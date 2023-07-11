@@ -57,6 +57,14 @@
     "node": ">=16.13.0",
     "npm": ">= 8.1.0"
   },
+  "peerDependencies": {
+    "zod": "^3.21.4"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "ava": "^5.0.1",
@@ -72,6 +80,7 @@
     "prettier": "^3.0.0",
     "tsc-alias": "^1.8.2",
     "tsx": "^3.12.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "zod": "^3.21.4"
   }
 }
