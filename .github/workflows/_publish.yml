@@ -16,9 +16,6 @@ on:
       registry_token:
         description: The package registry token.
         required: true
-      node_auth_token:
-        description: The Node.js auth token.
-        required: true
 
 jobs:
   publish:
