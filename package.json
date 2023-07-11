@@ -29,8 +29,7 @@
     "index.js.map",
     "index.d.ts",
     "lib",
-    "src",
-    "!**/*.test.ts"
+    "src"
   ],
   "scripts": {
     "build": "npm run build:ts",
@@ -39,19 +38,14 @@
     "prebuild:ts": "del 'index.*' lib",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
-    "test": "c8 ava",
-    "pretest": "tsx src/index.ts",
-    "test:update": "ava --update-snapshots",
-    "test:watch": "ava --watch",
-    "test:debug": "ava debug --break",
+    "pretypecheck": "tsx src/index.ts",
     "lint": "eslint --ignore-path .gitignore .",
     "prelint": "prettier --check --ignore-path .gitignore .",
     "postversion": "git push --follow-tags",
     "example": "tsx examples",
     "example:inspect": "tsx --inspect examples",
     "format": "eslint --ignore-path .gitignore --fix .",
-    "preformat": "prettier --write --ignore-path .gitignore .",
-    "report": "c8 report"
+    "preformat": "prettier --write --ignore-path .gitignore ."
   },
   "engines": {
     "node": ">=16.13.0",
@@ -67,8 +61,6 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
-    "ava": "^5.0.1",
-    "c8": "^8.0.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
