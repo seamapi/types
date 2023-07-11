@@ -1,7 +1,7 @@
 {
-  "name": "@seamapi/makenew-tsmodule",
-  "version": "1.2.2",
-  "description": "Package skeleton for a TypeScript module.",
+  "name": "@seamapi/types",
+  "version": "0.0.0",
+  "description": "TypeScript types for the Seam API.",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
@@ -16,9 +16,9 @@
   "keywords": [
     "node"
   ],
-  "homepage": "https://github.com/seamapi/makenew-tsmodule",
-  "bugs": "https://github.com/seamapi/makenew-tsmodule/issues",
-  "repository": "seamapi/makenew-tsmodule",
+  "homepage": "https://github.com/seamapi/types",
+  "bugs": "https://github.com/seamapi/types/issues",
+  "repository": "seamapi/types",
   "license": "MIT",
   "author": {
     "name": "Seam Labs, Inc.",

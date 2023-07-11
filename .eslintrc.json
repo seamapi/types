@@ -27,7 +27,7 @@
           ["^\\u0000"],
           ["^node:"],
           ["^@?\\w"],
-          ["@seamapi/makenew-tsmodule"],
+          ["@seamapi/types"],
           ["^lib/"],
           ["^"],
           ["^\\."]

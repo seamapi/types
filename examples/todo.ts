@@ -1,6 +1,6 @@
 import type { Builder, Command, Describe, Handler } from 'landlubber'
 
-import { todo } from '@seamapi/makenew-tsmodule'
+import { todo } from '@seamapi/types'
 
 interface Options {
   x: string
