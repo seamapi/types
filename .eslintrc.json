@@ -57,6 +57,12 @@
         ],
         "@typescript-eslint/no-unused-vars": "off"
       }
+    },
+    {
+      "files": ["src/lib/seam/connect/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/camelcase": "off"
+      }
     }
   ]
 }
