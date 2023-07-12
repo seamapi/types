@@ -10,6 +10,11 @@
       "import": "./index.js",
       "require": "./dist/index.cjs",
       "types": "./index.d.ts"
+    },
+    "./connect": {
+      "import": "./connect.js",
+      "require": "./dist/connect.cjs",
+      "types": "./connect.d.ts"
     }
   },
   "module": "index.js",
@@ -34,14 +39,15 @@
     "src"
   ],
   "scripts": {
-    "build": "npm run build:ts",
-    "prebuild": "tsup",
-    "postbuild": "node ./index.js",
+    "build": "npm run build:entrypoints",
+    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'",
+    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'",
+    "build:entrypoints": "npm run build:ts",
+    "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
-    "prebuild:ts": "del 'index.*' lib",
+    "prebuild:ts": "del 'index.*' 'connect.*' 'lib'",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
-    "pretypecheck": "tsx src/index.ts",
     "lint": "eslint --ignore-path .gitignore .",
     "prelint": "prettier --check --ignore-path .gitignore .",
     "postversion": "git push --follow-tags",
@@ -63,6 +69,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "concurrently": "^8.2.0",
     "del-cli": "^5.0.0",
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",

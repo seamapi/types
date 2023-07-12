@@ -83,6 +83,7 @@ jobs:
           path: index.js
           contents: |
             import '@seamapi/types'
+            import '@seamapi/types/connect'
       - name: Install Zod
         run: npm install --save zod
       - name: Install
