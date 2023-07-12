@@ -8,6 +8,7 @@
   "exports": {
     ".": {
       "import": "./index.js",
+      "require": "./dist/index.cjs",
       "types": "./index.d.ts"
     }
   },
@@ -28,11 +29,13 @@
     "index.js",
     "index.js.map",
     "index.d.ts",
+    "dist",
     "lib",
     "src"
   ],
   "scripts": {
     "build": "npm run build:ts",
+    "prebuild": "tsup",
     "postbuild": "node ./index.js",
     "build:ts": "tsc --project tsconfig.build.json",
     "prebuild:ts": "del 'index.*' lib",
@@ -68,6 +71,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^3.0.0",
     "tsc-alias": "^1.8.2",
+    "tsup": "^7.1.0",
     "tsx": "^3.12.1",
     "typescript": "^5.0.2",
     "zod": "^3.21.4"
