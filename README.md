@@ -7,9 +7,44 @@ TypeScript types for the Seam API.
 
 ## Description
 
-TODO
+This repository aggregates the latest route schemas and type definitions for the Seam API.
+Upstream Seam repositories automatically contribute updates on every deployment
+via a Pull Request opened by Seam Bot.
+This ensures downstream consumers, e.g., the SDK, fakes, documentation generators, etc.,
+have a single source of truth that stays up to date with the API.
+
+### Structure
+
+The main entrypoint for this module is empty: there is dedicated entrypoint for each Seam API namespace.
+
+Each directory under `src/lib/seam/*` is owned by an upstream Seam repository.
+These files should not be edited manually as they will be overridden by automation.
+
+Each entrypoint may export one or more of the following:
+
+- Zod schemas: collectively exported as a single object named `schemas`.
+- Types: derived directly from the [Zod Schemas][zod] and exported at the top level.
+- A separate collection of Zod schmeas named `routes`.
+- A type named `Routes` that implements the
+  [Route Definition interface from typed-axios][typed-axios Route Definition].
+- The OpenAPI schema as a plain object named `openapi`.
+
+[nextlove]: https://github.com/seamapi/nextlove
+[typed-axios Route Definition]: https://github.com/seamapi/typed-axios#route-definition
+[OpenAPI]: https://www.openapis.org/
+[zod]: https://zod.dev/
 
 ## Installation
+
+### Types Only
+
+Add this as a development dependency to your project using [npm] with
+
+```
+$ npm install --save-dev @seamapi/types
+```
+
+### Types and Zod Schemas
 
 Add this as a dependency to your project using [npm] with
 

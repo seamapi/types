@@ -83,8 +83,7 @@ jobs:
           path: index.js
           contents: |
             import '@seamapi/types'
-      - name: Install Zod
-        run: npm install --save zod
+            import '@seamapi/types/connect'
       - name: Install
         run: npm install --save ${{ steps.packages.outputs.paths }}
       - name: Run

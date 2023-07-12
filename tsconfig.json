@@ -25,9 +25,10 @@
     "baseUrl": "./",
     "paths": {
       "@seamapi/types": ["./src/index.ts"],
+      "@seamapi/types/connect": ["./src/connect.ts"],
       "lib/*": ["./src/lib/*"]
     }
   },
-  "files": ["src/index.ts"],
+  "files": ["src/index.ts", "src/connect.ts"],
   "include": ["src/**/*", "tsup.config.ts"]
 }
