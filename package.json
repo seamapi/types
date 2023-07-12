@@ -34,6 +34,9 @@
     "index.js",
     "index.js.map",
     "index.d.ts",
+    "connect.js",
+    "connect.js.map",
+    "connect.d.ts",
     "dist",
     "lib",
     "src"
