@@ -1,6 +1,6 @@
 {
   "root": true,
-  "plugins": ["simple-import-sort", "unused-imports"],
+  "plugins": ["simple-import-sort", "unused-imports", "eslint-plugin-node"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": "latest"
@@ -56,6 +56,19 @@
           }
         ],
         "@typescript-eslint/no-unused-vars": "off"
+      }
+    },
+    {
+      "files": ["src/lib/seam/connect/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/camelcase": "off",
+        "node/file-extension-in-import": [
+          "error",
+          "always",
+          {
+            "tryExtensions": [".js"]
+          }
+        ]
       }
     }
   ]
