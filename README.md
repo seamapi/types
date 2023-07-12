@@ -42,10 +42,10 @@ $ npm install --save-dev @seamapi/types
 
 ### Types and Zod Schemas
 
-Add this and zod as a dependency to your project using [npm] with
+Add this as a dependency to your project using [npm] with
 
 ```
-$ npm install zod @seamapi/types
+$ npm install @seamapi/types
 ```
 
 [npm]: https://www.npmjs.com/
