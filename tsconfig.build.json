@@ -8,5 +8,6 @@
     "outDir": "./"
   },
   "files": ["src/index.ts"],
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["tsup.config.ts"]
 }
