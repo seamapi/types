@@ -1,4 +1,4 @@
-import { z } from 'zod'
+import { z } from "zod"
 
 export const workspace = z.object({
   workspace_id: z.string().uuid(),
