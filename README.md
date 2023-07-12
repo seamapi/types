@@ -28,7 +28,6 @@ $ git clone https://github.com/seamapi/types.git
 $ cd types
 $ nvm install
 $ npm install
-$ npm run test:watch
 ```
 
 Primary development tasks are defined under `scripts` in `package.json`
