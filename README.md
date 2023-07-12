@@ -24,7 +24,7 @@ Each entrypoint may export one or more of the following:
 
 - Zod schemas: collectively exported as a single object named `schemas`.
 - Types: derived directly from the [Zod Schemas][zod] and exported at the top level.
-- A separate Zod schmea named `routes`.
+- A separate collection of Zod schmeas named `routes`.
 - A type named `Routes` that implements the
   [Route Definition interface from typed-axios][typed-axios Route Definition].
 - The OpenAPI schema as a plain object named `openapi`.
