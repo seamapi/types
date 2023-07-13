@@ -490,8 +490,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      action_attempts: Array<
-        | {
+      action_attempts: Array<| {
             status: "success"
             action_type: string
             action_attempt_id: string
@@ -514,8 +513,7 @@ export interface Routes {
               type: string
               message: string
             }
-          }
-      >
+          }>
     }
   }
   "/client_sessions/create": {
@@ -577,8 +575,7 @@ export interface Routes {
       custom_redirect_url?: string | undefined
       custom_redirect_failure_url?: string | undefined
       accepted_providers?:
-        | Array<
-            | "akuvox"
+        | Array<| "akuvox"
             | "august"
             | "avigilon_alta"
             | "brivo"
@@ -604,8 +601,7 @@ export interface Routes {
             | "igloohome"
             | "ecobee"
             | "hubitat"
-            | "yale_access"
-          >
+            | "yale_access">
         | undefined
       provider_category?: ("stable" | "internal_beta") | undefined
       custom_metadata?:
@@ -892,8 +888,7 @@ export interface Routes {
           )
         | undefined
       device_types?:
-        | Array<
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -917,8 +912,7 @@ export interface Routes {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          >
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -1063,8 +1057,7 @@ export interface Routes {
           )
         | undefined
       device_types?:
-        | Array<
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -1088,8 +1081,7 @@ export interface Routes {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          >
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -1283,8 +1275,7 @@ export interface Routes {
           )
         | undefined
       event_types?:
-        | Array<
-            | "device.connected"
+        | Array<| "device.connected"
             | "device.unmanaged.connected"
             | "device.disconnected"
             | "device.unmanaged.disconnected"
@@ -1314,8 +1305,7 @@ export interface Routes {
             | "connected_account.disconnected"
             | "connected_account.completed_first_sync"
             | "noise_sensor.noise_threshold_triggered"
-            | "access_code.backup_access_code_pulled"
-          >
+            | "access_code.backup_access_code_pulled">
         | undefined
       connected_account_id?: string | undefined
     }
@@ -1462,8 +1452,7 @@ export interface Routes {
           )
         | undefined
       device_types?:
-        | Array<
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -1487,8 +1476,7 @@ export interface Routes {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          >
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -2037,8 +2025,7 @@ export interface Routes {
           )
         | undefined
       device_types?:
-        | Array<
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -2062,8 +2049,7 @@ export interface Routes {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          >
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
