@@ -1,1 +1,8 @@
-export * from "./models/index.js"
+import * as schemas from "./schemas.js"
+
+export { schemas }
+
+export * from "./model-types.js"
+export { default as openapi } from "./openapi.js"
+// UPSTREAM: Reserve this named export until nextlove is able to generate this.
+export const routes = {}
