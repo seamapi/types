@@ -1,1 +1,1 @@
-export type { ConnectWebview } from "./models/index"
+export type { ConnectWebview } from "./models/index.js"
