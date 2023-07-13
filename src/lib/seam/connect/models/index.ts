@@ -1,1 +1,1 @@
-export * from "./connect-webview"
+export * from "./connect-webview.js"
