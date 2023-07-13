@@ -61,6 +61,7 @@
     {
       "files": ["src/lib/seam/connect/**/*.ts"],
       "rules": {
+        "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/naming-convention": "off",
         "node/file-extension-in-import": [
           "error",
