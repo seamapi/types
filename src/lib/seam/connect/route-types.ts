@@ -1,4 +1,4 @@
-export type Routes = {
+export interface Routes {
   "/access_codes/create": {
     route: "/access_codes/create"
     method: "POST"
@@ -83,7 +83,7 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      access_codes: {
+      access_codes: Array<{
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
         type: "time_bound" | "ongoing"
@@ -102,7 +102,7 @@ export type Routes = {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
-      }[]
+      }>
     }
   }
   "/access_codes/delete": {
@@ -189,7 +189,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      access_codes: {
+      access_codes: Array<{
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
         type: "time_bound" | "ongoing"
@@ -208,7 +208,7 @@ export type Routes = {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
-      }[]
+      }>
     }
   }
   "/access_codes/pull_backup_access_code": {
@@ -367,7 +367,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      access_codes: {
+      access_codes: Array<{
         type: "time_bound" | "ongoing"
         access_code_id: string
         device_id: string
@@ -380,7 +380,7 @@ export type Routes = {
         starts_at: string | null
         ends_at: string | null
         status: "set"
-      }[]
+      }>
     }
   }
   "/access_codes/unmanaged/update": {
@@ -490,8 +490,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      action_attempts: (
-        | {
+      action_attempts: Array<| {
             status: "success"
             action_type: string
             action_attempt_id: string
@@ -514,8 +513,7 @@ export type Routes = {
               type: string
               message: string
             }
-          }
-      )[]
+          }>
     }
   }
   "/client_sessions/create": {
@@ -558,14 +556,14 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      client_sessions: {
+      client_sessions: Array<{
         user_identifier_key: string | null
         client_session_id: string
         created_at: string
         device_count: number
         token: string
         workspace_id: string
-      }[]
+      }>
     }
   }
   "/connect_webviews/create": {
@@ -577,8 +575,7 @@ export type Routes = {
       custom_redirect_url?: string | undefined
       custom_redirect_failure_url?: string | undefined
       accepted_providers?:
-        | (
-            | "akuvox"
+        | Array<| "akuvox"
             | "august"
             | "avigilon_alta"
             | "brivo"
@@ -604,14 +601,11 @@ export type Routes = {
             | "igloohome"
             | "ecobee"
             | "hubitat"
-            | "yale_access"
-          )[]
+            | "yale_access">
         | undefined
       provider_category?: ("stable" | "internal_beta") | undefined
       custom_metadata?:
-        | {
-            [x: string]: string | number | null | boolean
-          }
+        | Record<string, string | number | null | boolean>
         | undefined
     }
     commonParams: {}
@@ -678,7 +672,7 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      connect_webviews: {
+      connect_webviews: Array<{
         connect_webview_id: string
         connected_account_id?: string | undefined
         url: string
@@ -691,7 +685,7 @@ export type Routes = {
         created_at: string
         login_successful: boolean
         status: "pending" | "failed" | "authorized"
-      }[]
+      }>
     }
   }
   "/connect_webviews/view": {
@@ -747,9 +741,7 @@ export type Routes = {
         errors?: any
         warnings?: any
         custom_metadata?:
-          | {
-              [x: string]: string | number | boolean | null
-            }
+          | Record<string, string | number | boolean | null>
           | undefined
       }
     }
@@ -762,7 +754,7 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      connected_accounts: {
+      connected_accounts: Array<{
         connected_account_id?: string | undefined
         created_at?: string | undefined
         user_identifier?:
@@ -778,11 +770,9 @@ export type Routes = {
         errors?: any
         warnings?: any
         custom_metadata?:
-          | {
-              [x: string]: string | number | boolean | null
-            }
+          | Record<string, string | number | boolean | null>
           | undefined
-      }[]
+      }>
     }
   }
   "/devices/delete": {
@@ -842,20 +832,18 @@ export type Routes = {
           model: {
             display_name: string
           }
-        } & {
-          [x: string]: any
-        }
+        } & Record<string, any>
         location?: any
         connected_account_id: string
         workspace_id: string
-        errors: {
+        errors: Array<{
           error_code: string
           message: string
-        }[]
-        warnings: {
+        }>
+        warnings: Array<{
           warning_code: string
           message: string
-        }[]
+        }>
         created_at: string
         is_managed: true
       }
@@ -900,8 +888,7 @@ export type Routes = {
           )
         | undefined
       device_types?:
-        | (
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -925,8 +912,7 @@ export type Routes = {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          )[]
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -962,7 +948,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      devices: {
+      devices: Array<{
         device_id: string
         device_type:
           | "akuvox_lock"
@@ -997,23 +983,21 @@ export type Routes = {
           model: {
             display_name: string
           }
-        } & {
-          [x: string]: any
-        }
+        } & Record<string, any>
         location?: any
         connected_account_id: string
         workspace_id: string
-        errors: {
+        errors: Array<{
           error_code: string
           message: string
-        }[]
-        warnings: {
+        }>
+        warnings: Array<{
           warning_code: string
           message: string
-        }[]
+        }>
         created_at: string
         is_managed: true
-      }[]
+      }>
     }
   }
   "/devices/list_device_providers": {
@@ -1026,12 +1010,12 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      device_providers: {
+      device_providers: Array<{
         device_provider_name: string
         display_name: string
         image_url: string
-        provider_categories: "stable"[]
-      }[]
+        provider_categories: Array<"stable">
+      }>
     }
   }
   "/devices/unmanaged/list": {
@@ -1073,8 +1057,7 @@ export type Routes = {
           )
         | undefined
       device_types?:
-        | (
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -1098,8 +1081,7 @@ export type Routes = {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          )[]
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -1135,7 +1117,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      devices: {
+      devices: Array<{
         device_id: string
         device_type:
           | "akuvox_lock"
@@ -1166,14 +1148,14 @@ export type Routes = {
         connected_account_id: string
         capabilities_supported: string[]
         workspace_id: string
-        errors: {
+        errors: Array<{
           error_code: string
           message: string
-        }[]
-        warnings: {
+        }>
+        warnings: Array<{
           warning_code: string
           message: string
-        }[]
+        }>
         created_at: string
         is_managed: false
         properties: {
@@ -1186,7 +1168,7 @@ export type Routes = {
             display_name: string
           }
         }
-      }[]
+      }>
     }
   }
   "/devices/unmanaged/update": {
@@ -1252,7 +1234,7 @@ export type Routes = {
     jsonBody: {}
     commonParams: {
       since?: string | undefined
-      between?: (string | Date)[] | undefined
+      between?: Array<string | Date> | undefined
       device_id?: string | undefined
       device_ids?: string[] | undefined
       access_code_id?: string | undefined
@@ -1293,8 +1275,7 @@ export type Routes = {
           )
         | undefined
       event_types?:
-        | (
-            | "device.connected"
+        | Array<| "device.connected"
             | "device.unmanaged.connected"
             | "device.disconnected"
             | "device.unmanaged.disconnected"
@@ -1324,22 +1305,21 @@ export type Routes = {
             | "connected_account.disconnected"
             | "connected_account.completed_first_sync"
             | "noise_sensor.noise_threshold_triggered"
-            | "access_code.backup_access_code_pulled"
-          )[]
+            | "access_code.backup_access_code_pulled">
         | undefined
       connected_account_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
       events?:
-        | {
+        | Array<{
             event_id: string
             device_id?: string | undefined
             event_type: string
             workspace_id: string
             created_at: Date
             occurred_at: Date
-          }[]
+          }>
         | undefined
       message?: string | undefined
     }
@@ -1355,11 +1335,11 @@ export type Routes = {
       ok: boolean
       msg: "I\u2019m one with the Force. The Force is with me."
       last_service_evaluation_at: string
-      service_health_statuses: {
+      service_health_statuses: Array<{
         service: string
         status: "healthy" | "degraded" | "down"
         description: string
-      }[]
+      }>
     }
   }
   "/health/get_health": {
@@ -1373,11 +1353,11 @@ export type Routes = {
       ok: boolean
       msg: "I\u2019m one with the Force. The Force is with me."
       last_service_evaluation_at: string
-      service_health_statuses: {
+      service_health_statuses: Array<{
         service: string
         status: "healthy" | "degraded" | "down"
         description: string
-      }[]
+      }>
     }
   }
   "/health/get_service_health": {
@@ -1472,8 +1452,7 @@ export type Routes = {
           )
         | undefined
       device_types?:
-        | (
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -1497,8 +1476,7 @@ export type Routes = {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          )[]
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -1727,7 +1705,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      noise_thresholds: {
+      noise_thresholds: Array<{
         noise_threshold_id: string
         device_id: string
         name: string
@@ -1735,7 +1713,7 @@ export type Routes = {
         starts_daily_at: string
         ends_daily_at: string
         noise_threshold_decibels: number
-      }[]
+      }>
     }
   }
   "/noise_sensors/noise_thresholds/update": {
@@ -1885,7 +1863,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      climate_setting_schedules: {
+      climate_setting_schedules: Array<{
         climate_setting_schedule_id: string
         schedule_type: "time_bound"
         device_id: string
@@ -1901,7 +1879,7 @@ export type Routes = {
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
         heating_set_point_fahrenheit?: (number | undefined) | undefined
         manual_override_allowed?: boolean | undefined
-      }[]
+      }>
     }
   }
   "/thermostats/climate_setting_schedules/update": {
@@ -1991,20 +1969,18 @@ export type Routes = {
           model: {
             display_name: string
           }
-        } & {
-          [x: string]: any
-        }
+        } & Record<string, any>
         location?: any
         connected_account_id: string
         workspace_id: string
-        errors: {
+        errors: Array<{
           error_code: string
           message: string
-        }[]
-        warnings: {
+        }>
+        warnings: Array<{
           warning_code: string
           message: string
-        }[]
+        }>
         created_at: string
         is_managed: true
       }
@@ -2049,8 +2025,7 @@ export type Routes = {
           )
         | undefined
       device_types?:
-        | (
-            | "akuvox_lock"
+        | Array<| "akuvox_lock"
             | "august_lock"
             | "brivo_access_point"
             | "butterflymx_panel"
@@ -2074,8 +2049,7 @@ export type Routes = {
             | "noiseaware_activity_zone"
             | "minut_sensor"
             | "ecobee_thermostat"
-            | "nest_thermostat"
-          )[]
+            | "nest_thermostat">
         | undefined
       manufacturer?:
         | (
@@ -2111,7 +2085,7 @@ export type Routes = {
     }
     formData: {}
     jsonResponse: {
-      thermostats: {
+      thermostats: Array<{
         device_id: string
         device_type:
           | "akuvox_lock"
@@ -2146,23 +2120,21 @@ export type Routes = {
           model: {
             display_name: string
           }
-        } & {
-          [x: string]: any
-        }
+        } & Record<string, any>
         location?: any
         connected_account_id: string
         workspace_id: string
-        errors: {
+        errors: Array<{
           error_code: string
           message: string
-        }[]
-        warnings: {
+        }>
+        warnings: Array<{
           warning_code: string
           message: string
-        }[]
+        }>
         created_at: string
         is_managed: true
-      }[]
+      }>
     }
   }
   "/thermostats/set_cooling_set_point": {
@@ -2271,12 +2243,12 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      webhooks: {
+      webhooks: Array<{
         webhook_id: string
         url: string
         event_types?: string[] | undefined
         secret?: string | undefined
-      }[]
+      }>
     }
   }
   "/workspaces/get": {
@@ -2305,11 +2277,11 @@ export type Routes = {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      workspaces: {
+      workspaces: Array<{
         workspace_id: string
         name: string
         is_sandbox: boolean
-      }[]
+      }>
     }
   }
   "/workspaces/reset_sandbox": {
