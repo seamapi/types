@@ -1,1 +1,1 @@
-export * from "./workspace.js"
+export * from "./connect-webview"
