@@ -59,9 +59,14 @@
       }
     },
     {
+      "files": ["src/lib/seam/connect/route-types.ts"],
+      "rules": {
+        "@typescript-eslint/ban-types": "off"
+      }
+    },
+    {
       "files": ["src/lib/seam/connect/**/*.ts"],
       "rules": {
-        "@typescript-eslint/ban-types": "off",
         "@typescript-eslint/naming-convention": "off",
         "node/file-extension-in-import": [
           "error",
