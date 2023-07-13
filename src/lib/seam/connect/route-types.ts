@@ -1,7 +1,7 @@
 export interface Routes {
-  "/access_codes/create": {
-    route: "/access_codes/create"
-    method: "POST"
+  '/access_codes/create': {
+    route: '/access_codes/create'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -20,21 +20,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -46,7 +46,7 @@ export interface Routes {
       access_code: {
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         is_waiting_for_code_assignment?: boolean | undefined
         access_code_id: string
         device_id: string
@@ -58,20 +58,20 @@ export interface Routes {
         is_managed: true
         starts_at?: string | undefined
         ends_at?: string | undefined
-        status: "setting" | "set" | "unset" | "removing" | "unknown"
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
       }
     }
   }
-  "/access_codes/create_multiple": {
-    route: "/access_codes/create_multiple"
-    method: "POST" | "PUT"
+  '/access_codes/create_multiple': {
+    route: '/access_codes/create_multiple'
+    method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
       device_ids: string[]
-      behavior_when_code_cannot_be_shared?: "throw" | "create_random_code"
+      behavior_when_code_cannot_be_shared?: 'throw' | 'create_random_code'
       name?: string | undefined
       starts_at?: string | undefined
       ends_at?: string | undefined
@@ -86,7 +86,7 @@ export interface Routes {
       access_codes: Array<{
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         is_waiting_for_code_assignment?: boolean | undefined
         access_code_id: string
         device_id: string
@@ -98,16 +98,16 @@ export interface Routes {
         is_managed: true
         starts_at?: string | undefined
         ends_at?: string | undefined
-        status: "setting" | "set" | "unset" | "removing" | "unknown"
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
       }>
     }
   }
-  "/access_codes/delete": {
-    route: "/access_codes/delete"
-    method: "DELETE" | "POST"
+  '/access_codes/delete': {
+    route: '/access_codes/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -119,21 +119,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -144,9 +144,9 @@ export interface Routes {
           }
     }
   }
-  "/access_codes/get": {
-    route: "/access_codes/get"
-    method: "GET" | "POST"
+  '/access_codes/get': {
+    route: '/access_codes/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -159,7 +159,7 @@ export interface Routes {
       access_code: {
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         is_waiting_for_code_assignment?: boolean | undefined
         access_code_id: string
         device_id: string
@@ -171,16 +171,16 @@ export interface Routes {
         is_managed: true
         starts_at?: string | undefined
         ends_at?: string | undefined
-        status: "setting" | "set" | "unset" | "removing" | "unknown"
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
       }
     }
   }
-  "/access_codes/list": {
-    route: "/access_codes/list"
-    method: "GET" | "POST"
+  '/access_codes/list': {
+    route: '/access_codes/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -192,7 +192,7 @@ export interface Routes {
       access_codes: Array<{
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         is_waiting_for_code_assignment?: boolean | undefined
         access_code_id: string
         device_id: string
@@ -204,16 +204,16 @@ export interface Routes {
         is_managed: true
         starts_at?: string | undefined
         ends_at?: string | undefined
-        status: "setting" | "set" | "unset" | "removing" | "unknown"
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
       }>
     }
   }
-  "/access_codes/pull_backup_access_code": {
-    route: "/access_codes/pull_backup_access_code"
-    method: "POST"
+  '/access_codes/pull_backup_access_code': {
+    route: '/access_codes/pull_backup_access_code'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       access_code_id: string
@@ -224,7 +224,7 @@ export interface Routes {
       backup_access_code: {
         common_code_key: string | null
         is_scheduled_on_device?: boolean | undefined
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         is_waiting_for_code_assignment?: boolean | undefined
         access_code_id: string
         device_id: string
@@ -236,16 +236,16 @@ export interface Routes {
         is_managed: true
         starts_at?: string | undefined
         ends_at?: string | undefined
-        status: "setting" | "set" | "unset" | "removing" | "unknown"
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
       }
     }
   }
-  "/access_codes/simulate/create_unmanaged_access_code": {
-    route: "/access_codes/simulate/create_unmanaged_access_code"
-    method: "POST"
+  '/access_codes/simulate/create_unmanaged_access_code': {
+    route: '/access_codes/simulate/create_unmanaged_access_code'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -259,28 +259,28 @@ export interface Routes {
         | {
             access_code_id: string
             code: string | null
-            status: "set"
+            status: 'set'
             created_at: string | Date
             is_managed: false
-            type: "ongoing"
+            type: 'ongoing'
             starts_at: null
             ends_at: null
           }
         | {
             access_code_id: string
             code: string | null
-            status: "set"
+            status: 'set'
             created_at: string | Date
             is_managed: false
-            type: "time_bound"
+            type: 'time_bound'
             starts_at: string | null
             ends_at: string | null
           }
     }
   }
-  "/access_codes/unmanaged/convert_to_managed": {
-    route: "/access_codes/unmanaged/convert_to_managed"
-    method: "POST" | "PATCH"
+  '/access_codes/unmanaged/convert_to_managed': {
+    route: '/access_codes/unmanaged/convert_to_managed'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -291,9 +291,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/access_codes/unmanaged/delete": {
-    route: "/access_codes/unmanaged/delete"
-    method: "DELETE" | "POST"
+  '/access_codes/unmanaged/delete': {
+    route: '/access_codes/unmanaged/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -304,21 +304,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -329,9 +329,9 @@ export interface Routes {
           }
     }
   }
-  "/access_codes/unmanaged/get": {
-    route: "/access_codes/unmanaged/get"
-    method: "GET" | "POST"
+  '/access_codes/unmanaged/get': {
+    route: '/access_codes/unmanaged/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -342,7 +342,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       access_code: {
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         access_code_id: string
         device_id: string
         name: string | null
@@ -353,13 +353,13 @@ export interface Routes {
         is_managed: false
         starts_at: string | null
         ends_at: string | null
-        status: "set"
+        status: 'set'
       }
     }
   }
-  "/access_codes/unmanaged/list": {
-    route: "/access_codes/unmanaged/list"
-    method: "GET" | "POST"
+  '/access_codes/unmanaged/list': {
+    route: '/access_codes/unmanaged/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -368,7 +368,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       access_codes: Array<{
-        type: "time_bound" | "ongoing"
+        type: 'time_bound' | 'ongoing'
         access_code_id: string
         device_id: string
         name: string | null
@@ -379,13 +379,13 @@ export interface Routes {
         is_managed: false
         starts_at: string | null
         ends_at: string | null
-        status: "set"
+        status: 'set'
       }>
     }
   }
-  "/access_codes/unmanaged/update": {
-    route: "/access_codes/unmanaged/update"
-    method: "POST" | "PATCH"
+  '/access_codes/unmanaged/update': {
+    route: '/access_codes/unmanaged/update'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -396,9 +396,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/access_codes/update": {
-    route: "/access_codes/update"
-    method: "POST" | "PUT"
+  '/access_codes/update': {
+    route: '/access_codes/update'
+    method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
       name?: string | undefined
@@ -411,28 +411,28 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       access_code_id: string
       device_id?: string | undefined
-      type?: ("ongoing" | "time_bound") | undefined
+      type?: ('ongoing' | 'time_bound') | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -443,9 +443,9 @@ export interface Routes {
           }
     }
   }
-  "/action_attempts/get": {
-    route: "/action_attempts/get"
-    method: "GET" | "POST"
+  '/action_attempts/get': {
+    route: '/action_attempts/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -455,21 +455,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -480,9 +480,9 @@ export interface Routes {
           }
     }
   }
-  "/action_attempts/list": {
-    route: "/action_attempts/list"
-    method: "GET" | "POST"
+  '/action_attempts/list': {
+    route: '/action_attempts/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -492,21 +492,21 @@ export interface Routes {
     jsonResponse: {
       action_attempts: Array<
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -518,9 +518,9 @@ export interface Routes {
       >
     }
   }
-  "/client_sessions/create": {
-    route: "/client_sessions/create"
-    method: "POST" | "PUT"
+  '/client_sessions/create': {
+    route: '/client_sessions/create'
+    method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody:
       | any
@@ -539,9 +539,9 @@ export interface Routes {
       }
     }
   }
-  "/client_sessions/delete": {
-    route: "/client_sessions/delete"
-    method: "POST" | "GET"
+  '/client_sessions/delete': {
+    route: '/client_sessions/delete'
+    method: 'POST' | 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -550,9 +550,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/client_sessions/list": {
-    route: "/client_sessions/list"
-    method: "POST" | "GET"
+  '/client_sessions/list': {
+    route: '/client_sessions/list'
+    method: 'POST' | 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -568,46 +568,46 @@ export interface Routes {
       }>
     }
   }
-  "/connect_webviews/create": {
-    route: "/connect_webviews/create"
-    method: "POST"
+  '/connect_webviews/create': {
+    route: '/connect_webviews/create'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
-      device_selection_mode?: ("none" | "single" | "multiple") | undefined
+      device_selection_mode?: ('none' | 'single' | 'multiple') | undefined
       custom_redirect_url?: string | undefined
       custom_redirect_failure_url?: string | undefined
       accepted_providers?:
         | Array<
-            | "akuvox"
-            | "august"
-            | "avigilon_alta"
-            | "brivo"
-            | "butterflymx"
-            | "schlage"
-            | "smartthings"
-            | "yale"
-            | "genie"
-            | "doorking"
-            | "salto"
-            | "lockly"
-            | "ttlock"
-            | "linear"
-            | "noiseaware"
-            | "nuki"
-            | "seam_relay_admin"
-            | "igloo"
-            | "kwikset"
-            | "minut"
-            | "my_2n"
-            | "controlbyweb"
-            | "nest"
-            | "igloohome"
-            | "ecobee"
-            | "hubitat"
-            | "yale_access"
+            | 'akuvox'
+            | 'august'
+            | 'avigilon_alta'
+            | 'brivo'
+            | 'butterflymx'
+            | 'schlage'
+            | 'smartthings'
+            | 'yale'
+            | 'genie'
+            | 'doorking'
+            | 'salto'
+            | 'lockly'
+            | 'ttlock'
+            | 'linear'
+            | 'noiseaware'
+            | 'nuki'
+            | 'seam_relay_admin'
+            | 'igloo'
+            | 'kwikset'
+            | 'minut'
+            | 'my_2n'
+            | 'controlbyweb'
+            | 'nest'
+            | 'igloohome'
+            | 'ecobee'
+            | 'hubitat'
+            | 'yale_access'
           >
         | undefined
-      provider_category?: ("stable" | "internal_beta") | undefined
+      provider_category?: ('stable' | 'internal_beta') | undefined
       custom_metadata?:
         | Record<string, string | number | null | boolean>
         | undefined
@@ -620,20 +620,20 @@ export interface Routes {
         connected_account_id?: string | undefined
         url: string
         workspace_id: string
-        device_selection_mode: "none" | "single" | "multiple"
+        device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
         created_at: string
         login_successful: boolean
-        status: "pending" | "failed" | "authorized"
+        status: 'pending' | 'failed' | 'authorized'
       }
     }
   }
-  "/connect_webviews/delete": {
-    route: "/connect_webviews/delete"
-    method: "DELETE" | "POST"
+  '/connect_webviews/delete': {
+    route: '/connect_webviews/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
       connect_webview_id: string
@@ -642,9 +642,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/connect_webviews/get": {
-    route: "/connect_webviews/get"
-    method: "GET" | "POST"
+  '/connect_webviews/get': {
+    route: '/connect_webviews/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -657,20 +657,20 @@ export interface Routes {
         connected_account_id?: string | undefined
         url: string
         workspace_id: string
-        device_selection_mode: "none" | "single" | "multiple"
+        device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
         created_at: string
         login_successful: boolean
-        status: "pending" | "failed" | "authorized"
+        status: 'pending' | 'failed' | 'authorized'
       }
     }
   }
-  "/connect_webviews/list": {
-    route: "/connect_webviews/list"
-    method: "GET" | "POST"
+  '/connect_webviews/list': {
+    route: '/connect_webviews/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -681,20 +681,20 @@ export interface Routes {
         connected_account_id?: string | undefined
         url: string
         workspace_id: string
-        device_selection_mode: "none" | "single" | "multiple"
+        device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
         created_at: string
         login_successful: boolean
-        status: "pending" | "failed" | "authorized"
+        status: 'pending' | 'failed' | 'authorized'
       }>
     }
   }
-  "/connect_webviews/view": {
-    route: "/connect_webviews/view"
-    method: "GET"
+  '/connect_webviews/view': {
+    route: '/connect_webviews/view'
+    method: 'GET'
     queryParams: {
       connect_webview_id: string
       auth_token: string
@@ -704,9 +704,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/connected_accounts/delete": {
-    route: "/connected_accounts/delete"
-    method: "DELETE" | "POST"
+  '/connected_accounts/delete': {
+    route: '/connected_accounts/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
       connected_account_id: string
@@ -715,9 +715,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/connected_accounts/get": {
-    route: "/connected_accounts/get"
-    method: "GET"
+  '/connected_accounts/get': {
+    route: '/connected_accounts/get'
+    method: 'GET'
     queryParams:
       | {
           connected_account_id: string
@@ -750,9 +750,9 @@ export interface Routes {
       }
     }
   }
-  "/connected_accounts/list": {
-    route: "/connected_accounts/list"
-    method: "GET"
+  '/connected_accounts/list': {
+    route: '/connected_accounts/list'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -779,9 +779,9 @@ export interface Routes {
       }>
     }
   }
-  "/devices/delete": {
-    route: "/devices/delete"
-    method: "DELETE" | "POST"
+  '/devices/delete': {
+    route: '/devices/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -790,9 +790,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/devices/get": {
-    route: "/devices/get"
-    method: "GET"
+  '/devices/get': {
+    route: '/devices/get'
+    method: 'GET'
     queryParams: {
       device_id?: string | undefined
       name?: string | undefined
@@ -804,31 +804,31 @@ export interface Routes {
       device: {
         device_id: string
         device_type:
-          | "akuvox_lock"
-          | "august_lock"
-          | "brivo_access_point"
-          | "butterflymx_panel"
-          | "doorking_lock"
-          | "genie_door"
-          | "igloo_lock"
-          | "linear_lock"
-          | "lockly_lock"
-          | "kwikset_lock"
-          | "nuki_lock"
-          | "salto_lock"
-          | "schlage_lock"
-          | "seam_relay"
-          | "smartthings_lock"
-          | "yale_lock"
-          | "two_n_intercom"
-          | "controlbyweb_device"
-          | "ttlock_lock"
-          | "igloohome_lock"
-          | "hubitat_lock"
-          | "noiseaware_activity_zone"
-          | "minut_sensor"
-          | "ecobee_thermostat"
-          | "nest_thermostat"
+          | 'akuvox_lock'
+          | 'august_lock'
+          | 'brivo_access_point'
+          | 'butterflymx_panel'
+          | 'doorking_lock'
+          | 'genie_door'
+          | 'igloo_lock'
+          | 'linear_lock'
+          | 'lockly_lock'
+          | 'kwikset_lock'
+          | 'nuki_lock'
+          | 'salto_lock'
+          | 'schlage_lock'
+          | 'seam_relay'
+          | 'smartthings_lock'
+          | 'yale_lock'
+          | 'two_n_intercom'
+          | 'controlbyweb_device'
+          | 'ttlock_lock'
+          | 'igloohome_lock'
+          | 'hubitat_lock'
+          | 'noiseaware_activity_zone'
+          | 'minut_sensor'
+          | 'ecobee_thermostat'
+          | 'nest_thermostat'
         capabilities_supported: string[]
         properties: {
           online: boolean
@@ -853,9 +853,9 @@ export interface Routes {
       }
     }
   }
-  "/devices/list": {
-    route: "/devices/list"
-    method: "GET" | "POST"
+  '/devices/list': {
+    route: '/devices/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -864,90 +864,90 @@ export interface Routes {
       connect_webview_id?: string | undefined
       device_type?:
         | (
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           )
         | undefined
       device_types?:
         | Array<
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           >
         | undefined
       manufacturer?:
         | (
-            | "akuvox"
-            | "august"
-            | "brivo"
-            | "butterflymx"
-            | "doorking"
-            | "genie"
-            | "igloo"
-            | "keywe"
-            | "kwikset"
-            | "linear"
-            | "lockly"
-            | "nuki"
-            | "philia"
-            | "salto"
-            | "samsung"
-            | "schlage"
-            | "seam"
-            | "unknown"
-            | "yale"
-            | "minut"
-            | "two_n"
-            | "ttlock"
-            | "nest"
-            | "igloohome"
-            | "ecobee"
-            | "hubitat"
+            | 'akuvox'
+            | 'august'
+            | 'brivo'
+            | 'butterflymx'
+            | 'doorking'
+            | 'genie'
+            | 'igloo'
+            | 'keywe'
+            | 'kwikset'
+            | 'linear'
+            | 'lockly'
+            | 'nuki'
+            | 'philia'
+            | 'salto'
+            | 'samsung'
+            | 'schlage'
+            | 'seam'
+            | 'unknown'
+            | 'yale'
+            | 'minut'
+            | 'two_n'
+            | 'ttlock'
+            | 'nest'
+            | 'igloohome'
+            | 'ecobee'
+            | 'hubitat'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -957,31 +957,31 @@ export interface Routes {
       devices: Array<{
         device_id: string
         device_type:
-          | "akuvox_lock"
-          | "august_lock"
-          | "brivo_access_point"
-          | "butterflymx_panel"
-          | "doorking_lock"
-          | "genie_door"
-          | "igloo_lock"
-          | "linear_lock"
-          | "lockly_lock"
-          | "kwikset_lock"
-          | "nuki_lock"
-          | "salto_lock"
-          | "schlage_lock"
-          | "seam_relay"
-          | "smartthings_lock"
-          | "yale_lock"
-          | "two_n_intercom"
-          | "controlbyweb_device"
-          | "ttlock_lock"
-          | "igloohome_lock"
-          | "hubitat_lock"
-          | "noiseaware_activity_zone"
-          | "minut_sensor"
-          | "ecobee_thermostat"
-          | "nest_thermostat"
+          | 'akuvox_lock'
+          | 'august_lock'
+          | 'brivo_access_point'
+          | 'butterflymx_panel'
+          | 'doorking_lock'
+          | 'genie_door'
+          | 'igloo_lock'
+          | 'linear_lock'
+          | 'lockly_lock'
+          | 'kwikset_lock'
+          | 'nuki_lock'
+          | 'salto_lock'
+          | 'schlage_lock'
+          | 'seam_relay'
+          | 'smartthings_lock'
+          | 'yale_lock'
+          | 'two_n_intercom'
+          | 'controlbyweb_device'
+          | 'ttlock_lock'
+          | 'igloohome_lock'
+          | 'hubitat_lock'
+          | 'noiseaware_activity_zone'
+          | 'minut_sensor'
+          | 'ecobee_thermostat'
+          | 'nest_thermostat'
         capabilities_supported: string[]
         properties: {
           online: boolean
@@ -1006,13 +1006,13 @@ export interface Routes {
       }>
     }
   }
-  "/devices/list_device_providers": {
-    route: "/devices/list_device_providers"
-    method: "GET"
+  '/devices/list_device_providers': {
+    route: '/devices/list_device_providers'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      provider_category?: "stable" | undefined
+      provider_category?: 'stable' | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1020,13 +1020,13 @@ export interface Routes {
         device_provider_name: string
         display_name: string
         image_url: string
-        provider_categories: Array<"stable">
+        provider_categories: Array<'stable'>
       }>
     }
   }
-  "/devices/unmanaged/list": {
-    route: "/devices/unmanaged/list"
-    method: "GET" | "POST"
+  '/devices/unmanaged/list': {
+    route: '/devices/unmanaged/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1035,90 +1035,90 @@ export interface Routes {
       connect_webview_id?: string | undefined
       device_type?:
         | (
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           )
         | undefined
       device_types?:
         | Array<
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           >
         | undefined
       manufacturer?:
         | (
-            | "akuvox"
-            | "august"
-            | "brivo"
-            | "butterflymx"
-            | "doorking"
-            | "genie"
-            | "igloo"
-            | "keywe"
-            | "kwikset"
-            | "linear"
-            | "lockly"
-            | "nuki"
-            | "philia"
-            | "salto"
-            | "samsung"
-            | "schlage"
-            | "seam"
-            | "unknown"
-            | "yale"
-            | "minut"
-            | "two_n"
-            | "ttlock"
-            | "nest"
-            | "igloohome"
-            | "ecobee"
-            | "hubitat"
+            | 'akuvox'
+            | 'august'
+            | 'brivo'
+            | 'butterflymx'
+            | 'doorking'
+            | 'genie'
+            | 'igloo'
+            | 'keywe'
+            | 'kwikset'
+            | 'linear'
+            | 'lockly'
+            | 'nuki'
+            | 'philia'
+            | 'salto'
+            | 'samsung'
+            | 'schlage'
+            | 'seam'
+            | 'unknown'
+            | 'yale'
+            | 'minut'
+            | 'two_n'
+            | 'ttlock'
+            | 'nest'
+            | 'igloohome'
+            | 'ecobee'
+            | 'hubitat'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -1128,31 +1128,31 @@ export interface Routes {
       devices: Array<{
         device_id: string
         device_type:
-          | "akuvox_lock"
-          | "august_lock"
-          | "brivo_access_point"
-          | "butterflymx_panel"
-          | "doorking_lock"
-          | "genie_door"
-          | "igloo_lock"
-          | "linear_lock"
-          | "lockly_lock"
-          | "kwikset_lock"
-          | "nuki_lock"
-          | "salto_lock"
-          | "schlage_lock"
-          | "seam_relay"
-          | "smartthings_lock"
-          | "yale_lock"
-          | "two_n_intercom"
-          | "controlbyweb_device"
-          | "ttlock_lock"
-          | "igloohome_lock"
-          | "hubitat_lock"
-          | "noiseaware_activity_zone"
-          | "minut_sensor"
-          | "ecobee_thermostat"
-          | "nest_thermostat"
+          | 'akuvox_lock'
+          | 'august_lock'
+          | 'brivo_access_point'
+          | 'butterflymx_panel'
+          | 'doorking_lock'
+          | 'genie_door'
+          | 'igloo_lock'
+          | 'linear_lock'
+          | 'lockly_lock'
+          | 'kwikset_lock'
+          | 'nuki_lock'
+          | 'salto_lock'
+          | 'schlage_lock'
+          | 'seam_relay'
+          | 'smartthings_lock'
+          | 'yale_lock'
+          | 'two_n_intercom'
+          | 'controlbyweb_device'
+          | 'ttlock_lock'
+          | 'igloohome_lock'
+          | 'hubitat_lock'
+          | 'noiseaware_activity_zone'
+          | 'minut_sensor'
+          | 'ecobee_thermostat'
+          | 'nest_thermostat'
         connected_account_id: string
         capabilities_supported: string[]
         workspace_id: string
@@ -1179,9 +1179,9 @@ export interface Routes {
       }>
     }
   }
-  "/devices/unmanaged/update": {
-    route: "/devices/unmanaged/update"
-    method: "POST" | "PATCH"
+  '/devices/unmanaged/update': {
+    route: '/devices/unmanaged/update'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1191,9 +1191,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/devices/update": {
-    route: "/devices/update"
-    method: "POST" | "PATCH"
+  '/devices/update': {
+    route: '/devices/update'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1210,9 +1210,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/events/get": {
-    route: "/events/get"
-    method: "GET"
+  '/events/get': {
+    route: '/events/get'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1235,9 +1235,9 @@ export interface Routes {
       message?: string | undefined
     }
   }
-  "/events/list": {
-    route: "/events/list"
-    method: "GET" | "POST"
+  '/events/list': {
+    route: '/events/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1249,72 +1249,72 @@ export interface Routes {
       access_code_ids?: string[] | undefined
       event_type?:
         | (
-            | "device.connected"
-            | "device.unmanaged.connected"
-            | "device.disconnected"
-            | "device.unmanaged.disconnected"
-            | "device.converted_to_unmanaged"
-            | "device.unmanaged.converted_to_managed"
-            | "device.removed"
-            | "device.tampered"
-            | "device.low_battery"
-            | "device.battery_status_changed"
-            | "access_code.created"
-            | "access_code.changed"
-            | "access_code.scheduled_on_device"
-            | "access_code.set_on_device"
-            | "access_code.removed_from_device"
-            | "access_code.failed_to_set_on_device"
-            | "access_code.delay_in_setting_on_device"
-            | "access_code.failed_to_remove_from_device"
-            | "access_code.delay_in_removing_from_device"
-            | "access_code.unmanaged.converted_to_managed"
-            | "access_code.unmanaged.failed_to_convert_to_managed"
-            | "access_code.unmanaged.created"
-            | "access_code.unmanaged.removed"
-            | "lock.locked"
-            | "lock.unlocked"
-            | "connected_account.connected"
-            | "connected_account.created"
-            | "connected_account.disconnected"
-            | "connected_account.completed_first_sync"
-            | "noise_sensor.noise_threshold_triggered"
-            | "access_code.backup_access_code_pulled"
+            | 'device.connected'
+            | 'device.unmanaged.connected'
+            | 'device.disconnected'
+            | 'device.unmanaged.disconnected'
+            | 'device.converted_to_unmanaged'
+            | 'device.unmanaged.converted_to_managed'
+            | 'device.removed'
+            | 'device.tampered'
+            | 'device.low_battery'
+            | 'device.battery_status_changed'
+            | 'access_code.created'
+            | 'access_code.changed'
+            | 'access_code.scheduled_on_device'
+            | 'access_code.set_on_device'
+            | 'access_code.removed_from_device'
+            | 'access_code.failed_to_set_on_device'
+            | 'access_code.delay_in_setting_on_device'
+            | 'access_code.failed_to_remove_from_device'
+            | 'access_code.delay_in_removing_from_device'
+            | 'access_code.unmanaged.converted_to_managed'
+            | 'access_code.unmanaged.failed_to_convert_to_managed'
+            | 'access_code.unmanaged.created'
+            | 'access_code.unmanaged.removed'
+            | 'lock.locked'
+            | 'lock.unlocked'
+            | 'connected_account.connected'
+            | 'connected_account.created'
+            | 'connected_account.disconnected'
+            | 'connected_account.completed_first_sync'
+            | 'noise_sensor.noise_threshold_triggered'
+            | 'access_code.backup_access_code_pulled'
           )
         | undefined
       event_types?:
         | Array<
-            | "device.connected"
-            | "device.unmanaged.connected"
-            | "device.disconnected"
-            | "device.unmanaged.disconnected"
-            | "device.converted_to_unmanaged"
-            | "device.unmanaged.converted_to_managed"
-            | "device.removed"
-            | "device.tampered"
-            | "device.low_battery"
-            | "device.battery_status_changed"
-            | "access_code.created"
-            | "access_code.changed"
-            | "access_code.scheduled_on_device"
-            | "access_code.set_on_device"
-            | "access_code.removed_from_device"
-            | "access_code.failed_to_set_on_device"
-            | "access_code.delay_in_setting_on_device"
-            | "access_code.failed_to_remove_from_device"
-            | "access_code.delay_in_removing_from_device"
-            | "access_code.unmanaged.converted_to_managed"
-            | "access_code.unmanaged.failed_to_convert_to_managed"
-            | "access_code.unmanaged.created"
-            | "access_code.unmanaged.removed"
-            | "lock.locked"
-            | "lock.unlocked"
-            | "connected_account.connected"
-            | "connected_account.created"
-            | "connected_account.disconnected"
-            | "connected_account.completed_first_sync"
-            | "noise_sensor.noise_threshold_triggered"
-            | "access_code.backup_access_code_pulled"
+            | 'device.connected'
+            | 'device.unmanaged.connected'
+            | 'device.disconnected'
+            | 'device.unmanaged.disconnected'
+            | 'device.converted_to_unmanaged'
+            | 'device.unmanaged.converted_to_managed'
+            | 'device.removed'
+            | 'device.tampered'
+            | 'device.low_battery'
+            | 'device.battery_status_changed'
+            | 'access_code.created'
+            | 'access_code.changed'
+            | 'access_code.scheduled_on_device'
+            | 'access_code.set_on_device'
+            | 'access_code.removed_from_device'
+            | 'access_code.failed_to_set_on_device'
+            | 'access_code.delay_in_setting_on_device'
+            | 'access_code.failed_to_remove_from_device'
+            | 'access_code.delay_in_removing_from_device'
+            | 'access_code.unmanaged.converted_to_managed'
+            | 'access_code.unmanaged.failed_to_convert_to_managed'
+            | 'access_code.unmanaged.created'
+            | 'access_code.unmanaged.removed'
+            | 'lock.locked'
+            | 'lock.unlocked'
+            | 'connected_account.connected'
+            | 'connected_account.created'
+            | 'connected_account.disconnected'
+            | 'connected_account.completed_first_sync'
+            | 'noise_sensor.noise_threshold_triggered'
+            | 'access_code.backup_access_code_pulled'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -1334,45 +1334,45 @@ export interface Routes {
       message?: string | undefined
     }
   }
-  "/health": {
-    route: "/health"
-    method: "GET"
+  '/health': {
+    route: '/health'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
     formData: {}
     jsonResponse: {
       ok: boolean
-      msg: "I\u2019m one with the Force. The Force is with me."
+      msg: 'I\u2019m one with the Force. The Force is with me.'
       last_service_evaluation_at: string
       service_health_statuses: Array<{
         service: string
-        status: "healthy" | "degraded" | "down"
+        status: 'healthy' | 'degraded' | 'down'
         description: string
       }>
     }
   }
-  "/health/get_health": {
-    route: "/health/get_health"
-    method: "GET"
+  '/health/get_health': {
+    route: '/health/get_health'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
     formData: {}
     jsonResponse: {
       ok: boolean
-      msg: "I\u2019m one with the Force. The Force is with me."
+      msg: 'I\u2019m one with the Force. The Force is with me.'
       last_service_evaluation_at: string
       service_health_statuses: Array<{
         service: string
-        status: "healthy" | "degraded" | "down"
+        status: 'healthy' | 'degraded' | 'down'
         description: string
       }>
     }
   }
-  "/health/get_service_health": {
-    route: "/health/get_service_health"
-    method: "GET"
+  '/health/get_service_health': {
+    route: '/health/get_service_health'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1384,14 +1384,14 @@ export interface Routes {
       last_service_evaluation_at: string
       service_health: {
         service: string
-        status: "healthy" | "degraded" | "down"
+        status: 'healthy' | 'degraded' | 'down'
         description: string
       }
     }
   }
-  "/health/service/[service_name]": {
-    route: "/health/service/[service_name]"
-    method: "GET"
+  '/health/service/[service_name]': {
+    route: '/health/service/[service_name]'
+    method: 'GET'
     queryParams: {
       service_name: string
     }
@@ -1403,14 +1403,14 @@ export interface Routes {
       last_service_evaluation_at: string
       service_health: {
         service: string
-        status: "healthy" | "degraded" | "down"
+        status: 'healthy' | 'degraded' | 'down'
         description: string
       }
     }
   }
-  "/locks/get": {
-    route: "/locks/get"
-    method: "GET" | "POST"
+  '/locks/get': {
+    route: '/locks/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1423,9 +1423,9 @@ export interface Routes {
       device?: any
     }
   }
-  "/locks/list": {
-    route: "/locks/list"
-    method: "GET" | "POST"
+  '/locks/list': {
+    route: '/locks/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1434,90 +1434,90 @@ export interface Routes {
       connect_webview_id?: string | undefined
       device_type?:
         | (
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           )
         | undefined
       device_types?:
         | Array<
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           >
         | undefined
       manufacturer?:
         | (
-            | "akuvox"
-            | "august"
-            | "brivo"
-            | "butterflymx"
-            | "doorking"
-            | "genie"
-            | "igloo"
-            | "keywe"
-            | "kwikset"
-            | "linear"
-            | "lockly"
-            | "nuki"
-            | "philia"
-            | "salto"
-            | "samsung"
-            | "schlage"
-            | "seam"
-            | "unknown"
-            | "yale"
-            | "minut"
-            | "two_n"
-            | "ttlock"
-            | "nest"
-            | "igloohome"
-            | "ecobee"
-            | "hubitat"
+            | 'akuvox'
+            | 'august'
+            | 'brivo'
+            | 'butterflymx'
+            | 'doorking'
+            | 'genie'
+            | 'igloo'
+            | 'keywe'
+            | 'kwikset'
+            | 'linear'
+            | 'lockly'
+            | 'nuki'
+            | 'philia'
+            | 'salto'
+            | 'samsung'
+            | 'schlage'
+            | 'seam'
+            | 'unknown'
+            | 'yale'
+            | 'minut'
+            | 'two_n'
+            | 'ttlock'
+            | 'nest'
+            | 'igloohome'
+            | 'ecobee'
+            | 'hubitat'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -1528,9 +1528,9 @@ export interface Routes {
       devices?: any
     }
   }
-  "/locks/lock_door": {
-    route: "/locks/lock_door"
-    method: "POST"
+  '/locks/lock_door': {
+    route: '/locks/lock_door'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -1541,21 +1541,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -1566,9 +1566,9 @@ export interface Routes {
           }
     }
   }
-  "/locks/unlock_door": {
-    route: "/locks/unlock_door"
-    method: "POST"
+  '/locks/unlock_door': {
+    route: '/locks/unlock_door'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -1579,21 +1579,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -1604,9 +1604,9 @@ export interface Routes {
           }
     }
   }
-  "/noise_sensors/noise_thresholds/create": {
-    route: "/noise_sensors/noise_thresholds/create"
-    method: "POST"
+  '/noise_sensors/noise_thresholds/create': {
+    route: '/noise_sensors/noise_thresholds/create'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -1622,21 +1622,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -1647,9 +1647,9 @@ export interface Routes {
           }
     }
   }
-  "/noise_sensors/noise_thresholds/delete": {
-    route: "/noise_sensors/noise_thresholds/delete"
-    method: "DELETE" | "POST"
+  '/noise_sensors/noise_thresholds/delete': {
+    route: '/noise_sensors/noise_thresholds/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
       noise_threshold_id: string
@@ -1661,21 +1661,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -1686,9 +1686,9 @@ export interface Routes {
           }
     }
   }
-  "/noise_sensors/noise_thresholds/get": {
-    route: "/noise_sensors/noise_thresholds/get"
-    method: "GET" | "POST"
+  '/noise_sensors/noise_thresholds/get': {
+    route: '/noise_sensors/noise_thresholds/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1707,9 +1707,9 @@ export interface Routes {
       }
     }
   }
-  "/noise_sensors/noise_thresholds/list": {
-    route: "/noise_sensors/noise_thresholds/list"
-    method: "GET" | "POST"
+  '/noise_sensors/noise_thresholds/list': {
+    route: '/noise_sensors/noise_thresholds/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1728,9 +1728,9 @@ export interface Routes {
       }>
     }
   }
-  "/noise_sensors/noise_thresholds/update": {
-    route: "/noise_sensors/noise_thresholds/update"
-    method: "PUT" | "POST"
+  '/noise_sensors/noise_thresholds/update': {
+    route: '/noise_sensors/noise_thresholds/update'
+    method: 'PUT' | 'POST'
     queryParams: {}
     jsonBody: {
       noise_threshold_id: string
@@ -1747,21 +1747,21 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: "success"
+            status: 'success'
             action_type: string
             action_attempt_id: string
             result?: any
             error: null
           }
         | {
-            status: "pending"
+            status: 'pending'
             action_type: string
             action_attempt_id: string
             result: null
             error: null
           }
         | {
-            status: "error"
+            status: 'error'
             action_type: string
             action_attempt_id: string
             result: null
@@ -1772,9 +1772,9 @@ export interface Routes {
           }
     }
   }
-  "/noise_sensors/simulate/trigger_noise_threshold": {
-    route: "/noise_sensors/simulate/trigger_noise_threshold"
-    method: "POST"
+  '/noise_sensors/simulate/trigger_noise_threshold': {
+    route: '/noise_sensors/simulate/trigger_noise_threshold'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -1783,19 +1783,19 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/thermostats/climate_setting_schedules/create": {
-    route: "/thermostats/climate_setting_schedules/create"
-    method: "POST"
+  '/thermostats/climate_setting_schedules/create': {
+    route: '/thermostats/climate_setting_schedules/create'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
-      schedule_type?: "time_bound"
+      schedule_type?: 'time_bound'
       device_id: string
       name?: string | undefined
       schedule_starts_at: string
       schedule_ends_at: string
       automatic_heating_enabled?: boolean | undefined
       automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
       cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1807,7 +1807,7 @@ export interface Routes {
     jsonResponse: {
       climate_setting_schedule: {
         climate_setting_schedule_id: string
-        schedule_type: "time_bound"
+        schedule_type: 'time_bound'
         device_id: string
         name?: string | undefined
         schedule_starts_at: string
@@ -1815,7 +1815,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1824,9 +1824,9 @@ export interface Routes {
       }
     }
   }
-  "/thermostats/climate_setting_schedules/delete": {
-    route: "/thermostats/climate_setting_schedules/delete"
-    method: "PUT" | "POST" | "DELETE"
+  '/thermostats/climate_setting_schedules/delete': {
+    route: '/thermostats/climate_setting_schedules/delete'
+    method: 'PUT' | 'POST' | 'DELETE'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1835,9 +1835,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/thermostats/climate_setting_schedules/get": {
-    route: "/thermostats/climate_setting_schedules/get"
-    method: "GET" | "POST"
+  '/thermostats/climate_setting_schedules/get': {
+    route: '/thermostats/climate_setting_schedules/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1848,7 +1848,7 @@ export interface Routes {
     jsonResponse: {
       climate_setting_schedule: {
         climate_setting_schedule_id: string
-        schedule_type: "time_bound"
+        schedule_type: 'time_bound'
         device_id: string
         name?: string | undefined
         schedule_starts_at: string
@@ -1856,7 +1856,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1865,9 +1865,9 @@ export interface Routes {
       }
     }
   }
-  "/thermostats/climate_setting_schedules/list": {
-    route: "/thermostats/climate_setting_schedules/list"
-    method: "GET" | "POST"
+  '/thermostats/climate_setting_schedules/list': {
+    route: '/thermostats/climate_setting_schedules/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1877,7 +1877,7 @@ export interface Routes {
     jsonResponse: {
       climate_setting_schedules: Array<{
         climate_setting_schedule_id: string
-        schedule_type: "time_bound"
+        schedule_type: 'time_bound'
         device_id: string
         name?: string | undefined
         schedule_starts_at: string
@@ -1885,7 +1885,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1894,19 +1894,19 @@ export interface Routes {
       }>
     }
   }
-  "/thermostats/climate_setting_schedules/update": {
-    route: "/thermostats/climate_setting_schedules/update"
-    method: "PUT" | "POST"
+  '/thermostats/climate_setting_schedules/update': {
+    route: '/thermostats/climate_setting_schedules/update'
+    method: 'PUT' | 'POST'
     queryParams: {}
     jsonBody: {
       climate_setting_schedule_id: string
-      schedule_type?: "time_bound"
+      schedule_type?: 'time_bound'
       name?: string | undefined
       schedule_starts_at?: string | undefined
       schedule_ends_at?: string | undefined
       automatic_heating_enabled?: boolean | undefined
       automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
       cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1918,7 +1918,7 @@ export interface Routes {
     jsonResponse: {
       climate_setting_schedule: {
         climate_setting_schedule_id: string
-        schedule_type: "time_bound"
+        schedule_type: 'time_bound'
         device_id: string
         name?: string | undefined
         schedule_starts_at: string
@@ -1926,7 +1926,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -1935,9 +1935,9 @@ export interface Routes {
       }
     }
   }
-  "/thermostats/get": {
-    route: "/thermostats/get"
-    method: "GET" | "POST"
+  '/thermostats/get': {
+    route: '/thermostats/get'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1949,31 +1949,31 @@ export interface Routes {
       thermostat: {
         device_id: string
         device_type:
-          | "akuvox_lock"
-          | "august_lock"
-          | "brivo_access_point"
-          | "butterflymx_panel"
-          | "doorking_lock"
-          | "genie_door"
-          | "igloo_lock"
-          | "linear_lock"
-          | "lockly_lock"
-          | "kwikset_lock"
-          | "nuki_lock"
-          | "salto_lock"
-          | "schlage_lock"
-          | "seam_relay"
-          | "smartthings_lock"
-          | "yale_lock"
-          | "two_n_intercom"
-          | "controlbyweb_device"
-          | "ttlock_lock"
-          | "igloohome_lock"
-          | "hubitat_lock"
-          | "noiseaware_activity_zone"
-          | "minut_sensor"
-          | "ecobee_thermostat"
-          | "nest_thermostat"
+          | 'akuvox_lock'
+          | 'august_lock'
+          | 'brivo_access_point'
+          | 'butterflymx_panel'
+          | 'doorking_lock'
+          | 'genie_door'
+          | 'igloo_lock'
+          | 'linear_lock'
+          | 'lockly_lock'
+          | 'kwikset_lock'
+          | 'nuki_lock'
+          | 'salto_lock'
+          | 'schlage_lock'
+          | 'seam_relay'
+          | 'smartthings_lock'
+          | 'yale_lock'
+          | 'two_n_intercom'
+          | 'controlbyweb_device'
+          | 'ttlock_lock'
+          | 'igloohome_lock'
+          | 'hubitat_lock'
+          | 'noiseaware_activity_zone'
+          | 'minut_sensor'
+          | 'ecobee_thermostat'
+          | 'nest_thermostat'
         capabilities_supported: string[]
         properties: {
           online: boolean
@@ -1998,9 +1998,9 @@ export interface Routes {
       }
     }
   }
-  "/thermostats/list": {
-    route: "/thermostats/list"
-    method: "GET" | "POST"
+  '/thermostats/list': {
+    route: '/thermostats/list'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -2009,90 +2009,90 @@ export interface Routes {
       connect_webview_id?: string | undefined
       device_type?:
         | (
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           )
         | undefined
       device_types?:
         | Array<
-            | "akuvox_lock"
-            | "august_lock"
-            | "brivo_access_point"
-            | "butterflymx_panel"
-            | "doorking_lock"
-            | "genie_door"
-            | "igloo_lock"
-            | "linear_lock"
-            | "lockly_lock"
-            | "kwikset_lock"
-            | "nuki_lock"
-            | "salto_lock"
-            | "schlage_lock"
-            | "seam_relay"
-            | "smartthings_lock"
-            | "yale_lock"
-            | "two_n_intercom"
-            | "controlbyweb_device"
-            | "ttlock_lock"
-            | "igloohome_lock"
-            | "hubitat_lock"
-            | "noiseaware_activity_zone"
-            | "minut_sensor"
-            | "ecobee_thermostat"
-            | "nest_thermostat"
+            | 'akuvox_lock'
+            | 'august_lock'
+            | 'brivo_access_point'
+            | 'butterflymx_panel'
+            | 'doorking_lock'
+            | 'genie_door'
+            | 'igloo_lock'
+            | 'linear_lock'
+            | 'lockly_lock'
+            | 'kwikset_lock'
+            | 'nuki_lock'
+            | 'salto_lock'
+            | 'schlage_lock'
+            | 'seam_relay'
+            | 'smartthings_lock'
+            | 'yale_lock'
+            | 'two_n_intercom'
+            | 'controlbyweb_device'
+            | 'ttlock_lock'
+            | 'igloohome_lock'
+            | 'hubitat_lock'
+            | 'noiseaware_activity_zone'
+            | 'minut_sensor'
+            | 'ecobee_thermostat'
+            | 'nest_thermostat'
           >
         | undefined
       manufacturer?:
         | (
-            | "akuvox"
-            | "august"
-            | "brivo"
-            | "butterflymx"
-            | "doorking"
-            | "genie"
-            | "igloo"
-            | "keywe"
-            | "kwikset"
-            | "linear"
-            | "lockly"
-            | "nuki"
-            | "philia"
-            | "salto"
-            | "samsung"
-            | "schlage"
-            | "seam"
-            | "unknown"
-            | "yale"
-            | "minut"
-            | "two_n"
-            | "ttlock"
-            | "nest"
-            | "igloohome"
-            | "ecobee"
-            | "hubitat"
+            | 'akuvox'
+            | 'august'
+            | 'brivo'
+            | 'butterflymx'
+            | 'doorking'
+            | 'genie'
+            | 'igloo'
+            | 'keywe'
+            | 'kwikset'
+            | 'linear'
+            | 'lockly'
+            | 'nuki'
+            | 'philia'
+            | 'salto'
+            | 'samsung'
+            | 'schlage'
+            | 'seam'
+            | 'unknown'
+            | 'yale'
+            | 'minut'
+            | 'two_n'
+            | 'ttlock'
+            | 'nest'
+            | 'igloohome'
+            | 'ecobee'
+            | 'hubitat'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -2102,31 +2102,31 @@ export interface Routes {
       thermostats: Array<{
         device_id: string
         device_type:
-          | "akuvox_lock"
-          | "august_lock"
-          | "brivo_access_point"
-          | "butterflymx_panel"
-          | "doorking_lock"
-          | "genie_door"
-          | "igloo_lock"
-          | "linear_lock"
-          | "lockly_lock"
-          | "kwikset_lock"
-          | "nuki_lock"
-          | "salto_lock"
-          | "schlage_lock"
-          | "seam_relay"
-          | "smartthings_lock"
-          | "yale_lock"
-          | "two_n_intercom"
-          | "controlbyweb_device"
-          | "ttlock_lock"
-          | "igloohome_lock"
-          | "hubitat_lock"
-          | "noiseaware_activity_zone"
-          | "minut_sensor"
-          | "ecobee_thermostat"
-          | "nest_thermostat"
+          | 'akuvox_lock'
+          | 'august_lock'
+          | 'brivo_access_point'
+          | 'butterflymx_panel'
+          | 'doorking_lock'
+          | 'genie_door'
+          | 'igloo_lock'
+          | 'linear_lock'
+          | 'lockly_lock'
+          | 'kwikset_lock'
+          | 'nuki_lock'
+          | 'salto_lock'
+          | 'schlage_lock'
+          | 'seam_relay'
+          | 'smartthings_lock'
+          | 'yale_lock'
+          | 'two_n_intercom'
+          | 'controlbyweb_device'
+          | 'ttlock_lock'
+          | 'igloohome_lock'
+          | 'hubitat_lock'
+          | 'noiseaware_activity_zone'
+          | 'minut_sensor'
+          | 'ecobee_thermostat'
+          | 'nest_thermostat'
         capabilities_supported: string[]
         properties: {
           online: boolean
@@ -2151,9 +2151,9 @@ export interface Routes {
       }>
     }
   }
-  "/thermostats/set_cooling_set_point": {
-    route: "/thermostats/set_cooling_set_point"
-    method: "POST"
+  '/thermostats/set_cooling_set_point': {
+    route: '/thermostats/set_cooling_set_point'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -2165,31 +2165,31 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/thermostats/set_mode": {
-    route: "/thermostats/set_mode"
-    method: "POST"
+  '/thermostats/set_mode': {
+    route: '/thermostats/set_mode'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
       automatic_heating_enabled?: boolean | undefined
       automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
       sync?: boolean
     }
     commonParams: {}
     formData: {}
     jsonResponse: {}
   }
-  "/thermostats/update": {
-    route: "/thermostats/update"
-    method: "POST"
+  '/thermostats/update': {
+    route: '/thermostats/update'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
       default_climate_setting: {
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ("off" | "heat" | "cool" | "heatcool") | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -2201,9 +2201,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/webhooks/create": {
-    route: "/webhooks/create"
-    method: "POST"
+  '/webhooks/create': {
+    route: '/webhooks/create'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       url: string
@@ -2220,9 +2220,9 @@ export interface Routes {
       }
     }
   }
-  "/webhooks/delete": {
-    route: "/webhooks/delete"
-    method: "DELETE" | "POST"
+  '/webhooks/delete': {
+    route: '/webhooks/delete'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -2231,9 +2231,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  "/webhooks/get": {
-    route: "/webhooks/get"
-    method: "GET"
+  '/webhooks/get': {
+    route: '/webhooks/get'
+    method: 'GET'
     queryParams: {
       webhook_id: string
     }
@@ -2249,9 +2249,9 @@ export interface Routes {
       }
     }
   }
-  "/webhooks/list": {
-    route: "/webhooks/list"
-    method: "GET"
+  '/webhooks/list': {
+    route: '/webhooks/list'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -2265,9 +2265,9 @@ export interface Routes {
       }>
     }
   }
-  "/workspaces/get": {
-    route: "/workspaces/get"
-    method: "GET"
+  '/workspaces/get': {
+    route: '/workspaces/get'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -2283,9 +2283,9 @@ export interface Routes {
         | undefined
     }
   }
-  "/workspaces/list": {
-    route: "/workspaces/list"
-    method: "GET"
+  '/workspaces/list': {
+    route: '/workspaces/list'
+    method: 'GET'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -2298,9 +2298,9 @@ export interface Routes {
       }>
     }
   }
-  "/workspaces/reset_sandbox": {
-    route: "/workspaces/reset_sandbox"
-    method: "POST"
+  '/workspaces/reset_sandbox': {
+    route: '/workspaces/reset_sandbox'
+    method: 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -2312,10 +2312,10 @@ export interface Routes {
 }
 
 export type RouteResponse<Path extends keyof Routes> =
-  Routes[Path]["jsonResponse"]
+  Routes[Path]['jsonResponse']
 
 export type RouteRequestBody<Path extends keyof Routes> =
-  Routes[Path]["jsonBody"] & Routes[Path]["commonParams"]
+  Routes[Path]['jsonBody'] & Routes[Path]['commonParams']
 
 export type RouteRequestParams<Path extends keyof Routes> =
-  Routes[Path]["queryParams"] & Routes[Path]["commonParams"]
+  Routes[Path]['queryParams'] & Routes[Path]['commonParams']
