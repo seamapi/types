@@ -61,7 +61,7 @@
     {
       "files": ["src/lib/seam/connect/**/*.ts"],
       "rules": {
-        "@typescript-eslint/camelcase": "off",
+        "@typescript-eslint/naming-convention": "off",
         "node/file-extension-in-import": [
           "error",
           "always",
