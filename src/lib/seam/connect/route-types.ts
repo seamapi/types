@@ -604,7 +604,6 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
-            | 'yale_access'
           >
         | undefined
       provider_category?: ('stable' | 'internal_beta') | undefined
