@@ -717,16 +717,16 @@ export interface Routes {
   }
   '/connected_accounts/get': {
     route: '/connected_accounts/get'
-    method: 'GET'
-    queryParams:
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams:
       | {
           connected_account_id: string
         }
       | {
           email: string
         }
-    jsonBody: {}
-    commonParams: {}
     formData: {}
     jsonResponse: {
       connected_account: {
@@ -752,7 +752,7 @@ export interface Routes {
   }
   '/connected_accounts/list': {
     route: '/connected_accounts/list'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
