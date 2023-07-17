@@ -1211,7 +1211,7 @@ export interface Routes {
   }
   '/events/get': {
     route: '/events/get'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
