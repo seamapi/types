@@ -535,7 +535,7 @@ export interface Routes {
       client_session: {
         token: string
         client_session_id: string
-        created_at: string
+        created_at: string | Date
       }
     }
   }
@@ -1227,8 +1227,8 @@ export interface Routes {
             device_id?: string | undefined
             event_type: string
             workspace_id: string
-            created_at: Date
-            occurred_at: Date
+            created_at: string
+            occurred_at: string
           }
         | undefined
       message?: string | undefined
@@ -1326,8 +1326,8 @@ export interface Routes {
             device_id?: string | undefined
             event_type: string
             workspace_id: string
-            created_at: Date
-            occurred_at: Date
+            created_at: string
+            occurred_at: string
           }>
         | undefined
       message?: string | undefined
@@ -1343,7 +1343,7 @@ export interface Routes {
     jsonResponse: {
       ok: boolean
       msg: 'I\u2019m one with the Force. The Force is with me.'
-      last_service_evaluation_at: string
+      last_service_evaluation_at?: string | undefined
       service_health_statuses: Array<{
         service: string
         status: 'healthy' | 'degraded' | 'down'
@@ -1361,7 +1361,7 @@ export interface Routes {
     jsonResponse: {
       ok: boolean
       msg: 'I\u2019m one with the Force. The Force is with me.'
-      last_service_evaluation_at: string
+      last_service_evaluation_at?: string | undefined
       service_health_statuses: Array<{
         service: string
         status: 'healthy' | 'degraded' | 'down'
