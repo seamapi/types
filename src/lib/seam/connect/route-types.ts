@@ -522,19 +522,18 @@ export interface Routes {
     route: '/client_sessions/create'
     method: 'POST' | 'PUT'
     queryParams: {}
-    jsonBody:
-      | any
-      | {
-          user_identifier_key: string
-          connect_webview_ids?: string[] | undefined
-          connected_account_ids?: string[] | undefined
-        }
+    jsonBody: {
+      user_identifier_key?: string | undefined
+      connect_webview_ids?: string[] | undefined
+      connected_account_ids?: string[] | undefined
+    }
     commonParams: {}
     formData: {}
     jsonResponse: {
       client_session: {
         token: string
         client_session_id: string
+        user_identifier_key: string | null
         created_at: string
       }
     }
@@ -555,7 +554,11 @@ export interface Routes {
     method: 'POST' | 'GET'
     queryParams: {}
     jsonBody: {}
-    commonParams: {}
+    commonParams: {
+      client_session_id?: string | undefined
+      user_identifier_key?: string | undefined
+      without_user_identifier_key?: boolean | undefined
+    }
     formData: {}
     jsonResponse: {
       client_sessions: Array<{
