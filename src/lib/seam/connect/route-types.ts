@@ -540,7 +540,7 @@ export interface Routes {
   }
   '/client_sessions/delete': {
     route: '/client_sessions/delete'
-    method: 'POST' | 'GET'
+    method: 'POST' | 'DELETE'
     queryParams: {}
     jsonBody: {}
     commonParams: {
