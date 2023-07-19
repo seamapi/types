@@ -1375,7 +1375,7 @@ export interface Routes {
   }
   '/health/get_service_health': {
     route: '/health/get_service_health'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1394,12 +1394,12 @@ export interface Routes {
   }
   '/health/service/[service_name]': {
     route: '/health/service/[service_name]'
-    method: 'GET'
-    queryParams: {
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
       service_name: string
     }
-    jsonBody: {}
-    commonParams: {}
     formData: {}
     jsonResponse: {
       ok: true
