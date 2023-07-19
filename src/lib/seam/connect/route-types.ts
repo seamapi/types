@@ -2153,35 +2153,6 @@ export interface Routes {
       }>
     }
   }
-  '/thermostats/set_cooling_set_point': {
-    route: '/thermostats/set_cooling_set_point'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      device_id: string
-      cooling_set_point_celsius?: number | undefined
-      cooling_set_point_fahrenheit?: number | undefined
-      sync?: boolean
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {}
-  }
-  '/thermostats/set_mode': {
-    route: '/thermostats/set_mode'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {
-      device_id: string
-      automatic_heating_enabled?: boolean | undefined
-      automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
-      sync?: boolean
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {}
-  }
   '/thermostats/update': {
     route: '/thermostats/update'
     method: 'POST'
