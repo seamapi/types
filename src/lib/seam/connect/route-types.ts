@@ -610,7 +610,9 @@ export interface Routes {
             | 'yale_access'
           >
         | undefined
-      provider_category?: ('stable' | 'internal_beta') | undefined
+      provider_category?:
+        | ('stable' | 'consumer_smartlocks' | 'internal_beta')
+        | undefined
       custom_metadata?:
         | Record<string, string | number | null | boolean>
         | undefined
@@ -1015,7 +1017,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      provider_category?: 'stable' | undefined
+      provider_category?: ('stable' | 'consumer_smartlocks') | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1023,7 +1025,7 @@ export interface Routes {
         device_provider_name: string
         display_name: string
         image_url: string
-        provider_categories: Array<'stable'>
+        provider_categories: Array<'stable' | 'consumer_smartlocks'>
       }>
     }
   }
@@ -2000,6 +2002,20 @@ export interface Routes {
         is_managed: true
       }
     }
+  }
+  '/thermostats/heat': {
+    route: '/thermostats/heat'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      heating_set_point_celsius?: number | undefined
+      heating_set_point_fahrenheit?: number | undefined
+      sync?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/thermostats/list': {
     route: '/thermostats/list'
