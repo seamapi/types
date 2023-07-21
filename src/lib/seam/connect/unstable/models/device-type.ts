@@ -1,0 +1,85 @@
+import { z } from 'zod'
+
+/** Locks */
+export const LOCK_DEVICE_TYPE = {
+  AKUVOX_LOCK: 'akuvox_lock',
+  AUGUST_LOCK: 'august_lock',
+  BRIVO_ACCESS_POINT: 'brivo_access_point',
+  BUTTERFLYMX_PANEL: 'butterflymx_panel',
+  DOORKING_LOCK: 'doorking_lock',
+  GENIE_DOOR: 'genie_door',
+  IGLOO_LOCK: 'igloo_lock',
+  LINEAR_LOCK: 'linear_lock',
+  LOCKLY_LOCK: 'lockly_lock',
+  KWIKSET_LOCK: 'kwikset_lock',
+  NUKI_LOCK: 'nuki_lock',
+  SALTO_LOCK: 'salto_lock',
+  SCHLAGE_LOCK: 'schlage_lock',
+  SEAM_RELAY: 'seam_relay',
+  SMARTTHINGS_LOCK: 'smartthings_lock',
+  YALE_LOCK: 'yale_lock',
+  TWO_N_INTERCOM: 'two_n_intercom',
+  CONTROLBYWEB_DEVICE: 'controlbyweb_device',
+  TTLOCK_LOCK: 'ttlock_lock',
+  IGLOOHOME_LOCK: 'igloohome_lock',
+  HUBITAT_LOCK: 'hubitat_lock',
+} as const
+
+type LockDeviceTypeFromMapping =
+  (typeof LOCK_DEVICE_TYPE)[keyof typeof LOCK_DEVICE_TYPE]
+
+export const LOCK_DEVICE_TYPE_LIST = Object.values(
+  LOCK_DEVICE_TYPE,
+) as LockDeviceTypeFromMapping[]
+
+export const lock_device_type = z.enum(
+  Object.values(LOCK_DEVICE_TYPE) as [LockDeviceTypeFromMapping],
+)
+
+export type LockDeviceType = z.infer<typeof lock_device_type>
+
+/** Noise Sensors */
+export const NOISE_SENSOR_DEVICE_TYPE = {
+  NOISEAWARE_ACTIVITY_ZONE: 'noiseaware_activity_zone',
+  MINUT_SENSOR: 'minut_sensor',
+} as const
+
+type NoiseSensorDeviceTypeFromMapping =
+  (typeof NOISE_SENSOR_DEVICE_TYPE)[keyof typeof NOISE_SENSOR_DEVICE_TYPE]
+
+export const NOISE_SENSOR_DEVICE_TYPE_LIST = Object.values(
+  NOISE_SENSOR_DEVICE_TYPE,
+) as NoiseSensorDeviceTypeFromMapping[]
+
+export const noise_sensor_device_type = z.enum(
+  Object.values(NOISE_SENSOR_DEVICE_TYPE) as [NoiseSensorDeviceTypeFromMapping],
+)
+
+export type NoiseSensorDeviceType = z.infer<typeof noise_sensor_device_type>
+
+/** Thermostats */
+export const THERMOSTAT_DEVICE_TYPE = {
+  ECOBEE_THERMOSTAT: 'ecobee_thermostat',
+  NEST_THERMOSTAT: 'nest_thermostat',
+} as const
+
+type ThermostatDeviceTypeFromMapping =
+  (typeof THERMOSTAT_DEVICE_TYPE)[keyof typeof THERMOSTAT_DEVICE_TYPE]
+
+export const THERMOSTAT_DEVICE_TYPE_LIST = Object.values(
+  THERMOSTAT_DEVICE_TYPE,
+) as ThermostatDeviceTypeFromMapping[]
+
+export const thermostat_device_type = z.enum(
+  Object.values(THERMOSTAT_DEVICE_TYPE) as [ThermostatDeviceTypeFromMapping],
+)
+
+export type ThermostatDeviceType = z.infer<typeof thermostat_device_type>
+
+export const any_device_type = z.union([
+  lock_device_type,
+  noise_sensor_device_type,
+  thermostat_device_type,
+])
+
+export type AnyDeviceType = z.infer<typeof any_device_type>
