@@ -797,13 +797,13 @@ export interface Routes {
   }
   '/devices/get': {
     route: '/devices/get'
-    method: 'GET'
-    queryParams: {
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
       device_id?: string | undefined
       name?: string | undefined
     }
-    jsonBody: {}
-    commonParams: {}
     formData: {}
     jsonResponse: {
       device: {
@@ -1013,7 +1013,7 @@ export interface Routes {
   }
   '/devices/list_device_providers': {
     route: '/devices/list_device_providers'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -2223,12 +2223,12 @@ export interface Routes {
   }
   '/webhooks/get': {
     route: '/webhooks/get'
-    method: 'GET'
-    queryParams: {
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
       webhook_id: string
     }
-    jsonBody: {}
-    commonParams: {}
     formData: {}
     jsonResponse: {
       webhook: {
