@@ -958,6 +958,8 @@ export interface Routes {
           )
         | undefined
       device_ids?: string[] | undefined
+      limit?: number
+      created_before?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1131,6 +1133,8 @@ export interface Routes {
           )
         | undefined
       device_ids?: string[] | undefined
+      limit?: number
+      created_before?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1532,6 +1536,8 @@ export interface Routes {
           )
         | undefined
       device_ids?: string[] | undefined
+      limit?: number
+      created_before?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -2123,6 +2129,8 @@ export interface Routes {
           )
         | undefined
       device_ids?: string[] | undefined
+      limit?: number
+      created_before?: string | undefined
     }
     formData: {}
     jsonResponse: {
