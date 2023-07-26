@@ -531,10 +531,11 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       client_session: {
-        token: string
         client_session_id: string
         user_identifier_key: string | null
         created_at: string
+        token: string
+        workspace_id: string
       }
     }
   }
@@ -549,6 +550,29 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/client_sessions/get': {
+    route: '/client_sessions/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      client_session_id?: string | undefined
+      user_identifier_key?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      client_session: {
+        client_session_id: string
+        user_identifier_key: string | null
+        created_at: string
+        token: string
+        device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
+        workspace_id: string
+      }
+    }
+  }
   '/client_sessions/list': {
     route: '/client_sessions/list'
     method: 'POST' | 'GET'
@@ -562,11 +586,10 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       client_sessions: Array<{
-        user_identifier_key: string | null
         client_session_id: string
+        user_identifier_key: string | null
         created_at: string
         device_count: number
-        token: string
         workspace_id: string
       }>
     }
