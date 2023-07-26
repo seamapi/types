@@ -2213,6 +2213,19 @@ export interface Routes {
       }>
     }
   }
+  '/thermostats/set_fan_mode': {
+    route: '/thermostats/set_fan_mode'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      fan_mode: 'auto' | 'on'
+      sync?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/update': {
     route: '/thermostats/update'
     method: 'POST'
