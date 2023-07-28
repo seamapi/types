@@ -639,6 +639,7 @@ export interface Routes {
       custom_metadata?:
         | Record<string, string | number | null | boolean>
         | undefined
+      automatically_manage_new_devices?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -726,6 +727,7 @@ export interface Routes {
     queryParams: {
       connect_webview_id: string
       auth_token: string
+      automatically_manage_new_devices?: boolean | undefined
     }
     jsonBody: {}
     commonParams: {}
@@ -978,6 +980,8 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
+            | 'controlbyweb'
+            | 'smartthings'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -1153,6 +1157,8 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
+            | 'controlbyweb'
+            | 'smartthings'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -1558,6 +1564,8 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
+            | 'controlbyweb'
+            | 'smartthings'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -2151,6 +2159,8 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
+            | 'controlbyweb'
+            | 'smartthings'
           )
         | undefined
       device_ids?: string[] | undefined
