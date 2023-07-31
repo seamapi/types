@@ -615,7 +615,6 @@ export interface Routes {
             | 'genie'
             | 'doorking'
             | 'salto'
-            | 'lockly'
             | 'ttlock'
             | 'linear'
             | 'noiseaware'
