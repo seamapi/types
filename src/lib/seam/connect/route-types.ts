@@ -2222,6 +2222,18 @@ export interface Routes {
       }>
     }
   }
+  '/thermostats/off': {
+    route: '/thermostats/off'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      sync?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/set_fan_mode': {
     route: '/thermostats/set_fan_mode'
     method: 'POST'
