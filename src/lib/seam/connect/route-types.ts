@@ -1984,6 +1984,20 @@ export interface Routes {
       }
     }
   }
+  '/thermostats/cool': {
+    route: '/thermostats/cool'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      cooling_set_point_celsius?: number | undefined
+      cooling_set_point_fahrenheit?: number | undefined
+      sync?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/get': {
     route: '/thermostats/get'
     method: 'GET' | 'POST'
