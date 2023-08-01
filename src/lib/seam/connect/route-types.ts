@@ -2077,6 +2077,22 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/thermostats/heat_cool': {
+    route: '/thermostats/heat_cool'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      heating_set_point_celsius?: number | undefined
+      heating_set_point_fahrenheit?: number | undefined
+      cooling_set_point_celsius?: number | undefined
+      cooling_set_point_fahrenheit?: number | undefined
+      sync?: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/list': {
     route: '/thermostats/list'
     method: 'GET' | 'POST'
