@@ -590,6 +590,8 @@ export interface Routes {
         user_identifier_key: string | null
         created_at: string
         device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
         workspace_id: string
       }>
     }
