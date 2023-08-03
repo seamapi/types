@@ -1,6 +1,10 @@
 export {
   any_device_type,
-  capabilities as capabilities_supported,
+  battery_status,
+  capabilities,
+  climate_setting,
+  climate_setting_schedule,
+  common_device_properties,
   lock_device_type,
   managed_device,
   noise_sensor_device_type,

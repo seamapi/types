@@ -1,8 +1,12 @@
 export type {
+  AccessCodeConstraint,
   AnyDeviceType,
+  BatteryStatus,
   Capabilities,
+  ClimateSetting,
   LockDeviceType,
   ManagedDevice,
+  ManagedDeviceWithBackendMetadata,
   NoiseSensorDeviceType,
   ThermostatDeviceType,
   UnmanagedDevice,
