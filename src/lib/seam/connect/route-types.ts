@@ -581,6 +581,7 @@ export interface Routes {
     commonParams: {
       client_session_id?: string | undefined
       user_identifier_key?: string | undefined
+      connect_webview_id?: string | undefined
       without_user_identifier_key?: boolean | undefined
     }
     formData: {}
