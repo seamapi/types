@@ -3583,6 +3583,7 @@ export interface Routes {
         workspace_id: string
         name: string
         is_sandbox: boolean
+        connect_partner_name: string | null
       }>
     }
   }
