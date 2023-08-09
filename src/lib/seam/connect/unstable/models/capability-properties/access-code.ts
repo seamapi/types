@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const simple_access_code_constraint = z.object({
+export const access_code_code_constraint = z.object({
   constraint_type: z.enum([
     'no_zeros', // Nuki
     'cannot_start_with_12', // Nuki
@@ -11,15 +11,15 @@ const simple_access_code_constraint = z.object({
   ]),
 })
 
-const complex_access_code_constraint = z.object({
-  constraint_type: z.enum(['name_length']), // Nuki, Kwikset
+export const access_code_name_constraint = z.object({
+  constraint_type: z.literal('name_length'), // Nuki, Kwikset
   min_length: z.number().optional(),
   max_length: z.number().optional(),
 })
 
 export const access_code_constraint = z.union([
-  simple_access_code_constraint,
-  complex_access_code_constraint,
+  access_code_code_constraint,
+  access_code_name_constraint,
 ])
 
 export type AccessCodeConstraint = z.infer<typeof access_code_constraint>
