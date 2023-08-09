@@ -27,6 +27,8 @@ export const climate_setting_schedule = z
 
 export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heatcool'])
 
+export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
+
 export const thermostat_capability_properties = z.object({
   temperature_fahrenheit: z.number(),
   temperature_celsius: z.number(),
