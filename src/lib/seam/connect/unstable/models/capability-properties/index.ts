@@ -1,4 +1,7 @@
-import { access_code_capability_properties } from './access-code.js'
+import {
+  access_code_capability_properties,
+  access_code_code_constraint,
+} from './access-code.js'
 import { lock_capability_properties } from './lock.js'
 import {
   climate_setting,
@@ -9,6 +12,7 @@ import {
 
 export {
   access_code_capability_properties,
+  access_code_code_constraint,
   climate_setting,
   climate_setting_schedule,
   hvac_mode_setting,
