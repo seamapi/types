@@ -23,4 +23,4 @@ export const capability_properties = access_code_capability_properties
   .merge(thermostat_capability_properties.partial())
 
 export type { AccessCodeConstraint } from './access-code.js'
-export type { ClimateSetting } from './thermostat.js'
+export type { ClimateSetting, HvacModeSetting } from './thermostat.js'
