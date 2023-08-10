@@ -12,6 +12,15 @@ export const device_metadata = z
       house_id: z.string().optional(),
     }),
 
+    avigilon_alta_metadata: z.object({
+      entry_name: z.string(),
+      org_name: z.string(),
+      zone_id: z.number(),
+      zone_name: z.string(),
+      site_id: z.number(),
+      site_name: z.string(),
+    }),
+
     schlage_metadata: z.object({
       device_id: z.string(),
       device_name: z.string(),

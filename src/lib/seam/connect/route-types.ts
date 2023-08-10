@@ -869,6 +869,7 @@ export interface Routes {
               | 'august_lock'
               | 'brivo_access_point'
               | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
               | 'doorking_lock'
               | 'genie_door'
               | 'igloo_lock'
@@ -920,6 +921,16 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+              }
+            | undefined
+          avigilon_alta_metadata?:
+            | {
+                entry_name: string
+                org_name: string
+                zone_id: number
+                zone_name: string
+                site_id: number
+                site_name: string
               }
             | undefined
           schlage_metadata?:
@@ -1228,6 +1239,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -1257,6 +1269,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -1283,6 +1296,7 @@ export interface Routes {
         | (
             | 'akuvox'
             | 'august'
+            | 'avigilon_alta'
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
@@ -1325,6 +1339,7 @@ export interface Routes {
               | 'august_lock'
               | 'brivo_access_point'
               | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
               | 'doorking_lock'
               | 'genie_door'
               | 'igloo_lock'
@@ -1376,6 +1391,16 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+              }
+            | undefined
+          avigilon_alta_metadata?:
+            | {
+                entry_name: string
+                org_name: string
+                zone_id: number
+                zone_name: string
+                site_id: number
+                site_name: string
               }
             | undefined
           schlage_metadata?:
@@ -1702,6 +1727,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -1731,6 +1757,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -1757,6 +1784,7 @@ export interface Routes {
         | (
             | 'akuvox'
             | 'august'
+            | 'avigilon_alta'
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
@@ -1799,6 +1827,7 @@ export interface Routes {
               | 'august_lock'
               | 'brivo_access_point'
               | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
               | 'doorking_lock'
               | 'genie_door'
               | 'igloo_lock'
@@ -2109,6 +2138,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -2138,6 +2168,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -2164,6 +2195,7 @@ export interface Routes {
         | (
             | 'akuvox'
             | 'august'
+            | 'avigilon_alta'
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
@@ -2642,6 +2674,7 @@ export interface Routes {
               | 'august_lock'
               | 'brivo_access_point'
               | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
               | 'doorking_lock'
               | 'genie_door'
               | 'igloo_lock'
@@ -2693,6 +2726,16 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+              }
+            | undefined
+          avigilon_alta_metadata?:
+            | {
+                entry_name: string
+                org_name: string
+                zone_id: number
+                zone_name: string
+                site_id: number
+                site_name: string
               }
             | undefined
           schlage_metadata?:
@@ -3031,6 +3074,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -3060,6 +3104,7 @@ export interface Routes {
                 | 'august_lock'
                 | 'brivo_access_point'
                 | 'butterflymx_panel'
+                | 'avigilon_alta_entry'
                 | 'doorking_lock'
                 | 'genie_door'
                 | 'igloo_lock'
@@ -3086,6 +3131,7 @@ export interface Routes {
         | (
             | 'akuvox'
             | 'august'
+            | 'avigilon_alta'
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
@@ -3128,6 +3174,7 @@ export interface Routes {
               | 'august_lock'
               | 'brivo_access_point'
               | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
               | 'doorking_lock'
               | 'genie_door'
               | 'igloo_lock'
@@ -3179,6 +3226,16 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+              }
+            | undefined
+          avigilon_alta_metadata?:
+            | {
+                entry_name: string
+                org_name: string
+                zone_id: number
+                zone_name: string
+                site_id: number
+                site_name: string
               }
             | undefined
           schlage_metadata?:
