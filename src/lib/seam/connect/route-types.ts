@@ -670,6 +670,7 @@ export interface Routes {
         | Record<string, string | number | null | boolean>
         | undefined
       automatically_manage_new_devices?: boolean | undefined
+      wait_for_device_creation?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -757,7 +758,6 @@ export interface Routes {
     queryParams: {
       connect_webview_id: string
       auth_token: string
-      automatically_manage_new_devices?: boolean | undefined
     }
     jsonBody: {}
     commonParams: {}
