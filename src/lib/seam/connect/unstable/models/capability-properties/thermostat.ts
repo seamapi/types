@@ -29,13 +29,15 @@ export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heatcool'])
 
 export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
 
-export const thermostat_capability_properties = z.object({
+const base_thermostat_capability_properties = z.object({
   temperature_fahrenheit: z.number(),
   temperature_celsius: z.number(),
   relative_humidity: z.number().min(0).max(1),
   can_enable_automatic_heating: z.boolean(),
   can_enable_automatic_cooling: z.boolean(),
   available_hvac_mode_settings: z.array(hvac_mode_setting),
+  is_heating_available: z.literal(false),
+  is_cooling_available: z.literal(false),
   is_heating: z.boolean(),
   is_cooling: z.boolean(),
   is_fan_running: z.boolean(),
@@ -53,3 +55,43 @@ export const thermostat_capability_properties = z.object({
   is_climate_setting_schedule_active: z.boolean(),
   active_climate_setting_schedule: climate_setting_schedule.optional(),
 })
+
+export const cooling_thermostat_capability_properties =
+  base_thermostat_capability_properties.merge(
+    z.object({
+      min_cooling_set_point_celsius: z.number(),
+      min_cooling_set_point_fahrenheit: z.number(),
+      max_cooling_set_point_celsius: z.number(),
+      max_cooling_set_point_fahrenheit: z.number(),
+      is_cooling_available: z.literal(true),
+    }),
+  )
+
+export const heating_thermostat_capability_properties =
+  base_thermostat_capability_properties.merge(
+    z.object({
+      min_heating_set_point_celsius: z.number(),
+      min_heating_set_point_fahrenheit: z.number(),
+      max_heating_set_point_celsius: z.number(),
+      max_heating_set_point_fahrenheit: z.number(),
+      is_heating_available: z.literal(true),
+    }),
+  )
+
+export const heating_cooling_thermostat_capability_properties =
+  cooling_thermostat_capability_properties
+    .merge(heating_thermostat_capability_properties)
+    .merge(
+      z.object({
+        is_cooling_available: z.literal(true),
+        is_heating_available: z.literal(true),
+        min_heating_cooling_delta_celsius: z.number(),
+        min_heating_cooling_delta_fahrenheit: z.number(),
+      }),
+    )
+
+export const thermostat_capability_properties = z.union([
+  heating_cooling_thermostat_capability_properties.partial(),
+  heating_thermostat_capability_properties.partial(),
+  cooling_thermostat_capability_properties.partial(),
+])

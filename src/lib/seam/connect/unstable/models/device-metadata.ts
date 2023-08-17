@@ -150,16 +150,6 @@ export const device_metadata = z
     ecobee_metadata: z.object({
       ecobee_device_id: z.string(),
       device_name: z.string(),
-      min_heating_set_point_fahrenheit: z.number().optional(),
-      max_heating_set_point_fahrenheit: z.number().optional(),
-      min_cooling_set_point_fahrenheit: z.number().optional(),
-      max_cooling_set_point_fahrenheit: z.number().optional(),
-      min_heating_set_point_celsius: z.number().optional(),
-      max_heating_set_point_celsius: z.number().optional(),
-      min_cooling_set_point_celsius: z.number().optional(),
-      max_cooling_set_point_celsius: z.number().optional(),
-      min_delta_heat_cool_set_points_fahrenheit: z.number().optional(),
-      min_delta_heat_cool_set_points_celsius: z.number().optional(),
     }),
 
     hubitat_metadata: z.object({
