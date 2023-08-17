@@ -15,6 +15,7 @@ export const common_device_properties = z.object({
   name: z.string(),
   model: z.object({
     display_name: z.string(),
+    manufacturer_display_name: z.string(),
   }),
   has_direct_power: z.boolean().optional(),
   battery_level: z.number().min(0).max(1).optional(),

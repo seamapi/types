@@ -24,6 +24,7 @@ export const unmanaged_device = managed_device
       image_alt_text: z.string().optional(),
       model: z.object({
         display_name: z.string(),
+        manufacturer_display_name: z.string(),
       }),
     }),
   })

@@ -899,6 +899,7 @@ export interface Routes {
           name: string
           model: {
             display_name: string
+            manufacturer_display_name: string
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -1551,6 +1552,7 @@ export interface Routes {
           name: string
           model: {
             display_name: string
+            manufacturer_display_name: string
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -2236,6 +2238,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           model: {
             display_name: string
+            manufacturer_display_name: string
           }
         }
       }>
@@ -3068,6 +3071,7 @@ export interface Routes {
           name: string
           model: {
             display_name: string
+            manufacturer_display_name: string
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -3750,6 +3754,7 @@ export interface Routes {
           name: string
           model: {
             display_name: string
+            manufacturer_display_name: string
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
