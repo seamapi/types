@@ -1,3 +1,5 @@
+import { z } from 'zod'
+
 import {
   access_code_capability_properties,
   access_code_code_constraint,
@@ -21,10 +23,12 @@ export {
 }
 
 // todo: discriminate based on capability and remove intersection type
-export const capability_properties = access_code_capability_properties
-  .partial()
-  .merge(lock_capability_properties.partial())
-  .merge(thermostat_capability_properties.partial())
+export const capability_properties = z.intersection(
+  access_code_capability_properties
+    .partial()
+    .merge(lock_capability_properties.partial()),
+  thermostat_capability_properties,
+)
 
 export type { AccessCodeConstraint } from './access-code.js'
 export type { ClimateSetting, HvacModeSetting } from './thermostat.js'
