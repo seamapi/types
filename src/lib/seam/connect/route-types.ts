@@ -660,6 +660,7 @@ export interface Routes {
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
+            | 'four_suites'
             | 'yale_access'
           >
         | undefined
