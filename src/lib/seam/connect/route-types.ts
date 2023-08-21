@@ -771,6 +771,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {
       connected_account_id: string
+      sync?: boolean
     }
     commonParams: {}
     formData: {}
