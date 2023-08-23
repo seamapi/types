@@ -24,6 +24,7 @@ export const LOCK_DEVICE_TYPE = {
   TTLOCK_LOCK: 'ttlock_lock',
   IGLOOHOME_LOCK: 'igloohome_lock',
   HUBITAT_LOCK: 'hubitat_lock',
+  FOUR_SUITES_DOOR: 'four_suites_door',
 } as const
 
 type LockDeviceTypeFromMapping =
