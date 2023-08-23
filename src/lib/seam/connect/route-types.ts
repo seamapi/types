@@ -889,6 +889,7 @@ export interface Routes {
               | 'ttlock_lock'
               | 'igloohome_lock'
               | 'hubitat_lock'
+              | 'four_suites_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -1036,6 +1037,12 @@ export interface Routes {
                     value: number
                   }
                 }
+              }
+            | undefined
+          four_suites_metadata?:
+            | {
+                device_id: number
+                device_name: string
               }
             | undefined
           two_n_metadata?:
@@ -1442,6 +1449,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -1472,6 +1480,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -1485,6 +1494,7 @@ export interface Routes {
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
+            | 'four_suites'
             | 'genie'
             | 'igloo'
             | 'keywe'
@@ -1542,6 +1552,7 @@ export interface Routes {
               | 'ttlock_lock'
               | 'igloohome_lock'
               | 'hubitat_lock'
+              | 'four_suites_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -1689,6 +1700,12 @@ export interface Routes {
                     value: number
                   }
                 }
+              }
+            | undefined
+          four_suites_metadata?:
+            | {
+                device_id: number
+                device_name: string
               }
             | undefined
           two_n_metadata?:
@@ -2113,6 +2130,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2143,6 +2161,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2156,6 +2175,7 @@ export interface Routes {
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
+            | 'four_suites'
             | 'genie'
             | 'igloo'
             | 'keywe'
@@ -2213,6 +2233,7 @@ export interface Routes {
               | 'ttlock_lock'
               | 'igloohome_lock'
               | 'hubitat_lock'
+              | 'four_suites_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2525,6 +2546,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2555,6 +2577,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2568,6 +2591,7 @@ export interface Routes {
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
+            | 'four_suites'
             | 'genie'
             | 'igloo'
             | 'keywe'
@@ -3061,6 +3085,7 @@ export interface Routes {
               | 'ttlock_lock'
               | 'igloohome_lock'
               | 'hubitat_lock'
+              | 'four_suites_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3208,6 +3233,12 @@ export interface Routes {
                     value: number
                   }
                 }
+              }
+            | undefined
+          four_suites_metadata?:
+            | {
+                device_id: number
+                device_name: string
               }
             | undefined
           two_n_metadata?:
@@ -3644,6 +3675,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3674,6 +3706,7 @@ export interface Routes {
                 | 'ttlock_lock'
                 | 'igloohome_lock'
                 | 'hubitat_lock'
+                | 'four_suites_door'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3687,6 +3720,7 @@ export interface Routes {
             | 'brivo'
             | 'butterflymx'
             | 'doorking'
+            | 'four_suites'
             | 'genie'
             | 'igloo'
             | 'keywe'
@@ -3744,6 +3778,7 @@ export interface Routes {
               | 'ttlock_lock'
               | 'igloohome_lock'
               | 'hubitat_lock'
+              | 'four_suites_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3891,6 +3926,12 @@ export interface Routes {
                     value: number
                   }
                 }
+              }
+            | undefined
+          four_suites_metadata?:
+            | {
+                device_id: number
+                device_name: string
               }
             | undefined
           two_n_metadata?:
