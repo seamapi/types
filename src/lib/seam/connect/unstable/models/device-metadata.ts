@@ -111,6 +111,10 @@ export const device_metadata = z
         }),
       }),
     }),
+    four_suites_metadata: z.object({
+      device_id: z.number(),
+      device_name: z.string(),
+    }),
 
     two_n_metadata: z.object({
       device_id: z.number(),
