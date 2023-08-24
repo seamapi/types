@@ -661,6 +661,7 @@ export interface Routes {
             | 'ecobee'
             | 'hubitat'
             | 'four_suites'
+            | 'dormakaba_oracode'
             | 'yale_access'
           >
         | undefined
