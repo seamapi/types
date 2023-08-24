@@ -114,6 +114,7 @@ export const device_metadata = z
     four_suites_metadata: z.object({
       device_id: z.number(),
       device_name: z.string(),
+      reclose_delay_in_seconds: z.number(),
     }),
 
     two_n_metadata: z.object({

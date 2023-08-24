@@ -661,6 +661,7 @@ export interface Routes {
             | 'ecobee'
             | 'hubitat'
             | 'four_suites'
+            | 'dormakaba_oracode'
             | 'yale_access'
           >
         | undefined
@@ -1043,6 +1044,7 @@ export interface Routes {
             | {
                 device_id: number
                 device_name: string
+                reclose_delay_in_seconds: number
               }
             | undefined
           two_n_metadata?:
@@ -1706,6 +1708,7 @@ export interface Routes {
             | {
                 device_id: number
                 device_name: string
+                reclose_delay_in_seconds: number
               }
             | undefined
           two_n_metadata?:
@@ -3239,6 +3242,7 @@ export interface Routes {
             | {
                 device_id: number
                 device_name: string
+                reclose_delay_in_seconds: number
               }
             | undefined
           two_n_metadata?:
@@ -3932,6 +3936,7 @@ export interface Routes {
             | {
                 device_id: number
                 device_name: string
+                reclose_delay_in_seconds: number
               }
             | undefined
           two_n_metadata?:
