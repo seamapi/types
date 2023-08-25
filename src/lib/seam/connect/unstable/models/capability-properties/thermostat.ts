@@ -1,4 +1,5 @@
 import { z } from 'zod'
+
 import { climate_setting, hvac_mode_setting } from './climate-setting.js'
 
 export const climate_setting_schedule = z

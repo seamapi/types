@@ -4,12 +4,12 @@ import {
   access_code_capability_properties,
   access_code_code_constraint,
 } from './access-code.js'
+import { climate_setting, hvac_mode_setting } from './climate-setting.js'
 import { lock_capability_properties } from './lock.js'
 import {
   climate_setting_schedule,
   thermostat_capability_properties,
 } from './thermostat.js'
-import { climate_setting, hvac_mode_setting } from './climate-setting.js'
 
 export {
   access_code_capability_properties,
