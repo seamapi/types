@@ -6,11 +6,10 @@ import {
 } from './access-code.js'
 import { lock_capability_properties } from './lock.js'
 import {
-  climate_setting,
   climate_setting_schedule,
-  hvac_mode_setting,
   thermostat_capability_properties,
 } from './thermostat.js'
+import { climate_setting, hvac_mode_setting } from './climate-setting.js'
 
 export {
   access_code_capability_properties,
@@ -31,4 +30,4 @@ export const capability_properties = z.intersection(
 )
 
 export type { AccessCodeConstraint } from './access-code.js'
-export type { ClimateSetting, HvacModeSetting } from './thermostat.js'
+export type { ClimateSetting, HvacModeSetting } from './climate-setting.js'
