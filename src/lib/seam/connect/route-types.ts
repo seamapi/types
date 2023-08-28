@@ -157,18 +157,6 @@ export interface Routes {
       generated_code: {
         device_id: string
         code: string
-        is_valid: true
-        conflicts_with_existing_code: false
-        violated_code_constraints: []
-        passed_code_constraints: Array<{
-          constraint_type:
-            | 'no_zeros'
-            | 'cannot_start_with_12'
-            | 'no_triple_consecutive_ints'
-            | 'cannot_specify_pin_code'
-            | 'pin_code_matches_existing_set'
-            | 'start_date_in_future'
-        }>
       }
     }
   }
