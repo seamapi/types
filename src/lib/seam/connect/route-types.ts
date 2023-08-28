@@ -601,6 +601,31 @@ export interface Routes {
       }
     }
   }
+  '/client_sessions/grant_access': {
+    route: '/client_sessions/grant_access'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      client_session_id?: string | undefined
+      user_identifier_key?: string | undefined
+      connected_account_ids?: string[] | undefined
+      connect_webview_ids?: string[] | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      client_session: {
+        client_session_id: string
+        user_identifier_key: string | null
+        created_at: string
+        token: string
+        device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
+        workspace_id: string
+      }
+    }
+  }
   '/client_sessions/list': {
     route: '/client_sessions/list'
     method: 'POST' | 'GET'
