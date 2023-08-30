@@ -2112,6 +2112,76 @@ export interface Routes {
       }>
     }
   }
+  '/devices/unmanaged/get': {
+    route: '/devices/unmanaged/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      device_id?: string | undefined
+      name?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      device: {
+        device_id: string
+        device_type:
+          | (
+              | 'akuvox_lock'
+              | 'august_lock'
+              | 'brivo_access_point'
+              | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
+              | 'doorking_lock'
+              | 'genie_door'
+              | 'igloo_lock'
+              | 'linear_lock'
+              | 'lockly_lock'
+              | 'kwikset_lock'
+              | 'nuki_lock'
+              | 'salto_lock'
+              | 'schlage_lock'
+              | 'seam_relay'
+              | 'smartthings_lock'
+              | 'yale_lock'
+              | 'two_n_intercom'
+              | 'controlbyweb_device'
+              | 'ttlock_lock'
+              | 'igloohome_lock'
+              | 'hubitat_lock'
+              | 'four_suites_door'
+            )
+          | ('noiseaware_activity_zone' | 'minut_sensor')
+          | ('ecobee_thermostat' | 'nest_thermostat')
+        connected_account_id: string
+        capabilities_supported: Array<
+          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+        >
+        workspace_id: string
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        created_at: string
+        is_managed: false
+        properties: {
+          name: string
+          online: boolean
+          manufacturer?: string | undefined
+          image_url?: string | undefined
+          image_alt_text?: string | undefined
+          model: {
+            display_name: string
+            manufacturer_display_name: string
+          }
+        }
+      }
+    }
+  }
   '/devices/unmanaged/list': {
     route: '/devices/unmanaged/list'
     method: 'GET' | 'POST'
