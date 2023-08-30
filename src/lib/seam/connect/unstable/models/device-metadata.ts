@@ -162,5 +162,13 @@ export const device_metadata = z
       device_name: z.string(),
       device_label: z.string(),
     }),
+
+    dormakaba_oracode_metadata: z.object({
+      door_id: z.number(),
+      door_name: z.string(),
+      device_id: z.number().optional(),
+      site_id: z.number(),
+      site_name: z.string(),
+    }),
   })
   .partial()
