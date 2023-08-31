@@ -1,9 +1,13 @@
 import { z } from 'zod'
 
+export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heat_cool'])
+
+export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
+
 export const climate_setting = z.object({
   automatic_heating_enabled: z.boolean(),
   automatic_cooling_enabled: z.boolean(),
-  hvac_mode_setting: z.enum(['off', 'heat', 'cool', 'heatcool']),
+  hvac_mode_setting,
   cooling_set_point_celsius: z.number().optional(),
   heating_set_point_celsius: z.number().optional(),
   cooling_set_point_fahrenheit: z.number().optional(),
@@ -24,10 +28,6 @@ export const climate_setting_schedule = z
     created_at: z.string().datetime(),
   })
   .merge(climate_setting.partial())
-
-export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heatcool'])
-
-export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
 
 const base_thermostat_capability_properties = z.object({
   temperature_fahrenheit: z.number(),
