@@ -1169,7 +1169,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: true | undefined
@@ -1181,7 +1181,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -1198,7 +1198,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -1222,7 +1222,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -1259,7 +1259,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: false | undefined
@@ -1271,7 +1271,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -1288,7 +1288,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -1312,7 +1312,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -1343,7 +1343,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: false | undefined
                 is_cooling_available?: true | undefined
@@ -1355,7 +1355,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -1372,7 +1372,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -1396,7 +1396,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -1846,7 +1846,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: true | undefined
@@ -1858,7 +1858,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -1875,7 +1875,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -1899,7 +1899,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -1936,7 +1936,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: false | undefined
@@ -1948,7 +1948,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -1965,7 +1965,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -1989,7 +1989,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -2020,7 +2020,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: false | undefined
                 is_cooling_available?: true | undefined
@@ -2032,7 +2032,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -2049,7 +2049,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -2073,7 +2073,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -2173,6 +2173,7 @@ export interface Routes {
               | 'igloohome_lock'
               | 'hubitat_lock'
               | 'four_suites_door'
+              | 'dormakaba_oracode_door'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3010,7 +3011,7 @@ export interface Routes {
       schedule_ends_at: string
       automatic_heating_enabled?: boolean | undefined
       automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
       cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3030,7 +3031,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3071,7 +3072,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3100,7 +3101,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3121,7 +3122,7 @@ export interface Routes {
       schedule_ends_at?: string | undefined
       automatic_heating_enabled?: boolean | undefined
       automatic_cooling_enabled?: boolean | undefined
-      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
       cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3141,7 +3142,7 @@ export interface Routes {
         created_at: string
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
@@ -3467,7 +3468,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: true | undefined
@@ -3479,7 +3480,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -3496,7 +3497,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -3520,7 +3521,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -3557,7 +3558,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: false | undefined
@@ -3569,7 +3570,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -3586,7 +3587,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -3610,7 +3611,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -3641,7 +3642,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: false | undefined
                 is_cooling_available?: true | undefined
@@ -3653,7 +3654,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -3670,7 +3671,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -3694,7 +3695,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -4174,7 +4175,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: true | undefined
@@ -4186,7 +4187,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -4203,7 +4204,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -4227,7 +4228,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -4264,7 +4265,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: true | undefined
                 is_cooling_available?: false | undefined
@@ -4276,7 +4277,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -4293,7 +4294,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -4317,7 +4318,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -4348,7 +4349,7 @@ export interface Routes {
                 can_enable_automatic_heating?: boolean | undefined
                 can_enable_automatic_cooling?: boolean | undefined
                 available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heatcool'>
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
                   | undefined
                 is_heating_available?: false | undefined
                 is_cooling_available?: true | undefined
@@ -4360,7 +4361,7 @@ export interface Routes {
                   | {
                       automatic_heating_enabled: boolean
                       automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heatcool'
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                       cooling_set_point_celsius?: number | undefined
                       heating_set_point_celsius?: number | undefined
                       cooling_set_point_fahrenheit?: number | undefined
@@ -4377,7 +4378,7 @@ export interface Routes {
                             | 'off'
                             | 'heat'
                             | 'cool'
-                            | 'heatcool'
+                            | 'heat_cool'
                           cooling_set_point_celsius?: number | undefined
                           heating_set_point_celsius?: number | undefined
                           cooling_set_point_fahrenheit?: number | undefined
@@ -4401,7 +4402,7 @@ export interface Routes {
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heatcool')
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
                             | undefined
                           cooling_set_point_celsius?:
                             | (number | undefined)
@@ -4479,7 +4480,7 @@ export interface Routes {
       default_climate_setting: {
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heatcool') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
         cooling_set_point_fahrenheit?: (number | undefined) | undefined
