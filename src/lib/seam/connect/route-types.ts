@@ -678,6 +678,7 @@ export interface Routes {
             | 'hubitat'
             | 'four_suites'
             | 'dormakaba_oracode'
+            | 'wyze'
             | 'yale_access'
           >
         | undefined
