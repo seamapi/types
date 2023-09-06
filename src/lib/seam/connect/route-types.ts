@@ -462,6 +462,39 @@ export interface Routes {
           }
     }
   }
+  '/acs/access_groups/create': {
+    route: '/acs/access_groups/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_system_id: string
+      name?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_access_group: {
+        acs_access_group_id: string
+        acs_system_id: string
+        workspace_id: string
+        name: string
+        acs_access_group_type: 'pti_unit'
+        created_at: string | Date
+      }
+    }
+  }
+  '/acs/access_groups/update': {
+    route: '/acs/access_groups/update'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+      name?: (string | null) | undefined
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/systems/get': {
     route: '/acs/systems/get'
     method: 'GET' | 'POST'
