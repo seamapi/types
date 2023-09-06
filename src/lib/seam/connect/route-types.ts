@@ -496,6 +496,18 @@ export interface Routes {
       }>
     }
   }
+  '/acs/users/add_to_access_group': {
+    route: '/acs/users/add_to_access_group'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/users/create': {
     route: '/acs/users/create'
     method: 'POST'
@@ -517,6 +529,18 @@ export interface Routes {
         created_at: string | Date
       }
     }
+  }
+  '/acs/users/remove_from_access_group': {
+    route: '/acs/users/remove_from_access_group'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {}
   }
   '/acs/users/update': {
     route: '/acs/users/update'
