@@ -1214,6 +1214,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -1304,6 +1305,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -1388,6 +1390,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -1891,6 +1894,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -1981,6 +1985,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -2065,6 +2070,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -3517,6 +3523,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -3607,6 +3614,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -3691,6 +3699,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -4224,6 +4233,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -4314,6 +4324,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
@@ -4398,6 +4409,7 @@ export interface Routes {
                 is_heating?: boolean | undefined
                 is_cooling?: boolean | undefined
                 is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
                 is_temporary_manual_override_active?: boolean | undefined
                 current_climate_setting?:
                   | {
