@@ -462,6 +462,40 @@ export interface Routes {
           }
     }
   }
+  '/acs/systems/get': {
+    route: '/acs/systems/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_system: {
+        acs_id: string
+        system_type: 'pti_site' | 'alta_org'
+        name: string
+        created_at: string | Date
+      }
+    }
+  }
+  '/acs/systems/list': {
+    route: '/acs/systems/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      acs_systems: Array<{
+        acs_id: string
+        system_type: 'pti_site' | 'alta_org'
+        name: string
+        created_at: string | Date
+      }>
+    }
+  }
   '/action_attempts/get': {
     route: '/action_attempts/get'
     method: 'GET' | 'POST'
