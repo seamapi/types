@@ -4,6 +4,10 @@ export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heat_cool'])
 
 export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
 
+export const fan_mode_setting = z.enum(['auto', 'on'])
+
+export type FanModeSetting = z.infer<typeof fan_mode_setting>
+
 export const climate_setting = z.object({
   automatic_heating_enabled: z.boolean(),
   automatic_cooling_enabled: z.boolean(),
@@ -41,6 +45,7 @@ const base_thermostat_capability_properties = z.object({
   is_heating: z.boolean(),
   is_cooling: z.boolean(),
   is_fan_running: z.boolean(),
+  fan_mode_setting,
 
   /**
    * this is true if the current thermostat settings differ that what is on seam, and `current_climate_setting.manual_override_allowed: true`
