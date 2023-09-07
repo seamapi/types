@@ -65,6 +65,9 @@
   "peerDependencies": {
     "zod": "^3.21.4"
   },
+  "dependencies": {
+    "type-fest": "^4.1.0"
+  },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "concurrently": "^8.2.0",
@@ -83,8 +86,5 @@
     "tsx": "^3.12.1",
     "typescript": "^5.0.2",
     "zod": "^3.21.4"
-  },
-  "dependencies": {
-    "type-fest": "^4.1.0"
   }
 }
