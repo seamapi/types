@@ -478,9 +478,61 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
-        acs_access_group_type: 'pti_unit'
+        access_group_type: 'pti_unit'
         created_at: string | Date
       }
+    }
+  }
+  '/acs/access_groups/delete': {
+    route: '/acs/access_groups/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/access_groups/get': {
+    route: '/acs/access_groups/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_access_group: {
+        acs_access_group_id: string
+        acs_system_id: string
+        workspace_id: string
+        name: string
+        access_group_type: 'pti_unit'
+        created_at: string | Date
+      }
+    }
+  }
+  '/acs/access_groups/list': {
+    route: '/acs/access_groups/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_system_id?: string | undefined
+      acs_user_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_access_groups: Array<{
+        acs_access_group_id: string
+        acs_system_id: string
+        workspace_id: string
+        name: string
+        access_group_type: 'pti_unit'
+        created_at: string | Date
+      }>
     }
   }
   '/acs/access_groups/update': {
@@ -948,6 +1000,7 @@ export interface Routes {
             }
           | undefined
         account_type?: string | undefined
+        account_type_display_name: string
         errors?: any
         warnings?: any
         custom_metadata?:
@@ -977,6 +1030,7 @@ export interface Routes {
             }
           | undefined
         account_type?: string | undefined
+        account_type_display_name: string
         errors?: any
         warnings?: any
         custom_metadata?:
