@@ -1,3 +1,4 @@
+export * from './acs/index.js'
 export * from './capabilities-supported.js'
 export * from './capability-properties/index.js'
 export * from './device-type.js'

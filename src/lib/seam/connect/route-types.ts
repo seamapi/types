@@ -599,10 +599,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_system_id: string
-      name?: string | undefined
+      full_name?: string | undefined
       email?: string | undefined
-      acs_access_group_ids?: string[]
+      phone_number?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -610,9 +609,67 @@ export interface Routes {
         acs_user_id: string
         acs_system_id: string
         workspace_id: string
-        name: string
-        created_at: string | Date
+        created_at: string
+        display_name: string
+        full_name?: string | undefined
+        email?: string | undefined
+        phone_number?: string | undefined
       }
+    }
+  }
+  '/acs/users/delete': {
+    route: '/acs/users/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/users/get': {
+    route: '/acs/users/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_user: {
+        acs_user_id: string
+        acs_system_id: string
+        workspace_id: string
+        created_at: string
+        display_name: string
+        full_name?: string | undefined
+        email?: string | undefined
+        phone_number?: string | undefined
+      }
+    }
+  }
+  '/acs/users/list': {
+    route: '/acs/users/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_system_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_users: Array<{
+        acs_user_id: string
+        acs_system_id: string
+        workspace_id: string
+        created_at: string
+        display_name: string
+        full_name?: string | undefined
+        email?: string | undefined
+        phone_number?: string | undefined
+      }>
     }
   }
   '/acs/users/remove_from_access_group': {
@@ -633,9 +690,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_user_id: string
-      name?: (string | null) | undefined
-      email?: (string | null) | undefined
+      full_name?: string | undefined
+      email?: string | undefined
+      phone_number?: string | undefined
     }
     formData: {}
     jsonResponse: {}
