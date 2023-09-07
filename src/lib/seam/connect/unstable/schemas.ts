@@ -1,5 +1,6 @@
 export {
   access_code_code_constraint,
+  acs_user,
   any_device_type,
   battery_status,
   capabilities,
