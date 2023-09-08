@@ -479,7 +479,8 @@ export interface Routes {
         workspace_id: string
         name: string
         access_group_type: 'pti_unit'
-        created_at: string | Date
+        access_group_type_display_name: string
+        created_at: string
       }
     }
   }
@@ -510,7 +511,8 @@ export interface Routes {
         workspace_id: string
         name: string
         access_group_type: 'pti_unit'
-        created_at: string | Date
+        access_group_type_display_name: string
+        created_at: string
       }
     }
   }
@@ -531,7 +533,8 @@ export interface Routes {
         workspace_id: string
         name: string
         access_group_type: 'pti_unit'
-        created_at: string | Date
+        access_group_type_display_name: string
+        created_at: string
       }>
     }
   }
@@ -560,8 +563,9 @@ export interface Routes {
       acs_system: {
         acs_system_id: string
         system_type: 'pti_site' | 'alta_org'
+        system_type_display_name: string
         name: string
-        created_at: string | Date
+        created_at: string
       }
     }
   }
@@ -576,8 +580,9 @@ export interface Routes {
       acs_systems: Array<{
         acs_system_id: string
         system_type: 'pti_site' | 'alta_org'
+        system_type_display_name: string
         name: string
-        created_at: string | Date
+        created_at: string
       }>
     }
   }
@@ -599,6 +604,8 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      acs_system_id: string
+      acs_access_group_ids?: string[]
       full_name?: string | undefined
       email?: string | undefined
       phone_number?: string | undefined
@@ -690,6 +697,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      acs_user_id: string
       full_name?: string | undefined
       email?: string | undefined
       phone_number?: string | undefined
