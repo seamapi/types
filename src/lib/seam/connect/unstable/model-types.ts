@@ -1,5 +1,9 @@
 export type {
   AccessCodeConstraint,
+  AcsAccessGroup,
+  AcsAccessGroupType,
+  AcsSystem,
+  AcsSystemType,
   AcsUser,
   AnyDeviceType,
   BatteryStatus,
