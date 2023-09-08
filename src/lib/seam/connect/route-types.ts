@@ -462,6 +462,18 @@ export interface Routes {
           }
     }
   }
+  '/acs/access_groups/add_user': {
+    route: '/acs/access_groups/add_user'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/access_groups/create': {
     route: '/acs/access_groups/create'
     method: 'POST'
@@ -537,6 +549,40 @@ export interface Routes {
         created_at: string
       }>
     }
+  }
+  '/acs/access_groups/list_users': {
+    route: '/acs/access_groups/list_users'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_users: Array<{
+        acs_user_id: string
+        acs_system_id: string
+        workspace_id: string
+        created_at: string
+        display_name: string
+        full_name?: string | undefined
+        email?: string | undefined
+        phone_number?: string | undefined
+      }>
+    }
+  }
+  '/acs/access_groups/remove_user': {
+    route: '/acs/access_groups/remove_user'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
   }
   '/acs/access_groups/update': {
     route: '/acs/access_groups/update'
