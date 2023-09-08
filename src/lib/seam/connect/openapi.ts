@@ -3945,31 +3945,7 @@ export default {
                   type: 'object',
                   properties: {
                     acs_access_group: {
-                      type: 'object',
-                      properties: {
-                        acs_access_group_id: { type: 'string', format: 'uuid' },
-                        acs_system_id: { type: 'string', format: 'uuid' },
-                        workspace_id: { type: 'string', format: 'uuid' },
-                        name: { type: 'string' },
-                        access_group_type: {
-                          type: 'string',
-                          enum: ['pti_unit'],
-                        },
-                        created_at: {
-                          oneOf: [
-                            { type: 'string' },
-                            { type: 'string', format: 'date-time' },
-                          ],
-                        },
-                      },
-                      required: [
-                        'acs_access_group_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'name',
-                        'access_group_type',
-                        'created_at',
-                      ],
+                      $ref: '#/components/schemas/acs_access_group',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4061,31 +4037,7 @@ export default {
                   type: 'object',
                   properties: {
                     acs_access_group: {
-                      type: 'object',
-                      properties: {
-                        acs_access_group_id: { type: 'string', format: 'uuid' },
-                        acs_system_id: { type: 'string', format: 'uuid' },
-                        workspace_id: { type: 'string', format: 'uuid' },
-                        name: { type: 'string' },
-                        access_group_type: {
-                          type: 'string',
-                          enum: ['pti_unit'],
-                        },
-                        created_at: {
-                          oneOf: [
-                            { type: 'string' },
-                            { type: 'string', format: 'date-time' },
-                          ],
-                        },
-                      },
-                      required: [
-                        'acs_access_group_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'name',
-                        'access_group_type',
-                        'created_at',
-                      ],
+                      $ref: '#/components/schemas/acs_access_group',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4134,36 +4086,7 @@ export default {
                   properties: {
                     acs_access_groups: {
                       type: 'array',
-                      items: {
-                        type: 'object',
-                        properties: {
-                          acs_access_group_id: {
-                            type: 'string',
-                            format: 'uuid',
-                          },
-                          acs_system_id: { type: 'string', format: 'uuid' },
-                          workspace_id: { type: 'string', format: 'uuid' },
-                          name: { type: 'string' },
-                          access_group_type: {
-                            type: 'string',
-                            enum: ['pti_unit'],
-                          },
-                          created_at: {
-                            oneOf: [
-                              { type: 'string' },
-                              { type: 'string', format: 'date-time' },
-                            ],
-                          },
-                        },
-                        required: [
-                          'acs_access_group_id',
-                          'acs_system_id',
-                          'workspace_id',
-                          'name',
-                          'access_group_type',
-                          'created_at',
-                        ],
-                      },
+                      items: { $ref: '#/components/schemas/acs_access_group' },
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4295,29 +4218,7 @@ export default {
                 schema: {
                   type: 'object',
                   properties: {
-                    acs_system: {
-                      type: 'object',
-                      properties: {
-                        acs_system_id: { type: 'string', format: 'uuid' },
-                        system_type: {
-                          type: 'string',
-                          enum: ['pti_site', 'alta_org'],
-                        },
-                        name: { type: 'string' },
-                        created_at: {
-                          oneOf: [
-                            { type: 'string' },
-                            { type: 'string', format: 'date-time' },
-                          ],
-                        },
-                      },
-                      required: [
-                        'acs_system_id',
-                        'system_type',
-                        'name',
-                        'created_at',
-                      ],
-                    },
+                    acs_system: { $ref: '#/components/schemas/acs_system' },
                     ok: { type: 'boolean' },
                   },
                   required: ['acs_system', 'ok'],
@@ -4365,29 +4266,7 @@ export default {
                   properties: {
                     acs_systems: {
                       type: 'array',
-                      items: {
-                        type: 'object',
-                        properties: {
-                          acs_system_id: { type: 'string', format: 'uuid' },
-                          system_type: {
-                            type: 'string',
-                            enum: ['pti_site', 'alta_org'],
-                          },
-                          name: { type: 'string' },
-                          created_at: {
-                            oneOf: [
-                              { type: 'string' },
-                              { type: 'string', format: 'date-time' },
-                            ],
-                          },
-                        },
-                        required: [
-                          'acs_system_id',
-                          'system_type',
-                          'name',
-                          'created_at',
-                        ],
-                      },
+                      items: { $ref: '#/components/schemas/acs_system' },
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4420,29 +4299,7 @@ export default {
                   properties: {
                     acs_systems: {
                       type: 'array',
-                      items: {
-                        type: 'object',
-                        properties: {
-                          acs_system_id: { type: 'string', format: 'uuid' },
-                          system_type: {
-                            type: 'string',
-                            enum: ['pti_site', 'alta_org'],
-                          },
-                          name: { type: 'string' },
-                          created_at: {
-                            oneOf: [
-                              { type: 'string' },
-                              { type: 'string', format: 'date-time' },
-                            ],
-                          },
-                        },
-                        required: [
-                          'acs_system_id',
-                          'system_type',
-                          'name',
-                          'created_at',
-                        ],
-                      },
+                      items: { $ref: '#/components/schemas/acs_system' },
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4539,26 +4396,7 @@ export default {
                 schema: {
                   type: 'object',
                   properties: {
-                    acs_user: {
-                      type: 'object',
-                      properties: {
-                        acs_user_id: { type: 'string', format: 'uuid' },
-                        acs_system_id: { type: 'string', format: 'uuid' },
-                        workspace_id: { type: 'string', format: 'uuid' },
-                        created_at: { type: 'string', format: 'date-time' },
-                        display_name: { type: 'string' },
-                        full_name: { type: 'string' },
-                        email: { type: 'string', format: 'email' },
-                        phone_number: { type: 'string', nullable: true },
-                      },
-                      required: [
-                        'acs_user_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'created_at',
-                        'display_name',
-                      ],
-                    },
+                    acs_user: { $ref: '#/components/schemas/acs_user' },
                     ok: { type: 'boolean' },
                   },
                   required: ['acs_user', 'ok'],
@@ -4580,10 +4418,17 @@ export default {
               schema: {
                 type: 'object',
                 properties: {
+                  acs_system_id: { type: 'string', format: 'uuid' },
+                  acs_access_group_ids: {
+                    default: [],
+                    type: 'array',
+                    items: { type: 'string', format: 'uuid' },
+                  },
                   full_name: { type: 'string' },
                   email: { type: 'string', format: 'email' },
                   phone_number: { type: 'string', nullable: true },
                 },
+                required: ['acs_system_id'],
               },
             },
           },
@@ -4646,26 +4491,7 @@ export default {
                 schema: {
                   type: 'object',
                   properties: {
-                    acs_user: {
-                      type: 'object',
-                      properties: {
-                        acs_user_id: { type: 'string', format: 'uuid' },
-                        acs_system_id: { type: 'string', format: 'uuid' },
-                        workspace_id: { type: 'string', format: 'uuid' },
-                        created_at: { type: 'string', format: 'date-time' },
-                        display_name: { type: 'string' },
-                        full_name: { type: 'string' },
-                        email: { type: 'string', format: 'email' },
-                        phone_number: { type: 'string', nullable: true },
-                      },
-                      required: [
-                        'acs_user_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'created_at',
-                        'display_name',
-                      ],
-                    },
+                    acs_user: { $ref: '#/components/schemas/acs_user' },
                     ok: { type: 'boolean' },
                   },
                   required: ['acs_user', 'ok'],
@@ -4711,26 +4537,7 @@ export default {
                   properties: {
                     acs_users: {
                       type: 'array',
-                      items: {
-                        type: 'object',
-                        properties: {
-                          acs_user_id: { type: 'string', format: 'uuid' },
-                          acs_system_id: { type: 'string', format: 'uuid' },
-                          workspace_id: { type: 'string', format: 'uuid' },
-                          created_at: { type: 'string', format: 'date-time' },
-                          display_name: { type: 'string' },
-                          full_name: { type: 'string' },
-                          email: { type: 'string', format: 'email' },
-                          phone_number: { type: 'string', nullable: true },
-                        },
-                        required: [
-                          'acs_user_id',
-                          'acs_system_id',
-                          'workspace_id',
-                          'created_at',
-                          'display_name',
-                        ],
-                      },
+                      items: { $ref: '#/components/schemas/acs_user' },
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4858,10 +4665,12 @@ export default {
               schema: {
                 type: 'object',
                 properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
                   full_name: { type: 'string' },
                   email: { type: 'string', format: 'email' },
                   phone_number: { type: 'string', nullable: true },
                 },
+                required: ['acs_user_id'],
               },
             },
           },
@@ -4900,10 +4709,12 @@ export default {
               schema: {
                 type: 'object',
                 properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
                   full_name: { type: 'string' },
                   email: { type: 'string', format: 'email' },
                   phone_number: { type: 'string', nullable: true },
                 },
+                required: ['acs_user_id'],
               },
             },
           },
@@ -7396,6 +7207,64 @@ export default {
           'name',
           'is_sandbox',
           'connect_partner_name',
+        ],
+      },
+      acs_system: {
+        type: 'object',
+        properties: {
+          acs_system_id: { type: 'string', format: 'uuid' },
+          system_type: { type: 'string', enum: ['pti_site', 'alta_org'] },
+          system_type_display_name: { type: 'string' },
+          name: { type: 'string' },
+          created_at: { type: 'string', format: 'date-time' },
+        },
+        required: [
+          'acs_system_id',
+          'system_type',
+          'system_type_display_name',
+          'name',
+          'created_at',
+        ],
+      },
+      acs_access_group: {
+        type: 'object',
+        properties: {
+          acs_access_group_id: { type: 'string', format: 'uuid' },
+          acs_system_id: { type: 'string', format: 'uuid' },
+          workspace_id: { type: 'string', format: 'uuid' },
+          name: { type: 'string' },
+          access_group_type: { type: 'string', enum: ['pti_unit'] },
+          access_group_type_display_name: { type: 'string' },
+          created_at: { type: 'string', format: 'date-time' },
+        },
+        required: [
+          'acs_access_group_id',
+          'acs_system_id',
+          'workspace_id',
+          'name',
+          'access_group_type',
+          'access_group_type_display_name',
+          'created_at',
+        ],
+      },
+      acs_user: {
+        type: 'object',
+        properties: {
+          acs_user_id: { type: 'string', format: 'uuid' },
+          acs_system_id: { type: 'string', format: 'uuid' },
+          workspace_id: { type: 'string', format: 'uuid' },
+          created_at: { type: 'string', format: 'date-time' },
+          display_name: { type: 'string' },
+          full_name: { type: 'string' },
+          email: { type: 'string', format: 'email' },
+          phone_number: { type: 'string', nullable: true },
+        },
+        required: [
+          'acs_user_id',
+          'acs_system_id',
+          'workspace_id',
+          'created_at',
+          'display_name',
         ],
       },
     },
