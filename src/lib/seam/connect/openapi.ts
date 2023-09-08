@@ -17,110 +17,11 @@ export default {
     { name: '/workspaces', description: 'workspaces' },
   ],
   paths: {
-    '/action_attempts/get': {
-      post: {
-        'x-fern-sdk-group-name': ['action_attempts'],
-        'x-fern-sdk-method-name': 'get',
-        summary: '/action_attempts/get',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempt', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  action_attempt_id: { type: 'string', format: 'uuid' },
-                },
-                required: ['action_attempt_id'],
-              },
-            },
-          },
-        },
-        tags: ['/action_attempts'],
-        operationId: 'actionAttemptsGetPost',
-      },
-    },
-    '/action_attempts/list': {
-      post: {
-        'x-fern-sdk-group-name': ['action_attempts'],
-        'x-fern-sdk-method-name': 'list',
-        summary: '/action_attempts/list',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    action_attempts: {
-                      type: 'array',
-                      items: { $ref: '#/components/schemas/action_attempt' },
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempts', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  action_attempt_ids: {
-                    type: 'array',
-                    items: { type: 'string', format: 'uuid' },
-                  },
-                },
-                required: ['action_attempt_ids'],
-              },
-            },
-          },
-        },
-        tags: ['/action_attempts'],
-        operationId: 'actionAttemptsListPost',
-      },
-    },
     '/access_codes/create': {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'access_code',
         summary: '/access_codes/create',
         responses: {
           200: {
@@ -173,6 +74,7 @@ export default {
                   common_code_key: { type: 'string' },
                   prefer_native_scheduling: { type: 'boolean' },
                   use_backup_access_code_pool: { type: 'boolean' },
+                  allow_external_modification: { type: 'boolean' },
                 },
                 required: ['device_id'],
               },
@@ -244,6 +146,7 @@ export default {
                   },
                   prefer_native_scheduling: { type: 'boolean' },
                   use_backup_access_code_pool: { type: 'boolean' },
+                  allow_external_modification: { type: 'boolean' },
                 },
                 required: ['device_ids'],
               },
@@ -256,6 +159,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'create_multiple',
+        'x-fern-sdk-return-value': 'access_codes',
         summary: '/access_codes/create_multiple',
         responses: {
           200: {
@@ -314,6 +218,7 @@ export default {
                   },
                   prefer_native_scheduling: { type: 'boolean' },
                   use_backup_access_code_pool: { type: 'boolean' },
+                  allow_external_modification: { type: 'boolean' },
                 },
                 required: ['device_ids'],
               },
@@ -328,6 +233,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/access_codes/delete',
         responses: {
           200: {
@@ -374,10 +280,55 @@ export default {
         operationId: 'accessCodesDeletePost',
       },
     },
+    '/access_codes/generate_code': {
+      get: {
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'generate_code',
+        'x-fern-sdk-return-value': 'generated_code',
+        summary: '/access_codes/generate_code',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    generated_code: {
+                      $ref: '#/components/schemas/access_code',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['generated_code', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        parameters: [
+          {
+            name: 'device_id',
+            in: 'query',
+            schema: { type: 'string', format: 'uuid' },
+            required: true,
+          },
+        ],
+        tags: ['/access_codes'],
+        operationId: 'accessCodesGenerateCodeGet',
+      },
+    },
     '/access_codes/get': {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_code',
         summary: '/access_codes/get',
         responses: {
           200: {
@@ -425,6 +376,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_codes',
         summary: '/access_codes/list',
         responses: {
           200: {
@@ -465,7 +417,6 @@ export default {
                     items: { type: 'string', format: 'uuid' },
                   },
                 },
-                required: ['device_id'],
               },
             },
           },
@@ -478,6 +429,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'pull_backup_access_code',
+        'x-fern-sdk-return-value': 'backup_access_code',
         summary: '/access_codes/pull_backup_access_code',
         responses: {
           200: {
@@ -574,6 +526,7 @@ export default {
                   },
                   prefer_native_scheduling: { type: 'boolean' },
                   use_backup_access_code_pool: { type: 'boolean' },
+                  allow_external_modification: { type: 'boolean' },
                   access_code_id: { type: 'string', format: 'uuid' },
                   device_id: { type: 'string', format: 'uuid' },
                   type: { type: 'string', enum: ['ongoing', 'time_bound'] },
@@ -589,6 +542,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/access_codes/update',
         responses: {
           200: {
@@ -638,6 +592,7 @@ export default {
                   },
                   prefer_native_scheduling: { type: 'boolean' },
                   use_backup_access_code_pool: { type: 'boolean' },
+                  allow_external_modification: { type: 'boolean' },
                   access_code_id: { type: 'string', format: 'uuid' },
                   device_id: { type: 'string', format: 'uuid' },
                   type: { type: 'string', enum: ['ongoing', 'time_bound'] },
@@ -649,6 +604,757 @@ export default {
         },
         tags: ['/access_codes'],
         operationId: 'accessCodesUpdatePost',
+      },
+    },
+    '/action_attempts/get': {
+      post: {
+        'x-fern-sdk-group-name': ['action_attempts'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'action_attempt',
+        summary: '/action_attempts/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  action_attempt_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['action_attempt_id'],
+              },
+            },
+          },
+        },
+        tags: ['/action_attempts'],
+        operationId: 'actionAttemptsGetPost',
+      },
+    },
+    '/action_attempts/list': {
+      post: {
+        'x-fern-sdk-group-name': ['action_attempts'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'action_attempts',
+        summary: '/action_attempts/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    action_attempts: {
+                      type: 'array',
+                      items: { $ref: '#/components/schemas/action_attempt' },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempts', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  action_attempt_ids: {
+                    type: 'array',
+                    items: { type: 'string', format: 'uuid' },
+                  },
+                },
+                required: ['action_attempt_ids'],
+              },
+            },
+          },
+        },
+        tags: ['/action_attempts'],
+        operationId: 'actionAttemptsListPost',
+      },
+    },
+    '/client_sessions/create': {
+      put: {
+        'x-fern-ignore': true,
+        summary: '/client_sessions/create',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  user_identifier_key: { type: 'string', minLength: 1 },
+                  connect_webview_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                  connected_account_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsCreatePut',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'client_session',
+        summary: '/client_sessions/create',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  user_identifier_key: { type: 'string', minLength: 1 },
+                  connect_webview_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                  connected_account_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsCreatePost',
+      },
+    },
+    '/client_sessions/delete': {
+      post: {
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'delete',
+        summary: '/client_sessions/delete',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  client_session_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['client_session_id'],
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsDeletePost',
+      },
+    },
+    '/client_sessions/get': {
+      post: {
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'client_session',
+        summary: '/client_sessions/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  client_session_id: { type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsGetPost',
+      },
+    },
+    '/client_sessions/grant_access': {
+      patch: {
+        'x-fern-ignore': true,
+        summary: '/client_sessions/grant_access',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  client_session_id: { type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                  connected_account_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                  connect_webview_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsGrantAccessPatch',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'grant_access',
+        summary: '/client_sessions/grant_access',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_session: {
+                      $ref: '#/components/schemas/client_session',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_session', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  client_session_id: { type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                  connected_account_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                  connect_webview_ids: {
+                    type: 'array',
+                    items: { type: 'string' },
+                  },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsGrantAccessPost',
+      },
+    },
+    '/client_sessions/list': {
+      post: {
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'client_sessions',
+        summary: '/client_sessions/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    client_sessions: {
+                      type: 'array',
+                      items: { $ref: '#/components/schemas/client_session' },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['client_sessions', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  client_session_id: { type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                  connect_webview_id: { type: 'string' },
+                  without_user_identifier_key: { type: 'boolean' },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/client_sessions'],
+        operationId: 'clientSessionsListPost',
+      },
+    },
+    '/connect_webviews/create': {
+      post: {
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'connect_webview',
+        summary: '/connect_webviews/create',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    connect_webview: {
+                      $ref: '#/components/schemas/connect_webview',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connect_webview', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  device_selection_mode: {
+                    type: 'string',
+                    enum: ['none', 'single', 'multiple'],
+                  },
+                  custom_redirect_url: { type: 'string' },
+                  custom_redirect_failure_url: { type: 'string' },
+                  accepted_providers: {
+                    type: 'array',
+                    items: {
+                      type: 'string',
+                      enum: [
+                        'akuvox',
+                        'august',
+                        'avigilon_alta',
+                        'brivo',
+                        'butterflymx',
+                        'schlage',
+                        'smartthings',
+                        'yale',
+                        'genie',
+                        'doorking',
+                        'salto',
+                        'ttlock',
+                        'linear',
+                        'noiseaware',
+                        'nuki',
+                        'seam_relay_admin',
+                        'igloo',
+                        'kwikset',
+                        'minut',
+                        'my_2n',
+                        'controlbyweb',
+                        'nest',
+                        'igloohome',
+                        'ecobee',
+                        'hubitat',
+                        'four_suites',
+                        'dormakaba_oracode',
+                        'wyze',
+                        'yale_access',
+                      ],
+                    },
+                  },
+                  provider_category: {
+                    type: 'string',
+                    enum: ['stable', 'consumer_smartlocks', 'internal_beta'],
+                  },
+                  custom_metadata: {
+                    type: 'object',
+                    additionalProperties: {
+                      oneOf: [
+                        { type: 'string', maxLength: 500 },
+                        { type: 'number' },
+                        { type: 'string', format: 'null', nullable: true },
+                        { type: 'boolean' },
+                      ],
+                      nullable: true,
+                    },
+                  },
+                  automatically_manage_new_devices: { type: 'boolean' },
+                  wait_for_device_creation: { type: 'boolean' },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsCreatePost',
+      },
+    },
+    '/connect_webviews/delete': {
+      post: {
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'delete',
+        summary: '/connect_webviews/delete',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  connect_webview_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['connect_webview_id'],
+              },
+            },
+          },
+        },
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsDeletePost',
+      },
+    },
+    '/connect_webviews/get': {
+      post: {
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'connect_webview',
+        summary: '/connect_webviews/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    connect_webview: {
+                      $ref: '#/components/schemas/connect_webview',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connect_webview', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  connect_webview_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['connect_webview_id'],
+              },
+            },
+          },
+        },
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsGetPost',
+      },
+    },
+    '/connect_webviews/list': {
+      post: {
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connect_webviews',
+        summary: '/connect_webviews/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    connect_webviews: {
+                      type: 'array',
+                      items: { $ref: '#/components/schemas/connect_webview' },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connect_webviews', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsListPost',
+      },
+      get: {
+        'x-fern-ignore': true,
+        summary: '/connect_webviews/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    connect_webviews: {
+                      type: 'array',
+                      items: { $ref: '#/components/schemas/connect_webview' },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connect_webviews', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsListGet',
+      },
+    },
+    '/connect_webviews/view': {
+      get: {
+        'x-fern-sdk-group-name': ['connect_webviews'],
+        'x-fern-sdk-method-name': 'view',
+        summary: '/connect_webviews/view',
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        parameters: [
+          {
+            name: 'connect_webview_id',
+            in: 'query',
+            schema: { type: 'string', format: 'uuid' },
+            required: true,
+          },
+          {
+            name: 'auth_token',
+            in: 'query',
+            schema: { type: 'string' },
+            required: true,
+          },
+        ],
+        tags: ['/connect_webviews'],
+        operationId: 'connectWebviewsViewGet',
       },
     },
     '/connected_accounts/delete': {
@@ -684,6 +1390,7 @@ export default {
                 type: 'object',
                 properties: {
                   connected_account_id: { type: 'string', format: 'uuid' },
+                  sync: { default: false, type: 'boolean' },
                 },
                 required: ['connected_account_id'],
               },
@@ -698,6 +1405,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'connected_account',
         summary: '/connected_accounts/get',
         responses: {
           200: {
@@ -755,6 +1463,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'connected_accounts',
         summary: '/connected_accounts/list',
         responses: {
           200: {
@@ -865,6 +1574,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
         summary: '/devices/get',
         responses: {
           200: {
@@ -911,6 +1621,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
         summary: '/devices/list',
         responses: {
           200: {
@@ -961,6 +1672,7 @@ export default {
                           'august_lock',
                           'brivo_access_point',
                           'butterflymx_panel',
+                          'avigilon_alta_entry',
                           'doorking_lock',
                           'genie_door',
                           'igloo_lock',
@@ -978,6 +1690,8 @@ export default {
                           'ttlock_lock',
                           'igloohome_lock',
                           'hubitat_lock',
+                          'four_suites_door',
+                          'dormakaba_oracode_door',
                         ],
                       },
                       {
@@ -1001,6 +1715,7 @@ export default {
                             'august_lock',
                             'brivo_access_point',
                             'butterflymx_panel',
+                            'avigilon_alta_entry',
                             'doorking_lock',
                             'genie_door',
                             'igloo_lock',
@@ -1018,6 +1733,8 @@ export default {
                             'ttlock_lock',
                             'igloohome_lock',
                             'hubitat_lock',
+                            'four_suites_door',
+                            'dormakaba_oracode_door',
                           ],
                         },
                         {
@@ -1036,9 +1753,11 @@ export default {
                     enum: [
                       'akuvox',
                       'august',
+                      'avigilon_alta',
                       'brivo',
                       'butterflymx',
                       'doorking',
+                      'four_suites',
                       'genie',
                       'igloo',
                       'keywe',
@@ -1062,6 +1781,7 @@ export default {
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
+                      'dormakaba_oracode',
                     ],
                   },
                   device_ids: {
@@ -1083,6 +1803,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list_device_providers',
+        'x-fern-sdk-return-value': 'device_providers',
         summary: '/devices/list_device_providers',
         responses: {
           200: {
@@ -1247,249 +1968,11 @@ export default {
         operationId: 'devicesUpdatePost',
       },
     },
-    '/client_sessions/create': {
-      put: {
-        'x-fern-ignore': true,
-        summary: '/client_sessions/create',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    client_session: {
-                      $ref: '#/components/schemas/client_session',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['client_session', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  user_identifier_key: { type: 'string', minLength: 1 },
-                  connect_webview_ids: {
-                    type: 'array',
-                    items: { type: 'string' },
-                  },
-                  connected_account_ids: {
-                    type: 'array',
-                    items: { type: 'string' },
-                  },
-                },
-              },
-            },
-          },
-        },
-        tags: ['/client_sessions'],
-        operationId: 'clientSessionsCreatePut',
-      },
-      post: {
-        'x-fern-sdk-group-name': ['client_sessions'],
-        'x-fern-sdk-method-name': 'create',
-        summary: '/client_sessions/create',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    client_session: {
-                      $ref: '#/components/schemas/client_session',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['client_session', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  user_identifier_key: { type: 'string', minLength: 1 },
-                  connect_webview_ids: {
-                    type: 'array',
-                    items: { type: 'string' },
-                  },
-                  connected_account_ids: {
-                    type: 'array',
-                    items: { type: 'string' },
-                  },
-                },
-              },
-            },
-          },
-        },
-        tags: ['/client_sessions'],
-        operationId: 'clientSessionsCreatePost',
-      },
-    },
-    '/client_sessions/delete': {
-      post: {
-        'x-fern-sdk-group-name': ['client_sessions'],
-        'x-fern-sdk-method-name': 'delete',
-        summary: '/client_sessions/delete',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  client_session_id: { type: 'string', format: 'uuid' },
-                },
-                required: ['client_session_id'],
-              },
-            },
-          },
-        },
-        tags: ['/client_sessions'],
-        operationId: 'clientSessionsDeletePost',
-      },
-    },
-    '/client_sessions/get': {
-      post: {
-        'x-fern-sdk-group-name': ['client_sessions'],
-        'x-fern-sdk-method-name': 'get',
-        summary: '/client_sessions/get',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    client_session: {
-                      $ref: '#/components/schemas/client_session',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['client_session', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  client_session_id: { type: 'string' },
-                  user_identifier_key: { type: 'string' },
-                },
-              },
-            },
-          },
-        },
-        tags: ['/client_sessions'],
-        operationId: 'clientSessionsGetPost',
-      },
-    },
-    '/client_sessions/list': {
-      post: {
-        'x-fern-sdk-group-name': ['client_sessions'],
-        'x-fern-sdk-method-name': 'list',
-        summary: '/client_sessions/list',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    client_sessions: {
-                      type: 'array',
-                      items: { $ref: '#/components/schemas/client_session' },
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['client_sessions', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  client_session_id: { type: 'string' },
-                  user_identifier_key: { type: 'string' },
-                  connect_webview_id: { type: 'string' },
-                  without_user_identifier_key: { type: 'boolean' },
-                },
-              },
-            },
-          },
-        },
-        tags: ['/client_sessions'],
-        operationId: 'clientSessionsListPost',
-      },
-    },
     '/events/get': {
       post: {
         'x-fern-sdk-group-name': ['events'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'event',
         summary: '/events/get',
         responses: {
           200: {
@@ -1538,6 +2021,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['events'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'events',
         summary: '/events/list',
         responses: {
           200: {
@@ -1618,6 +2102,7 @@ export default {
                       'access_code.delay_in_setting_on_device',
                       'access_code.failed_to_remove_from_device',
                       'access_code.delay_in_removing_from_device',
+                      'access_code.modified_external_to_seam',
                       'access_code.unmanaged.converted_to_managed',
                       'access_code.unmanaged.failed_to_convert_to_managed',
                       'access_code.unmanaged.created',
@@ -1626,6 +2111,7 @@ export default {
                       'lock.unlocked',
                       'connected_account.connected',
                       'connected_account.created',
+                      'connected_account.deleted',
                       'connected_account.disconnected',
                       'connected_account.completed_first_sync',
                       'noise_sensor.noise_threshold_triggered',
@@ -1657,6 +2143,7 @@ export default {
                         'access_code.delay_in_setting_on_device',
                         'access_code.failed_to_remove_from_device',
                         'access_code.delay_in_removing_from_device',
+                        'access_code.modified_external_to_seam',
                         'access_code.unmanaged.converted_to_managed',
                         'access_code.unmanaged.failed_to_convert_to_managed',
                         'access_code.unmanaged.created',
@@ -1665,6 +2152,7 @@ export default {
                         'lock.unlocked',
                         'connected_account.connected',
                         'connected_account.created',
+                        'connected_account.deleted',
                         'connected_account.disconnected',
                         'connected_account.completed_first_sync',
                         'noise_sensor.noise_threshold_triggered',
@@ -1680,303 +2168,6 @@ export default {
         },
         tags: ['/events'],
         operationId: 'eventsListPost',
-      },
-    },
-    '/connect_webviews/create': {
-      post: {
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'create',
-        summary: '/connect_webviews/create',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    connect_webview: {
-                      $ref: '#/components/schemas/connect_webview',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connect_webview', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  device_selection_mode: {
-                    type: 'string',
-                    enum: ['none', 'single', 'multiple'],
-                  },
-                  custom_redirect_url: { type: 'string' },
-                  custom_redirect_failure_url: { type: 'string' },
-                  accepted_providers: {
-                    type: 'array',
-                    items: {
-                      type: 'string',
-                      enum: [
-                        'akuvox',
-                        'august',
-                        'avigilon_alta',
-                        'brivo',
-                        'butterflymx',
-                        'schlage',
-                        'smartthings',
-                        'yale',
-                        'genie',
-                        'doorking',
-                        'salto',
-                        'ttlock',
-                        'linear',
-                        'noiseaware',
-                        'nuki',
-                        'seam_relay_admin',
-                        'igloo',
-                        'kwikset',
-                        'minut',
-                        'my_2n',
-                        'controlbyweb',
-                        'nest',
-                        'igloohome',
-                        'ecobee',
-                        'hubitat',
-                        'yale_access',
-                      ],
-                    },
-                  },
-                  provider_category: {
-                    type: 'string',
-                    enum: ['stable', 'consumer_smartlocks', 'internal_beta'],
-                  },
-                  custom_metadata: {
-                    type: 'object',
-                    additionalProperties: {
-                      oneOf: [
-                        { type: 'string', maxLength: 500 },
-                        { type: 'number' },
-                        { type: 'string', format: 'null', nullable: true },
-                        { type: 'boolean' },
-                      ],
-                      nullable: true,
-                    },
-                  },
-                  automatically_manage_new_devices: { type: 'boolean' },
-                },
-              },
-            },
-          },
-        },
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsCreatePost',
-      },
-    },
-    '/connect_webviews/delete': {
-      post: {
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'delete',
-        summary: '/connect_webviews/delete',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  connect_webview_id: { type: 'string', format: 'uuid' },
-                },
-                required: ['connect_webview_id'],
-              },
-            },
-          },
-        },
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsDeletePost',
-      },
-    },
-    '/connect_webviews/get': {
-      post: {
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'get',
-        summary: '/connect_webviews/get',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    connect_webview: {
-                      $ref: '#/components/schemas/connect_webview',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connect_webview', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                type: 'object',
-                properties: {
-                  connect_webview_id: { type: 'string', format: 'uuid' },
-                },
-                required: ['connect_webview_id'],
-              },
-            },
-          },
-        },
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsGetPost',
-      },
-    },
-    '/connect_webviews/list': {
-      post: {
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'list',
-        summary: '/connect_webviews/list',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    connect_webviews: {
-                      type: 'array',
-                      items: { $ref: '#/components/schemas/connect_webview' },
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connect_webviews', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsListPost',
-      },
-      get: {
-        'x-fern-ignore': true,
-        summary: '/connect_webviews/list',
-        responses: {
-          200: {
-            description: 'OK',
-            content: {
-              'application/json': {
-                schema: {
-                  type: 'object',
-                  properties: {
-                    connect_webviews: {
-                      type: 'array',
-                      items: { $ref: '#/components/schemas/connect_webview' },
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connect_webviews', 'ok'],
-                },
-              },
-            },
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { seam_workspace: [], access_token: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsListGet',
-      },
-    },
-    '/connect_webviews/view': {
-      get: {
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'view',
-        summary: '/connect_webviews/view',
-        responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        parameters: [
-          {
-            name: 'connect_webview_id',
-            in: 'query',
-            schema: { type: 'string', format: 'uuid' },
-            required: true,
-          },
-          {
-            name: 'auth_token',
-            in: 'query',
-            schema: { type: 'string' },
-            required: true,
-          },
-          {
-            name: 'automatically_manage_new_devices',
-            in: 'query',
-            schema: { type: 'boolean' },
-            required: false,
-          },
-        ],
-        tags: ['/connect_webviews'],
-        operationId: 'connectWebviewsViewGet',
       },
     },
     '/health/get_health': {
@@ -2100,6 +2291,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
         summary: '/locks/get',
         responses: {
           200: {
@@ -2147,6 +2339,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
         summary: '/locks/list',
         responses: {
           200: {
@@ -2195,6 +2388,7 @@ export default {
                           'august_lock',
                           'brivo_access_point',
                           'butterflymx_panel',
+                          'avigilon_alta_entry',
                           'doorking_lock',
                           'genie_door',
                           'igloo_lock',
@@ -2212,6 +2406,8 @@ export default {
                           'ttlock_lock',
                           'igloohome_lock',
                           'hubitat_lock',
+                          'four_suites_door',
+                          'dormakaba_oracode_door',
                         ],
                       },
                       {
@@ -2235,6 +2431,7 @@ export default {
                             'august_lock',
                             'brivo_access_point',
                             'butterflymx_panel',
+                            'avigilon_alta_entry',
                             'doorking_lock',
                             'genie_door',
                             'igloo_lock',
@@ -2252,6 +2449,8 @@ export default {
                             'ttlock_lock',
                             'igloohome_lock',
                             'hubitat_lock',
+                            'four_suites_door',
+                            'dormakaba_oracode_door',
                           ],
                         },
                         {
@@ -2270,9 +2469,11 @@ export default {
                     enum: [
                       'akuvox',
                       'august',
+                      'avigilon_alta',
                       'brivo',
                       'butterflymx',
                       'doorking',
+                      'four_suites',
                       'genie',
                       'igloo',
                       'keywe',
@@ -2296,6 +2497,7 @@ export default {
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
+                      'dormakaba_oracode',
                     ],
                   },
                   device_ids: {
@@ -2317,6 +2519,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'lock_door',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/locks/lock_door',
         responses: {
           200: {
@@ -2366,6 +2569,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'unlock_door',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/locks/unlock_door',
         responses: {
           200: {
@@ -2461,6 +2665,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'thermostat',
         summary: '/thermostats/get',
         responses: {
           200: {
@@ -2601,6 +2806,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'thermostats',
         summary: '/thermostats/list',
         responses: {
           200: {
@@ -2651,6 +2857,7 @@ export default {
                           'august_lock',
                           'brivo_access_point',
                           'butterflymx_panel',
+                          'avigilon_alta_entry',
                           'doorking_lock',
                           'genie_door',
                           'igloo_lock',
@@ -2668,6 +2875,8 @@ export default {
                           'ttlock_lock',
                           'igloohome_lock',
                           'hubitat_lock',
+                          'four_suites_door',
+                          'dormakaba_oracode_door',
                         ],
                       },
                       {
@@ -2691,6 +2900,7 @@ export default {
                             'august_lock',
                             'brivo_access_point',
                             'butterflymx_panel',
+                            'avigilon_alta_entry',
                             'doorking_lock',
                             'genie_door',
                             'igloo_lock',
@@ -2708,6 +2918,8 @@ export default {
                             'ttlock_lock',
                             'igloohome_lock',
                             'hubitat_lock',
+                            'four_suites_door',
+                            'dormakaba_oracode_door',
                           ],
                         },
                         {
@@ -2726,9 +2938,11 @@ export default {
                     enum: [
                       'akuvox',
                       'august',
+                      'avigilon_alta',
                       'brivo',
                       'butterflymx',
                       'doorking',
+                      'four_suites',
                       'genie',
                       'igloo',
                       'keywe',
@@ -2752,6 +2966,7 @@ export default {
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
+                      'dormakaba_oracode',
                     ],
                   },
                   device_ids: {
@@ -2898,7 +3113,7 @@ export default {
                       automatic_cooling_enabled: { type: 'boolean' },
                       hvac_mode_setting: {
                         type: 'string',
-                        enum: ['off', 'heat', 'cool', 'heatcool'],
+                        enum: ['off', 'heat', 'cool', 'heat_cool'],
                       },
                       cooling_set_point_celsius: { type: 'number' },
                       heating_set_point_celsius: { type: 'number' },
@@ -2921,6 +3136,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'webhook',
         summary: '/webhooks/create',
         responses: {
           200: {
@@ -3013,6 +3229,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'webhook',
         summary: '/webhooks/get',
         responses: {
           200: {
@@ -3057,6 +3274,7 @@ export default {
       get: {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'webhooks',
         summary: '/webhooks/list',
         responses: {
           200: {
@@ -3093,6 +3311,7 @@ export default {
       get: {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'workspace',
         summary: '/workspaces/get',
         responses: {
           200: {
@@ -3126,6 +3345,7 @@ export default {
       get: {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'workspace',
         summary: '/workspaces/list',
         responses: {
           200: {
@@ -3162,6 +3382,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'reset_sandbox',
+        'x-fern-sdk-return-value': 'message',
         summary: '/workspaces/reset_sandbox',
         responses: {
           200: {
@@ -3195,6 +3416,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes', 'simulate'],
         'x-fern-sdk-method-name': 'create_unmanaged_access_code',
+        'x-fern-sdk-return-value': 'access_code',
         summary: '/access_codes/simulate/create_unmanaged_access_code',
         responses: {
           200: {
@@ -3402,6 +3624,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/access_codes/unmanaged/delete',
         responses: {
           200: {
@@ -3451,6 +3674,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'access_code',
         summary: '/access_codes/unmanaged/get',
         responses: {
           200: {
@@ -3537,6 +3761,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'access_codes',
         summary: '/access_codes/unmanaged/list',
         responses: {
           200: {
@@ -3706,10 +3931,1039 @@ export default {
         operationId: 'accessCodesUnmanagedUpdatePost',
       },
     },
+    '/acs/access_groups/create': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'create',
+        summary: '/acs/access_groups/create',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_access_group: {
+                      type: 'object',
+                      properties: {
+                        acs_access_group_id: { type: 'string', format: 'uuid' },
+                        acs_system_id: { type: 'string', format: 'uuid' },
+                        workspace_id: { type: 'string', format: 'uuid' },
+                        name: { type: 'string' },
+                        access_group_type: {
+                          type: 'string',
+                          enum: ['pti_unit'],
+                        },
+                        created_at: {
+                          oneOf: [
+                            { type: 'string' },
+                            { type: 'string', format: 'date-time' },
+                          ],
+                        },
+                      },
+                      required: [
+                        'acs_access_group_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'name',
+                        'access_group_type',
+                        'created_at',
+                      ],
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_group', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_system_id: { type: 'string', format: 'uuid' },
+                  name: { type: 'string' },
+                },
+                required: ['acs_system_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsCreatePost',
+      },
+    },
+    '/acs/access_groups/delete': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'delete',
+        summary: '/acs/access_groups/delete',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsDeletePost',
+      },
+    },
+    '/acs/access_groups/get': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'get',
+        summary: '/acs/access_groups/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_access_group: {
+                      type: 'object',
+                      properties: {
+                        acs_access_group_id: { type: 'string', format: 'uuid' },
+                        acs_system_id: { type: 'string', format: 'uuid' },
+                        workspace_id: { type: 'string', format: 'uuid' },
+                        name: { type: 'string' },
+                        access_group_type: {
+                          type: 'string',
+                          enum: ['pti_unit'],
+                        },
+                        created_at: {
+                          oneOf: [
+                            { type: 'string' },
+                            { type: 'string', format: 'date-time' },
+                          ],
+                        },
+                      },
+                      required: [
+                        'acs_access_group_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'name',
+                        'access_group_type',
+                        'created_at',
+                      ],
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_group', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsGetPost',
+      },
+    },
+    '/acs/access_groups/list': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'list',
+        summary: '/acs/access_groups/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_access_groups: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        properties: {
+                          acs_access_group_id: {
+                            type: 'string',
+                            format: 'uuid',
+                          },
+                          acs_system_id: { type: 'string', format: 'uuid' },
+                          workspace_id: { type: 'string', format: 'uuid' },
+                          name: { type: 'string' },
+                          access_group_type: {
+                            type: 'string',
+                            enum: ['pti_unit'],
+                          },
+                          created_at: {
+                            oneOf: [
+                              { type: 'string' },
+                              { type: 'string', format: 'date-time' },
+                            ],
+                          },
+                        },
+                        required: [
+                          'acs_access_group_id',
+                          'acs_system_id',
+                          'workspace_id',
+                          'name',
+                          'access_group_type',
+                          'created_at',
+                        ],
+                      },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_groups', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_access_system_id: { type: 'string', format: 'uuid' },
+                  acs_user_id: { type: 'string', format: 'uuid' },
+                },
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsListPost',
+      },
+    },
+    '/acs/access_groups/update': {
+      patch: {
+        'x-fern-ignore': true,
+        summary: '/acs/access_groups/update',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                  name: { type: 'string', nullable: true },
+                },
+                required: ['acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsUpdatePatch',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'update',
+        summary: '/acs/access_groups/update',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                  name: { type: 'string', nullable: true },
+                },
+                required: ['acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsAccessGroupsUpdatePost',
+      },
+    },
+    '/acs/systems/get': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name': 'get',
+        summary: '/acs/systems/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_system: {
+                      type: 'object',
+                      properties: {
+                        acs_system_id: { type: 'string', format: 'uuid' },
+                        system_type: {
+                          type: 'string',
+                          enum: ['pti_site', 'alta_org'],
+                        },
+                        name: { type: 'string' },
+                        created_at: {
+                          oneOf: [
+                            { type: 'string' },
+                            { type: 'string', format: 'date-time' },
+                          ],
+                        },
+                      },
+                      required: [
+                        'acs_system_id',
+                        'system_type',
+                        'name',
+                        'created_at',
+                      ],
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_system', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_system_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_system_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsSystemsGetPost',
+      },
+    },
+    '/acs/systems/list': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name': 'list',
+        summary: '/acs/systems/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_systems: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        properties: {
+                          acs_system_id: { type: 'string', format: 'uuid' },
+                          system_type: {
+                            type: 'string',
+                            enum: ['pti_site', 'alta_org'],
+                          },
+                          name: { type: 'string' },
+                          created_at: {
+                            oneOf: [
+                              { type: 'string' },
+                              { type: 'string', format: 'date-time' },
+                            ],
+                          },
+                        },
+                        required: [
+                          'acs_system_id',
+                          'system_type',
+                          'name',
+                          'created_at',
+                        ],
+                      },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        tags: [],
+        operationId: 'acsSystemsListPost',
+      },
+      get: {
+        'x-fern-ignore': true,
+        summary: '/acs/systems/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_systems: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        properties: {
+                          acs_system_id: { type: 'string', format: 'uuid' },
+                          system_type: {
+                            type: 'string',
+                            enum: ['pti_site', 'alta_org'],
+                          },
+                          name: { type: 'string' },
+                          created_at: {
+                            oneOf: [
+                              { type: 'string' },
+                              { type: 'string', format: 'date-time' },
+                            ],
+                          },
+                        },
+                        required: [
+                          'acs_system_id',
+                          'system_type',
+                          'name',
+                          'created_at',
+                        ],
+                      },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        tags: [],
+        operationId: 'acsSystemsListGet',
+      },
+    },
+    '/acs/users/add_to_access_group': {
+      patch: {
+        'x-fern-ignore': true,
+        summary: '/acs/users/add_to_access_group',
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_user_id', 'acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersAddToAccessGroupPatch',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'add_to_access_group',
+        summary: '/acs/users/add_to_access_group',
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_user_id', 'acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersAddToAccessGroupPost',
+      },
+    },
+    '/acs/users/create': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'create',
+        summary: '/acs/users/create',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_user: {
+                      type: 'object',
+                      properties: {
+                        acs_user_id: { type: 'string', format: 'uuid' },
+                        acs_system_id: { type: 'string', format: 'uuid' },
+                        workspace_id: { type: 'string', format: 'uuid' },
+                        created_at: { type: 'string', format: 'date-time' },
+                        display_name: { type: 'string' },
+                        full_name: { type: 'string' },
+                        email: { type: 'string', format: 'email' },
+                        phone_number: { type: 'string', nullable: true },
+                      },
+                      required: [
+                        'acs_user_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'created_at',
+                        'display_name',
+                      ],
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_user', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  full_name: { type: 'string' },
+                  email: { type: 'string', format: 'email' },
+                  phone_number: { type: 'string', nullable: true },
+                },
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersCreatePost',
+      },
+    },
+    '/acs/users/delete': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'delete',
+        summary: '/acs/users/delete',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: { acs_user_id: { type: 'string', format: 'uuid' } },
+                required: ['acs_user_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersDeletePost',
+      },
+    },
+    '/acs/users/get': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'get',
+        summary: '/acs/users/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_user: {
+                      type: 'object',
+                      properties: {
+                        acs_user_id: { type: 'string', format: 'uuid' },
+                        acs_system_id: { type: 'string', format: 'uuid' },
+                        workspace_id: { type: 'string', format: 'uuid' },
+                        created_at: { type: 'string', format: 'date-time' },
+                        display_name: { type: 'string' },
+                        full_name: { type: 'string' },
+                        email: { type: 'string', format: 'email' },
+                        phone_number: { type: 'string', nullable: true },
+                      },
+                      required: [
+                        'acs_user_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'created_at',
+                        'display_name',
+                      ],
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_user', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: { acs_user_id: { type: 'string', format: 'uuid' } },
+                required: ['acs_user_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersGetPost',
+      },
+    },
+    '/acs/users/list': {
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'list',
+        summary: '/acs/users/list',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    acs_users: {
+                      type: 'array',
+                      items: {
+                        type: 'object',
+                        properties: {
+                          acs_user_id: { type: 'string', format: 'uuid' },
+                          acs_system_id: { type: 'string', format: 'uuid' },
+                          workspace_id: { type: 'string', format: 'uuid' },
+                          created_at: { type: 'string', format: 'date-time' },
+                          display_name: { type: 'string' },
+                          full_name: { type: 'string' },
+                          email: { type: 'string', format: 'email' },
+                          phone_number: { type: 'string', nullable: true },
+                        },
+                        required: [
+                          'acs_user_id',
+                          'acs_system_id',
+                          'workspace_id',
+                          'created_at',
+                          'display_name',
+                        ],
+                      },
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_system_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_system_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersListPost',
+      },
+    },
+    '/acs/users/remove_from_access_group': {
+      patch: {
+        'x-fern-ignore': true,
+        summary: '/acs/users/remove_from_access_group',
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_user_id', 'acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersRemoveFromAccessGroupPatch',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'remove_from_access_group',
+        summary: '/acs/users/remove_from_access_group',
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  acs_user_id: { type: 'string', format: 'uuid' },
+                  acs_access_group_id: { type: 'string', format: 'uuid' },
+                },
+                required: ['acs_user_id', 'acs_access_group_id'],
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersRemoveFromAccessGroupPost',
+      },
+    },
+    '/acs/users/update': {
+      patch: {
+        'x-fern-ignore': true,
+        summary: '/acs/users/update',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  full_name: { type: 'string' },
+                  email: { type: 'string', format: 'email' },
+                  phone_number: { type: 'string', nullable: true },
+                },
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersUpdatePatch',
+      },
+      post: {
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'update',
+        summary: '/acs/users/update',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  full_name: { type: 'string' },
+                  email: { type: 'string', format: 'email' },
+                  phone_number: { type: 'string', nullable: true },
+                },
+              },
+            },
+          },
+        },
+        tags: [],
+        operationId: 'acsUsersUpdatePost',
+      },
+    },
+    '/devices/unmanaged/get': {
+      post: {
+        'x-fern-sdk-group-name': ['devices', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'device',
+        summary: '/devices/unmanaged/get',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: {
+                  type: 'object',
+                  properties: {
+                    device: { $ref: '#/components/schemas/unmanaged_device' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['device', 'ok'],
+                },
+              },
+            },
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { seam_workspace: [], access_token: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                type: 'object',
+                properties: {
+                  device_id: { type: 'string', format: 'uuid' },
+                  name: { type: 'string' },
+                },
+              },
+            },
+          },
+        },
+        tags: ['/devices'],
+        operationId: 'devicesUnmanagedGetPost',
+      },
+    },
     '/devices/unmanaged/list': {
       post: {
         'x-fern-sdk-group-name': ['devices', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
         summary: '/devices/unmanaged/list',
         responses: {
           200: {
@@ -3760,6 +5014,7 @@ export default {
                           'august_lock',
                           'brivo_access_point',
                           'butterflymx_panel',
+                          'avigilon_alta_entry',
                           'doorking_lock',
                           'genie_door',
                           'igloo_lock',
@@ -3777,6 +5032,8 @@ export default {
                           'ttlock_lock',
                           'igloohome_lock',
                           'hubitat_lock',
+                          'four_suites_door',
+                          'dormakaba_oracode_door',
                         ],
                       },
                       {
@@ -3800,6 +5057,7 @@ export default {
                             'august_lock',
                             'brivo_access_point',
                             'butterflymx_panel',
+                            'avigilon_alta_entry',
                             'doorking_lock',
                             'genie_door',
                             'igloo_lock',
@@ -3817,6 +5075,8 @@ export default {
                             'ttlock_lock',
                             'igloohome_lock',
                             'hubitat_lock',
+                            'four_suites_door',
+                            'dormakaba_oracode_door',
                           ],
                         },
                         {
@@ -3835,9 +5095,11 @@ export default {
                     enum: [
                       'akuvox',
                       'august',
+                      'avigilon_alta',
                       'brivo',
                       'butterflymx',
                       'doorking',
+                      'four_suites',
                       'genie',
                       'igloo',
                       'keywe',
@@ -3861,6 +5123,7 @@ export default {
                       'hubitat',
                       'controlbyweb',
                       'smartthings',
+                      'dormakaba_oracode',
                     ],
                   },
                   device_ids: {
@@ -4013,6 +5276,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/noise_sensors/noise_thresholds/create',
         responses: {
           200: {
@@ -4067,6 +5331,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/noise_sensors/noise_thresholds/delete',
         responses: {
           200: {
@@ -4117,6 +5382,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'noise_threshold',
         summary: '/noise_sensors/noise_thresholds/get',
         responses: {
           200: {
@@ -4165,6 +5431,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'noise_thresholds',
         summary: '/noise_sensors/noise_thresholds/list',
         responses: {
           200: {
@@ -4212,6 +5479,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'action_attempt',
         summary: '/noise_sensors/noise_thresholds/update',
         responses: {
           200: {
@@ -4360,6 +5628,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'climate_setting_schedule',
         summary: '/thermostats/climate_setting_schedules/create',
         responses: {
           200: {
@@ -4406,7 +5675,7 @@ export default {
                   automatic_cooling_enabled: { type: 'boolean' },
                   hvac_mode_setting: {
                     type: 'string',
-                    enum: ['off', 'heat', 'cool', 'heatcool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
                   },
                   cooling_set_point_celsius: { type: 'number' },
                   heating_set_point_celsius: { type: 'number' },
@@ -4520,6 +5789,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'climate_setting_schedule',
         summary: '/thermostats/climate_setting_schedules/get',
         responses: {
           200: {
@@ -4571,6 +5841,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'climate_setting_schedules',
         summary: '/thermostats/climate_setting_schedules/list',
         responses: {
           200: {
@@ -4620,6 +5891,7 @@ export default {
       post: {
         'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'climate_setting_schedule',
         summary: '/thermostats/climate_setting_schedules/update',
         responses: {
           200: {
@@ -4669,7 +5941,7 @@ export default {
                   automatic_cooling_enabled: { type: 'boolean' },
                   hvac_mode_setting: {
                     type: 'string',
-                    enum: ['off', 'heat', 'cool', 'heatcool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
                   },
                   cooling_set_point_celsius: { type: 'number' },
                   heating_set_point_celsius: { type: 'number' },
@@ -4736,7 +6008,7 @@ export default {
                   automatic_cooling_enabled: { type: 'boolean' },
                   hvac_mode_setting: {
                     type: 'string',
-                    enum: ['off', 'heat', 'cool', 'heatcool'],
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
                   },
                   cooling_set_point_celsius: { type: 'number' },
                   heating_set_point_celsius: { type: 'number' },
@@ -4916,7 +6188,7 @@ export default {
           automatic_cooling_enabled: { type: 'boolean' },
           hvac_mode_setting: {
             type: 'string',
-            enum: ['off', 'heat', 'cool', 'heatcool'],
+            enum: ['off', 'heat', 'cool', 'heat_cool'],
           },
           cooling_set_point_celsius: { type: 'number' },
           heating_set_point_celsius: { type: 'number' },
@@ -4982,6 +6254,7 @@ export default {
             },
           },
           account_type: { type: 'string' },
+          account_type_display_name: { type: 'string' },
           errors: { nullable: true },
           warnings: { nullable: true },
           custom_metadata: {
@@ -4997,6 +6270,7 @@ export default {
             },
           },
         },
+        required: ['account_type_display_name'],
       },
       device: {
         type: 'object',
@@ -5011,6 +6285,7 @@ export default {
                   'august_lock',
                   'brivo_access_point',
                   'butterflymx_panel',
+                  'avigilon_alta_entry',
                   'doorking_lock',
                   'genie_door',
                   'igloo_lock',
@@ -5028,6 +6303,8 @@ export default {
                   'ttlock_lock',
                   'igloohome_lock',
                   'hubitat_lock',
+                  'four_suites_door',
+                  'dormakaba_oracode_door',
                 ],
               },
               {
@@ -5064,8 +6341,11 @@ export default {
                       name: { type: 'string' },
                       model: {
                         type: 'object',
-                        properties: { display_name: { type: 'string' } },
-                        required: ['display_name'],
+                        properties: {
+                          display_name: { type: 'string' },
+                          manufacturer_display_name: { type: 'string' },
+                        },
+                        required: ['display_name', 'manufacturer_display_name'],
                       },
                       has_direct_power: { type: 'boolean' },
                       battery_level: { type: 'number', minimum: 0, maximum: 1 },
@@ -5106,6 +6386,25 @@ export default {
                           'lock_name',
                           'house_name',
                           'has_keypad',
+                        ],
+                      },
+                      avigilon_alta_metadata: {
+                        type: 'object',
+                        properties: {
+                          entry_name: { type: 'string' },
+                          org_name: { type: 'string' },
+                          zone_id: { type: 'number' },
+                          zone_name: { type: 'string' },
+                          site_id: { type: 'number' },
+                          site_name: { type: 'string' },
+                        },
+                        required: [
+                          'entry_name',
+                          'org_name',
+                          'zone_id',
+                          'zone_name',
+                          'site_id',
+                          'site_name',
                         ],
                       },
                       schlage_metadata: {
@@ -5283,6 +6582,19 @@ export default {
                           'latest_sensor_values',
                         ],
                       },
+                      four_suites_metadata: {
+                        type: 'object',
+                        properties: {
+                          device_id: { type: 'number' },
+                          device_name: { type: 'string' },
+                          reclose_delay_in_seconds: { type: 'number' },
+                        },
+                        required: [
+                          'device_id',
+                          'device_name',
+                          'reclose_delay_in_seconds',
+                        ],
+                      },
                       two_n_metadata: {
                         type: 'object',
                         properties: {
@@ -5353,20 +6665,6 @@ export default {
                         properties: {
                           ecobee_device_id: { type: 'string' },
                           device_name: { type: 'string' },
-                          min_heating_set_point_fahrenheit: { type: 'number' },
-                          max_heating_set_point_fahrenheit: { type: 'number' },
-                          min_cooling_set_point_fahrenheit: { type: 'number' },
-                          max_cooling_set_point_fahrenheit: { type: 'number' },
-                          min_heating_set_point_celsius: { type: 'number' },
-                          max_heating_set_point_celsius: { type: 'number' },
-                          min_cooling_set_point_celsius: { type: 'number' },
-                          max_cooling_set_point_celsius: { type: 'number' },
-                          min_delta_heat_cool_set_points_fahrenheit: {
-                            type: 'number',
-                          },
-                          min_delta_heat_cool_set_points_celsius: {
-                            type: 'number',
-                          },
                         },
                         required: ['ecobee_device_id', 'device_name'],
                       },
@@ -5379,159 +6677,486 @@ export default {
                         },
                         required: ['device_id', 'device_name', 'device_label'],
                       },
+                      dormakaba_oracode_metadata: {
+                        type: 'object',
+                        properties: {
+                          door_id: { type: 'number' },
+                          door_name: { type: 'string' },
+                          device_id: { type: 'number' },
+                          site_id: { type: 'number' },
+                          site_name: { type: 'string' },
+                        },
+                        required: [
+                          'door_id',
+                          'door_name',
+                          'site_id',
+                          'site_name',
+                        ],
+                      },
                     },
                   },
                 ],
               },
               {
-                type: 'object',
-                properties: {
-                  code_constraints: {
-                    type: 'array',
-                    items: {
-                      oneOf: [
-                        {
-                          type: 'object',
-                          properties: {
-                            constraint_type: {
+                allOf: [
+                  {
+                    type: 'object',
+                    properties: {
+                      code_constraints: {
+                        type: 'array',
+                        items: {
+                          oneOf: [
+                            {
+                              type: 'object',
+                              properties: {
+                                constraint_type: {
+                                  type: 'string',
+                                  enum: [
+                                    'no_zeros',
+                                    'cannot_start_with_12',
+                                    'no_triple_consecutive_ints',
+                                    'cannot_specify_pin_code',
+                                    'pin_code_matches_existing_set',
+                                    'start_date_in_future',
+                                  ],
+                                },
+                              },
+                              required: ['constraint_type'],
+                            },
+                            {
+                              type: 'object',
+                              properties: {
+                                constraint_type: {
+                                  type: 'string',
+                                  enum: ['name_length'],
+                                },
+                                min_length: { type: 'number' },
+                                max_length: { type: 'number' },
+                              },
+                              required: ['constraint_type'],
+                            },
+                          ],
+                        },
+                      },
+                      supported_code_lengths: {
+                        type: 'array',
+                        items: { type: 'number' },
+                      },
+                      max_active_codes_supported: { type: 'number' },
+                      supports_backup_access_code_pool: { type: 'boolean' },
+                      has_native_entry_events: { type: 'boolean' },
+                      locked: { type: 'boolean' },
+                      keypad_battery: {
+                        type: 'object',
+                        properties: { level: { type: 'number' } },
+                        required: ['level'],
+                      },
+                      door_open: { type: 'boolean' },
+                    },
+                  },
+                  {
+                    oneOf: [
+                      {
+                        type: 'object',
+                        properties: {
+                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: { type: 'number' },
+                          relative_humidity: {
+                            type: 'number',
+                            minimum: 0,
+                            maximum: 1,
+                          },
+                          can_enable_automatic_heating: { type: 'boolean' },
+                          can_enable_automatic_cooling: { type: 'boolean' },
+                          available_hvac_mode_settings: {
+                            type: 'array',
+                            items: {
                               type: 'string',
-                              enum: [
-                                'no_zeros',
-                                'cannot_start_with_12',
-                                'no_triple_consecutive_ints',
-                                'cannot_specify_pin_code',
-                                'pin_code_matches_existing_set',
-                                'start_date_in_future',
-                              ],
+                              enum: ['off', 'heat', 'cool', 'heat_cool'],
                             },
                           },
-                          required: ['constraint_type'],
-                        },
-                        {
-                          type: 'object',
-                          properties: {
-                            constraint_type: {
-                              type: 'string',
-                              enum: ['name_length'],
-                            },
-                            min_length: { type: 'number' },
-                            max_length: { type: 'number' },
+                          is_heating_available: {
+                            type: 'boolean',
+                            enum: [true],
                           },
-                          required: ['constraint_type'],
+                          is_cooling_available: {
+                            type: 'boolean',
+                            enum: [true],
+                          },
+                          is_heating: { type: 'boolean' },
+                          is_cooling: { type: 'boolean' },
+                          is_fan_running: { type: 'boolean' },
+                          fan_mode_setting: {
+                            type: 'string',
+                            enum: ['auto', 'on'],
+                          },
+                          is_temporary_manual_override_active: {
+                            type: 'boolean',
+                          },
+                          current_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          default_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          is_climate_setting_schedule_active: {
+                            type: 'boolean',
+                          },
+                          active_climate_setting_schedule: {
+                            type: 'object',
+                            properties: {
+                              climate_setting_schedule_id: {
+                                type: 'string',
+                                format: 'uuid',
+                              },
+                              schedule_type: {
+                                type: 'string',
+                                enum: ['time_bound'],
+                              },
+                              device_id: { type: 'string' },
+                              name: { type: 'string' },
+                              schedule_starts_at: { type: 'string' },
+                              schedule_ends_at: { type: 'string' },
+                              created_at: {
+                                type: 'string',
+                                format: 'date-time',
+                              },
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'climate_setting_schedule_id',
+                              'schedule_type',
+                              'device_id',
+                              'schedule_starts_at',
+                              'schedule_ends_at',
+                              'created_at',
+                            ],
+                          },
+                          min_cooling_set_point_celsius: { type: 'number' },
+                          min_cooling_set_point_fahrenheit: { type: 'number' },
+                          max_cooling_set_point_celsius: { type: 'number' },
+                          max_cooling_set_point_fahrenheit: { type: 'number' },
+                          min_heating_set_point_celsius: { type: 'number' },
+                          min_heating_set_point_fahrenheit: { type: 'number' },
+                          max_heating_set_point_celsius: { type: 'number' },
+                          max_heating_set_point_fahrenheit: { type: 'number' },
+                          min_heating_cooling_delta_celsius: { type: 'number' },
+                          min_heating_cooling_delta_fahrenheit: {
+                            type: 'number',
+                          },
                         },
-                      ],
-                    },
-                  },
-                  supported_code_lengths: {
-                    type: 'array',
-                    items: { type: 'number' },
-                  },
-                  max_active_codes_supported: { type: 'number' },
-                  supports_backup_access_code_pool: { type: 'boolean' },
-                  has_native_entry_events: { type: 'boolean' },
-                  locked: { type: 'boolean' },
-                  keypad_battery: {
-                    type: 'object',
-                    properties: { level: { type: 'number' } },
-                    required: ['level'],
-                  },
-                  door_open: { type: 'boolean' },
-                  temperature_fahrenheit: { type: 'number' },
-                  temperature_celsius: { type: 'number' },
-                  relative_humidity: { type: 'number', minimum: 0, maximum: 1 },
-                  can_enable_automatic_heating: { type: 'boolean' },
-                  can_enable_automatic_cooling: { type: 'boolean' },
-                  available_hvac_mode_settings: {
-                    type: 'array',
-                    items: {
-                      type: 'string',
-                      enum: ['off', 'heat', 'cool', 'heatcool'],
-                    },
-                  },
-                  is_heating: { type: 'boolean' },
-                  is_cooling: { type: 'boolean' },
-                  is_fan_running: { type: 'boolean' },
-                  is_temporary_manual_override_active: { type: 'boolean' },
-                  current_climate_setting: {
-                    type: 'object',
-                    properties: {
-                      automatic_heating_enabled: { type: 'boolean' },
-                      automatic_cooling_enabled: { type: 'boolean' },
-                      hvac_mode_setting: {
-                        type: 'string',
-                        enum: ['off', 'heat', 'cool', 'heatcool'],
                       },
-                      cooling_set_point_celsius: { type: 'number' },
-                      heating_set_point_celsius: { type: 'number' },
-                      cooling_set_point_fahrenheit: { type: 'number' },
-                      heating_set_point_fahrenheit: { type: 'number' },
-                      manual_override_allowed: { type: 'boolean' },
-                    },
-                    required: [
-                      'automatic_heating_enabled',
-                      'automatic_cooling_enabled',
-                      'hvac_mode_setting',
-                      'manual_override_allowed',
+                      {
+                        type: 'object',
+                        properties: {
+                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: { type: 'number' },
+                          relative_humidity: {
+                            type: 'number',
+                            minimum: 0,
+                            maximum: 1,
+                          },
+                          can_enable_automatic_heating: { type: 'boolean' },
+                          can_enable_automatic_cooling: { type: 'boolean' },
+                          available_hvac_mode_settings: {
+                            type: 'array',
+                            items: {
+                              type: 'string',
+                              enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            },
+                          },
+                          is_heating_available: {
+                            type: 'boolean',
+                            enum: [true],
+                          },
+                          is_cooling_available: {
+                            type: 'boolean',
+                            enum: [false],
+                          },
+                          is_heating: { type: 'boolean' },
+                          is_cooling: { type: 'boolean' },
+                          is_fan_running: { type: 'boolean' },
+                          fan_mode_setting: {
+                            type: 'string',
+                            enum: ['auto', 'on'],
+                          },
+                          is_temporary_manual_override_active: {
+                            type: 'boolean',
+                          },
+                          current_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          default_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          is_climate_setting_schedule_active: {
+                            type: 'boolean',
+                          },
+                          active_climate_setting_schedule: {
+                            type: 'object',
+                            properties: {
+                              climate_setting_schedule_id: {
+                                type: 'string',
+                                format: 'uuid',
+                              },
+                              schedule_type: {
+                                type: 'string',
+                                enum: ['time_bound'],
+                              },
+                              device_id: { type: 'string' },
+                              name: { type: 'string' },
+                              schedule_starts_at: { type: 'string' },
+                              schedule_ends_at: { type: 'string' },
+                              created_at: {
+                                type: 'string',
+                                format: 'date-time',
+                              },
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'climate_setting_schedule_id',
+                              'schedule_type',
+                              'device_id',
+                              'schedule_starts_at',
+                              'schedule_ends_at',
+                              'created_at',
+                            ],
+                          },
+                          min_heating_set_point_celsius: { type: 'number' },
+                          min_heating_set_point_fahrenheit: { type: 'number' },
+                          max_heating_set_point_celsius: { type: 'number' },
+                          max_heating_set_point_fahrenheit: { type: 'number' },
+                        },
+                      },
+                      {
+                        type: 'object',
+                        properties: {
+                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: { type: 'number' },
+                          relative_humidity: {
+                            type: 'number',
+                            minimum: 0,
+                            maximum: 1,
+                          },
+                          can_enable_automatic_heating: { type: 'boolean' },
+                          can_enable_automatic_cooling: { type: 'boolean' },
+                          available_hvac_mode_settings: {
+                            type: 'array',
+                            items: {
+                              type: 'string',
+                              enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            },
+                          },
+                          is_heating_available: {
+                            type: 'boolean',
+                            enum: [false],
+                          },
+                          is_cooling_available: {
+                            type: 'boolean',
+                            enum: [true],
+                          },
+                          is_heating: { type: 'boolean' },
+                          is_cooling: { type: 'boolean' },
+                          is_fan_running: { type: 'boolean' },
+                          fan_mode_setting: {
+                            type: 'string',
+                            enum: ['auto', 'on'],
+                          },
+                          is_temporary_manual_override_active: {
+                            type: 'boolean',
+                          },
+                          current_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          default_climate_setting: {
+                            type: 'object',
+                            properties: {
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'automatic_heating_enabled',
+                              'automatic_cooling_enabled',
+                              'hvac_mode_setting',
+                              'manual_override_allowed',
+                            ],
+                          },
+                          is_climate_setting_schedule_active: {
+                            type: 'boolean',
+                          },
+                          active_climate_setting_schedule: {
+                            type: 'object',
+                            properties: {
+                              climate_setting_schedule_id: {
+                                type: 'string',
+                                format: 'uuid',
+                              },
+                              schedule_type: {
+                                type: 'string',
+                                enum: ['time_bound'],
+                              },
+                              device_id: { type: 'string' },
+                              name: { type: 'string' },
+                              schedule_starts_at: { type: 'string' },
+                              schedule_ends_at: { type: 'string' },
+                              created_at: {
+                                type: 'string',
+                                format: 'date-time',
+                              },
+                              automatic_heating_enabled: { type: 'boolean' },
+                              automatic_cooling_enabled: { type: 'boolean' },
+                              hvac_mode_setting: {
+                                type: 'string',
+                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              },
+                              cooling_set_point_celsius: { type: 'number' },
+                              heating_set_point_celsius: { type: 'number' },
+                              cooling_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_fahrenheit: { type: 'number' },
+                              manual_override_allowed: { type: 'boolean' },
+                            },
+                            required: [
+                              'climate_setting_schedule_id',
+                              'schedule_type',
+                              'device_id',
+                              'schedule_starts_at',
+                              'schedule_ends_at',
+                              'created_at',
+                            ],
+                          },
+                          min_cooling_set_point_celsius: { type: 'number' },
+                          min_cooling_set_point_fahrenheit: { type: 'number' },
+                          max_cooling_set_point_celsius: { type: 'number' },
+                          max_cooling_set_point_fahrenheit: { type: 'number' },
+                        },
+                      },
                     ],
                   },
-                  default_climate_setting: {
-                    type: 'object',
-                    properties: {
-                      automatic_heating_enabled: { type: 'boolean' },
-                      automatic_cooling_enabled: { type: 'boolean' },
-                      hvac_mode_setting: {
-                        type: 'string',
-                        enum: ['off', 'heat', 'cool', 'heatcool'],
-                      },
-                      cooling_set_point_celsius: { type: 'number' },
-                      heating_set_point_celsius: { type: 'number' },
-                      cooling_set_point_fahrenheit: { type: 'number' },
-                      heating_set_point_fahrenheit: { type: 'number' },
-                      manual_override_allowed: { type: 'boolean' },
-                    },
-                    required: [
-                      'automatic_heating_enabled',
-                      'automatic_cooling_enabled',
-                      'hvac_mode_setting',
-                      'manual_override_allowed',
-                    ],
-                  },
-                  is_climate_setting_schedule_active: { type: 'boolean' },
-                  active_climate_setting_schedule: {
-                    type: 'object',
-                    properties: {
-                      climate_setting_schedule_id: {
-                        type: 'string',
-                        format: 'uuid',
-                      },
-                      schedule_type: { type: 'string', enum: ['time_bound'] },
-                      device_id: { type: 'string' },
-                      name: { type: 'string' },
-                      schedule_starts_at: { type: 'string' },
-                      schedule_ends_at: { type: 'string' },
-                      created_at: { type: 'string', format: 'date-time' },
-                      automatic_heating_enabled: { type: 'boolean' },
-                      automatic_cooling_enabled: { type: 'boolean' },
-                      hvac_mode_setting: {
-                        type: 'string',
-                        enum: ['off', 'heat', 'cool', 'heatcool'],
-                      },
-                      cooling_set_point_celsius: { type: 'number' },
-                      heating_set_point_celsius: { type: 'number' },
-                      cooling_set_point_fahrenheit: { type: 'number' },
-                      heating_set_point_fahrenheit: { type: 'number' },
-                      manual_override_allowed: { type: 'boolean' },
-                    },
-                    required: [
-                      'climate_setting_schedule_id',
-                      'schedule_type',
-                      'device_id',
-                      'schedule_starts_at',
-                      'schedule_ends_at',
-                      'created_at',
-                    ],
-                  },
-                },
+                ],
               },
             ],
           },
@@ -5644,6 +7269,7 @@ export default {
                   'august_lock',
                   'brivo_access_point',
                   'butterflymx_panel',
+                  'avigilon_alta_entry',
                   'doorking_lock',
                   'genie_door',
                   'igloo_lock',
@@ -5661,6 +7287,8 @@ export default {
                   'ttlock_lock',
                   'igloohome_lock',
                   'hubitat_lock',
+                  'four_suites_door',
+                  'dormakaba_oracode_door',
                 ],
               },
               {
@@ -5722,8 +7350,11 @@ export default {
               image_alt_text: { type: 'string' },
               model: {
                 type: 'object',
-                properties: { display_name: { type: 'string' } },
-                required: ['display_name'],
+                properties: {
+                  display_name: { type: 'string' },
+                  manufacturer_display_name: { type: 'string' },
+                },
+                required: ['display_name', 'manufacturer_display_name'],
               },
             },
             required: ['name', 'online', 'model'],
