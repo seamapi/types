@@ -1135,6 +1135,7 @@ export default {
                         'hubitat',
                         'four_suites',
                         'dormakaba_oracode',
+                        'pti',
                         'wyze',
                         'yale_access',
                       ],
