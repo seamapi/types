@@ -170,5 +170,13 @@ export const device_metadata = z
       site_id: z.number(),
       site_name: z.string(),
     }),
+
+    wyze_metadata: z.object({
+      device_id: z.string(),
+      device_name: z.string(),
+      product_type: z.string(),
+      product_model: z.string(),
+      device_info_model: z.string(),
+    }),
   })
   .partial()

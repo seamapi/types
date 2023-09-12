@@ -1193,6 +1193,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -1418,6 +1419,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+              }
+            | undefined
+          wyze_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
+                product_model: string
+                device_info_model: string
               }
             | undefined
         }) &
@@ -1767,6 +1777,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -1799,6 +1810,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -1834,6 +1846,7 @@ export interface Routes {
             | 'schlage'
             | 'seam'
             | 'unknown'
+            | 'wyze'
             | 'yale'
             | 'minut'
             | 'two_n'
@@ -1873,6 +1886,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -2098,6 +2112,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+              }
+            | undefined
+          wyze_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
+                product_model: string
+                device_info_model: string
               }
             | undefined
         }) &
@@ -2468,6 +2491,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -2536,6 +2560,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -2568,6 +2593,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -2603,6 +2629,7 @@ export interface Routes {
             | 'schlage'
             | 'seam'
             | 'unknown'
+            | 'wyze'
             | 'yale'
             | 'minut'
             | 'two_n'
@@ -2642,6 +2669,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -2960,6 +2988,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -2992,6 +3021,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -3027,6 +3057,7 @@ export interface Routes {
             | 'schlage'
             | 'seam'
             | 'unknown'
+            | 'wyze'
             | 'yale'
             | 'minut'
             | 'two_n'
@@ -3502,6 +3533,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -3727,6 +3759,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+              }
+            | undefined
+          wyze_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
+                product_model: string
+                device_info_model: string
               }
             | undefined
         }) &
@@ -4106,6 +4147,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -4138,6 +4180,7 @@ export interface Routes {
                 | 'schlage_lock'
                 | 'seam_relay'
                 | 'smartthings_lock'
+                | 'wyze_lock'
                 | 'yale_lock'
                 | 'two_n_intercom'
                 | 'controlbyweb_device'
@@ -4173,6 +4216,7 @@ export interface Routes {
             | 'schlage'
             | 'seam'
             | 'unknown'
+            | 'wyze'
             | 'yale'
             | 'minut'
             | 'two_n'
@@ -4212,6 +4256,7 @@ export interface Routes {
               | 'schlage_lock'
               | 'seam_relay'
               | 'smartthings_lock'
+              | 'wyze_lock'
               | 'yale_lock'
               | 'two_n_intercom'
               | 'controlbyweb_device'
@@ -4437,6 +4482,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+              }
+            | undefined
+          wyze_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
+                product_model: string
+                device_info_model: string
               }
             | undefined
         }) &

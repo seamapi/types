@@ -18,6 +18,7 @@ export const LOCK_DEVICE_TYPE = {
   SCHLAGE_LOCK: 'schlage_lock',
   SEAM_RELAY: 'seam_relay',
   SMARTTHINGS_LOCK: 'smartthings_lock',
+  WYZE_LOCK: 'wyze_lock',
   YALE_LOCK: 'yale_lock',
   TWO_N_INTERCOM: 'two_n_intercom',
   CONTROLBYWEB_DEVICE: 'controlbyweb_device',
