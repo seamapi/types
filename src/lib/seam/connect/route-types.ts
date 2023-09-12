@@ -4776,7 +4776,8 @@ export interface Routes {
     queryParams: {}
     jsonBody: {
       device_id: string
-      fan_mode: 'auto' | 'on'
+      fan_mode?: ('auto' | 'on') | undefined
+      fan_mode_setting?: ('auto' | 'on') | undefined
       sync?: boolean
     }
     commonParams: {}

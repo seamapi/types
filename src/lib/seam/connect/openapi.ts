@@ -3063,9 +3063,10 @@ export default {
                 properties: {
                   device_id: { type: 'string', format: 'uuid' },
                   fan_mode: { type: 'string', enum: ['auto', 'on'] },
+                  fan_mode_setting: { type: 'string', enum: ['auto', 'on'] },
                   sync: { default: false, type: 'boolean' },
                 },
-                required: ['device_id', 'fan_mode'],
+                required: ['device_id'],
               },
             },
           },
