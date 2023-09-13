@@ -4205,7 +4205,7 @@ export default {
               schema: {
                 type: 'object',
                 properties: {
-                  acs_access_system_id: { type: 'string', format: 'uuid' },
+                  acs_system_id: { type: 'string', format: 'uuid' },
                   acs_user_id: { type: 'string', format: 'uuid' },
                 },
               },
