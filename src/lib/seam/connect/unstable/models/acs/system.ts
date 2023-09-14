@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+// If changed, update seam.acs_system.system_type check constraint
 export const acs_system_type = z.enum(['pti_site', 'alta_org'])
 
 export type AcsSystemType = z.infer<typeof acs_system_type>
