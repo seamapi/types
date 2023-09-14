@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+// If changed, update seam.acs_access_group.access_group_type check constraint
 export const acs_access_group_type = z.enum(['pti_unit'])
 
 export type AcsAccessGroupType = z.infer<typeof acs_access_group_type>
