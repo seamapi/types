@@ -727,7 +727,7 @@ export interface Routes {
   }
   '/acs/users/remove_from_access_group': {
     route: '/acs/users/remove_from_access_group'
-    method: 'POST' | 'PATCH'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
