@@ -3380,36 +3380,6 @@ export default {
       },
     },
     '/acs/users/remove_from_access_group': {
-      patch: {
-        operationId: 'acsUsersRemoveFromAccessGroupPatch',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['acs_user_id', 'acs_access_group_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/users/remove_from_access_group',
-        tags: [],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'acsUsersRemoveFromAccessGroupPost',
         requestBody: {
