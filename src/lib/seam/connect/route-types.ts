@@ -303,6 +303,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       access_code_id: string
+      allow_external_modification?: boolean | undefined
       force?: boolean | undefined
       sync?: boolean
     }
@@ -409,6 +410,7 @@ export interface Routes {
     commonParams: {
       access_code_id: string
       is_managed: boolean
+      allow_external_modification?: boolean | undefined
       force?: boolean | undefined
     }
     formData: {}
