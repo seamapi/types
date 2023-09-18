@@ -2040,6 +2040,7 @@ export default {
               schema: {
                 properties: {
                   access_code_id: { format: 'uuid', type: 'string' },
+                  allow_external_modification: { type: 'boolean' },
                   force: { type: 'boolean' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -2082,6 +2083,7 @@ export default {
               schema: {
                 properties: {
                   access_code_id: { format: 'uuid', type: 'string' },
+                  allow_external_modification: { type: 'boolean' },
                   force: { type: 'boolean' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -2351,6 +2353,7 @@ export default {
               schema: {
                 properties: {
                   access_code_id: { format: 'uuid', type: 'string' },
+                  allow_external_modification: { type: 'boolean' },
                   force: { type: 'boolean' },
                   is_managed: { type: 'boolean' },
                 },
@@ -2393,6 +2396,7 @@ export default {
               schema: {
                 properties: {
                   access_code_id: { format: 'uuid', type: 'string' },
+                  allow_external_modification: { type: 'boolean' },
                   force: { type: 'boolean' },
                   is_managed: { type: 'boolean' },
                 },
