@@ -13,14 +13,6 @@ const phone_number = z.coerce
     },
   )
 
-export const desired_user_properties = z.object({
-  _desired_full_name: z.string(),
-  _desired_email: z.string().email().nullish(),
-  _desired_phone_number: phone_number.nullish(),
-})
-
-export type DesiredAcsUserProperties = z.output<typeof desired_user_properties>
-
 const user_fields = z.object({
   full_name: z.string().optional(),
   email: z.string().email().optional(),
