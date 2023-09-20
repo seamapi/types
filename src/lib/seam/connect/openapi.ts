@@ -3980,6 +3980,7 @@ export default {
                         'genie',
                         'doorking',
                         'salto',
+                        'lockly',
                         'ttlock',
                         'linear',
                         'noiseaware',
