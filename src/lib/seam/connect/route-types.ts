@@ -1944,6 +1944,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -2727,6 +2728,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -3157,6 +3159,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -4316,6 +4319,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
