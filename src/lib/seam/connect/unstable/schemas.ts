@@ -2,6 +2,7 @@ export {
   access_code_code_constraint,
   acs_access_group,
   acs_access_group_type,
+  acs_credential,
   acs_system,
   acs_system_type,
   acs_user,

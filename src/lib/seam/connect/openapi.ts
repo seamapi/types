@@ -12,6 +12,7 @@ export default {
           errors: { nullable: true },
           is_backup: { type: 'boolean' },
           is_backup_access_code_available: { type: 'boolean' },
+          is_external_modification_allowed: { type: 'boolean' },
           is_managed: { enum: [true], type: 'boolean' },
           is_scheduled_on_device: { type: 'boolean' },
           is_waiting_for_code_assignment: { type: 'boolean' },
@@ -40,6 +41,7 @@ export default {
           'is_managed',
           'status',
           'is_backup_access_code_available',
+          'is_external_modification_allowed',
         ],
         type: 'object',
       },
@@ -3017,6 +3019,243 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'update',
+      },
+    },
+    '/acs/credentials/create': {
+      post: {
+        operationId: 'acsCredentialsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                  code: { pattern: '^\\d+$', type: 'string' },
+                },
+                required: ['acs_user_id', 'code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_user_id',
+                        'acs_system_id',
+                        'code',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'create',
+      },
+    },
+    '/acs/credentials/delete': {
+      post: {
+        operationId: 'acsCredentialsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'delete',
+      },
+    },
+    '/acs/credentials/get': {
+      post: {
+        operationId: 'acsCredentialsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credentials_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_credentials_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_user_id',
+                        'acs_system_id',
+                        'code',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
+    '/acs/credentials/list': {
+      post: {
+        operationId: 'acsCredentialsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: {
+                        properties: {
+                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                          code: { type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'acs_credential_id',
+                          'acs_user_id',
+                          'acs_system_id',
+                          'code',
+                          'created_at',
+                          'workspace_id',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'list',
       },
     },
     '/acs/systems/get': {
