@@ -63,6 +63,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
@@ -104,6 +105,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }>
     }
   }
@@ -193,6 +195,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
@@ -226,6 +229,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }>
     }
   }
@@ -258,6 +262,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
@@ -598,6 +603,78 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {}
+  }
+  '/acs/credentials/create': {
+    route: '/acs/credentials/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+      code: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credential: {
+        acs_credential_id: string
+        acs_user_id: string
+        acs_system_id: string
+        code: string
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
+  '/acs/credentials/delete': {
+    route: '/acs/credentials/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_credential_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/credentials/get': {
+    route: '/acs/credentials/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_credentials_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credential: {
+        acs_credential_id: string
+        acs_user_id: string
+        acs_system_id: string
+        code: string
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
+  '/acs/credentials/list': {
+    route: '/acs/credentials/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credentials: Array<{
+        acs_credential_id: string
+        acs_user_id: string
+        acs_system_id: string
+        code: string
+        created_at: string
+        workspace_id: string
+      }>
+    }
   }
   '/acs/systems/get': {
     route: '/acs/systems/get'
