@@ -433,6 +433,7 @@ export interface Routes {
       access_code_id: string
       device_id?: string | undefined
       type?: ('ongoing' | 'time_bound') | undefined
+      is_managed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -953,6 +954,7 @@ export interface Routes {
             | 'genie'
             | 'doorking'
             | 'salto'
+            | 'lockly'
             | 'ttlock'
             | 'linear'
             | 'noiseaware'
