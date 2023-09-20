@@ -611,7 +611,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       acs_user_id: string
-      code: string
+      code?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -619,7 +619,7 @@ export interface Routes {
         acs_credential_id: string
         acs_user_id: string
         acs_system_id: string
-        code: string
+        code: string | null
         created_at: string
         workspace_id: string
       }
@@ -650,7 +650,7 @@ export interface Routes {
         acs_credential_id: string
         acs_user_id: string
         acs_system_id: string
-        code: string
+        code: string | null
         created_at: string
         workspace_id: string
       }
@@ -670,7 +670,7 @@ export interface Routes {
         acs_credential_id: string
         acs_user_id: string
         acs_system_id: string
-        code: string
+        code: string | null
         created_at: string
         workspace_id: string
       }>
@@ -1944,6 +1944,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -2727,6 +2728,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -3157,6 +3159,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -4316,6 +4319,7 @@ export interface Routes {
       device_ids?: string[] | undefined
       limit?: number
       created_before?: string | undefined
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
