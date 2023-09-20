@@ -63,6 +63,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
@@ -104,6 +105,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }>
     }
   }
@@ -193,6 +195,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
@@ -226,6 +229,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }>
     }
   }
@@ -258,6 +262,7 @@ export interface Routes {
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
+        is_external_modification_allowed: boolean
       }
     }
   }
