@@ -3306,41 +3306,20 @@ export default {
       },
     },
     '/acs/systems/list': {
-      get: {
-        operationId: 'acsSystemsListGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    acs_systems: {
-                      items: { $ref: '#/components/schemas/acs_system' },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['acs_systems', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/systems/list',
-        tags: [],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'acsSystemsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connected_account_id: { format: 'uuid', type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
