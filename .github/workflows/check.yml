@@ -78,6 +78,7 @@ jobs:
           contents: |
             import '@seamapi/types'
             import '@seamapi/types/connect'
+            import '@seamapi/types/devicedb'
       - name: Install
         run: npm install --save ${{ steps.packages.outputs.paths }}
       - name: Run

@@ -7,7 +7,7 @@
     "rootDir": "./src",
     "outDir": "./"
   },
-  "files": ["src/index.ts", "src/connect.ts"],
+  "files": ["src/index.ts", "src/connect.ts", "src/devicedb.ts"],
   "include": ["src/**/*"],
   "exclude": ["tsup.config.ts"]
 }
