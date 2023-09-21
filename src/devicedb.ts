@@ -1,1 +1,1 @@
-export * from './lib/seam/connect/index.js'
+export * from './lib/seam/devicedb/index.js'
