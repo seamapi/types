@@ -701,7 +701,9 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: {}
+    commonParams: {
+      connected_account_id?: string | undefined
+    }
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
