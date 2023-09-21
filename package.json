@@ -15,6 +15,11 @@
       "import": "./connect.js",
       "require": "./dist/connect.cjs",
       "types": "./connect.d.ts"
+    },
+    "./devicedb": {
+      "import": "./devicedb.js",
+      "require": "./dist/devicedb.cjs",
+      "types": "./devicedb.d.ts"
     }
   },
   "module": "index.js",
@@ -37,18 +42,21 @@
     "connect.js",
     "connect.js.map",
     "connect.d.ts",
+    "devicedb.js",
+    "devicedb.js.map",
+    "devicedb.d.ts",
     "dist",
     "lib",
     "src"
   ],
   "scripts": {
     "build": "npm run build:entrypoints",
-    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'",
-    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'",
+    "prebuild": "concurrently --raw --group 'tsx src/index.ts' 'tsx src/connect.ts'  'tsx src/devicedb.ts'",
+    "postbuild": "concurrently --raw --group 'node ./index.js' 'node ./connect.js'  'node ./devicedb.js'",
     "build:entrypoints": "npm run build:ts",
     "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
-    "prebuild:ts": "del 'index.*' 'connect.*' 'lib'",
+    "prebuild:ts": "del 'index.*' 'connect.*' 'devicedb.*' 'lib'",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
     "lint": "eslint --ignore-path .gitignore .",
@@ -63,10 +71,13 @@
     "npm": ">= 8.1.0"
   },
   "peerDependencies": {
+    "type-fest": "^4.3.1",
     "zod": "^3.21.4"
   },
-  "dependencies": {
-    "type-fest": "^4.1.0"
+  "peerDependenciesMeta": {
+    "type-fest": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
@@ -84,6 +95,7 @@
     "tsc-alias": "^1.8.2",
     "tsup": "^7.1.0",
     "tsx": "^3.12.1",
+    "type-fest": "^4.3.1",
     "typescript": "^5.0.2",
     "zod": "^3.21.4"
   }

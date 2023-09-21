@@ -26,6 +26,7 @@
     "paths": {
       "@seamapi/types": ["./src/index.ts"],
       "@seamapi/types/connect": ["./src/connect.ts"],
+      "@seamapi/types/devicedb": ["./src/devicedb.ts"],
       "lib/*": ["./src/lib/*"]
     }
   },

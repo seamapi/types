@@ -59,13 +59,19 @@
       }
     },
     {
-      "files": ["src/lib/seam/connect/route-types.ts"],
+      "files": [
+        "src/lib/seam/connect/route-types.ts",
+        "src/lib/seam/devicedb/route-types.ts"
+      ],
       "rules": {
         "@typescript-eslint/ban-types": "off"
       }
     },
     {
-      "files": ["src/lib/seam/connect/**/*.ts"],
+      "files": [
+        "src/lib/seam/connect/**/*.ts",
+        "src/lib/seam/devicedb/**/*.ts"
+      ],
       "rules": {
         "@typescript-eslint/naming-convention": "off",
         "node/file-extension-in-import": [
