@@ -1126,7 +1126,9 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: {}
+    commonParams: {
+      user_identifier_key?: string | undefined
+    }
     formData: {}
     jsonResponse: {
       connect_webviews: Array<{

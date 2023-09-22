@@ -4382,41 +4382,18 @@ export default {
       },
     },
     '/connect_webviews/list': {
-      get: {
-        operationId: 'connectWebviewsListGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    connect_webviews: {
-                      items: { $ref: '#/components/schemas/connect_webview' },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connect_webviews', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/connect_webviews/list',
-        tags: ['/connect_webviews'],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'connectWebviewsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { user_identifier_key: { type: 'string' } },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
