@@ -612,7 +612,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       acs_user_id: string
-      code?: string | undefined
+      code: string
     }
     formData: {}
     jsonResponse: {
