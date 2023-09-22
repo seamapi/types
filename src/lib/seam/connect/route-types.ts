@@ -575,6 +575,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -747,6 +748,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -780,6 +782,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -802,6 +805,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
