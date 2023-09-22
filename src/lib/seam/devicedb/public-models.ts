@@ -37,6 +37,7 @@ export const device_model_v1 = z.object({
   manufacturer,
   is_device_supported: z.boolean(),
   display_name: z.string(),
+  description: z.string(),
   product_url: z.string(),
   main_connection_type: z.enum(['wifi', 'zwave', 'zigbee', 'unknown']),
   main_category: z.enum(['smartlock', 'thermostat', 'noise_sensor']),
