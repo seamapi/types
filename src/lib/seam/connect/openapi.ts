@@ -3031,9 +3031,9 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: { format: 'uuid', type: 'string' },
-                  code: { oneOf: [{ pattern: '^\\d+$', type: 'string' }, {}] },
+                  code: { pattern: '^\\d+$', type: 'string' },
                 },
-                required: ['acs_user_id'],
+                required: ['acs_user_id', 'code'],
                 type: 'object',
               },
             },
@@ -6660,7 +6660,10 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
