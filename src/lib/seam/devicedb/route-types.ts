@@ -27,6 +27,7 @@ export interface Routes {
         }
         is_device_supported: boolean
         display_name: string
+        description: string
         product_url: string
         main_connection_type: 'wifi' | 'zwave' | 'zigbee' | 'unknown'
         main_category: 'smartlock' | 'thermostat' | 'noise_sensor'
@@ -86,6 +87,7 @@ export interface Routes {
         }
         is_device_supported: boolean
         display_name: string
+        description: string
         product_url: string
         main_connection_type: 'wifi' | 'zwave' | 'zigbee' | 'unknown'
         main_category: 'smartlock' | 'thermostat' | 'noise_sensor'
