@@ -26,6 +26,7 @@ export const acs_user = z
     workspace_id: z.string().uuid(),
     created_at: z.string().datetime(),
     display_name: z.string(),
+    is_being_deleted: z.boolean(),
   })
   .merge(user_fields)
 
