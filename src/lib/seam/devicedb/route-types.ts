@@ -103,6 +103,9 @@ export interface Routes {
               can_program_climate_schedules: boolean
             }
           }
+        | {
+            main_category: 'relay'
+          }
       )
     }
   }
@@ -215,6 +218,9 @@ export interface Routes {
               software_features: {
                 can_program_climate_schedules: boolean
               }
+            }
+          | {
+              main_category: 'relay'
             }
         )
       >
