@@ -52,9 +52,13 @@ const thermostat = z.object({
   }),
 })
 
+const relay = z.object({
+  main_category: z.literal('relay'),
+})
+
 export const device_model_category_specific_properties = z.discriminatedUnion(
   'main_category',
-  [smartlock, sensor, thermostat],
+  [smartlock, sensor, thermostat, relay],
 )
 
 export const base_device_model_v1 = z.object({
