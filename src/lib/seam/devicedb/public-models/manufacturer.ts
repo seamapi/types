@@ -6,7 +6,7 @@ export const manufacturer = z.object({
   manufacturer_id: z.string().uuid(),
   display_name: z.string(),
   logo: image_reference.optional(),
-  integration: z.enum(['stable', 'beta', 'planned', 'unsupported']),
+  integration: z.enum(['stable', 'beta', 'planned', 'unsupported', 'inquire']),
   is_connect_webview_supported: z.boolean(),
   requires_seam_support_to_add_account: z.boolean(),
 })
