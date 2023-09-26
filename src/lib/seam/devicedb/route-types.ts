@@ -21,7 +21,7 @@ export interface Routes {
                 height: number
               }
             | undefined
-          integration: 'stable' | 'beta' | 'planned' | 'unsupported'
+          integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
           is_connect_webview_supported: boolean
           requires_seam_support_to_add_account: boolean
         }
@@ -116,7 +116,7 @@ export interface Routes {
       main_category?: string | undefined
       manufacturer_id?: string | undefined
       integration_status?:
-        | ('stable' | 'beta' | 'planned' | 'unsupported')
+        | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
         | undefined
       text_search?: string | undefined
     }
@@ -137,7 +137,12 @@ export interface Routes {
                   height: number
                 }
               | undefined
-            integration: 'stable' | 'beta' | 'planned' | 'unsupported'
+            integration:
+              | 'stable'
+              | 'beta'
+              | 'planned'
+              | 'unsupported'
+              | 'inquire'
             is_connect_webview_supported: boolean
             requires_seam_support_to_add_account: boolean
           }
@@ -246,7 +251,7 @@ export interface Routes {
               height: number
             }
           | undefined
-        integration: 'stable' | 'beta' | 'planned' | 'unsupported'
+        integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
       }
@@ -270,7 +275,7 @@ export interface Routes {
               height: number
             }
           | undefined
-        integration: 'stable' | 'beta' | 'planned' | 'unsupported'
+        integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
       }>
