@@ -389,6 +389,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       device_id: string
+      user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -499,8 +500,12 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
+        /** deprecated: use external_type */
         access_group_type: 'pti_unit'
+        /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
+        external_type: 'pti_unit'
+        external_type_display_name: string
         created_at: string
       }
     }
@@ -531,8 +536,12 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
+        /** deprecated: use external_type */
         access_group_type: 'pti_unit'
+        /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
+        external_type: 'pti_unit'
+        external_type_display_name: string
         created_at: string
       }
     }
@@ -553,8 +562,12 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
+        /** deprecated: use external_type */
         access_group_type: 'pti_unit'
+        /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
+        external_type: 'pti_unit'
+        external_type_display_name: string
         created_at: string
       }>
     }
@@ -575,6 +588,8 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        external_type: 'pti_user'
+        external_type_display_name: string
         is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
@@ -622,6 +637,8 @@ export interface Routes {
         acs_user_id: string
         acs_system_id: string
         code: string | null
+        external_type: 'pti_card'
+        external_type_display_name: string
         created_at: string
         workspace_id: string
       }
@@ -653,6 +670,8 @@ export interface Routes {
         acs_user_id: string
         acs_system_id: string
         code: string | null
+        external_type: 'pti_card'
+        external_type_display_name: string
         created_at: string
         workspace_id: string
       }
@@ -673,6 +692,8 @@ export interface Routes {
         acs_user_id: string
         acs_system_id: string
         code: string | null
+        external_type: 'pti_card'
+        external_type_display_name: string
         created_at: string
         workspace_id: string
       }>
@@ -690,7 +711,11 @@ export interface Routes {
     jsonResponse: {
       acs_system: {
         acs_system_id: string
+        external_type: 'pti_site' | 'alta_org'
+        external_type_display_name: string
+        /** deprecated: use external_type */
         system_type: 'pti_site' | 'alta_org'
+        /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
         created_at: string
@@ -709,7 +734,11 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
+        external_type: 'pti_site' | 'alta_org'
+        external_type_display_name: string
+        /** deprecated: use external_type */
         system_type: 'pti_site' | 'alta_org'
+        /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
         created_at: string
@@ -748,6 +777,8 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        external_type: 'pti_user'
+        external_type_display_name: string
         is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
@@ -782,6 +813,8 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        external_type: 'pti_user'
+        external_type_display_name: string
         is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
@@ -805,6 +838,8 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
+        external_type: 'pti_user'
+        external_type_display_name: string
         is_being_deleted: boolean
         full_name?: string | undefined
         email?: string | undefined
