@@ -3680,6 +3680,88 @@ export default {
         'x-fern-sdk-method-name': 'remove_from_access_group',
       },
     },
+    '/acs/users/suspend': {
+      post: {
+        operationId: 'acsUsersSuspendPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/users/suspend',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'suspend',
+      },
+    },
+    '/acs/users/unsuspend': {
+      post: {
+        operationId: 'acsUsersUnsuspendPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/users/unsuspend',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'unsuspend',
+      },
+    },
     '/acs/users/update': {
       patch: {
         operationId: 'acsUsersUpdatePatch',
