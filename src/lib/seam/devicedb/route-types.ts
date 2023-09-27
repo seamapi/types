@@ -115,6 +115,7 @@ export interface Routes {
     queryParams: {
       main_category?: string | undefined
       manufacturer_id?: string | undefined
+      manufacturer_ids?: string[] | undefined
       integration_status?:
         | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
         | undefined
@@ -260,7 +261,11 @@ export interface Routes {
   '/v1/manufacturers/list': {
     route: '/v1/manufacturers/list'
     method: 'GET' | 'OPTIONS'
-    queryParams: {}
+    queryParams: {
+      integration_status?:
+        | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
+        | undefined
+    }
     jsonBody: {}
     commonParams: {}
     formData: {}
