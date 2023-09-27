@@ -859,6 +859,28 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/acs/users/suspend': {
+    route: '/acs/users/suspend'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/users/unsuspend': {
+    route: '/acs/users/unsuspend'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/users/update': {
     route: '/acs/users/update'
     method: 'POST' | 'PATCH'
