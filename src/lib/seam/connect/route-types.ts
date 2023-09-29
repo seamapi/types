@@ -150,7 +150,7 @@ export interface Routes {
   }
   '/access_codes/generate_code': {
     route: '/access_codes/generate_code'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -411,7 +411,7 @@ export interface Routes {
   }
   '/access_codes/unmanaged/update': {
     route: '/access_codes/unmanaged/update'
-    method: 'POST' | 'PATCH'
+    method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -425,7 +425,7 @@ export interface Routes {
   }
   '/access_codes/update': {
     route: '/access_codes/update'
-    method: 'POST' | 'PUT'
+    method: 'POST' | 'PATCH' | 'PUT'
     queryParams: {}
     jsonBody: {
       name?: string | undefined
@@ -474,7 +474,7 @@ export interface Routes {
   }
   '/acs/access_groups/add_user': {
     route: '/acs/access_groups/add_user'
-    method: 'PATCH' | 'POST'
+    method: 'PUT' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -611,7 +611,7 @@ export interface Routes {
   }
   '/acs/access_groups/update': {
     route: '/acs/access_groups/update'
-    method: 'POST' | 'PATCH'
+    method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -747,7 +747,7 @@ export interface Routes {
   }
   '/acs/users/add_to_access_group': {
     route: '/acs/users/add_to_access_group'
-    method: 'POST' | 'PATCH'
+    method: 'PUT' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -883,7 +883,7 @@ export interface Routes {
   }
   '/acs/users/update': {
     route: '/acs/users/update'
-    method: 'POST' | 'PATCH'
+    method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -993,7 +993,7 @@ export interface Routes {
   }
   '/client_sessions/delete': {
     route: '/client_sessions/delete'
-    method: 'POST' | 'DELETE'
+    method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1027,7 +1027,7 @@ export interface Routes {
   }
   '/client_sessions/grant_access': {
     route: '/client_sessions/grant_access'
-    method: 'POST' | 'PATCH'
+    method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -1052,7 +1052,7 @@ export interface Routes {
   }
   '/client_sessions/list': {
     route: '/client_sessions/list'
-    method: 'POST' | 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -2940,8 +2940,11 @@ export interface Routes {
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.third_party_integration_detected'
+            | 'device.third_party_integration_no_longer_detected'
             | 'device.salto.privacy_mode_activated'
             | 'device.salto.privacy_mode_deactivated'
+            | 'device.connection_became_flaky'
+            | 'device.connection_stabilized'
             | 'access_code.created'
             | 'access_code.changed'
             | 'access_code.scheduled_on_device'
@@ -2982,8 +2985,11 @@ export interface Routes {
             | 'device.low_battery'
             | 'device.battery_status_changed'
             | 'device.third_party_integration_detected'
+            | 'device.third_party_integration_no_longer_detected'
             | 'device.salto.privacy_mode_activated'
             | 'device.salto.privacy_mode_deactivated'
+            | 'device.connection_became_flaky'
+            | 'device.connection_stabilized'
             | 'access_code.created'
             | 'access_code.changed'
             | 'access_code.scheduled_on_device'
@@ -3441,7 +3447,7 @@ export interface Routes {
   }
   '/noise_sensors/noise_thresholds/update': {
     route: '/noise_sensors/noise_thresholds/update'
-    method: 'PUT' | 'POST'
+    method: 'PATCH' | 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
       noise_threshold_id: string
@@ -3537,7 +3543,7 @@ export interface Routes {
   }
   '/thermostats/climate_setting_schedules/delete': {
     route: '/thermostats/climate_setting_schedules/delete'
-    method: 'PUT' | 'POST' | 'DELETE'
+    method: 'DELETE' | 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {}
     commonParams: {
@@ -3608,7 +3614,7 @@ export interface Routes {
   }
   '/thermostats/climate_setting_schedules/update': {
     route: '/thermostats/climate_setting_schedules/update'
-    method: 'PUT' | 'POST'
+    method: 'PATCH' | 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
       climate_setting_schedule_id: string
@@ -5000,7 +5006,7 @@ export interface Routes {
   }
   '/thermostats/update': {
     route: '/thermostats/update'
-    method: 'POST'
+    method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
@@ -5069,7 +5075,7 @@ export interface Routes {
   }
   '/webhooks/list': {
     route: '/webhooks/list'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -5085,7 +5091,7 @@ export interface Routes {
   }
   '/workspaces/get': {
     route: '/workspaces/get'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -5103,7 +5109,7 @@ export interface Routes {
   }
   '/workspaces/list': {
     route: '/workspaces/list'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
