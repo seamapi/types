@@ -32,7 +32,7 @@ export const acs_user = z
     display_name: z.string(),
     external_type: acs_user_external_type,
     external_type_display_name: z.string(),
-    is_being_deleted: z.boolean(),
+    is_suspended: z.boolean(),
   })
   .merge(user_fields)
 

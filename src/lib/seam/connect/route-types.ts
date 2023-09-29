@@ -590,7 +590,7 @@ export interface Routes {
         display_name: string
         external_type: 'pti_user'
         external_type_display_name: string
-        is_being_deleted: boolean
+        is_suspended: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -779,7 +779,7 @@ export interface Routes {
         display_name: string
         external_type: 'pti_user'
         external_type_display_name: string
-        is_being_deleted: boolean
+        is_suspended: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -815,7 +815,7 @@ export interface Routes {
         display_name: string
         external_type: 'pti_user'
         external_type_display_name: string
-        is_being_deleted: boolean
+        is_suspended: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -840,7 +840,7 @@ export interface Routes {
         display_name: string
         external_type: 'pti_user'
         external_type_display_name: string
-        is_being_deleted: boolean
+        is_suspended: boolean
         full_name?: string | undefined
         email?: string | undefined
         phone_number?: string | undefined
@@ -2939,6 +2939,7 @@ export interface Routes {
             | 'device.tampered'
             | 'device.low_battery'
             | 'device.battery_status_changed'
+            | 'device.third_party_integration_detected'
             | 'device.salto.privacy_mode_activated'
             | 'device.salto.privacy_mode_deactivated'
             | 'access_code.created'
@@ -2980,6 +2981,7 @@ export interface Routes {
             | 'device.tampered'
             | 'device.low_battery'
             | 'device.battery_status_changed'
+            | 'device.third_party_integration_detected'
             | 'device.salto.privacy_mode_activated'
             | 'device.salto.privacy_mode_deactivated'
             | 'access_code.created'
