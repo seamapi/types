@@ -1747,16 +1747,19 @@ export default {
       },
     },
     '/access_codes/generate_code': {
-      get: {
-        operationId: 'accessCodesGenerateCodeGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'device_id',
-            required: true,
-            schema: { format: 'uuid', type: 'string' },
+      post: {
+        operationId: 'accessCodesGenerateCodePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { format: 'uuid', type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
           },
-        ],
+        },
         responses: {
           200: {
             content: {
@@ -2468,6 +2471,71 @@ export default {
       },
     },
     '/access_codes/update': {
+      patch: {
+        operationId: 'accessCodesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_code_id: { format: 'uuid', type: 'string' },
+                  allow_external_modification: { type: 'boolean' },
+                  attempt_for_offline_device: {
+                    default: true,
+                    type: 'boolean',
+                  },
+                  code: {
+                    maxLength: 8,
+                    minLength: 4,
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  device_id: { format: 'uuid', type: 'string' },
+                  ends_at: { type: 'string' },
+                  is_managed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  prefer_native_scheduling: { type: 'boolean' },
+                  starts_at: { type: 'string' },
+                  sync: { default: false, type: 'boolean' },
+                  type: { enum: ['ongoing', 'time_bound'], type: 'string' },
+                  use_backup_access_code_pool: { type: 'boolean' },
+                },
+                required: ['access_code_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/access_codes/update',
+        tags: ['/access_codes'],
+        'x-fern-ignore': true,
+      },
       post: {
         operationId: 'accessCodesUpdatePost',
         requestBody: {
@@ -2602,47 +2670,6 @@ export default {
       },
     },
     '/acs/access_groups/add_user': {
-      patch: {
-        operationId: 'acsAccessGroupsAddUserPatch',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['acs_access_group_id', 'acs_user_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/access_groups/add_user',
-        tags: [],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'acsAccessGroupsAddUserPost',
         requestBody: {
@@ -2684,6 +2711,47 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'add_user',
+      },
+      put: {
+        operationId: 'acsAccessGroupsAddUserPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_access_group_id', 'acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/access_groups/add_user',
+        tags: [],
+        'x-fern-ignore': true,
       },
     },
     '/acs/access_groups/create': {
@@ -3397,36 +3465,6 @@ export default {
       },
     },
     '/acs/users/add_to_access_group': {
-      patch: {
-        operationId: 'acsUsersAddToAccessGroupPatch',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['acs_user_id', 'acs_access_group_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/users/add_to_access_group',
-        tags: [],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'acsUsersAddToAccessGroupPost',
         requestBody: {
@@ -3457,6 +3495,36 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'add_to_access_group',
+      },
+      put: {
+        operationId: 'acsUsersAddToAccessGroupPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_user_id', 'acs_access_group_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: { description: 'OK' },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/users/add_to_access_group',
+        tags: [],
+        'x-fern-ignore': true,
       },
     },
     '/acs/users/create': {
@@ -5606,8 +5674,11 @@ export default {
                       'device.low_battery',
                       'device.battery_status_changed',
                       'device.third_party_integration_detected',
+                      'device.third_party_integration_no_longer_detected',
                       'device.salto.privacy_mode_activated',
                       'device.salto.privacy_mode_deactivated',
+                      'device.connection_became_flaky',
+                      'device.connection_stabilized',
                       'access_code.created',
                       'access_code.changed',
                       'access_code.scheduled_on_device',
@@ -5650,8 +5721,11 @@ export default {
                         'device.low_battery',
                         'device.battery_status_changed',
                         'device.third_party_integration_detected',
+                        'device.third_party_integration_no_longer_detected',
                         'device.salto.privacy_mode_activated',
                         'device.salto.privacy_mode_deactivated',
+                        'device.connection_became_flaky',
+                        'device.connection_stabilized',
                         'access_code.created',
                         'access_code.changed',
                         'access_code.scheduled_on_device',
@@ -6423,6 +6497,58 @@ export default {
       },
     },
     '/noise_sensors/noise_thresholds/update': {
+      patch: {
+        operationId: 'noiseSensorsNoiseThresholdsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  ends_daily_at: { type: 'string' },
+                  name: { type: 'string' },
+                  noise_threshold_decibels: { type: 'number' },
+                  noise_threshold_id: { format: 'uuid', type: 'string' },
+                  noise_threshold_nrs: { type: 'number' },
+                  starts_daily_at: { type: 'string' },
+                  sync: { default: false, type: 'boolean' },
+                },
+                required: ['noise_threshold_id', 'device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/noise_sensors/noise_thresholds/update',
+        tags: ['/noise_sensors'],
+        'x-fern-ignore': true,
+      },
       post: {
         operationId: 'noiseSensorsNoiseThresholdsUpdatePost',
         requestBody: {
@@ -6838,6 +6964,73 @@ export default {
       },
     },
     '/thermostats/climate_setting_schedules/update': {
+      patch: {
+        operationId: 'thermostatsClimateSettingSchedulesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  automatic_cooling_enabled: { type: 'boolean' },
+                  automatic_heating_enabled: { type: 'boolean' },
+                  climate_setting_schedule_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  cooling_set_point_celsius: { type: 'number' },
+                  cooling_set_point_fahrenheit: { type: 'number' },
+                  heating_set_point_celsius: { type: 'number' },
+                  heating_set_point_fahrenheit: { type: 'number' },
+                  hvac_mode_setting: {
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    type: 'string',
+                  },
+                  manual_override_allowed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  schedule_ends_at: { type: 'string' },
+                  schedule_starts_at: { type: 'string' },
+                  schedule_type: {
+                    default: 'time_bound',
+                    enum: ['time_bound'],
+                    type: 'string',
+                  },
+                },
+                required: ['climate_setting_schedule_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    climate_setting_schedule: {
+                      $ref: '#/components/schemas/climate_setting_schedule',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['climate_setting_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/thermostats/climate_setting_schedules/update',
+        tags: [],
+        'x-fern-ignore': true,
+      },
       post: {
         operationId: 'thermostatsClimateSettingSchedulesUpdatePost',
         requestBody: {
@@ -7439,6 +7632,62 @@ export default {
       },
     },
     '/thermostats/update': {
+      patch: {
+        operationId: 'thermostatsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  default_climate_setting: {
+                    properties: {
+                      automatic_cooling_enabled: { type: 'boolean' },
+                      automatic_heating_enabled: { type: 'boolean' },
+                      cooling_set_point_celsius: { type: 'number' },
+                      cooling_set_point_fahrenheit: { type: 'number' },
+                      heating_set_point_celsius: { type: 'number' },
+                      heating_set_point_fahrenheit: { type: 'number' },
+                      hvac_mode_setting: {
+                        enum: ['off', 'heat', 'cool', 'heat_cool'],
+                        type: 'string',
+                      },
+                      manual_override_allowed: { type: 'boolean' },
+                    },
+                    type: 'object',
+                  },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'default_climate_setting'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/thermostats/update',
+        tags: [],
+        'x-fern-ignore': true,
+      },
       post: {
         operationId: 'thermostatsUpdatePost',
         requestBody: {
@@ -7667,6 +7916,39 @@ export default {
         ],
         summary: '/webhooks/list',
         tags: ['/webhooks'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'webhooksListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    webhooks: {
+                      items: { $ref: '#/components/schemas/webhook' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['webhooks', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/webhooks/list',
+        tags: ['/webhooks'],
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'webhooks',
@@ -7701,6 +7983,36 @@ export default {
         ],
         summary: '/workspaces/get',
         tags: ['/workspaces'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'workspacesGetPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspace: { $ref: '#/components/schemas/workspace' },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/workspaces/get',
+        tags: ['/workspaces'],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'workspace',
@@ -7709,6 +8021,39 @@ export default {
     '/workspaces/list': {
       get: {
         operationId: 'workspacesListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspaces: {
+                      items: { $ref: '#/components/schemas/workspace' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['workspaces', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/workspaces/list',
+        tags: ['/workspaces'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'workspacesListPost',
         responses: {
           200: {
             content: {
