@@ -501,10 +501,18 @@ export interface Routes {
         workspace_id: string
         name: string
         /** deprecated: use external_type */
-        access_group_type: 'pti_unit'
+        access_group_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
-        external_type: 'pti_unit'
+        external_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         external_type_display_name: string
         created_at: string
       }
@@ -537,10 +545,18 @@ export interface Routes {
         workspace_id: string
         name: string
         /** deprecated: use external_type */
-        access_group_type: 'pti_unit'
+        access_group_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
-        external_type: 'pti_unit'
+        external_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         external_type_display_name: string
         created_at: string
       }
@@ -563,10 +579,18 @@ export interface Routes {
         workspace_id: string
         name: string
         /** deprecated: use external_type */
-        access_group_type: 'pti_unit'
+        access_group_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         /** deprecated: use external_type_display_name */
         access_group_type_display_name: string
-        external_type: 'pti_unit'
+        external_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
         external_type_display_name: string
         created_at: string
       }>
@@ -1572,6 +1596,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -2266,6 +2291,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -3932,6 +3958,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -4656,6 +4683,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
