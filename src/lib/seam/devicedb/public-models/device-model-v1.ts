@@ -67,7 +67,7 @@ export const base_device_model_v1 = z.object({
   is_device_supported: z.boolean(),
   display_name: z.string(),
   description: z.string(),
-  product_url: z.string(),
+  product_url: z.string().optional(),
   main_connection_type: z.enum(['wifi', 'zwave', 'zigbee', 'unknown']),
   aesthetic_variants: z
     .object({
