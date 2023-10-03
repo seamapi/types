@@ -1572,6 +1572,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -2266,6 +2267,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -3932,6 +3934,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string
@@ -4656,6 +4659,7 @@ export interface Routes {
             | {
                 device_id: string
                 device_name: string
+                product_name: string
                 product_type: string
                 product_model: string
                 device_info_model: string

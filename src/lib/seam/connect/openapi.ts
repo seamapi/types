@@ -763,11 +763,13 @@ export default {
                           device_info_model: { type: 'string' },
                           device_name: { type: 'string' },
                           product_model: { type: 'string' },
+                          product_name: { type: 'string' },
                           product_type: { type: 'string' },
                         },
                         required: [
                           'device_id',
                           'device_name',
+                          'product_name',
                           'product_type',
                           'product_model',
                           'device_info_model',
