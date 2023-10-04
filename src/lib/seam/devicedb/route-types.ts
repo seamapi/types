@@ -28,13 +28,13 @@ export interface Routes {
         is_device_supported: boolean
         display_name: string
         description: string
-        product_url: string
+        product_url?: string | undefined
         main_connection_type: 'wifi' | 'zwave' | 'zigbee' | 'unknown'
         aesthetic_variants: Array<{
           slug: string
           display_name: string
           primary_color_hex?: string | undefined
-          manufacturer_sku: string
+          manufacturer_sku?: string | undefined
           front_image?:
             | {
                 url: string
@@ -69,6 +69,7 @@ export interface Routes {
                 | 'cylinder'
                 | 'padlock'
                 | 'locker'
+                | 'unknown'
               has_physical_key: boolean
               has_camera: boolean
             }
@@ -150,13 +151,13 @@ export interface Routes {
           is_device_supported: boolean
           display_name: string
           description: string
-          product_url: string
+          product_url?: string | undefined
           main_connection_type: 'wifi' | 'zwave' | 'zigbee' | 'unknown'
           aesthetic_variants: Array<{
             slug: string
             display_name: string
             primary_color_hex?: string | undefined
-            manufacturer_sku: string
+            manufacturer_sku?: string | undefined
             front_image?:
               | {
                   url: string
@@ -191,6 +192,7 @@ export interface Routes {
                   | 'cylinder'
                   | 'padlock'
                   | 'locker'
+                  | 'unknown'
                 has_physical_key: boolean
                 has_camera: boolean
               }

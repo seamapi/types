@@ -14,6 +14,7 @@ const smartlock = z.object({
       'cylinder',
       'padlock',
       'locker',
+      'unknown',
     ]),
     has_physical_key: z.boolean(),
     has_camera: z.boolean(),
@@ -52,6 +53,8 @@ const thermostat = z.object({
   }),
 })
 
+export type ThermostatPropertiesV1 = z.infer<typeof thermostat>
+
 const relay = z.object({
   main_category: z.literal('relay'),
 })
@@ -74,7 +77,7 @@ export const base_device_model_v1 = z.object({
       slug: z.string(),
       display_name: z.string(),
       primary_color_hex: z.string().optional(),
-      manufacturer_sku: z.string(),
+      manufacturer_sku: z.string().optional(),
       front_image: image_reference.optional(),
       back_image: image_reference.optional(),
     })
