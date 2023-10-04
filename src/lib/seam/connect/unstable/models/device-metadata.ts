@@ -174,6 +174,7 @@ export const device_metadata = z
     wyze_metadata: z.object({
       device_id: z.string(),
       device_name: z.string(),
+      product_name: z.string(),
       product_type: z.string(),
       product_model: z.string(),
       device_info_model: z.string(),

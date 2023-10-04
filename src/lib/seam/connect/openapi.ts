@@ -49,7 +49,12 @@ export default {
         properties: {
           access_group_type: {
             description: 'deprecated: use external_type',
-            enum: ['pti_unit'],
+            enum: [
+              'pti_unit',
+              'pti_access_level',
+              'salto_access_group',
+              'brivo_group',
+            ],
             type: 'string',
           },
           access_group_type_display_name: {
@@ -59,7 +64,15 @@ export default {
           acs_access_group_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
-          external_type: { enum: ['pti_unit'], type: 'string' },
+          external_type: {
+            enum: [
+              'pti_unit',
+              'pti_access_level',
+              'salto_access_group',
+              'brivo_group',
+            ],
+            type: 'string',
+          },
           external_type_display_name: { type: 'string' },
           name: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -763,11 +776,13 @@ export default {
                           device_info_model: { type: 'string' },
                           device_name: { type: 'string' },
                           product_model: { type: 'string' },
+                          product_name: { type: 'string' },
                           product_type: { type: 'string' },
                         },
                         required: [
                           'device_id',
                           'device_name',
+                          'product_name',
                           'product_type',
                           'product_model',
                           'device_info_model',
