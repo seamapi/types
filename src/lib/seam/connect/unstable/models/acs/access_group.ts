@@ -1,7 +1,12 @@
 import { z } from 'zod'
 
 // If changed, update seam.acs_access_group.access_group_type check constraint
-export const acs_access_group_external_type = z.enum(['pti_unit'])
+export const acs_access_group_external_type = z.enum([
+  'pti_unit',
+  'pti_access_level',
+  'salto_access_group',
+  'brivo_group',
+])
 
 export type AcsAccessGroupExternalType = z.infer<
   typeof acs_access_group_external_type
