@@ -59,9 +59,24 @@ const relay = z.object({
   main_category: z.literal('relay'),
 })
 
+const intercom = z.object({
+  main_category: z.literal('intercom'),
+  physical_properties: z.object({
+    has_camera: z.boolean(),
+  }),
+  software_features: z.object({
+    can_remotely_unlock: z.boolean(),
+    can_program_access_codes: z.boolean(),
+  }),
+})
+
+const accessory = z.object({
+  main_category: z.literal('accessory'),
+})
+
 export const device_model_category_specific_properties = z.discriminatedUnion(
   'main_category',
-  [smartlock, sensor, thermostat, relay],
+  [smartlock, sensor, thermostat, relay, intercom, accessory],
 )
 
 export const base_device_model_v1 = z.object({
