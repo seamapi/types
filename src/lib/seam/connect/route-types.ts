@@ -1049,6 +1049,27 @@ export interface Routes {
       }
     }
   }
+  '/client_sessions/get_or_create': {
+    route: '/client_sessions/get_or_create'
+    method: 'POST' | 'PUT'
+    queryParams: {}
+    jsonBody: {
+      user_identifier_key?: string | undefined
+      connect_webview_ids?: string[] | undefined
+      connected_account_ids?: string[] | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      client_session: {
+        client_session_id: string
+        user_identifier_key: string | null
+        created_at: string
+        token: string
+        workspace_id: string
+      }
+    }
+  }
   '/client_sessions/grant_access': {
     route: '/client_sessions/grant_access'
     method: 'PATCH' | 'POST'
