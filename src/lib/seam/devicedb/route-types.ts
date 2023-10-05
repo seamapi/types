@@ -107,6 +107,16 @@ export interface Routes {
         | {
             main_category: 'relay'
           }
+        | {
+            main_category: 'intercom'
+            physical_properties: {
+              has_camera: boolean
+            }
+            software_features: {
+              can_remotely_unlock: boolean
+              can_program_access_codes: boolean
+            }
+          }
       )
     }
   }
@@ -229,6 +239,16 @@ export interface Routes {
             }
           | {
               main_category: 'relay'
+            }
+          | {
+              main_category: 'intercom'
+              physical_properties: {
+                has_camera: boolean
+              }
+              software_features: {
+                can_remotely_unlock: boolean
+                can_program_access_codes: boolean
+              }
             }
         )
       >
