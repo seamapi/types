@@ -95,6 +95,7 @@ export const base_device_model_v1 = z.object({
       manufacturer_sku: z.string().optional(),
       front_image: image_reference.optional(),
       back_image: image_reference.optional(),
+      images: image_reference.array(),
     })
     .array(),
   power_sources: z
