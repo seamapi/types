@@ -49,6 +49,11 @@ export interface Routes {
                 height: number
               }
             | undefined
+          images: Array<{
+            url: string
+            width: number
+            height: number
+          }>
         }>
         power_sources: Array<
           | 'battery'
@@ -185,6 +190,11 @@ export interface Routes {
                   height: number
                 }
               | undefined
+            images: Array<{
+              url: string
+              width: number
+              height: number
+            }>
           }>
           power_sources: Array<
             | 'battery'
