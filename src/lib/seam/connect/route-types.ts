@@ -15,6 +15,7 @@ export interface Routes {
       prefer_native_scheduling?: boolean | undefined
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
+      is_external_modification_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -82,6 +83,7 @@ export interface Routes {
       prefer_native_scheduling?: boolean | undefined
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
+      is_external_modification_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -309,6 +311,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       access_code_id: string
+      is_external_modification_allowed?: boolean | undefined
       allow_external_modification?: boolean | undefined
       force?: boolean | undefined
       sync?: boolean
@@ -418,6 +421,7 @@ export interface Routes {
       access_code_id: string
       is_managed: boolean
       allow_external_modification?: boolean | undefined
+      is_external_modification_allowed?: boolean | undefined
       force?: boolean | undefined
     }
     formData: {}
@@ -437,6 +441,7 @@ export interface Routes {
       prefer_native_scheduling?: boolean | undefined
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
+      is_external_modification_allowed?: boolean | undefined
       access_code_id: string
       device_id?: string | undefined
       type?: ('ongoing' | 'time_bound') | undefined
