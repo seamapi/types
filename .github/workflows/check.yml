@@ -102,3 +102,14 @@ jobs:
           node_version: ${{ matrix.node }}
       - name: Typecheck
         run: npm run typecheck
+  docs:
+    name: Docs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+      - name: Build docs
+        run: npm run docs:build
