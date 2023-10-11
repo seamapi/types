@@ -59,6 +59,7 @@
     "prebuild:ts": "del 'index.*' 'connect.*' 'devicedb.*' 'lib'",
     "postbuild:ts": "tsc-alias --project tsconfig.build.json",
     "typecheck": "tsc",
+    "docs:build": "typedoc",
     "lint": "eslint --ignore-path .gitignore .",
     "prelint": "prettier --check --ignore-path .gitignore .",
     "postversion": "git push --follow-tags",
@@ -96,6 +97,7 @@
     "tsup": "^7.1.0",
     "tsx": "^3.12.1",
     "type-fest": "^4.3.1",
+    "typedoc": "^0.25.2",
     "typescript": "^5.0.2",
     "zod": "^3.21.4"
   }

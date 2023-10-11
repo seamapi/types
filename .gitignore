@@ -12,6 +12,7 @@
 !src/**/*.d.ts
 
 # Build directories
+docs
 package
 
 # Environment versions file
