@@ -3,8 +3,28 @@ import { z } from 'zod'
 import { image_reference } from './image-reference.js'
 import { manufacturer } from './manufacturer.js'
 
+export const device_category = z.enum([
+  'smartlock',
+  'sensor',
+  'thermostat',
+  'relay',
+  'intercom',
+  'accessory',
+])
+
+export type DeviceCategory = z.infer<typeof device_category>
+
+export const device_connection_type = z.enum([
+  'wifi',
+  'zwave',
+  'zigbee',
+  'unknown',
+])
+
+export type DeviceConnectionType = z.infer<typeof device_connection_type>
+
 const smartlock = z.object({
-  main_category: z.literal('smartlock'),
+  main_category: z.literal(device_category.enum.smartlock),
   physical_properties: z.object({
     lock_type: z.enum([
       'deadbolt',
@@ -28,7 +48,7 @@ const smartlock = z.object({
 })
 
 const sensor = z.object({
-  main_category: z.literal('sensor'),
+  main_category: z.literal(device_category.enum.sensor),
   physical_properties: z.object({
     has_noise_sensor: z.boolean(),
     has_humidity_sensor: z.boolean(),
@@ -37,8 +57,8 @@ const sensor = z.object({
   }),
 })
 
-const thermostat = z.object({
-  main_category: z.literal('thermostat'),
+export const thermostat = z.object({
+  main_category: z.literal(device_category.enum.thermostat),
   physical_properties: z.object({
     available_modes: z.enum(['heat', 'cool', 'fan', 'eco']).array(),
     is_heat_pump_compatible: z.boolean(),
@@ -56,11 +76,11 @@ const thermostat = z.object({
 export type ThermostatPropertiesV1 = z.infer<typeof thermostat>
 
 const relay = z.object({
-  main_category: z.literal('relay'),
+  main_category: z.literal(device_category.enum.relay),
 })
 
 const intercom = z.object({
-  main_category: z.literal('intercom'),
+  main_category: z.literal(device_category.enum.intercom),
   physical_properties: z.object({
     has_camera: z.boolean(),
   }),
@@ -71,7 +91,7 @@ const intercom = z.object({
 })
 
 const accessory = z.object({
-  main_category: z.literal('accessory'),
+  main_category: z.literal(device_category.enum.accessory),
 })
 
 export const device_model_category_specific_properties = z.discriminatedUnion(
@@ -86,7 +106,7 @@ export const base_device_model_v1 = z.object({
   display_name: z.string(),
   description: z.string(),
   product_url: z.string().optional(),
-  main_connection_type: z.enum(['wifi', 'zwave', 'zigbee', 'unknown']),
+  main_connection_type: device_connection_type,
   aesthetic_variants: z
     .object({
       slug: z.string(),

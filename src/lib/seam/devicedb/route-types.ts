@@ -132,7 +132,13 @@ export interface Routes {
     route: '/v1/device_models/list'
     method: 'GET' | 'OPTIONS'
     queryParams: {
-      main_category?: string | undefined
+      main_category:
+        | 'smartlock'
+        | 'sensor'
+        | 'thermostat'
+        | 'relay'
+        | 'intercom'
+        | 'accessory'
       manufacturer_id?: string | undefined
       manufacturer_ids?: string[] | undefined
       integration_status?:

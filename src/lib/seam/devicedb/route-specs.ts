@@ -1,0 +1,50 @@
+import { z } from 'zod'
+
+import * as schemas from './public-models/index.js'
+
+export const routes = {
+  '/api/v1/device_models/get': {
+    auth: 'publishable_key',
+    methods: ['GET', 'OPTIONS'],
+    queryParams: z.object({
+      device_model_id: z.string().uuid(),
+    }),
+    jsonResponse: z.object({
+      device_model: schemas.device_model_v1,
+    }),
+  },
+  '/api/v1/device_models/list': {
+    auth: 'publishable_key',
+    methods: ['GET', 'OPTIONS'],
+    queryParams: z.object({
+      main_category: schemas.device_category,
+      manufacturer_id: z.string().uuid().optional(),
+      manufacturer_ids: z.string().uuid().array().optional(),
+      integration_status: schemas.manufacturer.shape.integration.optional(),
+      text_search: z.string().optional(),
+    }),
+    jsonResponse: z.object({
+      device_models: schemas.device_model_v1.array(),
+    }),
+  },
+  '/api/v1/manufacturers/get': {
+    auth: 'publishable_key',
+    methods: ['GET', 'OPTIONS'],
+    queryParams: z.object({
+      manufacturer_id: z.string().uuid(),
+    }),
+    jsonResponse: z.object({
+      manufacturer: schemas.manufacturer,
+    }),
+  },
+  '/api/v1/manufacturers/list': {
+    auth: 'publishable_key',
+    methods: ['GET', 'OPTIONS'],
+    queryParams: z.object({
+      integration_status: schemas.manufacturer.shape.integration.optional(),
+    }),
+    jsonResponse: z.object({
+      manufacturers: schemas.manufacturer.array(),
+    }),
+  },
+} as const
