@@ -17,7 +17,7 @@ export const routes = {
     auth: 'publishable_key',
     methods: ['GET', 'OPTIONS'],
     queryParams: z.object({
-      main_category: schemas.device_category,
+      main_category: schemas.device_category.optional(),
       manufacturer_id: z.string().uuid().optional(),
       manufacturer_ids: z.string().uuid().array().optional(),
       integration_status: schemas.manufacturer.shape.integration.optional(),
