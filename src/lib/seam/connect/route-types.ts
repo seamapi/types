@@ -748,6 +748,7 @@ export interface Routes {
         system_type_display_name: string
         name: string
         created_at: string
+        connected_account_ids: string[]
       }
     }
   }
@@ -771,6 +772,7 @@ export interface Routes {
         system_type_display_name: string
         name: string
         created_at: string
+        connected_account_ids: string[]
       }>
     }
   }
