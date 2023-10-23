@@ -42,6 +42,7 @@ export const routes = {
     methods: ['GET', 'OPTIONS'],
     queryParams: z.object({
       integration_status: schemas.manufacturer.shape.integration.optional(),
+      liqe_query: z.string().optional(),
     }),
     jsonResponse: z.object({
       manufacturers: schemas.manufacturer.array(),
