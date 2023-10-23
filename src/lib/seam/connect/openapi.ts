@@ -93,6 +93,7 @@ export default {
       acs_system: {
         properties: {
           acs_system_id: { format: 'uuid', type: 'string' },
+          connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: { enum: ['pti_site', 'alta_org'], type: 'string' },
           external_type_display_name: { type: 'string' },
@@ -115,6 +116,7 @@ export default {
           'system_type_display_name',
           'name',
           'created_at',
+          'connected_account_ids',
         ],
         type: 'object',
       },
