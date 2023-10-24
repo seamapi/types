@@ -443,6 +443,7 @@ export default {
                       name: { type: 'string' },
                       online: { type: 'boolean' },
                       serial_number: { type: 'string' },
+                      supports_accessory_keypad: { type: 'boolean' },
                     },
                     required: ['online', 'name', 'model'],
                     type: 'object',
