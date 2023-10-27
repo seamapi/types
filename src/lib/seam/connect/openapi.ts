@@ -5044,7 +5044,12 @@ export default {
               schema: {
                 properties: {
                   connect_webview_id: { format: 'uuid', type: 'string' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'List all devices owned by this connected account',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
@@ -5349,7 +5354,12 @@ export default {
               schema: {
                 properties: {
                   connect_webview_id: { format: 'uuid', type: 'string' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'List all devices owned by this connected account',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
@@ -6146,7 +6156,12 @@ export default {
               schema: {
                 properties: {
                   connect_webview_id: { format: 'uuid', type: 'string' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'List all devices owned by this connected account',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
@@ -7492,7 +7507,12 @@ export default {
               schema: {
                 properties: {
                   connect_webview_id: { format: 'uuid', type: 'string' },
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'List all devices owned by this connected account',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
                     minItems: 1,
