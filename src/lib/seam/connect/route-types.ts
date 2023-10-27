@@ -1956,6 +1956,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** List all devices owned by this connected account */
       connected_account_id?: string | undefined
       connected_account_ids?: string[] | undefined
       connect_webview_id?: string | undefined
@@ -2742,6 +2743,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** List all devices owned by this connected account */
       connected_account_id?: string | undefined
       connected_account_ids?: string[] | undefined
       connect_webview_id?: string | undefined
@@ -3187,6 +3189,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** List all devices owned by this connected account */
       connected_account_id?: string | undefined
       connected_account_ids?: string[] | undefined
       connect_webview_id?: string | undefined
@@ -4350,6 +4353,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** List all devices owned by this connected account */
       connected_account_id?: string | undefined
       connected_account_ids?: string[] | undefined
       connect_webview_id?: string | undefined
