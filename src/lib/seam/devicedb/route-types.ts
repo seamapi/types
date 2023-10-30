@@ -302,6 +302,7 @@ export interface Routes {
         integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
+        device_model_count?: number | undefined
       }
     }
   }
@@ -331,6 +332,7 @@ export interface Routes {
         integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
+        device_model_count?: number | undefined
       }>
     }
   }

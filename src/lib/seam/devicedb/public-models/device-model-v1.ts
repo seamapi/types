@@ -101,7 +101,9 @@ export const device_model_category_specific_properties = z.discriminatedUnion(
 
 export const base_device_model_v1 = z.object({
   device_model_id: z.string().uuid(),
-  manufacturer,
+  manufacturer: manufacturer.omit({
+    device_model_count: true,
+  }),
   is_device_supported: z.boolean(),
   display_name: z.string(),
   description: z.string(),
