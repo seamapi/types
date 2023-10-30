@@ -21,7 +21,7 @@ export const manufacturer = z.object({
   integration: manufacturer_integration_support_level,
   is_connect_webview_supported: z.boolean(),
   requires_seam_support_to_add_account: z.boolean(),
-  device_model_count: z.number().optional(),
+  device_model_count: z.number(),
 })
 
 export type Manufacturer = z.infer<typeof manufacturer>
