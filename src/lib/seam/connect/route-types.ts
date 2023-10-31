@@ -5222,6 +5222,7 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          supports_accessory_keypad?: boolean | undefined
         } & {
           august_metadata?:
             | {
