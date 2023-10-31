@@ -65,6 +65,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -108,6 +110,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }>
     }
   }
@@ -198,6 +202,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -233,6 +239,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }>
     }
   }
@@ -266,6 +274,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -1427,6 +1437,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           serial_number?: string | undefined
           supports_accessory_keypad?: boolean | undefined
+          supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
             | {
@@ -2124,6 +2135,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           serial_number?: string | undefined
           supports_accessory_keypad?: boolean | undefined
+          supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
             | {
@@ -3794,6 +3806,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           serial_number?: string | undefined
           supports_accessory_keypad?: boolean | undefined
+          supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
             | {
@@ -4521,6 +4534,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           serial_number?: string | undefined
           supports_accessory_keypad?: boolean | undefined
+          supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
             | {
@@ -5223,6 +5237,7 @@ export interface Routes {
           image_alt_text?: string | undefined
           serial_number?: string | undefined
           supports_accessory_keypad?: boolean | undefined
+          supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
             | {
