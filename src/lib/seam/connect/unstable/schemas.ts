@@ -19,4 +19,5 @@ export {
   noise_sensor_device_type,
   thermostat_device_type,
   unmanaged_device,
+  user_identity,
 } from './models/index.js'

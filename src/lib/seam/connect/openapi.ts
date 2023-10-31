@@ -7894,6 +7894,503 @@ export default {
         'x-fern-sdk-method-name': 'update',
       },
     },
+    '/user_identities/add_acs_user': {
+      post: {
+        operationId: 'userIdentitiesAddAcsUserPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/add_acs_user',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'add_acs_user',
+      },
+      put: {
+        operationId: 'userIdentitiesAddAcsUserPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/add_acs_user',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+    },
+    '/user_identities/create': {
+      post: {
+        operationId: 'userIdentitiesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  email_address: {
+                    format: 'email',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  user_identity_key: { nullable: true, type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identity: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                        user_identity_key: { nullable: true, type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'user_identity_id',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['user_identity', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'create',
+      },
+    },
+    '/user_identities/get': {
+      post: {
+        operationId: 'userIdentitiesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      user_identity_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: ['user_identity_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: { user_identity_key: { type: 'string' } },
+                    required: ['user_identity_key'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identity: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                        user_identity_key: { nullable: true, type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'user_identity_id',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                  },
+                  required: ['user_identity', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
+    '/user_identities/grant_access_to_device': {
+      post: {
+        operationId: 'userIdentitiesGrantAccessToDevicePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/grant_access_to_device',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'grant_access_to_device',
+      },
+      put: {
+        operationId: 'userIdentitiesGrantAccessToDevicePut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/grant_access_to_device',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+    },
+    '/user_identities/list_accessible_devices': {
+      post: {
+        operationId: 'userIdentitiesListAccessibleDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    accessible_devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['accessible_devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/list_accessible_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_accessible_devices',
+      },
+    },
+    '/user_identities/list_acs_users': {
+      post: {
+        operationId: 'userIdentitiesListAcsUsersPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: { $ref: '#/components/schemas/acs_user' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/list_acs_users',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_acs_users',
+      },
+    },
+    '/user_identities/remove_acs_user': {
+      post: {
+        operationId: 'userIdentitiesRemoveAcsUserPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/remove_acs_user',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'remove_acs_user',
+      },
+    },
+    '/user_identities/revoke_access_to_device': {
+      post: {
+        operationId: 'userIdentitiesRevokeAccessToDevicePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id', 'device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/revoke_access_to_device',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'revoke_access_to_device',
+      },
+    },
     '/webhooks/create': {
       post: {
         operationId: 'webhooksCreatePost',
