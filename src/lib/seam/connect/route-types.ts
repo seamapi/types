@@ -5091,6 +5091,709 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/user_identities/add_acs_user': {
+    route: '/user_identities/add_acs_user'
+    method: 'POST' | 'PUT'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/user_identities/create': {
+    route: '/user_identities/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_key?: (string | null) | undefined
+      email_address?: (string | null) | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      user_identity: {
+        user_identity_id: string
+        user_identity_key?: (string | null) | undefined
+        email_address?: (string | null) | undefined
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
+  '/user_identities/get': {
+    route: '/user_identities/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams:
+      | {
+          user_identity_id: string
+        }
+      | {
+          user_identity_key: string
+        }
+    formData: {}
+    jsonResponse: {
+      user_identity: {
+        user_identity_id: string
+        user_identity_key?: (string | null) | undefined
+        email_address?: (string | null) | undefined
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
+  '/user_identities/grant_access_to_device': {
+    route: '/user_identities/grant_access_to_device'
+    method: 'PUT' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      device_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/user_identities/list_accessible_devices': {
+    route: '/user_identities/list_accessible_devices'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      accessible_devices: Array<{
+        device_id: string
+        device_type:
+          | (
+              | 'akuvox_lock'
+              | 'august_lock'
+              | 'brivo_access_point'
+              | 'butterflymx_panel'
+              | 'avigilon_alta_entry'
+              | 'doorking_lock'
+              | 'genie_door'
+              | 'igloo_lock'
+              | 'linear_lock'
+              | 'lockly_lock'
+              | 'kwikset_lock'
+              | 'nuki_lock'
+              | 'salto_lock'
+              | 'schlage_lock'
+              | 'seam_relay'
+              | 'smartthings_lock'
+              | 'wyze_lock'
+              | 'yale_lock'
+              | 'two_n_intercom'
+              | 'controlbyweb_device'
+              | 'ttlock_lock'
+              | 'igloohome_lock'
+              | 'hubitat_lock'
+              | 'four_suites_door'
+              | 'dormakaba_oracode_door'
+            )
+          | ('noiseaware_activity_zone' | 'minut_sensor')
+          | ('ecobee_thermostat' | 'nest_thermostat')
+        capabilities_supported: Array<
+          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+        >
+        properties: ({
+          online: boolean
+          name: string
+          model: {
+            display_name: string
+            manufacturer_display_name: string
+          }
+          has_direct_power?: boolean | undefined
+          battery_level?: number | undefined
+          battery?:
+            | {
+                level: number
+                status: 'critical' | 'low' | 'good' | 'full'
+              }
+            | undefined
+          manufacturer?: string | undefined
+          image_url?: string | undefined
+          image_alt_text?: string | undefined
+          serial_number?: string | undefined
+        } & {
+          august_metadata?:
+            | {
+                lock_id: string
+                lock_name: string
+                house_name: string
+                has_keypad: boolean
+                keypad_battery_level?: string | undefined
+                model?: string | undefined
+                house_id?: string | undefined
+              }
+            | undefined
+          avigilon_alta_metadata?:
+            | {
+                entry_name: string
+                org_name: string
+                zone_id: number
+                zone_name: string
+                site_id: number
+                site_name: string
+              }
+            | undefined
+          schlage_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                access_code_length: number
+                model?: string | undefined
+              }
+            | undefined
+          smartthings_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                model?: string | undefined
+                location_id?: string | undefined
+              }
+            | undefined
+          lockly_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                model?: string | undefined
+              }
+            | undefined
+          nuki_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                keypad_battery_critical?: boolean | undefined
+              }
+            | undefined
+          kwikset_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                model_number: string
+              }
+            | undefined
+          salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          genie_metadata?:
+            | {
+                device_name: string
+                door_name: string
+              }
+            | undefined
+          brivo_metadata?:
+            | {
+                device_name: string
+              }
+            | undefined
+          igloo_metadata?:
+            | {
+                device_id: string
+                bridge_id: string
+                model?: string | undefined
+              }
+            | undefined
+          noiseaware_metadata?:
+            | {
+                device_model: 'indoor' | 'outdoor'
+                noise_level_nrs: number
+                noise_level_decibel: number
+                device_name: string
+                device_id: string
+              }
+            | undefined
+          minut_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                latest_sensor_values: {
+                  temperature: {
+                    time: string
+                    value: number
+                  }
+                  sound: {
+                    time: string
+                    value: number
+                  }
+                  humidity: {
+                    time: string
+                    value: number
+                  }
+                  pressure: {
+                    time: string
+                    value: number
+                  }
+                  accelerometer_z: {
+                    time: string
+                    value: number
+                  }
+                }
+              }
+            | undefined
+          four_suites_metadata?:
+            | {
+                device_id: number
+                device_name: string
+                reclose_delay_in_seconds: number
+              }
+            | undefined
+          two_n_metadata?:
+            | {
+                device_id: number
+                device_name: string
+              }
+            | undefined
+          controlbyweb_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                relay_name: string | null
+              }
+            | undefined
+          ttlock_metadata?:
+            | {
+                lock_id: number
+                lock_alias: string
+              }
+            | undefined
+          seam_bridge_metadata?:
+            | {
+                unlock_method?: ('bridge' | 'doorking') | undefined
+                device_num: number
+                name: string
+              }
+            | undefined
+          igloohome_metadata?:
+            | {
+                device_id: string
+                bridge_id: string
+                device_name: string
+                bridge_name: string
+              }
+            | undefined
+          nest_metadata?:
+            | {
+                nest_device_id: string
+                device_name: string
+                custom_name: string
+              }
+            | undefined
+          ecobee_metadata?:
+            | {
+                ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          hubitat_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                device_label: string
+              }
+            | undefined
+          dormakaba_oracode_metadata?:
+            | {
+                door_id: number
+                door_name: string
+                device_id?: number | undefined
+                site_id: number
+                site_name: string
+              }
+            | undefined
+          wyze_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_name: string
+                product_type: string
+                product_model: string
+                device_info_model: string
+              }
+            | undefined
+        }) &
+          ({
+            code_constraints?:
+              | (
+                  | Array<
+                      | {
+                          constraint_type:
+                            | 'no_zeros'
+                            | 'cannot_start_with_12'
+                            | 'no_triple_consecutive_ints'
+                            | 'cannot_specify_pin_code'
+                            | 'pin_code_matches_existing_set'
+                            | 'start_date_in_future'
+                        }
+                      | {
+                          constraint_type: 'name_length'
+                          min_length?: number | undefined
+                          max_length?: number | undefined
+                        }
+                    >
+                  | undefined
+                )
+              | undefined
+            supported_code_lengths?: (number[] | undefined) | undefined
+            max_active_codes_supported?: (number | undefined) | undefined
+            supports_backup_access_code_pool?: (boolean | undefined) | undefined
+            has_native_entry_events?: (boolean | undefined) | undefined
+            locked?: (boolean | undefined) | undefined
+            keypad_battery?:
+              | (
+                  | {
+                      level: number
+                    }
+                  | undefined
+                )
+              | undefined
+            door_open?: (boolean | undefined) | undefined
+          } & (
+            | {
+                temperature_fahrenheit?: number | undefined
+                temperature_celsius?: number | undefined
+                relative_humidity?: number | undefined
+                can_enable_automatic_heating?: boolean | undefined
+                can_enable_automatic_cooling?: boolean | undefined
+                available_hvac_mode_settings?:
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+                  | undefined
+                is_heating_available?: true | undefined
+                is_cooling_available?: true | undefined
+                is_heating?: boolean | undefined
+                is_cooling?: boolean | undefined
+                is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
+                is_temporary_manual_override_active?: boolean | undefined
+                current_climate_setting?:
+                  | {
+                      automatic_heating_enabled: boolean
+                      automatic_cooling_enabled: boolean
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                      cooling_set_point_celsius?: number | undefined
+                      heating_set_point_celsius?: number | undefined
+                      cooling_set_point_fahrenheit?: number | undefined
+                      heating_set_point_fahrenheit?: number | undefined
+                      manual_override_allowed: boolean
+                    }
+                  | undefined
+                default_climate_setting?:
+                  | (
+                      | {
+                          automatic_heating_enabled: boolean
+                          automatic_cooling_enabled: boolean
+                          hvac_mode_setting:
+                            | 'off'
+                            | 'heat'
+                            | 'cool'
+                            | 'heat_cool'
+                          cooling_set_point_celsius?: number | undefined
+                          heating_set_point_celsius?: number | undefined
+                          cooling_set_point_fahrenheit?: number | undefined
+                          heating_set_point_fahrenheit?: number | undefined
+                          manual_override_allowed: boolean
+                        }
+                      | undefined
+                    )
+                  | undefined
+                is_climate_setting_schedule_active?: boolean | undefined
+                active_climate_setting_schedule?:
+                  | (
+                      | {
+                          climate_setting_schedule_id: string
+                          schedule_type: 'time_bound'
+                          device_id: string
+                          name?: string | undefined
+                          schedule_starts_at: string
+                          schedule_ends_at: string
+                          created_at: string
+                          automatic_heating_enabled?: boolean | undefined
+                          automatic_cooling_enabled?: boolean | undefined
+                          hvac_mode_setting?:
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
+                            | undefined
+                          cooling_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          cooling_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          manual_override_allowed?: boolean | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                min_cooling_set_point_celsius?: number | undefined
+                min_cooling_set_point_fahrenheit?: number | undefined
+                max_cooling_set_point_celsius?: number | undefined
+                max_cooling_set_point_fahrenheit?: number | undefined
+                min_heating_set_point_celsius?: number | undefined
+                min_heating_set_point_fahrenheit?: number | undefined
+                max_heating_set_point_celsius?: number | undefined
+                max_heating_set_point_fahrenheit?: number | undefined
+                min_heating_cooling_delta_celsius?: number | undefined
+                min_heating_cooling_delta_fahrenheit?: number | undefined
+              }
+            | {
+                temperature_fahrenheit?: number | undefined
+                temperature_celsius?: number | undefined
+                relative_humidity?: number | undefined
+                can_enable_automatic_heating?: boolean | undefined
+                can_enable_automatic_cooling?: boolean | undefined
+                available_hvac_mode_settings?:
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+                  | undefined
+                is_heating_available?: true | undefined
+                is_cooling_available?: false | undefined
+                is_heating?: boolean | undefined
+                is_cooling?: boolean | undefined
+                is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
+                is_temporary_manual_override_active?: boolean | undefined
+                current_climate_setting?:
+                  | {
+                      automatic_heating_enabled: boolean
+                      automatic_cooling_enabled: boolean
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                      cooling_set_point_celsius?: number | undefined
+                      heating_set_point_celsius?: number | undefined
+                      cooling_set_point_fahrenheit?: number | undefined
+                      heating_set_point_fahrenheit?: number | undefined
+                      manual_override_allowed: boolean
+                    }
+                  | undefined
+                default_climate_setting?:
+                  | (
+                      | {
+                          automatic_heating_enabled: boolean
+                          automatic_cooling_enabled: boolean
+                          hvac_mode_setting:
+                            | 'off'
+                            | 'heat'
+                            | 'cool'
+                            | 'heat_cool'
+                          cooling_set_point_celsius?: number | undefined
+                          heating_set_point_celsius?: number | undefined
+                          cooling_set_point_fahrenheit?: number | undefined
+                          heating_set_point_fahrenheit?: number | undefined
+                          manual_override_allowed: boolean
+                        }
+                      | undefined
+                    )
+                  | undefined
+                is_climate_setting_schedule_active?: boolean | undefined
+                active_climate_setting_schedule?:
+                  | (
+                      | {
+                          climate_setting_schedule_id: string
+                          schedule_type: 'time_bound'
+                          device_id: string
+                          name?: string | undefined
+                          schedule_starts_at: string
+                          schedule_ends_at: string
+                          created_at: string
+                          automatic_heating_enabled?: boolean | undefined
+                          automatic_cooling_enabled?: boolean | undefined
+                          hvac_mode_setting?:
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
+                            | undefined
+                          cooling_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          cooling_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          manual_override_allowed?: boolean | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                min_heating_set_point_celsius?: number | undefined
+                min_heating_set_point_fahrenheit?: number | undefined
+                max_heating_set_point_celsius?: number | undefined
+                max_heating_set_point_fahrenheit?: number | undefined
+              }
+            | {
+                temperature_fahrenheit?: number | undefined
+                temperature_celsius?: number | undefined
+                relative_humidity?: number | undefined
+                can_enable_automatic_heating?: boolean | undefined
+                can_enable_automatic_cooling?: boolean | undefined
+                available_hvac_mode_settings?:
+                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+                  | undefined
+                is_heating_available?: false | undefined
+                is_cooling_available?: true | undefined
+                is_heating?: boolean | undefined
+                is_cooling?: boolean | undefined
+                is_fan_running?: boolean | undefined
+                fan_mode_setting?: ('auto' | 'on') | undefined
+                is_temporary_manual_override_active?: boolean | undefined
+                current_climate_setting?:
+                  | {
+                      automatic_heating_enabled: boolean
+                      automatic_cooling_enabled: boolean
+                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                      cooling_set_point_celsius?: number | undefined
+                      heating_set_point_celsius?: number | undefined
+                      cooling_set_point_fahrenheit?: number | undefined
+                      heating_set_point_fahrenheit?: number | undefined
+                      manual_override_allowed: boolean
+                    }
+                  | undefined
+                default_climate_setting?:
+                  | (
+                      | {
+                          automatic_heating_enabled: boolean
+                          automatic_cooling_enabled: boolean
+                          hvac_mode_setting:
+                            | 'off'
+                            | 'heat'
+                            | 'cool'
+                            | 'heat_cool'
+                          cooling_set_point_celsius?: number | undefined
+                          heating_set_point_celsius?: number | undefined
+                          cooling_set_point_fahrenheit?: number | undefined
+                          heating_set_point_fahrenheit?: number | undefined
+                          manual_override_allowed: boolean
+                        }
+                      | undefined
+                    )
+                  | undefined
+                is_climate_setting_schedule_active?: boolean | undefined
+                active_climate_setting_schedule?:
+                  | (
+                      | {
+                          climate_setting_schedule_id: string
+                          schedule_type: 'time_bound'
+                          device_id: string
+                          name?: string | undefined
+                          schedule_starts_at: string
+                          schedule_ends_at: string
+                          created_at: string
+                          automatic_heating_enabled?: boolean | undefined
+                          automatic_cooling_enabled?: boolean | undefined
+                          hvac_mode_setting?:
+                            | ('off' | 'heat' | 'cool' | 'heat_cool')
+                            | undefined
+                          cooling_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_celsius?:
+                            | (number | undefined)
+                            | undefined
+                          cooling_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          heating_set_point_fahrenheit?:
+                            | (number | undefined)
+                            | undefined
+                          manual_override_allowed?: boolean | undefined
+                        }
+                      | undefined
+                    )
+                  | undefined
+                min_cooling_set_point_celsius?: number | undefined
+                min_cooling_set_point_fahrenheit?: number | undefined
+                max_cooling_set_point_celsius?: number | undefined
+                max_cooling_set_point_fahrenheit?: number | undefined
+              }
+          ))
+        location: {
+          location_name?: string | undefined
+          timezone?: string | undefined
+        } | null
+        connected_account_id: string
+        workspace_id: string
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        created_at: string
+        is_managed: true
+      }>
+    }
+  }
+  '/user_identities/list_acs_users': {
+    route: '/user_identities/list_acs_users'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_users: Array<{
+        acs_user_id: string
+        acs_system_id: string
+        workspace_id: string
+        created_at: string
+        display_name: string
+        external_type: 'pti_user'
+        external_type_display_name: string
+        is_suspended: boolean
+        full_name?: string | undefined
+        email?: string | undefined
+        phone_number?: string | undefined
+      }>
+    }
+  }
+  '/user_identities/remove_acs_user': {
+    route: '/user_identities/remove_acs_user'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/user_identities/revoke_access_to_device': {
+    route: '/user_identities/revoke_access_to_device'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      device_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/webhooks/create': {
     route: '/webhooks/create'
     method: 'POST'
