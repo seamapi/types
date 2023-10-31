@@ -31,6 +31,7 @@ export const common_device_properties = z.object({
   image_alt_text: z.string().optional(),
   serial_number: z.string().optional(),
   supports_accessory_keypad: z.boolean().optional(),
+  supports_offline_access_codes: z.boolean().optional(),
 })
 
 export const managed_device = z.object({
