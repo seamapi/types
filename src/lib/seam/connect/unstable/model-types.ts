@@ -12,10 +12,13 @@ export type {
   BatteryStatus,
   Capabilities,
   ClimateSetting,
+  DeviceMetadata,
   LockDeviceType,
+  ManagedAccessCode,
   ManagedDevice,
   ManagedDeviceWithBackendMetadata,
   NoiseSensorDeviceType,
   ThermostatDeviceType,
+  UnmanagedAccessCode,
   UnmanagedDevice,
 } from './models/index.js'

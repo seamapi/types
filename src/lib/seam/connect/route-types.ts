@@ -58,15 +58,13 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: true
-        starts_at?: string | undefined
-        ends_at?: string | undefined
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
-        is_one_time_use: boolean
-        is_offline_access_code: boolean
       }
     }
   }
@@ -103,15 +101,13 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: true
-        starts_at?: string | undefined
-        ends_at?: string | undefined
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
-        is_one_time_use: boolean
-        is_offline_access_code: boolean
       }>
     }
   }
@@ -195,15 +191,13 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: true
-        starts_at?: string | undefined
-        ends_at?: string | undefined
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
-        is_one_time_use: boolean
-        is_offline_access_code: boolean
       }
     }
   }
@@ -232,15 +226,13 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: true
-        starts_at?: string | undefined
-        ends_at?: string | undefined
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
-        is_one_time_use: boolean
-        is_offline_access_code: boolean
       }>
     }
   }
@@ -267,15 +259,13 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: true
-        starts_at?: string | undefined
-        ends_at?: string | undefined
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
         is_backup_access_code_available: boolean
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
-        is_one_time_use: boolean
-        is_offline_access_code: boolean
       }
     }
   }
@@ -291,27 +281,20 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      access_code:
-        | {
-            access_code_id: string
-            code: string | null
-            status: 'set'
-            created_at: string | Date
-            is_managed: false
-            type: 'ongoing'
-            starts_at: null
-            ends_at: null
-          }
-        | {
-            access_code_id: string
-            code: string | null
-            status: 'set'
-            created_at: string | Date
-            is_managed: false
-            type: 'time_bound'
-            starts_at: string | null
-            ends_at: string | null
-          }
+      access_code: {
+        type: 'time_bound' | 'ongoing'
+        access_code_id: string
+        device_id: string
+        name: string | null
+        code: string | null
+        created_at: string
+        errors?: any
+        warnings?: any
+        is_managed: false
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
+        status: 'set'
+      }
     }
   }
   '/access_codes/unmanaged/convert_to_managed': {
@@ -389,8 +372,8 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: false
-        starts_at: string | null
-        ends_at: string | null
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'set'
       }
     }
@@ -416,8 +399,8 @@ export interface Routes {
         errors?: any
         warnings?: any
         is_managed: false
-        starts_at: string | null
-        ends_at: string | null
+        starts_at?: (string | null) | undefined
+        ends_at?: (string | null) | undefined
         status: 'set'
       }>
     }
@@ -750,10 +733,10 @@ export interface Routes {
     jsonResponse: {
       acs_system: {
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org'
+        external_type: 'pti_site' | 'alta_org' | 'brivo_system'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org'
+        system_type: 'pti_site' | 'alta_org' | 'brivo_system'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -774,10 +757,10 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org'
+        external_type: 'pti_site' | 'alta_org' | 'brivo_system'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org'
+        system_type: 'pti_site' | 'alta_org' | 'brivo_system'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
