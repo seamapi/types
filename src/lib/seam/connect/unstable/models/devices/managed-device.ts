@@ -1,8 +1,8 @@
 import type { SetRequired, Simplify } from 'type-fest'
 import { z } from 'zod'
 
+import { capability_properties } from '../capability-properties/index.js'
 import { capabilities } from './capabilities-supported.js'
-import { capability_properties } from './capability-properties/index.js'
 import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
 

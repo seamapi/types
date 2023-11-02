@@ -181,3 +181,5 @@ export const device_metadata = z
     }),
   })
   .partial()
+
+export type DeviceMetadata = z.infer<typeof device_metadata>
