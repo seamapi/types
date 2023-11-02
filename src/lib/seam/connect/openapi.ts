@@ -8,14 +8,12 @@ export default {
           common_code_key: { nullable: true, type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
-          ends_at: { format: 'date-time', type: 'string' },
+          ends_at: { format: 'date-time', nullable: true, type: 'string' },
           errors: { nullable: true },
           is_backup: { type: 'boolean' },
           is_backup_access_code_available: { type: 'boolean' },
           is_external_modification_allowed: { type: 'boolean' },
           is_managed: { enum: [true], type: 'boolean' },
-          is_offline_access_code: { type: 'boolean' },
-          is_one_time_use: { type: 'boolean' },
           is_scheduled_on_device: { type: 'boolean' },
           is_waiting_for_code_assignment: { type: 'boolean' },
           name: { nullable: true, type: 'string' },
@@ -24,7 +22,7 @@ export default {
             nullable: true,
             type: 'string',
           },
-          starts_at: { format: 'date-time', type: 'string' },
+          starts_at: { format: 'date-time', nullable: true, type: 'string' },
           status: {
             enum: ['setting', 'set', 'unset', 'removing', 'unknown'],
             type: 'string',
@@ -44,8 +42,6 @@ export default {
           'status',
           'is_backup_access_code_available',
           'is_external_modification_allowed',
-          'is_one_time_use',
-          'is_offline_access_code',
         ],
         type: 'object',
       },
@@ -99,12 +95,15 @@ export default {
           acs_system_id: { format: 'uuid', type: 'string' },
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
-          external_type: { enum: ['pti_site', 'alta_org'], type: 'string' },
+          external_type: {
+            enum: ['pti_site', 'alta_org', 'brivo_system'],
+            type: 'string',
+          },
           external_type_display_name: { type: 'string' },
           name: { type: 'string' },
           system_type: {
             description: 'deprecated: use external_type',
-            enum: ['pti_site', 'alta_org'],
+            enum: ['pti_site', 'alta_org', 'brivo_system'],
             type: 'string',
           },
           system_type_display_name: {
@@ -1340,6 +1339,33 @@ export default {
         required: ['service', 'status', 'description'],
         type: 'object',
       },
+      unmanaged_access_code: {
+        properties: {
+          access_code_id: { format: 'uuid', type: 'string' },
+          code: { nullable: true, type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          device_id: { format: 'uuid', type: 'string' },
+          ends_at: { format: 'date-time', nullable: true, type: 'string' },
+          errors: { nullable: true },
+          is_managed: { enum: [false], type: 'boolean' },
+          name: { nullable: true, type: 'string' },
+          starts_at: { format: 'date-time', nullable: true, type: 'string' },
+          status: { enum: ['set'], type: 'string' },
+          type: { enum: ['time_bound', 'ongoing'], type: 'string' },
+          warnings: { nullable: true },
+        },
+        required: [
+          'type',
+          'access_code_id',
+          'device_id',
+          'name',
+          'code',
+          'created_at',
+          'is_managed',
+          'status',
+        ],
+        type: 'object',
+      },
       unmanaged_device: {
         properties: {
           capabilities_supported: {
@@ -2000,72 +2026,7 @@ export default {
                 schema: {
                   properties: {
                     access_code: {
-                      oneOf: [
-                        {
-                          properties: {
-                            access_code_id: { format: 'uuid', type: 'string' },
-                            code: { nullable: true, type: 'string' },
-                            created_at: {
-                              oneOf: [
-                                { type: 'string' },
-                                { format: 'date-time', type: 'string' },
-                              ],
-                            },
-                            ends_at: {
-                              format: 'null',
-                              nullable: true,
-                              type: 'string',
-                            },
-                            is_managed: { enum: [false], type: 'boolean' },
-                            starts_at: {
-                              format: 'null',
-                              nullable: true,
-                              type: 'string',
-                            },
-                            status: { enum: ['set'], type: 'string' },
-                            type: { enum: ['ongoing'], type: 'string' },
-                          },
-                          required: [
-                            'access_code_id',
-                            'code',
-                            'status',
-                            'created_at',
-                            'is_managed',
-                            'type',
-                            'starts_at',
-                            'ends_at',
-                          ],
-                          type: 'object',
-                        },
-                        {
-                          properties: {
-                            access_code_id: { format: 'uuid', type: 'string' },
-                            code: { nullable: true, type: 'string' },
-                            created_at: {
-                              oneOf: [
-                                { type: 'string' },
-                                { format: 'date-time', type: 'string' },
-                              ],
-                            },
-                            ends_at: { nullable: true, type: 'string' },
-                            is_managed: { enum: [false], type: 'boolean' },
-                            starts_at: { nullable: true, type: 'string' },
-                            status: { enum: ['set'], type: 'string' },
-                            type: { enum: ['time_bound'], type: 'string' },
-                          },
-                          required: [
-                            'access_code_id',
-                            'code',
-                            'status',
-                            'created_at',
-                            'is_managed',
-                            'type',
-                            'starts_at',
-                            'ends_at',
-                          ],
-                          type: 'object',
-                        },
-                      ],
+                      $ref: '#/components/schemas/unmanaged_access_code',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -2256,44 +2217,7 @@ export default {
                 schema: {
                   properties: {
                     access_code: {
-                      properties: {
-                        access_code_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        device_id: { format: 'uuid', type: 'string' },
-                        ends_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        errors: { nullable: true },
-                        is_managed: { enum: [false], type: 'boolean' },
-                        name: { nullable: true, type: 'string' },
-                        starts_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        status: { enum: ['set'], type: 'string' },
-                        type: {
-                          enum: ['time_bound', 'ongoing'],
-                          type: 'string',
-                        },
-                        warnings: { nullable: true },
-                      },
-                      required: [
-                        'type',
-                        'access_code_id',
-                        'device_id',
-                        'name',
-                        'code',
-                        'created_at',
-                        'is_managed',
-                        'starts_at',
-                        'ends_at',
-                        'status',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/unmanaged_access_code',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -2344,44 +2268,7 @@ export default {
                   properties: {
                     access_codes: {
                       items: {
-                        properties: {
-                          access_code_id: { format: 'uuid', type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          device_id: { format: 'uuid', type: 'string' },
-                          ends_at: {
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          errors: { nullable: true },
-                          is_managed: { enum: [false], type: 'boolean' },
-                          name: { nullable: true, type: 'string' },
-                          starts_at: {
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          status: { enum: ['set'], type: 'string' },
-                          type: {
-                            enum: ['time_bound', 'ongoing'],
-                            type: 'string',
-                          },
-                          warnings: { nullable: true },
-                        },
-                        required: [
-                          'type',
-                          'access_code_id',
-                          'device_id',
-                          'name',
-                          'code',
-                          'created_at',
-                          'is_managed',
-                          'starts_at',
-                          'ends_at',
-                          'status',
-                        ],
-                        type: 'object',
+                        $ref: '#/components/schemas/unmanaged_access_code',
                       },
                       type: 'array',
                     },
