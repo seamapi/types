@@ -16,6 +16,10 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
       is_external_modification_allowed?: boolean | undefined
+      use_offline_access_code?: boolean | undefined
+      is_offline_access_code?: boolean | undefined
+      is_one_time_use?: boolean | undefined
+      max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
     }
     commonParams: {}
     formData: {}
@@ -84,6 +88,10 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
       is_external_modification_allowed?: boolean | undefined
+      use_offline_access_code?: boolean | undefined
+      is_offline_access_code?: boolean | undefined
+      is_one_time_use?: boolean | undefined
+      max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
     }
     commonParams: {}
     formData: {}
@@ -435,6 +443,10 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
       is_external_modification_allowed?: boolean | undefined
+      use_offline_access_code?: boolean | undefined
+      is_offline_access_code?: boolean | undefined
+      is_one_time_use?: boolean | undefined
+      max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
       access_code_id: string
       device_id?: string | undefined
       type?: ('ongoing' | 'time_bound') | undefined
