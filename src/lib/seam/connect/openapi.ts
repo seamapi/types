@@ -4494,6 +4494,7 @@ export default {
                         'dormakaba_oracode',
                         'pti',
                         'wyze',
+                        'seam_passport',
                         'yale_access',
                       ],
                       type: 'string',
