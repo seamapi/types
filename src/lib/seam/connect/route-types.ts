@@ -1179,6 +1179,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'pti'
             | 'wyze'
+            | 'seam_passport'
             | 'yale_access'
           >
         | undefined
