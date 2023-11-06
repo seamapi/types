@@ -695,7 +695,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_credentials_id: string
+      acs_credential_id: string
     }
     formData: {}
     jsonResponse: {

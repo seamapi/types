@@ -3203,9 +3203,9 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credentials_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: { format: 'uuid', type: 'string' },
                 },
-                required: ['acs_credentials_id'],
+                required: ['acs_credential_id'],
                 type: 'object',
               },
             },
