@@ -5008,7 +5008,6 @@ export default {
                   },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
-                    minItems: 1,
                     type: 'array',
                   },
                   created_before: { format: 'date-time', type: 'string' },
@@ -5318,7 +5317,6 @@ export default {
                   },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
-                    minItems: 1,
                     type: 'array',
                   },
                   created_before: { format: 'date-time', type: 'string' },
@@ -6120,7 +6118,6 @@ export default {
                   },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
-                    minItems: 1,
                     type: 'array',
                   },
                   created_before: { format: 'date-time', type: 'string' },
@@ -7471,7 +7468,6 @@ export default {
                   },
                   connected_account_ids: {
                     items: { format: 'uuid', type: 'string' },
-                    minItems: 1,
                     type: 'array',
                   },
                   created_before: { format: 'date-time', type: 'string' },
