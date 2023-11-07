@@ -19,7 +19,12 @@ const phone_number = z.coerce
 
 const user_fields = z.object({
   full_name: z.string().optional(),
-  email: z.string().email().optional(),
+  email: z
+    .string()
+    .email()
+    .optional()
+    .describe('Deprecated: use email_address.'),
+  email_address: z.string().email().optional(),
   phone_number: phone_number.optional(),
 })
 

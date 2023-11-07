@@ -129,7 +129,12 @@ export default {
           acs_user_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           display_name: { type: 'string' },
-          email: { format: 'email', type: 'string' },
+          email: {
+            description: 'Deprecated: use email_address.',
+            format: 'email',
+            type: 'string',
+          },
+          email_address: { format: 'email', type: 'string' },
           external_type: { enum: ['pti_user'], type: 'string' },
           external_type_display_name: { type: 'string' },
           full_name: { type: 'string' },
@@ -3524,7 +3529,11 @@ export default {
                     type: 'array',
                   },
                   acs_system_id: { format: 'uuid', type: 'string' },
-                  email: { format: 'email', type: 'string' },
+                  email: {
+                    description: 'Deprecated: use email_address.',
+                    format: 'email',
+                    type: 'string',
+                  },
                   full_name: { type: 'string' },
                   phone_number: { nullable: true, type: 'string' },
                 },
@@ -3822,7 +3831,11 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: { format: 'uuid', type: 'string' },
-                  email: { format: 'email', type: 'string' },
+                  email: {
+                    description: 'Deprecated: use email_address.',
+                    format: 'email',
+                    type: 'string',
+                  },
                   full_name: { type: 'string' },
                   phone_number: { nullable: true, type: 'string' },
                 },
@@ -3865,7 +3878,11 @@ export default {
               schema: {
                 properties: {
                   acs_user_id: { format: 'uuid', type: 'string' },
-                  email: { format: 'email', type: 'string' },
+                  email: {
+                    description: 'Deprecated: use email_address.',
+                    format: 'email',
+                    type: 'string',
+                  },
                   full_name: { type: 'string' },
                   phone_number: { nullable: true, type: 'string' },
                 },

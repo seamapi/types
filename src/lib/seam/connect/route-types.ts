@@ -626,7 +626,9 @@ export interface Routes {
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
+        /** Deprecated: use email_address. */
         email?: string | undefined
+        email_address?: string | undefined
         phone_number?: string | undefined
       }>
     }
@@ -810,6 +812,7 @@ export interface Routes {
       acs_system_id: string
       acs_access_group_ids?: string[]
       full_name?: string | undefined
+      /** Deprecated: use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
     }
@@ -825,7 +828,9 @@ export interface Routes {
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
+        /** Deprecated: use email_address. */
         email?: string | undefined
+        email_address?: string | undefined
         phone_number?: string | undefined
       }
     }
@@ -861,7 +866,9 @@ export interface Routes {
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
+        /** Deprecated: use email_address. */
         email?: string | undefined
+        email_address?: string | undefined
         phone_number?: string | undefined
       }
     }
@@ -886,7 +893,9 @@ export interface Routes {
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
+        /** Deprecated: use email_address. */
         email?: string | undefined
+        email_address?: string | undefined
         phone_number?: string | undefined
       }>
     }
@@ -933,6 +942,7 @@ export interface Routes {
     commonParams: {
       acs_user_id: string
       full_name?: string | undefined
+      /** Deprecated: use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
     }
@@ -5798,7 +5808,9 @@ export interface Routes {
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
+        /** Deprecated: use email_address. */
         email?: string | undefined
+        email_address?: string | undefined
         phone_number?: string | undefined
       }>
     }
