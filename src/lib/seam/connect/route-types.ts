@@ -1032,6 +1032,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connect_webview_ids?: string[] | undefined
       connected_account_ids?: string[] | undefined
+      user_identity_ids?: string[] | undefined
       expires_at?: Date | undefined
     }
     commonParams: {}
@@ -1076,6 +1077,7 @@ export interface Routes {
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
+        user_identity_ids: string[]
         workspace_id: string
       }
     }
@@ -1088,6 +1090,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connect_webview_ids?: string[] | undefined
       connected_account_ids?: string[] | undefined
+      user_identity_ids?: string[] | undefined
       expires_at?: Date | undefined
     }
     commonParams: {}
@@ -1112,6 +1115,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connected_account_ids?: string[] | undefined
       connect_webview_ids?: string[] | undefined
+      user_identity_ids?: string[] | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1123,6 +1127,7 @@ export interface Routes {
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
+        user_identity_ids: string[]
         workspace_id: string
       }
     }
@@ -1147,6 +1152,7 @@ export interface Routes {
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
+        user_identity_ids: string[]
         workspace_id: string
       }>
     }
