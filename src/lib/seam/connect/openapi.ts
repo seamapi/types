@@ -4020,6 +4020,11 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  expires_at: {
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: { minLength: 1, type: 'string' },
                 },
                 type: 'object',
@@ -4068,6 +4073,11 @@ export default {
                   connected_account_ids: {
                     items: { type: 'string' },
                     type: 'array',
+                  },
+                  expires_at: {
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
                   },
                   user_identifier_key: { minLength: 1, type: 'string' },
                 },
@@ -4210,6 +4220,11 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
+                  expires_at: {
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: { minLength: 1, type: 'string' },
                 },
                 type: 'object',
@@ -4258,6 +4273,11 @@ export default {
                   connected_account_ids: {
                     items: { type: 'string' },
                     type: 'array',
+                  },
+                  expires_at: {
+                    format: 'date-time',
+                    nullable: true,
+                    type: 'string',
                   },
                   user_identifier_key: { minLength: 1, type: 'string' },
                 },
@@ -4451,6 +4471,49 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'client_sessions',
+      },
+    },
+    '/client_sessions/revoke': {
+      post: {
+        operationId: 'clientSessionsRevokePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  client_session_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['client_session_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/client_sessions/revoke',
+        tags: ['/client_sessions'],
+        'x-fern-sdk-group-name': ['client_sessions'],
+        'x-fern-sdk-method-name': 'revoke',
       },
     },
     '/connect_webviews/create': {

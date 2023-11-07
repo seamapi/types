@@ -1022,6 +1022,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connect_webview_ids?: string[] | undefined
       connected_account_ids?: string[] | undefined
+      expires_at?: Date | undefined
     }
     commonParams: {}
     formData: {}
@@ -1077,6 +1078,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connect_webview_ids?: string[] | undefined
       connected_account_ids?: string[] | undefined
+      expires_at?: Date | undefined
     }
     commonParams: {}
     formData: {}
@@ -1138,6 +1140,17 @@ export interface Routes {
         workspace_id: string
       }>
     }
+  }
+  '/client_sessions/revoke': {
+    route: '/client_sessions/revoke'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      client_session_id: string
+    }
+    formData: {}
+    jsonResponse: {}
   }
   '/connect_webviews/create': {
     route: '/connect_webviews/create'
