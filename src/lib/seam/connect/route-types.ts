@@ -2108,7 +2108,7 @@ export interface Routes {
         | undefined
       device_ids?: string[] | undefined
       limit?: number
-      created_before?: string | undefined
+      created_before?: Date | undefined
       user_identifier_key?: string | undefined
     }
     formData: {}
@@ -2896,7 +2896,7 @@ export interface Routes {
         | undefined
       device_ids?: string[] | undefined
       limit?: number
-      created_before?: string | undefined
+      created_before?: Date | undefined
       user_identifier_key?: string | undefined
     }
     formData: {}
@@ -3342,7 +3342,7 @@ export interface Routes {
         | undefined
       device_ids?: string[] | undefined
       limit?: number
-      created_before?: string | undefined
+      created_before?: Date | undefined
       user_identifier_key?: string | undefined
     }
     formData: {}
@@ -4507,7 +4507,7 @@ export interface Routes {
         | undefined
       device_ids?: string[] | undefined
       limit?: number
-      created_before?: string | undefined
+      created_before?: Date | undefined
       user_identifier_key?: string | undefined
     }
     formData: {}
