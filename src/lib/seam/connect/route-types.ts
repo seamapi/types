@@ -69,6 +69,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -116,6 +118,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }>
     }
   }
@@ -206,6 +210,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -241,6 +247,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }>
     }
   }
@@ -274,6 +282,8 @@ export interface Routes {
         is_backup?: boolean | undefined
         pulled_backup_access_code_id?: (string | null) | undefined
         is_external_modification_allowed: boolean
+        is_one_time_use: boolean
+        is_offline_access_code: boolean
       }
     }
   }
@@ -1631,9 +1641,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -2329,9 +2339,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4000,9 +4010,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4728,9 +4738,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -5431,9 +5441,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:

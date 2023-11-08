@@ -141,9 +141,9 @@ export const device_metadata = z
 
     igloohome_metadata: z.object({
       device_id: z.string(),
-      bridge_id: z.string(),
       device_name: z.string(),
-      bridge_name: z.string(),
+      bridge_id: z.string().optional(),
+      bridge_name: z.string().optional(),
     }),
 
     nest_metadata: z.object({
