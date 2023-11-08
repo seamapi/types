@@ -5885,6 +5885,8 @@ export default {
                       'device.salto.privacy_mode_deactivated',
                       'device.connection_became_flaky',
                       'device.connection_stabilized',
+                      'device.error.subscription_required',
+                      'device.error.subscription_required.resolved',
                       'access_code.created',
                       'access_code.changed',
                       'access_code.scheduled_on_device',
@@ -5933,6 +5935,8 @@ export default {
                         'device.salto.privacy_mode_deactivated',
                         'device.connection_became_flaky',
                         'device.connection_stabilized',
+                        'device.error.subscription_required',
+                        'device.error.subscription_required.resolved',
                         'access_code.created',
                         'access_code.changed',
                         'access_code.scheduled_on_device',
@@ -6191,11 +6195,11 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    device: { nullable: true },
-                    lock: { nullable: true },
+                    device: { $ref: '#/components/schemas/device' },
+                    lock: { $ref: '#/components/schemas/device' },
                     ok: { type: 'boolean' },
                   },
-                  required: ['ok'],
+                  required: ['lock', 'device', 'ok'],
                   type: 'object',
                 },
               },
@@ -6383,11 +6387,17 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    devices: { nullable: true },
-                    locks: { nullable: true },
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    locks: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
                     ok: { type: 'boolean' },
                   },
-                  required: ['ok'],
+                  required: ['locks', 'devices', 'ok'],
                   type: 'object',
                 },
               },
