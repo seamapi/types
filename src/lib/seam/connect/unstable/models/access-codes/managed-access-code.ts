@@ -20,6 +20,8 @@ export const managed_access_code = z.object({
   is_backup: z.boolean().optional(),
   pulled_backup_access_code_id: z.string().uuid().nullable().optional(),
   is_external_modification_allowed: z.boolean(),
+  is_one_time_use: z.boolean(),
+  is_offline_access_code: z.boolean(),
 })
 
 export type ManagedAccessCode = z.infer<typeof managed_access_code>
