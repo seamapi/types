@@ -585,12 +585,7 @@ export default {
                           device_id: { type: 'string' },
                           device_name: { type: 'string' },
                         },
-                        required: [
-                          'device_id',
-                          'bridge_id',
-                          'device_name',
-                          'bridge_name',
-                        ],
+                        required: ['device_id', 'device_name'],
                         type: 'object',
                       },
                       kwikset_metadata: {
