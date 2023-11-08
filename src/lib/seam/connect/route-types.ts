@@ -1631,9 +1631,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -2329,9 +2329,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4000,9 +4000,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4728,9 +4728,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -5431,9 +5431,9 @@ export interface Routes {
           igloohome_metadata?:
             | {
                 device_id: string
-                bridge_id: string
                 device_name: string
-                bridge_name: string
+                bridge_id?: string | undefined
+                bridge_name?: string | undefined
               }
             | undefined
           nest_metadata?:
