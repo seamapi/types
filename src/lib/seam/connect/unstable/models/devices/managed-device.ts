@@ -16,6 +16,10 @@ export const common_device_properties = z.object({
   model: z.object({
     display_name: z.string(),
     manufacturer_display_name: z.string(),
+
+    offline_access_codes_supported: z.boolean().optional(),
+    access_codes_supported: z.boolean().optional(),
+    accessory_keypad_supported: z.boolean().optional(),
   }),
   has_direct_power: z.boolean().optional(),
   battery_level: z.number().min(0).max(1).optional(),
@@ -30,8 +34,25 @@ export const common_device_properties = z.object({
   image_url: z.string().url().optional(),
   image_alt_text: z.string().optional(),
   serial_number: z.string().optional(),
-  supports_accessory_keypad: z.boolean().optional(),
-  supports_offline_access_codes: z.boolean().optional(),
+
+  online_access_codes_enabled: z
+    .boolean()
+    .describe('Currently possible to use online access codes')
+    .optional(),
+  offline_access_codes_enabled: z
+    .boolean()
+    .describe('Currently possible to use offline access codes')
+    .optional(),
+
+  // Deprecated legacy capability support props
+  supports_accessory_keypad: z
+    .boolean()
+    .describe('Deprecated: use model.offline_access_codes_enabled.')
+    .optional(),
+  supports_offline_access_codes: z
+    .boolean()
+    .describe('Deprecated: use model.accessory_keypad_supported.')
+    .optional(),
 })
 
 export const managed_device = z.object({
