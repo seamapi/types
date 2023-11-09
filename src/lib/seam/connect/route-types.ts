@@ -504,51 +504,6 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  '/acs/access_groups/create': {
-    route: '/acs/access_groups/create'
-    method: 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      acs_system_id: string
-      name?: string | undefined
-    }
-    formData: {}
-    jsonResponse: {
-      acs_access_group: {
-        acs_access_group_id: string
-        acs_system_id: string
-        workspace_id: string
-        name: string
-        /** deprecated: use external_type */
-        access_group_type:
-          | 'pti_unit'
-          | 'pti_access_level'
-          | 'salto_access_group'
-          | 'brivo_group'
-        /** deprecated: use external_type_display_name */
-        access_group_type_display_name: string
-        external_type:
-          | 'pti_unit'
-          | 'pti_access_level'
-          | 'salto_access_group'
-          | 'brivo_group'
-        external_type_display_name: string
-        created_at: string
-      }
-    }
-  }
-  '/acs/access_groups/delete': {
-    route: '/acs/access_groups/delete'
-    method: 'DELETE' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      acs_access_group_id: string
-    }
-    formData: {}
-    jsonResponse: {}
-  }
   '/acs/access_groups/get': {
     route: '/acs/access_groups/get'
     method: 'GET' | 'POST'
@@ -651,18 +606,6 @@ export interface Routes {
     commonParams: {
       acs_access_group_id: string
       acs_user_id: string
-    }
-    formData: {}
-    jsonResponse: {}
-  }
-  '/acs/access_groups/update': {
-    route: '/acs/access_groups/update'
-    method: 'PATCH' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      acs_access_group_id: string
-      name?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -1246,6 +1189,7 @@ export interface Routes {
             | 'wyze'
             | 'seam_passport'
             | 'yale_access'
+            | 'hid_cm'
           >
         | undefined
       provider_category?:
