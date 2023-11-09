@@ -8837,7 +8837,7 @@ export default {
         tags: ['/workspaces'],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'workspace',
+        'x-fern-sdk-return-value': 'workspaces',
       },
     },
     '/workspaces/reset_sandbox': {
