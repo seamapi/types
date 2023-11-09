@@ -451,17 +451,38 @@ export default {
                       manufacturer: { type: 'string' },
                       model: {
                         properties: {
+                          access_codes_supported: { type: 'boolean' },
+                          accessory_keypad_supported: { type: 'boolean' },
                           display_name: { type: 'string' },
                           manufacturer_display_name: { type: 'string' },
+                          offline_access_codes_supported: { type: 'boolean' },
                         },
                         required: ['display_name', 'manufacturer_display_name'],
                         type: 'object',
                       },
                       name: { type: 'string' },
+                      offline_access_codes_enabled: {
+                        description:
+                          'Currently possible to use offline access codes',
+                        type: 'boolean',
+                      },
                       online: { type: 'boolean' },
+                      online_access_codes_enabled: {
+                        description:
+                          'Currently possible to use online access codes',
+                        type: 'boolean',
+                      },
                       serial_number: { type: 'string' },
-                      supports_accessory_keypad: { type: 'boolean' },
-                      supports_offline_access_codes: { type: 'boolean' },
+                      supports_accessory_keypad: {
+                        description:
+                          'Deprecated: use model.offline_access_codes_enabled.',
+                        type: 'boolean',
+                      },
+                      supports_offline_access_codes: {
+                        description:
+                          'Deprecated: use model.accessory_keypad_supported.',
+                        type: 'boolean',
+                      },
                     },
                     required: ['online', 'name', 'model'],
                     type: 'object',

@@ -1466,6 +1466,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -1479,7 +1482,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -2164,6 +2173,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -2177,7 +2189,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -6143,6 +6161,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -6156,7 +6177,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -6871,6 +6898,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -6884,7 +6914,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -7574,6 +7610,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -7587,7 +7626,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
