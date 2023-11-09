@@ -1,1 +1,1 @@
-export { connect_webview } from './models/index.js'
+export { connect_webview, custom_metadata } from './models/index.js'
