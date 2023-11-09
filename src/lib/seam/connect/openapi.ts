@@ -139,7 +139,7 @@ export default {
             type: 'string',
           },
           email_address: { format: 'email', type: 'string' },
-          external_type: { enum: ['pti_user'], type: 'string' },
+          external_type: { enum: ['pti_user', 'brivo_user'], type: 'string' },
           external_type_display_name: { type: 'string' },
           full_name: { type: 'string' },
           is_suspended: { type: 'boolean' },
@@ -286,16 +286,46 @@ export default {
           accepted_providers: { items: { type: 'string' }, type: 'array' },
           any_device_allowed: { type: 'boolean' },
           any_provider_allowed: { type: 'boolean' },
+          authorized_at: {
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          automatically_manage_new_devices: { type: 'boolean' },
           connect_webview_id: { format: 'uuid', type: 'string' },
           connected_account_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
+          custom_metadata: {
+            additionalProperties: {
+              nullable: true,
+              oneOf: [
+                { maxLength: 500, type: 'string' },
+                { type: 'number' },
+                { format: 'null', nullable: true, type: 'string' },
+                { type: 'boolean' },
+              ],
+            },
+            type: 'object',
+          },
+          custom_redirect_failure_url: {
+            format: 'uri',
+            nullable: true,
+            type: 'string',
+          },
+          custom_redirect_url: {
+            format: 'uri',
+            nullable: true,
+            type: 'string',
+          },
           device_selection_mode: {
             enum: ['none', 'single', 'multiple'],
             type: 'string',
           },
           login_successful: { type: 'boolean' },
+          selected_provider: { nullable: true, type: 'string' },
           status: { enum: ['pending', 'failed', 'authorized'], type: 'string' },
           url: { format: 'uri', type: 'string' },
+          wait_for_device_creation: { type: 'boolean' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -310,6 +340,13 @@ export default {
           'created_at',
           'login_successful',
           'status',
+          'custom_redirect_url',
+          'custom_redirect_failure_url',
+          'custom_metadata',
+          'automatically_manage_new_devices',
+          'wait_for_device_creation',
+          'authorized_at',
+          'selected_provider',
         ],
         type: 'object',
       },
@@ -3113,6 +3150,91 @@ export default {
         'x-fern-sdk-method-name': 'update',
       },
     },
+    '/acs/credentials/assign': {
+      patch: {
+        operationId: 'acsCredentialsAssignPatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_user_id', 'acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/assign',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'acsCredentialsAssignPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_user_id', 'acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/assign',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'assign',
+      },
+    },
     '/acs/credentials/create': {
       post: {
         operationId: 'acsCredentialsCreatePost',
@@ -3143,13 +3265,15 @@ export default {
                         acs_user_id: { format: 'uuid', type: 'string' },
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
-                        external_type: { enum: ['pti_card'], type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
                         external_type_display_name: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
                         'acs_credential_id',
-                        'acs_user_id',
                         'acs_system_id',
                         'code',
                         'external_type',
@@ -3254,13 +3378,15 @@ export default {
                         acs_user_id: { format: 'uuid', type: 'string' },
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
-                        external_type: { enum: ['pti_card'], type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
                         external_type_display_name: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
                         'acs_credential_id',
-                        'acs_user_id',
                         'acs_system_id',
                         'code',
                         'external_type',
@@ -3342,13 +3468,15 @@ export default {
                           acs_user_id: { format: 'uuid', type: 'string' },
                           code: { nullable: true, type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
-                          external_type: { enum: ['pti_card'], type: 'string' },
+                          external_type: {
+                            enum: ['pti_card', 'brivo_credential'],
+                            type: 'string',
+                          },
                           external_type_display_name: { type: 'string' },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [
                           'acs_credential_id',
-                          'acs_user_id',
                           'acs_system_id',
                           'code',
                           'external_type',
@@ -3381,6 +3509,91 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'list',
+      },
+    },
+    '/acs/credentials/unassign': {
+      patch: {
+        operationId: 'acsCredentialsUnassignPatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_user_id', 'acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/unassign',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'acsCredentialsUnassignPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_user_id', 'acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/unassign',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'unassign',
       },
     },
     '/acs/systems/get': {
@@ -8837,7 +9050,7 @@ export default {
         tags: ['/workspaces'],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'workspace',
+        'x-fern-sdk-return-value': 'workspaces',
       },
     },
     '/workspaces/reset_sandbox': {
