@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const acs_user_external_type = z.enum(['pti_user'])
+export const acs_user_external_type = z.enum(['pti_user', 'brivo_user'])
 
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
 

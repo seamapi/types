@@ -1,1 +1,1 @@
-export type { ConnectWebview } from './models/index.js'
+export type { ConnectWebview, CustomMetadata } from './models/index.js'
