@@ -1583,6 +1583,12 @@ export default {
         scheme: 'bearer',
         type: 'http',
       },
+      api_key: { bearerFormat: 'API Key', scheme: 'bearer', type: 'http' },
+      client_session: {
+        bearerFormat: 'Client Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
       client_session_token: {
         in: 'header',
         name: 'client-session-token',
@@ -1594,6 +1600,11 @@ export default {
         type: 'apiKey',
       },
       seam_workspace: { in: 'header', name: 'seam-workspace', type: 'apiKey' },
+      user_session: {
+        bearerFormat: 'User Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
     },
   },
   info: { title: 'Seam Connect', version: '1.0.0' },
@@ -1970,9 +1981,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { api_key: [] },
+          { access_token: [] },
+          { user_session: [] },
+          { client_session: [] },
         ],
         summary: '/access_codes/get',
         tags: ['/access_codes'],
@@ -2783,98 +2795,6 @@ export default {
         'x-fern-ignore': true,
       },
     },
-    '/acs/access_groups/create': {
-      post: {
-        operationId: 'acsAccessGroupsCreatePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
-                },
-                required: ['acs_system_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    acs_access_group: {
-                      $ref: '#/components/schemas/acs_access_group',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['acs_access_group', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/access_groups/create',
-        tags: [],
-        'x-fern-sdk-group-name': ['acs', 'access_groups'],
-        'x-fern-sdk-method-name': 'create',
-      },
-    },
-    '/acs/access_groups/delete': {
-      post: {
-        operationId: 'acsAccessGroupsDeletePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                },
-                required: ['acs_access_group_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/access_groups/delete',
-        tags: [],
-        'x-fern-sdk-group-name': ['acs', 'access_groups'],
-        'x-fern-sdk-method-name': 'delete',
-      },
-    },
     '/acs/access_groups/get': {
       post: {
         operationId: 'acsAccessGroupsGetPost',
@@ -3063,91 +2983,6 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'remove_user',
-      },
-    },
-    '/acs/access_groups/update': {
-      patch: {
-        operationId: 'acsAccessGroupsUpdatePatch',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  name: { nullable: true, type: 'string' },
-                },
-                required: ['acs_access_group_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/access_groups/update',
-        tags: [],
-        'x-fern-ignore': true,
-      },
-      post: {
-        operationId: 'acsAccessGroupsUpdatePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  name: { nullable: true, type: 'string' },
-                },
-                required: ['acs_access_group_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/acs/access_groups/update',
-        tags: [],
-        'x-fern-sdk-group-name': ['acs', 'access_groups'],
-        'x-fern-sdk-method-name': 'update',
       },
     },
     '/acs/credentials/assign': {
