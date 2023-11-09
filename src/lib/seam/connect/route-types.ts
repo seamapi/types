@@ -632,7 +632,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user'
+        external_type: 'pti_user' | 'brivo_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -667,6 +667,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/acs/credentials/assign': {
+    route: '/acs/credentials/assign'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_user_id: string
+      acs_credential_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/credentials/create': {
     route: '/acs/credentials/create'
     method: 'POST'
@@ -680,10 +692,10 @@ export interface Routes {
     jsonResponse: {
       acs_credential: {
         acs_credential_id: string
-        acs_user_id: string
+        acs_user_id?: string | undefined
         acs_system_id: string
         code: string | null
-        external_type: 'pti_card'
+        external_type: 'pti_card' | 'brivo_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -713,10 +725,10 @@ export interface Routes {
     jsonResponse: {
       acs_credential: {
         acs_credential_id: string
-        acs_user_id: string
+        acs_user_id?: string | undefined
         acs_system_id: string
         code: string | null
-        external_type: 'pti_card'
+        external_type: 'pti_card' | 'brivo_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -743,15 +755,27 @@ export interface Routes {
     jsonResponse: {
       acs_credentials: Array<{
         acs_credential_id: string
-        acs_user_id: string
+        acs_user_id?: string | undefined
         acs_system_id: string
         code: string | null
-        external_type: 'pti_card'
+        external_type: 'pti_card' | 'brivo_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
       }>
     }
+  }
+  '/acs/credentials/unassign': {
+    route: '/acs/credentials/unassign'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_user_id: string
+      acs_credential_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/acs/systems/get': {
     route: '/acs/systems/get'
@@ -817,15 +841,16 @@ export interface Routes {
     route: '/acs/users/create'
     method: 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       acs_system_id: string
       acs_access_group_ids?: string[]
       full_name?: string | undefined
       /** Deprecated: use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
+      email_address?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       acs_user: {
@@ -834,7 +859,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user'
+        external_type: 'pti_user' | 'brivo_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -872,7 +897,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user'
+        external_type: 'pti_user' | 'brivo_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -899,7 +924,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user'
+        external_type: 'pti_user' | 'brivo_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -948,14 +973,15 @@ export interface Routes {
     route: '/acs/users/update'
     method: 'PATCH' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
+    jsonBody: {
       acs_user_id: string
       full_name?: string | undefined
       /** Deprecated: use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
+      email_address?: string | undefined
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {}
   }
@@ -1247,6 +1273,13 @@ export interface Routes {
         created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
+        custom_redirect_url: string | null
+        custom_redirect_failure_url: string | null
+        custom_metadata: Record<string, string | number | null | boolean>
+        automatically_manage_new_devices: boolean
+        wait_for_device_creation: boolean
+        authorized_at: string | null
+        selected_provider: string | null
       }
     }
   }
@@ -1284,6 +1317,13 @@ export interface Routes {
         created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
+        custom_redirect_url: string | null
+        custom_redirect_failure_url: string | null
+        custom_metadata: Record<string, string | number | null | boolean>
+        automatically_manage_new_devices: boolean
+        wait_for_device_creation: boolean
+        authorized_at: string | null
+        selected_provider: string | null
       }
     }
   }
@@ -1310,6 +1350,13 @@ export interface Routes {
         created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
+        custom_redirect_url: string | null
+        custom_redirect_failure_url: string | null
+        custom_metadata: Record<string, string | number | null | boolean>
+        automatically_manage_new_devices: boolean
+        wait_for_device_creation: boolean
+        authorized_at: string | null
+        selected_provider: string | null
       }>
     }
   }
@@ -3297,6 +3344,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -3310,7 +3360,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -3874,6 +3930,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -3887,7 +3946,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -4572,6 +4637,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -4585,7 +4653,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -5149,6 +5223,9 @@ export interface Routes {
           model: {
             display_name: string
             manufacturer_display_name: string
+            offline_access_codes_supported?: boolean | undefined
+            access_codes_supported?: boolean | undefined
+            accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
           battery_level?: number | undefined
@@ -5162,7 +5239,13 @@ export interface Routes {
           image_url?: string | undefined
           image_alt_text?: string | undefined
           serial_number?: string | undefined
+          /** Currently possible to use online access codes */
+          online_access_codes_enabled?: boolean | undefined
+          /** Currently possible to use offline access codes */
+          offline_access_codes_enabled?: boolean | undefined
+          /** Deprecated: use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
+          /** Deprecated: use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -8173,7 +8256,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user'
+        external_type: 'pti_user' | 'brivo_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
