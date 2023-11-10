@@ -735,10 +735,10 @@ export interface Routes {
     jsonResponse: {
       acs_system: {
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org' | 'brivo_system'
+        external_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org' | 'brivo_system'
+        system_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -759,10 +759,10 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org' | 'brivo_system'
+        external_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org' | 'brivo_system'
+        system_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string

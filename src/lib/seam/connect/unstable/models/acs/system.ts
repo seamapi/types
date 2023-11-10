@@ -4,6 +4,7 @@ import { z } from 'zod'
 export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
+  'salto_site',
   'brivo_system',
 ])
 
