@@ -3100,6 +3100,7 @@ export default {
                         acs_user_id: { format: 'uuid', type: 'string' },
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: ['pti_card', 'brivo_credential'],
                           type: 'string',
@@ -3110,6 +3111,7 @@ export default {
                       required: [
                         'acs_credential_id',
                         'acs_system_id',
+                        'display_name',
                         'code',
                         'external_type',
                         'external_type_display_name',
@@ -3213,6 +3215,7 @@ export default {
                         acs_user_id: { format: 'uuid', type: 'string' },
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: ['pti_card', 'brivo_credential'],
                           type: 'string',
@@ -3223,6 +3226,7 @@ export default {
                       required: [
                         'acs_credential_id',
                         'acs_system_id',
+                        'display_name',
                         'code',
                         'external_type',
                         'external_type_display_name',
@@ -3303,6 +3307,7 @@ export default {
                           acs_user_id: { format: 'uuid', type: 'string' },
                           code: { nullable: true, type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
+                          display_name: { minLength: 1, type: 'string' },
                           external_type: {
                             enum: ['pti_card', 'brivo_credential'],
                             type: 'string',
@@ -3313,6 +3318,7 @@ export default {
                         required: [
                           'acs_credential_id',
                           'acs_system_id',
+                          'display_name',
                           'code',
                           'external_type',
                           'external_type_display_name',
