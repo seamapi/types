@@ -100,14 +100,14 @@ export default {
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: {
-            enum: ['pti_site', 'alta_org', 'brivo_system'],
+            enum: ['pti_site', 'alta_org', 'salto_site', 'brivo_system'],
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
           name: { type: 'string' },
           system_type: {
             description: 'deprecated: use external_type',
-            enum: ['pti_site', 'alta_org', 'brivo_system'],
+            enum: ['pti_site', 'alta_org', 'salto_site', 'brivo_system'],
             type: 'string',
           },
           system_type_display_name: {
