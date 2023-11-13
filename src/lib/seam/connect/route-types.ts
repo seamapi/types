@@ -721,7 +721,19 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      acs_credential: {
+        acs_credential_id: string
+        acs_user_id?: string | undefined
+        acs_system_id: string
+        display_name: string
+        code: string | null
+        external_type: 'pti_card' | 'brivo_credential'
+        external_type_display_name: string
+        created_at: string
+        workspace_id: string
+      }
+    }
   }
   '/acs/systems/get': {
     route: '/acs/systems/get'
