@@ -3022,8 +3022,37 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { nullable: true, type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_system_id',
+                        'display_name',
+                        'code',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
                   type: 'object',
                 },
               },
@@ -3063,8 +3092,37 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { nullable: true, type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_system_id',
+                        'display_name',
+                        'code',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
                   type: 'object',
                 },
               },
