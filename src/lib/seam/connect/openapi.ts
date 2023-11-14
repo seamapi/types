@@ -100,14 +100,26 @@ export default {
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: {
-            enum: ['pti_site', 'alta_org', 'salto_site', 'brivo_system'],
+            enum: [
+              'pti_site',
+              'alta_org',
+              'salto_site',
+              'brivo_system',
+              'hid_cm_org',
+            ],
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
           name: { type: 'string' },
           system_type: {
             description: 'deprecated: use external_type',
-            enum: ['pti_site', 'alta_org', 'salto_site', 'brivo_system'],
+            enum: [
+              'pti_site',
+              'alta_org',
+              'salto_site',
+              'brivo_system',
+              'hid_cm_org',
+            ],
             type: 'string',
           },
           system_type_display_name: {
@@ -139,7 +151,10 @@ export default {
             type: 'string',
           },
           email_address: { format: 'email', type: 'string' },
-          external_type: { enum: ['pti_user', 'brivo_user'], type: 'string' },
+          external_type: {
+            enum: ['pti_user', 'brivo_user', 'hid_cm_user'],
+            type: 'string',
+          },
           external_type_display_name: { type: 'string' },
           full_name: { type: 'string' },
           is_suspended: { type: 'boolean' },
@@ -3374,8 +3389,37 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { nullable: true, type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_system_id',
+                        'display_name',
+                        'code',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
                   type: 'object',
                 },
               },
@@ -3415,8 +3459,37 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        code: { nullable: true, type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
+                        external_type: {
+                          enum: ['pti_card', 'brivo_credential'],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_system_id',
+                        'display_name',
+                        'code',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
                   type: 'object',
                 },
               },
@@ -3435,6 +3508,130 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'unassign',
+      },
+    },
+    '/acs/entrances/get': {
+      post: {
+        operationId: 'acsEntrancesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_entrance_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrance: {
+                      properties: {
+                        acs_entrance_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                      },
+                      required: [
+                        'acs_entrance_id',
+                        'display_name',
+                        'acs_system_id',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrance', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { access_token: [] },
+          { user_session: [] },
+          { client_session: [] },
+        ],
+        summary: '/acs/entrances/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
+    '/acs/entrances/list': {
+      post: {
+        operationId: 'acsEntrancesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: {
+                        properties: {
+                          acs_entrance_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                        },
+                        required: [
+                          'acs_entrance_id',
+                          'display_name',
+                          'acs_system_id',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { access_token: [] },
+          { user_session: [] },
+          { client_session: [] },
+        ],
+        summary: '/acs/entrances/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'list',
       },
     },
     '/acs/systems/get': {

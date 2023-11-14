@@ -1,4 +1,5 @@
 export * from './access_group.js'
 export * from './credential.js'
+export * from './entrance.js'
 export * from './system.js'
 export * from './user.js'
