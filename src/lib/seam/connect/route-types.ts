@@ -587,7 +587,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user'
+        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -721,7 +721,55 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      acs_credential: {
+        acs_credential_id: string
+        acs_user_id?: string | undefined
+        acs_system_id: string
+        display_name: string
+        code: string | null
+        external_type: 'pti_card' | 'brivo_credential'
+        external_type_display_name: string
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
+  '/acs/entrances/get': {
+    route: '/acs/entrances/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_entrance_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_entrance: {
+        acs_entrance_id: string
+        display_name: string
+        acs_system_id: string
+        created_at: string
+      }
+    }
+  }
+  '/acs/entrances/list': {
+    route: '/acs/entrances/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_system_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_entrances: Array<{
+        acs_entrance_id: string
+        display_name: string
+        acs_system_id: string
+        created_at: string
+      }>
+    }
   }
   '/acs/systems/get': {
     route: '/acs/systems/get'
@@ -735,10 +783,20 @@ export interface Routes {
     jsonResponse: {
       acs_system: {
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
+        external_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_system'
+          | 'hid_cm_org'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
+        system_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_system'
+          | 'hid_cm_org'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -759,10 +817,20 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
-        external_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
+        external_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_system'
+          | 'hid_cm_org'
         external_type_display_name: string
         /** deprecated: use external_type */
-        system_type: 'pti_site' | 'alta_org' | 'salto_site' | 'brivo_system'
+        system_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_system'
+          | 'hid_cm_org'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -805,7 +873,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user'
+        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -843,7 +911,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user'
+        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -870,7 +938,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user'
+        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -8203,7 +8271,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user'
+        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined

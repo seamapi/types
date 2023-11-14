@@ -4,6 +4,7 @@ export {
   acs_access_group_external_type,
   acs_credential,
   acs_credential_external_type,
+  acs_entrance,
   acs_system,
   acs_system_external_type,
   acs_user,
