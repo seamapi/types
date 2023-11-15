@@ -627,7 +627,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code: string | null
-        external_type: 'pti_card' | 'brivo_credential'
+        external_type: 'pti_card' | 'brivo_credential' | 'hid_cm_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -651,7 +651,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code: string | null
-        external_type: 'pti_card' | 'brivo_credential'
+        external_type: 'pti_card' | 'brivo_credential' | 'hid_cm_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -685,7 +685,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code: string | null
-        external_type: 'pti_card' | 'brivo_credential'
+        external_type: 'pti_card' | 'brivo_credential' | 'hid_cm_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -716,7 +716,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code: string | null
-        external_type: 'pti_card' | 'brivo_credential'
+        external_type: 'pti_card' | 'brivo_credential' | 'hid_cm_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
@@ -740,7 +740,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code: string | null
-        external_type: 'pti_card' | 'brivo_credential'
+        external_type: 'pti_card' | 'brivo_credential' | 'hid_cm_credential'
         external_type_display_name: string
         created_at: string
         workspace_id: string
