@@ -3,6 +3,7 @@ import { z } from 'zod'
 export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
+  'hid_cm_credential',
 ])
 
 export type AcsCredentialExternalType = z.infer<

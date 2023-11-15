@@ -3050,7 +3050,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
@@ -3120,7 +3124,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
@@ -3193,7 +3201,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
@@ -3308,7 +3320,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
@@ -3400,7 +3416,11 @@ export default {
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
                           external_type: {
-                            enum: ['pti_card', 'brivo_credential'],
+                            enum: [
+                              'pti_card',
+                              'brivo_credential',
+                              'hid_cm_credential',
+                            ],
                             type: 'string',
                           },
                           external_type_display_name: { type: 'string' },
@@ -3475,7 +3495,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
@@ -3545,7 +3569,11 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
-                          enum: ['pti_card', 'brivo_credential'],
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_cm_credential',
+                          ],
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
