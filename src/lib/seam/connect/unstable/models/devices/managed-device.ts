@@ -18,7 +18,7 @@ export const common_device_properties = z.object({
     manufacturer_display_name: z.string(),
 
     offline_access_codes_supported: z.boolean().optional(),
-    access_codes_supported: z.boolean().optional(),
+    online_access_codes_supported: z.boolean().optional(),
     accessory_keypad_supported: z.boolean().optional(),
   }),
   has_direct_power: z.boolean().optional(),

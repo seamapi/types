@@ -3,34 +3,122 @@ export default {
     schemas: {
       access_code: {
         properties: {
-          access_code_id: { format: 'uuid', type: 'string' },
-          code: { nullable: true, type: 'string' },
-          common_code_key: { nullable: true, type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          device_id: { format: 'uuid', type: 'string' },
-          ends_at: { format: 'date-time', nullable: true, type: 'string' },
-          errors: { nullable: true },
-          is_backup: { type: 'boolean' },
-          is_backup_access_code_available: { type: 'boolean' },
-          is_external_modification_allowed: { type: 'boolean' },
-          is_managed: { enum: [true], type: 'boolean' },
-          is_offline_access_code: { type: 'boolean' },
-          is_one_time_use: { type: 'boolean' },
-          is_scheduled_on_device: { type: 'boolean' },
-          is_waiting_for_code_assignment: { type: 'boolean' },
-          name: { nullable: true, type: 'string' },
+          access_code_id: {
+            description: 'Unique identifier for the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
+          code: {
+            description:
+              'Code used for access. Typically, a numeric or alphanumeric string.',
+            nullable: true,
+            type: 'string',
+          },
+          common_code_key: {
+            description:
+              'Unique identifier for a group of access codes that share the same code.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the access code was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description:
+              'Unique identifier for the device associated with the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Date and time after which the time-bound access code becomes inactive.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          errors: {
+            description:
+              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+            nullable: true,
+          },
+          is_backup: {
+            description: 'Indicates whether the access code is a backup code.',
+            type: 'boolean',
+          },
+          is_backup_access_code_available: {
+            description:
+              'Indicates whether a backup access code is available for use if the primary access code is lost or compromised.',
+            type: 'boolean',
+          },
+          is_external_modification_allowed: {
+            description:
+              'Indicates whether changes to the access code from external sources are permitted.',
+            type: 'boolean',
+          },
+          is_managed: {
+            description: 'Indicates whether Seam manages the access code.',
+            enum: [true],
+            type: 'boolean',
+          },
+          is_offline_access_code: {
+            description:
+              'Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection.',
+            type: 'boolean',
+          },
+          is_one_time_use: {
+            description:
+              'Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use.',
+            type: 'boolean',
+          },
+          is_scheduled_on_device: {
+            description:
+              'Indicates whether the code is set on the device according to a preconfigured schedule.',
+            type: 'boolean',
+          },
+          is_waiting_for_code_assignment: {
+            description:
+              'Indicates whether the access code is waiting for a code assignment.',
+            type: 'boolean',
+          },
+          name: {
+            description:
+              'Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.',
+            nullable: true,
+            type: 'string',
+          },
           pulled_backup_access_code_id: {
+            description:
+              'Identifier of the pulled backup access code. Used to associate the pulled backup access code with the original access code.',
             format: 'uuid',
             nullable: true,
             type: 'string',
           },
-          starts_at: { format: 'date-time', nullable: true, type: 'string' },
+          starts_at: {
+            description:
+              'Date and time at which the time-bound access code becomes active.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
           status: {
+            description:
+              '\n    Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.\n  ',
             enum: ['setting', 'set', 'unset', 'removing', 'unknown'],
             type: 'string',
           },
-          type: { enum: ['time_bound', 'ongoing'], type: 'string' },
-          warnings: { nullable: true },
+          type: {
+            description:
+              'Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.',
+            enum: ['time_bound', 'ongoing'],
+            type: 'string',
+          },
+          warnings: {
+            description:
+              'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+            nullable: true,
+          },
         },
         required: [
           'common_code_key',
@@ -503,11 +591,11 @@ export default {
                       manufacturer: { type: 'string' },
                       model: {
                         properties: {
-                          access_codes_supported: { type: 'boolean' },
                           accessory_keypad_supported: { type: 'boolean' },
                           display_name: { type: 'string' },
                           manufacturer_display_name: { type: 'string' },
                           offline_access_codes_supported: { type: 'boolean' },
+                          online_access_codes_supported: { type: 'boolean' },
                         },
                         required: ['display_name', 'manufacturer_display_name'],
                         type: 'object',
@@ -1441,18 +1529,66 @@ export default {
       },
       unmanaged_access_code: {
         properties: {
-          access_code_id: { format: 'uuid', type: 'string' },
-          code: { nullable: true, type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          device_id: { format: 'uuid', type: 'string' },
-          ends_at: { format: 'date-time', nullable: true, type: 'string' },
-          errors: { nullable: true },
+          access_code_id: {
+            description: 'Unique identifier for the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
+          code: {
+            description:
+              'Code used for access. Typically, a numeric or alphanumeric string.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the access code was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description:
+              'Unique identifier for the device associated with the access code.',
+            format: 'uuid',
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Date and time after which the time-bound access code becomes inactive.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          errors: {
+            description:
+              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+            nullable: true,
+          },
           is_managed: { enum: [false], type: 'boolean' },
-          name: { nullable: true, type: 'string' },
-          starts_at: { format: 'date-time', nullable: true, type: 'string' },
+          name: {
+            description:
+              'Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes.',
+            nullable: true,
+            type: 'string',
+          },
+          starts_at: {
+            description:
+              'Date and time at which the time-bound access code becomes active.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
           status: { enum: ['set'], type: 'string' },
-          type: { enum: ['time_bound', 'ongoing'], type: 'string' },
-          warnings: { nullable: true },
+          type: {
+            description:
+              'Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration.',
+            enum: ['time_bound', 'ongoing'],
+            type: 'string',
+          },
+          warnings: {
+            description:
+              'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+            nullable: true,
+          },
         },
         required: [
           'type',
