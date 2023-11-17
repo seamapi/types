@@ -4,6 +4,8 @@ export type {
   AcsAccessGroupExternalType,
   AcsCredential,
   AcsCredentialExternalType,
+  AcsCredentialPool,
+  AcsCredentialPoolExternalType,
   AcsSystem,
   AcsSystemExternalType,
   AcsUser,
