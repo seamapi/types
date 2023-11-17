@@ -1541,7 +1541,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -2248,7 +2248,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -3372,7 +3372,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -3958,7 +3958,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -4665,7 +4665,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -5251,7 +5251,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -6272,7 +6272,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -7009,7 +7009,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined
@@ -7721,7 +7721,7 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
             offline_access_codes_supported?: boolean | undefined
-            access_codes_supported?: boolean | undefined
+            online_access_codes_supported?: boolean | undefined
             accessory_keypad_supported?: boolean | undefined
           }
           has_direct_power?: boolean | undefined

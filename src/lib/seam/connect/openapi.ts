@@ -503,11 +503,11 @@ export default {
                       manufacturer: { type: 'string' },
                       model: {
                         properties: {
-                          access_codes_supported: { type: 'boolean' },
                           accessory_keypad_supported: { type: 'boolean' },
                           display_name: { type: 'string' },
                           manufacturer_display_name: { type: 'string' },
                           offline_access_codes_supported: { type: 'boolean' },
+                          online_access_codes_supported: { type: 'boolean' },
                         },
                         required: ['display_name', 'manufacturer_display_name'],
                         type: 'object',
