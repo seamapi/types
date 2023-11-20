@@ -1465,6 +1465,7 @@ export interface Routes {
             | 'pti'
             | 'wyze'
             | 'seam_passport'
+            | 'visionline'
             | 'yale_access'
             | 'hid_cm'
           >
@@ -7816,6 +7817,8 @@ export interface Routes {
     commonParams: {
       user_identity_key?: (string | null) | undefined
       email_address?: (string | null) | undefined
+      first_name?: (string | null) | undefined
+      last_name?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -7823,6 +7826,8 @@ export interface Routes {
         user_identity_id: string
         user_identity_key?: (string | null) | undefined
         email_address?: (string | null) | undefined
+        first_name?: (string | null) | undefined
+        last_name?: (string | null) | undefined
         created_at: string
         workspace_id: string
       }
@@ -7846,6 +7851,8 @@ export interface Routes {
         user_identity_id: string
         user_identity_key?: (string | null) | undefined
         email_address?: (string | null) | undefined
+        first_name?: (string | null) | undefined
+        last_name?: (string | null) | undefined
         created_at: string
         workspace_id: string
       }
