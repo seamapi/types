@@ -6,6 +6,7 @@ export {
   acs_credential_external_type,
   acs_credential_pool,
   acs_credential_pool_external_type,
+  acs_credential_provisioning_automation,
   acs_entrance,
   acs_system,
   acs_system_external_type,
