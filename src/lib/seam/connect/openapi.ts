@@ -3229,6 +3229,87 @@ export default {
         'x-fern-sdk-method-name': 'list',
       },
     },
+    '/acs/credential_provisioning_automations/launch': {
+      post: {
+        operationId: 'acsCredentialProvisioningAutomationsLaunchPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_pool_id: { format: 'uuid', type: 'string' },
+                  create_credential_manager_user: { type: 'boolean' },
+                  credential_manager_acs_system_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  credential_manager_acs_user_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: [
+                  'user_identity_id',
+                  'credential_manager_acs_system_id',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential_provisioning_automation: {
+                      properties: {
+                        acs_credential_provisioning_automation_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: { format: 'date-time', type: 'string' },
+                        credential_manager_acs_system_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_provisioning_automation_id',
+                        'credential_manager_acs_system_id',
+                        'user_identity_id',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential_provisioning_automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credential_provisioning_automations/launch',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
+        'x-fern-sdk-method-name': 'launch',
+      },
+    },
     '/acs/credentials/assign': {
       patch: {
         operationId: 'acsCredentialsAssignPatch',
