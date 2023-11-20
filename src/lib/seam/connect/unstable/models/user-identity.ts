@@ -4,6 +4,8 @@ export const user_identity = z.object({
   user_identity_id: z.string().uuid(),
   user_identity_key: z.string().nullish(),
   email_address: z.string().email().nullish(),
+  first_name: z.string().nullish(),
+  last_name: z.string().nullish(),
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
 })
