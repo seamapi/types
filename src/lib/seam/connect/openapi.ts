@@ -5302,6 +5302,7 @@ export default {
                         'pti',
                         'wyze',
                         'seam_passport',
+                        'visionline',
                         'yale_access',
                         'hid_cm',
                       ],
