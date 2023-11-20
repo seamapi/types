@@ -83,10 +83,15 @@ const intercom = z.object({
   main_category: z.literal(device_category.enum.intercom),
   physical_properties: z.object({
     has_camera: z.boolean(),
+    has_rfid_reader: z.boolean(),
+    has_nfc_reader: z.boolean(),
+    has_wiegand_interface: z.boolean(),
   }),
   software_features: z.object({
     can_remotely_unlock: z.boolean(),
     can_program_access_codes: z.boolean(),
+    can_unlock_with_face_recognition: z.boolean(),
+    supports_onvif: z.boolean(),
   }),
 })
 
