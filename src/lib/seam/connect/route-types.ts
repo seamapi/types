@@ -776,6 +776,29 @@ export interface Routes {
       }>
     }
   }
+  '/acs/credential_provisioning_automations/launch': {
+    route: '/acs/credential_provisioning_automations/launch'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      credential_manager_acs_system_id: string
+      acs_credential_pool_id?: string | undefined
+      create_credential_manager_user?: boolean | undefined
+      credential_manager_acs_user_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credential_provisioning_automation: {
+        acs_credential_provisioning_automation_id: string
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+      }
+    }
+  }
   '/acs/credentials/assign': {
     route: '/acs/credentials/assign'
     method: 'PATCH' | 'POST'
