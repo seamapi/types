@@ -1465,6 +1465,7 @@ export interface Routes {
             | 'pti'
             | 'wyze'
             | 'seam_passport'
+            | 'visionline'
             | 'yale_access'
             | 'hid_cm'
           >
@@ -1694,7 +1695,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       device: {
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -1725,38 +1728,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -2262,21 +2281,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }
     }
@@ -2401,7 +2429,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       devices: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -2432,38 +2462,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -2969,21 +3015,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }>
     }
@@ -3018,7 +3073,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       device: {
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -3049,19 +3106,25 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
         is_managed: false
         properties: {
@@ -3198,7 +3261,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       devices: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -3229,19 +3294,25 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
         is_managed: false
         properties: {
@@ -3525,7 +3596,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       lock: {
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -3556,38 +3629,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -4093,25 +4182,36 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }
       device: {
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -4142,38 +4242,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -4679,21 +4795,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }
     }
@@ -4818,7 +4943,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       locks: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -4849,38 +4976,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -5386,25 +5529,36 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }>
       devices: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -5435,38 +5589,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -5972,21 +6142,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }>
     }
@@ -6425,7 +6604,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       thermostat: {
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -6456,38 +6637,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -6993,21 +7190,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }
     }
@@ -7162,7 +7368,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       thermostats: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -7193,38 +7401,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -7730,21 +7954,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }>
     }
@@ -7816,6 +8049,8 @@ export interface Routes {
     commonParams: {
       user_identity_key?: (string | null) | undefined
       email_address?: (string | null) | undefined
+      first_name?: (string | null) | undefined
+      last_name?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -7823,6 +8058,8 @@ export interface Routes {
         user_identity_id: string
         user_identity_key?: (string | null) | undefined
         email_address?: (string | null) | undefined
+        first_name?: (string | null) | undefined
+        last_name?: (string | null) | undefined
         created_at: string
         workspace_id: string
       }
@@ -7846,6 +8083,8 @@ export interface Routes {
         user_identity_id: string
         user_identity_key?: (string | null) | undefined
         email_address?: (string | null) | undefined
+        first_name?: (string | null) | undefined
+        last_name?: (string | null) | undefined
         created_at: string
         workspace_id: string
       }
@@ -7874,7 +8113,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       accessible_devices: Array<{
+        /** Unique identifier for the device. */
         device_id: string
+        /** Type of the device. */
         device_type:
           | (
               | 'akuvox_lock'
@@ -7905,38 +8146,54 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
+        /** Properties of the device. */
         properties: ({
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
           model: {
+            /** Display name of the device model. */
             display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
             accessory_keypad_supported?: boolean | undefined
           }
+          /** Indicates whether the device has direct power. */
           has_direct_power?: boolean | undefined
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
           battery?:
             | {
                 level: number
                 status: 'critical' | 'low' | 'good' | 'full'
               }
             | undefined
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
+          /** Serial number of the device. */
           serial_number?: string | undefined
-          /** Currently possible to use online access codes */
+          /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
-          /** Currently possible to use offline access codes */
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: use model.offline_access_codes_enabled. */
+          /** Deprecated: Use model.offline_access_codes_enabled. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: use model.accessory_keypad_supported. */
+          /** Deprecated: Use model.accessory_keypad_supported. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -8442,21 +8699,30 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))
+        /** Location information for the device. */
         location: {
+          /** Name of the device location. */
           location_name?: string | undefined
+          /** Time zone of the device location. */
           timezone?: string | undefined
         } | null
+        /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
+        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<{
           error_code: string
           message: string
         }>
+        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
           warning_code: string
           message: string
         }>
+        /** Date and time at which the device object was created. */
         created_at: string
+        /** Indicates whether Seam manages the device. */
         is_managed: true
       }>
     }
