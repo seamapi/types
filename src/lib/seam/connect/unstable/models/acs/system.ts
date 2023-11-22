@@ -23,6 +23,7 @@ export const acs_system = z.object({
     .describe('deprecated: use external_type_display_name'),
   name: z.string(),
   created_at: z.string().datetime(),
+  workspace_id: z.string().uuid(),
   connected_account_ids: z.array(z.string()),
 })
 

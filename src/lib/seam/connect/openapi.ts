@@ -214,6 +214,7 @@ export default {
             description: 'deprecated: use external_type_display_name',
             type: 'string',
           },
+          workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
           'acs_system_id',
@@ -223,6 +224,7 @@ export default {
           'system_type_display_name',
           'name',
           'created_at',
+          'workspace_id',
           'connected_account_ids',
         ],
         type: 'object',
@@ -9183,6 +9185,118 @@ export default {
         summary: '/user_identities/grant_access_to_device',
         tags: [],
         'x-fern-ignore': true,
+      },
+    },
+    '/user_identities/list': {
+      get: {
+        operationId: 'userIdentitiesListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identities: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          email_address: {
+                            format: 'email',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          first_name: { nullable: true, type: 'string' },
+                          last_name: { nullable: true, type: 'string' },
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                          user_identity_key: { nullable: true, type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'user_identity_id',
+                          'created_at',
+                          'workspace_id',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['user_identities', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/user_identities/list',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'userIdentitiesListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    user_identities: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          email_address: {
+                            format: 'email',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          first_name: { nullable: true, type: 'string' },
+                          last_name: { nullable: true, type: 'string' },
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                          user_identity_key: { nullable: true, type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'user_identity_id',
+                          'created_at',
+                          'workspace_id',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['user_identities', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/user_identities/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'user_identities',
       },
     },
     '/user_identities/list_accessible_devices': {
