@@ -1032,6 +1032,7 @@ export interface Routes {
         system_type_display_name: string
         name: string
         created_at: string
+        workspace_id: string
         connected_account_ids: string[]
       }
     }
@@ -1066,6 +1067,7 @@ export interface Routes {
         system_type_display_name: string
         name: string
         created_at: string
+        workspace_id: string
         connected_account_ids: string[]
       }>
     }
@@ -8126,6 +8128,25 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {}
+  }
+  '/user_identities/list': {
+    route: '/user_identities/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      user_identities: Array<{
+        user_identity_id: string
+        user_identity_key?: (string | null) | undefined
+        email_address?: (string | null) | undefined
+        first_name?: (string | null) | undefined
+        last_name?: (string | null) | undefined
+        created_at: string
+        workspace_id: string
+      }>
+    }
   }
   '/user_identities/list_accessible_devices': {
     route: '/user_identities/list_accessible_devices'
