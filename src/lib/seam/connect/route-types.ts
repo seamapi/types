@@ -729,6 +729,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1103,6 +1104,7 @@ export interface Routes {
       acs_user: {
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1141,6 +1143,7 @@ export interface Routes {
       acs_user: {
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1168,6 +1171,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1227,6 +1231,7 @@ export interface Routes {
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
+      hid_acs_system_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -6383,6 +6388,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       device_id: string
+      is_programmed?: boolean | undefined
     }
     formData: {}
     jsonResponse: {
@@ -8786,6 +8792,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string

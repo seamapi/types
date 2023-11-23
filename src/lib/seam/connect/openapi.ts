@@ -247,6 +247,7 @@ export default {
           },
           external_type_display_name: { type: 'string' },
           full_name: { type: 'string' },
+          hid_acs_system_id: { format: 'uuid', type: 'string' },
           is_suspended: { type: 'boolean' },
           phone_number: { nullable: true, type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -4747,6 +4748,7 @@ export default {
                   },
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
+                  hid_acs_system_id: { format: 'uuid', type: 'string' },
                   phone_number: { nullable: true, type: 'string' },
                 },
                 required: ['acs_user_id'],
@@ -4795,6 +4797,7 @@ export default {
                   },
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
+                  hid_acs_system_id: { format: 'uuid', type: 'string' },
                   phone_number: { nullable: true, type: 'string' },
                 },
                 required: ['acs_user_id'],
@@ -7571,7 +7574,10 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  is_programmed: { type: 'boolean' },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
