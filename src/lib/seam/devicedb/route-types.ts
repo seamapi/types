@@ -116,15 +116,15 @@ export interface Routes {
             main_category: 'intercom'
             physical_properties: {
               has_camera: boolean
-              has_rfid_reader: boolean
-              has_nfc_reader: boolean
-              has_wiegand_interface: boolean
+              has_rfid_reader?: boolean
+              has_nfc_reader?: boolean
+              has_wiegand_interface?: boolean
             }
             software_features: {
               can_remotely_unlock: boolean
               can_program_access_codes: boolean
-              can_unlock_with_face_recognition: boolean
-              supports_onvif: boolean
+              can_unlock_with_face_recognition?: boolean
+              supports_onvif?: boolean
             }
           }
         | {
@@ -271,15 +271,15 @@ export interface Routes {
               main_category: 'intercom'
               physical_properties: {
                 has_camera: boolean
-                has_rfid_reader: boolean
-                has_nfc_reader: boolean
-                has_wiegand_interface: boolean
+                has_rfid_reader?: boolean
+                has_nfc_reader?: boolean
+                has_wiegand_interface?: boolean
               }
               software_features: {
                 can_remotely_unlock: boolean
                 can_program_access_codes: boolean
-                can_unlock_with_face_recognition: boolean
-                supports_onvif: boolean
+                can_unlock_with_face_recognition?: boolean
+                supports_onvif?: boolean
               }
             }
           | {
