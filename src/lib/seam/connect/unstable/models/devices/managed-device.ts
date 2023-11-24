@@ -84,11 +84,11 @@ export const common_device_properties = z.object({
   // Deprecated legacy capability support props
   supports_accessory_keypad: z
     .boolean()
-    .describe('Deprecated: Use model.offline_access_codes_enabled.')
+    .describe('Deprecated. Use model.accessory_keypad_supported.')
     .optional(),
   supports_offline_access_codes: z
     .boolean()
-    .describe('Deprecated: Use model.accessory_keypad_supported.')
+    .describe('Deprecated. Use offline_access_codes_enabled.')
     .optional(),
 })
 
