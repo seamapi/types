@@ -729,6 +729,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1103,6 +1104,7 @@ export interface Routes {
       acs_user: {
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1141,6 +1143,7 @@ export interface Routes {
       acs_user: {
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1168,6 +1171,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
@@ -1227,6 +1231,7 @@ export interface Routes {
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
+      hid_acs_system_id?: string | undefined
     }
     commonParams: {}
     formData: {}
@@ -1800,9 +1805,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -2534,9 +2539,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -3701,9 +3706,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -4314,9 +4319,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -5048,9 +5053,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -5661,9 +5666,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -6383,6 +6388,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       device_id: string
+      is_programmed?: boolean | undefined
     }
     formData: {}
     jsonResponse: {
@@ -6709,9 +6715,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -7473,9 +7479,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -8237,9 +8243,9 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated: Use model.offline_access_codes_enabled. */
+          /** Deprecated. Use model.accessory_keypad_supported. */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated: Use model.accessory_keypad_supported. */
+          /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
           august_metadata?:
@@ -8786,6 +8792,7 @@ export interface Routes {
       acs_users: Array<{
         acs_user_id: string
         acs_system_id: string
+        hid_acs_system_id?: string | undefined
         workspace_id: string
         created_at: string
         display_name: string
