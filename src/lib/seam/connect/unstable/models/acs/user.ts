@@ -36,6 +36,7 @@ export const acs_user = z
   .object({
     acs_user_id: z.string().uuid(),
     acs_system_id: z.string().uuid(),
+    hid_acs_system_id: z.string().uuid().optional(),
     workspace_id: z.string().uuid(),
     created_at: z.string().datetime(),
     display_name: z.string(),
