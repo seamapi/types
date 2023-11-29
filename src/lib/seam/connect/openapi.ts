@@ -1891,6 +1891,11 @@ export default {
         scheme: 'bearer',
         type: 'http',
       },
+      pat_without_workspace: {
+        bearerFormat: 'API Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
       seam_client_session_token: {
         in: 'header',
         name: 'seam-client-session-token',
@@ -9697,6 +9702,58 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'webhooks',
+      },
+    },
+    '/workspaces/create': {
+      post: {
+        operationId: 'workspacesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  connect_partner_name: {
+                    description: 'The name shown inside the connect webview',
+                    type: 'string',
+                  },
+                  is_sandbox: { default: false, type: 'boolean' },
+                  webview_logo_shape: {
+                    enum: ['circle', 'square'],
+                    type: 'string',
+                  },
+                  webview_primary_button_color: { type: 'string' },
+                  workspace_name: { type: 'string' },
+                },
+                required: ['workspace_name', 'connect_partner_name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    workspace: { $ref: '#/components/schemas/workspace' },
+                  },
+                  required: ['workspace', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ pat_without_workspace: [] }],
+        summary: '/workspaces/create',
+        tags: ['/workspaces'],
+        'x-fern-sdk-group-name': ['workspaces'],
+        'x-fern-sdk-method-name': 'create',
       },
     },
     '/workspaces/get': {
