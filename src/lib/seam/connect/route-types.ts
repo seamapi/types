@@ -8895,6 +8895,29 @@ export interface Routes {
       }>
     }
   }
+  '/workspaces/create': {
+    route: '/workspaces/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      workspace_name: string
+      /** The name shown inside the connect webview */
+      connect_partner_name: string
+      is_sandbox?: boolean
+      webview_primary_button_color?: string | undefined
+      webview_logo_shape?: ('circle' | 'square') | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      workspace: {
+        workspace_id: string
+        name: string
+        connect_partner_name: string | null
+        is_sandbox: boolean
+      }
+    }
+  }
   '/workspaces/get': {
     route: '/workspaces/get'
     method: 'GET' | 'POST'
