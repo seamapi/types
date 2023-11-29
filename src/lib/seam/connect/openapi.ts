@@ -1787,6 +1787,13 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           properties: {
             properties: {
+              battery_level: {
+                description:
+                  'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                maximum: 1,
+                minimum: 0,
+                type: 'number',
+              },
               image_alt_text: { type: 'string' },
               image_url: { type: 'string' },
               manufacturer: { type: 'string' },
@@ -9717,14 +9724,14 @@ export default {
                     type: 'string',
                   },
                   is_sandbox: { default: false, type: 'boolean' },
+                  name: { type: 'string' },
                   webview_logo_shape: {
                     enum: ['circle', 'square'],
                     type: 'string',
                   },
                   webview_primary_button_color: { type: 'string' },
-                  workspace_name: { type: 'string' },
                 },
-                required: ['workspace_name', 'connect_partner_name'],
+                required: ['name', 'connect_partner_name'],
                 type: 'object',
               },
             },

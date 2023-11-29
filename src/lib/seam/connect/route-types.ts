@@ -3169,6 +3169,8 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
         }
       }
     }
@@ -3357,6 +3359,8 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
         }
       }>
     }
@@ -8900,7 +8904,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      workspace_name: string
+      name: string
       /** The name shown inside the connect webview */
       connect_partner_name: string
       is_sandbox?: boolean
