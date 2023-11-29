@@ -26,6 +26,14 @@ export const unmanaged_device = managed_device
         display_name: z.string(),
         manufacturer_display_name: z.string(),
       }),
+      battery_level: z
+        .number()
+        .min(0)
+        .max(1)
+        .optional()
+        .describe(
+          'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+        ),
     }),
   })
 
