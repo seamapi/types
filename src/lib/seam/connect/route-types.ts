@@ -3169,6 +3169,8 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
         }
       }
     }
@@ -3357,6 +3359,8 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
         }
       }>
     }

@@ -1787,6 +1787,13 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           properties: {
             properties: {
+              battery_level: {
+                description:
+                  'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                maximum: 1,
+                minimum: 0,
+                type: 'number',
+              },
               image_alt_text: { type: 'string' },
               image_url: { type: 'string' },
               manufacturer: { type: 'string' },
