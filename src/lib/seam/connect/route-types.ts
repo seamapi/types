@@ -1021,6 +1021,8 @@ export interface Routes {
           | 'salto_site'
           | 'brivo_system'
           | 'hid_cm_org'
+          | 'visionline_system'
+          | 'assa_abloy_cs_system_user'
         external_type_display_name: string
         /** deprecated: use external_type */
         system_type:
@@ -1029,6 +1031,8 @@ export interface Routes {
           | 'salto_site'
           | 'brivo_system'
           | 'hid_cm_org'
+          | 'visionline_system'
+          | 'assa_abloy_cs_system_user'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -1056,6 +1060,8 @@ export interface Routes {
           | 'salto_site'
           | 'brivo_system'
           | 'hid_cm_org'
+          | 'visionline_system'
+          | 'assa_abloy_cs_system_user'
         external_type_display_name: string
         /** deprecated: use external_type */
         system_type:
@@ -1064,6 +1070,8 @@ export interface Routes {
           | 'salto_site'
           | 'brivo_system'
           | 'hid_cm_org'
+          | 'visionline_system'
+          | 'assa_abloy_cs_system_user'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -1498,6 +1506,7 @@ export interface Routes {
             | 'wyze'
             | 'seam_passport'
             | 'visionline'
+            | 'assaabloy_credential_service'
             | 'yale_access'
             | 'hid_cm'
           >
@@ -3169,6 +3178,10 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
+          /** Indicates whether it is currently possible to use online access codes for the device. */
+          online_access_codes_enabled?: boolean | undefined
         }
       }
     }
@@ -3357,6 +3370,10 @@ export interface Routes {
             display_name: string
             manufacturer_display_name: string
           }
+          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
+          battery_level?: number | undefined
+          /** Indicates whether it is currently possible to use online access codes for the device. */
+          online_access_codes_enabled?: boolean | undefined
         }
       }>
     }
@@ -8900,7 +8917,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      workspace_name: string
+      name: string
       /** The name shown inside the connect webview */
       connect_partner_name: string
       is_sandbox?: boolean
