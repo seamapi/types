@@ -7,6 +7,8 @@ export const acs_system_external_type = z.enum([
   'salto_site',
   'brivo_system',
   'hid_cm_org',
+  'visionline_system',
+  'assa_abloy_cs_system_user',
 ])
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
