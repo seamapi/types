@@ -1022,7 +1022,7 @@ export interface Routes {
           | 'brivo_system'
           | 'hid_cm_org'
           | 'visionline_system'
-          | 'assa_abloy_cs_system_user'
+          | 'assa_abloy_credential_service_user'
         external_type_display_name: string
         /** deprecated: use external_type */
         system_type:
@@ -1032,7 +1032,7 @@ export interface Routes {
           | 'brivo_system'
           | 'hid_cm_org'
           | 'visionline_system'
-          | 'assa_abloy_cs_system_user'
+          | 'assa_abloy_credential_service_user'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -1061,7 +1061,7 @@ export interface Routes {
           | 'brivo_system'
           | 'hid_cm_org'
           | 'visionline_system'
-          | 'assa_abloy_cs_system_user'
+          | 'assa_abloy_credential_service_user'
         external_type_display_name: string
         /** deprecated: use external_type */
         system_type:
@@ -1071,7 +1071,7 @@ export interface Routes {
           | 'brivo_system'
           | 'hid_cm_org'
           | 'visionline_system'
-          | 'assa_abloy_cs_system_user'
+          | 'assa_abloy_credential_service_user'
         /** deprecated: use external_type_display_name */
         system_type_display_name: string
         name: string
@@ -1506,7 +1506,7 @@ export interface Routes {
             | 'wyze'
             | 'seam_passport'
             | 'visionline'
-            | 'assaabloy_credential_service'
+            | 'assa_abloy_credential_service'
             | 'yale_access'
             | 'hid_cm'
           >
