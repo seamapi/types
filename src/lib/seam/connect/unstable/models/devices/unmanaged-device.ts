@@ -8,6 +8,7 @@ export const unmanaged_device = managed_device
     device_type: true,
     connected_account_id: true,
     capabilities_supported: true,
+    enabled_capabilities: true,
     workspace_id: true,
     errors: true,
     warnings: true,

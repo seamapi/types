@@ -95,7 +95,16 @@ export const common_device_properties = z.object({
 export const managed_device = z.object({
   device_id: z.string().uuid().describe('Unique identifier for the device.'),
   device_type: any_device_type.describe('Type of the device.'),
+  /** @deprecated use enabled_capabilities for same behavior */
   capabilities_supported: z
+    .array(capabilities)
+    .describe('Deprecated. Use enabled_capabilities.'),
+  enabled_capabilities: z
+    .array(capabilities)
+    .describe(
+      'Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+    ),
+  supported_capabilities: z
     .array(capabilities)
     .describe(
       'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',

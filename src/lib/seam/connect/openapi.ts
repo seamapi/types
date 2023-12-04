@@ -497,8 +497,7 @@ export default {
       device: {
         properties: {
           capabilities_supported: {
-            description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            description: 'Deprecated. Use enabled_capabilities.',
             items: {
               enum: [
                 'access_code',
@@ -570,6 +569,21 @@ export default {
                 type: 'string',
               },
             ],
+          },
+          enabled_capabilities: {
+            description:
+              'Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            items: {
+              enum: [
+                'access_code',
+                'lock',
+                'noise_detection',
+                'thermostat',
+                'battery',
+              ],
+              type: 'string',
+            },
+            type: 'array',
           },
           errors: {
             description:
@@ -1523,6 +1537,21 @@ export default {
             ],
             description: 'Properties of the device.',
           },
+          supported_capabilities: {
+            description:
+              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            items: {
+              enum: [
+                'access_code',
+                'lock',
+                'noise_detection',
+                'thermostat',
+                'battery',
+              ],
+              type: 'string',
+            },
+            type: 'array',
+          },
           warnings: {
             description:
               'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
@@ -1547,6 +1576,8 @@ export default {
           'device_id',
           'device_type',
           'capabilities_supported',
+          'enabled_capabilities',
+          'supported_capabilities',
           'properties',
           'location',
           'connected_account_id',
@@ -1701,8 +1732,7 @@ export default {
       unmanaged_device: {
         properties: {
           capabilities_supported: {
-            description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            description: 'Deprecated. Use enabled_capabilities.',
             items: {
               enum: [
                 'access_code',
@@ -1775,6 +1805,21 @@ export default {
               },
             ],
           },
+          enabled_capabilities: {
+            description:
+              'Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            items: {
+              enum: [
+                'access_code',
+                'lock',
+                'noise_detection',
+                'thermostat',
+                'battery',
+              ],
+              type: 'string',
+            },
+            type: 'array',
+          },
           errors: {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
@@ -1845,6 +1890,7 @@ export default {
           'device_type',
           'connected_account_id',
           'capabilities_supported',
+          'enabled_capabilities',
           'workspace_id',
           'errors',
           'warnings',
