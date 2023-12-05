@@ -817,7 +817,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -842,7 +842,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -877,7 +877,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -909,7 +909,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -934,7 +934,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -944,13 +944,13 @@ export interface Routes {
   }
   '/acs/credentials/update': {
     route: '/acs/credentials/update'
-    method: 'POST'
+    method: 'PATCH' | 'POST'
     queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      code?: string | undefined
-      name?: string | undefined
+    jsonBody: {
+      acs_credential_id: string
+      code: string
     }
+    commonParams: {}
     formData: {}
     jsonResponse: {
       acs_credential: {
@@ -959,7 +959,7 @@ export interface Routes {
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
         display_name: string
-        code: string | null
+        code?: (string | undefined) | null
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -1769,16 +1769,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -2511,16 +2503,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -3165,12 +3149,8 @@ export interface Routes {
           | ('ecobee_thermostat' | 'nest_thermostat')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
-        /** Deprecated. Use enabled_capabilities. */
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Unique identifier for the Seam workspace associated with the device. */
@@ -3361,12 +3341,8 @@ export interface Routes {
           | ('ecobee_thermostat' | 'nest_thermostat')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
-        /** Deprecated. Use enabled_capabilities. */
+        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Unique identifier for the Seam workspace associated with the device. */
@@ -3702,16 +3678,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -4323,16 +4291,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -5065,16 +5025,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -5686,16 +5638,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -6752,16 +6696,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -7524,16 +7460,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
@@ -8296,16 +8224,8 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
-        /** Deprecated. Use enabled_capabilities. */
-        capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
-        /** Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        enabled_capabilities: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
-        >
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        supported_capabilities: Array<
+        capabilities_supported: Array<
           'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
         >
         /** Properties of the device. */
