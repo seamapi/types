@@ -497,7 +497,8 @@ export default {
       device: {
         properties: {
           capabilities_supported: {
-            description: 'Deprecated. Use enabled_capabilities.',
+            description:
+              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
             items: {
               enum: [
                 'access_code',
@@ -569,21 +570,6 @@ export default {
                 type: 'string',
               },
             ],
-          },
-          enabled_capabilities: {
-            description:
-              'Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
-            items: {
-              enum: [
-                'access_code',
-                'lock',
-                'noise_detection',
-                'thermostat',
-                'battery',
-              ],
-              type: 'string',
-            },
-            type: 'array',
           },
           errors: {
             description:
@@ -1537,21 +1523,6 @@ export default {
             ],
             description: 'Properties of the device.',
           },
-          supported_capabilities: {
-            description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
-            items: {
-              enum: [
-                'access_code',
-                'lock',
-                'noise_detection',
-                'thermostat',
-                'battery',
-              ],
-              type: 'string',
-            },
-            type: 'array',
-          },
           warnings: {
             description:
               'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
@@ -1576,8 +1547,6 @@ export default {
           'device_id',
           'device_type',
           'capabilities_supported',
-          'enabled_capabilities',
-          'supported_capabilities',
           'properties',
           'location',
           'connected_account_id',
@@ -1732,7 +1701,8 @@ export default {
       unmanaged_device: {
         properties: {
           capabilities_supported: {
-            description: 'Deprecated. Use enabled_capabilities.',
+            description:
+              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
             items: {
               enum: [
                 'access_code',
@@ -1805,21 +1775,6 @@ export default {
               },
             ],
           },
-          enabled_capabilities: {
-            description:
-              'Collection of capabilities that the device has enabled, reflecting its present configuration. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
-            items: {
-              enum: [
-                'access_code',
-                'lock',
-                'noise_detection',
-                'thermostat',
-                'battery',
-              ],
-              type: 'string',
-            },
-            type: 'array',
-          },
           errors: {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
@@ -1890,7 +1845,6 @@ export default {
           'device_type',
           'connected_account_id',
           'capabilities_supported',
-          'enabled_capabilities',
           'workspace_id',
           'errors',
           'warnings',
@@ -3537,8 +3491,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -3555,7 +3510,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3615,8 +3571,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -3633,7 +3590,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3696,8 +3654,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -3714,7 +3673,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3819,8 +3779,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -3837,7 +3798,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3919,8 +3881,9 @@ export default {
                           },
                           acs_system_id: { format: 'uuid', type: 'string' },
                           acs_user_id: { format: 'uuid', type: 'string' },
-                          code: { nullable: true, type: 'string' },
+                          actual_code: { nullable: true, type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
+                          desired_code: { nullable: true, type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
                           external_type: {
                             enum: [
@@ -3937,7 +3900,8 @@ export default {
                           'acs_credential_id',
                           'acs_system_id',
                           'display_name',
-                          'code',
+                          'actual_code',
+                          'desired_code',
                           'external_type',
                           'external_type_display_name',
                           'created_at',
@@ -4003,8 +3967,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -4021,7 +3986,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -4081,8 +4047,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -4099,7 +4066,8 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -4131,16 +4099,17 @@ export default {
       },
     },
     '/acs/credentials/update': {
-      post: {
-        operationId: 'acsCredentialsUpdatePost',
+      patch: {
+        operationId: 'acsCredentialsUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
+                  acs_credential_id: { type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
-                  name: { maxLength: 10, type: 'string' },
                 },
+                required: ['acs_credential_id', 'code'],
                 type: 'object',
               },
             },
@@ -4161,8 +4130,9 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         external_type: {
                           enum: [
@@ -4179,7 +4149,88 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
-                        'code',
+                        'actual_code',
+                        'desired_code',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'workspace_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/acs/credentials/update',
+        tags: [],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'acsCredentialsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { type: 'string' },
+                  code: { pattern: '^\\d+$', type: 'string' },
+                },
+                required: ['acs_credential_id', 'code'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      properties: {
+                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_credential_pool_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        actual_code: { nullable: true, type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        desired_code: { nullable: true, type: 'string' },
+                        display_name: { minLength: 1, type: 'string' },
+                        external_type: {
+                          enum: [
+                            'pti_card',
+                            'brivo_credential',
+                            'hid_credential',
+                          ],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_credential_id',
+                        'acs_system_id',
+                        'display_name',
+                        'actual_code',
+                        'desired_code',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
