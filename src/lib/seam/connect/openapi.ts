@@ -3484,6 +3484,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -3509,6 +3513,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3561,6 +3566,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -3586,6 +3595,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3624,10 +3634,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_method: {
+                    enum: ['code', 'card', 'mobile_key'],
+                    type: 'string',
+                  },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
                 },
-                required: ['acs_user_id', 'code'],
+                required: ['acs_user_id', 'access_method'],
                 type: 'object',
               },
             },
@@ -3641,6 +3655,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -3666,6 +3684,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3763,6 +3782,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -3788,6 +3811,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -3862,6 +3886,10 @@ export default {
                     acs_credentials: {
                       items: {
                         properties: {
+                          access_method: {
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
                           acs_credential_id: { format: 'uuid', type: 'string' },
                           acs_credential_pool_id: {
                             format: 'uuid',
@@ -3887,6 +3915,7 @@ export default {
                           'acs_credential_id',
                           'acs_system_id',
                           'display_name',
+                          'access_method',
                           'external_type',
                           'external_type_display_name',
                           'created_at',
@@ -3945,6 +3974,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -3970,6 +4003,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -4022,6 +4056,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -4047,6 +4085,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -4102,6 +4141,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -4127,6 +4170,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
@@ -4179,6 +4223,10 @@ export default {
                   properties: {
                     acs_credential: {
                       properties: {
+                        access_method: {
+                          enum: ['code', 'card', 'mobile_key'],
+                          type: 'string',
+                        },
                         acs_credential_id: { format: 'uuid', type: 'string' },
                         acs_credential_pool_id: {
                           format: 'uuid',
@@ -4204,6 +4252,7 @@ export default {
                         'acs_credential_id',
                         'acs_system_id',
                         'display_name',
+                        'access_method',
                         'external_type',
                         'external_type_display_name',
                         'created_at',
