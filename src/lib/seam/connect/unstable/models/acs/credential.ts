@@ -6,6 +6,12 @@ export const acs_credential_external_type = z.enum([
   'hid_credential',
 ])
 
+export const acs_credential_access_method_type = z.enum([
+  'code',
+  'card',
+  'mobile_key',
+])
+
 export type AcsCredentialExternalType = z.infer<
   typeof acs_credential_external_type
 >
@@ -17,6 +23,7 @@ export const acs_credential = z.object({
   acs_system_id: z.string().uuid(),
   display_name: z.string().nonempty(),
   code: z.string().optional().nullable(),
+  access_method: acs_credential_access_method_type,
   external_type: acs_credential_external_type,
   external_type_display_name: z.string(),
   created_at: z.string().datetime(),
