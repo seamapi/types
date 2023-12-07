@@ -5,7 +5,7 @@ export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
   'salto_site',
-  'brivo_system',
+  'brivo_account',
   'hid_cm_org',
   'visionline_system',
   'assa_abloy_credential_service_user',
