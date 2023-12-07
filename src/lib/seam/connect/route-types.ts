@@ -818,6 +818,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -832,7 +833,8 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       acs_user_id: string
-      code: string
+      access_method: 'code' | 'card' | 'mobile_key'
+      code?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -843,6 +845,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -878,6 +881,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -910,6 +914,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -935,6 +940,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
@@ -960,6 +966,7 @@ export interface Routes {
         acs_system_id: string
         display_name: string
         code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
         external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
         external_type_display_name: string
         created_at: string
