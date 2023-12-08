@@ -169,6 +169,19 @@ export const device_metadata = z
       device_id: z.number().optional(),
       site_id: z.number(),
       site_name: z.string(),
+      iana_timezone: z.string().optional(),
+      predefined_time_slots: z
+        .array(
+          z.object({
+            name: z.string(),
+            prefix: z.number(),
+            // Seam TOD
+            check_in_time: z.string(),
+            // Seam TOD
+            check_out_time: z.string(),
+          }),
+        )
+        .optional(),
     }),
 
     wyze_metadata: z.object({
