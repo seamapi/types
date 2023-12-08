@@ -2017,6 +2017,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -2751,6 +2760,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -3926,6 +3944,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -4539,6 +4566,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -5273,6 +5309,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -5886,6 +5931,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -6944,6 +6998,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -7708,6 +7771,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
@@ -8472,6 +8544,15 @@ export interface Routes {
                 device_id?: number | undefined
                 site_id: number
                 site_name: string
+                iana_timezone?: string | undefined
+                predefined_time_slots?:
+                  | Array<{
+                      name: string
+                      prefix: number
+                      check_in_time: string
+                      check_out_time: string
+                    }>
+                  | undefined
               }
             | undefined
           wyze_metadata?:
