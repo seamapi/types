@@ -1,5 +1,22 @@
 import { z } from 'zod'
 
+export const dormakaba_oracode_time_slot_schema = z.object({
+  name: z.string(),
+  prefix: z.number(),
+  // Seam TOD
+  check_in_time: z.string(),
+  // Seam TOD
+  check_out_time: z.string(),
+
+  is_24_hour: z.boolean(),
+  is_biweekly_mode: z.boolean(),
+  is_one_shot: z.boolean(),
+  is_master: z.boolean(),
+
+  ext_dormakaba_oracode_user_level_prefix: z.number(),
+  dormakaba_oracode_user_level_id: z.string().uuid(),
+})
+
 export const device_metadata = z
   .object({
     august_metadata: z.object({
@@ -171,16 +188,7 @@ export const device_metadata = z
       site_name: z.string(),
       iana_timezone: z.string().optional(),
       predefined_time_slots: z
-        .array(
-          z.object({
-            name: z.string(),
-            prefix: z.number(),
-            // Seam TOD
-            check_in_time: z.string(),
-            // Seam TOD
-            check_out_time: z.string(),
-          }),
-        )
+        .array(dormakaba_oracode_time_slot_schema)
         .optional(),
     }),
 
