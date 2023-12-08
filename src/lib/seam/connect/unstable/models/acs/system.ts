@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-// If changed, update seam.acs_system.system_type check constraint
+// If changed, update seam.acs_system.external_type generated column
 export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
