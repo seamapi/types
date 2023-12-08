@@ -773,6 +773,25 @@ export default {
                           device_id: { type: 'number' },
                           door_id: { type: 'number' },
                           door_name: { type: 'string' },
+                          iana_timezone: { type: 'string' },
+                          predefined_time_slots: {
+                            items: {
+                              properties: {
+                                check_in_time: { type: 'string' },
+                                check_out_time: { type: 'string' },
+                                name: { type: 'string' },
+                                prefix: { type: 'number' },
+                              },
+                              required: [
+                                'name',
+                                'prefix',
+                                'check_in_time',
+                                'check_out_time',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           site_id: { type: 'number' },
                           site_name: { type: 'string' },
                         },
