@@ -2024,6 +2024,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -2767,6 +2773,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -3951,6 +3963,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -4573,6 +4591,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -5316,6 +5340,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -5938,6 +5968,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -7005,6 +7041,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -7778,6 +7820,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
@@ -8551,6 +8599,12 @@ export interface Routes {
                       prefix: number
                       check_in_time: string
                       check_out_time: string
+                      is_24_hour: boolean
+                      is_biweekly_mode: boolean
+                      is_one_shot: boolean
+                      is_master: boolean
+                      ext_dormakaba_oracode_user_level_prefix: number
+                      dormakaba_oracode_user_level_id: string
                     }>
                   | undefined
               }
