@@ -733,7 +733,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1123,7 +1127,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1162,7 +1170,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1190,7 +1202,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1687,6 +1703,7 @@ export interface Routes {
         custom_metadata?:
           | Record<string, string | number | boolean | null>
           | undefined
+        automatically_manage_new_devices: boolean
       }
     }
   }
@@ -1717,7 +1734,42 @@ export interface Routes {
         custom_metadata?:
           | Record<string, string | number | boolean | null>
           | undefined
+        automatically_manage_new_devices: boolean
       }>
+    }
+  }
+  '/connected_accounts/update': {
+    route: '/connected_accounts/update'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      connected_account_id: string
+      automatically_manage_new_devices?: boolean | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      connected_account: {
+        connected_account_id?: string | undefined
+        created_at?: string | undefined
+        user_identifier?:
+          | {
+              username?: string | undefined
+              api_url?: string | undefined
+              email?: string | undefined
+              phone?: string | undefined
+              exclusive?: boolean | undefined
+            }
+          | undefined
+        account_type?: string | undefined
+        account_type_display_name: string
+        errors?: any
+        warnings?: any
+        custom_metadata?:
+          | Record<string, string | number | boolean | null>
+          | undefined
+        automatically_manage_new_devices: boolean
+      }
     }
   }
   '/devices/delete': {
@@ -9026,7 +9078,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
