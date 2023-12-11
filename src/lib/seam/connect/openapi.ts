@@ -246,7 +246,7 @@ export default {
           },
           email_address: { format: 'email', type: 'string' },
           external_type: {
-            enum: ['pti_user', 'brivo_user', 'hid_cm_user'],
+            enum: ['pti_user', 'brivo_user', 'hid_cm_user', 'salto_site_user'],
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
@@ -469,6 +469,7 @@ export default {
         properties: {
           account_type: { type: 'string' },
           account_type_display_name: { type: 'string' },
+          automatically_manage_new_devices: { type: 'boolean' },
           connected_account_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
@@ -496,7 +497,10 @@ export default {
           },
           warnings: { nullable: true },
         },
-        required: ['account_type_display_name'],
+        required: [
+          'account_type_display_name',
+          'automatically_manage_new_devices',
+        ],
         type: 'object',
       },
       device: {
@@ -6130,6 +6134,56 @@ export default {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'connected_accounts',
+      },
+    },
+    '/connected_accounts/update': {
+      post: {
+        operationId: 'connectedAccountsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  automatically_manage_new_devices: { type: 'boolean' },
+                  connected_account_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['connected_account_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    connected_account: {
+                      $ref: '#/components/schemas/connected_account',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['connected_account', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/connected_accounts/update',
+        tags: ['/connected_accounts'],
+        'x-fern-sdk-group-name': ['connected_accounts'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'connected_account',
       },
     },
     '/devices/delete': {
