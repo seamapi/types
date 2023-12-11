@@ -368,6 +368,11 @@ export default {
           cooling_set_point_fahrenheit: { type: 'number' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { type: 'string' },
+          errors: {
+            description:
+              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+            nullable: true,
+          },
           heating_set_point_celsius: { type: 'number' },
           heating_set_point_fahrenheit: { type: 'number' },
           hvac_mode_setting: {
@@ -1171,6 +1176,11 @@ export default {
                                 type: 'string',
                               },
                               device_id: { type: 'string' },
+                              errors: {
+                                description:
+                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                nullable: true,
+                              },
                               heating_set_point_celsius: { type: 'number' },
                               heating_set_point_fahrenheit: { type: 'number' },
                               hvac_mode_setting: {
@@ -1309,6 +1319,11 @@ export default {
                                 type: 'string',
                               },
                               device_id: { type: 'string' },
+                              errors: {
+                                description:
+                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                nullable: true,
+                              },
                               heating_set_point_celsius: { type: 'number' },
                               heating_set_point_fahrenheit: { type: 'number' },
                               hvac_mode_setting: {
@@ -1439,6 +1454,11 @@ export default {
                                 type: 'string',
                               },
                               device_id: { type: 'string' },
+                              errors: {
+                                description:
+                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                nullable: true,
+                              },
                               heating_set_point_celsius: { type: 'number' },
                               heating_set_point_fahrenheit: { type: 'number' },
                               hvac_mode_setting: {

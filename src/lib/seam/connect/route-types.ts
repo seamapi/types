@@ -2140,6 +2140,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -2231,6 +2233,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -2316,6 +2320,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -2889,6 +2895,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -2980,6 +2988,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -3065,6 +3075,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4079,6 +4091,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4170,6 +4184,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4255,6 +4271,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4707,6 +4725,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4798,6 +4818,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -4883,6 +4905,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -5456,6 +5480,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -5547,6 +5573,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -5632,6 +5660,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -6084,6 +6114,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -6175,6 +6207,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -6260,6 +6294,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -6611,6 +6647,8 @@ export interface Routes {
         schedule_starts_at: string
         schedule_ends_at: string
         created_at: string
+        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -6652,6 +6690,8 @@ export interface Routes {
         schedule_starts_at: string
         schedule_ends_at: string
         created_at: string
+        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -6682,6 +6722,8 @@ export interface Routes {
         schedule_starts_at: string
         schedule_ends_at: string
         created_at: string
+        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -6723,6 +6765,8 @@ export interface Routes {
         schedule_starts_at: string
         schedule_ends_at: string
         created_at: string
+        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
         automatic_heating_enabled?: boolean | undefined
         automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -7157,6 +7201,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -7248,6 +7294,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -7333,6 +7381,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -7936,6 +7986,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -8027,6 +8079,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -8112,6 +8166,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -8715,6 +8771,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -8806,6 +8864,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
@@ -8891,6 +8951,8 @@ export interface Routes {
                           schedule_starts_at: string
                           schedule_ends_at: string
                           created_at: string
+                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                          errors?: any
                           automatic_heating_enabled?: boolean | undefined
                           automatic_cooling_enabled?: boolean | undefined
                           hvac_mode_setting?:
