@@ -30,6 +30,11 @@ export const climate_setting_schedule = z
     schedule_starts_at: z.string(),
     schedule_ends_at: z.string(),
     created_at: z.string().datetime(),
+    errors: z
+      .any()
+      .describe(
+        'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+      ),
   })
   .merge(climate_setting.partial())
 
