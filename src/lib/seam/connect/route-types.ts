@@ -733,7 +733,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1123,7 +1127,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1162,7 +1170,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -1190,7 +1202,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
@@ -9026,7 +9042,11 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type: 'pti_user' | 'brivo_user' | 'hid_cm_user'
+        external_type:
+          | 'pti_user'
+          | 'brivo_user'
+          | 'hid_cm_user'
+          | 'salto_site_user'
         external_type_display_name: string
         is_suspended: boolean
         full_name?: string | undefined
