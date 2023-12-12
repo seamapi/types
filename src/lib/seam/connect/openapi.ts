@@ -1851,6 +1851,19 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           properties: {
             properties: {
+              battery: {
+                description:
+                  'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
+                properties: {
+                  level: { maximum: 1, minimum: 0, type: 'number' },
+                  status: {
+                    enum: ['critical', 'low', 'good', 'full'],
+                    type: 'string',
+                  },
+                },
+                required: ['level', 'status'],
+                type: 'object',
+              },
               battery_level: {
                 description:
                   'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
@@ -1858,19 +1871,63 @@ export default {
                 minimum: 0,
                 type: 'number',
               },
-              image_alt_text: { type: 'string' },
-              image_url: { type: 'string' },
-              manufacturer: { type: 'string' },
+              image_alt_text: {
+                description: 'Alt text for the device image.',
+                type: 'string',
+              },
+              image_url: {
+                description: 'Image URL for the device.',
+                format: 'uri',
+                type: 'string',
+              },
+              manufacturer: {
+                description: 'Manufacturer of the device.',
+                type: 'string',
+              },
               model: {
                 properties: {
-                  display_name: { type: 'string' },
-                  manufacturer_display_name: { type: 'string' },
+                  accessory_keypad_supported: {
+                    description:
+                      'Indicates whether the device supports an accessory keypad.',
+                    type: 'boolean',
+                  },
+                  display_name: {
+                    description: 'Display name of the device model.',
+                    type: 'string',
+                  },
+                  manufacturer_display_name: {
+                    description:
+                      'Display name that corresponds to the manufacturer-specific terminology for the device.',
+                    type: 'string',
+                  },
+                  offline_access_codes_supported: {
+                    description:
+                      'Indicates whether the device supports offline access codes.',
+                    type: 'boolean',
+                  },
+                  online_access_codes_supported: {
+                    description:
+                      'Indicates whether the device supports online access codes.',
+                    type: 'boolean',
+                  },
                 },
                 required: ['display_name', 'manufacturer_display_name'],
                 type: 'object',
               },
-              name: { type: 'string' },
-              online: { type: 'boolean' },
+              name: {
+                description:
+                  'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+                type: 'string',
+              },
+              offline_access_codes_enabled: {
+                description:
+                  'Indicates whether it is currently possible to use offline access codes for the device.',
+                type: 'boolean',
+              },
+              online: {
+                description: 'Indicates whether the device is online.',
+                type: 'boolean',
+              },
               online_access_codes_enabled: {
                 description:
                   'Indicates whether it is currently possible to use online access codes for the device.',

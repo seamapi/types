@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { managed_device } from './managed-device.js'
+import { common_device_properties, managed_device } from './managed-device.js'
 
 export const unmanaged_device = managed_device
   .pick({
@@ -15,31 +15,17 @@ export const unmanaged_device = managed_device
   })
   .extend({
     is_managed: z.literal(false),
-    // todo: should pick from the managed_device schema instead of re-defining
-    properties: z.object({
-      name: z.string(),
-      online: z.boolean(),
-      manufacturer: z.string().optional(),
-      image_url: z.string().optional(),
-      image_alt_text: z.string().optional(),
-      model: z.object({
-        display_name: z.string(),
-        manufacturer_display_name: z.string(),
-      }),
-      battery_level: z
-        .number()
-        .min(0)
-        .max(1)
-        .optional()
-        .describe(
-          'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
-        ),
-      online_access_codes_enabled: z
-        .boolean()
-        .describe(
-          'Indicates whether it is currently possible to use online access codes for the device.',
-        )
-        .optional(),
+    properties: common_device_properties.pick({
+      name: true,
+      online: true,
+      manufacturer: true,
+      image_url: true,
+      image_alt_text: true,
+      battery_level: true,
+      battery: true,
+      online_access_codes_enabled: true,
+      offline_access_codes_enabled: true,
+      model: true,
     }),
   })
 
