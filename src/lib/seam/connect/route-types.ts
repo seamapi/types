@@ -3270,19 +3270,41 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
-          model: {
-            display_name: string
-            manufacturer_display_name: string
-          }
           /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
+          battery?:
+            | {
+                level: number
+                status: 'critical' | 'low' | 'good' | 'full'
+              }
+            | undefined
           /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
+          offline_access_codes_enabled?: boolean | undefined
+          model: {
+            /** Display name of the device model. */
+            display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
+            manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
+            offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
+            online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
+            accessory_keypad_supported?: boolean | undefined
+          }
         }
       }
     }
@@ -3462,19 +3484,41 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
+          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Indicates whether the device is online. */
           online: boolean
+          /** Manufacturer of the device. */
           manufacturer?: string | undefined
+          /** Image URL for the device. */
           image_url?: string | undefined
+          /** Alt text for the device image. */
           image_alt_text?: string | undefined
-          model: {
-            display_name: string
-            manufacturer_display_name: string
-          }
           /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
           battery_level?: number | undefined
+          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
+          battery?:
+            | {
+                level: number
+                status: 'critical' | 'low' | 'good' | 'full'
+              }
+            | undefined
           /** Indicates whether it is currently possible to use online access codes for the device. */
           online_access_codes_enabled?: boolean | undefined
+          /** Indicates whether it is currently possible to use offline access codes for the device. */
+          offline_access_codes_enabled?: boolean | undefined
+          model: {
+            /** Display name of the device model. */
+            display_name: string
+            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
+            manufacturer_display_name: string
+            /** Indicates whether the device supports offline access codes. */
+            offline_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports online access codes. */
+            online_access_codes_supported?: boolean | undefined
+            /** Indicates whether the device supports an accessory keypad. */
+            accessory_keypad_supported?: boolean | undefined
+          }
         }
       }>
     }
