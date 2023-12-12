@@ -4,6 +4,7 @@ export const acs_user_external_type = z.enum([
   'pti_user',
   'brivo_user',
   'hid_cm_user',
+  'salto_site_user',
 ])
 
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
