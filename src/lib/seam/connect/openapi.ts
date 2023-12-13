@@ -4488,6 +4488,51 @@ export default {
         'x-fern-sdk-method-name': 'get',
       },
     },
+    '/acs/entrances/grant_access': {
+      post: {
+        operationId: 'acsEntrancesGrantAccessPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_entrance_id', 'acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/acs/entrances/grant_access',
+        tags: [],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'grant_access',
+      },
+    },
     '/acs/entrances/list': {
       post: {
         operationId: 'acsEntrancesListPost',
@@ -10112,9 +10157,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { api_key: [] },
+          { user_session: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
         ],
         summary: '/workspaces/get',
         tags: ['/workspaces'],
@@ -10142,9 +10188,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { api_key: [] },
+          { user_session: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
         ],
         summary: '/workspaces/get',
         tags: ['/workspaces'],
