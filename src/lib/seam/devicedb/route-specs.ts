@@ -2,6 +2,8 @@ import { z } from 'zod'
 
 import * as schemas from './public-models/index.js'
 
+const dot_path = z.string().regex(/^([a-z])[a-z_.]*[a-z]+$/)
+
 export const routes = {
   '/api/v1/device_models/get': {
     auth: 'publishable_key',
@@ -22,6 +24,8 @@ export const routes = {
       manufacturer_ids: z.string().uuid().array().optional(),
       integration_status: schemas.manufacturer.shape.integration.optional(),
       text_search: z.string().optional(),
+      include_if: z.array(dot_path).optional(),
+      exclude_if: z.array(dot_path).optional(),
     }),
     jsonResponse: z.object({
       device_models: schemas.device_model_v1.array(),
