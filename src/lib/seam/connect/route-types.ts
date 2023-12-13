@@ -996,6 +996,18 @@ export interface Routes {
       }
     }
   }
+  '/acs/entrances/grant_access': {
+    route: '/acs/entrances/grant_access'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_entrance_id: string
+      acs_user_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/entrances/list': {
     route: '/acs/entrances/list'
     method: 'GET' | 'POST'
