@@ -18,11 +18,11 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '16'
           - '18'
+          - '20'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
         with:
@@ -43,14 +43,14 @@ jobs:
         os:
           - ubuntu-latest
         node:
-          - '16'
           - '18'
+          - '20'
         include:
           - os: ubuntu-latest
             os_name: Linux
     steps:
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Download artifact
@@ -59,7 +59,7 @@ jobs:
           name: ${{ needs.build.outputs.artifact_name }}
           path: .
       - name: Find packages
-        uses: tj-actions/glob@v16
+        uses: tj-actions/glob@v17
         id: packages
         with:
           files: '*.tgz'
@@ -91,11 +91,11 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '16'
           - '18'
+          - '20'
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/setup
         with:
