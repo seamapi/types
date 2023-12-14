@@ -153,6 +153,8 @@ export interface Routes {
         | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
         | undefined
       text_search?: string | undefined
+      include_if?: string[] | undefined
+      exclude_if?: string[] | undefined
     }
     jsonBody: {}
     commonParams: {}
