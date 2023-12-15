@@ -733,13 +733,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1123,6 +1124,12 @@ export interface Routes {
     jsonBody: {
       acs_system_id: string
       acs_access_group_ids?: string[]
+      access_schedule?:
+        | {
+            starts_at: string
+            ends_at: string
+          }
+        | undefined
       full_name?: string | undefined
       /** Deprecated: use email_address. */
       email?: string | undefined
@@ -1139,13 +1146,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1182,13 +1190,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1214,13 +1223,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -9134,13 +9144,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
