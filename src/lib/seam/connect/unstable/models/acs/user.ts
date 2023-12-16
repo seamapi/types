@@ -41,9 +41,12 @@ export const acs_user = z
     workspace_id: z.string().uuid(),
     created_at: z.string().datetime(),
     display_name: z.string(),
-    external_type: acs_user_external_type,
-    external_type_display_name: z.string(),
+    external_type: acs_user_external_type.optional(),
+    external_type_display_name: z.string().optional(),
     is_suspended: z.boolean(),
+    starts_at: z.string().datetime().optional(),
+    ends_at: z.string().datetime().optional(),
+    is_virtual: z.boolean(),
   })
   .merge(user_fields)
 
