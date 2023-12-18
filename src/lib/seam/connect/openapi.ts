@@ -245,6 +245,7 @@ export default {
             type: 'string',
           },
           email_address: { format: 'email', type: 'string' },
+          ends_at: { format: 'date-time', type: 'string' },
           external_type: {
             enum: ['pti_user', 'brivo_user', 'hid_cm_user', 'salto_site_user'],
             type: 'string',
@@ -253,7 +254,9 @@ export default {
           full_name: { type: 'string' },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
           is_suspended: { type: 'boolean' },
+          is_virtual: { type: 'boolean' },
           phone_number: { nullable: true, type: 'string' },
+          starts_at: { format: 'date-time', type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -262,9 +265,8 @@ export default {
           'workspace_id',
           'created_at',
           'display_name',
-          'external_type',
-          'external_type_display_name',
           'is_suspended',
+          'is_virtual',
         ],
         type: 'object',
       },
@@ -515,6 +517,7 @@ export default {
                 'noise_detection',
                 'thermostat',
                 'battery',
+                'phone',
               ],
               type: 'string',
             },
@@ -578,6 +581,7 @@ export default {
                 enum: ['ecobee_thermostat', 'nest_thermostat'],
                 type: 'string',
               },
+              { enum: ['ios_phone', 'android_phone'], type: 'string' },
             ],
           },
           errors: {
@@ -1770,6 +1774,7 @@ export default {
                 'noise_detection',
                 'thermostat',
                 'battery',
+                'phone',
               ],
               type: 'string',
             },
@@ -1833,6 +1838,7 @@ export default {
                 enum: ['ecobee_thermostat', 'nest_thermostat'],
                 type: 'string',
               },
+              { enum: ['ios_phone', 'android_phone'], type: 'string' },
             ],
           },
           errors: {
@@ -2076,6 +2082,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -2160,6 +2167,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -2241,6 +2249,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -2969,6 +2978,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -3043,6 +3053,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -3119,6 +3130,7 @@ export default {
                   is_offline_access_code: { type: 'boolean' },
                   is_one_time_use: { type: 'boolean' },
                   max_time_rounding: {
+                    default: '1hour',
                     enum: ['1hour', '1day', '1h', '1d'],
                     type: 'string',
                   },
@@ -4761,6 +4773,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_schedule: {
+                    properties: {
+                      ends_at: { format: 'date-time', type: 'string' },
+                      starts_at: { format: 'date-time', type: 'string' },
+                    },
+                    required: ['starts_at', 'ends_at'],
+                    type: 'object',
+                  },
                   acs_access_group_ids: {
                     default: [],
                     items: { format: 'uuid', type: 'string' },
@@ -6460,6 +6480,7 @@ export default {
                         enum: ['ecobee_thermostat', 'nest_thermostat'],
                         type: 'string',
                       },
+                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -6501,6 +6522,10 @@ export default {
                         },
                         {
                           enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          type: 'string',
+                        },
+                        {
+                          enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
                       ],
@@ -6753,6 +6778,7 @@ export default {
                         enum: ['ecobee_thermostat', 'nest_thermostat'],
                         type: 'string',
                       },
+                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -6794,6 +6820,10 @@ export default {
                         },
                         {
                           enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          type: 'string',
+                        },
+                        {
+                          enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
                       ],
@@ -7562,6 +7592,7 @@ export default {
                         enum: ['ecobee_thermostat', 'nest_thermostat'],
                         type: 'string',
                       },
+                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -7603,6 +7634,10 @@ export default {
                         },
                         {
                           enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          type: 'string',
+                        },
+                        {
+                          enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
                       ],
@@ -8928,6 +8963,7 @@ export default {
                         enum: ['ecobee_thermostat', 'nest_thermostat'],
                         type: 'string',
                       },
+                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -8969,6 +9005,10 @@ export default {
                         },
                         {
                           enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          type: 'string',
+                        },
+                        {
+                          enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
                       ],
