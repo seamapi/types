@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-// If changed, update seam.acs_access_group.access_group_type check constraint
+// If changed, update seam.acs_access_group.external_type generated column
 export const acs_access_group_external_type = z.enum([
   'pti_unit',
   'pti_access_level',
