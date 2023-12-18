@@ -6,6 +6,7 @@ export const capabilities = z.enum([
   'noise_detection',
   'thermostat',
   'battery',
+  'phone',
 ])
 
 export type Capabilities = z.infer<typeof capabilities>
