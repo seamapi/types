@@ -80,10 +80,30 @@ export const thermostat_device_type = z.enum(
 
 export type ThermostatDeviceType = z.infer<typeof thermostat_device_type>
 
+/** Phones */
+export const PHONE_DEVICE_TYPE = {
+  IOS_PHONE: 'ios_phone',
+  ANDROID_PHONE: 'android_phone',
+} as const
+
+type PhoneDeviceTypeFromMapping =
+  (typeof PHONE_DEVICE_TYPE)[keyof typeof PHONE_DEVICE_TYPE]
+
+export const PHONE_DEVICE_TYPE_LIST = Object.values(
+  PHONE_DEVICE_TYPE,
+) as PhoneDeviceTypeFromMapping[]
+
+export const phone_device_type = z.enum(
+  Object.values(PHONE_DEVICE_TYPE_LIST) as [PhoneDeviceTypeFromMapping],
+)
+
+export type PhoneDeviceType = z.infer<typeof phone_device_type>
+
 export const any_device_type = z.union([
   lock_device_type,
   noise_sensor_device_type,
   thermostat_device_type,
+  phone_device_type,
 ])
 
 export type AnyDeviceType = z.infer<typeof any_device_type>
