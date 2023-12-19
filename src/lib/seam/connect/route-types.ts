@@ -19,7 +19,7 @@ export interface Routes {
       use_offline_access_code?: boolean | undefined
       is_offline_access_code?: boolean | undefined
       is_one_time_use?: boolean | undefined
-      max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
+      max_time_rounding?: '1hour' | '1day' | '1h' | '1d'
     }
     commonParams: {}
     formData: {}
@@ -116,7 +116,7 @@ export interface Routes {
       use_offline_access_code?: boolean | undefined
       is_offline_access_code?: boolean | undefined
       is_one_time_use?: boolean | undefined
-      max_time_rounding?: ('1hour' | '1day' | '1h' | '1d') | undefined
+      max_time_rounding?: '1hour' | '1day' | '1h' | '1d'
     }
     commonParams: {}
     formData: {}
@@ -733,13 +733,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1123,6 +1124,12 @@ export interface Routes {
     jsonBody: {
       acs_system_id: string
       acs_access_group_ids?: string[]
+      access_schedule?:
+        | {
+            starts_at: string
+            ends_at: string
+          }
+        | undefined
       full_name?: string | undefined
       /** Deprecated: use email_address. */
       email?: string | undefined
@@ -1139,13 +1146,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1182,13 +1190,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1214,13 +1223,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1840,9 +1850,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -2483,6 +2499,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           )
         | undefined
       device_types?:
@@ -2516,6 +2533,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           >
         | undefined
       manufacturer?:
@@ -2595,9 +2613,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -3260,11 +3284,17 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
@@ -3362,6 +3392,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           )
         | undefined
       device_types?:
@@ -3395,6 +3426,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           >
         | undefined
       manufacturer?:
@@ -3474,11 +3506,17 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
@@ -3835,9 +3873,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -4469,9 +4513,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -5112,6 +5162,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           )
         | undefined
       device_types?:
@@ -5145,6 +5196,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           >
         | undefined
       manufacturer?:
@@ -5224,9 +5276,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -5858,9 +5916,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -6945,9 +7009,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -7618,6 +7688,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           )
         | undefined
       device_types?:
@@ -7651,6 +7722,7 @@ export interface Routes {
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ios_phone' | 'android_phone')
           >
         | undefined
       manufacturer?:
@@ -7730,9 +7802,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -8515,9 +8593,15 @@ export interface Routes {
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
-          'access_code' | 'lock' | 'noise_detection' | 'thermostat' | 'battery'
+          | 'access_code'
+          | 'lock'
+          | 'noise_detection'
+          | 'thermostat'
+          | 'battery'
+          | 'phone'
         >
         /** Properties of the device. */
         properties: ({
@@ -9134,13 +9218,14 @@ export interface Routes {
         workspace_id: string
         created_at: string
         display_name: string
-        external_type:
-          | 'pti_user'
-          | 'brivo_user'
-          | 'hid_cm_user'
-          | 'salto_site_user'
-        external_type_display_name: string
+        external_type?:
+          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | undefined
+        external_type_display_name?: string | undefined
         is_suspended: boolean
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_virtual: boolean
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
