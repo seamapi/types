@@ -5867,6 +5867,7 @@ export default {
                         'seam_passport',
                         'visionline',
                         'assa_abloy_credential_service',
+                        'seam_bridge',
                         'yale_access',
                         'hid_cm',
                       ],
