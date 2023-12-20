@@ -22,7 +22,11 @@ export const routes = {
       main_category: schemas.device_category.optional(),
       manufacturer_id: z.string().uuid().optional(),
       manufacturer_ids: z.string().uuid().array().optional(),
+      /** @deprecated */
       integration_status: schemas.manufacturer.shape.integration.optional(),
+      integration_support_levels: z
+        .array(schemas.manufacturer_integration_support_level)
+        .optional(),
       text_search: z.string().optional(),
       include_if: z.array(dot_path).optional(),
       exclude_if: z.array(dot_path).optional(),
@@ -45,7 +49,11 @@ export const routes = {
     auth: 'publishable_key',
     methods: ['GET', 'OPTIONS'],
     queryParams: z.object({
+      /** @deprecated */
       integration_status: schemas.manufacturer.shape.integration.optional(),
+      integration_support_levels: z
+        .array(schemas.manufacturer_integration_support_level)
+        .optional(),
       liqe_query: z.string().optional(),
     }),
     jsonResponse: z.object({
