@@ -22,6 +22,12 @@ export interface Routes {
               }
             | undefined
           integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
+          integration_support_level:
+            | 'stable'
+            | 'beta'
+            | 'planned'
+            | 'unsupported'
+            | 'inquire'
           is_connect_webview_supported: boolean
           requires_seam_support_to_add_account: boolean
         }
@@ -152,6 +158,9 @@ export interface Routes {
       integration_status?:
         | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
         | undefined
+      integration_support_levels?:
+        | Array<'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'>
+        | undefined
       text_search?: string | undefined
       include_if?: string[] | undefined
       exclude_if?: string[] | undefined
@@ -174,6 +183,12 @@ export interface Routes {
                 }
               | undefined
             integration:
+              | 'stable'
+              | 'beta'
+              | 'planned'
+              | 'unsupported'
+              | 'inquire'
+            integration_support_level:
               | 'stable'
               | 'beta'
               | 'planned'
@@ -312,6 +327,12 @@ export interface Routes {
             }
           | undefined
         integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
+        integration_support_level:
+          | 'stable'
+          | 'beta'
+          | 'planned'
+          | 'unsupported'
+          | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
         device_model_count: number
@@ -324,6 +345,9 @@ export interface Routes {
     queryParams: {
       integration_status?:
         | ('stable' | 'beta' | 'planned' | 'unsupported' | 'inquire')
+        | undefined
+      integration_support_levels?:
+        | Array<'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'>
         | undefined
       liqe_query?: string | undefined
     }
@@ -342,6 +366,12 @@ export interface Routes {
             }
           | undefined
         integration: 'stable' | 'beta' | 'planned' | 'unsupported' | 'inquire'
+        integration_support_level:
+          | 'stable'
+          | 'beta'
+          | 'planned'
+          | 'unsupported'
+          | 'inquire'
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
         device_model_count: number
