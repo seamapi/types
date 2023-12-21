@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { schedule } from '../schedule.js'
+
 export const acs_user_external_type = z.enum([
   'pti_user',
   'brivo_user',
@@ -44,9 +46,7 @@ export const acs_user = z
     external_type: acs_user_external_type.optional(),
     external_type_display_name: z.string().optional(),
     is_suspended: z.boolean(),
-    starts_at: z.string().datetime().optional(),
-    ends_at: z.string().datetime().optional(),
-    is_virtual: z.boolean(),
+    access_schedule: schedule.optional(),
   })
   .merge(user_fields)
 
