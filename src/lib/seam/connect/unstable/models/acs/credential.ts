@@ -4,6 +4,7 @@ export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
   'hid_credential',
+  'visionline_card',
 ])
 
 export const acs_credential_access_method_type = z.enum([
@@ -24,8 +25,8 @@ export const acs_credential = z.object({
   display_name: z.string().nonempty(),
   code: z.string().optional().nullable(),
   access_method: acs_credential_access_method_type,
-  external_type: acs_credential_external_type,
-  external_type_display_name: z.string(),
+  external_type: acs_credential_external_type.optional(),
+  external_type_display_name: z.string().optional(),
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
 })
