@@ -738,9 +738,12 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
-        starts_at?: string | undefined
-        ends_at?: string | undefined
-        is_virtual: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -824,8 +827,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }
@@ -840,6 +850,18 @@ export interface Routes {
       acs_user_id: string
       access_method: 'code' | 'card' | 'mobile_key'
       code?: string | undefined
+      is_multi_phone_sync_credential?: boolean | undefined
+      assa_abloy_credential_service_mobile_endpoint_id?: string | undefined
+      external_type?:
+        | (
+            | 'pti_card'
+            | 'brivo_credential'
+            | 'hid_credential'
+            | 'visionline_card'
+          )
+        | undefined
+      card_format?: ('TLCode' | 'rfid48') | undefined
+      is_override_key?: boolean | undefined
     }
     formData: {}
     jsonResponse: {
@@ -851,8 +873,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }
@@ -887,8 +916,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }
@@ -920,8 +956,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }>
@@ -946,8 +989,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }
@@ -972,8 +1022,15 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
-        external_type: 'pti_card' | 'brivo_credential' | 'hid_credential'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
       }
@@ -1124,6 +1181,7 @@ export interface Routes {
     jsonBody: {
       acs_system_id: string
       acs_access_group_ids?: string[]
+      user_identity_id?: string | undefined
       access_schedule?:
         | {
             starts_at: string
@@ -1151,9 +1209,12 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
-        starts_at?: string | undefined
-        ends_at?: string | undefined
-        is_virtual: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1195,9 +1256,12 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
-        starts_at?: string | undefined
-        ends_at?: string | undefined
-        is_virtual: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1228,9 +1292,12 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
-        starts_at?: string | undefined
-        ends_at?: string | undefined
-        is_virtual: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -8494,6 +8561,30 @@ export interface Routes {
       }
     }
   }
+  '/user_identities/enrollment_automations/launch': {
+    route: '/user_identities/enrollment_automations/launch'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+      credential_manager_acs_system_id: string
+      acs_credential_pool_id?: string | undefined
+      create_credential_manager_user?: boolean | undefined
+      credential_manager_acs_user_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      enrollment_automation: {
+        acs_credential_provisioning_automation_id: string
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+        enrollment_automation_id: string
+      }
+    }
+  }
   '/user_identities/get': {
     route: '/user_identities/get'
     method: 'GET' | 'POST'
@@ -9224,9 +9315,12 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
-        starts_at?: string | undefined
-        ends_at?: string | undefined
-        is_virtual: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
