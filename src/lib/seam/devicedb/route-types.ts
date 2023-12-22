@@ -30,6 +30,10 @@ export interface Routes {
             | 'inquire'
           is_connect_webview_supported: boolean
           requires_seam_support_to_add_account: boolean
+          annotations: Array<{
+            annotation_code: 'subscription_required'
+            message: string
+          }>
         }
         is_device_supported: boolean
         display_name: string
@@ -196,6 +200,10 @@ export interface Routes {
               | 'inquire'
             is_connect_webview_supported: boolean
             requires_seam_support_to_add_account: boolean
+            annotations: Array<{
+              annotation_code: 'subscription_required'
+              message: string
+            }>
           }
           is_device_supported: boolean
           display_name: string
@@ -336,6 +344,10 @@ export interface Routes {
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
         device_model_count: number
+        annotations: Array<{
+          annotation_code: 'subscription_required'
+          message: string
+        }>
       }
     }
   }
@@ -375,6 +387,10 @@ export interface Routes {
         is_connect_webview_supported: boolean
         requires_seam_support_to_add_account: boolean
         device_model_count: number
+        annotations: Array<{
+          annotation_code: 'subscription_required'
+          message: string
+        }>
       }>
     }
   }
