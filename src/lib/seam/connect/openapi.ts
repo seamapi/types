@@ -7842,6 +7842,119 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
       },
     },
+    '/networks/get': {
+      post: {
+        operationId: 'networksGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { network_id: { format: 'uuid', type: 'string' } },
+                required: ['network_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    network: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        network_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'network_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['network', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
+    '/networks/list': {
+      post: {
+        operationId: 'networksListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    networks: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                          network_id: { format: 'uuid', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'network_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['networks', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'list',
+      },
+    },
     '/noise_sensors/noise_thresholds/create': {
       post: {
         operationId: 'noiseSensorsNoiseThresholdsCreatePost',
@@ -8250,6 +8363,93 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'simulate'],
         'x-fern-sdk-method-name': 'trigger_noise_threshold',
+      },
+    },
+    '/phones/simulate/create_sandbox_phone': {
+      post: {
+        operationId: 'phonesSimulateCreateSandboxPhonePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  assa_abloy_credential_service_acs_system_id: {
+                    type: 'string',
+                  },
+                  phone_metadata: {
+                    default: {},
+                    properties: {
+                      application_version: { default: '1.0.0', type: 'string' },
+                      ble_capability: { default: true, type: 'boolean' },
+                      device_manufacturer: {
+                        default: 'Samsung',
+                        type: 'string',
+                      },
+                      device_model: {
+                        default: 'Samsung Galaxy S10',
+                        type: 'string',
+                      },
+                      hce_capability: { default: false, type: 'boolean' },
+                      nfc_capability: { default: false, type: 'boolean' },
+                      operating_system: {
+                        default: 'android',
+                        enum: ['android', 'ios'],
+                        type: 'string',
+                      },
+                      os_version: { default: '10', type: 'string' },
+                      seos_applet_version: { default: '1.0.0', type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  sdk_installation_id: { type: 'string' },
+                  user_identity_id: { type: 'string' },
+                },
+                required: [
+                  'assa_abloy_credential_service_acs_system_id',
+                  'sdk_installation_id',
+                  'user_identity_id',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone: {
+                      properties: {
+                        device_id: { type: 'string' },
+                        is_registered: { type: 'boolean' },
+                      },
+                      required: ['is_registered', 'device_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/phones/simulate/create_sandbox_phone',
+        tags: [],
+        'x-fern-sdk-group-name': ['phones', 'simulate'],
+        'x-fern-sdk-method-name': 'create_sandbox_phone',
+        'x-fern-sdk-return-value': 'device',
       },
     },
     '/thermostats/climate_setting_schedules/create': {
@@ -9471,6 +9671,75 @@ export default {
         'x-fern-sdk-method-name': 'create',
       },
     },
+    '/user_identities/enrollment_automations/get': {
+      post: {
+        operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  enrollment_automation_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['enrollment_automation_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automation: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        credential_manager_acs_system_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        enrollment_automation_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        user_identity_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'credential_manager_acs_system_id',
+                        'user_identity_id',
+                        'created_at',
+                        'workspace_id',
+                        'enrollment_automation_id',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
     '/user_identities/enrollment_automations/launch': {
       post: {
         operationId: 'userIdentitiesEnrollmentAutomationsLaunchPost',
@@ -9555,6 +9824,78 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
+      },
+    },
+    '/user_identities/enrollment_automations/list': {
+      post: {
+        operationId: 'userIdentitiesEnrollmentAutomationsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automations: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          credential_manager_acs_system_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          enrollment_automation_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'credential_manager_acs_system_id',
+                          'user_identity_id',
+                          'created_at',
+                          'workspace_id',
+                          'enrollment_automation_id',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'list',
       },
     },
     '/user_identities/get': {

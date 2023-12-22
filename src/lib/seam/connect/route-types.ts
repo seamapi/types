@@ -6668,6 +6668,40 @@ export interface Routes {
           }
     }
   }
+  '/networks/get': {
+    route: '/networks/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      network_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      network: {
+        network_id: string
+        workspace_id: string
+        display_name: string
+        created_at: string
+      }
+    }
+  }
+  '/networks/list': {
+    route: '/networks/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      networks: Array<{
+        network_id: string
+        workspace_id: string
+        display_name: string
+        created_at: string
+      }>
+    }
+  }
   '/noise_sensors/noise_thresholds/create': {
     route: '/noise_sensors/noise_thresholds/create'
     method: 'POST'
@@ -6856,6 +6890,37 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {}
+  }
+  '/phones/simulate/create_sandbox_phone': {
+    route: '/phones/simulate/create_sandbox_phone'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      assa_abloy_credential_service_acs_system_id: string
+      sdk_installation_id: string
+      user_identity_id: string
+      phone_metadata?: {
+        ble_capability?: boolean
+        hce_capability?: boolean
+        nfc_capability?: boolean
+        application_version?: string
+        seos_applet_version?: string
+        device_manufacturer?: string
+        device_model?: string
+        os_version?: string
+        operating_system?: 'android' | 'ios'
+      }
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      phone?:
+        | {
+            is_registered: boolean
+            device_id: string
+          }
+        | undefined
+    }
   }
   '/thermostats/climate_setting_schedules/create': {
     route: '/thermostats/climate_setting_schedules/create'
@@ -8561,6 +8626,25 @@ export interface Routes {
       }
     }
   }
+  '/user_identities/enrollment_automations/get': {
+    route: '/user_identities/enrollment_automations/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      enrollment_automation_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      enrollment_automation: {
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+        enrollment_automation_id: string
+      }
+    }
+  }
   '/user_identities/enrollment_automations/launch': {
     route: '/user_identities/enrollment_automations/launch'
     method: 'POST'
@@ -8583,6 +8667,25 @@ export interface Routes {
         workspace_id: string
         enrollment_automation_id: string
       }
+    }
+  }
+  '/user_identities/enrollment_automations/list': {
+    route: '/user_identities/enrollment_automations/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      enrollment_automations: Array<{
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+        enrollment_automation_id: string
+      }>
     }
   }
   '/user_identities/get': {
