@@ -6668,6 +6668,40 @@ export interface Routes {
           }
     }
   }
+  '/networks/get': {
+    route: '/networks/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      network_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      network: {
+        network_id: string
+        workspace_id: string
+        display_name: string
+        created_at: string
+      }
+    }
+  }
+  '/networks/list': {
+    route: '/networks/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      networks: Array<{
+        network_id: string
+        workspace_id: string
+        display_name: string
+        created_at: string
+      }>
+    }
+  }
   '/noise_sensors/noise_thresholds/create': {
     route: '/noise_sensors/noise_thresholds/create'
     method: 'POST'
@@ -8561,6 +8595,25 @@ export interface Routes {
       }
     }
   }
+  '/user_identities/enrollment_automations/get': {
+    route: '/user_identities/enrollment_automations/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      enrollment_automation_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      enrollment_automation: {
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+        enrollment_automation_id: string
+      }
+    }
+  }
   '/user_identities/enrollment_automations/launch': {
     route: '/user_identities/enrollment_automations/launch'
     method: 'POST'
@@ -8583,6 +8636,25 @@ export interface Routes {
         workspace_id: string
         enrollment_automation_id: string
       }
+    }
+  }
+  '/user_identities/enrollment_automations/list': {
+    route: '/user_identities/enrollment_automations/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      enrollment_automations: Array<{
+        credential_manager_acs_system_id: string
+        user_identity_id: string
+        created_at: string
+        workspace_id: string
+        enrollment_automation_id: string
+      }>
     }
   }
   '/user_identities/get': {

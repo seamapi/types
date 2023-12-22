@@ -8,6 +8,18 @@ export const acs_credential_provisioning_automation = z.object({
   workspace_id: z.string().uuid(),
 })
 
+export const enrollment_automation = acs_credential_provisioning_automation
+  .omit({
+    acs_credential_provisioning_automation_id: true,
+  })
+  .merge(
+    z.object({
+      enrollment_automation_id: z.string().uuid(),
+    }),
+  )
+
+export type EnrollmentAutomation = z.output<typeof enrollment_automation>
+
 export type AcsCredentialProvisioningAutomation = z.output<
   typeof acs_credential_provisioning_automation
 >
