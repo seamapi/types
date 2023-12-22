@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+// If changed, update seam.acs_credential.external_type generated column
 export const acs_credential_external_type = z.enum([
   'pti_card',
   'brivo_credential',
