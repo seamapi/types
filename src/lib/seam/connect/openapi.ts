@@ -195,7 +195,7 @@ export default {
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
-              'assa_abloy_credential_service_user',
+              'assa_abloy_credential_service',
             ],
             type: 'string',
           },
@@ -210,7 +210,7 @@ export default {
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
-              'assa_abloy_credential_service_user',
+              'assa_abloy_credential_service',
             ],
             type: 'string',
           },
@@ -626,967 +626,1101 @@ export default {
               {
                 allOf: [
                   {
-                    properties: {
-                      battery: {
-                        description:
-                          'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
+                    allOf: [
+                      {
                         properties: {
-                          level: { maximum: 1, minimum: 0, type: 'number' },
-                          status: {
-                            enum: ['critical', 'low', 'good', 'full'],
-                            type: 'string',
-                          },
-                        },
-                        required: ['level', 'status'],
-                        type: 'object',
-                      },
-                      battery_level: {
-                        description:
-                          'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
-                        maximum: 1,
-                        minimum: 0,
-                        type: 'number',
-                      },
-                      has_direct_power: {
-                        description:
-                          'Indicates whether the device has direct power.',
-                        type: 'boolean',
-                      },
-                      image_alt_text: {
-                        description: 'Alt text for the device image.',
-                        type: 'string',
-                      },
-                      image_url: {
-                        description: 'Image URL for the device.',
-                        format: 'uri',
-                        type: 'string',
-                      },
-                      manufacturer: {
-                        description: 'Manufacturer of the device.',
-                        type: 'string',
-                      },
-                      model: {
-                        properties: {
-                          accessory_keypad_supported: {
+                          battery: {
                             description:
-                              'Indicates whether the device supports an accessory keypad.',
-                            type: 'boolean',
-                          },
-                          display_name: {
-                            description: 'Display name of the device model.',
-                            type: 'string',
-                          },
-                          manufacturer_display_name: {
-                            description:
-                              'Display name that corresponds to the manufacturer-specific terminology for the device.',
-                            type: 'string',
-                          },
-                          offline_access_codes_supported: {
-                            description:
-                              'Indicates whether the device supports offline access codes.',
-                            type: 'boolean',
-                          },
-                          online_access_codes_supported: {
-                            description:
-                              'Indicates whether the device supports online access codes.',
-                            type: 'boolean',
-                          },
-                        },
-                        required: ['display_name', 'manufacturer_display_name'],
-                        type: 'object',
-                      },
-                      name: {
-                        description:
-                          'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
-                        type: 'string',
-                      },
-                      offline_access_codes_enabled: {
-                        description:
-                          'Indicates whether it is currently possible to use offline access codes for the device.',
-                        type: 'boolean',
-                      },
-                      online: {
-                        description: 'Indicates whether the device is online.',
-                        type: 'boolean',
-                      },
-                      online_access_codes_enabled: {
-                        description:
-                          'Indicates whether it is currently possible to use online access codes for the device.',
-                        type: 'boolean',
-                      },
-                      serial_number: {
-                        description: 'Serial number of the device.',
-                        type: 'string',
-                      },
-                      supports_accessory_keypad: {
-                        description:
-                          'Deprecated. Use model.accessory_keypad_supported.',
-                        type: 'boolean',
-                      },
-                      supports_offline_access_codes: {
-                        description:
-                          'Deprecated. Use offline_access_codes_enabled.',
-                        type: 'boolean',
-                      },
-                    },
-                    required: ['online', 'name', 'model'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      august_metadata: {
-                        properties: {
-                          has_keypad: { type: 'boolean' },
-                          house_id: { type: 'string' },
-                          house_name: { type: 'string' },
-                          keypad_battery_level: { type: 'string' },
-                          lock_id: { type: 'string' },
-                          lock_name: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: [
-                          'lock_id',
-                          'lock_name',
-                          'house_name',
-                          'has_keypad',
-                        ],
-                        type: 'object',
-                      },
-                      avigilon_alta_metadata: {
-                        properties: {
-                          entry_name: { type: 'string' },
-                          org_name: { type: 'string' },
-                          site_id: { type: 'number' },
-                          site_name: { type: 'string' },
-                          zone_id: { type: 'number' },
-                          zone_name: { type: 'string' },
-                        },
-                        required: [
-                          'entry_name',
-                          'org_name',
-                          'zone_id',
-                          'zone_name',
-                          'site_id',
-                          'site_name',
-                        ],
-                        type: 'object',
-                      },
-                      brivo_metadata: {
-                        properties: { device_name: { type: 'string' } },
-                        required: ['device_name'],
-                        type: 'object',
-                      },
-                      controlbyweb_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          relay_name: { nullable: true, type: 'string' },
-                        },
-                        required: ['device_id', 'device_name', 'relay_name'],
-                        type: 'object',
-                      },
-                      dormakaba_oracode_metadata: {
-                        properties: {
-                          device_id: { type: 'number' },
-                          door_id: { type: 'number' },
-                          door_name: { type: 'string' },
-                          iana_timezone: { type: 'string' },
-                          predefined_time_slots: {
-                            items: {
-                              properties: {
-                                check_in_time: { type: 'string' },
-                                check_out_time: { type: 'string' },
-                                dormakaba_oracode_user_level_id: {
-                                  format: 'uuid',
-                                  type: 'string',
-                                },
-                                ext_dormakaba_oracode_user_level_prefix: {
-                                  type: 'number',
-                                },
-                                is_24_hour: { type: 'boolean' },
-                                is_biweekly_mode: { type: 'boolean' },
-                                is_master: { type: 'boolean' },
-                                is_one_shot: { type: 'boolean' },
-                                name: { type: 'string' },
-                                prefix: { type: 'number' },
-                              },
-                              required: [
-                                'name',
-                                'prefix',
-                                'check_in_time',
-                                'check_out_time',
-                                'is_24_hour',
-                                'is_biweekly_mode',
-                                'is_one_shot',
-                                'is_master',
-                                'ext_dormakaba_oracode_user_level_prefix',
-                                'dormakaba_oracode_user_level_id',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          site_id: { type: 'number' },
-                          site_name: { type: 'string' },
-                        },
-                        required: [
-                          'door_id',
-                          'door_name',
-                          'site_id',
-                          'site_name',
-                        ],
-                        type: 'object',
-                      },
-                      ecobee_metadata: {
-                        properties: {
-                          device_name: { type: 'string' },
-                          ecobee_device_id: { type: 'string' },
-                        },
-                        required: ['ecobee_device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      four_suites_metadata: {
-                        properties: {
-                          device_id: { type: 'number' },
-                          device_name: { type: 'string' },
-                          reclose_delay_in_seconds: { type: 'number' },
-                        },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'reclose_delay_in_seconds',
-                        ],
-                        type: 'object',
-                      },
-                      genie_metadata: {
-                        properties: {
-                          device_name: { type: 'string' },
-                          door_name: { type: 'string' },
-                        },
-                        required: ['device_name', 'door_name'],
-                        type: 'object',
-                      },
-                      hubitat_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_label: { type: 'string' },
-                          device_name: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name', 'device_label'],
-                        type: 'object',
-                      },
-                      igloo_metadata: {
-                        properties: {
-                          bridge_id: { type: 'string' },
-                          device_id: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: ['device_id', 'bridge_id'],
-                        type: 'object',
-                      },
-                      igloohome_metadata: {
-                        properties: {
-                          bridge_id: { type: 'string' },
-                          bridge_name: { type: 'string' },
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      kwikset_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model_number: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name', 'model_number'],
-                        type: 'object',
-                      },
-                      lockly_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      minut_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          latest_sensor_values: {
+                              'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
                             properties: {
-                              accelerometer_z: {
-                                properties: {
-                                  time: { type: 'string' },
-                                  value: { type: 'number' },
-                                },
-                                required: ['time', 'value'],
-                                type: 'object',
+                              level: { maximum: 1, minimum: 0, type: 'number' },
+                              status: {
+                                enum: ['critical', 'low', 'good', 'full'],
+                                type: 'string',
                               },
-                              humidity: {
-                                properties: {
-                                  time: { type: 'string' },
-                                  value: { type: 'number' },
-                                },
-                                required: ['time', 'value'],
-                                type: 'object',
+                            },
+                            required: ['level', 'status'],
+                            type: 'object',
+                          },
+                          battery_level: {
+                            description:
+                              'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                            maximum: 1,
+                            minimum: 0,
+                            type: 'number',
+                          },
+                          has_direct_power: {
+                            description:
+                              'Indicates whether the device has direct power.',
+                            type: 'boolean',
+                          },
+                          image_alt_text: {
+                            description: 'Alt text for the device image.',
+                            type: 'string',
+                          },
+                          image_url: {
+                            description: 'Image URL for the device.',
+                            format: 'uri',
+                            type: 'string',
+                          },
+                          manufacturer: {
+                            description: 'Manufacturer of the device.',
+                            type: 'string',
+                          },
+                          model: {
+                            properties: {
+                              accessory_keypad_supported: {
+                                description:
+                                  'Indicates whether the device supports an accessory keypad.',
+                                type: 'boolean',
                               },
-                              pressure: {
-                                properties: {
-                                  time: { type: 'string' },
-                                  value: { type: 'number' },
-                                },
-                                required: ['time', 'value'],
-                                type: 'object',
+                              display_name: {
+                                description:
+                                  'Display name of the device model.',
+                                type: 'string',
                               },
-                              sound: {
-                                properties: {
-                                  time: { type: 'string' },
-                                  value: { type: 'number' },
-                                },
-                                required: ['time', 'value'],
-                                type: 'object',
+                              manufacturer_display_name: {
+                                description:
+                                  'Display name that corresponds to the manufacturer-specific terminology for the device.',
+                                type: 'string',
                               },
-                              temperature: {
-                                properties: {
-                                  time: { type: 'string' },
-                                  value: { type: 'number' },
-                                },
-                                required: ['time', 'value'],
-                                type: 'object',
+                              offline_access_codes_supported: {
+                                description:
+                                  'Indicates whether the device supports offline access codes.',
+                                type: 'boolean',
+                              },
+                              online_access_codes_supported: {
+                                description:
+                                  'Indicates whether the device supports online access codes.',
+                                type: 'boolean',
                               },
                             },
                             required: [
-                              'temperature',
-                              'sound',
-                              'humidity',
-                              'pressure',
-                              'accelerometer_z',
+                              'display_name',
+                              'manufacturer_display_name',
                             ],
                             type: 'object',
                           },
-                        },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'latest_sensor_values',
-                        ],
-                        type: 'object',
-                      },
-                      nest_metadata: {
-                        properties: {
-                          custom_name: { type: 'string' },
-                          device_name: { type: 'string' },
-                          nest_device_id: { type: 'string' },
-                        },
-                        required: [
-                          'nest_device_id',
-                          'device_name',
-                          'custom_name',
-                        ],
-                        type: 'object',
-                      },
-                      noiseaware_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_model: {
-                            enum: ['indoor', 'outdoor'],
+                          name: {
+                            description:
+                              'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
                             type: 'string',
                           },
-                          device_name: { type: 'string' },
-                          noise_level_decibel: { type: 'number' },
-                          noise_level_nrs: { type: 'number' },
-                        },
-                        required: [
-                          'device_model',
-                          'noise_level_nrs',
-                          'noise_level_decibel',
-                          'device_name',
-                          'device_id',
-                        ],
-                        type: 'object',
-                      },
-                      nuki_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          keypad_battery_critical: { type: 'boolean' },
-                        },
-                        required: ['device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      salto_metadata: {
-                        properties: {
-                          battery_level: { type: 'string' },
-                          customer_reference: { type: 'string' },
-                          lock_id: { type: 'string' },
-                          lock_type: { type: 'string' },
-                          locked_state: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: [
-                          'lock_id',
-                          'customer_reference',
-                          'lock_type',
-                          'battery_level',
-                          'locked_state',
-                        ],
-                        type: 'object',
-                      },
-                      schlage_metadata: {
-                        properties: {
-                          access_code_length: { type: 'number' },
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'access_code_length',
-                        ],
-                        type: 'object',
-                      },
-                      seam_bridge_metadata: {
-                        properties: {
-                          device_num: { type: 'number' },
-                          name: { type: 'string' },
-                          unlock_method: {
-                            enum: ['bridge', 'doorking'],
+                          offline_access_codes_enabled: {
+                            description:
+                              'Indicates whether it is currently possible to use offline access codes for the device.',
+                            type: 'boolean',
+                          },
+                          online: {
+                            description:
+                              'Indicates whether the device is online.',
+                            type: 'boolean',
+                          },
+                          online_access_codes_enabled: {
+                            description:
+                              'Indicates whether it is currently possible to use online access codes for the device.',
+                            type: 'boolean',
+                          },
+                          serial_number: {
+                            description: 'Serial number of the device.',
                             type: 'string',
                           },
+                          supports_accessory_keypad: {
+                            description:
+                              'Deprecated. Use model.accessory_keypad_supported.',
+                            type: 'boolean',
+                          },
+                          supports_offline_access_codes: {
+                            description:
+                              'Deprecated. Use offline_access_codes_enabled.',
+                            type: 'boolean',
+                          },
                         },
-                        required: ['device_num', 'name'],
+                        required: ['online', 'name', 'model'],
                         type: 'object',
                       },
-                      smartthings_metadata: {
+                      {
                         properties: {
-                          device_id: { type: 'string' },
-                          device_name: { type: 'string' },
-                          location_id: { type: 'string' },
-                          model: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      ttlock_metadata: {
-                        properties: {
-                          lock_alias: { type: 'string' },
-                          lock_id: { type: 'number' },
-                        },
-                        required: ['lock_id', 'lock_alias'],
-                        type: 'object',
-                      },
-                      two_n_metadata: {
-                        properties: {
-                          device_id: { type: 'number' },
-                          device_name: { type: 'string' },
-                        },
-                        required: ['device_id', 'device_name'],
-                        type: 'object',
-                      },
-                      wyze_metadata: {
-                        properties: {
-                          device_id: { type: 'string' },
-                          device_info_model: { type: 'string' },
-                          device_name: { type: 'string' },
-                          product_model: { type: 'string' },
-                          product_name: { type: 'string' },
-                          product_type: { type: 'string' },
-                        },
-                        required: [
-                          'device_id',
-                          'device_name',
-                          'product_name',
-                          'product_type',
-                          'product_model',
-                          'device_info_model',
-                        ],
-                        type: 'object',
-                      },
-                    },
-                    type: 'object',
-                  },
-                ],
-              },
-              {
-                allOf: [
-                  {
-                    properties: {
-                      code_constraints: {
-                        items: {
-                          oneOf: [
-                            {
-                              properties: {
-                                constraint_type: {
-                                  enum: [
-                                    'no_zeros',
-                                    'cannot_start_with_12',
-                                    'no_triple_consecutive_ints',
-                                    'cannot_specify_pin_code',
-                                    'pin_code_matches_existing_set',
-                                    'start_date_in_future',
+                          august_metadata: {
+                            properties: {
+                              has_keypad: { type: 'boolean' },
+                              house_id: { type: 'string' },
+                              house_name: { type: 'string' },
+                              keypad_battery_level: { type: 'string' },
+                              lock_id: { type: 'string' },
+                              lock_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: [
+                              'lock_id',
+                              'lock_name',
+                              'house_name',
+                              'has_keypad',
+                            ],
+                            type: 'object',
+                          },
+                          avigilon_alta_metadata: {
+                            properties: {
+                              entry_name: { type: 'string' },
+                              org_name: { type: 'string' },
+                              site_id: { type: 'number' },
+                              site_name: { type: 'string' },
+                              zone_id: { type: 'number' },
+                              zone_name: { type: 'string' },
+                            },
+                            required: [
+                              'entry_name',
+                              'org_name',
+                              'zone_id',
+                              'zone_name',
+                              'site_id',
+                              'site_name',
+                            ],
+                            type: 'object',
+                          },
+                          brivo_metadata: {
+                            properties: { device_name: { type: 'string' } },
+                            required: ['device_name'],
+                            type: 'object',
+                          },
+                          controlbyweb_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              relay_name: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'relay_name',
+                            ],
+                            type: 'object',
+                          },
+                          dormakaba_oracode_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              door_id: { type: 'number' },
+                              door_name: { type: 'string' },
+                              iana_timezone: { type: 'string' },
+                              predefined_time_slots: {
+                                items: {
+                                  properties: {
+                                    check_in_time: { type: 'string' },
+                                    check_out_time: { type: 'string' },
+                                    dormakaba_oracode_user_level_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    ext_dormakaba_oracode_user_level_prefix: {
+                                      type: 'number',
+                                    },
+                                    is_24_hour: { type: 'boolean' },
+                                    is_biweekly_mode: { type: 'boolean' },
+                                    is_master: { type: 'boolean' },
+                                    is_one_shot: { type: 'boolean' },
+                                    name: { type: 'string' },
+                                    prefix: { type: 'number' },
+                                  },
+                                  required: [
+                                    'name',
+                                    'prefix',
+                                    'check_in_time',
+                                    'check_out_time',
+                                    'is_24_hour',
+                                    'is_biweekly_mode',
+                                    'is_one_shot',
+                                    'is_master',
+                                    'ext_dormakaba_oracode_user_level_prefix',
+                                    'dormakaba_oracode_user_level_id',
                                   ],
-                                  type: 'string',
+                                  type: 'object',
                                 },
+                                type: 'array',
                               },
-                              required: ['constraint_type'],
-                              type: 'object',
+                              site_id: { type: 'number' },
+                              site_name: { type: 'string' },
                             },
-                            {
-                              properties: {
-                                constraint_type: {
-                                  enum: ['name_length'],
-                                  type: 'string',
+                            required: [
+                              'door_id',
+                              'door_name',
+                              'site_id',
+                              'site_name',
+                            ],
+                            type: 'object',
+                          },
+                          ecobee_metadata: {
+                            properties: {
+                              device_name: { type: 'string' },
+                              ecobee_device_id: { type: 'string' },
+                            },
+                            required: ['ecobee_device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          four_suites_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              device_name: { type: 'string' },
+                              reclose_delay_in_seconds: { type: 'number' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'reclose_delay_in_seconds',
+                            ],
+                            type: 'object',
+                          },
+                          genie_metadata: {
+                            properties: {
+                              device_name: { type: 'string' },
+                              door_name: { type: 'string' },
+                            },
+                            required: ['device_name', 'door_name'],
+                            type: 'object',
+                          },
+                          hubitat_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_label: { type: 'string' },
+                              device_name: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'device_label',
+                            ],
+                            type: 'object',
+                          },
+                          igloo_metadata: {
+                            properties: {
+                              bridge_id: { type: 'string' },
+                              device_id: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'bridge_id'],
+                            type: 'object',
+                          },
+                          igloohome_metadata: {
+                            properties: {
+                              bridge_id: { type: 'string' },
+                              bridge_name: { type: 'string' },
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          kwikset_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model_number: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'model_number',
+                            ],
+                            type: 'object',
+                          },
+                          lockly_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          minut_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              latest_sensor_values: {
+                                properties: {
+                                  accelerometer_z: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  humidity: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  pressure: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  sound: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  temperature: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
                                 },
-                                max_length: { type: 'number' },
-                                min_length: { type: 'number' },
-                              },
-                              required: ['constraint_type'],
-                              type: 'object',
-                            },
-                          ],
-                        },
-                        type: 'array',
-                      },
-                      door_open: { type: 'boolean' },
-                      has_native_entry_events: { type: 'boolean' },
-                      keypad_battery: {
-                        properties: { level: { type: 'number' } },
-                        required: ['level'],
-                        type: 'object',
-                      },
-                      locked: { type: 'boolean' },
-                      max_active_codes_supported: { type: 'number' },
-                      supported_code_lengths: {
-                        items: { type: 'number' },
-                        type: 'array',
-                      },
-                      supports_backup_access_code_pool: { type: 'boolean' },
-                    },
-                    type: 'object',
-                  },
-                  {
-                    oneOf: [
-                      {
-                        properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              device_id: { type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
-                              },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
+                                required: [
+                                  'temperature',
+                                  'sound',
+                                  'humidity',
+                                  'pressure',
+                                  'accelerometer_z',
+                                ],
+                                type: 'object',
                               },
                             },
                             required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
                               'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
+                              'device_name',
+                              'latest_sensor_values',
                             ],
                             type: 'object',
                           },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
+                          nest_metadata: {
                             properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
+                              custom_name: { type: 'string' },
+                              device_name: { type: 'string' },
+                              nest_device_id: { type: 'string' },
                             },
                             required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
+                              'nest_device_id',
+                              'device_name',
+                              'custom_name',
                             ],
                             type: 'object',
                           },
-                          default_climate_setting: {
+                          noiseaware_metadata: {
                             properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
-                            type: 'string',
-                          },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_cooling_set_point_celsius: { type: 'number' },
-                          max_cooling_set_point_fahrenheit: { type: 'number' },
-                          max_heating_set_point_celsius: { type: 'number' },
-                          max_heating_set_point_fahrenheit: { type: 'number' },
-                          min_cooling_set_point_celsius: { type: 'number' },
-                          min_cooling_set_point_fahrenheit: { type: 'number' },
-                          min_heating_cooling_delta_celsius: { type: 'number' },
-                          min_heating_cooling_delta_fahrenheit: {
-                            type: 'number',
-                          },
-                          min_heating_set_point_celsius: { type: 'number' },
-                          min_heating_set_point_fahrenheit: { type: 'number' },
-                          relative_humidity: {
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
                               device_id: { type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
-                              },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              device_model: {
+                                enum: ['indoor', 'outdoor'],
                                 type: 'string',
                               },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
-                              },
+                              device_name: { type: 'string' },
+                              noise_level_decibel: { type: 'number' },
+                              noise_level_nrs: { type: 'number' },
                             },
                             required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
+                              'device_model',
+                              'noise_level_nrs',
+                              'noise_level_decibel',
+                              'device_name',
                               'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
                             ],
                             type: 'object',
                           },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
+                          nuki_metadata: {
                             properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          default_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
-                            type: 'string',
-                          },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [false],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_heating_set_point_celsius: { type: 'number' },
-                          max_heating_set_point_fahrenheit: { type: 'number' },
-                          min_heating_set_point_celsius: { type: 'number' },
-                          min_heating_set_point_fahrenheit: { type: 'number' },
-                          relative_humidity: {
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
                               device_id: { type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
-                              },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
-                              },
+                              device_name: { type: 'string' },
+                              keypad_battery_critical: { type: 'boolean' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          salto_metadata: {
+                            properties: {
+                              battery_level: { type: 'string' },
+                              customer_reference: { type: 'string' },
+                              lock_id: { type: 'string' },
+                              lock_type: { type: 'string' },
+                              locked_state: { type: 'string' },
+                              model: { type: 'string' },
                             },
                             required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
+                              'lock_id',
+                              'customer_reference',
+                              'lock_type',
+                              'battery_level',
+                              'locked_state',
+                            ],
+                            type: 'object',
+                          },
+                          schlage_metadata: {
+                            properties: {
+                              access_code_length: { type: 'number' },
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: [
                               'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
+                              'device_name',
+                              'access_code_length',
                             ],
                             type: 'object',
                           },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
+                          seam_bridge_metadata: {
                             properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              device_num: { type: 'number' },
+                              name: { type: 'string' },
+                              unlock_method: {
+                                enum: ['bridge', 'doorking'],
                                 type: 'string',
                               },
-                              manual_override_allowed: { type: 'boolean' },
                             },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
+                            required: ['device_num', 'name'],
                             type: 'object',
                           },
-                          default_climate_setting: {
+                          smartthings_metadata: {
                             properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              location_id: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          ttlock_metadata: {
+                            properties: {
+                              lock_alias: { type: 'string' },
+                              lock_id: { type: 'number' },
+                            },
+                            required: ['lock_id', 'lock_alias'],
+                            type: 'object',
+                          },
+                          two_n_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              device_name: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          wyze_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_info_model: { type: 'string' },
+                              device_name: { type: 'string' },
+                              product_model: { type: 'string' },
+                              product_name: { type: 'string' },
+                              product_type: { type: 'string' },
                             },
                             required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
+                              'device_id',
+                              'device_name',
+                              'product_name',
+                              'product_type',
+                              'product_model',
+                              'device_info_model',
                             ],
                             type: 'object',
                           },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
-                            type: 'string',
-                          },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [false],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_cooling_set_point_celsius: { type: 'number' },
-                          max_cooling_set_point_fahrenheit: { type: 'number' },
-                          min_cooling_set_point_celsius: { type: 'number' },
-                          min_cooling_set_point_fahrenheit: { type: 'number' },
-                          relative_humidity: {
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
                         },
                         type: 'object',
                       },
                     ],
                   },
+                  {
+                    allOf: [
+                      {
+                        properties: {
+                          code_constraints: {
+                            items: {
+                              oneOf: [
+                                {
+                                  properties: {
+                                    constraint_type: {
+                                      enum: [
+                                        'no_zeros',
+                                        'cannot_start_with_12',
+                                        'no_triple_consecutive_ints',
+                                        'cannot_specify_pin_code',
+                                        'pin_code_matches_existing_set',
+                                        'start_date_in_future',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['constraint_type'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    constraint_type: {
+                                      enum: ['name_length'],
+                                      type: 'string',
+                                    },
+                                    max_length: { type: 'number' },
+                                    min_length: { type: 'number' },
+                                  },
+                                  required: ['constraint_type'],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          door_open: { type: 'boolean' },
+                          has_native_entry_events: { type: 'boolean' },
+                          keypad_battery: {
+                            properties: { level: { type: 'number' } },
+                            required: ['level'],
+                            type: 'object',
+                          },
+                          locked: { type: 'boolean' },
+                          max_active_codes_supported: { type: 'number' },
+                          supported_code_lengths: {
+                            items: { type: 'number' },
+                            type: 'array',
+                          },
+                          supports_backup_access_code_pool: { type: 'boolean' },
+                        },
+                        type: 'object',
+                      },
+                      {
+                        oneOf: [
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_cooling_set_point_celsius: { type: 'number' },
+                              max_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              max_heating_set_point_celsius: { type: 'number' },
+                              max_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_cooling_set_point_celsius: { type: 'number' },
+                              min_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_cooling_delta_celsius: {
+                                type: 'number',
+                              },
+                              min_heating_cooling_delta_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_set_point_celsius: { type: 'number' },
+                              min_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [false],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_heating_set_point_celsius: { type: 'number' },
+                              max_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_set_point_celsius: { type: 'number' },
+                              min_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [false],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_cooling_set_point_celsius: { type: 'number' },
+                              max_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_cooling_set_point_celsius: { type: 'number' },
+                              min_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                        ],
+                      },
+                    ],
+                  },
                 ],
+              },
+              {
+                properties: {
+                  assa_abloy_credential_service_metadata: {
+                    properties: {
+                      endpoints: {
+                        items: {
+                          properties: {
+                            endpoint_id: { type: 'string' },
+                            is_active: { type: 'boolean' },
+                          },
+                          required: ['endpoint_id', 'is_active'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      has_active_endpoint: { type: 'boolean' },
+                    },
+                    required: ['has_active_endpoint', 'endpoints'],
+                    type: 'object',
+                  },
+                },
+                type: 'object',
               },
             ],
             description: 'Properties of the device.',
@@ -1644,6 +1778,23 @@ export default {
         ],
         type: 'object',
       },
+      enrollment_automation: {
+        properties: {
+          created_at: { format: 'date-time', type: 'string' },
+          credential_manager_acs_system_id: { format: 'uuid', type: 'string' },
+          enrollment_automation_id: { format: 'uuid', type: 'string' },
+          user_identity_id: { format: 'uuid', type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'credential_manager_acs_system_id',
+          'user_identity_id',
+          'created_at',
+          'workspace_id',
+          'enrollment_automation_id',
+        ],
+        type: 'object',
+      },
       event: {
         properties: {
           created_at: { format: 'date-time', type: 'string' },
@@ -1679,6 +1830,1225 @@ export default {
           'starts_daily_at',
           'ends_daily_at',
           'noise_threshold_decibels',
+        ],
+        type: 'object',
+      },
+      phone: {
+        properties: {
+          assa_abloy_credential_service_metadata: {
+            properties: {
+              endpoints: {
+                items: {
+                  properties: {
+                    endpoint_id: { type: 'string' },
+                    is_active: { type: 'boolean' },
+                  },
+                  required: ['endpoint_id', 'is_active'],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+              has_active_endpoint: { type: 'boolean' },
+            },
+            required: ['has_active_endpoint', 'endpoints'],
+            type: 'object',
+          },
+          capabilities_supported: {
+            description:
+              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
+            items: {
+              enum: [
+                'access_code',
+                'lock',
+                'noise_detection',
+                'thermostat',
+                'battery',
+                'phone',
+              ],
+              type: 'string',
+            },
+            type: 'array',
+          },
+          created_at: {
+            description:
+              'Date and time at which the device object was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description: 'Unique identifier for the device.',
+            format: 'uuid',
+            type: 'string',
+          },
+          device_type: { enum: ['android_phone', 'ios_phone'], type: 'string' },
+          errors: {
+            description:
+              'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          is_managed: {
+            description: 'Indicates whether Seam manages the device.',
+            enum: [true],
+            type: 'boolean',
+          },
+          location: {
+            description: 'Location information for the device.',
+            nullable: true,
+            properties: {
+              location_name: {
+                description: 'Name of the device location.',
+                type: 'string',
+              },
+              timezone: {
+                description: 'Time zone of the device location.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
+          properties: {
+            allOf: [
+              {
+                allOf: [
+                  {
+                    allOf: [
+                      {
+                        properties: {
+                          battery: {
+                            description:
+                              'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
+                            properties: {
+                              level: { maximum: 1, minimum: 0, type: 'number' },
+                              status: {
+                                enum: ['critical', 'low', 'good', 'full'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['level', 'status'],
+                            type: 'object',
+                          },
+                          battery_level: {
+                            description:
+                              'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                            maximum: 1,
+                            minimum: 0,
+                            type: 'number',
+                          },
+                          has_direct_power: {
+                            description:
+                              'Indicates whether the device has direct power.',
+                            type: 'boolean',
+                          },
+                          image_alt_text: {
+                            description: 'Alt text for the device image.',
+                            type: 'string',
+                          },
+                          image_url: {
+                            description: 'Image URL for the device.',
+                            format: 'uri',
+                            type: 'string',
+                          },
+                          manufacturer: {
+                            description: 'Manufacturer of the device.',
+                            type: 'string',
+                          },
+                          model: {
+                            properties: {
+                              accessory_keypad_supported: {
+                                description:
+                                  'Indicates whether the device supports an accessory keypad.',
+                                type: 'boolean',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the device model.',
+                                type: 'string',
+                              },
+                              manufacturer_display_name: {
+                                description:
+                                  'Display name that corresponds to the manufacturer-specific terminology for the device.',
+                                type: 'string',
+                              },
+                              offline_access_codes_supported: {
+                                description:
+                                  'Indicates whether the device supports offline access codes.',
+                                type: 'boolean',
+                              },
+                              online_access_codes_supported: {
+                                description:
+                                  'Indicates whether the device supports online access codes.',
+                                type: 'boolean',
+                              },
+                            },
+                            required: [
+                              'display_name',
+                              'manufacturer_display_name',
+                            ],
+                            type: 'object',
+                          },
+                          name: {
+                            description:
+                              'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+                            type: 'string',
+                          },
+                          offline_access_codes_enabled: {
+                            description:
+                              'Indicates whether it is currently possible to use offline access codes for the device.',
+                            type: 'boolean',
+                          },
+                          online: {
+                            description:
+                              'Indicates whether the device is online.',
+                            type: 'boolean',
+                          },
+                          online_access_codes_enabled: {
+                            description:
+                              'Indicates whether it is currently possible to use online access codes for the device.',
+                            type: 'boolean',
+                          },
+                          serial_number: {
+                            description: 'Serial number of the device.',
+                            type: 'string',
+                          },
+                          supports_accessory_keypad: {
+                            description:
+                              'Deprecated. Use model.accessory_keypad_supported.',
+                            type: 'boolean',
+                          },
+                          supports_offline_access_codes: {
+                            description:
+                              'Deprecated. Use offline_access_codes_enabled.',
+                            type: 'boolean',
+                          },
+                        },
+                        required: ['online', 'name', 'model'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          august_metadata: {
+                            properties: {
+                              has_keypad: { type: 'boolean' },
+                              house_id: { type: 'string' },
+                              house_name: { type: 'string' },
+                              keypad_battery_level: { type: 'string' },
+                              lock_id: { type: 'string' },
+                              lock_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: [
+                              'lock_id',
+                              'lock_name',
+                              'house_name',
+                              'has_keypad',
+                            ],
+                            type: 'object',
+                          },
+                          avigilon_alta_metadata: {
+                            properties: {
+                              entry_name: { type: 'string' },
+                              org_name: { type: 'string' },
+                              site_id: { type: 'number' },
+                              site_name: { type: 'string' },
+                              zone_id: { type: 'number' },
+                              zone_name: { type: 'string' },
+                            },
+                            required: [
+                              'entry_name',
+                              'org_name',
+                              'zone_id',
+                              'zone_name',
+                              'site_id',
+                              'site_name',
+                            ],
+                            type: 'object',
+                          },
+                          brivo_metadata: {
+                            properties: { device_name: { type: 'string' } },
+                            required: ['device_name'],
+                            type: 'object',
+                          },
+                          controlbyweb_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              relay_name: { nullable: true, type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'relay_name',
+                            ],
+                            type: 'object',
+                          },
+                          dormakaba_oracode_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              door_id: { type: 'number' },
+                              door_name: { type: 'string' },
+                              iana_timezone: { type: 'string' },
+                              predefined_time_slots: {
+                                items: {
+                                  properties: {
+                                    check_in_time: { type: 'string' },
+                                    check_out_time: { type: 'string' },
+                                    dormakaba_oracode_user_level_id: {
+                                      format: 'uuid',
+                                      type: 'string',
+                                    },
+                                    ext_dormakaba_oracode_user_level_prefix: {
+                                      type: 'number',
+                                    },
+                                    is_24_hour: { type: 'boolean' },
+                                    is_biweekly_mode: { type: 'boolean' },
+                                    is_master: { type: 'boolean' },
+                                    is_one_shot: { type: 'boolean' },
+                                    name: { type: 'string' },
+                                    prefix: { type: 'number' },
+                                  },
+                                  required: [
+                                    'name',
+                                    'prefix',
+                                    'check_in_time',
+                                    'check_out_time',
+                                    'is_24_hour',
+                                    'is_biweekly_mode',
+                                    'is_one_shot',
+                                    'is_master',
+                                    'ext_dormakaba_oracode_user_level_prefix',
+                                    'dormakaba_oracode_user_level_id',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                              site_id: { type: 'number' },
+                              site_name: { type: 'string' },
+                            },
+                            required: [
+                              'door_id',
+                              'door_name',
+                              'site_id',
+                              'site_name',
+                            ],
+                            type: 'object',
+                          },
+                          ecobee_metadata: {
+                            properties: {
+                              device_name: { type: 'string' },
+                              ecobee_device_id: { type: 'string' },
+                            },
+                            required: ['ecobee_device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          four_suites_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              device_name: { type: 'string' },
+                              reclose_delay_in_seconds: { type: 'number' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'reclose_delay_in_seconds',
+                            ],
+                            type: 'object',
+                          },
+                          genie_metadata: {
+                            properties: {
+                              device_name: { type: 'string' },
+                              door_name: { type: 'string' },
+                            },
+                            required: ['device_name', 'door_name'],
+                            type: 'object',
+                          },
+                          hubitat_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_label: { type: 'string' },
+                              device_name: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'device_label',
+                            ],
+                            type: 'object',
+                          },
+                          igloo_metadata: {
+                            properties: {
+                              bridge_id: { type: 'string' },
+                              device_id: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'bridge_id'],
+                            type: 'object',
+                          },
+                          igloohome_metadata: {
+                            properties: {
+                              bridge_id: { type: 'string' },
+                              bridge_name: { type: 'string' },
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          kwikset_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model_number: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'model_number',
+                            ],
+                            type: 'object',
+                          },
+                          lockly_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          minut_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              latest_sensor_values: {
+                                properties: {
+                                  accelerometer_z: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  humidity: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  pressure: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  sound: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                  temperature: {
+                                    properties: {
+                                      time: { type: 'string' },
+                                      value: { type: 'number' },
+                                    },
+                                    required: ['time', 'value'],
+                                    type: 'object',
+                                  },
+                                },
+                                required: [
+                                  'temperature',
+                                  'sound',
+                                  'humidity',
+                                  'pressure',
+                                  'accelerometer_z',
+                                ],
+                                type: 'object',
+                              },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'latest_sensor_values',
+                            ],
+                            type: 'object',
+                          },
+                          nest_metadata: {
+                            properties: {
+                              custom_name: { type: 'string' },
+                              device_name: { type: 'string' },
+                              nest_device_id: { type: 'string' },
+                            },
+                            required: [
+                              'nest_device_id',
+                              'device_name',
+                              'custom_name',
+                            ],
+                            type: 'object',
+                          },
+                          noiseaware_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_model: {
+                                enum: ['indoor', 'outdoor'],
+                                type: 'string',
+                              },
+                              device_name: { type: 'string' },
+                              noise_level_decibel: { type: 'number' },
+                              noise_level_nrs: { type: 'number' },
+                            },
+                            required: [
+                              'device_model',
+                              'noise_level_nrs',
+                              'noise_level_decibel',
+                              'device_name',
+                              'device_id',
+                            ],
+                            type: 'object',
+                          },
+                          nuki_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              keypad_battery_critical: { type: 'boolean' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          salto_metadata: {
+                            properties: {
+                              battery_level: { type: 'string' },
+                              customer_reference: { type: 'string' },
+                              lock_id: { type: 'string' },
+                              lock_type: { type: 'string' },
+                              locked_state: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: [
+                              'lock_id',
+                              'customer_reference',
+                              'lock_type',
+                              'battery_level',
+                              'locked_state',
+                            ],
+                            type: 'object',
+                          },
+                          schlage_metadata: {
+                            properties: {
+                              access_code_length: { type: 'number' },
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'access_code_length',
+                            ],
+                            type: 'object',
+                          },
+                          seam_bridge_metadata: {
+                            properties: {
+                              device_num: { type: 'number' },
+                              name: { type: 'string' },
+                              unlock_method: {
+                                enum: ['bridge', 'doorking'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['device_num', 'name'],
+                            type: 'object',
+                          },
+                          smartthings_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_name: { type: 'string' },
+                              location_id: { type: 'string' },
+                              model: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          ttlock_metadata: {
+                            properties: {
+                              lock_alias: { type: 'string' },
+                              lock_id: { type: 'number' },
+                            },
+                            required: ['lock_id', 'lock_alias'],
+                            type: 'object',
+                          },
+                          two_n_metadata: {
+                            properties: {
+                              device_id: { type: 'number' },
+                              device_name: { type: 'string' },
+                            },
+                            required: ['device_id', 'device_name'],
+                            type: 'object',
+                          },
+                          wyze_metadata: {
+                            properties: {
+                              device_id: { type: 'string' },
+                              device_info_model: { type: 'string' },
+                              device_name: { type: 'string' },
+                              product_model: { type: 'string' },
+                              product_name: { type: 'string' },
+                              product_type: { type: 'string' },
+                            },
+                            required: [
+                              'device_id',
+                              'device_name',
+                              'product_name',
+                              'product_type',
+                              'product_model',
+                              'device_info_model',
+                            ],
+                            type: 'object',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    ],
+                  },
+                  {
+                    allOf: [
+                      {
+                        properties: {
+                          code_constraints: {
+                            items: {
+                              oneOf: [
+                                {
+                                  properties: {
+                                    constraint_type: {
+                                      enum: [
+                                        'no_zeros',
+                                        'cannot_start_with_12',
+                                        'no_triple_consecutive_ints',
+                                        'cannot_specify_pin_code',
+                                        'pin_code_matches_existing_set',
+                                        'start_date_in_future',
+                                      ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: ['constraint_type'],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    constraint_type: {
+                                      enum: ['name_length'],
+                                      type: 'string',
+                                    },
+                                    max_length: { type: 'number' },
+                                    min_length: { type: 'number' },
+                                  },
+                                  required: ['constraint_type'],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
+                          door_open: { type: 'boolean' },
+                          has_native_entry_events: { type: 'boolean' },
+                          keypad_battery: {
+                            properties: { level: { type: 'number' } },
+                            required: ['level'],
+                            type: 'object',
+                          },
+                          locked: { type: 'boolean' },
+                          max_active_codes_supported: { type: 'number' },
+                          supported_code_lengths: {
+                            items: { type: 'number' },
+                            type: 'array',
+                          },
+                          supports_backup_access_code_pool: { type: 'boolean' },
+                        },
+                        type: 'object',
+                      },
+                      {
+                        oneOf: [
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_cooling_set_point_celsius: { type: 'number' },
+                              max_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              max_heating_set_point_celsius: { type: 'number' },
+                              max_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_cooling_set_point_celsius: { type: 'number' },
+                              min_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_cooling_delta_celsius: {
+                                type: 'number',
+                              },
+                              min_heating_cooling_delta_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_set_point_celsius: { type: 'number' },
+                              min_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [false],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_heating_set_point_celsius: { type: 'number' },
+                              max_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_heating_set_point_celsius: { type: 'number' },
+                              min_heating_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              active_climate_setting_schedule: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  climate_setting_schedule_id: {
+                                    format: 'uuid',
+                                    type: 'string',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  device_id: { type: 'string' },
+                                  errors: {
+                                    description:
+                                      'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                                    nullable: true,
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                  name: { type: 'string' },
+                                  schedule_ends_at: { type: 'string' },
+                                  schedule_starts_at: { type: 'string' },
+                                  schedule_type: {
+                                    enum: ['time_bound'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'climate_setting_schedule_id',
+                                  'schedule_type',
+                                  'device_id',
+                                  'schedule_starts_at',
+                                  'schedule_ends_at',
+                                  'created_at',
+                                ],
+                                type: 'object',
+                              },
+                              available_hvac_mode_settings: {
+                                items: {
+                                  enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                  type: 'string',
+                                },
+                                type: 'array',
+                              },
+                              can_enable_automatic_cooling: { type: 'boolean' },
+                              can_enable_automatic_heating: { type: 'boolean' },
+                              current_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              default_climate_setting: {
+                                properties: {
+                                  automatic_cooling_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  automatic_heating_enabled: {
+                                    type: 'boolean',
+                                  },
+                                  cooling_set_point_celsius: { type: 'number' },
+                                  cooling_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  heating_set_point_celsius: { type: 'number' },
+                                  heating_set_point_fahrenheit: {
+                                    type: 'number',
+                                  },
+                                  hvac_mode_setting: {
+                                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                                    type: 'string',
+                                  },
+                                  manual_override_allowed: { type: 'boolean' },
+                                },
+                                required: [
+                                  'automatic_heating_enabled',
+                                  'automatic_cooling_enabled',
+                                  'hvac_mode_setting',
+                                  'manual_override_allowed',
+                                ],
+                                type: 'object',
+                              },
+                              fan_mode_setting: {
+                                enum: ['auto', 'on'],
+                                type: 'string',
+                              },
+                              is_climate_setting_schedule_active: {
+                                type: 'boolean',
+                              },
+                              is_cooling: { type: 'boolean' },
+                              is_cooling_available: {
+                                enum: [true],
+                                type: 'boolean',
+                              },
+                              is_fan_running: { type: 'boolean' },
+                              is_heating: { type: 'boolean' },
+                              is_heating_available: {
+                                enum: [false],
+                                type: 'boolean',
+                              },
+                              is_temporary_manual_override_active: {
+                                type: 'boolean',
+                              },
+                              max_cooling_set_point_celsius: { type: 'number' },
+                              max_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              min_cooling_set_point_celsius: { type: 'number' },
+                              min_cooling_set_point_fahrenheit: {
+                                type: 'number',
+                              },
+                              relative_humidity: {
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
+                              temperature_celsius: { type: 'number' },
+                              temperature_fahrenheit: { type: 'number' },
+                            },
+                            type: 'object',
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                properties: {
+                  assa_abloy_credential_service_metadata: {
+                    properties: {
+                      endpoints: {
+                        items: {
+                          properties: {
+                            endpoint_id: { type: 'string' },
+                            is_active: { type: 'boolean' },
+                          },
+                          required: ['endpoint_id', 'is_active'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      has_active_endpoint: { type: 'boolean' },
+                    },
+                    required: ['has_active_endpoint', 'endpoints'],
+                    type: 'object',
+                  },
+                },
+                type: 'object',
+              },
+            ],
+            description: 'Properties of the device.',
+          },
+          warnings: {
+            description:
+              'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['warning_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'Unique identifier for the Seam workspace associated with the device.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'device_id',
+          'device_type',
+          'capabilities_supported',
+          'properties',
+          'location',
+          'workspace_id',
+          'errors',
+          'warnings',
+          'created_at',
+          'is_managed',
         ],
         type: 'object',
       },
@@ -5103,6 +6473,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_schedule: {
+                    properties: {
+                      ends_at: { format: 'date-time', type: 'string' },
+                      starts_at: { format: 'date-time', type: 'string' },
+                    },
+                    required: ['starts_at', 'ends_at'],
+                    type: 'object',
+                  },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
                     description: 'Deprecated: use email_address.',
@@ -5152,6 +6530,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  access_schedule: {
+                    properties: {
+                      ends_at: { format: 'date-time', type: 'string' },
+                      starts_at: { format: 'date-time', type: 'string' },
+                    },
+                    required: ['starts_at', 'ends_at'],
+                    type: 'object',
+                  },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
                     description: 'Deprecated: use email_address.',
@@ -7842,6 +9228,119 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
       },
     },
+    '/networks/get': {
+      post: {
+        operationId: 'networksGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { network_id: { format: 'uuid', type: 'string' } },
+                required: ['network_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    network: {
+                      properties: {
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        network_id: { format: 'uuid', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'network_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['network', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
+    '/networks/list': {
+      post: {
+        operationId: 'networksListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    networks: {
+                      items: {
+                        properties: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                          network_id: { format: 'uuid', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'network_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['networks', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/networks/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['networks'],
+        'x-fern-sdk-method-name': 'list',
+      },
+    },
     '/noise_sensors/noise_thresholds/create': {
       post: {
         operationId: 'noiseSensorsNoiseThresholdsCreatePost',
@@ -8250,6 +9749,135 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'simulate'],
         'x-fern-sdk-method-name': 'trigger_noise_threshold',
+      },
+    },
+    '/phones/list': {
+      post: {
+        operationId: 'phonesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  owner_user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phones: {
+                      items: { $ref: '#/components/schemas/phone' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['phones', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/phones/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'phones',
+      },
+    },
+    '/phones/simulate/create_sandbox_phone': {
+      post: {
+        operationId: 'phonesSimulateCreateSandboxPhonePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  assa_abloy_credential_service_acs_system_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  custom_sdk_installation_id: { type: 'string' },
+                  phone_metadata: {
+                    default: {},
+                    properties: {
+                      application_version: { default: '1.0.0', type: 'string' },
+                      ble_capability: { default: true, type: 'boolean' },
+                      device_manufacturer: {
+                        default: 'Samsung',
+                        type: 'string',
+                      },
+                      device_model: {
+                        default: 'Samsung Galaxy S10',
+                        type: 'string',
+                      },
+                      hce_capability: { default: false, type: 'boolean' },
+                      nfc_capability: { default: false, type: 'boolean' },
+                      operating_system: {
+                        default: 'android',
+                        enum: ['android', 'ios'],
+                        type: 'string',
+                      },
+                      os_version: { default: '10', type: 'string' },
+                      seos_applet_version: { default: '1.0.0', type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: [
+                  'assa_abloy_credential_service_acs_system_id',
+                  'user_identity_id',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone: { $ref: '#/components/schemas/phone' },
+                  },
+                  required: ['phone', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/phones/simulate/create_sandbox_phone',
+        tags: [],
+        'x-fern-sdk-group-name': ['phones', 'simulate'],
+        'x-fern-sdk-method-name': 'create_sandbox_phone',
+        'x-fern-sdk-return-value': 'phone',
       },
     },
     '/thermostats/climate_setting_schedules/create': {
@@ -9471,6 +11099,55 @@ export default {
         'x-fern-sdk-method-name': 'create',
       },
     },
+    '/user_identities/enrollment_automations/get': {
+      post: {
+        operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  enrollment_automation_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['enrollment_automation_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automation: {
+                      $ref: '#/components/schemas/enrollment_automation',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automation', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'get',
+      },
+    },
     '/user_identities/enrollment_automations/launch': {
       post: {
         operationId: 'userIdentitiesEnrollmentAutomationsLaunchPost',
@@ -9555,6 +11232,58 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
+      },
+    },
+    '/user_identities/enrollment_automations/list': {
+      post: {
+        operationId: 'userIdentitiesEnrollmentAutomationsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    enrollment_automations: {
+                      items: {
+                        $ref: '#/components/schemas/enrollment_automation',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['enrollment_automations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'list',
       },
     },
     '/user_identities/get': {
