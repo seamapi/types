@@ -5,6 +5,7 @@ import { capability_properties } from '../capability-properties/index.js'
 import { capabilities } from './capabilities-supported.js'
 import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
+import { phone_specific_properties } from './phone-properties.js'
 
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
 
@@ -103,6 +104,7 @@ export const managed_device = z.object({
   properties: common_device_properties
     .and(device_metadata)
     .and(capability_properties)
+    .and(phone_specific_properties.partial())
     .describe('Properties of the device.'),
   location: z
     // todo: optional instead of nullable

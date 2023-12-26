@@ -8,7 +8,7 @@ export const acs_system_external_type = z.enum([
   'brivo_account',
   'hid_credential_manager_organization',
   'visionline_system',
-  'assa_abloy_credential_service_user',
+  'assa_abloy_credential_service',
 ])
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
