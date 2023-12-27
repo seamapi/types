@@ -22,8 +22,10 @@ export type ManufacturerAnnotationCode = z.infer<
 
 export const manufacturer_annotation = z.object({
   annotation_code: manufacturer_annotation_code,
-  message: z.string().nonempty(),
+  message: z.string().trim().nonempty(),
 })
+
+export type ManufacturerAnnotation = z.infer<typeof manufacturer_annotation>
 
 export const manufacturer = z.object({
   manufacturer_id: z.string().uuid(),
