@@ -10,6 +10,7 @@ export type {
   DeviceModelV1,
   ImageReference,
   Manufacturer,
+  ManufacturerAnnotation,
   ManufacturerAnnotationCode,
   ManufacturerIntegrationSupportLevel,
 } from './public-models/index.js'
