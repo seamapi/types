@@ -9995,6 +9995,7 @@ export interface Routes {
         email_address?: (string | null) | undefined
         first_name?: (string | null) | undefined
         last_name?: (string | null) | undefined
+        display_name: string
         created_at: string
         workspace_id: string
       }
@@ -10082,6 +10083,7 @@ export interface Routes {
         email_address?: (string | null) | undefined
         first_name?: (string | null) | undefined
         last_name?: (string | null) | undefined
+        display_name: string
         created_at: string
         workspace_id: string
       }
@@ -10113,6 +10115,7 @@ export interface Routes {
         email_address?: (string | null) | undefined
         first_name?: (string | null) | undefined
         last_name?: (string | null) | undefined
+        display_name: string
         created_at: string
         workspace_id: string
       }>

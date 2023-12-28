@@ -6,6 +6,7 @@ export const user_identity = z.object({
   email_address: z.string().email().nullish(),
   first_name: z.string().nullish(),
   last_name: z.string().nullish(),
+  display_name: z.string(),
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
 })
