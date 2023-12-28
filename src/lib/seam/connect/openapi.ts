@@ -5173,6 +5173,7 @@ export default {
                   },
                   card_format: { enum: ['TLCode', 'rfid48'], type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
+                  ends_at: { format: 'date-time', type: 'string' },
                   external_type: {
                     enum: [
                       'pti_card',
@@ -5184,6 +5185,7 @@ export default {
                   },
                   is_multi_phone_sync_credential: { type: 'boolean' },
                   is_override_key: { type: 'boolean' },
+                  starts_at: { format: 'date-time', type: 'string' },
                 },
                 required: ['acs_user_id', 'access_method'],
                 type: 'object',

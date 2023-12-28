@@ -862,6 +862,8 @@ export interface Routes {
         | undefined
       card_format?: ('TLCode' | 'rfid48') | undefined
       is_override_key?: boolean | undefined
+      starts_at?: string | undefined
+      ends_at?: string | undefined
     }
     formData: {}
     jsonResponse: {
