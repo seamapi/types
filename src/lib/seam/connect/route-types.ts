@@ -9984,18 +9984,16 @@ export interface Routes {
     commonParams: {
       user_identity_key?: (string | null) | undefined
       email_address?: (string | null) | undefined
-      first_name?: (string | null) | undefined
-      last_name?: (string | null) | undefined
+      full_name?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
       user_identity: {
         user_identity_id: string
-        user_identity_key?: (string | null) | undefined
-        email_address?: (string | null) | undefined
-        first_name?: (string | null) | undefined
-        last_name?: (string | null) | undefined
+        user_identity_key: string | null
+        email_address: string | null
         display_name: string
+        full_name: string | null
         created_at: string
         workspace_id: string
       }
@@ -10079,11 +10077,10 @@ export interface Routes {
     jsonResponse: {
       user_identity: {
         user_identity_id: string
-        user_identity_key?: (string | null) | undefined
-        email_address?: (string | null) | undefined
-        first_name?: (string | null) | undefined
-        last_name?: (string | null) | undefined
+        user_identity_key: string | null
+        email_address: string | null
         display_name: string
+        full_name: string | null
         created_at: string
         workspace_id: string
       }
@@ -10111,11 +10108,10 @@ export interface Routes {
     jsonResponse: {
       user_identities: Array<{
         user_identity_id: string
-        user_identity_key?: (string | null) | undefined
-        email_address?: (string | null) | undefined
-        first_name?: (string | null) | undefined
-        last_name?: (string | null) | undefined
+        user_identity_key: string | null
+        email_address: string | null
         display_name: string
+        full_name: string | null
         created_at: string
         workspace_id: string
       }>
