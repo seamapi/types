@@ -11059,6 +11059,7 @@ export default {
                     user_identity: {
                       properties: {
                         created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
                         email_address: {
                           format: 'email',
                           nullable: true,
@@ -11072,6 +11073,7 @@ export default {
                       },
                       required: [
                         'user_identity_id',
+                        'display_name',
                         'created_at',
                         'workspace_id',
                       ],
@@ -11321,6 +11323,7 @@ export default {
                     user_identity: {
                       properties: {
                         created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
                         email_address: {
                           format: 'email',
                           nullable: true,
@@ -11334,6 +11337,7 @@ export default {
                       },
                       required: [
                         'user_identity_id',
+                        'display_name',
                         'created_at',
                         'workspace_id',
                       ],
@@ -11460,6 +11464,7 @@ export default {
                       items: {
                         properties: {
                           created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
                           email_address: {
                             format: 'email',
                             nullable: true,
@@ -11473,6 +11478,7 @@ export default {
                         },
                         required: [
                           'user_identity_id',
+                          'display_name',
                           'created_at',
                           'workspace_id',
                         ],
@@ -11514,6 +11520,7 @@ export default {
                       items: {
                         properties: {
                           created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
                           email_address: {
                             format: 'email',
                             nullable: true,
@@ -11527,6 +11534,7 @@ export default {
                         },
                         required: [
                           'user_identity_id',
+                          'display_name',
                           'created_at',
                           'workspace_id',
                         ],
