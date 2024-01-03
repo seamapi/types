@@ -12221,10 +12221,12 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    message: { type: 'string' },
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
                     ok: { type: 'boolean' },
                   },
-                  required: ['message', 'ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
