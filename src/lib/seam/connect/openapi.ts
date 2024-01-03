@@ -9814,12 +9814,21 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  custom_sdk_installation_id: { type: 'string' },
-                  phone_metadata: {
+                  assa_abloy_metadata: {
                     default: {},
                     properties: {
                       application_version: { default: '1.0.0', type: 'string' },
                       ble_capability: { default: true, type: 'boolean' },
+                      hce_capability: { default: false, type: 'boolean' },
+                      nfc_capability: { default: false, type: 'boolean' },
+                      seos_applet_version: { default: '1.0.0', type: 'string' },
+                    },
+                    type: 'object',
+                  },
+                  custom_sdk_installation_id: { type: 'string' },
+                  phone_metadata: {
+                    default: {},
+                    properties: {
                       device_manufacturer: {
                         default: 'Samsung',
                         type: 'string',
@@ -9828,15 +9837,12 @@ export default {
                         default: 'Samsung Galaxy S10',
                         type: 'string',
                       },
-                      hce_capability: { default: false, type: 'boolean' },
-                      nfc_capability: { default: false, type: 'boolean' },
                       operating_system: {
                         default: 'android',
                         enum: ['android', 'ios'],
                         type: 'string',
                       },
                       os_version: { default: '10', type: 'string' },
-                      seos_applet_version: { default: '1.0.0', type: 'string' },
                     },
                     type: 'object',
                   },
