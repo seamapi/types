@@ -1294,7 +1294,8 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_system_id: string
+      user_identity_id?: string | undefined
+      acs_system_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
