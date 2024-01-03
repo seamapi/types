@@ -734,7 +734,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1208,7 +1213,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1255,7 +1265,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1291,7 +1306,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -10805,7 +10825,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean

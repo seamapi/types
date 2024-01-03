@@ -5,7 +5,7 @@ import { schedule } from '../schedule.js'
 export const acs_user_external_type = z.enum([
   'pti_user',
   'brivo_user',
-  'hid_cm_user',
+  'hid_credential_manager_user',
   'salto_site_user',
 ])
 

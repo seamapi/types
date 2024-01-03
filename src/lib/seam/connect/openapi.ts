@@ -254,7 +254,12 @@ export default {
           },
           email_address: { format: 'email', type: 'string' },
           external_type: {
-            enum: ['pti_user', 'brivo_user', 'hid_cm_user', 'salto_site_user'],
+            enum: [
+              'pti_user',
+              'brivo_user',
+              'hid_credential_manager_user',
+              'salto_site_user',
+            ],
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
