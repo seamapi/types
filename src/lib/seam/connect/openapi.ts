@@ -9828,6 +9828,7 @@ export default {
                       hce_capability: { default: false, type: 'boolean' },
                       nfc_capability: { default: false, type: 'boolean' },
                       seos_applet_version: { default: '1.0.0', type: 'string' },
+                      seos_tsm_endpoint_id: { default: 1, type: 'number' },
                     },
                     type: 'object',
                   },

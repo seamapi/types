@@ -7659,6 +7659,7 @@ export interface Routes {
         nfc_capability?: boolean
         application_version?: string
         seos_applet_version?: string
+        seos_tsm_endpoint_id?: number
       }
     }
     commonParams: {}
