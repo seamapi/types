@@ -7627,15 +7627,17 @@ export interface Routes {
       custom_sdk_installation_id?: string | undefined
       user_identity_id: string
       phone_metadata?: {
+        operating_system?: 'android' | 'ios'
+        os_version?: string
+        device_manufacturer?: string
+        device_model?: string
+      }
+      assa_abloy_metadata?: {
         ble_capability?: boolean
         hce_capability?: boolean
         nfc_capability?: boolean
         application_version?: string
         seos_applet_version?: string
-        device_manufacturer?: string
-        device_model?: string
-        os_version?: string
-        operating_system?: 'android' | 'ios'
       }
     }
     commonParams: {}
