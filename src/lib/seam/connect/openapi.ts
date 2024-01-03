@@ -254,7 +254,12 @@ export default {
           },
           email_address: { format: 'email', type: 'string' },
           external_type: {
-            enum: ['pti_user', 'brivo_user', 'hid_cm_user', 'salto_site_user'],
+            enum: [
+              'pti_user',
+              'brivo_user',
+              'hid_credential_manager_user',
+              'salto_site_user',
+            ],
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
@@ -5936,6 +5941,7 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
                   acs_system_id: { format: 'uuid', type: 'string' },
                 },
                 type: 'object',
@@ -9814,12 +9820,22 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  custom_sdk_installation_id: { type: 'string' },
-                  phone_metadata: {
+                  assa_abloy_metadata: {
                     default: {},
                     properties: {
                       application_version: { default: '1.0.0', type: 'string' },
                       ble_capability: { default: true, type: 'boolean' },
+                      hce_capability: { default: false, type: 'boolean' },
+                      nfc_capability: { default: false, type: 'boolean' },
+                      seos_applet_version: { default: '1.0.0', type: 'string' },
+                      seos_tsm_endpoint_id: { default: 1, type: 'number' },
+                    },
+                    type: 'object',
+                  },
+                  custom_sdk_installation_id: { type: 'string' },
+                  phone_metadata: {
+                    default: {},
+                    properties: {
                       device_manufacturer: {
                         default: 'Samsung',
                         type: 'string',
@@ -9828,15 +9844,12 @@ export default {
                         default: 'Samsung Galaxy S10',
                         type: 'string',
                       },
-                      hce_capability: { default: false, type: 'boolean' },
-                      nfc_capability: { default: false, type: 'boolean' },
                       operating_system: {
                         default: 'android',
                         enum: ['android', 'ios'],
                         type: 'string',
                       },
                       os_version: { default: '10', type: 'string' },
-                      seos_applet_version: { default: '1.0.0', type: 'string' },
                     },
                     type: 'object',
                   },

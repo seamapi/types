@@ -734,7 +734,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1075,6 +1080,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       acs_system_id?: string | undefined
+      acs_credential_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1207,7 +1213,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1254,7 +1265,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -1290,7 +1306,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
@@ -7627,15 +7648,18 @@ export interface Routes {
       custom_sdk_installation_id?: string | undefined
       user_identity_id: string
       phone_metadata?: {
+        operating_system?: 'android' | 'ios'
+        os_version?: string
+        device_manufacturer?: string
+        device_model?: string
+      }
+      assa_abloy_metadata?: {
         ble_capability?: boolean
         hce_capability?: boolean
         nfc_capability?: boolean
         application_version?: string
         seos_applet_version?: string
-        device_manufacturer?: string
-        device_model?: string
-        os_version?: string
-        operating_system?: 'android' | 'ios'
+        seos_tsm_endpoint_id?: number
       }
     }
     commonParams: {}
@@ -10802,7 +10826,12 @@ export interface Routes {
         created_at: string
         display_name: string
         external_type?:
-          | ('pti_user' | 'brivo_user' | 'hid_cm_user' | 'salto_site_user')
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+            )
           | undefined
         external_type_display_name?: string | undefined
         is_suspended: boolean
