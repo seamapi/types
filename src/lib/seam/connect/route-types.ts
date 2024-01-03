@@ -1075,6 +1075,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       acs_system_id?: string | undefined
+      acs_credential_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
