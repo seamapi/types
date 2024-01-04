@@ -843,6 +843,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }
     }
   }
@@ -891,6 +893,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }
     }
   }
@@ -934,6 +938,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }
     }
   }
@@ -952,6 +958,9 @@ export interface Routes {
       | {
           acs_user_id: string
           acs_system_id: string
+        }
+      | {
+          user_identity_id: string
         }
     formData: {}
     jsonResponse: {
@@ -974,6 +983,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }>
     }
   }
@@ -1007,6 +1018,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }
     }
   }
@@ -1040,6 +1053,8 @@ export interface Routes {
         external_type_display_name?: string | undefined
         created_at: string
         workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
       }
     }
   }

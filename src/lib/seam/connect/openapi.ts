@@ -5033,6 +5033,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5043,6 +5044,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5114,6 +5116,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5124,6 +5127,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5220,6 +5224,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5230,6 +5235,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5346,6 +5352,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5356,6 +5363,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5421,6 +5429,13 @@ export default {
                     required: ['acs_user_id', 'acs_system_id'],
                     type: 'object',
                   },
+                  {
+                    properties: {
+                      user_identity_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: ['user_identity_id'],
+                    type: 'object',
+                  },
                 ],
               },
             },
@@ -5449,6 +5464,7 @@ export default {
                           code: { nullable: true, type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
+                          ends_at: { type: 'string' },
                           external_type: {
                             enum: [
                               'pti_card',
@@ -5459,6 +5475,7 @@ export default {
                             type: 'string',
                           },
                           external_type_display_name: { type: 'string' },
+                          starts_at: { type: 'string' },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [
@@ -5536,6 +5553,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5546,6 +5564,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5617,6 +5636,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5627,6 +5647,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5701,6 +5722,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5711,6 +5733,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -5782,6 +5805,7 @@ export default {
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        ends_at: { type: 'string' },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -5792,6 +5816,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        starts_at: { type: 'string' },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
