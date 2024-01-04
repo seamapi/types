@@ -6317,8 +6317,8 @@ export default {
               schema: {
                 properties: {
                   acs_system_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
                 },
-                required: ['acs_system_id'],
                 type: 'object',
               },
             },
