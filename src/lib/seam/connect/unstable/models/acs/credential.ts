@@ -30,6 +30,8 @@ export const acs_credential = z.object({
   external_type_display_name: z.string().optional(),
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
+  starts_at: z.string().optional(),
+  ends_at: z.string().optional(),
 })
 
 export type AcsCredential = z.output<typeof acs_credential>
