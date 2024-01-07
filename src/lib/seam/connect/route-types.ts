@@ -3737,7 +3737,6 @@ export interface Routes {
           }
         | undefined
       name?: (string | null) | undefined
-      location?: {} | undefined
       is_managed?: boolean
     }
     formData: {}

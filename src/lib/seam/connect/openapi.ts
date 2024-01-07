@@ -8438,7 +8438,6 @@ export default {
                 properties: {
                   device_id: { format: 'uuid', type: 'string' },
                   is_managed: { default: true, type: 'boolean' },
-                  location: { properties: {}, type: 'object' },
                   name: { nullable: true, type: 'string' },
                   properties: {
                     properties: { name: { nullable: true, type: 'string' } },
@@ -8485,7 +8484,6 @@ export default {
                 properties: {
                   device_id: { format: 'uuid', type: 'string' },
                   is_managed: { default: true, type: 'boolean' },
-                  location: { properties: {}, type: 'object' },
                   name: { nullable: true, type: 'string' },
                   properties: {
                     properties: { name: { nullable: true, type: 'string' } },
