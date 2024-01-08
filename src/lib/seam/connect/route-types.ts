@@ -10823,6 +10823,45 @@ export interface Routes {
       }>
     }
   }
+  '/user_identities/list_acs_systems': {
+    route: '/user_identities/list_acs_systems'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_systems: Array<{
+        acs_system_id: string
+        external_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_account'
+          | 'hid_credential_manager_organization'
+          | 'visionline_system'
+          | 'assa_abloy_credential_service'
+        external_type_display_name: string
+        /** deprecated: use external_type */
+        system_type:
+          | 'pti_site'
+          | 'alta_org'
+          | 'salto_site'
+          | 'brivo_account'
+          | 'hid_credential_manager_organization'
+          | 'visionline_system'
+          | 'assa_abloy_credential_service'
+        /** deprecated: use external_type_display_name */
+        system_type_display_name: string
+        name: string
+        created_at: string
+        workspace_id: string
+        connected_account_ids: string[]
+      }>
+    }
+  }
   '/user_identities/list_acs_users': {
     route: '/user_identities/list_acs_users'
     method: 'GET' | 'POST'

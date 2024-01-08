@@ -11696,6 +11696,56 @@ export default {
         'x-fern-sdk-method-name': 'list_accessible_devices',
       },
     },
+    '/user_identities/list_acs_systems': {
+      post: {
+        operationId: 'userIdentitiesListAcsSystemsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_systems: {
+                      items: { $ref: '#/components/schemas/acs_system' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/list_acs_systems',
+        tags: [],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'list_acs_systems',
+      },
+    },
     '/user_identities/list_acs_users': {
       post: {
         operationId: 'userIdentitiesListAcsUsersPost',
