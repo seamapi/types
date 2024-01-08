@@ -11741,7 +11741,7 @@ export default {
           { api_key: [] },
         ],
         summary: '/user_identities/list_acs_systems',
-        tags: [],
+        tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_acs_systems',
       },
