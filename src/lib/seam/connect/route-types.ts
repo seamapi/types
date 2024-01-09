@@ -1672,9 +1672,7 @@ export interface Routes {
       provider_category?:
         | ('stable' | 'consumer_smartlocks' | 'internal_beta')
         | undefined
-      custom_metadata?:
-        | Record<string, string | number | null | boolean>
-        | undefined
+      custom_metadata?: Record<string, string | boolean> | undefined
       automatically_manage_new_devices?: boolean | undefined
       wait_for_device_creation?: boolean | undefined
     }
@@ -1696,7 +1694,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | number | null | boolean>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1740,7 +1738,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | number | null | boolean>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1773,7 +1771,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | number | null | boolean>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1835,9 +1833,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?:
-          | Record<string, string | number | boolean | null>
-          | undefined
+        custom_metadata?: Record<string, string | boolean> | undefined
         automatically_manage_new_devices: boolean
       }
     }
@@ -1866,9 +1862,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?:
-          | Record<string, string | number | boolean | null>
-          | undefined
+        custom_metadata?: Record<string, string | boolean> | undefined
         automatically_manage_new_devices: boolean
       }>
     }
@@ -1900,9 +1894,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?:
-          | Record<string, string | number | boolean | null>
-          | undefined
+        custom_metadata?: Record<string, string | boolean> | undefined
         automatically_manage_new_devices: boolean
       }
     }
