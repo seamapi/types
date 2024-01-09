@@ -423,13 +423,7 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { maxLength: 500, type: 'string' },
-                { type: 'number' },
-                { format: 'null', nullable: true, type: 'string' },
-                { type: 'boolean' },
-              ],
+              oneOf: [{ maxLength: 500, type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -485,13 +479,7 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { type: 'string' },
-                { type: 'number' },
-                { type: 'boolean' },
-                { format: 'null', nullable: true, type: 'string' },
-              ],
+              oneOf: [{ maxLength: 500, type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -7309,11 +7297,8 @@ export default {
                   automatically_manage_new_devices: { type: 'boolean' },
                   custom_metadata: {
                     additionalProperties: {
-                      nullable: true,
                       oneOf: [
                         { maxLength: 500, type: 'string' },
-                        { type: 'number' },
-                        { format: 'null', nullable: true, type: 'string' },
                         { type: 'boolean' },
                       ],
                     },
