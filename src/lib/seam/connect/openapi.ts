@@ -6371,6 +6371,68 @@ export default {
         'x-fern-sdk-method-name': 'list',
       },
     },
+    '/acs/users/list_accessible_entrances': {
+      post: {
+        operationId: 'acsUsersListAccessibleEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: {
+                        properties: {
+                          acs_entrance_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                        },
+                        required: [
+                          'acs_entrance_id',
+                          'display_name',
+                          'acs_system_id',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+      },
+    },
     '/acs/users/remove_from_access_group': {
       post: {
         operationId: 'acsUsersRemoveFromAccessGroupPost',

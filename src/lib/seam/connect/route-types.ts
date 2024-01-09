@@ -1345,6 +1345,24 @@ export interface Routes {
       }>
     }
   }
+  '/acs/users/list_accessible_entrances': {
+    route: '/acs/users/list_accessible_entrances'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_entrances: Array<{
+        acs_entrance_id: string
+        display_name: string
+        acs_system_id: string
+        created_at: string
+      }>
+    }
+  }
   '/acs/users/remove_from_access_group': {
     route: '/acs/users/remove_from_access_group'
     method: 'DELETE' | 'POST'
