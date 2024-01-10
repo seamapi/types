@@ -10035,6 +10035,7 @@ export interface Routes {
     commonParams: {
       user_identity_key?: (string | null) | undefined
       email_address?: (string | null) | undefined
+      phone_number?: (string | null) | undefined
       full_name?: (string | null) | undefined
     }
     formData: {}
@@ -10043,6 +10044,7 @@ export interface Routes {
         user_identity_id: string
         user_identity_key: string | null
         email_address: string | null
+        phone_number: string | null
         display_name: string
         full_name: string | null
         created_at: string
@@ -10130,6 +10132,7 @@ export interface Routes {
         user_identity_id: string
         user_identity_key: string | null
         email_address: string | null
+        phone_number: string | null
         display_name: string
         full_name: string | null
         created_at: string
@@ -10161,6 +10164,7 @@ export interface Routes {
         user_identity_id: string
         user_identity_key: string | null
         email_address: string | null
+        phone_number: string | null
         display_name: string
         full_name: string | null
         created_at: string
