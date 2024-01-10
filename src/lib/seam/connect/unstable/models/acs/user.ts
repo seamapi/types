@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { phone_number } from '../phone-number.js'
 import { schedule } from '../schedule.js'
 
 export const acs_user_external_type = z.enum([
@@ -10,19 +11,6 @@ export const acs_user_external_type = z.enum([
 ])
 
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
-
-const phone_number = z.coerce
-  .string()
-  .trim()
-  .refine(
-    (val) => {
-      // https://www.twilio.com/docs/glossary/what-e164
-      return /^\+[1-9]\d{1,14}$/.test(val)
-    },
-    {
-      message: 'Phone number must be in E.164 format: +14155552671',
-    },
-  )
 
 const user_fields = z.object({
   full_name: z.string().optional(),
