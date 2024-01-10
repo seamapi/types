@@ -11126,6 +11126,7 @@ export default {
                     type: 'string',
                   },
                   full_name: { minLength: 1, nullable: true, type: 'string' },
+                  phone_number: { nullable: true, type: 'string' },
                   user_identity_key: {
                     minLength: 1,
                     nullable: true,
@@ -11158,6 +11159,7 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        phone_number: { nullable: true, type: 'string' },
                         user_identity_id: { format: 'uuid', type: 'string' },
                         user_identity_key: {
                           minLength: 1,
@@ -11170,6 +11172,7 @@ export default {
                         'user_identity_id',
                         'user_identity_key',
                         'email_address',
+                        'phone_number',
                         'display_name',
                         'full_name',
                         'created_at',
@@ -11432,6 +11435,7 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        phone_number: { nullable: true, type: 'string' },
                         user_identity_id: { format: 'uuid', type: 'string' },
                         user_identity_key: {
                           minLength: 1,
@@ -11444,6 +11448,7 @@ export default {
                         'user_identity_id',
                         'user_identity_key',
                         'email_address',
+                        'phone_number',
                         'display_name',
                         'full_name',
                         'created_at',
@@ -11583,6 +11588,7 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          phone_number: { nullable: true, type: 'string' },
                           user_identity_id: { format: 'uuid', type: 'string' },
                           user_identity_key: {
                             minLength: 1,
@@ -11595,6 +11601,7 @@ export default {
                           'user_identity_id',
                           'user_identity_key',
                           'email_address',
+                          'phone_number',
                           'display_name',
                           'full_name',
                           'created_at',
@@ -11649,6 +11656,7 @@ export default {
                             nullable: true,
                             type: 'string',
                           },
+                          phone_number: { nullable: true, type: 'string' },
                           user_identity_id: { format: 'uuid', type: 'string' },
                           user_identity_key: {
                             minLength: 1,
@@ -11661,6 +11669,7 @@ export default {
                           'user_identity_id',
                           'user_identity_key',
                           'email_address',
+                          'phone_number',
                           'display_name',
                           'full_name',
                           'created_at',
