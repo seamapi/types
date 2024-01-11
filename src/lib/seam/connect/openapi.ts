@@ -267,6 +267,9 @@ export default {
           hid_acs_system_id: { format: 'uuid', type: 'string' },
           is_suspended: { type: 'boolean' },
           phone_number: { nullable: true, type: 'string' },
+          user_identity_email_address: { type: 'string' },
+          user_identity_id: { type: 'string' },
+          user_identity_phone_number: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -6330,7 +6333,12 @@ export default {
               schema: {
                 properties: {
                   acs_system_id: { format: 'uuid', type: 'string' },
+                  user_identity_email_address: { type: 'string' },
                   user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_phone_number: {
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -7338,6 +7346,7 @@ export default {
                         'my_2n',
                         'controlbyweb',
                         'nest',
+                        'google_nest',
                         'igloohome',
                         'ecobee',
                         'hubitat',
