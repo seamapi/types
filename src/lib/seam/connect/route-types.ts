@@ -1705,7 +1705,7 @@ export interface Routes {
       provider_category?:
         | ('stable' | 'consumer_smartlocks' | 'internal_beta')
         | undefined
-      custom_metadata?: Record<string, string | boolean> | undefined
+      custom_metadata?: Record<string, string | boolean | null> | undefined
       automatically_manage_new_devices?: boolean | undefined
       wait_for_device_creation?: boolean | undefined
     }
@@ -1727,7 +1727,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean>
+        custom_metadata: Record<string, string | boolean | null>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1771,7 +1771,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean>
+        custom_metadata: Record<string, string | boolean | null>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1786,6 +1786,8 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       user_identifier_key?: string | undefined
+      /** Returns devices where the webview's custom_metadata contains all of the provided key/value pairs. */
+      custom_metadata_has?: Record<string, string | boolean> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1804,7 +1806,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean>
+        custom_metadata: Record<string, string | boolean | null>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -1866,7 +1868,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean> | undefined
+        custom_metadata?: Record<string, string | boolean | null> | undefined
         automatically_manage_new_devices: boolean
       }
     }
@@ -1876,7 +1878,10 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: {}
+    commonParams: {
+      /** Returns devices where the account's custom_metadata contains all of the provided key/value pairs. */
+      custom_metadata_has?: Record<string, string | boolean> | undefined
+    }
     formData: {}
     jsonResponse: {
       connected_accounts: Array<{
@@ -1895,7 +1900,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean> | undefined
+        custom_metadata?: Record<string, string | boolean | null> | undefined
         automatically_manage_new_devices: boolean
       }>
     }
@@ -1907,6 +1912,7 @@ export interface Routes {
     jsonBody: {
       connected_account_id: string
       automatically_manage_new_devices?: boolean | undefined
+      custom_metadata?: Record<string, string | boolean | null> | undefined
     }
     commonParams: {}
     formData: {}
@@ -1927,7 +1933,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean> | undefined
+        custom_metadata?: Record<string, string | boolean | null> | undefined
         automatically_manage_new_devices: boolean
       }
     }
