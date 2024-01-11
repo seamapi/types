@@ -426,7 +426,12 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              oneOf: [{ maxLength: 500, type: 'string' }, { type: 'boolean' }],
+              nullable: true,
+              oneOf: [
+                { maxLength: 500, type: 'string' },
+                { type: 'boolean' },
+                { format: 'null', nullable: true, type: 'string' },
+              ],
             },
             type: 'object',
           },
@@ -482,7 +487,12 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              oneOf: [{ maxLength: 500, type: 'string' }, { type: 'boolean' }],
+              nullable: true,
+              oneOf: [
+                { maxLength: 500, type: 'string' },
+                { type: 'boolean' },
+                { format: 'null', nullable: true, type: 'string' },
+              ],
             },
             type: 'object',
           },
@@ -7368,9 +7378,11 @@ export default {
                   automatically_manage_new_devices: { type: 'boolean' },
                   custom_metadata: {
                     additionalProperties: {
+                      nullable: true,
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     type: 'object',
@@ -7524,7 +7536,20 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { user_identifier_key: { type: 'string' } },
+                properties: {
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
+                    type: 'object',
+                  },
+                  user_identifier_key: { type: 'string' },
+                },
                 type: 'object',
               },
             },
@@ -7695,41 +7720,30 @@ export default {
       },
     },
     '/connected_accounts/list': {
-      get: {
-        operationId: 'connectedAccountsListGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    connected_accounts: {
-                      items: { $ref: '#/components/schemas/connected_account' },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['connected_accounts', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
-        ],
-        summary: '/connected_accounts/list',
-        tags: ['/connected_accounts'],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'connectedAccountsListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      "Returns devices where the account's custom_metadata contains all of the provided key/value pairs.",
+                    type: 'object',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
@@ -7774,6 +7788,17 @@ export default {
                 properties: {
                   automatically_manage_new_devices: { type: 'boolean' },
                   connected_account_id: { format: 'uuid', type: 'string' },
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
+                  },
                 },
                 required: ['connected_account_id'],
                 type: 'object',
