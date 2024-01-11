@@ -7524,7 +7524,20 @@ export default {
           content: {
             'application/json': {
               schema: {
-                properties: { user_identifier_key: { type: 'string' } },
+                properties: {
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                      ],
+                    },
+                    description:
+                      "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
+                    type: 'object',
+                  },
+                  user_identifier_key: { type: 'string' },
+                },
                 type: 'object',
               },
             },
