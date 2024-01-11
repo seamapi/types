@@ -1686,6 +1686,7 @@ export interface Routes {
             | 'my_2n'
             | 'controlbyweb'
             | 'nest'
+            | 'google_nest'
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'

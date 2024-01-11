@@ -7346,6 +7346,7 @@ export default {
                         'my_2n',
                         'controlbyweb',
                         'nest',
+                        'google_nest',
                         'igloohome',
                         'ecobee',
                         'hubitat',
