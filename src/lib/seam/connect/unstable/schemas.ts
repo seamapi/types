@@ -26,6 +26,7 @@ export {
   network,
   noise_sensor_device_type,
   phone,
+  phone_number,
   thermostat_capability_properties,
   thermostat_device_type,
   unmanaged_access_code,

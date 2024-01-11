@@ -35,6 +35,9 @@ export const acs_user = z
     external_type_display_name: z.string().optional(),
     is_suspended: z.boolean(),
     access_schedule: schedule.optional(),
+    user_identity_id: z.string().optional(),
+    user_identity_email_address: z.string().optional(),
+    user_identity_phone_number: z.string().optional(),
   })
   .merge(user_fields)
 

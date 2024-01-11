@@ -749,6 +749,9 @@ export interface Routes {
               ends_at: string
             }
           | undefined
+        user_identity_id?: string | undefined
+        user_identity_email_address?: string | undefined
+        user_identity_phone_number?: string | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1243,6 +1246,9 @@ export interface Routes {
               ends_at: string
             }
           | undefined
+        user_identity_id?: string | undefined
+        user_identity_email_address?: string | undefined
+        user_identity_phone_number?: string | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1295,6 +1301,9 @@ export interface Routes {
               ends_at: string
             }
           | undefined
+        user_identity_id?: string | undefined
+        user_identity_email_address?: string | undefined
+        user_identity_phone_number?: string | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -1310,6 +1319,8 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       user_identity_id?: string | undefined
+      user_identity_phone_number?: string | undefined
+      user_identity_email_address?: string | undefined
       acs_system_id?: string | undefined
     }
     formData: {}
@@ -1337,6 +1348,9 @@ export interface Routes {
               ends_at: string
             }
           | undefined
+        user_identity_id?: string | undefined
+        user_identity_email_address?: string | undefined
+        user_identity_phone_number?: string | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
@@ -10909,6 +10923,9 @@ export interface Routes {
               ends_at: string
             }
           | undefined
+        user_identity_id?: string | undefined
+        user_identity_email_address?: string | undefined
+        user_identity_phone_number?: string | undefined
         full_name?: string | undefined
         /** Deprecated: use email_address. */
         email?: string | undefined
