@@ -36,6 +36,10 @@ Each entrypoint may export one or more of the following:
 
 ## Installation
 
+_This is a low-level package meant for applications and libraries with particular dependency requirements.
+These types and schemas are entirely contained in the [seam package]. Seam recommends using that package instead
+for simpler dependency management._
+
 ### Types Only
 
 Add this as a development dependency to your project using [npm] with
@@ -53,6 +57,7 @@ $ npm install @seamapi/types
 ```
 
 [npm]: https://www.npmjs.com/
+[seam package]: https://www.npmjs.com/package/seam
 
 ## Development and Testing
 
