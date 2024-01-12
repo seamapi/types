@@ -7539,9 +7539,11 @@ export default {
                 properties: {
                   custom_metadata_has: {
                     additionalProperties: {
+                      nullable: true,
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     description:
@@ -7729,9 +7731,11 @@ export default {
                 properties: {
                   custom_metadata_has: {
                     additionalProperties: {
+                      nullable: true,
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     description:

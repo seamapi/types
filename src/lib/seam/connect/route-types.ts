@@ -1787,7 +1787,7 @@ export interface Routes {
     commonParams: {
       user_identifier_key?: string | undefined
       /** Returns devices where the webview's custom_metadata contains all of the provided key/value pairs. */
-      custom_metadata_has?: Record<string, string | boolean> | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -1880,7 +1880,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       /** Returns devices where the account's custom_metadata contains all of the provided key/value pairs. */
-      custom_metadata_has?: Record<string, string | boolean> | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {
