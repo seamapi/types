@@ -1686,7 +1686,6 @@ export interface Routes {
             | 'my_2n'
             | 'controlbyweb'
             | 'nest'
-            | 'google_nest'
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
@@ -1700,6 +1699,7 @@ export interface Routes {
             | 'seam_bridge'
             | 'yale_access'
             | 'hid_cm'
+            | 'google_nest'
           >
         | undefined
       provider_category?:
@@ -2612,6 +2612,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }
     }
   }
@@ -3388,6 +3389,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }>
     }
   }
@@ -3769,6 +3771,7 @@ export interface Routes {
         | undefined
       name?: (string | null) | undefined
       is_managed?: boolean
+      custom_metadata?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {}
@@ -4660,6 +4663,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }
       device: {
         /** Unique identifier for the device. */
@@ -5313,6 +5317,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }
     }
   }
@@ -6089,6 +6094,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }>
       devices: Array<{
         /** Unique identifier for the device. */
@@ -6742,6 +6748,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }>
     }
   }
@@ -7673,6 +7680,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
         assa_abloy_credential_service_metadata?:
           | {
               has_active_endpoint: boolean
@@ -8330,6 +8338,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
         assa_abloy_credential_service_metadata?:
           | {
               has_active_endpoint: boolean
@@ -9180,6 +9189,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }
     }
   }
@@ -9986,6 +9996,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }>
     }
   }
@@ -10855,6 +10866,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
+        custom_metadata?: Record<string, string | boolean | null> | undefined
       }>
     }
   }
