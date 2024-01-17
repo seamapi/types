@@ -1686,7 +1686,6 @@ export interface Routes {
             | 'my_2n'
             | 'controlbyweb'
             | 'nest'
-            | 'google_nest'
             | 'igloohome'
             | 'ecobee'
             | 'hubitat'
@@ -1700,6 +1699,7 @@ export interface Routes {
             | 'seam_bridge'
             | 'yale_access'
             | 'hid_cm'
+            | 'google_nest'
           >
         | undefined
       provider_category?:
