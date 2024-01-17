@@ -545,6 +545,17 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          custom_metadata: {
+            additionalProperties: {
+              nullable: true,
+              oneOf: [
+                { maxLength: 500, type: 'string' },
+                { type: 'boolean' },
+                { format: 'null', nullable: true, type: 'string' },
+              ],
+            },
+            type: 'object',
+          },
           device_id: {
             description: 'Unique identifier for the device.',
             format: 'uuid',
@@ -1880,6 +1891,17 @@ export default {
               'Date and time at which the device object was created.',
             format: 'date-time',
             type: 'string',
+          },
+          custom_metadata: {
+            additionalProperties: {
+              nullable: true,
+              oneOf: [
+                { maxLength: 500, type: 'string' },
+                { type: 'boolean' },
+                { format: 'null', nullable: true, type: 'string' },
+              ],
+            },
+            type: 'object',
           },
           device_id: {
             description: 'Unique identifier for the device.',
@@ -7356,7 +7378,6 @@ export default {
                         'my_2n',
                         'controlbyweb',
                         'nest',
-                        'google_nest',
                         'igloohome',
                         'ecobee',
                         'hubitat',
@@ -7370,6 +7391,7 @@ export default {
                         'seam_bridge',
                         'yale_access',
                         'hid_cm',
+                        'google_nest',
                       ],
                       type: 'string',
                     },
