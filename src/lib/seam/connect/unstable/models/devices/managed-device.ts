@@ -1,6 +1,7 @@
 import type { SetRequired, Simplify } from 'type-fest'
 import { z } from 'zod'
 
+import { custom_metadata } from '../../../stable/models/custom-metadata.js'
 import { capability_properties } from '../capability-properties/index.js'
 import { capabilities } from './capabilities-supported.js'
 import { device_metadata } from './device-metadata.js'
@@ -157,6 +158,7 @@ export const managed_device = z.object({
   is_managed: z
     .literal(true)
     .describe('Indicates whether Seam manages the device.'),
+  custom_metadata: custom_metadata.optional(),
 })
 
 export type ManagedDevice = z.infer<typeof managed_device>
