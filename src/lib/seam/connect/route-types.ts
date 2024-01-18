@@ -3771,6 +3771,7 @@ export interface Routes {
         | undefined
       name?: (string | null) | undefined
       is_managed?: boolean
+      custom_metadata?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {}
