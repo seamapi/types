@@ -8543,6 +8543,17 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
+                  },
                   device_id: { format: 'uuid', type: 'string' },
                   is_managed: { default: true, type: 'boolean' },
                   name: { nullable: true, type: 'string' },
@@ -8589,6 +8600,17 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  custom_metadata: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
+                  },
                   device_id: { format: 'uuid', type: 'string' },
                   is_managed: { default: true, type: 'boolean' },
                   name: { nullable: true, type: 'string' },
