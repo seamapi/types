@@ -2734,6 +2734,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -3641,6 +3642,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -5439,6 +5441,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -9341,6 +9344,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
+      custom_metadata_has?: Record<string, string | boolean | null> | undefined
     }
     formData: {}
     jsonResponse: {

@@ -7977,6 +7977,17 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
+                  },
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
@@ -8274,6 +8285,17 @@ export default {
                     format: 'date-time',
                     nullable: true,
                     type: 'string',
+                  },
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
                   },
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
@@ -9108,6 +9130,17 @@ export default {
                     format: 'date-time',
                     nullable: true,
                     type: 'string',
+                  },
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
                   },
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
@@ -10728,6 +10761,17 @@ export default {
                     format: 'date-time',
                     nullable: true,
                     type: 'string',
+                  },
+                  custom_metadata_has: {
+                    additionalProperties: {
+                      nullable: true,
+                      oneOf: [
+                        { maxLength: 500, type: 'string' },
+                        { type: 'boolean' },
+                        { format: 'null', nullable: true, type: 'string' },
+                      ],
+                    },
+                    type: 'object',
                   },
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
