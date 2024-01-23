@@ -25,6 +25,9 @@ export const access_code_constraint = z.union([
 export type AccessCodeConstraint = z.infer<typeof access_code_constraint>
 
 export const access_code_capability_properties = z.object({
+  _experimental_supported_code_from_access_codes_lengths: z
+    .array(z.number())
+    .optional(),
   code_constraints: z.array(access_code_constraint).optional(),
   supported_code_lengths: z.array(z.number()).optional(),
   max_active_codes_supported: z.number().optional(),
