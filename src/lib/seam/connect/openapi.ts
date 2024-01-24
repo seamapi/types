@@ -1152,6 +1152,8 @@ export default {
                     allOf: [
                       {
                         properties: {
+                          _experimental_supported_code_from_access_codes_lengths:
+                            { items: { type: 'number' }, type: 'array' },
                           code_constraints: {
                             items: {
                               oneOf: [
@@ -2456,6 +2458,8 @@ export default {
                     allOf: [
                       {
                         properties: {
+                          _experimental_supported_code_from_access_codes_lengths:
+                            { items: { type: 'number' }, type: 'array' },
                           code_constraints: {
                             items: {
                               oneOf: [
