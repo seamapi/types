@@ -2270,6 +2270,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -3048,6 +3051,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -4323,6 +4329,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -4977,6 +4986,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -5755,6 +5767,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -6409,6 +6424,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -7343,6 +7361,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -8001,6 +8022,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -8850,6 +8874,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -9658,6 +9685,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
@@ -10528,6 +10558,9 @@ export interface Routes {
             | undefined
         }) &
           ({
+            _experimental_supported_code_from_access_codes_lengths?:
+              | (number[] | undefined)
+              | undefined
             code_constraints?:
               | (
                   | Array<
