@@ -8943,10 +8943,76 @@ export default {
         tags: ['/health'],
         'x-fern-ignore': true,
       },
+      post: {
+        operationId: 'healthPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    last_service_evaluation_at: { type: 'string' },
+                    msg: {
+                      enum: ['I’m one with the Force. The Force is with me.'],
+                      type: 'string',
+                    },
+                    ok: { type: 'boolean' },
+                    service_health_statuses: {
+                      items: { $ref: '#/components/schemas/service_health' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['ok', 'msg', 'service_health_statuses'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        summary: '/health',
+        tags: ['/health'],
+        'x-fern-ignore': true,
+      },
     },
     '/health/get_health': {
       get: {
         operationId: 'healthGetHealthGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    last_service_evaluation_at: { type: 'string' },
+                    msg: {
+                      enum: ['I’m one with the Force. The Force is with me.'],
+                      type: 'string',
+                    },
+                    ok: { type: 'boolean' },
+                    service_health_statuses: {
+                      items: { $ref: '#/components/schemas/service_health' },
+                      type: 'array',
+                    },
+                  },
+                  required: ['ok', 'msg', 'service_health_statuses'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        summary: '/health/get_health',
+        tags: ['/health'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'healthGetHealthPost',
         responses: {
           200: {
             content: {
