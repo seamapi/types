@@ -3942,7 +3942,7 @@ export interface Routes {
   }
   '/health': {
     route: '/health'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
@@ -3960,7 +3960,7 @@ export interface Routes {
   }
   '/health/get_health': {
     route: '/health/get_health'
-    method: 'GET'
+    method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {}
