@@ -848,6 +848,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }
     }
   }
@@ -898,6 +899,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }
     }
   }
@@ -943,6 +945,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }
     }
   }
@@ -988,6 +991,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }>
     }
   }
@@ -1023,6 +1027,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }
     }
   }
@@ -1058,6 +1063,7 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
       }
     }
   }
