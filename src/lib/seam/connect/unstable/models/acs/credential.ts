@@ -32,6 +32,7 @@ export const acs_credential = z.object({
   workspace_id: z.string().uuid(),
   starts_at: z.string().optional(),
   ends_at: z.string().optional(),
+  is_multi_phone_sync_credential: z.boolean().optional(),
 })
 
 export type AcsCredential = z.output<typeof acs_credential>
