@@ -103,9 +103,9 @@ export const managed_device = z.object({
       'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
     ),
   properties: common_device_properties
+    .and(phone_specific_properties.partial())
     .and(device_metadata)
     .and(capability_properties)
-    .and(phone_specific_properties.partial())
     .describe('Properties of the device.'),
   location: z
     // todo: optional instead of nullable

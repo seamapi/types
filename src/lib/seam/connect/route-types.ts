@@ -2056,6 +2056,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -2582,21 +2595,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -2838,6 +2837,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -3364,21 +3376,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -4117,6 +4115,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -4643,21 +4654,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -4775,6 +4772,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -5301,21 +5311,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -5557,6 +5553,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -6083,21 +6092,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -6215,6 +6210,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -6741,21 +6749,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -7498,6 +7492,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -8024,21 +8031,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -8310,6 +8303,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -8836,21 +8842,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -9184,6 +9176,19 @@ export interface Routes {
           /** Deprecated. Use offline_access_codes_enabled. */
           supports_offline_access_codes?: boolean | undefined
         } & {
+          assa_abloy_credential_service_metadata?:
+            | (
+                | {
+                    has_active_endpoint: boolean
+                    endpoints: Array<{
+                      endpoint_id: string
+                      is_active: boolean
+                    }>
+                  }
+                | undefined
+              )
+            | undefined
+        }) & {
           august_metadata?:
             | {
                 lock_id: string
@@ -9710,21 +9715,7 @@ export interface Routes {
                 max_cooling_set_point_celsius?: number | undefined
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
-          ))) & {
-          properties?:
-            | {
-                assa_abloy_credential_service_metadata?:
-                  | {
-                      has_active_endpoint: boolean
-                      endpoints: Array<{
-                        endpoint_id: string
-                        is_active: boolean
-                      }>
-                    }
-                  | undefined
-              }
-            | undefined
-        }
+          ))
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
