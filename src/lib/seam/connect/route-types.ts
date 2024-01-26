@@ -2583,17 +2583,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -3364,17 +3365,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -4642,17 +4644,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -5299,17 +5302,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -6080,17 +6084,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -6737,17 +6742,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -7101,590 +7107,15 @@ export interface Routes {
           | 'battery'
           | 'phone'
         >
-        /** Properties of the device. */
-        properties: (({
-          /** Indicates whether the device is online. */
-          online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          name: string
-          model: {
-            /** Display name of the device model. */
-            display_name: string
-            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
-            manufacturer_display_name: string
-            /** Indicates whether the device supports offline access codes. */
-            offline_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports online access codes. */
-            online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
-            accessory_keypad_supported?: boolean | undefined
-          }
-          /** Indicates whether the device has direct power. */
-          has_direct_power?: boolean | undefined
-          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
-          battery_level?: number | undefined
-          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
-          battery?:
-            | {
-                level: number
-                status: 'critical' | 'low' | 'good' | 'full'
-              }
-            | undefined
-          /** Manufacturer of the device. */
-          manufacturer?: string | undefined
-          /** Image URL for the device. */
-          image_url?: string | undefined
-          /** Alt text for the device image. */
-          image_alt_text?: string | undefined
-          /** Serial number of the device. */
-          serial_number?: string | undefined
-          /** Indicates whether it is currently possible to use online access codes for the device. */
-          online_access_codes_enabled?: boolean | undefined
-          /** Indicates whether it is currently possible to use offline access codes for the device. */
-          offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
-          supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
-          supports_offline_access_codes?: boolean | undefined
-        } & {
-          august_metadata?:
-            | {
-                lock_id: string
-                lock_name: string
-                house_name: string
-                has_keypad: boolean
-                keypad_battery_level?: string | undefined
-                model?: string | undefined
-                house_id?: string | undefined
-              }
-            | undefined
-          avigilon_alta_metadata?:
-            | {
-                entry_name: string
-                org_name: string
-                zone_id: number
-                zone_name: string
-                site_id: number
-                site_name: string
-              }
-            | undefined
-          schlage_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                access_code_length: number
-                model?: string | undefined
-              }
-            | undefined
-          smartthings_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model?: string | undefined
-                location_id?: string | undefined
-              }
-            | undefined
-          lockly_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model?: string | undefined
-              }
-            | undefined
-          nuki_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                keypad_battery_critical?: boolean | undefined
-              }
-            | undefined
-          kwikset_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model_number: string
-              }
-            | undefined
-          salto_metadata?:
-            | {
-                lock_id: string
-                customer_reference: string
-                lock_type: string
-                battery_level: string
-                locked_state: string
-                model?: string | undefined
-              }
-            | undefined
-          genie_metadata?:
-            | {
-                device_name: string
-                door_name: string
-              }
-            | undefined
-          brivo_metadata?:
-            | {
-                device_name: string
-              }
-            | undefined
-          igloo_metadata?:
-            | {
-                device_id: string
-                bridge_id: string
-                model?: string | undefined
-              }
-            | undefined
-          noiseaware_metadata?:
-            | {
-                device_model: 'indoor' | 'outdoor'
-                noise_level_nrs: number
-                noise_level_decibel: number
-                device_name: string
-                device_id: string
-              }
-            | undefined
-          minut_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                latest_sensor_values: {
-                  temperature: {
-                    time: string
-                    value: number
-                  }
-                  sound: {
-                    time: string
-                    value: number
-                  }
-                  humidity: {
-                    time: string
-                    value: number
-                  }
-                  pressure: {
-                    time: string
-                    value: number
-                  }
-                  accelerometer_z: {
-                    time: string
-                    value: number
-                  }
-                }
-              }
-            | undefined
-          four_suites_metadata?:
-            | {
-                device_id: number
-                device_name: string
-                reclose_delay_in_seconds: number
-              }
-            | undefined
-          two_n_metadata?:
-            | {
-                device_id: number
-                device_name: string
-              }
-            | undefined
-          controlbyweb_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                relay_name: string | null
-              }
-            | undefined
-          ttlock_metadata?:
-            | {
-                lock_id: number
-                lock_alias: string
-              }
-            | undefined
-          seam_bridge_metadata?:
-            | {
-                unlock_method?: ('bridge' | 'doorking') | undefined
-                device_num: number
-                name: string
-              }
-            | undefined
-          igloohome_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                bridge_id?: string | undefined
-                bridge_name?: string | undefined
-              }
-            | undefined
-          nest_metadata?:
-            | {
-                nest_device_id: string
-                device_name: string
-                custom_name: string
-              }
-            | undefined
-          ecobee_metadata?:
-            | {
-                ecobee_device_id: string
-                device_name: string
-              }
-            | undefined
-          hubitat_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                device_label: string
-              }
-            | undefined
-          dormakaba_oracode_metadata?:
-            | {
-                door_id: number
-                door_name: string
-                device_id?: number | undefined
-                site_id: number
-                site_name: string
-                iana_timezone?: string | undefined
-                predefined_time_slots?:
-                  | Array<{
-                      name: string
-                      prefix: number
-                      check_in_time: string
-                      check_out_time: string
-                      is_24_hour: boolean
-                      is_biweekly_mode: boolean
-                      is_one_shot: boolean
-                      is_master: boolean
-                      ext_dormakaba_oracode_user_level_prefix: number
-                      dormakaba_oracode_user_level_id: string
-                    }>
-                  | undefined
-              }
-            | undefined
-          wyze_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                product_name: string
-                product_type: string
-                product_model: string
-                device_info_model: string
-              }
-            | undefined
-        }) &
-          ({
-            _experimental_supported_code_from_access_codes_lengths?:
-              | (number[] | undefined)
-              | undefined
-            code_constraints?:
-              | (
-                  | Array<
-                      | {
-                          constraint_type:
-                            | 'no_zeros'
-                            | 'cannot_start_with_12'
-                            | 'no_triple_consecutive_ints'
-                            | 'cannot_specify_pin_code'
-                            | 'pin_code_matches_existing_set'
-                            | 'start_date_in_future'
-                        }
-                      | {
-                          constraint_type: 'name_length'
-                          min_length?: number | undefined
-                          max_length?: number | undefined
-                        }
-                    >
-                  | undefined
-                )
-              | undefined
-            supported_code_lengths?: (number[] | undefined) | undefined
-            max_active_codes_supported?: (number | undefined) | undefined
-            supports_backup_access_code_pool?: (boolean | undefined) | undefined
-            has_native_entry_events?: (boolean | undefined) | undefined
-            locked?: (boolean | undefined) | undefined
-            keypad_battery?:
-              | (
-                  | {
-                      level: number
-                    }
-                  | undefined
-                )
-              | undefined
-            door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))) & {
+        properties: {
           assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+            | {
+                has_active_endpoint: boolean
+                endpoints: Array<{
+                  endpoint_id: string
+                  is_active: boolean
+                }>
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -7711,15 +7142,6 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
-        assa_abloy_credential_service_metadata?:
-          | {
-              has_active_endpoint: boolean
-              endpoints: Array<{
-                endpoint_id: string
-                is_active: boolean
-              }>
-            }
-          | undefined
       }>
     }
   }
@@ -7762,590 +7184,15 @@ export interface Routes {
           | 'battery'
           | 'phone'
         >
-        /** Properties of the device. */
-        properties: (({
-          /** Indicates whether the device is online. */
-          online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          name: string
-          model: {
-            /** Display name of the device model. */
-            display_name: string
-            /** Display name that corresponds to the manufacturer-specific terminology for the device. */
-            manufacturer_display_name: string
-            /** Indicates whether the device supports offline access codes. */
-            offline_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports online access codes. */
-            online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
-            accessory_keypad_supported?: boolean | undefined
-          }
-          /** Indicates whether the device has direct power. */
-          has_direct_power?: boolean | undefined
-          /** Indicates the battery level of the device as a decimal value between 0 and 1, inclusive. */
-          battery_level?: number | undefined
-          /** Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage. */
-          battery?:
-            | {
-                level: number
-                status: 'critical' | 'low' | 'good' | 'full'
-              }
-            | undefined
-          /** Manufacturer of the device. */
-          manufacturer?: string | undefined
-          /** Image URL for the device. */
-          image_url?: string | undefined
-          /** Alt text for the device image. */
-          image_alt_text?: string | undefined
-          /** Serial number of the device. */
-          serial_number?: string | undefined
-          /** Indicates whether it is currently possible to use online access codes for the device. */
-          online_access_codes_enabled?: boolean | undefined
-          /** Indicates whether it is currently possible to use offline access codes for the device. */
-          offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
-          supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
-          supports_offline_access_codes?: boolean | undefined
-        } & {
-          august_metadata?:
-            | {
-                lock_id: string
-                lock_name: string
-                house_name: string
-                has_keypad: boolean
-                keypad_battery_level?: string | undefined
-                model?: string | undefined
-                house_id?: string | undefined
-              }
-            | undefined
-          avigilon_alta_metadata?:
-            | {
-                entry_name: string
-                org_name: string
-                zone_id: number
-                zone_name: string
-                site_id: number
-                site_name: string
-              }
-            | undefined
-          schlage_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                access_code_length: number
-                model?: string | undefined
-              }
-            | undefined
-          smartthings_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model?: string | undefined
-                location_id?: string | undefined
-              }
-            | undefined
-          lockly_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model?: string | undefined
-              }
-            | undefined
-          nuki_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                keypad_battery_critical?: boolean | undefined
-              }
-            | undefined
-          kwikset_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                model_number: string
-              }
-            | undefined
-          salto_metadata?:
-            | {
-                lock_id: string
-                customer_reference: string
-                lock_type: string
-                battery_level: string
-                locked_state: string
-                model?: string | undefined
-              }
-            | undefined
-          genie_metadata?:
-            | {
-                device_name: string
-                door_name: string
-              }
-            | undefined
-          brivo_metadata?:
-            | {
-                device_name: string
-              }
-            | undefined
-          igloo_metadata?:
-            | {
-                device_id: string
-                bridge_id: string
-                model?: string | undefined
-              }
-            | undefined
-          noiseaware_metadata?:
-            | {
-                device_model: 'indoor' | 'outdoor'
-                noise_level_nrs: number
-                noise_level_decibel: number
-                device_name: string
-                device_id: string
-              }
-            | undefined
-          minut_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                latest_sensor_values: {
-                  temperature: {
-                    time: string
-                    value: number
-                  }
-                  sound: {
-                    time: string
-                    value: number
-                  }
-                  humidity: {
-                    time: string
-                    value: number
-                  }
-                  pressure: {
-                    time: string
-                    value: number
-                  }
-                  accelerometer_z: {
-                    time: string
-                    value: number
-                  }
-                }
-              }
-            | undefined
-          four_suites_metadata?:
-            | {
-                device_id: number
-                device_name: string
-                reclose_delay_in_seconds: number
-              }
-            | undefined
-          two_n_metadata?:
-            | {
-                device_id: number
-                device_name: string
-              }
-            | undefined
-          controlbyweb_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                relay_name: string | null
-              }
-            | undefined
-          ttlock_metadata?:
-            | {
-                lock_id: number
-                lock_alias: string
-              }
-            | undefined
-          seam_bridge_metadata?:
-            | {
-                unlock_method?: ('bridge' | 'doorking') | undefined
-                device_num: number
-                name: string
-              }
-            | undefined
-          igloohome_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                bridge_id?: string | undefined
-                bridge_name?: string | undefined
-              }
-            | undefined
-          nest_metadata?:
-            | {
-                nest_device_id: string
-                device_name: string
-                custom_name: string
-              }
-            | undefined
-          ecobee_metadata?:
-            | {
-                ecobee_device_id: string
-                device_name: string
-              }
-            | undefined
-          hubitat_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                device_label: string
-              }
-            | undefined
-          dormakaba_oracode_metadata?:
-            | {
-                door_id: number
-                door_name: string
-                device_id?: number | undefined
-                site_id: number
-                site_name: string
-                iana_timezone?: string | undefined
-                predefined_time_slots?:
-                  | Array<{
-                      name: string
-                      prefix: number
-                      check_in_time: string
-                      check_out_time: string
-                      is_24_hour: boolean
-                      is_biweekly_mode: boolean
-                      is_one_shot: boolean
-                      is_master: boolean
-                      ext_dormakaba_oracode_user_level_prefix: number
-                      dormakaba_oracode_user_level_id: string
-                    }>
-                  | undefined
-              }
-            | undefined
-          wyze_metadata?:
-            | {
-                device_id: string
-                device_name: string
-                product_name: string
-                product_type: string
-                product_model: string
-                device_info_model: string
-              }
-            | undefined
-        }) &
-          ({
-            _experimental_supported_code_from_access_codes_lengths?:
-              | (number[] | undefined)
-              | undefined
-            code_constraints?:
-              | (
-                  | Array<
-                      | {
-                          constraint_type:
-                            | 'no_zeros'
-                            | 'cannot_start_with_12'
-                            | 'no_triple_consecutive_ints'
-                            | 'cannot_specify_pin_code'
-                            | 'pin_code_matches_existing_set'
-                            | 'start_date_in_future'
-                        }
-                      | {
-                          constraint_type: 'name_length'
-                          min_length?: number | undefined
-                          max_length?: number | undefined
-                        }
-                    >
-                  | undefined
-                )
-              | undefined
-            supported_code_lengths?: (number[] | undefined) | undefined
-            max_active_codes_supported?: (number | undefined) | undefined
-            supports_backup_access_code_pool?: (boolean | undefined) | undefined
-            has_native_entry_events?: (boolean | undefined) | undefined
-            locked?: (boolean | undefined) | undefined
-            keypad_battery?:
-              | (
-                  | {
-                      level: number
-                    }
-                  | undefined
-                )
-              | undefined
-            door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))) & {
+        properties: {
           assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+            | {
+                has_active_endpoint: boolean
+                endpoints: Array<{
+                  endpoint_id: string
+                  is_active: boolean
+                }>
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -8372,15 +7219,6 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
-        assa_abloy_credential_service_metadata?:
-          | {
-              has_active_endpoint: boolean
-              endpoints: Array<{
-                endpoint_id: string
-                is_active: boolean
-              }>
-            }
-          | undefined
       }
     }
   }
@@ -9187,17 +8025,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -9998,17 +8837,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
@@ -10871,17 +9711,18 @@ export interface Routes {
                 max_cooling_set_point_fahrenheit?: number | undefined
               }
           ))) & {
-          assa_abloy_credential_service_metadata?:
-            | (
-                | {
-                    has_active_endpoint: boolean
-                    endpoints: Array<{
-                      endpoint_id: string
-                      is_active: boolean
-                    }>
-                  }
-                | undefined
-              )
+          properties?:
+            | {
+                assa_abloy_credential_service_metadata?:
+                  | {
+                      has_active_endpoint: boolean
+                      endpoints: Array<{
+                        endpoint_id: string
+                        is_active: boolean
+                      }>
+                    }
+                  | undefined
+              }
             | undefined
         }
         /** Location information for the device. */
