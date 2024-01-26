@@ -1082,6 +1082,15 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        visionline_metadata: {
+          door_name: string
+          profiles?:
+            | Array<{
+                visionline_door_profile_id: string
+                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+              }>
+            | undefined
+        } | null
       }
     }
   }
@@ -1113,6 +1122,15 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        visionline_metadata: {
+          door_name: string
+          profiles?:
+            | Array<{
+                visionline_door_profile_id: string
+                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+              }>
+            | undefined
+        } | null
       }>
     }
   }
@@ -1380,6 +1398,15 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        visionline_metadata: {
+          door_name: string
+          profiles?:
+            | Array<{
+                visionline_door_profile_id: string
+                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+              }>
+            | undefined
+        } | null
       }>
     }
   }

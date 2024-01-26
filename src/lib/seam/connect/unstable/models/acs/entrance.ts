@@ -5,6 +5,23 @@ export const acs_entrance = z.object({
   display_name: z.string(),
   acs_system_id: z.string().uuid(),
   created_at: z.string().datetime(),
+  visionline_metadata: z
+    .object({
+      door_name: z.string(),
+      profiles: z
+        .array(
+          z.object({
+            visionline_door_profile_id: z.string(),
+            visionline_door_profile_type: z.enum([
+              'BLE',
+              'commonDoor',
+              'touch',
+            ]),
+          }),
+        )
+        .optional(),
+    })
+    .nullable(),
 })
 
 export type AcsEntrance = z.infer<typeof acs_entrance>
