@@ -4715,12 +4715,40 @@ export default {
                         acs_system_id: { format: 'uuid', type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { type: 'string' },
+                        visionline_metadata: {
+                          nullable: true,
+                          properties: {
+                            door_name: { type: 'string' },
+                            profiles: {
+                              items: {
+                                properties: {
+                                  visionline_door_profile_id: {
+                                    type: 'string',
+                                  },
+                                  visionline_door_profile_type: {
+                                    enum: ['BLE', 'commonDoor', 'touch'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'visionline_door_profile_id',
+                                  'visionline_door_profile_type',
+                                ],
+                                type: 'object',
+                              },
+                              type: 'array',
+                            },
+                          },
+                          required: ['door_name'],
+                          type: 'object',
+                        },
                       },
                       required: [
                         'acs_entrance_id',
                         'display_name',
                         'acs_system_id',
                         'created_at',
+                        'visionline_metadata',
                       ],
                       type: 'object',
                     },
@@ -4822,12 +4850,40 @@ export default {
                           acs_system_id: { format: 'uuid', type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { type: 'string' },
+                          visionline_metadata: {
+                            nullable: true,
+                            properties: {
+                              door_name: { type: 'string' },
+                              profiles: {
+                                items: {
+                                  properties: {
+                                    visionline_door_profile_id: {
+                                      type: 'string',
+                                    },
+                                    visionline_door_profile_type: {
+                                      enum: ['BLE', 'commonDoor', 'touch'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'visionline_door_profile_id',
+                                    'visionline_door_profile_type',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                            },
+                            required: ['door_name'],
+                            type: 'object',
+                          },
                         },
                         required: [
                           'acs_entrance_id',
                           'display_name',
                           'acs_system_id',
                           'created_at',
+                          'visionline_metadata',
                         ],
                         type: 'object',
                       },
@@ -5250,12 +5306,40 @@ export default {
                           acs_system_id: { format: 'uuid', type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { type: 'string' },
+                          visionline_metadata: {
+                            nullable: true,
+                            properties: {
+                              door_name: { type: 'string' },
+                              profiles: {
+                                items: {
+                                  properties: {
+                                    visionline_door_profile_id: {
+                                      type: 'string',
+                                    },
+                                    visionline_door_profile_type: {
+                                      enum: ['BLE', 'commonDoor', 'touch'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'visionline_door_profile_id',
+                                    'visionline_door_profile_type',
+                                  ],
+                                  type: 'object',
+                                },
+                                type: 'array',
+                              },
+                            },
+                            required: ['door_name'],
+                            type: 'object',
+                          },
                         },
                         required: [
                           'acs_entrance_id',
                           'display_name',
                           'acs_system_id',
                           'created_at',
+                          'visionline_metadata',
                         ],
                         type: 'object',
                       },
