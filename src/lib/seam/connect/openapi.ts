@@ -4913,6 +4913,106 @@ export default {
         'x-fern-sdk-method-name': 'list',
       },
     },
+    '/acs/entrances/list_credentials_with_access': {
+      post: {
+        operationId: 'acsEntrancesListCredentialsWithAccessPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_entrance_id: { format: 'uuid', type: 'string' },
+                  acs_entrance_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  include_if: {
+                    items: {
+                      enum: ['visionline_metadata.is_valid'],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credentials: {
+                      items: {
+                        properties: {
+                          access_method: {
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_pool_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                          code: { nullable: true, type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { minLength: 1, type: 'string' },
+                          ends_at: { type: 'string' },
+                          external_type: {
+                            enum: [
+                              'pti_card',
+                              'brivo_credential',
+                              'hid_credential',
+                              'visionline_card',
+                            ],
+                            type: 'string',
+                          },
+                          external_type_display_name: { type: 'string' },
+                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          starts_at: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'acs_credential_id',
+                          'acs_system_id',
+                          'display_name',
+                          'access_method',
+                          'created_at',
+                          'workspace_id',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credentials', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/entrances/list_credentials_with_access',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'entrances'],
+        'x-fern-sdk-method-name': 'list_credentials_with_access',
+      },
+    },
     '/acs/systems/get': {
       post: {
         operationId: 'acsSystemsGetPost',

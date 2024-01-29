@@ -1134,6 +1134,43 @@ export interface Routes {
       }>
     }
   }
+  '/acs/entrances/list_credentials_with_access': {
+    route: '/acs/entrances/list_credentials_with_access'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_entrance_id?: string | undefined
+      acs_entrance_ids?: string[] | undefined
+      include_if?: Array<'visionline_metadata.is_valid'> | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credentials: Array<{
+        acs_credential_id: string
+        acs_user_id?: string | undefined
+        acs_credential_pool_id?: string | undefined
+        acs_system_id: string
+        display_name: string
+        code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
+        created_at: string
+        workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        is_multi_phone_sync_credential?: boolean | undefined
+      }>
+    }
+  }
   '/acs/systems/get': {
     route: '/acs/systems/get'
     method: 'GET' | 'POST'
