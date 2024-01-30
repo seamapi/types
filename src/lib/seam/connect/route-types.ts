@@ -9020,6 +9020,17 @@ export interface Routes {
       }
     }
   }
+  '/user_identities/delete': {
+    route: '/user_identities/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      user_identity_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/user_identities/enrollment_automations/get': {
     route: '/user_identities/enrollment_automations/get'
     method: 'GET' | 'POST'

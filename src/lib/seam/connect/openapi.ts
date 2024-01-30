@@ -10390,6 +10390,49 @@ export default {
         'x-fern-sdk-method-name': 'create',
       },
     },
+    '/user_identities/delete': {
+      post: {
+        operationId: 'userIdentitiesDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/user_identities/delete',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'delete',
+      },
+    },
     '/user_identities/enrollment_automations/get': {
       post: {
         operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
