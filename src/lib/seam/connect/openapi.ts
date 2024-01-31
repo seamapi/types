@@ -10423,9 +10423,9 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
         ],
         summary: '/user_identities/delete',
         tags: ['/user_identities'],
