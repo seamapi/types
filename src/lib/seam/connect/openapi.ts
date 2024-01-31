@@ -8651,7 +8651,7 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'create',
-        'x-fern-sdk-return-value': 'action_attempt',
+        'x-fern-sdk-return-value': 'noise_threshold',
       },
     },
     '/noise_sensors/noise_thresholds/delete': {
