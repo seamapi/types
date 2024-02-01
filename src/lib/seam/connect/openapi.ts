@@ -6393,6 +6393,7 @@ export default {
                         'visionline',
                         'assa_abloy_credential_service',
                         'seam_bridge',
+                        'tedee',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
