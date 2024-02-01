@@ -4004,11 +4004,6 @@ export default {
                     type: 'string',
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
-                  assa_abloy_credential_service_mobile_endpoint_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  card_format: { enum: ['TLCode', 'rfid48'], type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
                   ends_at: { format: 'date-time', type: 'string' },
                   external_type: {
@@ -4021,8 +4016,21 @@ export default {
                     type: 'string',
                   },
                   is_multi_phone_sync_credential: { type: 'boolean' },
-                  is_override_key: { type: 'boolean' },
                   starts_at: { format: 'date-time', type: 'string' },
+                  visionline_metadata: {
+                    properties: {
+                      assa_abloy_credential_service_mobile_endpoint_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      card_format: {
+                        enum: ['TLCode', 'rfid48'],
+                        type: 'string',
+                      },
+                      is_override_key: { type: 'boolean' },
+                    },
+                    type: 'object',
+                  },
                 },
                 required: ['acs_user_id', 'access_method'],
                 type: 'object',
