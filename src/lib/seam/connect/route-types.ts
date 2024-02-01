@@ -862,7 +862,6 @@ export interface Routes {
       access_method: 'code' | 'card' | 'mobile_key'
       code?: string | undefined
       is_multi_phone_sync_credential?: boolean | undefined
-      assa_abloy_credential_service_mobile_endpoint_id?: string | undefined
       external_type?:
         | (
             | 'pti_card'
@@ -871,8 +870,15 @@ export interface Routes {
             | 'visionline_card'
           )
         | undefined
-      card_format?: ('TLCode' | 'rfid48') | undefined
-      is_override_key?: boolean | undefined
+      visionline_metadata?:
+        | {
+            assa_abloy_credential_service_mobile_endpoint_id?:
+              | string
+              | undefined
+            card_format?: ('TLCode' | 'rfid48') | undefined
+            is_override_key?: boolean | undefined
+          }
+        | undefined
       starts_at?: string | undefined
       ends_at?: string | undefined
     }
