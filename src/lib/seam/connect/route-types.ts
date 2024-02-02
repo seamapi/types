@@ -1146,8 +1146,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_entrance_id?: string | undefined
-      acs_entrance_ids?: string[] | undefined
+      acs_entrance_id: string
       include_if?: Array<'visionline_metadata.is_valid'> | undefined
     }
     formData: {}
