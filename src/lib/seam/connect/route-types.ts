@@ -849,6 +849,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }
     }
   }
@@ -877,6 +882,7 @@ export interface Routes {
               | undefined
             card_format?: ('TLCode' | 'rfid48') | undefined
             is_override_key?: boolean | undefined
+            joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
       starts_at?: string | undefined
@@ -906,6 +912,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }
     }
   }
@@ -952,6 +963,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }
     }
   }
@@ -998,6 +1014,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }>
     }
   }
@@ -1034,6 +1055,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }
     }
   }
@@ -1070,6 +1096,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }
     }
   }
@@ -1173,6 +1204,11 @@ export interface Routes {
         starts_at?: string | undefined
         ends_at?: string | undefined
         is_multi_phone_sync_credential?: boolean | undefined
+        visionline_metadata?:
+          | {
+              joiner_acs_credential_ids?: string[] | undefined
+            }
+          | undefined
       }>
     }
   }
