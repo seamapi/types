@@ -4930,10 +4930,6 @@ export default {
               schema: {
                 properties: {
                   acs_entrance_id: { format: 'uuid', type: 'string' },
-                  acs_entrance_ids: {
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
                   include_if: {
                     items: {
                       enum: ['visionline_metadata.is_valid'],
@@ -4942,6 +4938,7 @@ export default {
                     type: 'array',
                   },
                 },
+                required: ['acs_entrance_id'],
                 type: 'object',
               },
             },
