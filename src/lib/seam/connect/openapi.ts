@@ -3872,6 +3872,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -3956,6 +3965,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4028,6 +4046,10 @@ export default {
                         type: 'string',
                       },
                       is_override_key: { type: 'boolean' },
+                      joiner_acs_credential_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
                     },
                     type: 'object',
                   },
@@ -4073,6 +4095,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4202,6 +4233,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4315,6 +4355,15 @@ export default {
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
                           starts_at: { type: 'string' },
+                          visionline_metadata: {
+                            properties: {
+                              joiner_acs_credential_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [
@@ -4405,6 +4454,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4489,6 +4547,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4576,6 +4643,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4660,6 +4736,15 @@ export default {
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
                         starts_at: { type: 'string' },
+                        visionline_metadata: {
+                          properties: {
+                            joiner_acs_credential_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4980,6 +5065,15 @@ export default {
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
                           starts_at: { type: 'string' },
+                          visionline_metadata: {
+                            properties: {
+                              joiner_acs_credential_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [

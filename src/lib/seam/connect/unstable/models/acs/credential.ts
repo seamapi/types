@@ -18,6 +18,14 @@ export type AcsCredentialExternalType = z.infer<
   typeof acs_credential_external_type
 >
 
+export const acs_credential_visionline_metadata = z.object({
+  joiner_acs_credential_ids: z.array(z.string().uuid()).optional(),
+})
+
+export type AcsCredentialVisionlineMetadata = z.infer<
+  typeof acs_credential_visionline_metadata
+>
+
 export const acs_credential = z.object({
   acs_credential_id: z.string().uuid(),
   acs_user_id: z.string().uuid().optional(),
@@ -33,6 +41,7 @@ export const acs_credential = z.object({
   starts_at: z.string().optional(),
   ends_at: z.string().optional(),
   is_multi_phone_sync_credential: z.boolean().optional(),
+  visionline_metadata: acs_credential_visionline_metadata.optional(),
 })
 
 export type AcsCredential = z.output<typeof acs_credential>
