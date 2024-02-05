@@ -200,6 +200,15 @@ export const device_metadata = z
       product_model: z.string(),
       device_info_model: z.string(),
     }),
+
+    tedee_metadata: z.object({
+      device_id: z.number(),
+      serial_number: z.string(),
+      device_name: z.string(),
+      device_model: z.string(),
+      bridge_id: z.number(),
+      bridge_name: z.string(),
+    }),
   })
   .partial()
 
