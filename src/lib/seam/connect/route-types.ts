@@ -1809,6 +1809,7 @@ export interface Routes {
             | 'assa_abloy_credential_service'
             | 'seam_bridge'
             | 'tedee'
+            | 'honeywell'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
