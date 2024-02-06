@@ -2103,6 +2103,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2391,6 +2392,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -2769,6 +2780,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2803,6 +2815,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -2843,6 +2856,7 @@ export interface Routes {
             | 'controlbyweb'
             | 'smartthings'
             | 'dormakaba_oracode'
+            | 'tedee'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -2884,6 +2898,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3172,6 +3187,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -3572,6 +3597,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3680,6 +3706,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3714,6 +3741,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -3754,6 +3782,7 @@ export interface Routes {
             | 'controlbyweb'
             | 'smartthings'
             | 'dormakaba_oracode'
+            | 'tedee'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -3795,6 +3824,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -4162,6 +4192,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -4450,6 +4481,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -4819,6 +4860,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -5107,6 +5149,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -5485,6 +5537,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -5519,6 +5572,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -5559,6 +5613,7 @@ export interface Routes {
             | 'controlbyweb'
             | 'smartthings'
             | 'dormakaba_oracode'
+            | 'tedee'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -5600,6 +5655,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -5888,6 +5944,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -6257,6 +6323,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -6545,6 +6612,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -7539,6 +7616,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -7827,6 +7905,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -8235,6 +8323,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -8269,6 +8358,7 @@ export interface Routes {
                 | 'hubitat_lock'
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
+                | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | ('ecobee_thermostat' | 'nest_thermostat')
@@ -8309,6 +8399,7 @@ export interface Routes {
             | 'controlbyweb'
             | 'smartthings'
             | 'dormakaba_oracode'
+            | 'tedee'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -8350,6 +8441,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -8638,6 +8730,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &
@@ -9234,6 +9336,7 @@ export interface Routes {
               | 'hubitat_lock'
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
+              | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat')
@@ -9522,6 +9625,16 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+              }
+            | undefined
+          tedee_metadata?:
+            | {
+                device_id: number
+                serial_number: string
+                device_name: string
+                device_model: string
+                bridge_id: number
+                bridge_name: string
               }
             | undefined
         }) &

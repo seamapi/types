@@ -27,6 +27,7 @@ export const LOCK_DEVICE_TYPE = {
   HUBITAT_LOCK: 'hubitat_lock',
   FOUR_SUITES_DOOR: 'four_suites_door',
   DORMAKABA_ORACODE_DOOR: 'dormakaba_oracode_door',
+  TEDEE_LOCK: 'tedee_lock',
 } as const
 
 type LockDeviceTypeFromMapping =
