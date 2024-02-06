@@ -104,6 +104,7 @@ export interface Routes {
     jsonBody: {
       device_ids: string[]
       behavior_when_code_cannot_be_shared?: 'throw' | 'create_random_code'
+      preferred_code_length?: number | undefined
       name?: string | undefined
       starts_at?: string | undefined
       ends_at?: string | undefined
