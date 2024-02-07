@@ -2422,6 +2422,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -3217,6 +3219,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -4511,6 +4515,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -5179,6 +5185,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -5974,6 +5982,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -6642,6 +6652,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -7935,6 +7947,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -8760,6 +8774,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -9655,6 +9671,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
