@@ -833,6 +833,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -896,6 +897,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -947,6 +949,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -998,6 +1001,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1039,6 +1043,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1080,6 +1085,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1188,6 +1194,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -2422,6 +2429,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -3217,6 +3226,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -4511,6 +4522,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -5179,6 +5192,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -5974,6 +5989,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -6642,6 +6659,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -7935,6 +7954,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -8760,6 +8781,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
@@ -9655,6 +9678,8 @@ export interface Routes {
                             | 'cannot_specify_pin_code'
                             | 'pin_code_matches_existing_set'
                             | 'start_date_in_future'
+                            | 'no_ascending_or_descending_sequence'
+                            | 'at_least_three_unique_digits'
                         }
                       | {
                           constraint_type: 'name_length'
