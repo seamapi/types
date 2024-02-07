@@ -3896,6 +3896,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -3989,6 +3993,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4119,6 +4127,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4257,6 +4269,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4379,6 +4395,10 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
+                          parent_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
@@ -4478,6 +4498,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4571,6 +4595,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4667,6 +4695,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4760,6 +4792,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -5089,6 +5125,10 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
+                          parent_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
@@ -11514,6 +11554,91 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'webhooks',
+      },
+    },
+    '/webhooks/update': {
+      post: {
+        operationId: 'webhooksUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  event_types: { items: { type: 'string' }, type: 'array' },
+                  webhook_id: { type: 'string' },
+                },
+                required: ['webhook_id', 'event_types'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/webhooks/update',
+        tags: ['/webhooks'],
+        'x-fern-sdk-group-name': ['webhooks'],
+        'x-fern-sdk-method-name': 'update',
+      },
+      put: {
+        operationId: 'webhooksUpdatePut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  event_types: { items: { type: 'string' }, type: 'array' },
+                  webhook_id: { type: 'string' },
+                },
+                required: ['webhook_id', 'event_types'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { access_token: [], seam_workspace: [] },
+          { seam_client_session_token: [] },
+          { client_session_token: [] },
+        ],
+        summary: '/webhooks/update',
+        tags: ['/webhooks'],
+        'x-fern-ignore': true,
       },
     },
     '/workspaces/create': {
