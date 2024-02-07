@@ -833,6 +833,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -896,6 +897,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -947,6 +949,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -998,6 +1001,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1039,6 +1043,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1080,6 +1085,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -1188,6 +1194,7 @@ export interface Routes {
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
         acs_system_id: string
+        parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
@@ -10165,6 +10172,18 @@ export interface Routes {
         secret?: string | undefined
       }>
     }
+  }
+  '/webhooks/update': {
+    route: '/webhooks/update'
+    method: 'PUT' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      webhook_id: string
+      event_types: string[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/workspaces/create': {
     route: '/workspaces/create'
