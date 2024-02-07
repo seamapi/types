@@ -8,6 +8,8 @@ export const access_code_code_constraint = z.object({
     'cannot_specify_pin_code', // Lockly
     'pin_code_matches_existing_set', // Salto
     'start_date_in_future', // Kwikset
+    'no_ascending_or_descending_sequence', // Tedee
+    'at_least_three_unique_digits', // Tedee
   ]),
 })
 
