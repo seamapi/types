@@ -3896,6 +3896,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -3989,6 +3993,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4119,6 +4127,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4257,6 +4269,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4379,6 +4395,10 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
+                          parent_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
@@ -4478,6 +4498,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4571,6 +4595,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4667,6 +4695,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -4760,6 +4792,10 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
+                        parent_credential_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
@@ -5089,6 +5125,10 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
+                          parent_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
