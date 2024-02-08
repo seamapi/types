@@ -4944,6 +4944,16 @@ export default {
                         visionline_metadata: {
                           nullable: true,
                           properties: {
+                            door_category: {
+                              enum: [
+                                'entrance',
+                                'guest',
+                                'elevator reader',
+                                'common',
+                                'common (PMS)',
+                              ],
+                              type: 'string',
+                            },
                             door_name: { type: 'string' },
                             profiles: {
                               items: {
@@ -4965,7 +4975,7 @@ export default {
                               type: 'array',
                             },
                           },
-                          required: ['door_name'],
+                          required: ['door_name', 'door_category'],
                           type: 'object',
                         },
                       },
@@ -5079,6 +5089,16 @@ export default {
                           visionline_metadata: {
                             nullable: true,
                             properties: {
+                              door_category: {
+                                enum: [
+                                  'entrance',
+                                  'guest',
+                                  'elevator reader',
+                                  'common',
+                                  'common (PMS)',
+                                ],
+                                type: 'string',
+                              },
                               door_name: { type: 'string' },
                               profiles: {
                                 items: {
@@ -5100,7 +5120,7 @@ export default {
                                 type: 'array',
                               },
                             },
-                            required: ['door_name'],
+                            required: ['door_name', 'door_category'],
                             type: 'object',
                           },
                         },
@@ -5653,6 +5673,16 @@ export default {
                           visionline_metadata: {
                             nullable: true,
                             properties: {
+                              door_category: {
+                                enum: [
+                                  'entrance',
+                                  'guest',
+                                  'elevator reader',
+                                  'common',
+                                  'common (PMS)',
+                                ],
+                                type: 'string',
+                              },
                               door_name: { type: 'string' },
                               profiles: {
                                 items: {
@@ -5674,7 +5704,7 @@ export default {
                                 type: 'array',
                               },
                             },
-                            required: ['door_name'],
+                            required: ['door_name', 'door_category'],
                             type: 'object',
                           },
                         },
