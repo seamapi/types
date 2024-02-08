@@ -854,6 +854,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -918,6 +920,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -970,6 +974,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1022,6 +1028,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }>
@@ -1064,6 +1072,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1106,6 +1116,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1215,6 +1227,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }>

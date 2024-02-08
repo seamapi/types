@@ -3903,6 +3903,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4000,6 +4008,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4134,6 +4150,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4276,6 +4300,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4402,6 +4434,14 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               joiner_acs_credential_ids: {
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
@@ -4505,6 +4545,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4602,6 +4650,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4702,6 +4758,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4799,6 +4863,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -5132,6 +5204,14 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               joiner_acs_credential_ids: {
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
