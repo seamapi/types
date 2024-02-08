@@ -1508,6 +1508,17 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/acs/users/revoke_access_to_all_entrances': {
+    route: '/acs/users/revoke_access_to_all_entrances'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_user_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/users/suspend': {
     route: '/acs/users/suspend'
     method: 'POST'
