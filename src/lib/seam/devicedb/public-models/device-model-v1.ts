@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { device_model_capability_flags } from './device-capability.js'
+import { hardware } from './hardware.js'
 import { image_reference } from './image-reference.js'
 import { manufacturer } from './manufacturer.js'
 
@@ -23,29 +25,36 @@ export const device_connection_type = z.enum([
 
 export type DeviceConnectionType = z.infer<typeof device_connection_type>
 
-const smartlock = z.object({
-  main_category: z.literal(device_category.enum.smartlock),
-  physical_properties: z.object({
-    lock_type: z.enum([
-      'deadbolt',
-      'lever',
-      'mortise',
-      'lockbox',
-      'cylinder',
-      'padlock',
-      'locker',
-      'unknown',
-    ]),
-    has_physical_key: z.boolean(),
-    has_camera: z.boolean(),
-  }),
-  software_features: z.object({
-    can_remotely_unlock: z.boolean(),
-    can_program_access_codes: z.boolean(),
-    can_program_access_schedules: z.boolean(),
-    can_program_access_codes_offline: z.boolean(),
-  }),
-})
+const smartlock = z
+  .object({
+    main_category: z.literal(device_category.enum.smartlock),
+    physical_properties: z.object({
+      lock_type: z.enum([
+        'deadbolt',
+        'lever',
+        'mortise',
+        'lockbox',
+        'cylinder',
+        'padlock',
+        'locker',
+        'unknown',
+      ]),
+      has_physical_key: z.boolean(),
+      has_camera: z.boolean(),
+    }),
+    software_features: z.object({
+      can_remotely_unlock: z.boolean(),
+      can_program_access_codes: z.boolean(),
+      can_program_access_schedules: z.boolean(),
+      can_program_access_codes_offline: z.boolean(),
+    }),
+  })
+  .merge(
+    device_model_capability_flags.pick({
+      can_remotely_unlock: true,
+      can_program_online_access_codes: true,
+    }),
+  )
 
 const sensor = z.object({
   main_category: z.literal(device_category.enum.sensor),
@@ -114,6 +123,7 @@ export const base_device_model_v1 = z.object({
   description: z.string(),
   product_url: z.string().optional(),
   main_connection_type: device_connection_type,
+  hardware,
   aesthetic_variants: z
     .object({
       slug: z.string(),
