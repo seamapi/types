@@ -3896,7 +3896,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -3993,7 +3993,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4127,7 +4127,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4269,7 +4269,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4395,7 +4395,7 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
-                          parent_credential_id: {
+                          parent_acs_credential_id: {
                             format: 'uuid',
                             type: 'string',
                           },
@@ -4498,7 +4498,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4595,7 +4595,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4695,7 +4695,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -4792,7 +4792,7 @@ export default {
                         },
                         external_type_display_name: { type: 'string' },
                         is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_credential_id: {
+                        parent_acs_credential_id: {
                           format: 'uuid',
                           type: 'string',
                         },
@@ -5125,7 +5125,7 @@ export default {
                           },
                           external_type_display_name: { type: 'string' },
                           is_multi_phone_sync_credential: { type: 'boolean' },
-                          parent_credential_id: {
+                          parent_acs_credential_id: {
                             format: 'uuid',
                             type: 'string',
                           },
