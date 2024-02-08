@@ -1140,6 +1140,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string
@@ -1180,6 +1186,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string
@@ -1500,6 +1512,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string
