@@ -8,6 +8,13 @@ export const acs_entrance = z.object({
   visionline_metadata: z
     .object({
       door_name: z.string(),
+      door_category: z.enum([
+        'entrance',
+        'guest',
+        'elevator reader',
+        'common',
+        'common (PMS)',
+      ]),
       profiles: z
         .array(
           z.object({

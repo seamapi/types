@@ -854,6 +854,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -918,6 +920,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -970,6 +974,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1022,6 +1028,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }>
@@ -1064,6 +1072,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1106,6 +1116,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }
@@ -1128,6 +1140,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string
@@ -1168,6 +1186,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string
@@ -1215,6 +1239,8 @@ export interface Routes {
         visionline_metadata?:
           | {
               joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
             }
           | undefined
       }>
@@ -1486,6 +1512,12 @@ export interface Routes {
         created_at: string
         visionline_metadata: {
           door_name: string
+          door_category:
+            | 'entrance'
+            | 'guest'
+            | 'elevator reader'
+            | 'common'
+            | 'common (PMS)'
           profiles?:
             | Array<{
                 visionline_door_profile_id: string

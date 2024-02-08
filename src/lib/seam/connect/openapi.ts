@@ -3903,6 +3903,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4000,6 +4008,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4134,6 +4150,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4276,6 +4300,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4402,6 +4434,14 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               joiner_acs_credential_ids: {
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
@@ -4505,6 +4545,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4602,6 +4650,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4702,6 +4758,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4799,6 +4863,14 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            common_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
+                            guest_acs_entrance_ids: {
+                              items: { format: 'uuid', type: 'string' },
+                              type: 'array',
+                            },
                             joiner_acs_credential_ids: {
                               items: { format: 'uuid', type: 'string' },
                               type: 'array',
@@ -4872,6 +4944,16 @@ export default {
                         visionline_metadata: {
                           nullable: true,
                           properties: {
+                            door_category: {
+                              enum: [
+                                'entrance',
+                                'guest',
+                                'elevator reader',
+                                'common',
+                                'common (PMS)',
+                              ],
+                              type: 'string',
+                            },
                             door_name: { type: 'string' },
                             profiles: {
                               items: {
@@ -4893,7 +4975,7 @@ export default {
                               type: 'array',
                             },
                           },
-                          required: ['door_name'],
+                          required: ['door_name', 'door_category'],
                           type: 'object',
                         },
                       },
@@ -5007,6 +5089,16 @@ export default {
                           visionline_metadata: {
                             nullable: true,
                             properties: {
+                              door_category: {
+                                enum: [
+                                  'entrance',
+                                  'guest',
+                                  'elevator reader',
+                                  'common',
+                                  'common (PMS)',
+                                ],
+                                type: 'string',
+                              },
                               door_name: { type: 'string' },
                               profiles: {
                                 items: {
@@ -5028,7 +5120,7 @@ export default {
                                 type: 'array',
                               },
                             },
-                            required: ['door_name'],
+                            required: ['door_name', 'door_category'],
                             type: 'object',
                           },
                         },
@@ -5132,6 +5224,14 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
                               joiner_acs_credential_ids: {
                                 items: { format: 'uuid', type: 'string' },
                                 type: 'array',
@@ -5573,6 +5673,16 @@ export default {
                           visionline_metadata: {
                             nullable: true,
                             properties: {
+                              door_category: {
+                                enum: [
+                                  'entrance',
+                                  'guest',
+                                  'elevator reader',
+                                  'common',
+                                  'common (PMS)',
+                                ],
+                                type: 'string',
+                              },
                               door_name: { type: 'string' },
                               profiles: {
                                 items: {
@@ -5594,7 +5704,7 @@ export default {
                                 type: 'array',
                               },
                             },
-                            required: ['door_name'],
+                            required: ['door_name', 'door_category'],
                             type: 'object',
                           },
                         },
