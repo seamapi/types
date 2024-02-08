@@ -5666,6 +5666,47 @@ export default {
         'x-fern-sdk-method-name': 'remove_from_access_group',
       },
     },
+    '/acs/users/revoke_access_to_all_entrances': {
+      post: {
+        operationId: 'acsUsersRevokeAccessToAllEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/acs/users/revoke_access_to_all_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users'],
+        'x-fern-sdk-method-name': 'revoke_access_to_all_entrances',
+      },
+    },
     '/acs/users/suspend': {
       post: {
         operationId: 'acsUsersSuspendPost',
