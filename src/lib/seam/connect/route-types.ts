@@ -850,6 +850,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -909,6 +917,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -963,6 +979,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -1017,6 +1041,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -1061,6 +1093,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -1105,6 +1145,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
@@ -1228,6 +1276,14 @@ export interface Routes {
         workspace_id: string
         starts_at?: string | undefined
         ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
