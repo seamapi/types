@@ -43,6 +43,18 @@ export const acs_credential = z.object({
   workspace_id: z.string().uuid(),
   starts_at: z.string().optional(),
   ends_at: z.string().optional(),
+  errors: z.array(
+    z.object({
+      error_code: z.string(),
+      message: z.string(),
+    }),
+  ),
+  warnings: z.array(
+    z.object({
+      warning_code: z.string(),
+      message: z.string(),
+    }),
+  ),
   is_multi_phone_sync_credential: z.boolean().optional(),
   visionline_metadata: acs_credential_visionline_metadata.optional(),
 })
