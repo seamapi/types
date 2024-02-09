@@ -870,15 +870,8 @@ export interface Routes {
       acs_user_id: string
       access_method: 'code' | 'card' | 'mobile_key'
       code?: string | undefined
-      is_multi_phone_sync_credential?: boolean | undefined
-      external_type?:
-        | (
-            | 'pti_card'
-            | 'brivo_credential'
-            | 'hid_credential'
-            | 'visionline_card'
-          )
-        | undefined
+      is_multi_phone_sync_credential?: boolean
+      external_type?: 'visionline_card' | undefined
       visionline_metadata?:
         | {
             assa_abloy_credential_service_mobile_endpoint_id?:
