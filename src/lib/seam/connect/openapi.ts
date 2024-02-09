@@ -3885,6 +3885,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -3918,6 +3929,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -3927,6 +3949,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -3990,6 +4014,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4023,6 +4058,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4032,6 +4078,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4127,6 +4175,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4160,6 +4219,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4169,6 +4239,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4277,6 +4349,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4310,6 +4393,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4319,6 +4413,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4411,6 +4507,17 @@ export default {
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
                           ends_at: { type: 'string' },
+                          errors: {
+                            items: {
+                              properties: {
+                                error_code: { type: 'string' },
+                                message: { type: 'string' },
+                              },
+                              required: ['error_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           external_type: {
                             enum: [
                               'pti_card',
@@ -4444,6 +4551,17 @@ export default {
                             },
                             type: 'object',
                           },
+                          warnings: {
+                            items: {
+                              properties: {
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: ['warning_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [
@@ -4453,6 +4571,8 @@ export default {
                           'access_method',
                           'created_at',
                           'workspace_id',
+                          'errors',
+                          'warnings',
                         ],
                         type: 'object',
                       },
@@ -4522,6 +4642,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4555,6 +4686,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4564,6 +4706,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4627,6 +4771,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4660,6 +4815,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4669,6 +4835,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4735,6 +4903,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4768,6 +4947,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4777,6 +4967,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -4840,6 +5032,17 @@ export default {
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
                         ends_at: { type: 'string' },
+                        errors: {
+                          items: {
+                            properties: {
+                              error_code: { type: 'string' },
+                              message: { type: 'string' },
+                            },
+                            required: ['error_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_card',
@@ -4873,6 +5076,17 @@ export default {
                           },
                           type: 'object',
                         },
+                        warnings: {
+                          items: {
+                            properties: {
+                              message: { type: 'string' },
+                              warning_code: { type: 'string' },
+                            },
+                            required: ['warning_code', 'message'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: { format: 'uuid', type: 'string' },
                       },
                       required: [
@@ -4882,6 +5096,8 @@ export default {
                         'access_method',
                         'created_at',
                         'workspace_id',
+                        'errors',
+                        'warnings',
                       ],
                       type: 'object',
                     },
@@ -5201,6 +5417,17 @@ export default {
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
                           ends_at: { type: 'string' },
+                          errors: {
+                            items: {
+                              properties: {
+                                error_code: { type: 'string' },
+                                message: { type: 'string' },
+                              },
+                              required: ['error_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           external_type: {
                             enum: [
                               'pti_card',
@@ -5234,6 +5461,17 @@ export default {
                             },
                             type: 'object',
                           },
+                          warnings: {
+                            items: {
+                              properties: {
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: ['warning_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           workspace_id: { format: 'uuid', type: 'string' },
                         },
                         required: [
@@ -5243,6 +5481,8 @@ export default {
                           'access_method',
                           'created_at',
                           'workspace_id',
+                          'errors',
+                          'warnings',
                         ],
                         type: 'object',
                       },
