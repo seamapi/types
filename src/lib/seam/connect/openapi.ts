@@ -12026,6 +12026,7 @@ export default {
         tags: ['/webhooks'],
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'webhook',
       },
       put: {
         operationId: 'webhooksUpdatePut',
