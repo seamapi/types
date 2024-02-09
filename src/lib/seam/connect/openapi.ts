@@ -12006,8 +12006,11 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    ok: { type: 'boolean' },
+                    webhook: { $ref: '#/components/schemas/webhook' },
+                  },
+                  required: ['webhook', 'ok'],
                   type: 'object',
                 },
               },
@@ -12026,6 +12029,7 @@ export default {
         tags: ['/webhooks'],
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'webhook',
       },
       put: {
         operationId: 'webhooksUpdatePut',
@@ -12048,8 +12052,11 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    ok: { type: 'boolean' },
+                    webhook: { $ref: '#/components/schemas/webhook' },
+                  },
+                  required: ['webhook', 'ok'],
                   type: 'object',
                 },
               },
