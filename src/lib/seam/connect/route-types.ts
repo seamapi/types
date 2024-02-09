@@ -7318,6 +7318,17 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/phones/deactivate': {
+    route: '/phones/deactivate'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/phones/list': {
     route: '/phones/list'
     method: 'GET' | 'POST'

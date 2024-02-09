@@ -9327,6 +9327,48 @@ export default {
         'x-fern-sdk-method-name': 'trigger_noise_threshold',
       },
     },
+    '/phones/deactivate': {
+      post: {
+        operationId: 'phonesDeactivatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/phones/deactivate',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'deactivate',
+      },
+    },
     '/phones/list': {
       post: {
         operationId: 'phonesListPost',
