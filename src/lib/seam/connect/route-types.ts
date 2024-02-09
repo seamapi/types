@@ -10286,7 +10286,14 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      webhook: {
+        webhook_id: string
+        url: string
+        event_types?: string[] | undefined
+        secret?: string | undefined
+      }
+    }
   }
   '/workspaces/create': {
     route: '/workspaces/create'
