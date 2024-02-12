@@ -1088,7 +1088,10 @@ export default {
                       },
                       schlage_metadata: {
                         properties: {
-                          access_code_length: { type: 'number' },
+                          access_code_length: {
+                            nullable: true,
+                            type: 'number',
+                          },
                           device_id: { type: 'string' },
                           device_name: { type: 'string' },
                           model: { type: 'string' },
