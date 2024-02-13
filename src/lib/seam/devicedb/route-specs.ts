@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import * as schemas from './public-models/index.js'
+import * as schemas from './models/index.js'
 
 const dot_path = z.string().regex(/^([a-z])[a-z_.]*[a-z]+$/)
 

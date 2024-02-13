@@ -82,7 +82,7 @@ export const thermostat = z.object({
   }),
 })
 
-export type ThermostatPropertiesV1 = z.infer<typeof thermostat>
+export type ThermostatProperties = z.infer<typeof thermostat>
 
 const relay = z.object({
   main_category: z.literal(device_category.enum.relay),
@@ -146,10 +146,10 @@ export const base_device_model_v1 = z.object({
     .array(),
 })
 
-export type BaseDeviceModelV1 = z.infer<typeof base_device_model_v1>
+export type BaseDeviceModel = z.infer<typeof base_device_model_v1>
 
 export const device_model_v1 = base_device_model_v1.and(
   device_model_category_specific_properties,
 )
 
-export type DeviceModelV1 = z.infer<typeof device_model_v1>
+export type DeviceModel = z.infer<typeof device_model_v1>
