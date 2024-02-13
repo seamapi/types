@@ -5628,7 +5628,18 @@ export default {
           },
         },
         responses: {
-          200: { description: 'OK' },
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
@@ -5659,7 +5670,18 @@ export default {
           },
         },
         responses: {
-          200: { description: 'OK' },
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
@@ -5999,7 +6021,18 @@ export default {
           },
         },
         responses: {
-          200: { description: 'OK' },
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
