@@ -600,7 +600,11 @@ export default {
                 type: 'string',
               },
               {
-                enum: ['ecobee_thermostat', 'nest_thermostat'],
+                enum: [
+                  'ecobee_thermostat',
+                  'nest_thermostat',
+                  'honeywell_thermostat',
+                ],
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -914,6 +918,14 @@ export default {
                           door_name: { type: 'string' },
                         },
                         required: ['device_name', 'door_name'],
+                        type: 'object',
+                      },
+                      honeywell_metadata: {
+                        properties: {
+                          device_name: { type: 'string' },
+                          honeywell_device_id: { type: 'string' },
+                        },
+                        required: ['honeywell_device_id', 'device_name'],
                         type: 'object',
                       },
                       hubitat_metadata: {
@@ -2066,7 +2078,11 @@ export default {
                 type: 'string',
               },
               {
-                enum: ['ecobee_thermostat', 'nest_thermostat'],
+                enum: [
+                  'ecobee_thermostat',
+                  'nest_thermostat',
+                  'honeywell_thermostat',
+                ],
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -7614,7 +7630,11 @@ export default {
                         type: 'string',
                       },
                       {
-                        enum: ['ecobee_thermostat', 'nest_thermostat'],
+                        enum: [
+                          'ecobee_thermostat',
+                          'nest_thermostat',
+                          'honeywell_thermostat',
+                        ],
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -7659,7 +7679,11 @@ export default {
                           type: 'string',
                         },
                         {
-                          enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          enum: [
+                            'ecobee_thermostat',
+                            'nest_thermostat',
+                            'honeywell_thermostat',
+                          ],
                           type: 'string',
                         },
                         {
@@ -7706,6 +7730,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
+                      'honeywell',
                     ],
                     type: 'string',
                   },
@@ -7926,7 +7951,11 @@ export default {
                         type: 'string',
                       },
                       {
-                        enum: ['ecobee_thermostat', 'nest_thermostat'],
+                        enum: [
+                          'ecobee_thermostat',
+                          'nest_thermostat',
+                          'honeywell_thermostat',
+                        ],
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -7971,7 +8000,11 @@ export default {
                           type: 'string',
                         },
                         {
-                          enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          enum: [
+                            'ecobee_thermostat',
+                            'nest_thermostat',
+                            'honeywell_thermostat',
+                          ],
                           type: 'string',
                         },
                         {
@@ -8018,6 +8051,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
+                      'honeywell',
                     ],
                     type: 'string',
                   },
@@ -8842,7 +8876,11 @@ export default {
                         type: 'string',
                       },
                       {
-                        enum: ['ecobee_thermostat', 'nest_thermostat'],
+                        enum: [
+                          'ecobee_thermostat',
+                          'nest_thermostat',
+                          'honeywell_thermostat',
+                        ],
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -8887,7 +8925,11 @@ export default {
                           type: 'string',
                         },
                         {
-                          enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          enum: [
+                            'ecobee_thermostat',
+                            'nest_thermostat',
+                            'honeywell_thermostat',
+                          ],
                           type: 'string',
                         },
                         {
@@ -8934,6 +8976,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
+                      'honeywell',
                     ],
                     type: 'string',
                   },
@@ -10518,7 +10561,11 @@ export default {
                         type: 'string',
                       },
                       {
-                        enum: ['ecobee_thermostat', 'nest_thermostat'],
+                        enum: [
+                          'ecobee_thermostat',
+                          'nest_thermostat',
+                          'honeywell_thermostat',
+                        ],
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
@@ -10563,7 +10610,11 @@ export default {
                           type: 'string',
                         },
                         {
-                          enum: ['ecobee_thermostat', 'nest_thermostat'],
+                          enum: [
+                            'ecobee_thermostat',
+                            'nest_thermostat',
+                            'honeywell_thermostat',
+                          ],
                           type: 'string',
                         },
                         {
@@ -10610,6 +10661,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
+                      'honeywell',
                     ],
                     type: 'string',
                   },

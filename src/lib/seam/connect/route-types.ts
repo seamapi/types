@@ -2207,7 +2207,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -2451,6 +2451,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -2886,7 +2892,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -2921,7 +2927,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -2960,6 +2966,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
+            | 'honeywell'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -3004,7 +3011,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -3248,6 +3255,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -3705,7 +3718,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -3814,7 +3827,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -3849,7 +3862,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -3888,6 +3901,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
+            | 'honeywell'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -3932,7 +3946,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -4302,7 +4316,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -4546,6 +4560,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -4972,7 +4992,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -5216,6 +5236,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -5651,7 +5677,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -5686,7 +5712,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -5725,6 +5751,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
+            | 'honeywell'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -5769,7 +5796,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -6013,6 +6040,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -6439,7 +6472,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -6683,6 +6716,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -7745,7 +7784,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -7989,6 +8028,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -8454,7 +8499,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -8489,7 +8534,7 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat')
+            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -8528,6 +8573,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
+            | 'honeywell'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -8572,7 +8618,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -8816,6 +8862,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined
@@ -9469,7 +9521,7 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat')
+          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
@@ -9713,6 +9765,12 @@ export interface Routes {
           ecobee_metadata?:
             | {
                 ecobee_device_id: string
+                device_name: string
+              }
+            | undefined
+          honeywell_metadata?:
+            | {
+                honeywell_device_id: string
                 device_name: string
               }
             | undefined

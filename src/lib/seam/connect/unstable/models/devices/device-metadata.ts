@@ -174,6 +174,11 @@ export const device_metadata = z
       device_name: z.string(),
     }),
 
+    honeywell_metadata: z.object({
+      honeywell_device_id: z.string(),
+      device_name: z.string(),
+    }),
+
     hubitat_metadata: z.object({
       device_id: z.string(),
       device_name: z.string(),
