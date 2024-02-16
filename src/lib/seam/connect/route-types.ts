@@ -2848,6 +2848,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
     }
   }
@@ -3652,6 +3654,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
@@ -4957,6 +4961,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
       device: {
         /** Unique identifier for the device. */
@@ -5633,6 +5639,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
     }
   }
@@ -6437,6 +6445,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
       devices: Array<{
         /** Unique identifier for the device. */
@@ -7113,6 +7123,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
@@ -7484,6 +7496,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
@@ -7561,6 +7575,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
     }
   }
@@ -8425,6 +8441,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
     }
   }
@@ -9259,6 +9277,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
@@ -10162,6 +10182,8 @@ export interface Routes {
         /** Indicates whether Seam manages the device. */
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
