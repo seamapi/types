@@ -4131,6 +4131,7 @@ export interface Routes {
             | 'connected_account.deleted'
             | 'connected_account.disconnected'
             | 'connected_account.completed_first_sync'
+            | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
           )
@@ -4180,6 +4181,7 @@ export interface Routes {
             | 'connected_account.deleted'
             | 'connected_account.disconnected'
             | 'connected_account.completed_first_sync'
+            | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
           >
