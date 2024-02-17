@@ -72,7 +72,7 @@
     "postbuild:entrypoints": "tsup",
     "build:ts": "tsc --project tsconfig.build.json",
     "prebuild:ts": "del 'index.*' 'connect.*' 'devicedb.*' lib",
-    "postbuild:ts": "tsc-alias --project tsconfig.build.json",
+    "postbuild:ts": "tsc-alias --replacer ./tsc-alias-replacer.cjs --project tsconfig.build.json",
     "typecheck": "tsc",
     "docs:build": "typedoc",
     "lint": "eslint --ignore-path .gitignore .",
