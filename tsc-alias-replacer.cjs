@@ -1,4 +1,4 @@
-// UPSTREAM: tsc-alias does not replace paths with @
+// UPSTREAM: tsc-alias does not replace paths which start with @.
 
 const path = require('path')
 
@@ -17,6 +17,7 @@ module.exports.default = ({ orig, file }) => {
     const target = path
       .relative(file, tsPath)
       .replace('./src', '')
+      .replace('.././', '../')
       .replace('.ts', '.js')
     if (path != null) return `from '${target}'`
   }
