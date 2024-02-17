@@ -1,4 +1,5 @@
 // UPSTREAM: tsc-alias does not replace paths which start with @.
+// https://github.com/justkey007/tsc-alias/issues/212
 
 const path = require('path')
 
