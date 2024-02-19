@@ -10296,6 +10296,21 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/user_identities/update': {
+    route: '/user_identities/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      user_identity_id: string
+      user_identity_key?: (string | null) | undefined
+      email_address?: (string | null) | undefined
+      phone_number?: (string | null) | undefined
+      full_name?: (string | null) | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/webhooks/create': {
     route: '/webhooks/create'
     method: 'POST'
