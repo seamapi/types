@@ -11872,6 +11872,113 @@ export default {
         'x-fern-sdk-method-name': 'revoke_access_to_device',
       },
     },
+    '/user_identities/update': {
+      patch: {
+        operationId: 'userIdentitiesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  email_address: {
+                    format: 'email',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  full_name: { minLength: 1, nullable: true, type: 'string' },
+                  phone_number: { nullable: true, type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_key: {
+                    minLength: 1,
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/update',
+        tags: ['/user_identities'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'userIdentitiesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  email_address: {
+                    format: 'email',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  full_name: { minLength: 1, nullable: true, type: 'string' },
+                  phone_number: { nullable: true, type: 'string' },
+                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_key: {
+                    minLength: 1,
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['user_identity_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/update',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities'],
+        'x-fern-sdk-method-name': 'update',
+      },
+    },
     '/webhooks/create': {
       post: {
         operationId: 'webhooksCreatePost',
