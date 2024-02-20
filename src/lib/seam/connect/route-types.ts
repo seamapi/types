@@ -9379,6 +9379,17 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/user_identities/enrollment_automations/delete': {
+    route: '/user_identities/enrollment_automations/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      enrollment_automation_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
   '/user_identities/enrollment_automations/get': {
     route: '/user_identities/enrollment_automations/get'
     method: 'GET' | 'POST'

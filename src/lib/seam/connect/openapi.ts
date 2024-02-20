@@ -11135,6 +11135,49 @@ export default {
         'x-fern-sdk-method-name': 'delete',
       },
     },
+    '/user_identities/enrollment_automations/delete': {
+      post: {
+        operationId: 'userIdentitiesEnrollmentAutomationsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  enrollment_automation_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['enrollment_automation_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/user_identities/enrollment_automations/delete',
+        tags: ['/user_identities'],
+        'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
+        'x-fern-sdk-method-name': 'delete',
+      },
+    },
     '/user_identities/enrollment_automations/get': {
       post: {
         operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
