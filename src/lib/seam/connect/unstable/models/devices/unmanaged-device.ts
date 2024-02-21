@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
+
 import { common_device_properties, managed_device } from './managed-device.js'
 
 export const unmanaged_device = managed_device
@@ -28,5 +30,6 @@ export const unmanaged_device = managed_device
       model: true,
     }),
   })
+  .merge(devicedb_schemas.device_capability_flags)
 
 export type UnmanagedDevice = z.infer<typeof unmanaged_device>

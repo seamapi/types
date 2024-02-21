@@ -3787,6 +3787,8 @@ export interface Routes {
             accessory_keypad_supported?: boolean | undefined
           }
         }
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }
     }
   }
@@ -4015,6 +4017,8 @@ export interface Routes {
             accessory_keypad_supported?: boolean | undefined
           }
         }
+        can_remotely_unlock?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
       }>
     }
   }
