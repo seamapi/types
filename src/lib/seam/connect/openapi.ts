@@ -11542,76 +11542,23 @@ export default {
       },
     },
     '/user_identities/list': {
-      get: {
-        operationId: 'userIdentitiesListGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    ok: { type: 'boolean' },
-                    user_identities: {
-                      items: {
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          email_address: {
-                            format: 'email',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          full_name: {
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          phone_number: { nullable: true, type: 'string' },
-                          user_identity_id: { format: 'uuid', type: 'string' },
-                          user_identity_key: {
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'user_identity_id',
-                          'user_identity_key',
-                          'email_address',
-                          'phone_number',
-                          'display_name',
-                          'full_name',
-                          'created_at',
-                          'workspace_id',
-                        ],
-                        type: 'object',
-                      },
-                      type: 'array',
-                    },
-                  },
-                  required: ['user_identities', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { api_key: [] },
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-        ],
-        summary: '/user_identities/list',
-        tags: ['/user_identities'],
-        'x-fern-ignore': true,
-      },
       post: {
         operationId: 'userIdentitiesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  credential_manager_acs_system_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
         responses: {
           200: {
             content: {
