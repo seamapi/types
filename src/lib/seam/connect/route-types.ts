@@ -9499,7 +9499,9 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams: {}
+    commonParams: {
+      credential_manager_acs_system_id?: string | undefined
+    }
     formData: {}
     jsonResponse: {
       user_identities: Array<{
