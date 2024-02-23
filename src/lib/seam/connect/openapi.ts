@@ -1724,7 +1724,15 @@ export default {
           display_name: { type: 'string' },
           image_url: { type: 'string' },
           provider_categories: {
-            items: { enum: ['stable', 'consumer_smartlocks'], type: 'string' },
+            items: {
+              enum: [
+                'stable',
+                'consumer_smartlocks',
+                'thermostats',
+                'noise_sensors',
+              ],
+              type: 'string',
+            },
             type: 'array',
           },
         },
@@ -7023,7 +7031,13 @@ export default {
                     type: 'string',
                   },
                   provider_category: {
-                    enum: ['stable', 'consumer_smartlocks', 'internal_beta'],
+                    enum: [
+                      'stable',
+                      'consumer_smartlocks',
+                      'thermostats',
+                      'noise_sensors',
+                      'internal_beta',
+                    ],
                     type: 'string',
                   },
                   wait_for_device_creation: { type: 'boolean' },
@@ -7791,7 +7805,12 @@ export default {
               schema: {
                 properties: {
                   provider_category: {
-                    enum: ['stable', 'consumer_smartlocks'],
+                    enum: [
+                      'stable',
+                      'consumer_smartlocks',
+                      'thermostats',
+                      'noise_sensors',
+                    ],
                     type: 'string',
                   },
                 },

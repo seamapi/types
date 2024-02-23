@@ -1917,7 +1917,13 @@ export interface Routes {
           >
         | undefined
       provider_category?:
-        | ('stable' | 'consumer_smartlocks' | 'internal_beta')
+        | (
+            | 'stable'
+            | 'consumer_smartlocks'
+            | 'thermostats'
+            | 'noise_sensors'
+            | 'internal_beta'
+          )
         | undefined
       custom_metadata?: Record<string, string | boolean | null> | undefined
       automatically_manage_new_devices?: boolean | undefined
@@ -3666,7 +3672,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      provider_category?: ('stable' | 'consumer_smartlocks') | undefined
+      provider_category?:
+        | ('stable' | 'consumer_smartlocks' | 'thermostats' | 'noise_sensors')
+        | undefined
     }
     formData: {}
     jsonResponse: {
@@ -3674,7 +3682,9 @@ export interface Routes {
         device_provider_name: string
         display_name: string
         image_url: string
-        provider_categories: Array<'stable' | 'consumer_smartlocks'>
+        provider_categories: Array<
+          'stable' | 'consumer_smartlocks' | 'thermostats' | 'noise_sensors'
+        >
       }>
     }
   }
