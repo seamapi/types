@@ -6864,6 +6864,7 @@ export default {
                   client_session_id: { type: 'string' },
                   connect_webview_id: { type: 'string' },
                   user_identifier_key: { type: 'string' },
+                  user_identity_id: { type: 'string' },
                   without_user_identifier_key: { type: 'boolean' },
                 },
                 type: 'object',
