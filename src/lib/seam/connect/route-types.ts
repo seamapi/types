@@ -1838,6 +1838,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       connect_webview_id?: string | undefined
       without_user_identifier_key?: boolean | undefined
+      user_identity_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
