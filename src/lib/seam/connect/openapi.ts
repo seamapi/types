@@ -4481,34 +4481,44 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
+                allOf: [
                   {
-                    properties: {
-                      acs_user_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: ['acs_user_id'],
-                    type: 'object',
+                    oneOf: [
+                      {
+                        properties: {
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['acs_user_id'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['acs_system_id'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['acs_user_id', 'acs_system_id'],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          user_identity_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['user_identity_id'],
+                        type: 'object',
+                      },
+                    ],
                   },
                   {
                     properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
+                      is_multi_phone_sync_credential: { type: 'boolean' },
                     },
-                    required: ['acs_system_id'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      acs_user_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: ['acs_user_id', 'acs_system_id'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      user_identity_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: ['user_identity_id'],
                     type: 'object',
                   },
                 ],
@@ -8451,6 +8461,8 @@ export default {
                       'connected_account.completed_first_sync_after_reconnection',
                       'noise_sensor.noise_threshold_triggered',
                       'access_code.backup_access_code_pulled',
+                      'acs_user.deleted',
+                      'acs_credential.deleted',
                     ],
                     type: 'string',
                   },
@@ -8503,6 +8515,8 @@ export default {
                         'connected_account.completed_first_sync_after_reconnection',
                         'noise_sensor.noise_threshold_triggered',
                         'access_code.backup_access_code_pulled',
+                        'acs_user.deleted',
+                        'acs_credential.deleted',
                       ],
                       type: 'string',
                     },

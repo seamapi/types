@@ -1003,7 +1003,7 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams:
+    commonParams: (
       | {
           acs_user_id: string
         }
@@ -1017,6 +1017,9 @@ export interface Routes {
       | {
           user_identity_id: string
         }
+    ) & {
+      is_multi_phone_sync_credential?: boolean | undefined
+    }
     formData: {}
     jsonResponse: {
       acs_credentials: Array<{
@@ -4149,6 +4152,8 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_user.deleted'
+            | 'acs_credential.deleted'
           )
         | undefined
       event_types?:
@@ -4199,6 +4204,8 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_user.deleted'
+            | 'acs_credential.deleted'
           >
         | undefined
       connected_account_id?: string | undefined
