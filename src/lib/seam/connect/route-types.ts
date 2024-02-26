@@ -4152,6 +4152,8 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_user.deleted'
+            | 'acs_credential.deleted'
           )
         | undefined
       event_types?:
@@ -4202,6 +4204,8 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_user.deleted'
+            | 'acs_credential.deleted'
           >
         | undefined
       connected_account_id?: string | undefined
