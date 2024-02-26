@@ -1003,7 +1003,7 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams:
+    commonParams: (
       | {
           acs_user_id: string
         }
@@ -1017,6 +1017,9 @@ export interface Routes {
       | {
           user_identity_id: string
         }
+    ) & {
+      is_multi_phone_sync_credential?: boolean | undefined
+    }
     formData: {}
     jsonResponse: {
       acs_credentials: Array<{
