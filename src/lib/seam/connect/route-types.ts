@@ -1334,6 +1334,8 @@ export interface Routes {
         created_at: string
         workspace_id: string
         connected_account_ids: string[]
+        image_url: string
+        image_alt_text: string
       }
     }
   }
@@ -1373,6 +1375,8 @@ export interface Routes {
         created_at: string
         workspace_id: string
         connected_account_ids: string[]
+        image_url: string
+        image_alt_text: string
       }>
     }
   }
@@ -10260,6 +10264,8 @@ export interface Routes {
         created_at: string
         workspace_id: string
         connected_account_ids: string[]
+        image_url: string
+        image_alt_text: string
       }>
     }
   }
