@@ -27,6 +27,8 @@ export const acs_system = z.object({
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
   connected_account_ids: z.array(z.string()),
+  image_url: z.string(),
+  image_alt_text: z.string(),
 })
 
 export type AcsSystem = z.output<typeof acs_system>

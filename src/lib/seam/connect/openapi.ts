@@ -200,6 +200,8 @@ export default {
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
+          image_alt_text: { type: 'string' },
+          image_url: { type: 'string' },
           name: { type: 'string' },
           system_type: {
             description: 'deprecated: use external_type',
@@ -230,6 +232,8 @@ export default {
           'created_at',
           'workspace_id',
           'connected_account_ids',
+          'image_url',
+          'image_alt_text',
         ],
         type: 'object',
       },
