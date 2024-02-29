@@ -4158,6 +4158,7 @@ export interface Routes {
             | 'access_code.backup_access_code_pulled'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
+            | 'enrollment_automation.deleted'
           )
         | undefined
       event_types?:
@@ -4210,6 +4211,7 @@ export interface Routes {
             | 'access_code.backup_access_code_pulled'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
+            | 'enrollment_automation.deleted'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -7534,7 +7536,6 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {
-      assa_abloy_credential_service_acs_system_id: string
       custom_sdk_installation_id?: string | undefined
       user_identity_id: string
       phone_metadata?: {

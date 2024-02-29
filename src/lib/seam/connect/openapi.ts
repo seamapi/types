@@ -8467,6 +8467,7 @@ export default {
                       'access_code.backup_access_code_pulled',
                       'acs_user.deleted',
                       'acs_credential.deleted',
+                      'enrollment_automation.deleted',
                     ],
                     type: 'string',
                   },
@@ -8521,6 +8522,7 @@ export default {
                         'access_code.backup_access_code_pulled',
                         'acs_user.deleted',
                         'acs_credential.deleted',
+                        'enrollment_automation.deleted',
                       ],
                       type: 'string',
                     },
@@ -9793,10 +9795,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  assa_abloy_credential_service_acs_system_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
                   assa_abloy_metadata: {
                     default: {},
                     properties: {
@@ -9832,10 +9830,7 @@ export default {
                   },
                   user_identity_id: { format: 'uuid', type: 'string' },
                 },
-                required: [
-                  'assa_abloy_credential_service_acs_system_id',
-                  'user_identity_id',
-                ],
+                required: ['user_identity_id'],
                 type: 'object',
               },
             },
