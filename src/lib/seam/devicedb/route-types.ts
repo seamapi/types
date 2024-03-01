@@ -97,6 +97,7 @@ export interface Routes {
               can_program_access_schedules: boolean
               can_program_access_codes_offline: boolean
             }
+            can_remotely_lock?: true | undefined
             can_remotely_unlock?: true | undefined
             can_program_online_access_codes?: true | undefined
           }
@@ -272,6 +273,7 @@ export interface Routes {
                 can_program_access_schedules: boolean
                 can_program_access_codes_offline: boolean
               }
+              can_remotely_lock?: true | undefined
               can_remotely_unlock?: true | undefined
               can_program_online_access_codes?: true | undefined
             }
