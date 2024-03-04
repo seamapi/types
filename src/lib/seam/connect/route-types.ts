@@ -4159,6 +4159,7 @@ export interface Routes {
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'enrollment_automation.deleted'
+            | 'client_session.deleted'
           )
         | undefined
       event_types?:
@@ -4212,6 +4213,7 @@ export interface Routes {
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'enrollment_automation.deleted'
+            | 'client_session.deleted'
           >
         | undefined
       connected_account_id?: string | undefined
