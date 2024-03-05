@@ -3693,7 +3693,43 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       device_providers: Array<{
-        device_provider_name: string
+        device_provider_name:
+          | 'akuvox'
+          | 'august'
+          | 'avigilon_alta'
+          | 'brivo'
+          | 'butterflymx'
+          | 'schlage'
+          | 'smartthings'
+          | 'yale'
+          | 'genie'
+          | 'doorking'
+          | 'salto'
+          | 'lockly'
+          | 'ttlock'
+          | 'linear'
+          | 'noiseaware'
+          | 'nuki'
+          | 'seam_relay_admin'
+          | 'igloo'
+          | 'kwikset'
+          | 'minut'
+          | 'my_2n'
+          | 'controlbyweb'
+          | 'nest'
+          | 'igloohome'
+          | 'ecobee'
+          | 'hubitat'
+          | 'four_suites'
+          | 'dormakaba_oracode'
+          | 'pti'
+          | 'wyze'
+          | 'seam_passport'
+          | 'visionline'
+          | 'assa_abloy_credential_service'
+          | 'seam_bridge'
+          | 'tedee'
+          | 'honeywell'
         display_name: string
         image_url: string
         provider_categories: Array<
