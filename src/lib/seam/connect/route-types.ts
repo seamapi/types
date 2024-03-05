@@ -1929,6 +1929,7 @@ export interface Routes {
             | 'consumer_smartlocks'
             | 'thermostats'
             | 'noise_sensors'
+            | 'access_control_systems'
             | 'internal_beta'
           )
         | undefined
@@ -3680,7 +3681,13 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       provider_category?:
-        | ('stable' | 'consumer_smartlocks' | 'thermostats' | 'noise_sensors')
+        | (
+            | 'stable'
+            | 'consumer_smartlocks'
+            | 'thermostats'
+            | 'noise_sensors'
+            | 'access_control_systems'
+          )
         | undefined
     }
     formData: {}
@@ -3690,7 +3697,11 @@ export interface Routes {
         display_name: string
         image_url: string
         provider_categories: Array<
-          'stable' | 'consumer_smartlocks' | 'thermostats' | 'noise_sensors'
+          | 'stable'
+          | 'consumer_smartlocks'
+          | 'thermostats'
+          | 'noise_sensors'
+          | 'access_control_systems'
         >
       }>
     }
