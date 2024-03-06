@@ -10407,8 +10407,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -10427,6 +10432,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'cool',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/get': {
@@ -10500,8 +10506,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -10520,6 +10531,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'heat',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/heat_cool': {
@@ -10548,8 +10560,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -10568,6 +10585,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'heat_cool',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/list': {
@@ -10814,8 +10832,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -10834,6 +10857,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'off',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/set_fan_mode': {
@@ -10860,8 +10884,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -10880,6 +10909,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'set_fan_mode',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/update': {

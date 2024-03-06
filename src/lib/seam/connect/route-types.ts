@@ -7829,7 +7829,33 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/get': {
     route: '/thermostats/get'
@@ -8534,7 +8560,33 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/heat_cool': {
     route: '/thermostats/heat_cool'
@@ -8550,7 +8602,33 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/list': {
     route: '/thermostats/list'
@@ -9368,7 +9446,33 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/set_fan_mode': {
     route: '/thermostats/set_fan_mode'
@@ -9382,7 +9486,33 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/thermostats/update': {
     route: '/thermostats/update'
