@@ -4264,20 +4264,18 @@ export interface Routes {
           >
         | undefined
       connected_account_id?: string | undefined
+      limit?: number
     }
     formData: {}
     jsonResponse: {
-      events?:
-        | Array<{
-            event_id: string
-            device_id?: string | undefined
-            event_type: string
-            workspace_id: string
-            created_at: string
-            occurred_at: string
-          }>
-        | undefined
-      message?: string | undefined
+      events: Array<{
+        event_id: string
+        device_id?: string | undefined
+        event_type: string
+        workspace_id: string
+        created_at: string
+        occurred_at: string
+      }>
     }
   }
   '/health': {
