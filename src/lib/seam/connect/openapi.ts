@@ -657,6 +657,17 @@ export default {
                     allOf: [
                       {
                         properties: {
+                          appearance: {
+                            properties: {
+                              name: {
+                                description:
+                                  'Name of the device as seen from the provider API and application, not settable through Seam.',
+                                type: 'string',
+                              },
+                            },
+                            required: ['name'],
+                            type: 'object',
+                          },
                           battery: {
                             description:
                               'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
@@ -734,6 +745,11 @@ export default {
                               'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
                             type: 'string',
                           },
+                          nickname: {
+                            description:
+                              'Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+                            type: 'string',
+                          },
                           offline_access_codes_enabled: {
                             description:
                               'Indicates whether it is currently possible to use offline access codes for the device.',
@@ -764,7 +780,7 @@ export default {
                             type: 'boolean',
                           },
                         },
-                        required: ['online', 'name', 'model'],
+                        required: ['online', 'name', 'appearance', 'model'],
                         type: 'object',
                       },
                       {
