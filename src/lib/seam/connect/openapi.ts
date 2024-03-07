@@ -616,6 +616,11 @@ export default {
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
             ],
           },
+          display_name: {
+            description:
+              'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+            type: 'string',
+          },
           errors: {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
@@ -648,6 +653,11 @@ export default {
               },
             },
             type: 'object',
+          },
+          nickname: {
+            description:
+              'Optional nickname to describe the device, settable through Seam',
+            type: 'string',
           },
           properties: {
             allOf: [
@@ -742,12 +752,7 @@ export default {
                           },
                           name: {
                             description:
-                              'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
-                            type: 'string',
-                          },
-                          nickname: {
-                            description:
-                              'Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+                              'Name of the device. Deprecated - use device.display_name instead',
                             type: 'string',
                           },
                           offline_access_codes_enabled: {
@@ -1726,6 +1731,7 @@ export default {
         required: [
           'device_id',
           'device_type',
+          'display_name',
           'capabilities_supported',
           'properties',
           'location',
@@ -1903,6 +1909,11 @@ export default {
             type: 'string',
           },
           device_type: { enum: ['android_phone', 'ios_phone'], type: 'string' },
+          display_name: {
+            description:
+              'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+            type: 'string',
+          },
           errors: {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
@@ -1935,6 +1946,11 @@ export default {
               },
             },
             type: 'object',
+          },
+          nickname: {
+            description:
+              'Optional nickname to describe the device, settable through Seam',
+            type: 'string',
           },
           properties: {
             properties: {
@@ -1982,6 +1998,7 @@ export default {
         required: [
           'device_id',
           'device_type',
+          'display_name',
           'capabilities_supported',
           'properties',
           'location',
@@ -2244,7 +2261,7 @@ export default {
               },
               name: {
                 description:
-                  'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+                  'Name of the device. Deprecated - use device.display_name instead',
                 type: 'string',
               },
               offline_access_codes_enabled: {
