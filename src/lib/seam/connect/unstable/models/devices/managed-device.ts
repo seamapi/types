@@ -21,6 +21,19 @@ export const common_device_properties = z.object({
     .describe(
       'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
     ),
+  nickname: z
+    .string()
+    .optional()
+    .describe(
+      'Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+    ),
+  appearance: z.object({
+    name: z
+      .string()
+      .describe(
+        'Name of the device as seen from the provider API and application, not settable through Seam.',
+      ),
+  }),
   model: z.object({
     display_name: z.string().describe('Display name of the device model.'),
     manufacturer_display_name: z
