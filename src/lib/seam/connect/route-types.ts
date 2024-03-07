@@ -2224,6 +2224,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -2237,10 +2241,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -3036,6 +3038,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -3049,10 +3055,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -3828,7 +3832,7 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -4058,7 +4062,7 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -4411,6 +4415,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -4424,10 +4432,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -5095,6 +5101,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -5108,10 +5118,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -5907,6 +5915,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -5920,10 +5932,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -6591,6 +6601,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -6604,10 +6618,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -7565,6 +7577,10 @@ export interface Routes {
         /** Unique identifier for the device. */
         device_id: string
         device_type: 'android_phone' | 'ios_phone'
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -7643,6 +7659,10 @@ export interface Routes {
         /** Unique identifier for the device. */
         device_id: string
         device_type: 'android_phone' | 'ios_phone'
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -7940,6 +7960,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -7953,10 +7977,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -8834,6 +8856,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -8847,10 +8873,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
@@ -9810,6 +9834,10 @@ export interface Routes {
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
           | ('ios_phone' | 'android_phone')
+        /** Optional nickname to describe the device, settable through Seam */
+        nickname?: string | undefined
+        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        display_name: string
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -9823,10 +9851,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          /** Name of the device. Deprecated - use device.display_name instead */
           name: string
-          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
-          nickname?: string | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
