@@ -19,13 +19,7 @@ export const common_device_properties = z.object({
   name: z
     .string()
     .describe(
-      'Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
-    ),
-  nickname: z
-    .string()
-    .optional()
-    .describe(
-      'Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+      'Name of the device. Deprecated - use device.display_name instead',
     ),
   appearance: z.object({
     name: z
@@ -113,6 +107,17 @@ export const managed_device = z
   .object({
     device_id: z.string().uuid().describe('Unique identifier for the device.'),
     device_type: any_device_type.describe('Type of the device.'),
+    nickname: z
+      .string()
+      .optional()
+      .describe(
+        'Optional nickname to describe the device, settable through Seam',
+      ),
+    display_name: z
+      .string()
+      .describe(
+        'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+      ),
     capabilities_supported: z
       .array(capabilities)
       .describe(
