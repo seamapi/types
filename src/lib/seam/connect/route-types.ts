@@ -2239,6 +2239,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -3045,6 +3051,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -4414,6 +4426,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -5092,6 +5110,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -5898,6 +5922,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -6576,6 +6606,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -7919,6 +7955,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -8807,6 +8849,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
@@ -9777,6 +9825,12 @@ export interface Routes {
           online: boolean
           /** Name of the device. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
           name: string
+          /** Optional nickname to describe the device, settable through Seam. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+          nickname?: string | undefined
+          appearance: {
+            /** Name of the device as seen from the provider API and application, not settable through Seam. */
+            name: string
+          }
           model: {
             /** Display name of the device model. */
             display_name: string
