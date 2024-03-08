@@ -185,6 +185,7 @@ export default {
       acs_system: {
         properties: {
           acs_system_id: { format: 'uuid', type: 'string' },
+          can_automate_enrollment: { type: 'boolean' },
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: {
