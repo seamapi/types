@@ -610,7 +610,7 @@ export default {
                 enum: [
                   'ecobee_thermostat',
                   'nest_thermostat',
-                  'honeywell_thermostat',
+                  'honeywell_resideo_thermostat',
                 ],
                 type: 'string',
               },
@@ -948,12 +948,15 @@ export default {
                         required: ['device_name', 'door_name'],
                         type: 'object',
                       },
-                      honeywell_metadata: {
+                      honeywell_resideo_metadata: {
                         properties: {
                           device_name: { type: 'string' },
-                          honeywell_device_id: { type: 'string' },
+                          honeywell_resideo_device_id: { type: 'string' },
                         },
-                        required: ['honeywell_device_id', 'device_name'],
+                        required: [
+                          'honeywell_resideo_device_id',
+                          'device_name',
+                        ],
                         type: 'object',
                       },
                       hubitat_metadata: {
@@ -1784,7 +1787,7 @@ export default {
               'assa_abloy_credential_service',
               'seam_bridge',
               'tedee',
-              'honeywell',
+              'honeywell_resideo',
             ],
             type: 'string',
           },
@@ -2174,7 +2177,7 @@ export default {
                 enum: [
                   'ecobee_thermostat',
                   'nest_thermostat',
-                  'honeywell_thermostat',
+                  'honeywell_resideo_thermostat',
                 ],
                 type: 'string',
               },
@@ -7092,7 +7095,7 @@ export default {
                         'assa_abloy_credential_service',
                         'seam_bridge',
                         'tedee',
-                        'honeywell',
+                        'honeywell_resideo',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -7744,7 +7747,7 @@ export default {
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
-                          'honeywell_thermostat',
+                          'honeywell_resideo_thermostat',
                         ],
                         type: 'string',
                       },
@@ -7793,7 +7796,7 @@ export default {
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
-                            'honeywell_thermostat',
+                            'honeywell_resideo_thermostat',
                           ],
                           type: 'string',
                         },
@@ -7841,7 +7844,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell',
+                      'honeywell_resideo',
                     ],
                     type: 'string',
                   },
@@ -8071,7 +8074,7 @@ export default {
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
-                          'honeywell_thermostat',
+                          'honeywell_resideo_thermostat',
                         ],
                         type: 'string',
                       },
@@ -8120,7 +8123,7 @@ export default {
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
-                            'honeywell_thermostat',
+                            'honeywell_resideo_thermostat',
                           ],
                           type: 'string',
                         },
@@ -8168,7 +8171,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell',
+                      'honeywell_resideo',
                     ],
                     type: 'string',
                   },
@@ -9006,7 +9009,7 @@ export default {
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
-                          'honeywell_thermostat',
+                          'honeywell_resideo_thermostat',
                         ],
                         type: 'string',
                       },
@@ -9055,7 +9058,7 @@ export default {
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
-                            'honeywell_thermostat',
+                            'honeywell_resideo_thermostat',
                           ],
                           type: 'string',
                         },
@@ -9103,7 +9106,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell',
+                      'honeywell_resideo',
                     ],
                     type: 'string',
                   },
@@ -10703,7 +10706,7 @@ export default {
                         enum: [
                           'ecobee_thermostat',
                           'nest_thermostat',
-                          'honeywell_thermostat',
+                          'honeywell_resideo_thermostat',
                         ],
                         type: 'string',
                       },
@@ -10752,7 +10755,7 @@ export default {
                           enum: [
                             'ecobee_thermostat',
                             'nest_thermostat',
-                            'honeywell_thermostat',
+                            'honeywell_resideo_thermostat',
                           ],
                           type: 'string',
                         },
@@ -10800,7 +10803,7 @@ export default {
                       'smartthings',
                       'dormakaba_oracode',
                       'tedee',
-                      'honeywell',
+                      'honeywell_resideo',
                     ],
                     type: 'string',
                   },

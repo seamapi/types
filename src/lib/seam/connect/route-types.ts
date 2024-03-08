@@ -1919,7 +1919,7 @@ export interface Routes {
             | 'assa_abloy_credential_service'
             | 'seam_bridge'
             | 'tedee'
-            | 'honeywell'
+            | 'honeywell_resideo'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -2224,7 +2224,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -2479,9 +2483,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -2919,7 +2923,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -2954,7 +2962,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -2993,7 +3005,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
-            | 'honeywell'
+            | 'honeywell_resideo'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -3038,7 +3050,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -3293,9 +3309,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -3747,7 +3763,7 @@ export interface Routes {
           | 'assa_abloy_credential_service'
           | 'seam_bridge'
           | 'tedee'
-          | 'honeywell'
+          | 'honeywell_resideo'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -3805,7 +3821,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -3916,7 +3936,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -3951,7 +3975,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -3990,7 +4018,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
-            | 'honeywell'
+            | 'honeywell_resideo'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -4035,7 +4063,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
@@ -4415,7 +4447,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -4670,9 +4706,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -5101,7 +5137,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -5356,9 +5396,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -5796,7 +5836,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -5831,7 +5875,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -5870,7 +5918,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
-            | 'honeywell'
+            | 'honeywell_resideo'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -5915,7 +5963,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -6170,9 +6222,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -6601,7 +6653,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -6856,9 +6912,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -7960,7 +8016,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -8215,9 +8275,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -8737,7 +8797,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           )
         | undefined
@@ -8772,7 +8836,11 @@ export interface Routes {
                 | 'tedee_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
-            | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+            | (
+                | 'ecobee_thermostat'
+                | 'nest_thermostat'
+                | 'honeywell_resideo_thermostat'
+              )
             | ('ios_phone' | 'android_phone')
           >
         | undefined
@@ -8811,7 +8879,7 @@ export interface Routes {
             | 'smartthings'
             | 'dormakaba_oracode'
             | 'tedee'
-            | 'honeywell'
+            | 'honeywell_resideo'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -8856,7 +8924,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -9111,9 +9183,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
@@ -9834,7 +9906,11 @@ export interface Routes {
               | 'tedee_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
-          | ('ecobee_thermostat' | 'nest_thermostat' | 'honeywell_thermostat')
+          | (
+              | 'ecobee_thermostat'
+              | 'nest_thermostat'
+              | 'honeywell_resideo_thermostat'
+            )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -10089,9 +10165,9 @@ export interface Routes {
                 device_name: string
               }
             | undefined
-          honeywell_metadata?:
+          honeywell_resideo_metadata?:
             | {
-                honeywell_device_id: string
+                honeywell_resideo_device_id: string
                 device_name: string
               }
             | undefined
