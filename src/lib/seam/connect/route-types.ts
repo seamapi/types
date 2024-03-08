@@ -1336,6 +1336,7 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
+        can_automate_enrollment?: boolean | undefined
       }
     }
   }
@@ -1377,6 +1378,7 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
+        can_automate_enrollment?: boolean | undefined
       }>
     }
   }
@@ -10524,6 +10526,7 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
+        can_automate_enrollment?: boolean | undefined
       }>
     }
   }

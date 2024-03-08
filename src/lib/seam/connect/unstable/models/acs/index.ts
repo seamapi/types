@@ -1,4 +1,5 @@
 export * from './access_group.js'
+export * from './acs_system_capability_flags.js'
 export * from './credential.js'
 export * from './credential_pool.js'
 export * from './credential_provisioning_automation.js'
