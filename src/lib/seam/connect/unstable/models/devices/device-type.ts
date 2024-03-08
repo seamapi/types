@@ -66,7 +66,7 @@ export type NoiseSensorDeviceType = z.infer<typeof noise_sensor_device_type>
 export const THERMOSTAT_DEVICE_TYPE = {
   ECOBEE_THERMOSTAT: 'ecobee_thermostat',
   NEST_THERMOSTAT: 'nest_thermostat',
-  HONEYWELL_THERMOSTAT: 'honeywell_thermostat',
+  HONEYWELL_RESIDEO_THERMOSTAT: 'honeywell_resideo_thermostat',
 } as const
 
 type ThermostatDeviceTypeFromMapping =
