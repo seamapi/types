@@ -523,6 +523,7 @@ export default {
       device: {
         properties: {
           can_program_online_access_codes: { type: 'boolean' },
+          can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
           capabilities_supported: {
             description:
@@ -1873,6 +1874,7 @@ export default {
       phone: {
         properties: {
           can_program_online_access_codes: { type: 'boolean' },
+          can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
           capabilities_supported: {
             description:
@@ -2101,6 +2103,7 @@ export default {
       unmanaged_device: {
         properties: {
           can_program_online_access_codes: { type: 'boolean' },
+          can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
           capabilities_supported: {
             description:

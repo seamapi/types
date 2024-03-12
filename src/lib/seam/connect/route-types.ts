@@ -2878,6 +2878,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
     }
@@ -3704,6 +3705,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
@@ -3891,6 +3893,7 @@ export interface Routes {
           }
         }
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
     }
@@ -4133,6 +4136,7 @@ export interface Routes {
           }
         }
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
@@ -5103,6 +5107,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
       device: {
@@ -5793,6 +5798,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
     }
@@ -6619,6 +6625,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
       devices: Array<{
@@ -7309,6 +7316,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
@@ -7686,6 +7694,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
@@ -7768,6 +7777,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
     }
@@ -8672,6 +8682,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }
     }
@@ -9580,6 +9591,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
@@ -10562,6 +10574,7 @@ export interface Routes {
         is_managed: true
         custom_metadata?: Record<string, string | boolean | null> | undefined
         can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
       }>
     }
