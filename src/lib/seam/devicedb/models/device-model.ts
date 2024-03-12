@@ -53,6 +53,7 @@ const smartlock = z
     device_model_capability_flags.pick({
       can_remotely_lock: true,
       can_remotely_unlock: true,
+      can_program_offline_access_codes: true,
       can_program_online_access_codes: true,
     }),
   )

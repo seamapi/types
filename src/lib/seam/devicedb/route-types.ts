@@ -99,6 +99,7 @@ export interface Routes {
             }
             can_remotely_lock?: true | undefined
             can_remotely_unlock?: true | undefined
+            can_program_offline_access_codes?: true | undefined
             can_program_online_access_codes?: true | undefined
           }
         | {
@@ -275,6 +276,7 @@ export interface Routes {
               }
               can_remotely_lock?: true | undefined
               can_remotely_unlock?: true | undefined
+              can_program_offline_access_codes?: true | undefined
               can_program_online_access_codes?: true | undefined
             }
           | {
