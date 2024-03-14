@@ -3779,6 +3779,17 @@ export interface Routes {
       }>
     }
   }
+  '/devices/simulate/remove': {
+    route: '/devices/simulate/remove'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/devices/unmanaged/get': {
     route: '/devices/unmanaged/get'
     method: 'GET' | 'POST'
