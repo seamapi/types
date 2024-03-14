@@ -4240,7 +4240,6 @@ export default {
                   acs_user_id: { format: 'uuid', type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
                   ends_at: { format: 'date-time', type: 'string' },
-                  external_type: { enum: ['visionline_card'], type: 'string' },
                   is_multi_phone_sync_credential: {
                     default: false,
                     type: 'boolean',
