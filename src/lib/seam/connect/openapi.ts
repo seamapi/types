@@ -1789,6 +1789,7 @@ export default {
               'seam_bridge',
               'tedee',
               'honeywell_resideo',
+              'latch',
             ],
             type: 'string',
           },
@@ -7099,6 +7100,7 @@ export default {
                         'seam_bridge',
                         'tedee',
                         'honeywell_resideo',
+                        'latch',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
@@ -7948,6 +7950,47 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list_device_providers',
         'x-fern-sdk-return-value': 'device_providers',
+      },
+    },
+    '/devices/simulate/remove': {
+      post: {
+        operationId: 'devicesSimulateRemovePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { format: 'uuid', type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/devices/simulate/remove',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'remove',
       },
     },
     '/devices/unmanaged/get': {

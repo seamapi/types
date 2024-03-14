@@ -1921,6 +1921,7 @@ export interface Routes {
             | 'seam_bridge'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'latch'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -3767,6 +3768,7 @@ export interface Routes {
           | 'seam_bridge'
           | 'tedee'
           | 'honeywell_resideo'
+          | 'latch'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -3778,6 +3780,17 @@ export interface Routes {
         >
       }>
     }
+  }
+  '/devices/simulate/remove': {
+    route: '/devices/simulate/remove'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/devices/unmanaged/get': {
     route: '/devices/unmanaged/get'
