@@ -669,6 +669,19 @@ export default {
                     allOf: [
                       {
                         properties: {
+                          accessory_keypad: {
+                            description:
+                              'Represents the accessory keypad state.',
+                            properties: {
+                              is_connected: {
+                                description:
+                                  'Indicates if the accessory_keypad is connected to the device.',
+                                type: 'boolean',
+                              },
+                            },
+                            required: ['is_connected'],
+                            type: 'object',
+                          },
                           appearance: {
                             properties: {
                               name: {
@@ -725,10 +738,20 @@ export default {
                                   'Indicates whether the device supports an accessory keypad.',
                                 type: 'boolean',
                               },
+                              can_connect_accessory_keypad: {
+                                description:
+                                  'Indicates whether the device can connect a accessory keypad.',
+                                type: 'boolean',
+                              },
                               display_name: {
                                 description:
                                   'Display name of the device model.',
                                 type: 'string',
+                              },
+                              has_built_in_keypad: {
+                                description:
+                                  'Indicates whether the device has a built in accessory keypad.',
+                                type: 'boolean',
                               },
                               manufacturer_display_name: {
                                 description:
@@ -2244,9 +2267,19 @@ export default {
                       'Indicates whether the device supports an accessory keypad.',
                     type: 'boolean',
                   },
+                  can_connect_accessory_keypad: {
+                    description:
+                      'Indicates whether the device can connect a accessory keypad.',
+                    type: 'boolean',
+                  },
                   display_name: {
                     description: 'Display name of the device model.',
                     type: 'string',
+                  },
+                  has_built_in_keypad: {
+                    description:
+                      'Indicates whether the device has a built in accessory keypad.',
+                    type: 'boolean',
                   },
                   manufacturer_display_name: {
                     description:
