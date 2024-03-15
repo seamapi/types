@@ -2250,15 +2250,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -3077,15 +3088,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -3893,10 +3915,14 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -4136,10 +4162,14 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -4491,15 +4521,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -5182,15 +5223,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -6009,15 +6061,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -6700,15 +6763,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -8066,15 +8140,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -8975,15 +9060,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
@@ -9958,15 +10054,26 @@ export interface Routes {
           online: boolean
           /** Name of the device. Deprecated - use device.display_name instead */
           name: string
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           appearance: {
             /** Name of the device as seen from the provider API and application, not settable through Seam. */
             name: string
           }
           model: {
+            /** Indicates whether the device can connect a accessory keypad. */
+            can_connect_accessory_keypad?: boolean | undefined
             /** Display name of the device model. */
             display_name: string
             /** Display name that corresponds to the manufacturer-specific terminology for the device. */
             manufacturer_display_name: string
+            /** Indicates whether the device has a built in accessory keypad. */
+            has_built_in_keypad?: boolean | undefined
             /** Indicates whether the device supports offline access codes. */
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
