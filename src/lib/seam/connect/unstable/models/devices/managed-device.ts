@@ -21,6 +21,16 @@ export const common_device_properties = z.object({
     .describe(
       'Name of the device. Deprecated - use device.display_name instead',
     ),
+  accessory_keypad: z
+    .object({
+      is_connected: z
+        .boolean()
+        .describe(
+          'Indicates if the accessory_keypad is connected to the device.',
+        ),
+    })
+    .optional()
+    .describe('Represents the accessory keypad state.'),
   appearance: z.object({
     name: z
       .string()
@@ -29,13 +39,22 @@ export const common_device_properties = z.object({
       ),
   }),
   model: z.object({
+    can_connect_accessory_keypad: z
+      .boolean()
+      .optional()
+      .describe('Indicates whether the device can connect a accessory keypad.'),
     display_name: z.string().describe('Display name of the device model.'),
     manufacturer_display_name: z
       .string()
       .describe(
         'Display name that corresponds to the manufacturer-specific terminology for the device.',
       ),
-
+    has_built_in_keypad: z
+      .boolean()
+      .optional()
+      .describe(
+        'Indicates whether the device has a built in accessory keypad.',
+      ),
     offline_access_codes_supported: z
       .boolean()
       .optional()
