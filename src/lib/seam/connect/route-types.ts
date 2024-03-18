@@ -1178,9 +1178,17 @@ export interface Routes {
     jsonResponse: {
       acs_entrance: {
         acs_entrance_id: string
+        latch_door_id: string | null
+        visionline_door_id: string | null
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1224,9 +1232,17 @@ export interface Routes {
     jsonResponse: {
       acs_entrances: Array<{
         acs_entrance_id: string
+        latch_door_id: string | null
+        visionline_door_id: string | null
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1564,9 +1580,17 @@ export interface Routes {
     jsonResponse: {
       acs_entrances: Array<{
         acs_entrance_id: string
+        latch_door_id: string | null
+        visionline_door_id: string | null
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
