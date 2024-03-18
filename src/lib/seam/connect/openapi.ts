@@ -5313,6 +5313,32 @@ export default {
                         acs_system_id: { format: 'uuid', type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { type: 'string' },
+                        latch_door_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        latch_metadata: {
+                          nullable: true,
+                          properties: {
+                            accessibility_type: { type: 'string' },
+                            is_connected: { type: 'boolean' },
+                            name: { type: 'string' },
+                            type: { type: 'string' },
+                          },
+                          required: [
+                            'accessibility_type',
+                            'name',
+                            'type',
+                            'is_connected',
+                          ],
+                          type: 'object',
+                        },
+                        visionline_door_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
                         visionline_metadata: {
                           nullable: true,
                           properties: {
@@ -5353,9 +5379,12 @@ export default {
                       },
                       required: [
                         'acs_entrance_id',
+                        'latch_door_id',
+                        'visionline_door_id',
                         'display_name',
                         'acs_system_id',
                         'created_at',
+                        'latch_metadata',
                         'visionline_metadata',
                       ],
                       type: 'object',
@@ -5458,6 +5487,32 @@ export default {
                           acs_system_id: { format: 'uuid', type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { type: 'string' },
+                          latch_door_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          latch_metadata: {
+                            nullable: true,
+                            properties: {
+                              accessibility_type: { type: 'string' },
+                              is_connected: { type: 'boolean' },
+                              name: { type: 'string' },
+                              type: { type: 'string' },
+                            },
+                            required: [
+                              'accessibility_type',
+                              'name',
+                              'type',
+                              'is_connected',
+                            ],
+                            type: 'object',
+                          },
+                          visionline_door_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           visionline_metadata: {
                             nullable: true,
                             properties: {
@@ -5498,9 +5553,12 @@ export default {
                         },
                         required: [
                           'acs_entrance_id',
+                          'latch_door_id',
+                          'visionline_door_id',
                           'display_name',
                           'acs_system_id',
                           'created_at',
+                          'latch_metadata',
                           'visionline_metadata',
                         ],
                         type: 'object',
@@ -6088,6 +6146,32 @@ export default {
                           acs_system_id: { format: 'uuid', type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { type: 'string' },
+                          latch_door_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          latch_metadata: {
+                            nullable: true,
+                            properties: {
+                              accessibility_type: { type: 'string' },
+                              is_connected: { type: 'boolean' },
+                              name: { type: 'string' },
+                              type: { type: 'string' },
+                            },
+                            required: [
+                              'accessibility_type',
+                              'name',
+                              'type',
+                              'is_connected',
+                            ],
+                            type: 'object',
+                          },
+                          visionline_door_id: {
+                            format: 'uuid',
+                            nullable: true,
+                            type: 'string',
+                          },
                           visionline_metadata: {
                             nullable: true,
                             properties: {
@@ -6128,9 +6212,12 @@ export default {
                         },
                         required: [
                           'acs_entrance_id',
+                          'latch_door_id',
+                          'visionline_door_id',
                           'display_name',
                           'acs_system_id',
                           'created_at',
+                          'latch_metadata',
                           'visionline_metadata',
                         ],
                         type: 'object',
@@ -9275,9 +9362,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
         ],
         summary: '/locks/lock_door',
         tags: ['/locks'],
