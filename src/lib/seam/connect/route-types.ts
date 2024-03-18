@@ -1181,6 +1181,12 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1227,6 +1233,12 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1567,6 +1579,12 @@ export interface Routes {
         display_name: string
         acs_system_id: string
         created_at: string
+        latch_metadata: {
+          accessibility_type: string
+          name: string
+          type: string
+          is_connected: boolean
+        } | null
         visionline_metadata: {
           door_name: string
           door_category:
