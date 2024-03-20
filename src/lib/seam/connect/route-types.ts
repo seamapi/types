@@ -2910,6 +2910,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
     }
   }
@@ -3748,6 +3749,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }
@@ -3952,6 +3954,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
     }
   }
@@ -4199,6 +4202,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }
@@ -5181,6 +5185,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
       device: {
         /** Unique identifier for the device. */
@@ -5883,6 +5888,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
     }
   }
@@ -6721,6 +6727,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
       devices: Array<{
         /** Unique identifier for the device. */
@@ -7423,6 +7430,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }
@@ -7801,6 +7809,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }
@@ -7884,6 +7893,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
     }
   }
@@ -8800,6 +8810,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }
     }
   }
@@ -9720,6 +9731,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }
@@ -10714,6 +10726,7 @@ export interface Routes {
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
       }>
     }
   }

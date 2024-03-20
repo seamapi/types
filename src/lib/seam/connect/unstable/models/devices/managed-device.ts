@@ -10,6 +10,11 @@ import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
 
+export const device_capability_flags =
+  devicedb_schemas.device_capability_flags.extend({
+    can_simulate_removal: z.boolean().optional(),
+  })
+
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
 
 export type BatteryStatus = z.infer<typeof battery_status>
@@ -202,7 +207,7 @@ export const managed_device = z
       .describe('Indicates whether Seam manages the device.'),
     custom_metadata: custom_metadata.optional(),
   })
-  .merge(devicedb_schemas.device_capability_flags)
+  .merge(device_capability_flags)
 
 export type ManagedDevice = z.infer<typeof managed_device>
 
