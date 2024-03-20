@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
 
-import { custom_metadata } from '../../../stable/models/custom-metadata.js'
+import { custom_metadata } from '../../../models/custom-metadata.js'
 import { capability_properties } from '../capability-properties/index.js'
 import { capabilities } from './capabilities-supported.js'
 import { device_metadata } from './device-metadata.js'
