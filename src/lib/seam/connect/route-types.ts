@@ -3045,6 +3045,22 @@ export interface Routes {
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
       custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      include_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
+      exclude_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
     }
     formData: {}
     jsonResponse: {
@@ -4089,6 +4105,22 @@ export interface Routes {
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
       custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      include_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
+      exclude_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
     }
     formData: {}
     jsonResponse: {
@@ -6023,6 +6055,22 @@ export interface Routes {
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
       custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      include_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
+      exclude_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
     }
     formData: {}
     jsonResponse: {
@@ -9027,6 +9075,22 @@ export interface Routes {
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
       custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      include_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
+      exclude_if?:
+        | Array<
+            | 'can_remotely_unlock'
+            | 'can_remotely_lock'
+            | 'can_program_online_access_codes'
+            | 'can_simulate_removal'
+          >
+        | undefined
     }
     formData: {}
     jsonResponse: {
