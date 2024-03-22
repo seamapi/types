@@ -7901,6 +7901,30 @@ export default {
                     },
                     type: 'array',
                   },
+                  exclude_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
                   limit: { default: 500, nullable: true, type: 'number' },
                   manufacturer: {
                     enum: [
@@ -8266,6 +8290,30 @@ export default {
                           type: 'string',
                         },
                       ],
+                    },
+                    type: 'array',
+                  },
+                  exclude_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
                     },
                     type: 'array',
                   },
@@ -9204,6 +9252,30 @@ export default {
                           type: 'string',
                         },
                       ],
+                    },
+                    type: 'array',
+                  },
+                  exclude_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
                     },
                     type: 'array',
                   },
@@ -10915,6 +10987,30 @@ export default {
                           type: 'string',
                         },
                       ],
+                    },
+                    type: 'array',
+                  },
+                  exclude_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
+                    },
+                    type: 'array',
+                  },
+                  include_if: {
+                    items: {
+                      enum: [
+                        'can_remotely_unlock',
+                        'can_remotely_lock',
+                        'can_program_online_access_codes',
+                        'can_simulate_removal',
+                      ],
+                      type: 'string',
                     },
                     type: 'array',
                   },
