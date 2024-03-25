@@ -20,12 +20,16 @@ export const acs_system = z
     acs_system_id: z.string().uuid(),
     external_type: acs_system_external_type,
     external_type_display_name: z.string(),
-    system_type: acs_system_external_type.describe(
-      'deprecated: use external_type',
-    ),
-    system_type_display_name: z
-      .string()
-      .describe('deprecated: use external_type_display_name'),
+    system_type: acs_system_external_type.describe(`
+      ---
+      deprecated: use external_type
+      ---
+      `),
+    system_type_display_name: z.string().describe(`
+      ---
+      deprecated: use external_type_display_name
+      ---
+      `),
     name: z.string(),
     created_at: z.string().datetime(),
     workspace_id: z.string().uuid(),
