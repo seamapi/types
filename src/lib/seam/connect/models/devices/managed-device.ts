@@ -3,8 +3,8 @@ import { z } from 'zod'
 
 import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
 
-import { custom_metadata } from '../../../models/custom-metadata.js'
 import { capability_properties } from '../capability-properties/index.js'
+import { custom_metadata } from '../custom-metadata.js'
 import { capabilities } from './capabilities-supported.js'
 import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
@@ -21,11 +21,12 @@ export type BatteryStatus = z.infer<typeof battery_status>
 
 export const common_device_properties = z.object({
   online: z.boolean().describe('Indicates whether the device is online.'),
-  name: z
-    .string()
-    .describe(
-      'Name of the device. Deprecated - use device.display_name instead',
-    ),
+  name: z.string().describe(`
+      ---
+      deprecated: use device.display_name instead
+      ---
+      Name of the device.
+      `),
   accessory_keypad: z
     .object({
       is_connected: z
@@ -119,11 +120,23 @@ export const common_device_properties = z.object({
   // Deprecated legacy capability support props
   supports_accessory_keypad: z
     .boolean()
-    .describe('Deprecated. Use model.accessory_keypad_supported.')
+    .describe(
+      `
+      ---
+      deprecated: use model.accessory_keypad_supported
+      ---
+      `,
+    )
     .optional(),
   supports_offline_access_codes: z
     .boolean()
-    .describe('Deprecated. Use offline_access_codes_enabled.')
+    .describe(
+      `
+      ---
+      deprecated: use offline_access_codes_enabled
+      ---
+      `,
+    )
     .optional(),
 })
 

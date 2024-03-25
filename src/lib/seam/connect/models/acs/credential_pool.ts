@@ -9,7 +9,7 @@ export type AcsCredentialPoolExternalType = z.infer<
 export const acs_credential_pool = z.object({
   acs_credential_pool_id: z.string().uuid(),
   acs_system_id: z.string().uuid(),
-  display_name: z.string().nonempty(),
+  display_name: z.string().min(1),
   external_type: acs_credential_pool_external_type,
   external_type_display_name: z.string(),
   created_at: z.string().datetime(),
