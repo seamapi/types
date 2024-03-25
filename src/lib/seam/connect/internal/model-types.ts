@@ -6,6 +6,7 @@ export type {
   AcsCredentialExternalType,
   AcsCredentialPool,
   AcsCredentialPoolExternalType,
+  AcsEntranceLatchMetadata,
   AcsSystem,
   AcsSystemExternalType,
   AcsUser,
@@ -14,7 +15,12 @@ export type {
   BatteryStatus,
   Capabilities,
   ClimateSetting,
+  ConnectWebview,
+  CustomMetadata,
+  ManagedDevice as Device,
   DeviceMetadata,
+  FanModeSetting,
+  HvacModeSetting,
   LockDeviceType,
   ManagedAccessCode,
   ManagedDevice,
@@ -23,4 +29,4 @@ export type {
   ThermostatDeviceType,
   UnmanagedAccessCode,
   UnmanagedDevice,
-} from './models/index.js'
+} from '../models/index.js'

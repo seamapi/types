@@ -17,12 +17,16 @@ export const acs_access_group = z.object({
   acs_system_id: z.string().uuid(),
   workspace_id: z.string().uuid(),
   name: z.string(),
-  access_group_type: acs_access_group_external_type.describe(
-    'deprecated: use external_type',
-  ),
-  access_group_type_display_name: z
-    .string()
-    .describe('deprecated: use external_type_display_name'),
+  access_group_type: acs_access_group_external_type.describe(`
+    ---
+    deprecated: use external_type
+    ---
+  `),
+  access_group_type_display_name: z.string().describe(`
+    ---
+    deprecated: use external_type_display_name
+    ---
+    `),
   external_type: acs_access_group_external_type,
   external_type_display_name: z.string(),
   created_at: z.string().datetime(),
