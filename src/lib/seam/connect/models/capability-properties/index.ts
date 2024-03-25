@@ -33,4 +33,8 @@ export const capability_properties = z.intersection(
 )
 
 export type { AccessCodeConstraint } from './access-code.js'
-export type { ClimateSetting, HvacModeSetting } from './thermostat.js'
+export type {
+  ClimateSetting,
+  FanModeSetting,
+  HvacModeSetting,
+} from './thermostat.js'

@@ -3,6 +3,7 @@ export {
   LOCK_DEVICE_TYPE_LIST,
   NOISE_SENSOR_DEVICE_TYPE,
   NOISE_SENSOR_DEVICE_TYPE_LIST,
+  PHONE_DEVICE_TYPE,
   THERMOSTAT_DEVICE_TYPE,
   THERMOSTAT_DEVICE_TYPE_LIST,
-} from './unstable/models/index.js'
+} from '../models/index.js'
