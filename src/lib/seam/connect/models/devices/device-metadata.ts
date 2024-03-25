@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const dormakaba_oracode_time_slot_schema = z.object({
+export const dormakaba_oracode_time_slot = z.object({
   name: z.string(),
   prefix: z.number(),
   // Seam TOD
@@ -192,9 +192,7 @@ export const device_metadata = z
       site_id: z.number(),
       site_name: z.string(),
       iana_timezone: z.string().optional(),
-      predefined_time_slots: z
-        .array(dormakaba_oracode_time_slot_schema)
-        .optional(),
+      predefined_time_slots: z.array(dormakaba_oracode_time_slot).optional(),
     }),
 
     wyze_metadata: z.object({
