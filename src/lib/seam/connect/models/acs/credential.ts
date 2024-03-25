@@ -34,7 +34,7 @@ export const acs_credential = z.object({
   acs_credential_pool_id: z.string().uuid().optional(),
   acs_system_id: z.string().uuid(),
   parent_acs_credential_id: z.string().uuid().optional(),
-  display_name: z.string().nonempty(),
+  display_name: z.string().min(1),
   code: z.string().optional().nullable(),
   access_method: acs_credential_access_method_type,
   external_type: acs_credential_external_type.optional(),
