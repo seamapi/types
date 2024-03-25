@@ -140,7 +140,8 @@ export default {
       acs_access_group: {
         properties: {
           access_group_type: {
-            description: 'deprecated: use external_type',
+            description:
+              '\n    ---\n    deprecated: use external_type\n    ---\n  ',
             enum: [
               'pti_unit',
               'pti_access_level',
@@ -150,7 +151,8 @@ export default {
             type: 'string',
           },
           access_group_type_display_name: {
-            description: 'deprecated: use external_type_display_name',
+            description:
+              '\n    ---\n    deprecated: use external_type_display_name\n    ---\n    ',
             type: 'string',
           },
           acs_access_group_id: { format: 'uuid', type: 'string' },
@@ -197,6 +199,7 @@ export default {
               'hid_credential_manager_organization',
               'visionline_system',
               'assa_abloy_credential_service',
+              'latch_building',
             ],
             type: 'string',
           },
@@ -205,7 +208,8 @@ export default {
           image_url: { type: 'string' },
           name: { type: 'string' },
           system_type: {
-            description: 'deprecated: use external_type',
+            description:
+              '\n      ---\n      deprecated: use external_type\n      ---\n      ',
             enum: [
               'pti_site',
               'alta_org',
@@ -214,11 +218,13 @@ export default {
               'hid_credential_manager_organization',
               'visionline_system',
               'assa_abloy_credential_service',
+              'latch_building',
             ],
             type: 'string',
           },
           system_type_display_name: {
-            description: 'deprecated: use external_type_display_name',
+            description:
+              '\n      ---\n      deprecated: use external_type_display_name\n      ---\n      ',
             type: 'string',
           },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -253,7 +259,8 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           display_name: { type: 'string' },
           email: {
-            description: 'Deprecated: use email_address.',
+            description:
+              '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
             format: 'email',
             type: 'string',
           },
@@ -386,7 +393,7 @@ export default {
           cooling_set_point_celsius: { type: 'number' },
           cooling_set_point_fahrenheit: { type: 'number' },
           created_at: { format: 'date-time', type: 'string' },
-          device_id: { type: 'string' },
+          device_id: { format: 'uuid', type: 'string' },
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
@@ -778,7 +785,7 @@ export default {
                           },
                           name: {
                             description:
-                              'Name of the device. Deprecated - use device.display_name instead',
+                              '\n      ---\n      deprecated: use device.display_name instead\n      ---\n      Name of the device.\n      ',
                             type: 'string',
                           },
                           offline_access_codes_enabled: {
@@ -802,12 +809,12 @@ export default {
                           },
                           supports_accessory_keypad: {
                             description:
-                              'Deprecated. Use model.accessory_keypad_supported.',
+                              '\n      ---\n      deprecated: use model.accessory_keypad_supported\n      ---\n      ',
                             type: 'boolean',
                           },
                           supports_offline_access_codes: {
                             description:
-                              'Deprecated. Use offline_access_codes_enabled.',
+                              '\n      ---\n      deprecated: use offline_access_codes_enabled\n      ---\n      ',
                             type: 'boolean',
                           },
                         },
@@ -1333,7 +1340,7 @@ export default {
                                 format: 'date-time',
                                 type: 'string',
                               },
-                              device_id: { type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
@@ -1476,7 +1483,7 @@ export default {
                                 format: 'date-time',
                                 type: 'string',
                               },
-                              device_id: { type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
@@ -1611,7 +1618,7 @@ export default {
                                 format: 'date-time',
                                 type: 'string',
                               },
-                              device_id: { type: 'string' },
+                              device_id: { format: 'uuid', type: 'string' },
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
@@ -2305,7 +2312,7 @@ export default {
               },
               name: {
                 description:
-                  'Name of the device. Deprecated - use device.display_name instead',
+                  '\n      ---\n      deprecated: use device.display_name instead\n      ---\n      Name of the device.\n      ',
                 type: 'string',
               },
               offline_access_codes_enabled: {
@@ -5913,7 +5920,8 @@ export default {
                   },
                   acs_system_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description: 'Deprecated: use email_address.',
+                    description:
+                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
                     format: 'email',
                     type: 'string',
                   },
@@ -6400,7 +6408,8 @@ export default {
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description: 'Deprecated: use email_address.',
+                    description:
+                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
                     format: 'email',
                     type: 'string',
                   },
@@ -6457,7 +6466,8 @@ export default {
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description: 'Deprecated: use email_address.',
+                    description:
+                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
                     format: 'email',
                     type: 'string',
                   },

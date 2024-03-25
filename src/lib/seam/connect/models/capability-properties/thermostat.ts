@@ -25,7 +25,7 @@ export const climate_setting_schedule = z
   .object({
     climate_setting_schedule_id: z.string().uuid(),
     schedule_type: z.literal('time_bound'),
-    device_id: z.string(),
+    device_id: z.string().uuid(),
     name: z.string().optional(),
     schedule_starts_at: z.string(),
     schedule_ends_at: z.string(),
