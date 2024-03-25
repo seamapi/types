@@ -1,7 +1,0 @@
-export * from './access-codes/index.js'
-export * from './acs/index.js'
-export * from './capability-properties/index.js'
-export * from './devices/index.js'
-export * from './network.js'
-export * from './phone-number.js'
-export * from './user-identity.js'
