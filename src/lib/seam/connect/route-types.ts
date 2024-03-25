@@ -665,13 +665,21 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
-        /** deprecated: use external_type */
+        /**
+            ---
+            deprecated: use external_type
+            ---
+           */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
-        /** deprecated: use external_type_display_name */
+        /**
+            ---
+            deprecated: use external_type_display_name
+            ---
+             */
         access_group_type_display_name: string
         external_type:
           | 'pti_unit'
@@ -699,13 +707,21 @@ export interface Routes {
         acs_system_id: string
         workspace_id: string
         name: string
-        /** deprecated: use external_type */
+        /**
+            ---
+            deprecated: use external_type
+            ---
+           */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
-        /** deprecated: use external_type_display_name */
+        /**
+            ---
+            deprecated: use external_type_display_name
+            ---
+             */
         access_group_type_display_name: string
         external_type:
           | 'pti_unit'
@@ -754,7 +770,11 @@ export interface Routes {
         user_identity_email_address?: string | undefined
         user_identity_phone_number?: string | undefined
         full_name?: string | undefined
-        /** Deprecated: use email_address. */
+        /**
+            ---
+            deprecated: use email_address.
+            ---
+             */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -1329,8 +1349,13 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
+          | 'latch_building'
         external_type_display_name: string
-        /** deprecated: use external_type */
+        /**
+              ---
+              deprecated: use external_type
+              ---
+               */
         system_type:
           | 'pti_site'
           | 'alta_org'
@@ -1339,7 +1364,12 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
-        /** deprecated: use external_type_display_name */
+          | 'latch_building'
+        /**
+              ---
+              deprecated: use external_type_display_name
+              ---
+               */
         system_type_display_name: string
         name: string
         created_at: string
@@ -1371,8 +1401,13 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
+          | 'latch_building'
         external_type_display_name: string
-        /** deprecated: use external_type */
+        /**
+              ---
+              deprecated: use external_type
+              ---
+               */
         system_type:
           | 'pti_site'
           | 'alta_org'
@@ -1381,7 +1416,12 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
-        /** deprecated: use external_type_display_name */
+          | 'latch_building'
+        /**
+              ---
+              deprecated: use external_type_display_name
+              ---
+               */
         system_type_display_name: string
         name: string
         created_at: string
@@ -1420,7 +1460,11 @@ export interface Routes {
           }
         | undefined
       full_name?: string | undefined
-      /** Deprecated: use email_address. */
+      /**
+        ---
+        deprecated: use email_address.
+        ---
+         */
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
@@ -1455,7 +1499,11 @@ export interface Routes {
         user_identity_email_address?: string | undefined
         user_identity_phone_number?: string | undefined
         full_name?: string | undefined
-        /** Deprecated: use email_address. */
+        /**
+            ---
+            deprecated: use email_address.
+            ---
+             */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -1510,7 +1558,11 @@ export interface Routes {
         user_identity_email_address?: string | undefined
         user_identity_phone_number?: string | undefined
         full_name?: string | undefined
-        /** Deprecated: use email_address. */
+        /**
+            ---
+            deprecated: use email_address.
+            ---
+             */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -1557,7 +1609,11 @@ export interface Routes {
         user_identity_email_address?: string | undefined
         user_identity_phone_number?: string | undefined
         full_name?: string | undefined
-        /** Deprecated: use email_address. */
+        /**
+            ---
+            deprecated: use email_address.
+            ---
+             */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -1661,7 +1717,11 @@ export interface Routes {
         | undefined
       acs_user_id: string
       full_name?: string | undefined
-      /** Deprecated: use email_address. */
+      /**
+        ---
+        deprecated: use email_address.
+        ---
+         */
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
@@ -2266,7 +2326,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -2318,9 +2383,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -3121,7 +3194,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -3173,9 +3251,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -3927,7 +4013,12 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -4191,7 +4282,12 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -4573,7 +4669,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -4625,9 +4726,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -5276,7 +5385,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -5328,9 +5442,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -6131,7 +6253,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -6183,9 +6310,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -6834,7 +6969,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -6886,9 +7026,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -8214,7 +8362,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -8266,9 +8419,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -9151,7 +9312,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -9203,9 +9369,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -10146,7 +10320,12 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /** Name of the device. Deprecated - use device.display_name instead */
+          /**
+                  ---
+                  deprecated: use device.display_name instead
+                  ---
+                  Name of the device.
+                   */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -10198,9 +10377,17 @@ export interface Routes {
           online_access_codes_enabled?: boolean | undefined
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
-          /** Deprecated. Use model.accessory_keypad_supported. */
+          /**
+                  ---
+                  deprecated: use model.accessory_keypad_supported
+                  ---
+                   */
           supports_accessory_keypad?: boolean | undefined
-          /** Deprecated. Use offline_access_codes_enabled. */
+          /**
+                  ---
+                  deprecated: use offline_access_codes_enabled
+                  ---
+                   */
           supports_offline_access_codes?: boolean | undefined
         } & {
           assa_abloy_credential_service_metadata?:
@@ -10814,8 +11001,13 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
+          | 'latch_building'
         external_type_display_name: string
-        /** deprecated: use external_type */
+        /**
+              ---
+              deprecated: use external_type
+              ---
+               */
         system_type:
           | 'pti_site'
           | 'alta_org'
@@ -10824,7 +11016,12 @@ export interface Routes {
           | 'hid_credential_manager_organization'
           | 'visionline_system'
           | 'assa_abloy_credential_service'
-        /** deprecated: use external_type_display_name */
+          | 'latch_building'
+        /**
+              ---
+              deprecated: use external_type_display_name
+              ---
+               */
         system_type_display_name: string
         name: string
         created_at: string
@@ -10873,7 +11070,11 @@ export interface Routes {
         user_identity_email_address?: string | undefined
         user_identity_phone_number?: string | undefined
         full_name?: string | undefined
-        /** Deprecated: use email_address. */
+        /**
+            ---
+            deprecated: use email_address.
+            ---
+             */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined

@@ -14,11 +14,11 @@ export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
 
 const user_fields = z.object({
   full_name: z.string().optional(),
-  email: z
-    .string()
-    .email()
-    .optional()
-    .describe('Deprecated: use email_address.'),
+  email: z.string().email().optional().describe(`
+    ---
+    deprecated: use email_address.
+    ---
+    `),
   email_address: z.string().email().optional(),
   phone_number: phone_number.optional(),
 })
