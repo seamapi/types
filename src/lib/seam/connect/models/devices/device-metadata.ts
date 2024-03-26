@@ -211,6 +211,7 @@ export const device_metadata = z
       device_model: z.string(),
       bridge_id: z.number(),
       bridge_name: z.string(),
+      keypad_id: z.number().optional(),
     }),
   })
   .partial()
