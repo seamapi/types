@@ -2641,6 +2641,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -3509,6 +3510,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -4984,6 +4986,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -5700,6 +5703,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -6568,6 +6572,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -7284,6 +7289,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -8677,6 +8683,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -9627,6 +9634,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
@@ -10635,6 +10643,7 @@ export interface Routes {
                 device_model: string
                 bridge_id: number
                 bridge_name: string
+                keypad_id?: number | undefined
               }
             | undefined
         }) &
