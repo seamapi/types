@@ -1207,6 +1207,7 @@ export default {
                           device_id: { type: 'number' },
                           device_model: { type: 'string' },
                           device_name: { type: 'string' },
+                          keypad_id: { type: 'number' },
                           serial_number: { type: 'string' },
                         },
                         required: [
