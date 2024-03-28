@@ -895,6 +895,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      credential_manager_acs_system_id?: string | undefined
       acs_user_id: string
       access_method: 'code' | 'card' | 'mobile_key'
       code?: string | undefined
@@ -1825,6 +1826,10 @@ export interface Routes {
         user_identifier_key: string | null
         created_at: string
         token: string
+        device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
+        user_identity_ids: string[]
         workspace_id: string
       }
     }
@@ -1883,6 +1888,10 @@ export interface Routes {
         user_identifier_key: string | null
         created_at: string
         token: string
+        device_count: number
+        connected_account_ids: string[]
+        connect_webview_ids: string[]
+        user_identity_ids: string[]
         workspace_id: string
       }
     }
