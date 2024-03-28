@@ -4282,6 +4282,11 @@ export default {
                     type: 'string',
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
+                  allowed_acs_entrance_ids: {
+                    default: [],
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   code: { pattern: '^\\d+$', type: 'string' },
                   credential_manager_acs_system_id: {
                     format: 'uuid',
