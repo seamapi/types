@@ -4283,6 +4283,10 @@ export default {
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
+                  credential_manager_acs_system_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   ends_at: { format: 'date-time', type: 'string' },
                   is_multi_phone_sync_credential: {
                     default: false,
