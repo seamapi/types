@@ -900,6 +900,7 @@ export interface Routes {
       access_method: 'code' | 'card' | 'mobile_key'
       code?: string | undefined
       is_multi_phone_sync_credential?: boolean
+      allowed_acs_entrance_ids?: string[]
       visionline_metadata?:
         | {
             assa_abloy_credential_service_mobile_endpoint_id?:
