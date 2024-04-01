@@ -20,6 +20,7 @@ export const unmanaged_device = managed_device
   .extend({
     is_managed: z.literal(false),
     properties: common_device_properties.pick({
+      accessory_keypad: true,
       name: true,
       online: true,
       manufacturer: true,

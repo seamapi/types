@@ -4025,6 +4025,13 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           /**
                   ---
                   deprecated: use device.display_name instead
@@ -4294,6 +4301,13 @@ export interface Routes {
         created_at: string
         is_managed: false
         properties: {
+          /** Represents the accessory keypad state. */
+          accessory_keypad?:
+            | {
+                /** Indicates if the accessory_keypad is connected to the device. */
+                is_connected: boolean
+              }
+            | undefined
           /**
                   ---
                   deprecated: use device.display_name instead
