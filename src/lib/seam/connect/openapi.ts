@@ -438,12 +438,7 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { maxLength: 500, type: 'string' },
-                { type: 'boolean' },
-                { format: 'null', nullable: true, type: 'string' },
-              ],
+              oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -499,12 +494,7 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { maxLength: 500, type: 'string' },
-                { type: 'boolean' },
-                { format: 'null', nullable: true, type: 'string' },
-              ],
+              oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -523,6 +513,7 @@ export default {
         },
         required: [
           'account_type_display_name',
+          'custom_metadata',
           'automatically_manage_new_devices',
         ],
         type: 'object',
@@ -563,12 +554,7 @@ export default {
           },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { maxLength: 500, type: 'string' },
-                { type: 'boolean' },
-                { format: 'null', nullable: true, type: 'string' },
-              ],
+              oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -681,6 +667,19 @@ export default {
                             description:
                               'Represents the accessory keypad state.',
                             properties: {
+                              battery: {
+                                description:
+                                  'Indicates if the keypad battery properties.',
+                                properties: {
+                                  level: {
+                                    maximum: 1,
+                                    minimum: 0,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['level'],
+                                type: 'object',
+                              },
                               is_connected: {
                                 description:
                                   'Indicates if the accessory_keypad is connected to the device.',
@@ -1778,6 +1777,7 @@ export default {
           'warnings',
           'created_at',
           'is_managed',
+          'custom_metadata',
         ],
         type: 'object',
       },
@@ -1934,12 +1934,7 @@ export default {
           },
           custom_metadata: {
             additionalProperties: {
-              nullable: true,
-              oneOf: [
-                { maxLength: 500, type: 'string' },
-                { type: 'boolean' },
-                { format: 'null', nullable: true, type: 'string' },
-              ],
+              oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
             type: 'object',
           },
@@ -2047,6 +2042,7 @@ export default {
           'warnings',
           'created_at',
           'is_managed',
+          'custom_metadata',
         ],
         type: 'object',
       },
@@ -7399,12 +7395,7 @@ export default {
                 properties: {
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
                       "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
@@ -7591,12 +7582,7 @@ export default {
                 properties: {
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
                       "Returns devices where the account's custom_metadata contains all of the provided key/value pairs.",
@@ -7818,12 +7804,7 @@ export default {
                   },
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     type: 'object',
                   },
@@ -8212,12 +8193,7 @@ export default {
                   },
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     type: 'object',
                   },
@@ -9174,12 +9150,7 @@ export default {
                   },
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     type: 'object',
                   },
@@ -10909,12 +10880,7 @@ export default {
                   },
                   custom_metadata_has: {
                     additionalProperties: {
-                      nullable: true,
-                      oneOf: [
-                        { maxLength: 500, type: 'string' },
-                        { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
-                      ],
+                      oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     type: 'object',
                   },

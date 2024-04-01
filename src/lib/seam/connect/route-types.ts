@@ -2046,7 +2046,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean | null>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -2090,7 +2090,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean | null>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -2106,7 +2106,7 @@ export interface Routes {
     commonParams: {
       user_identifier_key?: string | undefined
       /** Returns devices where the webview's custom_metadata contains all of the provided key/value pairs. */
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -2125,7 +2125,7 @@ export interface Routes {
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
         custom_redirect_failure_url: string | null
-        custom_metadata: Record<string, string | boolean | null>
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
         wait_for_device_creation: boolean
         authorized_at: string | null
@@ -2187,7 +2187,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
     }
@@ -2199,7 +2199,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       /** Returns devices where the account's custom_metadata contains all of the provided key/value pairs. */
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
     }
     formData: {}
     jsonResponse: {
@@ -2219,7 +2219,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }>
     }
@@ -2252,7 +2252,7 @@ export interface Routes {
         account_type_display_name: string
         errors?: any
         warnings?: any
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
     }
@@ -2348,6 +2348,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -2990,7 +2996,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -3128,7 +3134,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -3217,6 +3223,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -3859,7 +3871,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -4214,7 +4226,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -4707,6 +4719,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -5349,7 +5367,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -5424,6 +5442,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -6066,7 +6090,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -6204,7 +6228,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -6293,6 +6317,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -6935,7 +6965,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -7010,6 +7040,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -7652,7 +7688,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -8031,7 +8067,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -8115,7 +8151,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -8404,6 +8440,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -9046,7 +9088,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -9266,7 +9308,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       user_identifier_key?: string | undefined
-      custom_metadata_has?: Record<string, string | boolean | null> | undefined
+      custom_metadata_has?: Record<string, string | boolean> | undefined
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -9355,6 +9397,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -9997,7 +10045,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
@@ -10364,6 +10412,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -11006,7 +11060,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
