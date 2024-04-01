@@ -218,7 +218,7 @@ export const managed_device = z
     is_managed: z
       .literal(true)
       .describe('Indicates whether Seam manages the device.'),
-    custom_metadata: custom_metadata.optional(),
+    custom_metadata,
   })
   .merge(device_capability_flags)
 
