@@ -2238,6 +2238,18 @@ export default {
           is_managed: { enum: [false], type: 'boolean' },
           properties: {
             properties: {
+              accessory_keypad: {
+                description: 'Represents the accessory keypad state.',
+                properties: {
+                  is_connected: {
+                    description:
+                      'Indicates if the accessory_keypad is connected to the device.',
+                    type: 'boolean',
+                  },
+                },
+                required: ['is_connected'],
+                type: 'object',
+              },
               battery: {
                 description:
                   'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
