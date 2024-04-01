@@ -20,8 +20,7 @@ export {
   climate_setting,
   climate_setting_schedule,
   common_device_properties,
-  connect_webview,
-  custom_metadata,
+  custom_metadata_input,
   device_capability_flags,
   dormakaba_oracode_time_slot,
   enrollment_automation,
@@ -39,3 +38,4 @@ export {
   unmanaged_device,
   user_identity,
 } from '../models/index.js'
+export * from '../schemas.js'
