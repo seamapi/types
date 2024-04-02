@@ -34,6 +34,12 @@ export const common_device_properties = z.object({
         .describe(
           'Indicates if the accessory_keypad is connected to the device.',
         ),
+      battery: z
+        .object({
+          level: z.number().min(0).max(1),
+        })
+        .optional()
+        .describe('Indicates if the keypad battery properties.'),
     })
     .optional()
     .describe('Represents the accessory keypad state.'),
