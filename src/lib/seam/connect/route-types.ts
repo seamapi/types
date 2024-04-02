@@ -2348,6 +2348,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -3217,6 +3223,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -4030,6 +4042,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           /**
@@ -4306,6 +4324,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           /**
@@ -4707,6 +4731,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -5424,6 +5454,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -6293,6 +6329,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -7010,6 +7052,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -8404,6 +8452,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -9355,6 +9409,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -10364,6 +10424,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
