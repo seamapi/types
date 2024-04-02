@@ -1137,7 +1137,9 @@ export default {
                         properties: {
                           device_id: { type: 'string' },
                           device_name: { type: 'string' },
+                          keypad_2_paired: { type: 'boolean' },
                           keypad_battery_critical: { type: 'boolean' },
+                          keypad_paired: { type: 'boolean' },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
