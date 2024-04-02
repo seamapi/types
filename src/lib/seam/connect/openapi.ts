@@ -667,6 +667,19 @@ export default {
                             description:
                               'Represents the accessory keypad state.',
                             properties: {
+                              battery: {
+                                description:
+                                  'Indicates if the keypad battery properties.',
+                                properties: {
+                                  level: {
+                                    maximum: 1,
+                                    minimum: 0,
+                                    type: 'number',
+                                  },
+                                },
+                                required: ['level'],
+                                type: 'object',
+                              },
                               is_connected: {
                                 description:
                                   'Indicates if the accessory_keypad is connected to the device.',
@@ -2224,6 +2237,14 @@ export default {
               accessory_keypad: {
                 description: 'Represents the accessory keypad state.',
                 properties: {
+                  battery: {
+                    description: 'Indicates if the keypad battery properties.',
+                    properties: {
+                      level: { maximum: 1, minimum: 0, type: 'number' },
+                    },
+                    required: ['level'],
+                    type: 'object',
+                  },
                   is_connected: {
                     description:
                       'Indicates if the accessory_keypad is connected to the device.',
