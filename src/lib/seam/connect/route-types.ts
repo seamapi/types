@@ -2474,6 +2474,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -3349,6 +3351,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -4857,6 +4861,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -5580,6 +5586,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -6455,6 +6463,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -7178,6 +7188,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -8578,6 +8590,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -9535,6 +9549,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -10550,6 +10566,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:

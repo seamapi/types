@@ -62,6 +62,8 @@ export const device_metadata = z
       device_id: z.string(),
       device_name: z.string(),
       keypad_battery_critical: z.boolean().optional(),
+      keypad_paired: z.boolean().optional(),
+      keypad_2_paired: z.boolean().optional(),
     }),
 
     kwikset_metadata: z.object({
