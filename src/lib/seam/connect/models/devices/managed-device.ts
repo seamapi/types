@@ -1,4 +1,3 @@
-import type { SetRequired, Simplify } from 'type-fest'
 import { z } from 'zod'
 
 import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
@@ -229,11 +228,3 @@ export const managed_device = z
   .merge(device_capability_flags)
 
 export type ManagedDevice = z.infer<typeof managed_device>
-
-export type ManagedDeviceWithBackendMetadata<
-  MetadataKey extends keyof z.infer<typeof device_metadata>,
-> = Simplify<
-  ManagedDevice & {
-    properties: SetRequired<ManagedDevice['properties'], MetadataKey>
-  }
->
