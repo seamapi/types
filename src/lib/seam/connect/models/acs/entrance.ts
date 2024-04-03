@@ -38,6 +38,7 @@ export const acs_entrance = z.object({
     })
     .nullable(),
 })
+
 export type AcsEntranceLatchMetadata = z.infer<
   typeof acs_entrance_latch_metadata
 >

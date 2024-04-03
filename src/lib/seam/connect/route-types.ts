@@ -2025,23 +2025,23 @@ export interface Routes {
           )
         | undefined
       custom_metadata?: Record<string, string | boolean | null> | undefined
-      automatically_manage_new_devices?: boolean | undefined
-      wait_for_device_creation?: boolean | undefined
+      automatically_manage_new_devices?: boolean
+      wait_for_device_creation?: boolean
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
       connect_webview: {
         connect_webview_id: string
-        connected_account_id?: string | undefined
-        url: string
         workspace_id: string
+        created_at: string
+        connected_account_id: string | null
+        url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
-        created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
@@ -2077,15 +2077,15 @@ export interface Routes {
     jsonResponse: {
       connect_webview: {
         connect_webview_id: string
-        connected_account_id?: string | undefined
-        url: string
         workspace_id: string
+        created_at: string
+        connected_account_id: string | null
+        url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
-        created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
@@ -2112,15 +2112,15 @@ export interface Routes {
     jsonResponse: {
       connect_webviews: Array<{
         connect_webview_id: string
-        connected_account_id?: string | undefined
-        url: string
         workspace_id: string
+        created_at: string
+        connected_account_id: string | null
+        url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         accepted_devices: string[]
         any_provider_allowed: boolean
         any_device_allowed: boolean
-        created_at: string
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
@@ -2589,6 +2589,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -3466,6 +3467,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4976,6 +4978,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -5701,6 +5704,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -6578,6 +6582,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -7303,6 +7308,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -8705,6 +8711,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -9664,6 +9671,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -10681,6 +10689,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
