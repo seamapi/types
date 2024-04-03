@@ -434,7 +434,11 @@ export default {
           },
           automatically_manage_new_devices: { type: 'boolean' },
           connect_webview_id: { format: 'uuid', type: 'string' },
-          connected_account_id: { format: 'uuid', type: 'string' },
+          connected_account_id: {
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
           created_at: { format: 'date-time', type: 'string' },
           custom_metadata: {
             additionalProperties: {
@@ -465,14 +469,15 @@ export default {
         },
         required: [
           'connect_webview_id',
-          'url',
           'workspace_id',
+          'created_at',
+          'connected_account_id',
+          'url',
           'device_selection_mode',
           'accepted_providers',
           'accepted_devices',
           'any_provider_allowed',
           'any_device_allowed',
-          'created_at',
           'login_successful',
           'status',
           'custom_redirect_url',
@@ -7234,7 +7239,10 @@ export default {
                     },
                     type: 'array',
                   },
-                  automatically_manage_new_devices: { type: 'boolean' },
+                  automatically_manage_new_devices: {
+                    default: true,
+                    type: 'boolean',
+                  },
                   custom_metadata: {
                     additionalProperties: {
                       nullable: true,
@@ -7263,7 +7271,7 @@ export default {
                     ],
                     type: 'string',
                   },
-                  wait_for_device_creation: { type: 'boolean' },
+                  wait_for_device_creation: { default: false, type: 'boolean' },
                 },
                 type: 'object',
               },
