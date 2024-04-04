@@ -756,6 +756,7 @@ export interface Routes {
               | 'brivo_user'
               | 'hid_credential_manager_user'
               | 'salto_site_user'
+              | 'latch_user'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -1343,36 +1344,42 @@ export interface Routes {
     jsonResponse: {
       acs_system: {
         acs_system_id: string
-        external_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         /**
               ---
               deprecated: use external_type
               ---
                */
-        system_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
+        system_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
         /**
               ---
               deprecated: use external_type_display_name
               ---
                */
-        system_type_display_name: string
+        system_type_display_name?: string | undefined
         name: string
         created_at: string
         workspace_id: string
@@ -1395,36 +1402,42 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
-        external_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         /**
               ---
               deprecated: use external_type
               ---
                */
-        system_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
+        system_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
         /**
               ---
               deprecated: use external_type_display_name
               ---
                */
-        system_type_display_name: string
+        system_type_display_name?: string | undefined
         name: string
         created_at: string
         workspace_id: string
@@ -1487,6 +1500,7 @@ export interface Routes {
               | 'brivo_user'
               | 'hid_credential_manager_user'
               | 'salto_site_user'
+              | 'latch_user'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -1546,6 +1560,7 @@ export interface Routes {
               | 'brivo_user'
               | 'hid_credential_manager_user'
               | 'salto_site_user'
+              | 'latch_user'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -1597,6 +1612,7 @@ export interface Routes {
               | 'brivo_user'
               | 'hid_credential_manager_user'
               | 'salto_site_user'
+              | 'latch_user'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -11119,36 +11135,42 @@ export interface Routes {
     jsonResponse: {
       acs_systems: Array<{
         acs_system_id: string
-        external_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
-        external_type_display_name: string
+        external_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
         /**
               ---
               deprecated: use external_type
               ---
                */
-        system_type:
-          | 'pti_site'
-          | 'alta_org'
-          | 'salto_site'
-          | 'brivo_account'
-          | 'hid_credential_manager_organization'
-          | 'visionline_system'
-          | 'assa_abloy_credential_service'
-          | 'latch_building'
+        system_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
         /**
               ---
               deprecated: use external_type_display_name
               ---
                */
-        system_type_display_name: string
+        system_type_display_name?: string | undefined
         name: string
         created_at: string
         workspace_id: string
@@ -11182,6 +11204,7 @@ export interface Routes {
               | 'brivo_user'
               | 'hid_credential_manager_user'
               | 'salto_site_user'
+              | 'latch_user'
             )
           | undefined
         external_type_display_name?: string | undefined

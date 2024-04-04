@@ -231,10 +231,6 @@ export default {
         },
         required: [
           'acs_system_id',
-          'external_type',
-          'external_type_display_name',
-          'system_type',
-          'system_type_display_name',
           'name',
           'created_at',
           'workspace_id',
@@ -271,6 +267,7 @@ export default {
               'brivo_user',
               'hid_credential_manager_user',
               'salto_site_user',
+              'latch_user',
             ],
             type: 'string',
           },
