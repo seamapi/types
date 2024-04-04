@@ -2,8 +2,7 @@ import { z } from 'zod'
 
 import { acs_system_capability_flags } from './acs_system_capability_flags.js'
 
-// If changed, update seam.acs_system.external_type generated column
-export const acs_system_external_type = z.enum([
+export const acs_system_external_type_values = [
   'pti_site',
   'alta_org',
   'salto_site',
@@ -12,7 +11,12 @@ export const acs_system_external_type = z.enum([
   'visionline_system',
   'assa_abloy_credential_service',
   'latch_building',
-])
+] as const
+
+// If changed, update seam.acs_system.external_type generated column
+export const acs_system_external_type = z
+  .enum(acs_system_external_type_values)
+  .optional()
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
 
@@ -20,13 +24,13 @@ export const acs_system = z
   .object({
     acs_system_id: z.string().uuid(),
     external_type: acs_system_external_type,
-    external_type_display_name: z.string(),
+    external_type_display_name: z.string().optional(),
     system_type: acs_system_external_type.describe(`
       ---
       deprecated: use external_type
       ---
       `),
-    system_type_display_name: z.string().describe(`
+    system_type_display_name: z.string().optional().describe(`
       ---
       deprecated: use external_type_display_name
       ---
