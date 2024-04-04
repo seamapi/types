@@ -2589,6 +2589,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -3466,6 +3467,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -4976,6 +4978,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -5701,6 +5704,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -6578,6 +6582,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -7303,6 +7308,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -8705,6 +8711,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -9664,6 +9671,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -10681,6 +10689,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:

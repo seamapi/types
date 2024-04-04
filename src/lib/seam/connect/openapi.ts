@@ -1019,6 +1019,7 @@ export default {
                           bridge_name: { type: 'string' },
                           device_id: { type: 'string' },
                           device_name: { type: 'string' },
+                          keypad_id: { type: 'string' },
                         },
                         required: ['device_id', 'device_name'],
                         type: 'object',
