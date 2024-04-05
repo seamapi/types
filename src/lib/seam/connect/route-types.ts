@@ -2666,6 +2666,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -3544,6 +3546,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -5055,6 +5059,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -5781,6 +5787,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -6659,6 +6667,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -7385,6 +7395,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -8788,6 +8800,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -9748,6 +9762,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -10766,6 +10782,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:

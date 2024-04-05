@@ -1245,6 +1245,8 @@ export default {
                           device_id: { type: 'string' },
                           device_info_model: { type: 'string' },
                           device_name: { type: 'string' },
+                          keypad_uuid: { type: 'string' },
+                          locker_status_hardlock: { type: 'number' },
                           product_model: { type: 'string' },
                           product_name: { type: 'string' },
                           product_type: { type: 'string' },
