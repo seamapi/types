@@ -420,9 +420,18 @@ export default {
       },
       connect_webview: {
         properties: {
-          accepted_devices: { items: { type: 'string' }, type: 'array' },
+          accepted_devices: {
+            description:
+              '\n      ---\n      deprecated: Unused. Will be removed.\n      ---\n      ',
+            items: { type: 'string' },
+            type: 'array',
+          },
           accepted_providers: { items: { type: 'string' }, type: 'array' },
-          any_device_allowed: { type: 'boolean' },
+          any_device_allowed: {
+            description:
+              '\n      ---\n      deprecated: Unused. Will be removed.\n      ---\n      ',
+            type: 'boolean',
+          },
           any_provider_allowed: { type: 'boolean' },
           authorized_at: {
             format: 'date-time',
@@ -473,8 +482,8 @@ export default {
           'device_selection_mode',
           'accepted_providers',
           'accepted_devices',
-          'any_provider_allowed',
           'any_device_allowed',
+          'any_provider_allowed',
           'login_successful',
           'status',
           'custom_redirect_url',
