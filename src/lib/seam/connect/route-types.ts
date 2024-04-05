@@ -2055,9 +2055,19 @@ export interface Routes {
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         accepted_devices: string[]
-        any_provider_allowed: boolean
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         any_device_allowed: boolean
+        any_provider_allowed: boolean
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
@@ -2099,9 +2109,19 @@ export interface Routes {
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         accepted_devices: string[]
-        any_provider_allowed: boolean
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         any_device_allowed: boolean
+        any_provider_allowed: boolean
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
@@ -2134,9 +2154,19 @@ export interface Routes {
         url: string
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         accepted_devices: string[]
-        any_provider_allowed: boolean
+        /**
+              ---
+              deprecated: Unused. Will be removed.
+              ---
+               */
         any_device_allowed: boolean
+        any_provider_allowed: boolean
         login_successful: boolean
         status: 'pending' | 'failed' | 'authorized'
         custom_redirect_url: string | null
