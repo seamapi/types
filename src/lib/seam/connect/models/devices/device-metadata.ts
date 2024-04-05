@@ -205,6 +205,8 @@ export const device_metadata = z
       product_type: z.string(),
       product_model: z.string(),
       device_info_model: z.string(),
+      keypad_uuid: z.string().optional(),
+      locker_status_hardlock: z.number().optional(),
     }),
 
     tedee_metadata: z.object({
