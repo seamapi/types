@@ -19,11 +19,22 @@ export const connect_webview = z.object({
   // TODO: Use enum value.
   accepted_providers: z.array(z.string()),
 
-  // TODO: Use enum value.
-  accepted_devices: z.array(z.string()),
+  accepted_devices: z.array(z.string()).describe(
+    `
+      ---
+      deprecated: Unused. Will be removed.
+      ---
+      `,
+  ),
+  any_device_allowed: z.boolean().describe(
+    `
+      ---
+      deprecated: Unused. Will be removed.
+      ---
+      `,
+  ),
 
   any_provider_allowed: z.boolean(),
-  any_device_allowed: z.boolean(),
   login_successful: z.boolean(),
   status: z.enum(['pending', 'failed', 'authorized']),
   custom_redirect_url: z.string().url().nullable(),
