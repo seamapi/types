@@ -184,6 +184,190 @@ export default {
         ],
         type: 'object',
       },
+      acs_credential: {
+        properties: {
+          access_method: {
+            enum: ['code', 'card', 'mobile_key'],
+            type: 'string',
+          },
+          acs_credential_id: { format: 'uuid', type: 'string' },
+          acs_credential_pool_id: { format: 'uuid', type: 'string' },
+          acs_system_id: { format: 'uuid', type: 'string' },
+          acs_user_id: { format: 'uuid', type: 'string' },
+          code: { nullable: true, type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          display_name: { minLength: 1, type: 'string' },
+          ends_at: { type: 'string' },
+          errors: {
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          external_type: {
+            enum: [
+              'pti_card',
+              'brivo_credential',
+              'hid_credential',
+              'visionline_card',
+            ],
+            type: 'string',
+          },
+          external_type_display_name: { type: 'string' },
+          is_multi_phone_sync_credential: { type: 'boolean' },
+          parent_acs_credential_id: { format: 'uuid', type: 'string' },
+          starts_at: { type: 'string' },
+          visionline_metadata: {
+            properties: {
+              common_acs_entrance_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              guest_acs_entrance_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              joiner_acs_credential_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+            },
+            type: 'object',
+          },
+          warnings: {
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['warning_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'acs_credential_id',
+          'acs_system_id',
+          'display_name',
+          'access_method',
+          'created_at',
+          'workspace_id',
+          'errors',
+          'warnings',
+        ],
+        type: 'object',
+      },
+      acs_credential_pool: {
+        properties: {
+          acs_credential_pool_id: { format: 'uuid', type: 'string' },
+          acs_system_id: { format: 'uuid', type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          display_name: { minLength: 1, type: 'string' },
+          external_type: { enum: ['hid_part_number'], type: 'string' },
+          external_type_display_name: { type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'acs_credential_pool_id',
+          'acs_system_id',
+          'display_name',
+          'external_type',
+          'external_type_display_name',
+          'created_at',
+          'workspace_id',
+        ],
+        type: 'object',
+      },
+      acs_credential_provisioning_automation: {
+        properties: {
+          acs_credential_provisioning_automation_id: {
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: { format: 'date-time', type: 'string' },
+          credential_manager_acs_system_id: { format: 'uuid', type: 'string' },
+          user_identity_id: { format: 'uuid', type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'acs_credential_provisioning_automation_id',
+          'credential_manager_acs_system_id',
+          'user_identity_id',
+          'created_at',
+          'workspace_id',
+        ],
+        type: 'object',
+      },
+      acs_entrance: {
+        properties: {
+          acs_entrance_id: { format: 'uuid', type: 'string' },
+          acs_system_id: { format: 'uuid', type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          display_name: { type: 'string' },
+          latch_metadata: {
+            nullable: true,
+            properties: {
+              accessibility_type: { type: 'string' },
+              is_connected: { type: 'boolean' },
+              name: { type: 'string' },
+              type: { type: 'string' },
+            },
+            required: ['accessibility_type', 'name', 'type', 'is_connected'],
+            type: 'object',
+          },
+          visionline_metadata: {
+            nullable: true,
+            properties: {
+              door_category: {
+                enum: [
+                  'entrance',
+                  'guest',
+                  'elevator reader',
+                  'common',
+                  'common (PMS)',
+                ],
+                type: 'string',
+              },
+              door_name: { type: 'string' },
+              profiles: {
+                items: {
+                  properties: {
+                    visionline_door_profile_id: { type: 'string' },
+                    visionline_door_profile_type: {
+                      enum: ['BLE', 'commonDoor', 'touch'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'visionline_door_profile_id',
+                    'visionline_door_profile_type',
+                  ],
+                  type: 'object',
+                },
+                type: 'array',
+              },
+            },
+            required: ['door_name', 'door_category'],
+            type: 'object',
+          },
+        },
+        required: [
+          'acs_entrance_id',
+          'display_name',
+          'acs_system_id',
+          'created_at',
+          'latch_metadata',
+          'visionline_metadata',
+        ],
+        type: 'object',
+      },
       acs_system: {
         properties: {
           acs_system_id: { format: 'uuid', type: 'string' },
@@ -1900,6 +2084,16 @@ export default {
         ],
         type: 'object',
       },
+      network: {
+        properties: {
+          created_at: { format: 'date-time', type: 'string' },
+          display_name: { type: 'string' },
+          network_id: { format: 'uuid', type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: ['network_id', 'workspace_id', 'display_name', 'created_at'],
+        type: 'object',
+      },
       noise_threshold: {
         properties: {
           device_id: { format: 'uuid', type: 'string' },
@@ -2397,6 +2591,29 @@ export default {
           'created_at',
           'is_managed',
           'properties',
+        ],
+        type: 'object',
+      },
+      user_identity: {
+        properties: {
+          created_at: { format: 'date-time', type: 'string' },
+          display_name: { minLength: 1, type: 'string' },
+          email_address: { format: 'email', nullable: true, type: 'string' },
+          full_name: { minLength: 1, nullable: true, type: 'string' },
+          phone_number: { nullable: true, type: 'string' },
+          user_identity_id: { format: 'uuid', type: 'string' },
+          user_identity_key: { minLength: 1, nullable: true, type: 'string' },
+          workspace_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'user_identity_id',
+          'user_identity_key',
+          'email_address',
+          'phone_number',
+          'display_name',
+          'full_name',
+          'created_at',
+          'workspace_id',
         ],
         type: 'object',
       },
@@ -3739,6 +3956,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_access_group',
       },
     },
     '/acs/access_groups/list': {
@@ -3788,6 +4006,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_access_groups',
       },
     },
     '/acs/access_groups/list_users': {
@@ -3838,6 +4057,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'list_users',
+        'x-fern-sdk-return-value': 'acs_users',
       },
     },
     '/acs/access_groups/remove_user': {
@@ -3908,31 +4128,7 @@ export default {
                   properties: {
                     acs_credential_pools: {
                       items: {
-                        properties: {
-                          acs_credential_pool_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          external_type: {
-                            enum: ['hid_part_number'],
-                            type: 'string',
-                          },
-                          external_type_display_name: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'acs_credential_pool_id',
-                          'acs_system_id',
-                          'display_name',
-                          'external_type',
-                          'external_type_display_name',
-                          'created_at',
-                          'workspace_id',
-                        ],
-                        type: 'object',
+                        $ref: '#/components/schemas/acs_credential_pool',
                       },
                       type: 'array',
                     },
@@ -3957,6 +4153,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credential_pools'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credential_pools',
       },
     },
     '/acs/credential_provisioning_automations/launch': {
@@ -3995,27 +4192,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential_provisioning_automation: {
-                      properties: {
-                        acs_credential_provisioning_automation_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: { format: 'date-time', type: 'string' },
-                        credential_manager_acs_system_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        user_identity_id: { format: 'uuid', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_provisioning_automation_id',
-                        'credential_manager_acs_system_id',
-                        'user_identity_id',
-                        'created_at',
-                        'workspace_id',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential_provisioning_automation',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4038,6 +4215,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
         'x-fern-sdk-method-name': 'launch',
+        'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
       },
     },
     '/acs/credentials/assign': {
@@ -4064,90 +4242,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4193,90 +4288,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4362,90 +4374,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4468,6 +4397,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'acs_credential',
       },
     },
     '/acs/credentials/delete': {
@@ -4536,90 +4466,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4642,6 +4489,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_credential',
       },
     },
     '/acs/credentials/list': {
@@ -4703,92 +4551,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credentials: {
-                      items: {
-                        properties: {
-                          access_method: {
-                            enum: ['code', 'card', 'mobile_key'],
-                            type: 'string',
-                          },
-                          acs_credential_id: { format: 'uuid', type: 'string' },
-                          acs_credential_pool_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          ends_at: { type: 'string' },
-                          errors: {
-                            items: {
-                              properties: {
-                                error_code: { type: 'string' },
-                                message: { type: 'string' },
-                              },
-                              required: ['error_code', 'message'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          external_type: {
-                            enum: [
-                              'pti_card',
-                              'brivo_credential',
-                              'hid_credential',
-                              'visionline_card',
-                            ],
-                            type: 'string',
-                          },
-                          external_type_display_name: { type: 'string' },
-                          is_multi_phone_sync_credential: { type: 'boolean' },
-                          parent_acs_credential_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          starts_at: { type: 'string' },
-                          visionline_metadata: {
-                            properties: {
-                              common_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              guest_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              joiner_acs_credential_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                            },
-                            type: 'object',
-                          },
-                          warnings: {
-                            items: {
-                              properties: {
-                                message: { type: 'string' },
-                                warning_code: { type: 'string' },
-                              },
-                              required: ['warning_code', 'message'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'acs_credential_id',
-                          'acs_system_id',
-                          'display_name',
-                          'access_method',
-                          'created_at',
-                          'workspace_id',
-                          'errors',
-                          'warnings',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/acs_credential' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -4813,6 +4576,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_credentials',
       },
     },
     '/acs/credentials/unassign': {
@@ -4839,90 +4603,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -4968,90 +4649,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -5100,90 +4698,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -5229,90 +4744,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      properties: {
-                        access_method: {
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
-                        errors: {
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: { type: 'string' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
-                        parent_acs_credential_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: { type: 'string' },
-                        visionline_metadata: {
-                          properties: {
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        warnings: {
-                          items: {
-                            properties: {
-                              message: { type: 'string' },
-                              warning_code: { type: 'string' },
-                            },
-                            required: ['warning_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -5359,76 +4791,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    acs_entrance: {
-                      properties: {
-                        acs_entrance_id: { format: 'uuid', type: 'string' },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { type: 'string' },
-                        latch_metadata: {
-                          nullable: true,
-                          properties: {
-                            accessibility_type: { type: 'string' },
-                            is_connected: { type: 'boolean' },
-                            name: { type: 'string' },
-                            type: { type: 'string' },
-                          },
-                          required: [
-                            'accessibility_type',
-                            'name',
-                            'type',
-                            'is_connected',
-                          ],
-                          type: 'object',
-                        },
-                        visionline_metadata: {
-                          nullable: true,
-                          properties: {
-                            door_category: {
-                              enum: [
-                                'entrance',
-                                'guest',
-                                'elevator reader',
-                                'common',
-                                'common (PMS)',
-                              ],
-                              type: 'string',
-                            },
-                            door_name: { type: 'string' },
-                            profiles: {
-                              items: {
-                                properties: {
-                                  visionline_door_profile_id: {
-                                    type: 'string',
-                                  },
-                                  visionline_door_profile_type: {
-                                    enum: ['BLE', 'commonDoor', 'touch'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'visionline_door_profile_id',
-                                  'visionline_door_profile_type',
-                                ],
-                                type: 'object',
-                              },
-                              type: 'array',
-                            },
-                          },
-                          required: ['door_name', 'door_category'],
-                          type: 'object',
-                        },
-                      },
-                      required: [
-                        'acs_entrance_id',
-                        'display_name',
-                        'acs_system_id',
-                        'created_at',
-                        'latch_metadata',
-                        'visionline_metadata',
-                      ],
-                      type: 'object',
-                    },
+                    acs_entrance: { $ref: '#/components/schemas/acs_entrance' },
                     ok: { type: 'boolean' },
                   },
                   required: ['acs_entrance', 'ok'],
@@ -5451,6 +4814,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_entrance',
       },
     },
     '/acs/entrances/grant_access': {
@@ -5521,76 +4885,7 @@ export default {
                 schema: {
                   properties: {
                     acs_entrances: {
-                      items: {
-                        properties: {
-                          acs_entrance_id: { format: 'uuid', type: 'string' },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
-                          latch_metadata: {
-                            nullable: true,
-                            properties: {
-                              accessibility_type: { type: 'string' },
-                              is_connected: { type: 'boolean' },
-                              name: { type: 'string' },
-                              type: { type: 'string' },
-                            },
-                            required: [
-                              'accessibility_type',
-                              'name',
-                              'type',
-                              'is_connected',
-                            ],
-                            type: 'object',
-                          },
-                          visionline_metadata: {
-                            nullable: true,
-                            properties: {
-                              door_category: {
-                                enum: [
-                                  'entrance',
-                                  'guest',
-                                  'elevator reader',
-                                  'common',
-                                  'common (PMS)',
-                                ],
-                                type: 'string',
-                              },
-                              door_name: { type: 'string' },
-                              profiles: {
-                                items: {
-                                  properties: {
-                                    visionline_door_profile_id: {
-                                      type: 'string',
-                                    },
-                                    visionline_door_profile_type: {
-                                      enum: ['BLE', 'commonDoor', 'touch'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'visionline_door_profile_id',
-                                    'visionline_door_profile_type',
-                                  ],
-                                  type: 'object',
-                                },
-                                type: 'array',
-                              },
-                            },
-                            required: ['door_name', 'door_category'],
-                            type: 'object',
-                          },
-                        },
-                        required: [
-                          'acs_entrance_id',
-                          'display_name',
-                          'acs_system_id',
-                          'created_at',
-                          'latch_metadata',
-                          'visionline_metadata',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/acs_entrance' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -5615,6 +4910,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_entrances',
       },
     },
     '/acs/entrances/list_credentials_with_access': {
@@ -5647,92 +4943,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credentials: {
-                      items: {
-                        properties: {
-                          access_method: {
-                            enum: ['code', 'card', 'mobile_key'],
-                            type: 'string',
-                          },
-                          acs_credential_id: { format: 'uuid', type: 'string' },
-                          acs_credential_pool_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          ends_at: { type: 'string' },
-                          errors: {
-                            items: {
-                              properties: {
-                                error_code: { type: 'string' },
-                                message: { type: 'string' },
-                              },
-                              required: ['error_code', 'message'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          external_type: {
-                            enum: [
-                              'pti_card',
-                              'brivo_credential',
-                              'hid_credential',
-                              'visionline_card',
-                            ],
-                            type: 'string',
-                          },
-                          external_type_display_name: { type: 'string' },
-                          is_multi_phone_sync_credential: { type: 'boolean' },
-                          parent_acs_credential_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          starts_at: { type: 'string' },
-                          visionline_metadata: {
-                            properties: {
-                              common_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              guest_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              joiner_acs_credential_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                            },
-                            type: 'object',
-                          },
-                          warnings: {
-                            items: {
-                              properties: {
-                                message: { type: 'string' },
-                                warning_code: { type: 'string' },
-                              },
-                              required: ['warning_code', 'message'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'acs_credential_id',
-                          'acs_system_id',
-                          'display_name',
-                          'access_method',
-                          'created_at',
-                          'workspace_id',
-                          'errors',
-                          'warnings',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/acs_credential' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -5757,6 +4968,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'list_credentials_with_access',
+        'x-fern-sdk-return-value': 'acs_credentials',
       },
     },
     '/acs/systems/get': {
@@ -5803,6 +5015,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_system',
       },
     },
     '/acs/systems/list': {
@@ -5852,6 +5065,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_systems',
       },
     },
     '/acs/users/add_to_access_group': {
@@ -6006,6 +5220,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'acs_user',
       },
     },
     '/acs/users/delete': {
@@ -6091,6 +5306,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_user',
       },
     },
     '/acs/users/list': {
@@ -6146,6 +5362,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_users',
       },
     },
     '/acs/users/list_accessible_entrances': {
@@ -6169,76 +5386,7 @@ export default {
                 schema: {
                   properties: {
                     acs_entrances: {
-                      items: {
-                        properties: {
-                          acs_entrance_id: { format: 'uuid', type: 'string' },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
-                          latch_metadata: {
-                            nullable: true,
-                            properties: {
-                              accessibility_type: { type: 'string' },
-                              is_connected: { type: 'boolean' },
-                              name: { type: 'string' },
-                              type: { type: 'string' },
-                            },
-                            required: [
-                              'accessibility_type',
-                              'name',
-                              'type',
-                              'is_connected',
-                            ],
-                            type: 'object',
-                          },
-                          visionline_metadata: {
-                            nullable: true,
-                            properties: {
-                              door_category: {
-                                enum: [
-                                  'entrance',
-                                  'guest',
-                                  'elevator reader',
-                                  'common',
-                                  'common (PMS)',
-                                ],
-                                type: 'string',
-                              },
-                              door_name: { type: 'string' },
-                              profiles: {
-                                items: {
-                                  properties: {
-                                    visionline_door_profile_id: {
-                                      type: 'string',
-                                    },
-                                    visionline_door_profile_type: {
-                                      enum: ['BLE', 'commonDoor', 'touch'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'visionline_door_profile_id',
-                                    'visionline_door_profile_type',
-                                  ],
-                                  type: 'object',
-                                },
-                                type: 'array',
-                              },
-                            },
-                            required: ['door_name', 'door_category'],
-                            type: 'object',
-                          },
-                        },
-                        required: [
-                          'acs_entrance_id',
-                          'display_name',
-                          'acs_system_id',
-                          'created_at',
-                          'latch_metadata',
-                          'visionline_metadata',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/acs_entrance' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -6263,6 +5411,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
       },
     },
     '/acs/users/remove_from_access_group': {
@@ -9520,21 +8669,7 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    network: {
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { type: 'string' },
-                        network_id: { format: 'uuid', type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'network_id',
-                        'workspace_id',
-                        'display_name',
-                        'created_at',
-                      ],
-                      type: 'object',
-                    },
+                    network: { $ref: '#/components/schemas/network' },
                     ok: { type: 'boolean' },
                   },
                   required: ['network', 'ok'],
@@ -9556,6 +8691,7 @@ export default {
         tags: ['/networks'],
         'x-fern-sdk-group-name': ['networks'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'network',
       },
     },
     '/networks/list': {
@@ -9573,21 +8709,7 @@ export default {
                 schema: {
                   properties: {
                     networks: {
-                      items: {
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
-                          network_id: { format: 'uuid', type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'network_id',
-                          'workspace_id',
-                          'display_name',
-                          'created_at',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/network' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -9611,6 +8733,7 @@ export default {
         tags: ['/networks'],
         'x-fern-sdk-group-name': ['networks'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'networks',
       },
     },
     '/noise_sensors/noise_thresholds/create': {
@@ -11464,39 +10587,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     user_identity: {
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        email_address: {
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        full_name: {
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        phone_number: { nullable: true, type: 'string' },
-                        user_identity_id: { format: 'uuid', type: 'string' },
-                        user_identity_key: {
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'user_identity_id',
-                        'user_identity_key',
-                        'email_address',
-                        'phone_number',
-                        'display_name',
-                        'full_name',
-                        'created_at',
-                        'workspace_id',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/user_identity',
                     },
                   },
                   required: ['user_identity', 'ok'],
@@ -11518,6 +10609,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'user_identity',
       },
     },
     '/user_identities/delete': {
@@ -11653,6 +10745,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'enrollment_automation',
       },
     },
     '/user_identities/enrollment_automations/launch': {
@@ -11739,6 +10832,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
+        'x-fern-sdk-return-value': 'enrollment_automation',
       },
     },
     '/user_identities/enrollment_automations/list': {
@@ -11791,6 +10885,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'enrollment_automations',
       },
     },
     '/user_identities/get': {
@@ -11826,39 +10921,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     user_identity: {
-                      properties: {
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        email_address: {
-                          format: 'email',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        full_name: {
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        phone_number: { nullable: true, type: 'string' },
-                        user_identity_id: { format: 'uuid', type: 'string' },
-                        user_identity_key: {
-                          minLength: 1,
-                          nullable: true,
-                          type: 'string',
-                        },
-                        workspace_id: { format: 'uuid', type: 'string' },
-                      },
-                      required: [
-                        'user_identity_id',
-                        'user_identity_key',
-                        'email_address',
-                        'phone_number',
-                        'display_name',
-                        'full_name',
-                        'created_at',
-                        'workspace_id',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/user_identity',
                     },
                   },
                   required: ['user_identity', 'ok'],
@@ -11880,6 +10943,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'user_identity',
       },
     },
     '/user_identities/grant_access_to_device': {
@@ -11993,41 +11057,7 @@ export default {
                   properties: {
                     ok: { type: 'boolean' },
                     user_identities: {
-                      items: {
-                        properties: {
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          email_address: {
-                            format: 'email',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          full_name: {
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          phone_number: { nullable: true, type: 'string' },
-                          user_identity_id: { format: 'uuid', type: 'string' },
-                          user_identity_key: {
-                            minLength: 1,
-                            nullable: true,
-                            type: 'string',
-                          },
-                          workspace_id: { format: 'uuid', type: 'string' },
-                        },
-                        required: [
-                          'user_identity_id',
-                          'user_identity_key',
-                          'email_address',
-                          'phone_number',
-                          'display_name',
-                          'full_name',
-                          'created_at',
-                          'workspace_id',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/user_identity' },
                       type: 'array',
                     },
                   },
@@ -12077,12 +11107,18 @@ export default {
                 schema: {
                   properties: {
                     accessible_devices: {
+                      description:
+                        '\n      ---\n      deprecated: use devices.\n      ---\n    ',
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    devices: {
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['accessible_devices', 'ok'],
+                  required: ['devices', 'accessible_devices', 'ok'],
                   type: 'object',
                 },
               },
@@ -12101,6 +11137,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_accessible_devices',
+        'x-fern-sdk-return-value': 'devices',
       },
     },
     '/user_identities/list_acs_systems': {
@@ -12151,6 +11188,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_acs_systems',
+        'x-fern-sdk-return-value': 'acs_systems',
       },
     },
     '/user_identities/list_acs_users': {
@@ -12200,6 +11238,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_acs_users',
+        'x-fern-sdk-return-value': 'acs_users',
       },
     },
     '/user_identities/remove_acs_user': {
@@ -12740,6 +11779,7 @@ export default {
         tags: ['/workspaces'],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'workspace',
       },
     },
     '/workspaces/get': {
