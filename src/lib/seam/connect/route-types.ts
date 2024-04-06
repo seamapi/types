@@ -10510,6 +10510,12 @@ export interface Routes {
             | {
                 /** Indicates if the accessory_keypad is connected to the device. */
                 is_connected: boolean
+                /** Indicates if the keypad battery properties. */
+                battery?:
+                  | {
+                      level: number
+                    }
+                  | undefined
               }
             | undefined
           appearance: {
@@ -10630,6 +10636,8 @@ export interface Routes {
                 device_id: string
                 device_name: string
                 keypad_battery_critical?: boolean | undefined
+                keypad_paired?: boolean | undefined
+                keypad_2_paired?: boolean | undefined
               }
             | undefined
           kwikset_metadata?:
@@ -10743,6 +10751,7 @@ export interface Routes {
                 device_name: string
                 bridge_id?: string | undefined
                 bridge_name?: string | undefined
+                keypad_id?: string | undefined
               }
             | undefined
           nest_metadata?:
@@ -10803,6 +10812,8 @@ export interface Routes {
                 product_type: string
                 product_model: string
                 device_info_model: string
+                keypad_uuid?: string | undefined
+                locker_status_hardlock?: number | undefined
               }
             | undefined
           tedee_metadata?:
@@ -11152,7 +11163,7 @@ export interface Routes {
         created_at: string
         /** Indicates whether Seam manages the device. */
         is_managed: true
-        custom_metadata?: Record<string, string | boolean | null> | undefined
+        custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
