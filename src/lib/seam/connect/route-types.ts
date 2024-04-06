@@ -768,8 +768,8 @@ export interface Routes {
             }
           | undefined
         user_identity_id?: string | undefined
-        user_identity_email_address?: string | undefined
-        user_identity_phone_number?: string | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
             ---
@@ -1512,8 +1512,8 @@ export interface Routes {
             }
           | undefined
         user_identity_id?: string | undefined
-        user_identity_email_address?: string | undefined
-        user_identity_phone_number?: string | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
             ---
@@ -1572,8 +1572,8 @@ export interface Routes {
             }
           | undefined
         user_identity_id?: string | undefined
-        user_identity_email_address?: string | undefined
-        user_identity_phone_number?: string | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
             ---
@@ -1624,8 +1624,8 @@ export interface Routes {
             }
           | undefined
         user_identity_id?: string | undefined
-        user_identity_email_address?: string | undefined
-        user_identity_phone_number?: string | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
             ---
@@ -11997,8 +11997,8 @@ export interface Routes {
             }
           | undefined
         user_identity_id?: string | undefined
-        user_identity_email_address?: string | undefined
-        user_identity_phone_number?: string | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
             ---
