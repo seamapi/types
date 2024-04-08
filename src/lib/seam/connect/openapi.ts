@@ -461,6 +461,7 @@ export default {
           is_suspended: { type: 'boolean' },
           phone_number: { nullable: true, type: 'string' },
           user_identity_email_address: { nullable: true, type: 'string' },
+          user_identity_full_name: { nullable: true, type: 'string' },
           user_identity_id: { type: 'string' },
           user_identity_phone_number: { nullable: true, type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
