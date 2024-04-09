@@ -2990,7 +2990,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/generate_code': {
@@ -3393,7 +3392,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/unmanaged/get': {
@@ -3745,7 +3743,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
       put: {
         operationId: 'accessCodesUpdatePut',
@@ -8844,7 +8841,6 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/noise_sensors/noise_thresholds/get': {
@@ -9052,7 +9048,6 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
       put: {
         operationId: 'noiseSensorsNoiseThresholdsUpdatePut',
