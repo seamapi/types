@@ -2183,18 +2183,6 @@ export interface Routes {
       }>
     }
   }
-  '/connect_webviews/view': {
-    route: '/connect_webviews/view'
-    method: 'GET'
-    queryParams: {
-      connect_webview_id: string
-      auth_token: string
-    }
-    jsonBody: {}
-    commonParams: {}
-    formData: {}
-    jsonResponse: {}
-  }
   '/connected_accounts/delete': {
     route: '/connected_accounts/delete'
     method: 'DELETE' | 'POST'
@@ -4635,80 +4623,6 @@ export interface Routes {
         created_at: string
         occurred_at: string
       }>
-    }
-  }
-  '/health': {
-    route: '/health'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {}
-    formData: {}
-    jsonResponse: {
-      ok: boolean
-      msg: 'I\u2019m one with the Force. The Force is with me.'
-      last_service_evaluation_at?: string | undefined
-      service_health_statuses: Array<{
-        service: string
-        status: 'healthy' | 'degraded' | 'down'
-        description: string
-      }>
-    }
-  }
-  '/health/get_health': {
-    route: '/health/get_health'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {}
-    formData: {}
-    jsonResponse: {
-      ok: boolean
-      msg: 'I\u2019m one with the Force. The Force is with me.'
-      last_service_evaluation_at?: string | undefined
-      service_health_statuses: Array<{
-        service: string
-        status: 'healthy' | 'degraded' | 'down'
-        description: string
-      }>
-    }
-  }
-  '/health/get_service_health': {
-    route: '/health/get_service_health'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      service: string
-    }
-    formData: {}
-    jsonResponse: {
-      ok: true
-      last_service_evaluation_at: string
-      service_health: {
-        service: string
-        status: 'healthy' | 'degraded' | 'down'
-        description: string
-      }
-    }
-  }
-  '/health/service/[service_name]': {
-    route: '/health/service/[service_name]'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      service_name: string
-    }
-    formData: {}
-    jsonResponse: {
-      ok: true
-      last_service_evaluation_at: string
-      service_health: {
-        service: string
-        status: 'healthy' | 'degraded' | 'down'
-        description: string
-      }
     }
   }
   '/locks/get': {
