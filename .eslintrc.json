@@ -83,6 +83,14 @@
           }
         ]
       }
+    },
+    {
+      "files": ["src/lib/seam/connect/events/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/consistent-type-assertions": "off"
+      }
     }
   ]
 }
