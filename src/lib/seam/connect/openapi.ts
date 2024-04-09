@@ -2990,7 +2990,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/generate_code': {
@@ -3393,7 +3392,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/unmanaged/get': {
@@ -3745,7 +3743,6 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
       put: {
         operationId: 'accessCodesUpdatePut',
@@ -6621,34 +6618,6 @@ export default {
         'x-fern-sdk-return-value': 'connect_webviews',
       },
     },
-    '/connect_webviews/view': {
-      get: {
-        operationId: 'connectWebviewsViewGet',
-        parameters: [
-          {
-            in: 'query',
-            name: 'connect_webview_id',
-            required: true,
-            schema: { format: 'uuid', type: 'string' },
-          },
-          {
-            in: 'query',
-            name: 'auth_token',
-            required: true,
-            schema: { type: 'string' },
-          },
-        ],
-        responses: {
-          200: { description: 'OK' },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/connect_webviews/view',
-        tags: ['/connect_webviews'],
-        'x-fern-sdk-group-name': ['connect_webviews'],
-        'x-fern-sdk-method-name': 'view',
-      },
-    },
     '/connected_accounts/delete': {
       post: {
         operationId: 'connectedAccountsDeletePost',
@@ -8025,235 +7994,6 @@ export default {
         'x-fern-sdk-return-value': 'events',
       },
     },
-    '/health': {
-      get: {
-        operationId: 'healthGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    msg: {
-                      enum: ['I’m one with the Force. The Force is with me.'],
-                      type: 'string',
-                    },
-                    ok: { type: 'boolean' },
-                    service_health_statuses: {
-                      items: { $ref: '#/components/schemas/service_health' },
-                      type: 'array',
-                    },
-                  },
-                  required: ['ok', 'msg', 'service_health_statuses'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health',
-        tags: ['/health'],
-        'x-fern-ignore': true,
-      },
-      post: {
-        operationId: 'healthPost',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    msg: {
-                      enum: ['I’m one with the Force. The Force is with me.'],
-                      type: 'string',
-                    },
-                    ok: { type: 'boolean' },
-                    service_health_statuses: {
-                      items: { $ref: '#/components/schemas/service_health' },
-                      type: 'array',
-                    },
-                  },
-                  required: ['ok', 'msg', 'service_health_statuses'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health',
-        tags: ['/health'],
-        'x-fern-ignore': true,
-      },
-    },
-    '/health/get_health': {
-      get: {
-        operationId: 'healthGetHealthGet',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    msg: {
-                      enum: ['I’m one with the Force. The Force is with me.'],
-                      type: 'string',
-                    },
-                    ok: { type: 'boolean' },
-                    service_health_statuses: {
-                      items: { $ref: '#/components/schemas/service_health' },
-                      type: 'array',
-                    },
-                  },
-                  required: ['ok', 'msg', 'service_health_statuses'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health/get_health',
-        tags: ['/health'],
-        'x-fern-ignore': true,
-      },
-      post: {
-        operationId: 'healthGetHealthPost',
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    msg: {
-                      enum: ['I’m one with the Force. The Force is with me.'],
-                      type: 'string',
-                    },
-                    ok: { type: 'boolean' },
-                    service_health_statuses: {
-                      items: { $ref: '#/components/schemas/service_health' },
-                      type: 'array',
-                    },
-                  },
-                  required: ['ok', 'msg', 'service_health_statuses'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health/get_health',
-        tags: ['/health'],
-        'x-fern-sdk-group-name': ['health'],
-        'x-fern-sdk-method-name': 'get_health',
-      },
-    },
-    '/health/get_service_health': {
-      post: {
-        operationId: 'healthGetServiceHealthPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: { service: { type: 'string' } },
-                required: ['service'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    ok: { type: 'boolean' },
-                    service_health: {
-                      $ref: '#/components/schemas/service_health',
-                    },
-                  },
-                  required: [
-                    'ok',
-                    'last_service_evaluation_at',
-                    'service_health',
-                  ],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health/get_service_health',
-        tags: ['/health'],
-        'x-fern-sdk-group-name': ['health'],
-        'x-fern-sdk-method-name': 'get_service_health',
-      },
-    },
-    '/health/service/[service_name]': {
-      post: {
-        operationId: 'healthServiceByServiceNamePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: { service_name: { type: 'string' } },
-                required: ['service_name'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    last_service_evaluation_at: { type: 'string' },
-                    ok: { type: 'boolean' },
-                    service_health: {
-                      $ref: '#/components/schemas/service_health',
-                    },
-                  },
-                  required: [
-                    'ok',
-                    'last_service_evaluation_at',
-                    'service_health',
-                  ],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/health/service/[service_name]',
-        tags: ['/health'],
-        'x-fern-sdk-group-name': ['health', 'service'],
-        'x-fern-sdk-method-name': 'by_service_name',
-      },
-    },
     '/locks/get': {
       post: {
         operationId: 'locksGetPost',
@@ -8844,7 +8584,6 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'delete',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/noise_sensors/noise_thresholds/get': {
@@ -9052,7 +8791,6 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'action_attempt',
       },
       put: {
         operationId: 'noiseSensorsNoiseThresholdsUpdatePut',
