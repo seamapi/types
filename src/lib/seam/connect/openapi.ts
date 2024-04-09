@@ -1483,6 +1483,7 @@ export default {
                                     'start_date_in_future',
                                     'no_ascending_or_descending_sequence',
                                     'at_least_three_unique_digits',
+                                    'cannot_contain_089',
                                   ],
                                   type: 'string',
                                 },
