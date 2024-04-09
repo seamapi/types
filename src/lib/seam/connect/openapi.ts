@@ -6609,9 +6609,10 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { access_token: [], seam_workspace: [] },
-          { seam_client_session_token: [] },
-          { client_session_token: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
         ],
         summary: '/connect_webviews/list',
         tags: ['/connect_webviews'],
