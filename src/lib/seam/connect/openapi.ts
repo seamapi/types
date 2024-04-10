@@ -716,6 +716,7 @@ export default {
       },
       device: {
         properties: {
+          can_program_offline_access_codes: { type: 'boolean' },
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
@@ -1098,6 +1099,7 @@ export default {
                         properties: {
                           device_id: { type: 'number' },
                           door_id: { type: 'number' },
+                          door_is_wireless: { type: 'boolean' },
                           door_name: { type: 'string' },
                           iana_timezone: { type: 'string' },
                           predefined_time_slots: {
@@ -1141,6 +1143,7 @@ export default {
                         required: [
                           'door_id',
                           'door_name',
+                          'door_is_wireless',
                           'site_id',
                           'site_name',
                         ],
@@ -2118,6 +2121,7 @@ export default {
       },
       phone: {
         properties: {
+          can_program_offline_access_codes: { type: 'boolean' },
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
@@ -2344,6 +2348,7 @@ export default {
       },
       unmanaged_device: {
         properties: {
+          can_program_offline_access_codes: { type: 'boolean' },
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
@@ -7068,6 +7073,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -7080,6 +7086,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -7457,6 +7464,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -7469,6 +7477,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -8185,6 +8194,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -8197,6 +8207,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -9887,6 +9898,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],
@@ -9899,6 +9911,7 @@ export default {
                       enum: [
                         'can_remotely_unlock',
                         'can_remotely_lock',
+                        'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
                       ],

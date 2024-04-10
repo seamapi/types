@@ -192,6 +192,7 @@ export const device_metadata = z
       door_id: z.number(),
       door_name: z.string(),
       device_id: z.number().optional(),
+      door_is_wireless: z.boolean(),
       site_id: z.number(),
       site_name: z.string(),
       iana_timezone: z.string().optional(),
