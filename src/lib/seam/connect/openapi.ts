@@ -315,11 +315,16 @@ export default {
             nullable: true,
             properties: {
               accessibility_type: { type: 'string' },
+              door_name: { type: 'string' },
+              door_type: { type: 'string' },
               is_connected: { type: 'boolean' },
-              name: { type: 'string' },
-              type: { type: 'string' },
             },
-            required: ['accessibility_type', 'name', 'type', 'is_connected'],
+            required: [
+              'accessibility_type',
+              'door_name',
+              'door_type',
+              'is_connected',
+            ],
             type: 'object',
           },
           visionline_metadata: {
