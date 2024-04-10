@@ -1207,8 +1207,8 @@ export interface Routes {
         created_at: string
         latch_metadata: {
           accessibility_type: string
-          name: string
-          type: string
+          door_name: string
+          door_type: string
           is_connected: boolean
         } | null
         visionline_metadata: {
@@ -1259,8 +1259,8 @@ export interface Routes {
         created_at: string
         latch_metadata: {
           accessibility_type: string
-          name: string
-          type: string
+          door_name: string
+          door_type: string
           is_connected: boolean
         } | null
         visionline_metadata: {
@@ -1659,8 +1659,8 @@ export interface Routes {
         created_at: string
         latch_metadata: {
           accessibility_type: string
-          name: string
-          type: string
+          door_name: string
+          door_type: string
           is_connected: boolean
         } | null
         visionline_metadata: {
