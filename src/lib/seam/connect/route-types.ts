@@ -2661,6 +2661,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -3043,6 +3044,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -3183,6 +3185,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -3191,6 +3194,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -3542,6 +3546,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -3924,6 +3929,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -4147,6 +4153,7 @@ export interface Routes {
         }
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -4287,6 +4294,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -4295,6 +4303,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -4429,6 +4438,7 @@ export interface Routes {
         }
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -4982,6 +4992,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -5364,6 +5375,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -5711,6 +5723,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -6093,6 +6106,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -6233,6 +6247,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -6241,6 +6256,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -6592,6 +6608,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -6974,6 +6991,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -7321,6 +7339,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -7703,6 +7722,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -8082,6 +8102,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -8166,6 +8187,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -8727,6 +8749,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -9109,6 +9132,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }
@@ -9331,6 +9355,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -9339,6 +9364,7 @@ export interface Routes {
         | Array<
             | 'can_remotely_unlock'
             | 'can_remotely_lock'
+            | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
           >
@@ -9690,6 +9716,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -10072,6 +10099,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -10711,6 +10739,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -11093,6 +11122,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
@@ -11445,6 +11475,7 @@ export interface Routes {
                 door_id: number
                 door_name: string
                 device_id?: number | undefined
+                door_is_wireless: boolean
                 site_id: number
                 site_name: string
                 iana_timezone?: string | undefined
@@ -11827,6 +11858,7 @@ export interface Routes {
         custom_metadata: Record<string, string | boolean>
         can_remotely_unlock?: boolean | undefined
         can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
       }>
