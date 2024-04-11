@@ -87,13 +87,7 @@
     "npm": ">= 9.0.0"
   },
   "peerDependencies": {
-    "type-fest": "^4.3.1",
     "zod": "^3.21.4"
-  },
-  "peerDependenciesMeta": {
-    "type-fest": {
-      "optional": true
-    }
   },
   "devDependencies": {
     "@types/node": "^20.8.10",
@@ -111,7 +105,6 @@
     "tsc-alias": "^1.8.2",
     "tsup": "^8.0.1",
     "tsx": "^4.6.2",
-    "type-fest": "^4.3.1",
     "typedoc": "^0.25.2",
     "typescript": "^5.1.0",
     "zod": "^3.21.4"
