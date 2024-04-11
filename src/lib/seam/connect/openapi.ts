@@ -9483,7 +9483,6 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'climate_setting_schedule',
       },
       put: {
         operationId: 'thermostatsClimateSettingSchedulesUpdatePut',
@@ -11717,7 +11716,7 @@ export default {
         tags: ['/workspaces'],
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'reset_sandbox',
-        'x-fern-sdk-return-value': 'message',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
   },
