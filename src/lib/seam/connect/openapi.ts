@@ -2079,6 +2079,7 @@ export default {
       },
       event: {
         properties: {
+          action_attempt_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
           event_id: { format: 'uuid', type: 'string' },

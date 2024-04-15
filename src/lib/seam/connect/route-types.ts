@@ -4493,6 +4493,7 @@ export interface Routes {
         | {
             event_id: string
             device_id?: string | undefined
+            action_attempt_id?: string | undefined
             event_type: string
             workspace_id: string
             created_at: string
@@ -4632,6 +4633,7 @@ export interface Routes {
       events: Array<{
         event_id: string
         device_id?: string | undefined
+        action_attempt_id?: string | undefined
         event_type: string
         workspace_id: string
         created_at: string
