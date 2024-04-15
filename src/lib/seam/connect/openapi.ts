@@ -377,6 +377,7 @@ export default {
         properties: {
           acs_system_id: { format: 'uuid', type: 'string' },
           can_automate_enrollment: { type: 'boolean' },
+          can_create_acs_access_groups: { type: 'boolean' },
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: {
