@@ -34,6 +34,17 @@ export interface Routes {
             annotation_code: 'subscription_required'
             message: string
           }>
+          website?: string | undefined
+          legal_name?: string | undefined
+          parent_organization?: string | undefined
+          headquarters?: string[] | undefined
+          countries_of_origin?: string[] | undefined
+          founding_year?: string | undefined
+          us_customer_support_tel?: string | undefined
+          us_customer_support_email?: string | undefined
+          us_customer_support_contact_url?: string | undefined
+          seam_api_guide?: string | undefined
+          description?: string | undefined
         }
         is_device_supported: boolean
         display_name: string
@@ -211,6 +222,17 @@ export interface Routes {
               annotation_code: 'subscription_required'
               message: string
             }>
+            website?: string | undefined
+            legal_name?: string | undefined
+            parent_organization?: string | undefined
+            headquarters?: string[] | undefined
+            countries_of_origin?: string[] | undefined
+            founding_year?: string | undefined
+            us_customer_support_tel?: string | undefined
+            us_customer_support_email?: string | undefined
+            us_customer_support_contact_url?: string | undefined
+            seam_api_guide?: string | undefined
+            description?: string | undefined
           }
           is_device_supported: boolean
           display_name: string
@@ -362,6 +384,17 @@ export interface Routes {
           annotation_code: 'subscription_required'
           message: string
         }>
+        website?: string | undefined
+        legal_name?: string | undefined
+        parent_organization?: string | undefined
+        headquarters?: string[] | undefined
+        countries_of_origin?: string[] | undefined
+        founding_year?: string | undefined
+        us_customer_support_tel?: string | undefined
+        us_customer_support_email?: string | undefined
+        us_customer_support_contact_url?: string | undefined
+        seam_api_guide?: string | undefined
+        description?: string | undefined
       }
     }
   }
@@ -405,6 +438,17 @@ export interface Routes {
           annotation_code: 'subscription_required'
           message: string
         }>
+        website?: string | undefined
+        legal_name?: string | undefined
+        parent_organization?: string | undefined
+        headquarters?: string[] | undefined
+        countries_of_origin?: string[] | undefined
+        founding_year?: string | undefined
+        us_customer_support_tel?: string | undefined
+        us_customer_support_email?: string | undefined
+        us_customer_support_contact_url?: string | undefined
+        seam_api_guide?: string | undefined
+        description?: string | undefined
       }>
     }
   }
