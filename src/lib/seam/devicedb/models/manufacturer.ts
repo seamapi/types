@@ -38,6 +38,17 @@ export const manufacturer = z.object({
   requires_seam_support_to_add_account: z.boolean(),
   device_model_count: z.number(),
   annotations: z.array(manufacturer_annotation),
+  website: z.string().url().optional(),
+  legal_name: z.string().optional(),
+  parent_organization: z.string().optional(),
+  headquarters: z.array(z.string()).optional(),
+  countries_of_origin: z.array(z.string()).optional(),
+  founding_year: z.string().optional(),
+  us_customer_support_tel: z.string().optional(),
+  us_customer_support_email: z.string().email().optional(),
+  us_customer_support_contact_url: z.string().url().optional(),
+  seam_api_guide: z.string().optional(),
+  description: z.string().optional(),
 })
 
 export type Manufacturer = z.infer<typeof manufacturer>
