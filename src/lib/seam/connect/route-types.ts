@@ -1388,6 +1388,7 @@ export interface Routes {
         image_url: string
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
+        can_create_acs_access_groups?: boolean | undefined
       }
     }
   }
@@ -1446,6 +1447,7 @@ export interface Routes {
         image_url: string
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
+        can_create_acs_access_groups?: boolean | undefined
       }>
     }
   }
@@ -11919,6 +11921,7 @@ export interface Routes {
         image_url: string
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
+        can_create_acs_access_groups?: boolean | undefined
       }>
     }
   }
