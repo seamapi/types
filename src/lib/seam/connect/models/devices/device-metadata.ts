@@ -36,6 +36,7 @@ export const device_metadata = z
       zone_name: z.string(),
       site_id: z.number(),
       site_name: z.string(),
+      entry_relays_total_count: z.number(),
     }),
 
     schlage_metadata: z.object({
