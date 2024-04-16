@@ -883,6 +883,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -909,7 +910,14 @@ export interface Routes {
               | string
               | undefined
             card_format?: ('TLCode' | 'rfid48') | undefined
+            card_function_type?: 'guest' | 'staff'
+            /**
+                  ---
+                  deprecated: use override.
+                  ---
+                 */
             is_override_key?: boolean | undefined
+            override?: boolean | undefined
             joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
@@ -951,6 +959,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -1013,6 +1022,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -1078,6 +1088,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -1130,6 +1141,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -1182,6 +1194,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
@@ -1325,6 +1338,7 @@ export interface Routes {
         is_multi_phone_sync_credential?: boolean | undefined
         visionline_metadata?:
           | {
+              card_function_type: 'guest' | 'staff'
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
