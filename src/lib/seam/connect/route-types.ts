@@ -1389,6 +1389,8 @@ export interface Routes {
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
+        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }
     }
   }
@@ -1448,6 +1450,8 @@ export interface Routes {
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
+        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }>
     }
   }
@@ -2484,6 +2488,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -3369,6 +3374,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -4817,6 +4823,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -5548,6 +5555,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -6433,6 +6441,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -7164,6 +7173,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -8574,6 +8584,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -9541,6 +9552,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -10564,6 +10576,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -11300,6 +11313,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -11924,6 +11938,8 @@ export interface Routes {
         image_alt_text: string
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
+        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }>
     }
   }
