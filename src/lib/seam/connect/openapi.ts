@@ -1071,6 +1071,7 @@ export default {
                       avigilon_alta_metadata: {
                         properties: {
                           entry_name: { type: 'string' },
+                          entry_relays_total_count: { type: 'number' },
                           org_name: { type: 'string' },
                           site_id: { type: 'number' },
                           site_name: { type: 'string' },
@@ -1084,6 +1085,7 @@ export default {
                           'zone_name',
                           'site_id',
                           'site_name',
+                          'entry_relays_total_count',
                         ],
                         type: 'object',
                       },
