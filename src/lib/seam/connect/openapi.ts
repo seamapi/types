@@ -224,6 +224,7 @@ export default {
           starts_at: { type: 'string' },
           visionline_metadata: {
             properties: {
+              card_function_type: { enum: ['guest', 'staff'], type: 'string' },
               common_acs_entrance_ids: {
                 items: { format: 'uuid', type: 'string' },
                 type: 'array',
@@ -237,6 +238,7 @@ export default {
                 type: 'array',
               },
             },
+            required: ['card_function_type'],
             type: 'object',
           },
           warnings: {
@@ -4367,11 +4369,21 @@ export default {
                         enum: ['TLCode', 'rfid48'],
                         type: 'string',
                       },
-                      is_override_key: { type: 'boolean' },
+                      card_function_type: {
+                        default: 'guest',
+                        enum: ['guest', 'staff'],
+                        type: 'string',
+                      },
+                      is_override_key: {
+                        description:
+                          '\n          ---\n          deprecated: use override.\n          ---\n        ',
+                        type: 'boolean',
+                      },
                       joiner_acs_credential_ids: {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
+                      override: { type: 'boolean' },
                     },
                     type: 'object',
                   },
