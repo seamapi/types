@@ -376,8 +376,10 @@ export default {
       acs_system: {
         properties: {
           acs_system_id: { format: 'uuid', type: 'string' },
+          can_add_acs_users_to_acs_access_groups: { type: 'boolean' },
           can_automate_enrollment: { type: 'boolean' },
           can_create_acs_access_groups: { type: 'boolean' },
+          can_remove_acs_users_from_acs_access_groups: { type: 'boolean' },
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
           external_type: {
@@ -1071,6 +1073,7 @@ export default {
                       avigilon_alta_metadata: {
                         properties: {
                           entry_name: { type: 'string' },
+                          entry_relays_total_count: { type: 'number' },
                           org_name: { type: 'string' },
                           site_id: { type: 'number' },
                           site_name: { type: 'string' },
@@ -1084,6 +1087,7 @@ export default {
                           'zone_name',
                           'site_id',
                           'site_name',
+                          'entry_relays_total_count',
                         ],
                         type: 'object',
                       },
