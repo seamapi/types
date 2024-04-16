@@ -2484,6 +2484,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -3369,6 +3370,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -4817,6 +4819,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -5548,6 +5551,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -6433,6 +6437,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -7164,6 +7169,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -8574,6 +8580,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -9541,6 +9548,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -10564,6 +10572,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
@@ -11300,6 +11309,7 @@ export interface Routes {
                 zone_name: string
                 site_id: number
                 site_name: string
+                entry_relays_total_count: number
               }
             | undefined
           schlage_metadata?:
