@@ -7,9 +7,11 @@ import { connected_account_events } from './connected-accounts.js'
 import { device_events } from './devices.js'
 import { enrollment_automation_events } from './enrollment-automations.js'
 import { phone_events } from './phones.js'
+import { action_attempt_events } from 'lib/seam/connect/models/events/action_attempts.js'
 
 export const seam_event = z.discriminatedUnion('event_type', [
   ...access_code_events,
+  ...action_attempt_events,
   ...acs_events,
   ...client_session_events,
   ...connected_account_events,
