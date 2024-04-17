@@ -1,1 +1,6 @@
-export type { ConnectWebview, CustomMetadata } from './models/index.js'
+export type {
+  ConnectWebview,
+  CustomMetadata,
+  SeamEvent,
+  SeamEventType,
+} from './models/index.js'
