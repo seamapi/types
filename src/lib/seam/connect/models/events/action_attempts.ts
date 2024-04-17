@@ -1,5 +1,6 @@
-import { common_event } from 'lib/seam/connect/models/events/common.js'
 import { z } from 'zod'
+
+import { common_event } from 'lib/seam/connect/models/events/common.js'
 
 const action_attempt_lock_door_failed_event = common_event
   .extend({
