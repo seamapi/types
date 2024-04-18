@@ -1509,7 +1509,7 @@ export default {
                             {
                               properties: {
                                 constraint_type: {
-                                  enum: ['name_length'],
+                                  enum: ['name_length', 'name_must_be_unique'],
                                   type: 'string',
                                 },
                                 max_length: { type: 'number' },

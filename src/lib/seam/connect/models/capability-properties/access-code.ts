@@ -15,7 +15,7 @@ export const access_code_code_constraint = z.object({
 })
 
 export const access_code_name_constraint = z.object({
-  constraint_type: z.literal('name_length'), // Nuki, Kwikset
+  constraint_type: z.enum(['name_length', 'name_must_be_unique']), // Nuki, Kwikset
   min_length: z.number().optional(),
   max_length: z.number().optional(),
 })

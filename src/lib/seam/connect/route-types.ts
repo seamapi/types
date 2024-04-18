@@ -2746,7 +2746,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -3632,7 +3632,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -5085,7 +5085,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -5817,7 +5817,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -6703,7 +6703,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -7435,7 +7435,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -8846,7 +8846,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -9814,7 +9814,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -10838,7 +10838,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
@@ -11575,7 +11575,7 @@ export interface Routes {
                             | 'cannot_contain_089'
                         }
                       | {
-                          constraint_type: 'name_length'
+                          constraint_type: 'name_length' | 'name_must_be_unique'
                           min_length?: number | undefined
                           max_length?: number | undefined
                         }
