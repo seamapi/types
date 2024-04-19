@@ -1224,6 +1224,10 @@ export interface Routes {
           door_type: string
           is_connected: boolean
         } | null
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1276,6 +1280,10 @@ export interface Routes {
           door_type: string
           is_connected: boolean
         } | null
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
         visionline_metadata: {
           door_name: string
           door_category:
@@ -1683,6 +1691,10 @@ export interface Routes {
           door_type: string
           is_connected: boolean
         } | null
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
         visionline_metadata: {
           door_name: string
           door_category:
