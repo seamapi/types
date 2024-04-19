@@ -4526,6 +4526,11 @@ export interface Routes {
             event_id: string
             device_id?: string | undefined
             action_attempt_id?: string | undefined
+            acs_credential_id?: string | undefined
+            acs_user_id?: string | undefined
+            acs_system_id?: string | undefined
+            client_session_id?: string | undefined
+            enrollment_automation_id?: string | undefined
             event_type: string
             workspace_id: string
             created_at: string
@@ -4670,6 +4675,11 @@ export interface Routes {
         event_id: string
         device_id?: string | undefined
         action_attempt_id?: string | undefined
+        acs_credential_id?: string | undefined
+        acs_user_id?: string | undefined
+        acs_system_id?: string | undefined
+        client_session_id?: string | undefined
+        enrollment_automation_id?: string | undefined
         event_type: string
         workspace_id: string
         created_at: string
