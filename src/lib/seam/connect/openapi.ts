@@ -2097,9 +2097,14 @@ export default {
       },
       event: {
         properties: {
+          acs_credential_id: { format: 'uuid', type: 'string' },
+          acs_system_id: { format: 'uuid', type: 'string' },
+          acs_user_id: { format: 'uuid', type: 'string' },
           action_attempt_id: { format: 'uuid', type: 'string' },
+          client_session_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
+          enrollment_automation_id: { format: 'uuid', type: 'string' },
           event_id: { format: 'uuid', type: 'string' },
           event_type: { type: 'string' },
           occurred_at: { format: 'date-time', type: 'string' },
