@@ -13,6 +13,12 @@ export const acs_entrance = z.object({
   acs_system_id: z.string().uuid(),
   created_at: z.string().datetime(),
   latch_metadata: acs_entrance_latch_metadata.nullable(),
+  errors: z.array(
+    z.object({
+      error_code: z.string(),
+      message: z.string(),
+    }),
+  ),
   visionline_metadata: z
     .object({
       door_name: z.string(),
