@@ -313,6 +313,17 @@ export default {
           acs_system_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           display_name: { type: 'string' },
+          errors: {
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           latch_metadata: {
             nullable: true,
             properties: {
@@ -371,6 +382,7 @@ export default {
           'acs_system_id',
           'created_at',
           'latch_metadata',
+          'errors',
           'visionline_metadata',
         ],
         type: 'object',
