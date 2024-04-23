@@ -1,5 +1,6 @@
 export type * from './access-codes.js'
 export type * from './acs/index.js'
+export type * from './action-attempts.js'
 export type * from './client-sessions.js'
 export type * from './connected-accounts.js'
 export type * from './devices.js'
