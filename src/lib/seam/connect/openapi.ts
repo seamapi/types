@@ -4728,8 +4728,9 @@ export default {
                 properties: {
                   acs_credential_id: { type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
+                  ends_at: { format: 'date-time', type: 'string' },
                 },
-                required: ['acs_credential_id', 'code'],
+                required: ['acs_credential_id'],
                 type: 'object',
               },
             },
@@ -4774,8 +4775,9 @@ export default {
                 properties: {
                   acs_credential_id: { type: 'string' },
                   code: { pattern: '^\\d+$', type: 'string' },
+                  ends_at: { format: 'date-time', type: 'string' },
                 },
-                required: ['acs_credential_id', 'code'],
+                required: ['acs_credential_id'],
                 type: 'object',
               },
             },

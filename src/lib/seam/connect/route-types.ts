@@ -1156,7 +1156,8 @@ export interface Routes {
     queryParams: {}
     jsonBody: {
       acs_credential_id: string
-      code: string
+      code?: string | undefined
+      ends_at?: string | undefined
     }
     commonParams: {}
     formData: {}
