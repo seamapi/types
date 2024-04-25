@@ -4610,6 +4610,8 @@ export interface Routes {
             | 'client_session.deleted'
             | 'action_attempt.lock_door.succeeded'
             | 'action_attempt.lock_door.failed'
+            | 'action_attempt.unlock_door.succeeded'
+            | 'action_attempt.unlock_door.failed'
           )
         | undefined
       event_types?:
@@ -4669,6 +4671,8 @@ export interface Routes {
             | 'client_session.deleted'
             | 'action_attempt.lock_door.succeeded'
             | 'action_attempt.lock_door.failed'
+            | 'action_attempt.unlock_door.succeeded'
+            | 'action_attempt.unlock_door.failed'
           >
         | undefined
       connected_account_id?: string | undefined
