@@ -4555,6 +4555,8 @@ export interface Routes {
       access_code_ids?: string[] | undefined
       event_type?:
         | (
+            | 'device.accessory_keypad_connected'
+            | 'device.accessory_keypad_disconnected'
             | 'device.connected'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
@@ -4574,8 +4576,6 @@ export interface Routes {
             | 'device.connection_stabilized'
             | 'device.error.subscription_required'
             | 'device.error.subscription_required.resolved'
-            | 'device.accessory_keypad_connected'
-            | 'device.accessory_keypad_disconnected'
             | 'access_code.created'
             | 'access_code.changed'
             | 'access_code.scheduled_on_device'
@@ -4616,6 +4616,8 @@ export interface Routes {
         | undefined
       event_types?:
         | Array<
+            | 'device.accessory_keypad_connected'
+            | 'device.accessory_keypad_disconnected'
             | 'device.connected'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
@@ -4635,8 +4637,6 @@ export interface Routes {
             | 'device.connection_stabilized'
             | 'device.error.subscription_required'
             | 'device.error.subscription_required.resolved'
-            | 'device.accessory_keypad_connected'
-            | 'device.accessory_keypad_disconnected'
             | 'access_code.created'
             | 'access_code.changed'
             | 'access_code.scheduled_on_device'
