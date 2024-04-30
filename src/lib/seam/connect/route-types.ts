@@ -454,7 +454,33 @@ export interface Routes {
       sync?: boolean
     }
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            status: 'success'
+            action_type: string
+            action_attempt_id: string
+            result?: any
+            error: null
+          }
+        | {
+            status: 'pending'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: null
+          }
+        | {
+            status: 'error'
+            action_type: string
+            action_attempt_id: string
+            result: null
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
   }
   '/access_codes/unmanaged/delete': {
     route: '/access_codes/unmanaged/delete'

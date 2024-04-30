@@ -3026,6 +3026,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/generate_code': {
@@ -3312,8 +3313,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -3357,8 +3363,13 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -3378,6 +3389,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'convert_to_managed',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/unmanaged/delete': {
@@ -3428,6 +3440,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/access_codes/unmanaged/get': {
@@ -3779,6 +3792,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
       put: {
         operationId: 'accessCodesUpdatePut',
