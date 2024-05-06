@@ -151,6 +151,7 @@ export const device_metadata = z
     ttlock_metadata: z.object({
       lock_id: z.number(),
       lock_alias: z.string(),
+      feature_value: z.string(),
     }),
 
     seam_bridge_metadata: z.object({

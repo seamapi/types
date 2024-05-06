@@ -1447,10 +1447,11 @@ export default {
                       },
                       ttlock_metadata: {
                         properties: {
+                          feature_value: { type: 'string' },
                           lock_alias: { type: 'string' },
                           lock_id: { type: 'number' },
                         },
-                        required: ['lock_id', 'lock_alias'],
+                        required: ['lock_id', 'lock_alias', 'feature_value'],
                         type: 'object',
                       },
                       two_n_metadata: {
