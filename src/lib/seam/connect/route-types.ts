@@ -2646,6 +2646,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -3532,6 +3533,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -5003,6 +5005,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -5735,6 +5738,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -6621,6 +6625,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -7353,6 +7358,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -8764,6 +8770,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -9732,6 +9739,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -10756,6 +10764,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
@@ -11493,6 +11502,7 @@ export interface Routes {
             | {
                 lock_id: number
                 lock_alias: string
+                feature_value: string
               }
             | undefined
           seam_bridge_metadata?:
