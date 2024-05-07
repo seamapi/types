@@ -2748,7 +2748,7 @@ export default {
                     type: 'boolean',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -2831,7 +2831,7 @@ export default {
                     type: 'string',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -2914,7 +2914,7 @@ export default {
                     type: 'string',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -3644,7 +3644,7 @@ export default {
                     type: 'boolean',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -3719,7 +3719,7 @@ export default {
                     type: 'boolean',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
@@ -3795,7 +3795,7 @@ export default {
                     type: 'boolean',
                   },
                   code: {
-                    maxLength: 8,
+                    maxLength: 9,
                     minLength: 4,
                     pattern: '^\\d+$',
                     type: 'string',
