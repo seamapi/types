@@ -1478,6 +1478,67 @@ export interface Routes {
       }>
     }
   }
+  '/acs/systems/list_compatible_credential_manager_acs_systems': {
+    route: '/acs/systems/list_compatible_credential_manager_acs_systems'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_system_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_systems: Array<{
+        acs_system_id: string
+        external_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
+        /**
+              ---
+              deprecated: use external_type
+              ---
+               */
+        system_type?:
+          | (
+              | 'pti_site'
+              | 'alta_org'
+              | 'salto_site'
+              | 'brivo_account'
+              | 'hid_credential_manager_organization'
+              | 'visionline_system'
+              | 'assa_abloy_credential_service'
+              | 'latch_building'
+            )
+          | undefined
+        /**
+              ---
+              deprecated: use external_type_display_name
+              ---
+               */
+        system_type_display_name?: string | undefined
+        name: string
+        created_at: string
+        workspace_id: string
+        connected_account_ids: string[]
+        image_url: string
+        image_alt_text: string
+        can_automate_enrollment?: boolean | undefined
+        can_create_acs_access_groups?: boolean | undefined
+        can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        can_add_acs_users_to_acs_access_groups?: boolean | undefined
+      }>
+    }
+  }
   '/acs/users/add_to_access_group': {
     route: '/acs/users/add_to_access_group'
     method: 'PUT' | 'POST'

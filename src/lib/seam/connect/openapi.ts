@@ -5115,6 +5115,57 @@ export default {
         'x-fern-sdk-return-value': 'acs_systems',
       },
     },
+    '/acs/systems/list_compatible_credential_manager_acs_systems': {
+      post: {
+        operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_system_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_systems: {
+                      items: { $ref: '#/components/schemas/acs_system' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/systems/list_compatible_credential_manager_acs_systems',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'systems'],
+        'x-fern-sdk-method-name':
+          'list_compatible_credential_manager_acs_systems',
+        'x-fern-sdk-return-value': 'acs_systems',
+      },
+    },
     '/acs/users/add_to_access_group': {
       post: {
         operationId: 'acsUsersAddToAccessGroupPost',
