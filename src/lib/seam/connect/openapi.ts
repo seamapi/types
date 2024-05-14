@@ -4624,6 +4624,56 @@ export default {
         'x-fern-sdk-return-value': 'acs_credentials',
       },
     },
+    '/acs/credentials/list_accessible_entrances': {
+      post: {
+        operationId: 'acsCredentialsListAccessibleEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_credential_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/acs/credentials/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+      },
+    },
     '/acs/credentials/unassign': {
       patch: {
         operationId: 'acsCredentialsUnassignPatch',
