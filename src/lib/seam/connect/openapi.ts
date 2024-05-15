@@ -9167,6 +9167,10 @@ export default {
                     },
                     type: 'object',
                   },
+                  credential_manager_acs_system_id: {
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   custom_sdk_installation_id: { type: 'string' },
                   phone_metadata: {
                     default: {},
@@ -9190,7 +9194,10 @@ export default {
                   },
                   user_identity_id: { format: 'uuid', type: 'string' },
                 },
-                required: ['user_identity_id'],
+                required: [
+                  'user_identity_id',
+                  'credential_manager_acs_system_id',
+                ],
                 type: 'object',
               },
             },
