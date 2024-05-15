@@ -8294,6 +8294,7 @@ export interface Routes {
         device_manufacturer?: string
         device_model?: string
       }
+      credential_manager_acs_system_id: string
       assa_abloy_metadata?: {
         ble_capability?: boolean
         hce_capability?: boolean
