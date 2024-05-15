@@ -143,6 +143,12 @@ export const common_device_properties = z.object({
       `,
     )
     .optional(),
+  noise_level_decibels: z
+    .number()
+    .describe(
+      'Indicates current noise level in decibels, if the device supports noise detection.',
+    )
+    .optional(),
 })
 
 export const managed_device = z
