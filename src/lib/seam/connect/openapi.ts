@@ -1006,6 +1006,11 @@ export default {
                               '\n      ---\n      deprecated: use device.display_name instead\n      ---\n      Name of the device.\n      ',
                             type: 'string',
                           },
+                          noise_level_decibels: {
+                            description:
+                              'Indicates current noise level in decibels, if the device supports noise detection.',
+                            type: 'number',
+                          },
                           offline_access_codes_enabled: {
                             description:
                               'Indicates whether it is currently possible to use offline access codes for the device.',

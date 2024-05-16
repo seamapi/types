@@ -2586,6 +2586,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -3473,6 +3475,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -4945,6 +4949,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -5678,6 +5684,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -6565,6 +6573,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -7298,6 +7308,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -8711,6 +8723,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -9680,6 +9694,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -10705,6 +10721,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -11443,6 +11461,8 @@ export interface Routes {
                   ---
                    */
           supports_offline_access_codes?: boolean | undefined
+          /** Indicates current noise level in decibels, if the device supports noise detection. */
+          noise_level_decibels?: number | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
