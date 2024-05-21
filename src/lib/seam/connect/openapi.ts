@@ -6727,6 +6727,7 @@ export default {
                       "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
                     type: 'object',
                   },
+                  limit: { default: 500, nullable: true, type: 'number' },
                   user_identifier_key: { type: 'string' },
                 },
                 type: 'object',
