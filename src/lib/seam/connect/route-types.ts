@@ -2284,6 +2284,7 @@ export interface Routes {
       user_identifier_key?: string | undefined
       /** Returns devices where the webview's custom_metadata contains all of the provided key/value pairs. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      limit?: number
     }
     formData: {}
     jsonResponse: {
