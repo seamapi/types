@@ -2573,7 +2573,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -2601,7 +2605,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -3462,7 +3466,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -3490,7 +3498,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -4317,7 +4325,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
         }
@@ -4602,7 +4614,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
         }
@@ -4936,7 +4952,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -4964,7 +4984,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -5671,7 +5691,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -5699,7 +5723,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -6560,7 +6584,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -6588,7 +6616,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -7295,7 +7323,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -7323,7 +7355,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -8709,7 +8741,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -8737,7 +8773,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -9680,7 +9716,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -9708,7 +9748,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -10707,7 +10747,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -10735,7 +10779,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
@@ -11447,7 +11491,11 @@ export interface Routes {
             offline_access_codes_supported?: boolean | undefined
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
-            /** Indicates whether the device supports an accessory keypad. */
+            /**
+                      ---
+                      deprecated: use device.properties.model.can_connect_accessory_keypad
+                      ---
+                       */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -11475,7 +11523,7 @@ export interface Routes {
           offline_access_codes_enabled?: boolean | undefined
           /**
                   ---
-                  deprecated: use model.accessory_keypad_supported
+                  deprecated: use device.properties.model.can_connect_accessory_keypad
                   ---
                    */
           supports_accessory_keypad?: boolean | undefined
