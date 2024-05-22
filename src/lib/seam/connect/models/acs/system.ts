@@ -41,6 +41,18 @@ export const acs_system = z
     connected_account_ids: z.array(z.string()),
     image_url: z.string(),
     image_alt_text: z.string(),
+    errors: z.array(
+      z.object({
+        error_code: z.string(),
+        message: z.string(),
+      }),
+    ),
+    warnings: z.array(
+      z.object({
+        warning_code: z.string(),
+        message: z.string(),
+      }),
+    ),
   })
   .merge(acs_system_capability_flags)
 

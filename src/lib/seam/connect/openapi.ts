@@ -396,6 +396,17 @@ export default {
           can_remove_acs_users_from_acs_access_groups: { type: 'boolean' },
           connected_account_ids: { items: { type: 'string' }, type: 'array' },
           created_at: { format: 'date-time', type: 'string' },
+          errors: {
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           external_type: {
             enum: [
               'pti_site',
@@ -433,6 +444,17 @@ export default {
               '\n      ---\n      deprecated: use external_type_display_name\n      ---\n      ',
             type: 'string',
           },
+          warnings: {
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['warning_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -443,6 +465,8 @@ export default {
           'connected_account_ids',
           'image_url',
           'image_alt_text',
+          'errors',
+          'warnings',
         ],
         type: 'object',
       },
