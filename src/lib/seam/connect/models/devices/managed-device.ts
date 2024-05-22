@@ -77,7 +77,13 @@ export const common_device_properties = z.object({
     accessory_keypad_supported: z
       .boolean()
       .optional()
-      .describe('Indicates whether the device supports an accessory keypad.'),
+      .describe(
+        `
+      ---
+      deprecated: use device.properties.model.can_connect_accessory_keypad
+      ---
+      `,
+      ),
   }),
   has_direct_power: z
     .boolean()
@@ -128,7 +134,7 @@ export const common_device_properties = z.object({
     .describe(
       `
       ---
-      deprecated: use model.accessory_keypad_supported
+      deprecated: use device.properties.model.can_connect_accessory_keypad
       ---
       `,
     )

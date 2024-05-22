@@ -985,7 +985,7 @@ export default {
                             properties: {
                               accessory_keypad_supported: {
                                 description:
-                                  'Indicates whether the device supports an accessory keypad.',
+                                  '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
                                 type: 'boolean',
                               },
                               can_connect_accessory_keypad: {
@@ -1056,7 +1056,7 @@ export default {
                           },
                           supports_accessory_keypad: {
                             description:
-                              '\n      ---\n      deprecated: use model.accessory_keypad_supported\n      ---\n      ',
+                              '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
                             type: 'boolean',
                           },
                           supports_offline_access_codes: {
@@ -2568,7 +2568,7 @@ export default {
                 properties: {
                   accessory_keypad_supported: {
                     description:
-                      'Indicates whether the device supports an accessory keypad.',
+                      '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
                     type: 'boolean',
                   },
                   can_connect_accessory_keypad: {
