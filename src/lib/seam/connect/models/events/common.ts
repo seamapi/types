@@ -1,4 +1,4 @@
-import * as z from 'zod'
+import { z } from 'zod'
 
 export const common_event = z.object({
   workspace_id: z.string().uuid().describe(`

@@ -523,40 +523,63 @@ export default {
         type: 'object',
       },
       action_attempt: {
-        discriminator: { propertyName: 'status' },
         oneOf: [
           {
+            description: 'Locking door.',
             properties: {
-              action_attempt_id: { format: 'uuid', type: 'string' },
-              action_type: { type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
-              status: { enum: ['success'], type: 'string' },
-            },
-            required: ['status', 'action_type', 'action_attempt_id', 'error'],
-            type: 'object',
-          },
-          {
-            properties: {
-              action_attempt_id: { format: 'uuid', type: 'string' },
-              action_type: { type: 'string' },
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
               error: { format: 'null', nullable: true, type: 'string' },
               result: { format: 'null', nullable: true, type: 'string' },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
-              'status',
-              'action_type',
               'action_attempt_id',
+              'status',
               'result',
               'error',
+              'action_type',
             ],
             type: 'object',
           },
           {
+            description: 'Locking door succeeded.',
             properties: {
-              action_attempt_id: { format: 'uuid', type: 'string' },
-              action_type: { type: 'string' },
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Locking door failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['LOCK_DOOR'], type: 'string' },
               error: {
                 properties: {
                   message: { type: 'string' },
@@ -569,10 +592,551 @@ export default {
               status: { enum: ['error'], type: 'string' },
             },
             required: [
-              'status',
-              'action_type',
               'action_attempt_id',
+              'status',
               'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Unlocking door.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Unlocking door succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Unlocking door failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resetting sandbox workspace.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['RESET_SANDBOX_WORKSPACE'],
+                type: 'string',
+              },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resetting sandbox workspace succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['RESET_SANDBOX_WORKSPACE'],
+                type: 'string',
+              },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Resetting sandbox workspace failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: {
+                enum: ['RESET_SANDBOX_WORKSPACE'],
+                type: 'string',
+              },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to cool.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_COOL'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to cool succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_COOL'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to cool failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_COOL'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to heat mode.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to heat mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to heat mode failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to heat-cool mode.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC to heat-cool mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting heat-cool mode failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting fan mode.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting fan mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting fan mode failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Turning HVAC off.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Turning HVAC off succeeded.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
+              error: { format: 'null', nullable: true, type: 'string' },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Turning HVAC off failed.',
+            properties: {
+              action_attempt_id: {
+                description:
+                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { format: 'null', nullable: true, type: 'string' },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
               'error',
             ],
             type: 'object',
@@ -2814,7 +3378,91 @@ export default {
                   properties: {
                     access_code: { $ref: '#/components/schemas/access_code' },
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -3032,7 +3680,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -3434,7 +4166,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -3710,7 +4526,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -3785,7 +4685,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -3861,7 +4845,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -5895,7 +6963,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -5948,7 +7100,93 @@ export default {
                 schema: {
                   properties: {
                     action_attempts: {
-                      items: { $ref: '#/components/schemas/action_attempt' },
+                      items: {
+                        discriminator: { propertyName: 'status' },
+                        oneOf: [
+                          {
+                            properties: {
+                              action_attempt_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              action_type: { type: 'string' },
+                              error: {
+                                format: 'null',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              result: { nullable: true },
+                              status: { enum: ['success'], type: 'string' },
+                            },
+                            required: [
+                              'status',
+                              'action_type',
+                              'action_attempt_id',
+                              'error',
+                            ],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              action_attempt_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              action_type: { type: 'string' },
+                              error: {
+                                format: 'null',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              result: {
+                                format: 'null',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              status: { enum: ['pending'], type: 'string' },
+                            },
+                            required: [
+                              'status',
+                              'action_type',
+                              'action_attempt_id',
+                              'result',
+                              'error',
+                            ],
+                            type: 'object',
+                          },
+                          {
+                            properties: {
+                              action_attempt_id: {
+                                format: 'uuid',
+                                type: 'string',
+                              },
+                              action_type: { type: 'string' },
+                              error: {
+                                properties: {
+                                  message: { type: 'string' },
+                                  type: { type: 'string' },
+                                },
+                                required: ['type', 'message'],
+                                type: 'object',
+                              },
+                              result: {
+                                format: 'null',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              status: { enum: ['error'], type: 'string' },
+                            },
+                            required: [
+                              'status',
+                              'action_type',
+                              'action_attempt_id',
+                              'result',
+                              'error',
+                            ],
+                            type: 'object',
+                          },
+                        ],
+                      },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -8702,7 +9940,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     noise_threshold: {
                       $ref: '#/components/schemas/noise_threshold',
@@ -8756,7 +10078,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -8911,7 +10317,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -8963,7 +10453,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },
@@ -9016,7 +10590,91 @@ export default {
                 schema: {
                   properties: {
                     action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
+                      discriminator: { propertyName: 'status' },
+                      oneOf: [
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: { nullable: true },
+                            status: { enum: ['success'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['pending'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                        {
+                          properties: {
+                            action_attempt_id: {
+                              format: 'uuid',
+                              type: 'string',
+                            },
+                            action_type: { type: 'string' },
+                            error: {
+                              properties: {
+                                message: { type: 'string' },
+                                type: { type: 'string' },
+                              },
+                              required: ['type', 'message'],
+                              type: 'object',
+                            },
+                            result: {
+                              format: 'null',
+                              nullable: true,
+                              type: 'string',
+                            },
+                            status: { enum: ['error'], type: 'string' },
+                          },
+                          required: [
+                            'status',
+                            'action_type',
+                            'action_attempt_id',
+                            'result',
+                            'error',
+                          ],
+                          type: 'object',
+                        },
+                      ],
                     },
                     ok: { type: 'boolean' },
                   },

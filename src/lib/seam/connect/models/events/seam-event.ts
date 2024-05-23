@@ -1,4 +1,4 @@
-import * as z from 'zod'
+import { z } from 'zod'
 
 import { access_code_events } from './access-codes.js'
 import { acs_events } from './acs/index.js'
