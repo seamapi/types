@@ -1,4 +1,5 @@
 export type {
+  ActionAttempt,
   ConnectWebview,
   CustomMetadata,
   SeamEvent,
