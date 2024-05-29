@@ -26,24 +26,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -184,24 +790,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -469,24 +1681,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -613,24 +2431,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -1926,24 +4350,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -1963,24 +4993,630 @@ export interface Routes {
     jsonResponse: {
       action_attempts: Array<
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -8318,6 +11954,300 @@ export interface Routes {
               message: string
             }
           }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/locks/unlock_door': {
@@ -8668,6 +12598,300 @@ export interface Routes {
               message: string
             }
           }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/networks/get': {
@@ -8722,24 +12946,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -8770,24 +13600,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -8857,24 +14293,630 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            status: 'success'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
-            result?: any
-            error: null
-          }
-        | {
             status: 'pending'
-            action_type: string
-            action_attempt_id: string
             result: null
             error: null
+            action_type: 'LOCK_DOOR'
           }
         | {
-            status: 'error'
-            action_type: string
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
             action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
             result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -9565,6 +15607,300 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -10674,6 +17010,300 @@ export interface Routes {
               message: string
             }
           }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/thermostats/heat_cool': {
@@ -11023,6 +17653,300 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -12271,6 +19195,300 @@ export interface Routes {
               message: string
             }
           }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/thermostats/set_fan_mode': {
@@ -12618,6 +19836,300 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string
@@ -14953,6 +22465,300 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /**
+            ---
+            title: Action Attempt ID
+            ---
+            The ID of the action attempt.
+           */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
               type: string
               message: string

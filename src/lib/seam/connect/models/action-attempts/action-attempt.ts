@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { deprecated_action_attempts } from './deprecated.js'
 import { lock_door_action_attempt } from './lock-door.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
 import { set_cool_action_attempt } from './set-cool.js'
@@ -18,8 +19,7 @@ export const action_attempt = z.union([
   ...set_heat_cool_action_attempt.options,
   ...set_fan_mode_action_attempt.options,
   ...set_thermostat_off_action_attempt.options,
+  ...deprecated_action_attempts,
 ])
 
 export type ActionAttempt = z.infer<typeof action_attempt>
-
-export type ActionAttemptType = ActionAttempt['action_type']
