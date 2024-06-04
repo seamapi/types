@@ -30,7 +30,6 @@ export {
   lock_device_type,
   managed_access_code,
   managed_device,
-  network,
   noise_sensor_device_type,
   phone,
   phone_number,
@@ -39,5 +38,6 @@ export {
   unmanaged_access_code,
   unmanaged_device,
   user_identity,
+  workspace,
 } from '../models/index.js'
 export * from '../schemas.js'

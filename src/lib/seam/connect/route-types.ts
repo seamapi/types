@@ -22086,8 +22086,8 @@ export interface Routes {
       workspace: {
         workspace_id: string
         name: string
-        connect_partner_name: string | null
         is_sandbox: boolean
+        connect_partner_name: string | null
       }
     }
   }
@@ -22099,14 +22099,12 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      workspace?:
-        | {
-            workspace_id: string
-            name: string
-            is_sandbox: boolean
-            connect_partner_name: string | null
-          }
-        | undefined
+      workspace: {
+        workspace_id: string
+        name: string
+        is_sandbox: boolean
+        connect_partner_name: string | null
+      }
     }
   }
   '/workspaces/list': {
