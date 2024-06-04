@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-import { phone_number } from './phone-number.js'
+import { phone_number } from '../phone-number.js'
 
 export const user_identity = z.object({
   user_identity_id: z.string().uuid(),

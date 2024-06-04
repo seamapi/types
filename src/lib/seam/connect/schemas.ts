@@ -3,4 +3,5 @@ export {
   connect_webview,
   custom_metadata,
   seam_event,
+  workspace,
 } from './models/index.js'
