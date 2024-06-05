@@ -3729,7 +3729,13 @@ export default {
       },
       workspace: {
         properties: {
-          connect_partner_name: { nullable: true, type: 'string' },
+          company_name: { type: 'string' },
+          connect_partner_name: {
+            description:
+              '\n    ---\n    deprecated: use company_name\n    ---\n  ',
+            nullable: true,
+            type: 'string',
+          },
           is_sandbox: { type: 'boolean' },
           name: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
@@ -3737,6 +3743,7 @@ export default {
         required: [
           'workspace_id',
           'name',
+          'company_name',
           'is_sandbox',
           'connect_partner_name',
         ],
@@ -12707,8 +12714,11 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  company_name: { type: 'string' },
                   connect_partner_name: {
-                    description: 'The name shown inside the connect webview',
+                    description:
+                      '\n    ---\n    deprecated: use company_name\n    ---\n  ',
+                    nullable: true,
                     type: 'string',
                   },
                   is_sandbox: { default: false, type: 'boolean' },
@@ -12719,7 +12729,7 @@ export default {
                   },
                   webview_primary_button_color: { type: 'string' },
                 },
-                required: ['name', 'connect_partner_name'],
+                required: ['name'],
                 type: 'object',
               },
             },
