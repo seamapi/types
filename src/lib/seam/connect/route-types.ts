@@ -22074,8 +22074,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {
       name: string
-      /** The name shown inside the connect webview */
-      connect_partner_name: string
+      company_name?: string | undefined
+      /**
+        ---
+        deprecated: use company_name
+        ---
+       */
+      connect_partner_name?: ((string | null) | null) | undefined
       is_sandbox?: boolean
       webview_primary_button_color?: string | undefined
       webview_logo_shape?: ('circle' | 'square') | undefined
@@ -22086,8 +22091,14 @@ export interface Routes {
       workspace: {
         workspace_id: string
         name: string
+        company_name: string
         is_sandbox: boolean
-        connect_partner_name: string | null
+        /**
+            ---
+            deprecated: use company_name
+            ---
+           */
+        connect_partner_name: (string | null) | null
       }
     }
   }
@@ -22102,8 +22113,14 @@ export interface Routes {
       workspace: {
         workspace_id: string
         name: string
+        company_name: string
         is_sandbox: boolean
-        connect_partner_name: string | null
+        /**
+            ---
+            deprecated: use company_name
+            ---
+           */
+        connect_partner_name: (string | null) | null
       }
     }
   }
@@ -22118,8 +22135,14 @@ export interface Routes {
       workspaces: Array<{
         workspace_id: string
         name: string
+        company_name: string
         is_sandbox: boolean
-        connect_partner_name: string | null
+        /**
+            ---
+            deprecated: use company_name
+            ---
+           */
+        connect_partner_name: (string | null) | null
       }>
     }
   }
