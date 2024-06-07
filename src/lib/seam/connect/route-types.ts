@@ -5641,14 +5641,14 @@ export interface Routes {
     jsonResponse: {
       client_session: {
         client_session_id: string
-        user_identifier_key: string | null
+        workspace_id: string
         created_at: string
         token: string
+        user_identifier_key: string | null
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
-        workspace_id: string
       }
     }
   }
@@ -5676,14 +5676,14 @@ export interface Routes {
     jsonResponse: {
       client_session: {
         client_session_id: string
-        user_identifier_key: string | null
+        workspace_id: string
         created_at: string
         token: string
+        user_identifier_key: string | null
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
-        workspace_id: string
       }
     }
   }
@@ -5703,14 +5703,14 @@ export interface Routes {
     jsonResponse: {
       client_session: {
         client_session_id: string
-        user_identifier_key: string | null
+        workspace_id: string
         created_at: string
         token: string
+        user_identifier_key: string | null
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
-        workspace_id: string
       }
     }
   }
@@ -5730,14 +5730,14 @@ export interface Routes {
     jsonResponse: {
       client_session: {
         client_session_id: string
-        user_identifier_key: string | null
+        workspace_id: string
         created_at: string
         token: string
+        user_identifier_key: string | null
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
-        workspace_id: string
       }
     }
   }
@@ -5757,14 +5757,14 @@ export interface Routes {
     jsonResponse: {
       client_sessions: Array<{
         client_session_id: string
-        user_identifier_key: string | null
+        workspace_id: string
         created_at: string
         token: string
+        user_identifier_key: string | null
         device_count: number
         connected_account_ids: string[]
         connect_webview_ids: string[]
         user_identity_ids: string[]
-        workspace_id: string
       }>
     }
   }

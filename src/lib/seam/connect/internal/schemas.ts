@@ -38,6 +38,5 @@ export {
   unmanaged_access_code,
   unmanaged_device,
   user_identity,
-  workspace,
 } from '../models/index.js'
 export * from '../schemas.js'
