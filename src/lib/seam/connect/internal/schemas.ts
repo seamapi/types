@@ -21,9 +21,11 @@ export {
   climate_setting_schedule,
   common_device_properties,
   connect_webview_device_selection_mode,
+  connected_account,
   custom_metadata_input,
   device_capability_flags,
   device_metadata,
+  device_provider,
   dormakaba_oracode_time_slot,
   enrollment_automation,
   fan_mode_setting,
@@ -31,6 +33,7 @@ export {
   managed_access_code,
   managed_device,
   noise_sensor_device_type,
+  noise_threshold,
   phone,
   phone_number,
   thermostat_capability_properties,
@@ -38,5 +41,6 @@ export {
   unmanaged_access_code,
   unmanaged_device,
   user_identity,
+  webhook,
 } from '../models/index.js'
 export * from '../schemas.js'
