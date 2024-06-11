@@ -5,26 +5,32 @@ const common_seam_bridge_error = z.object({
   message: z.string(),
 })
 
-const connection_failure = common_seam_bridge_error.extend({
-  error_code: z.literal('connection_failure'),
+const seam_bridge_unreachable = common_seam_bridge_error.extend({
+  error_code: z.literal('seam_bridge_unreachable'),
 })
-const bridge_tunnel_failed = common_seam_bridge_error.extend({
-  error_code: z.literal('bridge_tunnel_failed'),
+const failed_to_create_tunnel = common_seam_bridge_error.extend({
+  error_code: z.literal('failed_to_create_tunnel'),
 })
-const bridge_proxy_failure = common_seam_bridge_error.extend({
-  error_code: z.literal('bridge_proxy_failure'),
+const failed_to_create_proxy = common_seam_bridge_error.extend({
+  error_code: z.literal('failed_to_create_proxy'),
+})
+
+const managed_by_other_account = common_seam_bridge_error.extend({
+  error_code: z.literal('managed_by_other_account'),
 })
 
 export const seam_bridge_error_map = z.object({
-  bridge_tunnel_failed: bridge_tunnel_failed.optional().nullable(),
-  bridge_proxy_failure: bridge_proxy_failure.optional().nullable(),
-  connection_failure: connection_failure.optional().nullable(),
+  failed_to_create_tunnel: failed_to_create_tunnel.optional().nullable(),
+  failed_to_create_proxy: failed_to_create_proxy.optional().nullable(),
+  seam_bridge_unreachable: seam_bridge_unreachable.optional().nullable(),
+  managed_by_other_account: managed_by_other_account.optional().nullable(),
 })
 
 export const seam_bridge_error = z.union([
-  connection_failure,
-  bridge_proxy_failure,
-  bridge_tunnel_failed,
+  seam_bridge_unreachable,
+  failed_to_create_proxy,
+  failed_to_create_tunnel,
+  managed_by_other_account,
 ])
 
 export type SeamBridgeErrorMap = z.infer<typeof seam_bridge_error_map>
