@@ -155,6 +155,10 @@ export const common_device_properties = z.object({
       'Indicates current noise level in decibels, if the device supports noise detection.',
     )
     .optional(),
+  currently_triggering_noise_threshold_ids: z
+    .array(z.string())
+    .describe('Array of noise threshold IDs that are currently triggering.')
+    .optional(),
 })
 
 export const managed_device = z

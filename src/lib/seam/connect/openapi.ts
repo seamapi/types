@@ -1998,6 +1998,12 @@ export default {
                             minimum: 0,
                             type: 'number',
                           },
+                          currently_triggering_noise_threshold_ids: {
+                            description:
+                              'Array of noise threshold IDs that are currently triggering.',
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
                           has_direct_power: {
                             description:
                               'Indicates whether the device has direct power.',
