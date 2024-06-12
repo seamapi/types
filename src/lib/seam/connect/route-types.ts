@@ -3105,6 +3105,7 @@ export interface Routes {
             ---
              */
         access_group_type_display_name: string
+        display_name: string
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
@@ -3147,6 +3148,7 @@ export interface Routes {
             ---
              */
         access_group_type_display_name: string
+        display_name: string
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
@@ -8391,6 +8393,7 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_system.connected'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'enrollment_automation.deleted'
@@ -8452,6 +8455,7 @@ export interface Routes {
             | 'connected_account.completed_first_sync_after_reconnection'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
+            | 'acs_system.connected'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'enrollment_automation.deleted'

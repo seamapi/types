@@ -158,6 +158,7 @@ export default {
           acs_access_group_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
+          display_name: { type: 'string' },
           external_type: {
             enum: [
               'pti_unit',
@@ -178,6 +179,7 @@ export default {
           'name',
           'access_group_type',
           'access_group_type_display_name',
+          'display_name',
           'external_type',
           'external_type_display_name',
           'created_at',
@@ -9110,6 +9112,7 @@ export default {
                       'connected_account.completed_first_sync_after_reconnection',
                       'noise_sensor.noise_threshold_triggered',
                       'access_code.backup_access_code_pulled',
+                      'acs_system.connected',
                       'acs_user.deleted',
                       'acs_credential.deleted',
                       'enrollment_automation.deleted',
@@ -9173,6 +9176,7 @@ export default {
                         'connected_account.completed_first_sync_after_reconnection',
                         'noise_sensor.noise_threshold_triggered',
                         'access_code.backup_access_code_pulled',
+                        'acs_system.connected',
                         'acs_user.deleted',
                         'acs_credential.deleted',
                         'enrollment_automation.deleted',
