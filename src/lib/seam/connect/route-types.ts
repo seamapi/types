@@ -6255,6 +6255,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -7148,6 +7150,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -8636,6 +8640,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -9375,6 +9381,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -10268,6 +10276,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -11007,6 +11017,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -16061,6 +16073,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -18248,6 +18262,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -20491,6 +20507,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
@@ -21235,6 +21253,8 @@ export interface Routes {
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
+          /** Array of noise threshold IDs that are currently triggering. */
+          currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
           assa_abloy_credential_service_metadata?:
             | (
