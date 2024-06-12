@@ -158,6 +158,7 @@ export default {
           acs_access_group_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
+          display_name: { type: 'string' },
           external_type: {
             enum: [
               'pti_unit',
@@ -178,6 +179,7 @@ export default {
           'name',
           'access_group_type',
           'access_group_type_display_name',
+          'display_name',
           'external_type',
           'external_type_display_name',
           'created_at',

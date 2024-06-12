@@ -3105,6 +3105,7 @@ export interface Routes {
             ---
              */
         access_group_type_display_name: string
+        display_name: string
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
@@ -3147,6 +3148,7 @@ export interface Routes {
             ---
              */
         access_group_type_display_name: string
+        display_name: string
         external_type:
           | 'pti_unit'
           | 'pti_access_level'

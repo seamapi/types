@@ -27,6 +27,7 @@ export const acs_access_group = z.object({
     deprecated: use external_type_display_name
     ---
     `),
+  display_name: z.string(),
   external_type: acs_access_group_external_type,
   external_type_display_name: z.string(),
   created_at: z.string().datetime(),
