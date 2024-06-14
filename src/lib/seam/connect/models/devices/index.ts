@@ -1,4 +1,5 @@
 export * from './capabilities-supported.js'
+export * from './capability-properties/index.js'
 export * from './device-metadata.js'
 export * from './device-provider.js'
 export * from './device-type.js'

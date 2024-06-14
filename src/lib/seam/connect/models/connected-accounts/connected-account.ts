@@ -21,3 +21,5 @@ export const connected_account = z.object({
   custom_metadata,
   automatically_manage_new_devices: z.boolean(),
 })
+
+export type ConnectedAccount = z.infer<typeof connected_account>

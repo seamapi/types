@@ -11,3 +11,5 @@ export const client_session = z.object({
   connect_webview_ids: z.array(z.string().uuid()),
   user_identity_ids: z.array(z.string().uuid()),
 })
+
+export type ClientSession = z.infer<typeof client_session>

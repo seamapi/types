@@ -17,3 +17,5 @@ export const workspace = z.object({
     )
     .nullable(),
 })
+
+export type Workspace = z.infer<typeof workspace>
