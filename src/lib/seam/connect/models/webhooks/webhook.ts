@@ -6,3 +6,5 @@ export const webhook = z.object({
   event_types: z.array(z.string()).optional(),
   secret: z.string().optional(),
 })
+
+export type Webhook = z.infer<typeof webhook>

@@ -1,7 +1,6 @@
 export * from './access-codes/index.js'
 export * from './acs/index.js'
 export * from './action-attempts/index.js'
-export * from './capability-properties/index.js'
 export * from './client-sessions/index.js'
 export * from './connect-webviews/index.js'
 export * from './connected-accounts/index.js'

@@ -2,9 +2,9 @@ import { z } from 'zod'
 
 import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
 
-import { capability_properties } from '../capability-properties/index.js'
 import { custom_metadata } from '../custom-metadata.js'
 import { capabilities } from './capabilities-supported.js'
+import { capability_properties } from './capability-properties/index.js'
 import { device_metadata } from './device-metadata.js'
 import { any_device_type } from './device-type.js'
 import { phone_specific_properties } from './phone-properties.js'
