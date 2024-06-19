@@ -221,7 +221,12 @@ export default {
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
+          is_latest_desired_state_synced_with_provider: { type: 'boolean' },
           is_multi_phone_sync_credential: { type: 'boolean' },
+          latest_desired_state_synced_with_provider_at: {
+            format: 'date-time',
+            type: 'string',
+          },
           parent_acs_credential_id: { format: 'uuid', type: 'string' },
           starts_at: { type: 'string' },
           visionline_metadata: {

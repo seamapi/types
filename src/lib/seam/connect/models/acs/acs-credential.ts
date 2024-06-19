@@ -57,6 +57,11 @@ export const acs_credential = z.object({
     }),
   ),
   is_multi_phone_sync_credential: z.boolean().optional(),
+  is_latest_desired_state_synced_with_provider: z.boolean().optional(),
+  latest_desired_state_synced_with_provider_at: z
+    .string()
+    .datetime()
+    .optional(),
   visionline_metadata: acs_credential_visionline_metadata.optional(),
 })
 
