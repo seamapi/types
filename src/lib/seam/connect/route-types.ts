@@ -3307,6 +3307,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3383,6 +3385,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3446,6 +3450,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3512,6 +3518,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3608,6 +3616,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3662,6 +3672,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -3814,6 +3826,8 @@ export interface Routes {
           message: string
         }>
         is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
