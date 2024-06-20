@@ -3893,14 +3893,19 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              created_at: string
+              message: string
+              error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              created_at: string
+              message: string
+              error_code: 'visionline_instance_unreachable'
+            }
+        >
+        warnings: Array<{}>
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
@@ -3962,14 +3967,19 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              created_at: string
+              message: string
+              error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              created_at: string
+              message: string
+              error_code: 'visionline_instance_unreachable'
+            }
+        >
+        warnings: Array<{}>
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
@@ -4031,14 +4041,19 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              created_at: string
+              message: string
+              error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              created_at: string
+              message: string
+              error_code: 'visionline_instance_unreachable'
+            }
+        >
+        warnings: Array<{}>
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
@@ -21926,14 +21941,19 @@ export interface Routes {
         connected_account_ids: string[]
         image_url: string
         image_alt_text: string
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              created_at: string
+              message: string
+              error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              created_at: string
+              message: string
+              error_code: 'visionline_instance_unreachable'
+            }
+        >
+        warnings: Array<{}>
         can_automate_enrollment?: boolean | undefined
         can_create_acs_access_groups?: boolean | undefined
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined

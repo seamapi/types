@@ -25,6 +25,38 @@ export const acs_system_external_type = z
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
 
+const common_acs_system_error = z.object({
+  created_at: z.string().datetime(),
+  message: z.string(),
+})
+
+const seam_bridge_disconnected = common_acs_system_error.extend({
+  error_code: z.literal('seam_bridge_disconnected'),
+})
+const visionline_instance_unreachable = common_acs_system_error.extend({
+  error_code: z.literal('visionline_instance_unreachable'),
+})
+
+const acs_system_error = z.union([
+  seam_bridge_disconnected,
+  visionline_instance_unreachable,
+])
+
+const acs_system_error_map = z.object({
+  seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
+  visionline_instance_unreachable: visionline_instance_unreachable
+    .optional()
+    .nullable(),
+})
+
+export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
+
+const acs_system_warning = z.object({})
+
+const acs_system_warning_map = z.object({})
+
+export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
+
 export const acs_system = z
   .object({
     acs_system_id: z.string().uuid(),
@@ -46,18 +78,8 @@ export const acs_system = z
     connected_account_ids: z.array(z.string()),
     image_url: z.string(),
     image_alt_text: z.string(),
-    errors: z.array(
-      z.object({
-        error_code: z.string(),
-        message: z.string(),
-      }),
-    ),
-    warnings: z.array(
-      z.object({
-        warning_code: z.string(),
-        message: z.string(),
-      }),
-    ),
+    errors: z.array(acs_system_error),
+    warnings: z.array(acs_system_warning),
   })
   .merge(acs_system_capability_flags)
 

@@ -405,12 +405,32 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           errors: {
             items: {
-              properties: {
-                error_code: { type: 'string' },
-                message: { type: 'string' },
-              },
-              required: ['error_code', 'message'],
-              type: 'object',
+              oneOf: [
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      enum: ['seam_bridge_disconnected'],
+                      type: 'string',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      enum: ['visionline_instance_unreachable'],
+                      type: 'string',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -452,14 +472,7 @@ export default {
             type: 'string',
           },
           warnings: {
-            items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['warning_code', 'message'],
-              type: 'object',
-            },
+            items: { properties: {}, type: 'object' },
             type: 'array',
           },
           workspace_id: { format: 'uuid', type: 'string' },
