@@ -1,4 +1,9 @@
 export type {
+  AcsAccessGroup,
+  AcsCredential,
+  AcsEntrance,
+  AcsSystem,
+  AcsUser,
   ActionAttempt,
   ClientSession,
   ConnectedAccount,

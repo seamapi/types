@@ -7,7 +7,8 @@ export const acs_system_capability_flags = z.object({
   can_add_acs_users_to_acs_access_groups: z.boolean().optional(),
 })
 
-export const acs_system_external_type_values = [
+// If changed, update seam.acs_system.external_type generated column
+export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
   'salto_site',
@@ -16,12 +17,7 @@ export const acs_system_external_type_values = [
   'visionline_system',
   'assa_abloy_credential_service',
   'latch_building',
-] as const
-
-// If changed, update seam.acs_system.external_type generated column
-export const acs_system_external_type = z
-  .enum(acs_system_external_type_values)
-  .optional()
+])
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
 
@@ -60,13 +56,17 @@ export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
 export const acs_system = z
   .object({
     acs_system_id: z.string().uuid(),
-    external_type: acs_system_external_type,
+    external_type: acs_system_external_type.optional(),
     external_type_display_name: z.string().optional(),
-    system_type: acs_system_external_type.describe(`
+    system_type: acs_system_external_type
+      .describe(
+        `
       ---
       deprecated: use external_type
       ---
-      `),
+      `,
+      )
+      .optional(),
     system_type_display_name: z.string().optional().describe(`
       ---
       deprecated: use external_type_display_name
@@ -75,7 +75,7 @@ export const acs_system = z
     name: z.string(),
     created_at: z.string().datetime(),
     workspace_id: z.string().uuid(),
-    connected_account_ids: z.array(z.string()),
+    connected_account_ids: z.array(z.string().uuid()),
     image_url: z.string(),
     image_alt_text: z.string(),
     errors: z.array(acs_system_error),
