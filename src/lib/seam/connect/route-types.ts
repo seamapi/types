@@ -3542,35 +3542,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
-        acs_entrance_id: string
-        display_name: string
         acs_system_id: string
+        acs_entrance_id: string
         created_at: string
-        latch_metadata: {
-          accessibility_type: string
-          door_name: string
-          door_type: string
-          is_connected: boolean
-        } | null
+        display_name: string
         errors: Array<{
           error_code: string
           message: string
         }>
-        visionline_metadata: {
-          door_name: string
-          door_category:
-            | 'entrance'
-            | 'guest'
-            | 'elevator reader'
-            | 'common'
-            | 'common (PMS)'
-          profiles?:
-            | Array<{
-                visionline_door_profile_id: string
-                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
-              }>
-            | undefined
-        } | null
+        latch_metadata?:
+          | {
+              accessibility_type: string
+              door_name: string
+              door_type: string
+              is_connected: boolean
+            }
+          | undefined
+        visionline_metadata?:
+          | {
+              door_name: string
+              door_category:
+                | 'entrance'
+                | 'guest'
+                | 'elevator reader'
+                | 'common'
+                | 'common (PMS)'
+              profiles?:
+                | Array<{
+                    visionline_door_profile_id: string
+                    visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+                  }>
+                | undefined
+            }
+          | undefined
       }>
     }
   }
@@ -3696,35 +3700,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrance: {
-        acs_entrance_id: string
-        display_name: string
         acs_system_id: string
+        acs_entrance_id: string
         created_at: string
-        latch_metadata: {
-          accessibility_type: string
-          door_name: string
-          door_type: string
-          is_connected: boolean
-        } | null
+        display_name: string
         errors: Array<{
           error_code: string
           message: string
         }>
-        visionline_metadata: {
-          door_name: string
-          door_category:
-            | 'entrance'
-            | 'guest'
-            | 'elevator reader'
-            | 'common'
-            | 'common (PMS)'
-          profiles?:
-            | Array<{
-                visionline_door_profile_id: string
-                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
-              }>
-            | undefined
-        } | null
+        latch_metadata?:
+          | {
+              accessibility_type: string
+              door_name: string
+              door_type: string
+              is_connected: boolean
+            }
+          | undefined
+        visionline_metadata?:
+          | {
+              door_name: string
+              door_category:
+                | 'entrance'
+                | 'guest'
+                | 'elevator reader'
+                | 'common'
+                | 'common (PMS)'
+              profiles?:
+                | Array<{
+                    visionline_door_profile_id: string
+                    visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+                  }>
+                | undefined
+            }
+          | undefined
       }
     }
   }
@@ -3752,35 +3760,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
-        acs_entrance_id: string
-        display_name: string
         acs_system_id: string
+        acs_entrance_id: string
         created_at: string
-        latch_metadata: {
-          accessibility_type: string
-          door_name: string
-          door_type: string
-          is_connected: boolean
-        } | null
+        display_name: string
         errors: Array<{
           error_code: string
           message: string
         }>
-        visionline_metadata: {
-          door_name: string
-          door_category:
-            | 'entrance'
-            | 'guest'
-            | 'elevator reader'
-            | 'common'
-            | 'common (PMS)'
-          profiles?:
-            | Array<{
-                visionline_door_profile_id: string
-                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
-              }>
-            | undefined
-        } | null
+        latch_metadata?:
+          | {
+              accessibility_type: string
+              door_name: string
+              door_type: string
+              is_connected: boolean
+            }
+          | undefined
+        visionline_metadata?:
+          | {
+              door_name: string
+              door_category:
+                | 'entrance'
+                | 'guest'
+                | 'elevator reader'
+                | 'common'
+                | 'common (PMS)'
+              profiles?:
+                | Array<{
+                    visionline_door_profile_id: string
+                    visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+                  }>
+                | undefined
+            }
+          | undefined
       }>
     }
   }
@@ -4265,35 +4277,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
-        acs_entrance_id: string
-        display_name: string
         acs_system_id: string
+        acs_entrance_id: string
         created_at: string
-        latch_metadata: {
-          accessibility_type: string
-          door_name: string
-          door_type: string
-          is_connected: boolean
-        } | null
+        display_name: string
         errors: Array<{
           error_code: string
           message: string
         }>
-        visionline_metadata: {
-          door_name: string
-          door_category:
-            | 'entrance'
-            | 'guest'
-            | 'elevator reader'
-            | 'common'
-            | 'common (PMS)'
-          profiles?:
-            | Array<{
-                visionline_door_profile_id: string
-                visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
-              }>
-            | undefined
-        } | null
+        latch_metadata?:
+          | {
+              accessibility_type: string
+              door_name: string
+              door_type: string
+              is_connected: boolean
+            }
+          | undefined
+        visionline_metadata?:
+          | {
+              door_name: string
+              door_category:
+                | 'entrance'
+                | 'guest'
+                | 'elevator reader'
+                | 'common'
+                | 'common (PMS)'
+              profiles?:
+                | Array<{
+                    visionline_door_profile_id: string
+                    visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+                  }>
+                | undefined
+            }
+          | undefined
       }>
     }
   }

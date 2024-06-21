@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { acs_credential_visionline_metadata } from './metadata/index.js'
+
 // If changed, update seam.acs_credential.external_type generated column
 export const acs_credential_external_type = z.enum([
   'pti_card',
@@ -16,17 +18,6 @@ export const acs_credential_access_method_type = z.enum([
 
 export type AcsCredentialExternalType = z.infer<
   typeof acs_credential_external_type
->
-
-export const acs_credential_visionline_metadata = z.object({
-  card_function_type: z.enum(['guest', 'staff']),
-  joiner_acs_credential_ids: z.array(z.string().uuid()).optional(),
-  guest_acs_entrance_ids: z.array(z.string().uuid()).optional(),
-  common_acs_entrance_ids: z.array(z.string().uuid()).optional(),
-})
-
-export type AcsCredentialVisionlineMetadata = z.infer<
-  typeof acs_credential_visionline_metadata
 >
 
 export const acs_credential = z.object({
