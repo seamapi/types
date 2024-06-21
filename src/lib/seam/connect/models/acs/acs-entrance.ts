@@ -1,52 +1,23 @@
 import { z } from 'zod'
 
-export const acs_entrance_latch_metadata = z.object({
-  accessibility_type: z.string(),
-  door_name: z.string(),
-  door_type: z.string(),
-  is_connected: z.boolean(),
-})
+import {
+  acs_entrance_latch_metadata,
+  acs_entrance_visionline_metadata,
+} from './metadata/index.js'
 
 export const acs_entrance = z.object({
-  acs_entrance_id: z.string().uuid(),
-  display_name: z.string(),
   acs_system_id: z.string().uuid(),
+  acs_entrance_id: z.string().uuid(),
   created_at: z.string().datetime(),
-  latch_metadata: acs_entrance_latch_metadata.nullable(),
+  display_name: z.string(),
   errors: z.array(
     z.object({
       error_code: z.string(),
       message: z.string(),
     }),
   ),
-  visionline_metadata: z
-    .object({
-      door_name: z.string(),
-      door_category: z.enum([
-        'entrance',
-        'guest',
-        'elevator reader',
-        'common',
-        'common (PMS)',
-      ]),
-      profiles: z
-        .array(
-          z.object({
-            visionline_door_profile_id: z.string(),
-            visionline_door_profile_type: z.enum([
-              'BLE',
-              'commonDoor',
-              'touch',
-            ]),
-          }),
-        )
-        .optional(),
-    })
-    .nullable(),
+  latch_metadata: acs_entrance_latch_metadata.optional(),
+  visionline_metadata: acs_entrance_visionline_metadata.optional(),
 })
-
-export type AcsEntranceLatchMetadata = z.infer<
-  typeof acs_entrance_latch_metadata
->
 
 export type AcsEntrance = z.infer<typeof acs_entrance>

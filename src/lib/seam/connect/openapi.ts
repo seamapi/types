@@ -332,7 +332,6 @@ export default {
             type: 'array',
           },
           latch_metadata: {
-            nullable: true,
             properties: {
               accessibility_type: { type: 'string' },
               door_name: { type: 'string' },
@@ -348,7 +347,6 @@ export default {
             type: 'object',
           },
           visionline_metadata: {
-            nullable: true,
             properties: {
               door_category: {
                 enum: [
@@ -384,13 +382,11 @@ export default {
           },
         },
         required: [
-          'acs_entrance_id',
-          'display_name',
           'acs_system_id',
+          'acs_entrance_id',
           'created_at',
-          'latch_metadata',
+          'display_name',
           'errors',
-          'visionline_metadata',
         ],
         type: 'object',
       },
@@ -401,7 +397,10 @@ export default {
           can_automate_enrollment: { type: 'boolean' },
           can_create_acs_access_groups: { type: 'boolean' },
           can_remove_acs_users_from_acs_access_groups: { type: 'boolean' },
-          connected_account_ids: { items: { type: 'string' }, type: 'array' },
+          connected_account_ids: {
+            items: { format: 'uuid', type: 'string' },
+            type: 'array',
+          },
           created_at: { format: 'date-time', type: 'string' },
           errors: {
             items: {
