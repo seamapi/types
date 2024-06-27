@@ -1,4 +1,5 @@
 export {
+  access_code,
   acs_access_group,
   acs_credential,
   acs_entrance,
@@ -9,7 +10,10 @@ export {
   connect_webview,
   connected_account,
   custom_metadata,
+  device,
   seam_event,
+  unmanaged_access_code,
+  unmanaged_device,
   user_identity,
   webhook,
   workspace,

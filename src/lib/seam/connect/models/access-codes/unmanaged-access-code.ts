@@ -1,8 +1,8 @@
 import { z } from 'zod'
 
-import { managed_access_code } from './managed-access-code.js'
+import { access_code } from './managed-access-code.js'
 
-export const unmanaged_access_code = managed_access_code
+export const unmanaged_access_code = access_code
   .pick({
     type: true,
     access_code_id: true,

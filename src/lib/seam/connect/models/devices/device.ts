@@ -163,7 +163,7 @@ export const common_device_properties = z.object({
     .optional(),
 })
 
-export const managed_device = z
+export const device = z
   .object({
     device_id: z.string().uuid().describe('Unique identifier for the device.'),
     device_type: any_device_type.describe('Type of the device.'),
@@ -245,4 +245,4 @@ export const managed_device = z
   })
   .merge(device_capability_flags)
 
-export type ManagedDevice = z.infer<typeof managed_device>
+export type Device = z.infer<typeof device>
