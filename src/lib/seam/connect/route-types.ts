@@ -6902,6 +6902,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
     }
   }
@@ -7043,6 +7045,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
       exclude_if?:
@@ -7052,6 +7056,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
     }
@@ -7797,6 +7803,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -7868,6 +7876,28 @@ export interface Routes {
         >
       }>
     }
+  }
+  '/devices/simulate/connect': {
+    route: '/devices/simulate/connect'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/devices/simulate/disconnect': {
+    route: '/devices/simulate/disconnect'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/devices/simulate/remove': {
     route: '/devices/simulate/remove'
@@ -8025,6 +8055,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
     }
   }
@@ -8166,6 +8198,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
       exclude_if?:
@@ -8175,6 +8209,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
     }
@@ -8314,6 +8350,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -9287,6 +9325,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
       device: {
         /** Unique identifier for the device. */
@@ -10028,6 +10068,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
     }
   }
@@ -10169,6 +10211,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
       exclude_if?:
@@ -10178,6 +10222,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
     }
@@ -10923,6 +10969,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
       devices: Array<{
         /** Unique identifier for the device. */
@@ -11664,6 +11712,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -15074,6 +15124,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -15159,6 +15211,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
     }
   }
@@ -16720,6 +16774,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }
     }
   }
@@ -18155,6 +18211,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
       exclude_if?:
@@ -18164,6 +18222,8 @@ export interface Routes {
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
             | 'can_simulate_removal'
+            | 'can_simulate_connection'
+            | 'can_simulate_disconnection'
           >
         | undefined
     }
@@ -18909,6 +18969,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -21154,6 +21216,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
       /**
           ---
@@ -21900,6 +21964,8 @@ export interface Routes {
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
         can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }

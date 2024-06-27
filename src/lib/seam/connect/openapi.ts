@@ -1818,6 +1818,8 @@ export default {
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
+          can_simulate_connection: { type: 'boolean' },
+          can_simulate_disconnection: { type: 'boolean' },
           can_simulate_removal: { type: 'boolean' },
           capabilities_supported: {
             description:
@@ -3243,6 +3245,8 @@ export default {
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
+          can_simulate_connection: { type: 'boolean' },
+          can_simulate_disconnection: { type: 'boolean' },
           can_simulate_removal: { type: 'boolean' },
           capabilities_supported: {
             description:
@@ -3470,6 +3474,8 @@ export default {
           can_program_online_access_codes: { type: 'boolean' },
           can_remotely_lock: { type: 'boolean' },
           can_remotely_unlock: { type: 'boolean' },
+          can_simulate_connection: { type: 'boolean' },
+          can_simulate_disconnection: { type: 'boolean' },
           can_simulate_removal: { type: 'boolean' },
           capabilities_supported: {
             description:
@@ -8312,6 +8318,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -8325,6 +8333,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -8469,6 +8479,88 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list_device_providers',
         'x-fern-sdk-return-value': 'device_providers',
+      },
+    },
+    '/devices/simulate/connect': {
+      post: {
+        operationId: 'devicesSimulateConnectPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { format: 'uuid', type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/devices/simulate/connect',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'connect',
+      },
+    },
+    '/devices/simulate/disconnect': {
+      post: {
+        operationId: 'devicesSimulateDisconnectPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { device_id: { format: 'uuid', type: 'string' } },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/devices/simulate/disconnect',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'disconnect',
       },
     },
     '/devices/simulate/remove': {
@@ -8704,6 +8796,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -8717,6 +8811,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -9450,6 +9546,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -9463,6 +9561,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -11154,6 +11254,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
@@ -11167,6 +11269,8 @@ export default {
                         'can_program_offline_access_codes',
                         'can_program_online_access_codes',
                         'can_simulate_removal',
+                        'can_simulate_connection',
+                        'can_simulate_disconnection',
                       ],
                       type: 'string',
                     },
