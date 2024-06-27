@@ -1,4 +1,5 @@
 export type {
+  AccessCode,
   AcsAccessGroup,
   AcsCredential,
   AcsEntrance,
@@ -9,8 +10,11 @@ export type {
   ConnectedAccount,
   ConnectWebview,
   CustomMetadata,
+  Device,
   SeamEvent,
   SeamEventType,
+  UnmanagedAccessCode,
+  UnmanagedDevice,
   UserIdentity,
   Webhook,
   Workspace,

@@ -1,11 +1,11 @@
 import { z } from 'zod'
 
-import { managed_device } from './managed-device.js'
+import { device } from './device.js'
 import { phone_specific_properties } from './phone-properties.js'
 
 export { phone_specific_properties } from './phone-properties.js'
 
-export const phone = managed_device
+export const phone = device
   .omit({
     connected_account_id: true,
   })

@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const managed_access_code = z.object({
+export const access_code = z.object({
   common_code_key: z
     .string()
     .nullable()
@@ -116,4 +116,4 @@ export const managed_access_code = z.object({
     ),
 })
 
-export type ManagedAccessCode = z.infer<typeof managed_access_code>
+export type AccessCode = z.infer<typeof access_code>

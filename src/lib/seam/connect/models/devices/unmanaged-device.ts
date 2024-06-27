@@ -2,11 +2,11 @@ import { z } from 'zod'
 
 import {
   common_device_properties,
+  device,
   device_capability_flags,
-  managed_device,
-} from './managed-device.js'
+} from './device.js'
 
-export const unmanaged_device = managed_device
+export const unmanaged_device = device
   .pick({
     device_id: true,
     device_type: true,
