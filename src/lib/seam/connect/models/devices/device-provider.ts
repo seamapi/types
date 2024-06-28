@@ -40,11 +40,13 @@ export const DEVICE_PROVIDERS = {
   LATCH: 'latch',
 } as const
 
-export type DeviceProvider =
+export type DeviceProviderName =
   (typeof DEVICE_PROVIDERS)[keyof typeof DEVICE_PROVIDERS]
 
-export const ALL_DEVICE_PROVIDERS: [DeviceProvider, ...DeviceProvider[]] =
-  Object.values(DEVICE_PROVIDERS) as any
+export const ALL_DEVICE_PROVIDERS: [
+  DeviceProviderName,
+  ...DeviceProviderName[],
+] = Object.values(DEVICE_PROVIDERS) as any
 
 export type ProviderCategory = keyof typeof PROVIDER_CATEGORY_MAP
 
@@ -100,7 +102,7 @@ export const PROVIDER_CATEGORY_MAP = {
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
-} as const satisfies Record<string, readonly DeviceProvider[]>
+} as const satisfies Record<string, readonly DeviceProviderName[]>
 
 export const PROVIDER_CATEGORIES: [ProviderCategory, ...ProviderCategory[]] =
   Object.keys(PROVIDER_CATEGORY_MAP) as any
@@ -114,3 +116,5 @@ export const device_provider = z.object({
   image_url: z.string(),
   provider_categories: z.array(z.enum(PUBLIC_PROVIDER_CATEGORIES)),
 })
+
+export type DeviceProvider = z.infer<typeof device_provider>

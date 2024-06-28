@@ -11,6 +11,7 @@ export {
   connected_account,
   custom_metadata,
   device,
+  device_provider,
   seam_event,
   unmanaged_access_code,
   unmanaged_device,
