@@ -11,6 +11,7 @@ export type {
   ConnectWebview,
   CustomMetadata,
   Device,
+  DeviceProvider,
   SeamEvent,
   SeamEventType,
   UnmanagedAccessCode,
