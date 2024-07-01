@@ -38,6 +38,8 @@ export const climate_setting_schedule = z
   })
   .merge(climate_setting.partial())
 
+export type ClimateSettingSchedule = z.infer<typeof climate_setting_schedule>
+
 const base_thermostat_capability_properties = z.object({
   temperature_fahrenheit: z.number(),
   temperature_celsius: z.number(),

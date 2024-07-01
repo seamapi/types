@@ -7,6 +7,7 @@ export type {
   AcsUser,
   ActionAttempt,
   ClientSession,
+  ClimateSettingSchedule,
   ConnectedAccount,
   ConnectWebview,
   CustomMetadata,
