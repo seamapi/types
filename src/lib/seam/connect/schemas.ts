@@ -7,6 +7,7 @@ export {
   acs_user,
   action_attempt,
   client_session,
+  climate_setting_schedule,
   connect_webview,
   connected_account,
   custom_metadata,
