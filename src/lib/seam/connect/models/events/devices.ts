@@ -43,8 +43,13 @@ const disconnection_error_code = z.enum([
   The error code associated with the event, if any.
 `)
 
-export const lock_method = z.enum(['keycode', 'manual', 'unknown', 'seamapi'])
-  .describe(`
+export const lock_method = z.enum([
+  'keycode',
+  'manual',
+  'automatic',
+  'unknown',
+  'seamapi',
+]).describe(`
   ---
   title: Lock Lock/Unlock Method
   ---
