@@ -13,6 +13,7 @@ export {
   custom_metadata,
   device,
   device_provider,
+  noise_threshold,
   seam_event,
   unmanaged_access_code,
   unmanaged_device,
