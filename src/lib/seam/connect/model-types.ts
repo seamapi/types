@@ -13,6 +13,7 @@ export type {
   CustomMetadata,
   Device,
   DeviceProvider,
+  NoiseThreshold,
   SeamEvent,
   SeamEventType,
   UnmanagedAccessCode,

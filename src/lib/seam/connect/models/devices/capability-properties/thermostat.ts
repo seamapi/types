@@ -1,44 +1,11 @@
 import { z } from 'zod'
 
-export const hvac_mode_setting = z.enum(['off', 'heat', 'cool', 'heat_cool'])
-
-export type HvacModeSetting = z.infer<typeof hvac_mode_setting>
-
-export const fan_mode_setting = z.enum(['auto', 'on'])
-
-export type FanModeSetting = z.infer<typeof fan_mode_setting>
-
-export const climate_setting = z.object({
-  automatic_heating_enabled: z.boolean(),
-  automatic_cooling_enabled: z.boolean(),
+import {
+  climate_setting,
+  climate_setting_schedule,
+  fan_mode_setting,
   hvac_mode_setting,
-  cooling_set_point_celsius: z.number().optional(),
-  heating_set_point_celsius: z.number().optional(),
-  cooling_set_point_fahrenheit: z.number().optional(),
-  heating_set_point_fahrenheit: z.number().optional(),
-  manual_override_allowed: z.boolean(),
-})
-
-export type ClimateSetting = z.infer<typeof climate_setting>
-
-export const climate_setting_schedule = z
-  .object({
-    climate_setting_schedule_id: z.string().uuid(),
-    schedule_type: z.literal('time_bound'),
-    device_id: z.string().uuid(),
-    name: z.string().optional(),
-    schedule_starts_at: z.string(),
-    schedule_ends_at: z.string(),
-    created_at: z.string().datetime(),
-    errors: z
-      .any()
-      .describe(
-        'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-      ),
-  })
-  .merge(climate_setting.partial())
-
-export type ClimateSettingSchedule = z.infer<typeof climate_setting_schedule>
+} from '../../thermostats/index.js'
 
 const base_thermostat_capability_properties = z.object({
   temperature_fahrenheit: z.number(),

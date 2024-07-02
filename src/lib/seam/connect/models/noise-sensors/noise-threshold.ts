@@ -9,3 +9,5 @@ export const noise_threshold = z.object({
   ends_daily_at: z.string(), // TODO: zoned_time
   noise_threshold_decibels: z.number(),
 })
+
+export type NoiseThreshold = z.infer<typeof noise_threshold>
