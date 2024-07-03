@@ -326,6 +326,17 @@ export const lock_unlocked_event = device_event
 
 export type LockUnlockedEvent = z.infer<typeof lock_unlocked_event>
 
+export const lock_access_denied_event = device_event
+  .extend({
+    event_type: z.literal('lock.access_denied'),
+    access_code_id: z.string().uuid().optional(),
+  })
+  .describe(
+    'The lock denied access to a user after one or more consecutive invalid attempts to unlock the device.',
+  )
+
+export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>
+
 export const device_events = [
   device_connected_event,
   device_converted_to_unmanaged_event,
@@ -351,4 +362,5 @@ export const device_events = [
   noise_sensor_noise_threshold_triggered_event,
   lock_locked_event,
   lock_unlocked_event,
+  lock_access_denied_event,
 ] as const
