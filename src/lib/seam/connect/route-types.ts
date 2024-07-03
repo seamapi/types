@@ -26,12 +26,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -39,12 +34,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -52,12 +42,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -68,12 +53,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -81,12 +61,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -94,12 +69,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -110,12 +80,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -123,12 +88,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -136,12 +96,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -152,12 +107,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -165,12 +115,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -178,12 +123,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -194,12 +134,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -207,12 +142,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -220,12 +150,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -236,12 +161,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -249,12 +169,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -262,12 +177,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -278,12 +188,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -291,12 +196,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -304,12 +204,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -320,12 +215,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -333,12 +223,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -346,12 +231,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -362,12 +242,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -375,12 +250,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -388,12 +258,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -404,12 +269,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -417,12 +277,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -430,12 +285,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -446,12 +296,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -459,12 +304,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -472,12 +312,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -488,12 +323,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -501,12 +331,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -514,12 +339,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -530,12 +350,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -543,12 +358,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -556,12 +366,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -572,12 +377,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -585,12 +385,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -598,12 +393,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -614,12 +404,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -627,12 +412,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -640,12 +420,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -790,12 +565,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -803,12 +573,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -816,12 +581,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -832,12 +592,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -845,12 +600,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -858,12 +608,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -874,12 +619,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -887,12 +627,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -900,12 +635,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -916,12 +646,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -929,12 +654,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -942,12 +662,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -958,12 +673,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -971,12 +681,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -984,12 +689,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1000,12 +700,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1013,12 +708,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1026,12 +716,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1042,12 +727,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1055,12 +735,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1068,12 +743,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1084,12 +754,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1097,12 +762,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1110,12 +770,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1126,12 +781,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1139,12 +789,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1152,12 +797,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1168,12 +808,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1181,12 +816,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1194,12 +824,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1210,12 +835,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1223,12 +843,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1236,12 +851,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1252,12 +862,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1265,12 +870,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1278,12 +878,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1294,12 +889,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1307,12 +897,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1320,12 +905,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1336,12 +916,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1349,12 +924,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1362,12 +932,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1378,12 +943,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1391,12 +951,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1404,12 +959,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1681,12 +1231,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1694,12 +1239,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1707,12 +1247,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1723,12 +1258,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1736,12 +1266,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1749,12 +1274,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1765,12 +1285,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1778,12 +1293,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1791,12 +1301,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1807,12 +1312,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1820,12 +1320,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1833,12 +1328,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1849,12 +1339,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1862,12 +1347,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1875,12 +1355,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1891,12 +1366,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1904,12 +1374,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1917,12 +1382,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1933,12 +1393,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1946,12 +1401,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -1959,12 +1409,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -1975,12 +1420,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -1988,12 +1428,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2001,12 +1436,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2017,12 +1447,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2030,12 +1455,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2043,12 +1463,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2059,12 +1474,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2072,12 +1482,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2085,12 +1490,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2101,12 +1501,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2114,12 +1509,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2127,12 +1517,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2143,12 +1528,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2156,12 +1536,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2169,12 +1544,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2185,12 +1555,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2198,12 +1563,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2211,12 +1571,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2227,12 +1582,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2240,12 +1590,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2253,12 +1598,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2269,12 +1609,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2282,12 +1617,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2295,12 +1625,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2431,12 +1756,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2444,12 +1764,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2457,12 +1772,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2473,12 +1783,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2486,12 +1791,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2499,12 +1799,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2515,12 +1810,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2528,12 +1818,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2541,12 +1826,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2557,12 +1837,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2570,12 +1845,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2583,12 +1853,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2599,12 +1864,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2612,12 +1872,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2625,12 +1880,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2641,12 +1891,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2654,12 +1899,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2667,12 +1907,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2683,12 +1918,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2696,12 +1926,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2709,12 +1934,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2725,12 +1945,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2738,12 +1953,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2751,12 +1961,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2767,12 +1972,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2780,12 +1980,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2793,12 +1988,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2809,12 +1999,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2822,12 +2007,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2835,12 +2015,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2851,12 +2026,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2864,12 +2034,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2877,12 +2042,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2893,12 +2053,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2906,12 +2061,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2919,12 +2069,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2935,12 +2080,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2948,12 +2088,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -2961,12 +2096,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -2977,12 +2107,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -2990,12 +2115,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -3003,12 +2123,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -3019,12 +2134,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -3032,12 +2142,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -3045,12 +2150,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -3090,20 +2190,14 @@ export interface Routes {
         workspace_id: string
         name: string
         /**
-            ---
-            deprecated: use external_type
-            ---
-           */
+         * @deprecated use external_type */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-            ---
-            deprecated: use external_type_display_name
-            ---
-             */
+         * @deprecated use external_type_display_name */
         access_group_type_display_name: string
         display_name: string
         external_type:
@@ -3133,20 +2227,14 @@ export interface Routes {
         workspace_id: string
         name: string
         /**
-            ---
-            deprecated: use external_type
-            ---
-           */
+         * @deprecated use external_type */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-            ---
-            deprecated: use external_type_display_name
-            ---
-             */
+         * @deprecated use external_type_display_name */
         access_group_type_display_name: string
         display_name: string
         external_type:
@@ -3199,10 +2287,7 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
-            ---
-            deprecated: use email_address.
-            ---
-             */
+         * @deprecated use email_address. */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -3340,10 +2425,7 @@ export interface Routes {
             card_format?: ('TLCode' | 'rfid48') | undefined
             card_function_type?: 'guest' | 'staff'
             /**
-                  ---
-                  deprecated: use override.
-                  ---
-                 */
+             * @deprecated use override. */
             is_override_key?: boolean | undefined
             override?: boolean | undefined
             joiner_acs_credential_ids?: string[] | undefined
@@ -3877,10 +2959,7 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         /**
-              ---
-              deprecated: use external_type
-              ---
-               */
+         * @deprecated use external_type */
         system_type?:
           | (
               | 'pti_site'
@@ -3894,10 +2973,7 @@ export interface Routes {
             )
           | undefined
         /**
-              ---
-              deprecated: use external_type_display_name
-              ---
-               */
+         * @deprecated use external_type_display_name */
         system_type_display_name?: string | undefined
         name: string
         created_at: string
@@ -3951,10 +3027,7 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         /**
-              ---
-              deprecated: use external_type
-              ---
-               */
+         * @deprecated use external_type */
         system_type?:
           | (
               | 'pti_site'
@@ -3968,10 +3041,7 @@ export interface Routes {
             )
           | undefined
         /**
-              ---
-              deprecated: use external_type_display_name
-              ---
-               */
+         * @deprecated use external_type_display_name */
         system_type_display_name?: string | undefined
         name: string
         created_at: string
@@ -4025,10 +3095,7 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         /**
-              ---
-              deprecated: use external_type
-              ---
-               */
+         * @deprecated use external_type */
         system_type?:
           | (
               | 'pti_site'
@@ -4042,10 +3109,7 @@ export interface Routes {
             )
           | undefined
         /**
-              ---
-              deprecated: use external_type_display_name
-              ---
-               */
+         * @deprecated use external_type_display_name */
         system_type_display_name?: string | undefined
         name: string
         created_at: string
@@ -4101,10 +3165,7 @@ export interface Routes {
         | undefined
       full_name?: string | undefined
       /**
-        ---
-        deprecated: use email_address.
-        ---
-         */
+       * @deprecated use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
@@ -4142,10 +3203,7 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
-            ---
-            deprecated: use email_address.
-            ---
-             */
+         * @deprecated use email_address. */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -4203,10 +3261,7 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
-            ---
-            deprecated: use email_address.
-            ---
-             */
+         * @deprecated use email_address. */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -4256,10 +3311,7 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
-            ---
-            deprecated: use email_address.
-            ---
-             */
+         * @deprecated use email_address. */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -4372,10 +3424,7 @@ export interface Routes {
       acs_user_id: string
       full_name?: string | undefined
       /**
-        ---
-        deprecated: use email_address.
-        ---
-         */
+       * @deprecated use email_address. */
       email?: string | undefined
       phone_number?: string | undefined
       email_address?: string | undefined
@@ -4397,12 +3446,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4410,12 +3454,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4423,12 +3462,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4439,12 +3473,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4452,12 +3481,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4465,12 +3489,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4481,12 +3500,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4494,12 +3508,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4507,12 +3516,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4523,12 +3527,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4536,12 +3535,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4549,12 +3543,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4565,12 +3554,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4578,12 +3562,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4591,12 +3570,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4607,12 +3581,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4620,12 +3589,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4633,12 +3597,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4649,12 +3608,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4662,12 +3616,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4675,12 +3624,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4691,12 +3635,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4704,12 +3643,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4717,12 +3651,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4733,12 +3662,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4746,12 +3670,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4759,12 +3678,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4775,12 +3689,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4788,12 +3697,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4801,12 +3705,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4817,12 +3716,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4830,12 +3724,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4843,12 +3732,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4859,12 +3743,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4872,12 +3751,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4885,12 +3759,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4901,12 +3770,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4914,12 +3778,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4927,12 +3786,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4943,12 +3797,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4956,12 +3805,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -4969,12 +3813,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -4985,12 +3824,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -4998,12 +3832,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5011,12 +3840,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5040,12 +3864,7 @@ export interface Routes {
     jsonResponse: {
       action_attempts: Array<
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5053,12 +3872,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5066,12 +3880,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5082,12 +3891,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5095,12 +3899,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5108,12 +3907,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5124,12 +3918,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5137,12 +3926,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5150,12 +3934,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5166,12 +3945,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5179,12 +3953,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5192,12 +3961,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5208,12 +3972,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5221,12 +3980,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5234,12 +3988,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5250,12 +3999,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5263,12 +4007,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5276,12 +4015,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5292,12 +4026,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5305,12 +4034,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5318,12 +4042,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5334,12 +4053,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5347,12 +4061,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5360,12 +4069,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5376,12 +4080,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5389,12 +4088,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5402,12 +4096,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5418,12 +4107,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5431,12 +4115,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5444,12 +4123,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5460,12 +4134,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5473,12 +4142,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5486,12 +4150,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5502,12 +4161,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5515,12 +4169,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5528,12 +4177,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5544,12 +4188,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5557,12 +4196,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5570,12 +4204,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5586,12 +4215,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5599,12 +4223,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5612,12 +4231,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5628,12 +4242,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -5641,12 +4250,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -5654,12 +4258,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -5904,16 +4503,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
         any_provider_allowed: boolean
         login_successful: boolean
@@ -5958,16 +4551,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
         any_provider_allowed: boolean
         login_successful: boolean
@@ -6004,16 +4591,10 @@ export interface Routes {
         device_selection_mode: 'none' | 'single' | 'multiple'
         accepted_providers: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         accepted_devices: string[]
         /**
-              ---
-              deprecated: Unused. Will be removed.
-              ---
-               */
+         * @deprecated Unused. Will be removed. */
         any_device_allowed: boolean
         any_provider_allowed: boolean
         login_successful: boolean
@@ -6219,12 +4800,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -6257,10 +4834,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -6287,16 +4861,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -7120,12 +5688,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -7158,10 +5722,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -7188,16 +5749,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -8001,12 +6556,8 @@ export interface Routes {
                   | undefined
               }
             | undefined
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -8043,10 +6594,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
         }
@@ -8296,12 +6844,8 @@ export interface Routes {
                   | undefined
               }
             | undefined
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Indicates whether the device is online. */
           online: boolean
@@ -8338,10 +6882,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
         }
@@ -8644,12 +7185,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -8682,10 +7219,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -8712,16 +7246,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -9387,12 +7915,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -9425,10 +7949,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -9455,16 +7976,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -10288,12 +8803,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -10326,10 +8837,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -10356,16 +8864,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -11031,12 +9533,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -11069,10 +9567,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -11099,16 +9594,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -11732,12 +10221,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11745,12 +10229,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11758,12 +10237,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11774,12 +10248,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11787,12 +10256,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11800,12 +10264,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11816,12 +10275,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11829,12 +10283,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11842,12 +10291,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11858,12 +10302,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11871,12 +10310,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11884,12 +10318,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11900,12 +10329,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11913,12 +10337,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11926,12 +10345,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11942,12 +10356,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11955,12 +10364,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -11968,12 +10372,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -11984,12 +10383,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -11997,12 +10391,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12010,12 +10399,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12026,12 +10410,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12039,12 +10418,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12052,12 +10426,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12068,12 +10437,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12081,12 +10445,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12094,12 +10453,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12110,12 +10464,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12123,12 +10472,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12136,12 +10480,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12152,12 +10491,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12165,12 +10499,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12178,12 +10507,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12194,12 +10518,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12207,12 +10526,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12220,12 +10534,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12236,12 +10545,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12249,12 +10553,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12262,12 +10561,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12278,12 +10572,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12291,12 +10580,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12304,12 +10588,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12320,12 +10599,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12333,12 +10607,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12346,12 +10615,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12376,12 +10640,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12389,12 +10648,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12402,12 +10656,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12418,12 +10667,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12431,12 +10675,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12444,12 +10683,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12460,12 +10694,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12473,12 +10702,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12486,12 +10710,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12502,12 +10721,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12515,12 +10729,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12528,12 +10737,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12544,12 +10748,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12557,12 +10756,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12570,12 +10764,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12586,12 +10775,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12599,12 +10783,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12612,12 +10791,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12628,12 +10802,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12641,12 +10810,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12654,12 +10818,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12670,12 +10829,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12683,12 +10837,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12696,12 +10845,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12712,12 +10856,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12725,12 +10864,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12738,12 +10872,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12754,12 +10883,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12767,12 +10891,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12780,12 +10899,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12796,12 +10910,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12809,12 +10918,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12822,12 +10926,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12838,12 +10937,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12851,12 +10945,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12864,12 +10953,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12880,12 +10964,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12893,12 +10972,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12906,12 +10980,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12922,12 +10991,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12935,12 +10999,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12948,12 +11007,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -12964,12 +11018,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -12977,12 +11026,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -12990,12 +11034,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13059,12 +11098,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13072,12 +11106,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13085,12 +11114,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13101,12 +11125,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13114,12 +11133,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13127,12 +11141,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13143,12 +11152,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13156,12 +11160,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13169,12 +11168,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13185,12 +11179,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13198,12 +11187,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13211,12 +11195,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13227,12 +11206,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13240,12 +11214,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13253,12 +11222,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13269,12 +11233,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13282,12 +11241,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13295,12 +11249,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13311,12 +11260,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13324,12 +11268,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13337,12 +11276,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13353,12 +11287,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13366,12 +11295,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13379,12 +11303,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13395,12 +11314,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13408,12 +11322,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13421,12 +11330,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13437,12 +11341,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13450,12 +11349,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13463,12 +11357,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13479,12 +11368,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13492,12 +11376,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13505,12 +11384,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13521,12 +11395,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13534,12 +11403,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13547,12 +11411,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13563,12 +11422,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13576,12 +11430,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13589,12 +11438,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13605,12 +11449,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13618,12 +11457,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13631,12 +11465,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13647,12 +11476,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13660,12 +11484,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13673,12 +11492,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13713,12 +11527,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13726,12 +11535,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13739,12 +11543,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13755,12 +11554,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13768,12 +11562,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13781,12 +11570,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13797,12 +11581,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13810,12 +11589,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13823,12 +11597,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13839,12 +11608,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13852,12 +11616,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13865,12 +11624,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13881,12 +11635,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13894,12 +11643,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13907,12 +11651,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13923,12 +11662,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13936,12 +11670,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13949,12 +11678,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -13965,12 +11689,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -13978,12 +11697,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -13991,12 +11705,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14007,12 +11716,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14020,12 +11724,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14033,12 +11732,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14049,12 +11743,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14062,12 +11751,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14075,12 +11759,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14091,12 +11770,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14104,12 +11778,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14117,12 +11786,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14133,12 +11797,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14146,12 +11805,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14159,12 +11813,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14175,12 +11824,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14188,12 +11832,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14201,12 +11840,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14217,12 +11851,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14230,12 +11859,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14243,12 +11867,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14259,12 +11878,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14272,12 +11886,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14285,12 +11894,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14301,12 +11905,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14314,12 +11913,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14327,12 +11921,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14406,12 +11995,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14419,12 +12003,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14432,12 +12011,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14448,12 +12022,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14461,12 +12030,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14474,12 +12038,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14490,12 +12049,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14503,12 +12057,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14516,12 +12065,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14532,12 +12076,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14545,12 +12084,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14558,12 +12092,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14574,12 +12103,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14587,12 +12111,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14600,12 +12119,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14616,12 +12130,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14629,12 +12138,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14642,12 +12146,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14658,12 +12157,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14671,12 +12165,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14684,12 +12173,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14700,12 +12184,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14713,12 +12192,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14726,12 +12200,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14742,12 +12211,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14755,12 +12219,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14768,12 +12227,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14784,12 +12238,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14797,12 +12246,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14810,12 +12254,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14826,12 +12265,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14839,12 +12273,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14852,12 +12281,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14868,12 +12292,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14881,12 +12300,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14894,12 +12308,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14910,12 +12319,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14923,12 +12327,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14936,12 +12335,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14952,12 +12346,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -14965,12 +12354,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -14978,12 +12362,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -14994,12 +12373,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15007,12 +12381,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15020,12 +12389,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15394,12 +12758,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15407,12 +12766,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15420,12 +12774,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15436,12 +12785,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15449,12 +12793,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15462,12 +12801,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15478,12 +12812,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15491,12 +12820,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15504,12 +12828,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15520,12 +12839,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15533,12 +12847,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15546,12 +12855,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15562,12 +12866,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15575,12 +12874,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15588,12 +12882,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15604,12 +12893,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15617,12 +12901,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15630,12 +12909,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15646,12 +12920,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15659,12 +12928,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15672,12 +12936,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15688,12 +12947,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15701,12 +12955,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15714,12 +12963,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15730,12 +12974,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15743,12 +12982,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15756,12 +12990,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15772,12 +13001,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15785,12 +13009,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15798,12 +13017,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15814,12 +13028,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15827,12 +13036,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15840,12 +13044,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15856,12 +13055,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15869,12 +13063,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15882,12 +13071,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15898,12 +13082,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15911,12 +13090,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15924,12 +13098,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15940,12 +13109,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15953,12 +13117,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -15966,12 +13125,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -15982,12 +13136,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -15995,12 +13144,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16008,12 +13152,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -16093,12 +13232,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -16131,10 +13266,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -16161,16 +13293,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -16796,12 +13922,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -16809,12 +13930,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16822,12 +13938,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -16838,12 +13949,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -16851,12 +13957,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16864,12 +13965,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -16880,12 +13976,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -16893,12 +13984,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16906,12 +13992,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -16922,12 +14003,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -16935,12 +14011,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16948,12 +14019,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -16964,12 +14030,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -16977,12 +14038,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -16990,12 +14046,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17006,12 +14057,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17019,12 +14065,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17032,12 +14073,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17048,12 +14084,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17061,12 +14092,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17074,12 +14100,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17090,12 +14111,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17103,12 +14119,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17116,12 +14127,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17132,12 +14138,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17145,12 +14146,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17158,12 +14154,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17174,12 +14165,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17187,12 +14173,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17200,12 +14181,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17216,12 +14192,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17229,12 +14200,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17242,12 +14208,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17258,12 +14219,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17271,12 +14227,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17284,12 +14235,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17300,12 +14246,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17313,12 +14254,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17326,12 +14262,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17342,12 +14273,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17355,12 +14281,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17368,12 +14289,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17384,12 +14300,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17397,12 +14308,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17410,12 +14316,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17444,12 +14345,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17457,12 +14353,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17470,12 +14361,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17486,12 +14372,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17499,12 +14380,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17512,12 +14388,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17528,12 +14399,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17541,12 +14407,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17554,12 +14415,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17570,12 +14426,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17583,12 +14434,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17596,12 +14442,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17612,12 +14453,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17625,12 +14461,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17638,12 +14469,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17654,12 +14480,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17667,12 +14488,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17680,12 +14496,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17696,12 +14507,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17709,12 +14515,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17722,12 +14523,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17738,12 +14534,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17751,12 +14542,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17764,12 +14550,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17780,12 +14561,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17793,12 +14569,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17806,12 +14577,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17822,12 +14588,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17835,12 +14596,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17848,12 +14604,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17864,12 +14615,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17877,12 +14623,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17890,12 +14631,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17906,12 +14642,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17919,12 +14650,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17932,12 +14658,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17948,12 +14669,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -17961,12 +14677,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -17974,12 +14685,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -17990,12 +14696,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -18003,12 +14704,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -18016,12 +14712,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -18032,12 +14723,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -18045,12 +14731,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -18058,12 +14739,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -18288,12 +14964,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -18326,10 +14998,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -18356,16 +15025,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -18989,12 +15652,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19002,12 +15660,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19015,12 +15668,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19031,12 +15679,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19044,12 +15687,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19057,12 +15695,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19073,12 +15706,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19086,12 +15714,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19099,12 +15722,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19115,12 +15733,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19128,12 +15741,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19141,12 +15749,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19157,12 +15760,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19170,12 +15768,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19183,12 +15776,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19199,12 +15787,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19212,12 +15795,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19225,12 +15803,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19241,12 +15814,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19254,12 +15822,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19267,12 +15830,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19283,12 +15841,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19296,12 +15849,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19309,12 +15857,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19325,12 +15868,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19338,12 +15876,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19351,12 +15884,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19367,12 +15895,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19380,12 +15903,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19393,12 +15911,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19409,12 +15922,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19422,12 +15930,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19435,12 +15938,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19451,12 +15949,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19464,12 +15957,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19477,12 +15965,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19493,12 +15976,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19506,12 +15984,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19519,12 +15992,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19535,12 +16003,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19548,12 +16011,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19561,12 +16019,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19577,12 +16030,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19590,12 +16038,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19603,12 +16046,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19635,12 +16073,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19648,12 +16081,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19661,12 +16089,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19677,12 +16100,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19690,12 +16108,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19703,12 +16116,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19719,12 +16127,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19732,12 +16135,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19745,12 +16143,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19761,12 +16154,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19774,12 +16162,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19787,12 +16170,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19803,12 +16181,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19816,12 +16189,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19829,12 +16197,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19845,12 +16208,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19858,12 +16216,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19871,12 +16224,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19887,12 +16235,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19900,12 +16243,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19913,12 +16251,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19929,12 +16262,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19942,12 +16270,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19955,12 +16278,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -19971,12 +16289,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -19984,12 +16297,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -19997,12 +16305,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20013,12 +16316,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20026,12 +16324,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20039,12 +16332,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20055,12 +16343,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20068,12 +16351,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20081,12 +16359,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20097,12 +16370,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20110,12 +16378,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20123,12 +16386,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20139,12 +16397,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20152,12 +16405,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20165,12 +16413,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20181,12 +16424,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20194,12 +16432,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20207,12 +16440,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20223,12 +16451,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -20236,12 +16459,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -20249,12 +16467,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -20535,12 +16748,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -20573,10 +16782,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -20603,16 +16809,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -21222,10 +17422,7 @@ export interface Routes {
         can_simulate_disconnection?: boolean | undefined
       }>
       /**
-          ---
-          deprecated: use devices.
-          ---
-         */
+       * @deprecated use devices. */
       accessible_devices: Array<{
         /** Unique identifier for the device. */
         device_id: string
@@ -21283,12 +17480,8 @@ export interface Routes {
         properties: (({
           /** Indicates whether the device is online. */
           online: boolean
-          /**
-                  ---
-                  deprecated: use device.display_name instead
-                  ---
-                  Name of the device.
-                   */
+          /** Name of the device.
+           * @deprecated use device.display_name instead */
           name: string
           /** Represents the accessory keypad state. */
           accessory_keypad?:
@@ -21321,10 +17514,7 @@ export interface Routes {
             /** Indicates whether the device supports online access codes. */
             online_access_codes_supported?: boolean | undefined
             /**
-                      ---
-                      deprecated: use device.properties.model.can_connect_accessory_keypad
-                      ---
-                       */
+             * @deprecated use device.properties.model.can_connect_accessory_keypad */
             accessory_keypad_supported?: boolean | undefined
           }
           /** Indicates whether the device has direct power. */
@@ -21351,16 +17541,10 @@ export interface Routes {
           /** Indicates whether it is currently possible to use offline access codes for the device. */
           offline_access_codes_enabled?: boolean | undefined
           /**
-                  ---
-                  deprecated: use device.properties.model.can_connect_accessory_keypad
-                  ---
-                   */
+           * @deprecated use device.properties.model.can_connect_accessory_keypad */
           supports_accessory_keypad?: boolean | undefined
           /**
-                  ---
-                  deprecated: use offline_access_codes_enabled
-                  ---
-                   */
+           * @deprecated use offline_access_codes_enabled */
           supports_offline_access_codes?: boolean | undefined
           /** Indicates current noise level in decibels, if the device supports noise detection. */
           noise_level_decibels?: number | undefined
@@ -21997,10 +18181,7 @@ export interface Routes {
           | undefined
         external_type_display_name?: string | undefined
         /**
-              ---
-              deprecated: use external_type
-              ---
-               */
+         * @deprecated use external_type */
         system_type?:
           | (
               | 'pti_site'
@@ -22014,10 +18195,7 @@ export interface Routes {
             )
           | undefined
         /**
-              ---
-              deprecated: use external_type_display_name
-              ---
-               */
+         * @deprecated use external_type_display_name */
         system_type_display_name?: string | undefined
         name: string
         created_at: string
@@ -22085,10 +18263,7 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         full_name?: string | undefined
         /**
-            ---
-            deprecated: use email_address.
-            ---
-             */
+         * @deprecated use email_address. */
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
@@ -22218,10 +18393,7 @@ export interface Routes {
       name: string
       company_name?: string | undefined
       /**
-        ---
-        deprecated: use company_name
-        ---
-       */
+       * @deprecated use company_name */
       connect_partner_name?: ((string | null) | null) | undefined
       is_sandbox?: boolean
       webview_primary_button_color?: string | undefined
@@ -22236,10 +18408,7 @@ export interface Routes {
         company_name: string
         is_sandbox: boolean
         /**
-            ---
-            deprecated: use company_name
-            ---
-           */
+         * @deprecated use company_name */
         connect_partner_name: (string | null) | null
       }
     }
@@ -22258,10 +18427,7 @@ export interface Routes {
         company_name: string
         is_sandbox: boolean
         /**
-            ---
-            deprecated: use company_name
-            ---
-           */
+         * @deprecated use company_name */
         connect_partner_name: (string | null) | null
       }
     }
@@ -22280,10 +18446,7 @@ export interface Routes {
         company_name: string
         is_sandbox: boolean
         /**
-            ---
-            deprecated: use company_name
-            ---
-           */
+         * @deprecated use company_name */
         connect_partner_name: (string | null) | null
       }>
     }
@@ -22298,12 +18461,7 @@ export interface Routes {
     jsonResponse: {
       action_attempt:
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22311,12 +18469,7 @@ export interface Routes {
             action_type: 'LOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22324,12 +18477,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22340,12 +18488,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22353,12 +18496,7 @@ export interface Routes {
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22366,12 +18504,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22382,12 +18515,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22395,12 +18523,7 @@ export interface Routes {
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22408,12 +18531,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22424,12 +18542,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22437,12 +18550,7 @@ export interface Routes {
             action_type: 'SET_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22450,12 +18558,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22466,12 +18569,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22479,12 +18577,7 @@ export interface Routes {
             action_type: 'SET_HEAT'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22492,12 +18585,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22508,12 +18596,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22521,12 +18604,7 @@ export interface Routes {
             action_type: 'SET_HEAT_COOL'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22534,12 +18612,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22550,12 +18623,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22563,12 +18631,7 @@ export interface Routes {
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22576,12 +18639,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22592,12 +18650,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22605,12 +18658,7 @@ export interface Routes {
             action_type: 'SET_THERMOSTAT_OFF'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22618,12 +18666,7 @@ export interface Routes {
             result: {}
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22634,12 +18677,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22647,12 +18685,7 @@ export interface Routes {
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22660,12 +18693,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22676,12 +18704,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22689,12 +18712,7 @@ export interface Routes {
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22702,12 +18720,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22718,12 +18731,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22731,12 +18739,7 @@ export interface Routes {
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22744,12 +18747,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22760,12 +18758,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22773,12 +18766,7 @@ export interface Routes {
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22786,12 +18774,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22802,12 +18785,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22815,12 +18793,7 @@ export interface Routes {
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22828,12 +18801,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22844,12 +18812,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22857,12 +18820,7 @@ export interface Routes {
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22870,12 +18828,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
@@ -22886,12 +18839,7 @@ export interface Routes {
             }
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
             result: null
@@ -22899,12 +18847,7 @@ export interface Routes {
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
@@ -22912,12 +18855,7 @@ export interface Routes {
             result?: any
           }
         | {
-            /**
-            ---
-            title: Action Attempt ID
-            ---
-            The ID of the action attempt.
-           */
+            /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
             result: null
