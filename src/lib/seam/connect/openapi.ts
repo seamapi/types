@@ -41,7 +41,6 @@ export default {
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-            nullable: true,
           },
           is_backup: {
             description: 'Indicates whether the access code is a backup code.',
@@ -117,7 +116,6 @@ export default {
           warnings: {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
-            nullable: true,
           },
         },
         required: [
@@ -140,8 +138,7 @@ export default {
       acs_access_group: {
         properties: {
           access_group_type: {
-            description:
-              '\n    ---\n    deprecated: use external_type\n    ---\n  ',
+            deprecated: true,
             enum: [
               'pti_unit',
               'pti_access_level',
@@ -149,11 +146,12 @@ export default {
               'brivo_group',
             ],
             type: 'string',
+            'x-deprecated': 'use external_type',
           },
           access_group_type_display_name: {
-            description:
-              '\n    ---\n    deprecated: use external_type_display_name\n    ---\n    ',
+            deprecated: true,
             type: 'string',
+            'x-deprecated': 'use external_type_display_name',
           },
           acs_access_group_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
@@ -451,8 +449,7 @@ export default {
           image_url: { type: 'string' },
           name: { type: 'string' },
           system_type: {
-            description:
-              '\n      ---\n      deprecated: use external_type\n      ---\n      ',
+            deprecated: true,
             enum: [
               'pti_site',
               'alta_org',
@@ -464,11 +461,12 @@ export default {
               'latch_building',
             ],
             type: 'string',
+            'x-deprecated': 'use external_type',
           },
           system_type_display_name: {
-            description:
-              '\n      ---\n      deprecated: use external_type_display_name\n      ---\n      ',
+            deprecated: true,
             type: 'string',
+            'x-deprecated': 'use external_type_display_name',
           },
           warnings: {
             items: { properties: {}, type: 'object' },
@@ -504,10 +502,10 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           display_name: { type: 'string' },
           email: {
-            description:
-              '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
+            deprecated: true,
             format: 'email',
             type: 'string',
+            'x-deprecated': 'use email_address.',
           },
           email_address: { format: 'email', type: 'string' },
           external_type: {
@@ -524,7 +522,7 @@ export default {
           full_name: { type: 'string' },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
           is_suspended: { type: 'boolean' },
-          phone_number: { nullable: true, type: 'string' },
+          phone_number: { type: 'string' },
           user_identity_email_address: { nullable: true, type: 'string' },
           user_identity_full_name: { nullable: true, type: 'string' },
           user_identity_id: { type: 'string' },
@@ -547,14 +545,14 @@ export default {
             description: 'Locking door.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -570,13 +568,13 @@ export default {
             description: 'Locking door succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -593,10 +591,10 @@ export default {
             description: 'Locking door failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
               error: {
@@ -607,7 +605,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -623,14 +621,14 @@ export default {
             description: 'Unlocking door.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -646,13 +644,13 @@ export default {
             description: 'Unlocking door succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -669,10 +667,10 @@ export default {
             description: 'Unlocking door failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
               error: {
@@ -683,7 +681,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -699,17 +697,17 @@ export default {
             description: 'Resetting sandbox workspace.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -725,16 +723,16 @@ export default {
             description: 'Resetting sandbox workspace succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -751,10 +749,10 @@ export default {
             description: 'Resetting sandbox workspace failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
@@ -768,7 +766,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -784,14 +782,14 @@ export default {
             description: 'Setting HVAC to cool.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_COOL'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -807,13 +805,13 @@ export default {
             description: 'Setting HVAC to cool succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_COOL'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -830,10 +828,10 @@ export default {
             description: 'Setting HVAC to cool failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_COOL'], type: 'string' },
               error: {
@@ -844,7 +842,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -860,14 +858,14 @@ export default {
             description: 'Setting HVAC to heat mode.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -883,13 +881,13 @@ export default {
             description: 'Setting HVAC to heat mode succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -906,10 +904,10 @@ export default {
             description: 'Setting HVAC to heat mode failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT'], type: 'string' },
               error: {
@@ -920,7 +918,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -936,14 +934,14 @@ export default {
             description: 'Setting HVAC to heat-cool mode.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -959,13 +957,13 @@ export default {
             description: 'Setting HVAC to heat-cool mode succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -982,10 +980,10 @@ export default {
             description: 'Setting heat-cool mode failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HEAT_COOL'], type: 'string' },
               error: {
@@ -996,7 +994,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1012,14 +1010,14 @@ export default {
             description: 'Setting fan mode.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1035,13 +1033,13 @@ export default {
             description: 'Setting fan mode succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -1058,10 +1056,10 @@ export default {
             description: 'Setting fan mode failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
               error: {
@@ -1072,7 +1070,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1088,14 +1086,14 @@ export default {
             description: 'Turning HVAC off.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1111,13 +1109,13 @@ export default {
             description: 'Turning HVAC off succeeded.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -1134,10 +1132,10 @@ export default {
             description: 'Turning HVAC off failed.',
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_THERMOSTAT_OFF'], type: 'string' },
               error: {
@@ -1148,7 +1146,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1163,14 +1161,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1185,14 +1183,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1201,10 +1199,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
               error: {
@@ -1215,7 +1213,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1230,14 +1228,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1252,14 +1250,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1268,10 +1266,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -1282,7 +1280,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1297,14 +1295,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1319,14 +1317,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1335,10 +1333,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -1349,7 +1347,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1364,14 +1362,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1386,14 +1384,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1402,10 +1400,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -1416,7 +1414,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1431,14 +1429,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1453,14 +1451,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1469,10 +1467,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -1483,7 +1481,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1498,14 +1496,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1520,14 +1518,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1536,10 +1534,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -1550,7 +1548,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1565,14 +1563,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { format: 'null', nullable: true, type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -1587,14 +1585,14 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { format: 'null', nullable: true, type: 'string' },
-              result: { nullable: true },
+              error: { nullable: true },
+              result: {},
               status: { enum: ['success'], type: 'string' },
             },
             required: ['action_attempt_id', 'status', 'error', 'action_type'],
@@ -1603,10 +1601,10 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description:
-                  '\n    ---\n    title: Action Attempt ID\n    ---\n    The ID of the action attempt.\n  ',
+                description: 'The ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
+                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -1617,7 +1615,7 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { format: 'null', nullable: true, type: 'string' },
+              result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -1643,7 +1641,7 @@ export default {
             type: 'array',
           },
           created_at: { format: 'date-time', type: 'string' },
-          device_count: { type: 'number' },
+          device_count: { format: 'float', type: 'number' },
           token: { type: 'string' },
           user_identifier_key: { nullable: true, type: 'string' },
           user_identity_ids: {
@@ -1670,17 +1668,16 @@ export default {
           automatic_cooling_enabled: { type: 'boolean' },
           automatic_heating_enabled: { type: 'boolean' },
           climate_setting_schedule_id: { format: 'uuid', type: 'string' },
-          cooling_set_point_celsius: { type: 'number' },
-          cooling_set_point_fahrenheit: { type: 'number' },
+          cooling_set_point_celsius: { format: 'float', type: 'number' },
+          cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-            nullable: true,
           },
-          heating_set_point_celsius: { type: 'number' },
-          heating_set_point_fahrenheit: { type: 'number' },
+          heating_set_point_celsius: { format: 'float', type: 'number' },
+          heating_set_point_fahrenheit: { format: 'float', type: 'number' },
           hvac_mode_setting: {
             enum: ['off', 'heat', 'cool', 'heat_cool'],
             type: 'string',
@@ -1704,16 +1701,16 @@ export default {
       connect_webview: {
         properties: {
           accepted_devices: {
-            description:
-              '\n      ---\n      deprecated: Unused. Will be removed.\n      ---\n      ',
+            deprecated: true,
             items: { type: 'string' },
             type: 'array',
+            'x-deprecated': 'Unused. Will be removed.',
           },
           accepted_providers: { items: { type: 'string' }, type: 'array' },
           any_device_allowed: {
-            description:
-              '\n      ---\n      deprecated: Unused. Will be removed.\n      ---\n      ',
+            deprecated: true,
             type: 'boolean',
+            'x-deprecated': 'Unused. Will be removed.',
           },
           any_provider_allowed: { type: 'boolean' },
           authorized_at: {
@@ -1792,7 +1789,7 @@ export default {
             },
             type: 'object',
           },
-          errors: { nullable: true },
+          errors: {},
           user_identifier: {
             properties: {
               api_url: { type: 'string' },
@@ -1803,7 +1800,7 @@ export default {
             },
             type: 'object',
           },
-          warnings: { nullable: true },
+          warnings: {},
         },
         required: [
           'account_type_display_name',
@@ -1969,6 +1966,7 @@ export default {
                                   'Indicates if the keypad battery properties.',
                                 properties: {
                                   level: {
+                                    format: 'float',
                                     maximum: 1,
                                     minimum: 0,
                                     type: 'number',
@@ -2001,7 +1999,12 @@ export default {
                             description:
                               'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
                             properties: {
-                              level: { maximum: 1, minimum: 0, type: 'number' },
+                              level: {
+                                format: 'float',
+                                maximum: 1,
+                                minimum: 0,
+                                type: 'number',
+                              },
                               status: {
                                 enum: ['critical', 'low', 'good', 'full'],
                                 type: 'string',
@@ -2013,6 +2016,7 @@ export default {
                           battery_level: {
                             description:
                               'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                            format: 'float',
                             maximum: 1,
                             minimum: 0,
                             type: 'number',
@@ -2044,9 +2048,10 @@ export default {
                           model: {
                             properties: {
                               accessory_keypad_supported: {
-                                description:
-                                  '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
+                                deprecated: true,
                                 type: 'boolean',
+                                'x-deprecated':
+                                  'use device.properties.model.can_connect_accessory_keypad',
                               },
                               can_connect_accessory_keypad: {
                                 description:
@@ -2086,13 +2091,15 @@ export default {
                             type: 'object',
                           },
                           name: {
-                            description:
-                              '\n      ---\n      deprecated: use device.display_name instead\n      ---\n      Name of the device.\n      ',
+                            deprecated: true,
+                            description: 'Name of the device.',
                             type: 'string',
+                            'x-deprecated': 'use device.display_name instead',
                           },
                           noise_level_decibels: {
                             description:
                               'Indicates current noise level in decibels, if the device supports noise detection.',
+                            format: 'float',
                             type: 'number',
                           },
                           offline_access_codes_enabled: {
@@ -2115,14 +2122,15 @@ export default {
                             type: 'string',
                           },
                           supports_accessory_keypad: {
-                            description:
-                              '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
+                            deprecated: true,
                             type: 'boolean',
+                            'x-deprecated':
+                              'use device.properties.model.can_connect_accessory_keypad',
                           },
                           supports_offline_access_codes: {
-                            description:
-                              '\n      ---\n      deprecated: use offline_access_codes_enabled\n      ---\n      ',
+                            deprecated: true,
                             type: 'boolean',
+                            'x-deprecated': 'use offline_access_codes_enabled',
                           },
                         },
                         required: ['online', 'name', 'appearance', 'model'],
@@ -2176,11 +2184,14 @@ export default {
                       avigilon_alta_metadata: {
                         properties: {
                           entry_name: { type: 'string' },
-                          entry_relays_total_count: { type: 'number' },
+                          entry_relays_total_count: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           org_name: { type: 'string' },
-                          site_id: { type: 'number' },
+                          site_id: { format: 'float', type: 'number' },
                           site_name: { type: 'string' },
-                          zone_id: { type: 'number' },
+                          zone_id: { format: 'float', type: 'number' },
                           zone_name: { type: 'string' },
                         },
                         required: [
@@ -2210,8 +2221,8 @@ export default {
                       },
                       dormakaba_oracode_metadata: {
                         properties: {
-                          device_id: { type: 'number' },
-                          door_id: { type: 'number' },
+                          device_id: { format: 'float', type: 'number' },
+                          door_id: { format: 'float', type: 'number' },
                           door_is_wireless: { type: 'boolean' },
                           door_name: { type: 'string' },
                           iana_timezone: { type: 'string' },
@@ -2225,6 +2236,7 @@ export default {
                                   type: 'string',
                                 },
                                 ext_dormakaba_oracode_user_level_prefix: {
+                                  format: 'float',
                                   type: 'number',
                                 },
                                 is_24_hour: { type: 'boolean' },
@@ -2232,7 +2244,7 @@ export default {
                                 is_master: { type: 'boolean' },
                                 is_one_shot: { type: 'boolean' },
                                 name: { type: 'string' },
-                                prefix: { type: 'number' },
+                                prefix: { format: 'float', type: 'number' },
                               },
                               required: [
                                 'name',
@@ -2250,7 +2262,7 @@ export default {
                             },
                             type: 'array',
                           },
-                          site_id: { type: 'number' },
+                          site_id: { format: 'float', type: 'number' },
                           site_name: { type: 'string' },
                         },
                         required: [
@@ -2272,9 +2284,12 @@ export default {
                       },
                       four_suites_metadata: {
                         properties: {
-                          device_id: { type: 'number' },
+                          device_id: { format: 'float', type: 'number' },
                           device_name: { type: 'string' },
-                          reclose_delay_in_seconds: { type: 'number' },
+                          reclose_delay_in_seconds: {
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         required: [
                           'device_id',
@@ -2358,7 +2373,7 @@ export default {
                               accelerometer_z: {
                                 properties: {
                                   time: { type: 'string' },
-                                  value: { type: 'number' },
+                                  value: { format: 'float', type: 'number' },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -2366,7 +2381,7 @@ export default {
                               humidity: {
                                 properties: {
                                   time: { type: 'string' },
-                                  value: { type: 'number' },
+                                  value: { format: 'float', type: 'number' },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -2374,7 +2389,7 @@ export default {
                               pressure: {
                                 properties: {
                                   time: { type: 'string' },
-                                  value: { type: 'number' },
+                                  value: { format: 'float', type: 'number' },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -2382,7 +2397,7 @@ export default {
                               sound: {
                                 properties: {
                                   time: { type: 'string' },
-                                  value: { type: 'number' },
+                                  value: { format: 'float', type: 'number' },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -2390,7 +2405,7 @@ export default {
                               temperature: {
                                 properties: {
                                   time: { type: 'string' },
-                                  value: { type: 'number' },
+                                  value: { format: 'float', type: 'number' },
                                 },
                                 required: ['time', 'value'],
                                 type: 'object',
@@ -2434,8 +2449,11 @@ export default {
                             type: 'string',
                           },
                           device_name: { type: 'string' },
-                          noise_level_decibel: { type: 'number' },
-                          noise_level_nrs: { type: 'number' },
+                          noise_level_decibel: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          noise_level_nrs: { format: 'float', type: 'number' },
                         },
                         required: [
                           'device_model',
@@ -2478,6 +2496,7 @@ export default {
                       schlage_metadata: {
                         properties: {
                           access_code_length: {
+                            format: 'float',
                             nullable: true,
                             type: 'number',
                           },
@@ -2494,7 +2513,7 @@ export default {
                       },
                       seam_bridge_metadata: {
                         properties: {
-                          device_num: { type: 'number' },
+                          device_num: { format: 'float', type: 'number' },
                           name: { type: 'string' },
                           unlock_method: {
                             enum: ['bridge', 'doorking'],
@@ -2516,12 +2535,12 @@ export default {
                       },
                       tedee_metadata: {
                         properties: {
-                          bridge_id: { type: 'number' },
+                          bridge_id: { format: 'float', type: 'number' },
                           bridge_name: { type: 'string' },
-                          device_id: { type: 'number' },
+                          device_id: { format: 'float', type: 'number' },
                           device_model: { type: 'string' },
                           device_name: { type: 'string' },
-                          keypad_id: { type: 'number' },
+                          keypad_id: { format: 'float', type: 'number' },
                           serial_number: { type: 'string' },
                         },
                         required: [
@@ -2538,14 +2557,14 @@ export default {
                         properties: {
                           feature_value: { type: 'string' },
                           lock_alias: { type: 'string' },
-                          lock_id: { type: 'number' },
+                          lock_id: { format: 'float', type: 'number' },
                         },
                         required: ['lock_id', 'lock_alias', 'feature_value'],
                         type: 'object',
                       },
                       two_n_metadata: {
                         properties: {
-                          device_id: { type: 'number' },
+                          device_id: { format: 'float', type: 'number' },
                           device_name: { type: 'string' },
                         },
                         required: ['device_id', 'device_name'],
@@ -2557,7 +2576,10 @@ export default {
                           device_info_model: { type: 'string' },
                           device_name: { type: 'string' },
                           keypad_uuid: { type: 'string' },
-                          locker_status_hardlock: { type: 'number' },
+                          locker_status_hardlock: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           product_model: { type: 'string' },
                           product_name: { type: 'string' },
                           product_type: { type: 'string' },
@@ -2582,7 +2604,7 @@ export default {
                   {
                     properties: {
                       _experimental_supported_code_from_access_codes_lengths: {
-                        items: { type: 'number' },
+                        items: { format: 'float', type: 'number' },
                         type: 'array',
                       },
                       code_constraints: {
@@ -2614,8 +2636,8 @@ export default {
                                   enum: ['name_length', 'name_must_be_unique'],
                                   type: 'string',
                                 },
-                                max_length: { type: 'number' },
-                                min_length: { type: 'number' },
+                                max_length: { format: 'float', type: 'number' },
+                                min_length: { format: 'float', type: 'number' },
                               },
                               required: ['constraint_type'],
                               type: 'object',
@@ -2627,14 +2649,19 @@ export default {
                       door_open: { type: 'boolean' },
                       has_native_entry_events: { type: 'boolean' },
                       keypad_battery: {
-                        properties: { level: { type: 'number' } },
+                        properties: {
+                          level: { format: 'float', type: 'number' },
+                        },
                         required: ['level'],
                         type: 'object',
                       },
                       locked: { type: 'boolean' },
-                      max_active_codes_supported: { type: 'number' },
+                      max_active_codes_supported: {
+                        format: 'float',
+                        type: 'number',
+                      },
                       supported_code_lengths: {
-                        items: { type: 'number' },
+                        items: { format: 'float', type: 'number' },
                         type: 'array',
                       },
                       supports_backup_access_code_pool: { type: 'boolean' },
@@ -2653,8 +2680,14 @@ export default {
                                 format: 'uuid',
                                 type: 'string',
                               },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               created_at: {
                                 format: 'date-time',
                                 type: 'string',
@@ -2663,10 +2696,15 @@ export default {
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
                               },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2703,10 +2741,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2725,10 +2775,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2764,25 +2826,60 @@ export default {
                           is_temporary_manual_override_active: {
                             type: 'boolean',
                           },
-                          max_cooling_set_point_celsius: { type: 'number' },
-                          max_cooling_set_point_fahrenheit: { type: 'number' },
-                          max_heating_set_point_celsius: { type: 'number' },
-                          max_heating_set_point_fahrenheit: { type: 'number' },
-                          min_cooling_set_point_celsius: { type: 'number' },
-                          min_cooling_set_point_fahrenheit: { type: 'number' },
-                          min_heating_cooling_delta_celsius: { type: 'number' },
+                          max_cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          max_cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          max_heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          max_heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_heating_cooling_delta_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           min_heating_cooling_delta_fahrenheit: {
+                            format: 'float',
                             type: 'number',
                           },
-                          min_heating_set_point_celsius: { type: 'number' },
-                          min_heating_set_point_fahrenheit: { type: 'number' },
+                          min_heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           relative_humidity: {
+                            format: 'float',
                             maximum: 1,
                             minimum: 0,
                             type: 'number',
                           },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          temperature_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         type: 'object',
                       },
@@ -2796,8 +2893,14 @@ export default {
                                 format: 'uuid',
                                 type: 'string',
                               },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               created_at: {
                                 format: 'date-time',
                                 type: 'string',
@@ -2806,10 +2909,15 @@ export default {
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
                               },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2846,10 +2954,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2868,10 +2988,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2907,17 +3039,36 @@ export default {
                           is_temporary_manual_override_active: {
                             type: 'boolean',
                           },
-                          max_heating_set_point_celsius: { type: 'number' },
-                          max_heating_set_point_fahrenheit: { type: 'number' },
-                          min_heating_set_point_celsius: { type: 'number' },
-                          min_heating_set_point_fahrenheit: { type: 'number' },
+                          max_heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          max_heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           relative_humidity: {
+                            format: 'float',
                             maximum: 1,
                             minimum: 0,
                             type: 'number',
                           },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          temperature_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         type: 'object',
                       },
@@ -2931,8 +3082,14 @@ export default {
                                 format: 'uuid',
                                 type: 'string',
                               },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               created_at: {
                                 format: 'date-time',
                                 type: 'string',
@@ -2941,10 +3098,15 @@ export default {
                               errors: {
                                 description:
                                   'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                                nullable: true,
                               },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -2981,10 +3143,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -3003,10 +3177,22 @@ export default {
                             properties: {
                               automatic_cooling_enabled: { type: 'boolean' },
                               automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: { type: 'number' },
-                              cooling_set_point_fahrenheit: { type: 'number' },
-                              heating_set_point_celsius: { type: 'number' },
-                              heating_set_point_fahrenheit: { type: 'number' },
+                              cooling_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              cooling_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_celsius: {
+                                format: 'float',
+                                type: 'number',
+                              },
+                              heating_set_point_fahrenheit: {
+                                format: 'float',
+                                type: 'number',
+                              },
                               hvac_mode_setting: {
                                 enum: ['off', 'heat', 'cool', 'heat_cool'],
                                 type: 'string',
@@ -3042,17 +3228,36 @@ export default {
                           is_temporary_manual_override_active: {
                             type: 'boolean',
                           },
-                          max_cooling_set_point_celsius: { type: 'number' },
-                          max_cooling_set_point_fahrenheit: { type: 'number' },
-                          min_cooling_set_point_celsius: { type: 'number' },
-                          min_cooling_set_point_fahrenheit: { type: 'number' },
+                          max_cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          max_cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          min_cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                           relative_humidity: {
+                            format: 'float',
                             maximum: 1,
                             minimum: 0,
                             type: 'number',
                           },
-                          temperature_celsius: { type: 'number' },
-                          temperature_fahrenheit: { type: 'number' },
+                          temperature_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          temperature_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
                         },
                         type: 'object',
                       },
@@ -3224,9 +3429,9 @@ export default {
           device_id: { format: 'uuid', type: 'string' },
           ends_daily_at: { type: 'string' },
           name: { type: 'string' },
-          noise_threshold_decibels: { type: 'number' },
+          noise_threshold_decibels: { format: 'float', type: 'number' },
           noise_threshold_id: { format: 'uuid', type: 'string' },
-          noise_threshold_nrs: { type: 'number' },
+          noise_threshold_nrs: { format: 'float', type: 'number' },
           starts_daily_at: { type: 'string' },
         },
         required: [
@@ -3427,7 +3632,6 @@ export default {
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-            nullable: true,
           },
           is_managed: { enum: [false], type: 'boolean' },
           name: {
@@ -3453,7 +3657,6 @@ export default {
           warnings: {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
-            nullable: true,
           },
         },
         required: [
@@ -3581,7 +3784,12 @@ export default {
                   battery: {
                     description: 'Indicates if the keypad battery properties.',
                     properties: {
-                      level: { maximum: 1, minimum: 0, type: 'number' },
+                      level: {
+                        format: 'float',
+                        maximum: 1,
+                        minimum: 0,
+                        type: 'number',
+                      },
                     },
                     required: ['level'],
                     type: 'object',
@@ -3599,7 +3807,12 @@ export default {
                 description:
                   'Represents the current status of the battery charge level. Values are "critical," which indicates an extremely low level, suggesting imminent shutdown or an urgent need for charging; "low," which signifies that the battery is under the preferred threshold and should be charged soon; "good," which denotes a satisfactory charge level, adequate for normal use without the immediate need for recharging; and "full," which represents a battery that is fully charged, providing the maximum duration of usage.',
                 properties: {
-                  level: { maximum: 1, minimum: 0, type: 'number' },
+                  level: {
+                    format: 'float',
+                    maximum: 1,
+                    minimum: 0,
+                    type: 'number',
+                  },
                   status: {
                     enum: ['critical', 'low', 'good', 'full'],
                     type: 'string',
@@ -3611,6 +3824,7 @@ export default {
               battery_level: {
                 description:
                   'Indicates the battery level of the device as a decimal value between 0 and 1, inclusive.',
+                format: 'float',
                 maximum: 1,
                 minimum: 0,
                 type: 'number',
@@ -3631,9 +3845,10 @@ export default {
               model: {
                 properties: {
                   accessory_keypad_supported: {
-                    description:
-                      '\n      ---\n      deprecated: use device.properties.model.can_connect_accessory_keypad\n      ---\n      ',
+                    deprecated: true,
                     type: 'boolean',
+                    'x-deprecated':
+                      'use device.properties.model.can_connect_accessory_keypad',
                   },
                   can_connect_accessory_keypad: {
                     description:
@@ -3669,9 +3884,10 @@ export default {
                 type: 'object',
               },
               name: {
-                description:
-                  '\n      ---\n      deprecated: use device.display_name instead\n      ---\n      Name of the device.\n      ',
+                deprecated: true,
+                description: 'Name of the device.',
                 type: 'string',
+                'x-deprecated': 'use device.display_name instead',
               },
               offline_access_codes_enabled: {
                 description:
@@ -3762,10 +3978,10 @@ export default {
         properties: {
           company_name: { type: 'string' },
           connect_partner_name: {
-            description:
-              '\n    ---\n    deprecated: use company_name\n    ---\n  ',
+            deprecated: true,
             nullable: true,
             type: 'string',
+            'x-deprecated': 'use company_name',
           },
           is_sandbox: { type: 'boolean' },
           name: { type: 'string' },
@@ -3951,7 +4167,7 @@ export default {
                   },
                   name: { type: 'string' },
                   prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { type: 'number' },
+                  preferred_code_length: { format: 'float', type: 'number' },
                   starts_at: { type: 'string' },
                   use_backup_access_code_pool: { type: 'boolean' },
                   use_offline_access_code: { type: 'boolean' },
@@ -4034,7 +4250,7 @@ export default {
                   },
                   name: { type: 'string' },
                   prefer_native_scheduling: { type: 'boolean' },
-                  preferred_code_length: { type: 'number' },
+                  preferred_code_length: { format: 'float', type: 'number' },
                   starts_at: { type: 'string' },
                   use_backup_access_code_pool: { type: 'boolean' },
                   use_offline_access_code: { type: 'boolean' },
@@ -5489,9 +5705,9 @@ export default {
                         type: 'string',
                       },
                       is_override_key: {
-                        description:
-                          '\n          ---\n          deprecated: use override.\n          ---\n        ',
+                        deprecated: true,
                         type: 'boolean',
+                        'x-deprecated': 'use override.',
                       },
                       joiner_acs_credential_ids: {
                         items: { format: 'uuid', type: 'string' },
@@ -6419,14 +6635,14 @@ export default {
                   },
                   acs_system_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description:
-                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
+                    deprecated: true,
                     format: 'email',
                     type: 'string',
+                    'x-deprecated': 'use email_address.',
                   },
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
+                  phone_number: { type: 'string' },
                   user_identity_id: { format: 'uuid', type: 'string' },
                 },
                 required: ['acs_system_id'],
@@ -6563,10 +6779,7 @@ export default {
                   acs_system_id: { format: 'uuid', type: 'string' },
                   user_identity_email_address: { type: 'string' },
                   user_identity_id: { format: 'uuid', type: 'string' },
-                  user_identity_phone_number: {
-                    nullable: true,
-                    type: 'string',
-                  },
+                  user_identity_phone_number: { type: 'string' },
                 },
                 type: 'object',
               },
@@ -6842,15 +7055,15 @@ export default {
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description:
-                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
+                    deprecated: true,
                     format: 'email',
                     type: 'string',
+                    'x-deprecated': 'use email_address.',
                   },
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
+                  phone_number: { type: 'string' },
                 },
                 required: ['acs_user_id'],
                 type: 'object',
@@ -6900,15 +7113,15 @@ export default {
                   },
                   acs_user_id: { format: 'uuid', type: 'string' },
                   email: {
-                    description:
-                      '\n    ---\n    deprecated: use email_address.\n    ---\n    ',
+                    deprecated: true,
                     format: 'email',
                     type: 'string',
+                    'x-deprecated': 'use email_address.',
                   },
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
+                  phone_number: { type: 'string' },
                 },
                 required: ['acs_user_id'],
                 type: 'object',
@@ -7062,11 +7275,7 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  expires_at: { format: 'date-time', type: 'string' },
                   user_identifier_key: { minLength: 1, type: 'string' },
                   user_identity_ids: {
                     items: { type: 'string' },
@@ -7120,11 +7329,7 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  expires_at: { format: 'date-time', type: 'string' },
                   user_identifier_key: { minLength: 1, type: 'string' },
                   user_identity_ids: {
                     items: { type: 'string' },
@@ -7271,11 +7476,7 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  expires_at: { format: 'date-time', type: 'string' },
                   user_identifier_key: { minLength: 1, type: 'string' },
                   user_identity_ids: {
                     items: { type: 'string' },
@@ -7329,11 +7530,7 @@ export default {
                     items: { type: 'string' },
                     type: 'array',
                   },
-                  expires_at: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  expires_at: { format: 'date-time', type: 'string' },
                   user_identifier_key: { minLength: 1, type: 'string' },
                   user_identity_ids: {
                     items: { type: 'string' },
@@ -7650,7 +7847,6 @@ export default {
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     type: 'object',
@@ -7822,7 +8018,7 @@ export default {
                       "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
                     type: 'object',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   user_identifier_key: { type: 'string' },
                 },
                 type: 'object',
@@ -8040,7 +8236,6 @@ export default {
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     type: 'object',
@@ -8193,11 +8388,7 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  created_before: { format: 'date-time', type: 'string' },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -8340,7 +8531,7 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   manufacturer: {
                     enum: [
                       'akuvox',
@@ -8671,11 +8862,7 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  created_before: { format: 'date-time', type: 'string' },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -8818,7 +9005,7 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   manufacturer: {
                     enum: [
                       'akuvox',
@@ -8998,7 +9185,6 @@ export default {
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     type: 'object',
@@ -9055,7 +9241,6 @@ export default {
                       oneOf: [
                         { maxLength: 500, type: 'string' },
                         { type: 'boolean' },
-                        { format: 'null', nullable: true, type: 'string' },
                       ],
                     },
                     type: 'object',
@@ -9312,7 +9497,7 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   since: { type: 'string' },
                 },
                 type: 'object',
@@ -9423,11 +9608,7 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  created_before: { format: 'date-time', type: 'string' },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -9570,7 +9751,7 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   manufacturer: {
                     enum: [
                       'akuvox',
@@ -9856,8 +10037,8 @@ export default {
                   device_id: { format: 'uuid', type: 'string' },
                   ends_daily_at: { type: 'string' },
                   name: { type: 'string' },
-                  noise_threshold_decibels: { type: 'number' },
-                  noise_threshold_nrs: { type: 'number' },
+                  noise_threshold_decibels: { format: 'float', type: 'number' },
+                  noise_threshold_nrs: { format: 'float', type: 'number' },
                   starts_daily_at: { type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -10065,9 +10246,9 @@ export default {
                   device_id: { format: 'uuid', type: 'string' },
                   ends_daily_at: { type: 'string' },
                   name: { type: 'string' },
-                  noise_threshold_decibels: { type: 'number' },
+                  noise_threshold_decibels: { format: 'float', type: 'number' },
                   noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { type: 'number' },
+                  noise_threshold_nrs: { format: 'float', type: 'number' },
                   starts_daily_at: { type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -10117,9 +10298,9 @@ export default {
                   device_id: { format: 'uuid', type: 'string' },
                   ends_daily_at: { type: 'string' },
                   name: { type: 'string' },
-                  noise_threshold_decibels: { type: 'number' },
+                  noise_threshold_decibels: { format: 'float', type: 'number' },
                   noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { type: 'number' },
+                  noise_threshold_nrs: { format: 'float', type: 'number' },
                   starts_daily_at: { type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -10170,9 +10351,9 @@ export default {
                   device_id: { format: 'uuid', type: 'string' },
                   ends_daily_at: { type: 'string' },
                   name: { type: 'string' },
-                  noise_threshold_decibels: { type: 'number' },
+                  noise_threshold_decibels: { format: 'float', type: 'number' },
                   noise_threshold_id: { format: 'uuid', type: 'string' },
-                  noise_threshold_nrs: { type: 'number' },
+                  noise_threshold_nrs: { format: 'float', type: 'number' },
                   starts_daily_at: { type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -10361,7 +10542,11 @@ export default {
                       hce_capability: { default: false, type: 'boolean' },
                       nfc_capability: { default: false, type: 'boolean' },
                       seos_applet_version: { default: '1.0.0', type: 'string' },
-                      seos_tsm_endpoint_id: { default: 1, type: 'number' },
+                      seos_tsm_endpoint_id: {
+                        default: 1,
+                        format: 'float',
+                        type: 'number',
+                      },
                     },
                     type: 'object',
                   },
@@ -10435,11 +10620,23 @@ export default {
                 properties: {
                   automatic_cooling_enabled: { type: 'boolean' },
                   automatic_heating_enabled: { type: 'boolean' },
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   device_id: { type: 'string' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   hvac_mode_setting: {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
@@ -10710,10 +10907,22 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   hvac_mode_setting: {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
@@ -10778,10 +10987,22 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   hvac_mode_setting: {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
@@ -10847,10 +11068,22 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   hvac_mode_setting: {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
@@ -10911,8 +11144,14 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   device_id: { format: 'uuid', type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -11013,8 +11252,14 @@ export default {
               schema: {
                 properties: {
                   device_id: { format: 'uuid', type: 'string' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   sync: { default: false, type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -11065,11 +11310,23 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  cooling_set_point_celsius: { type: 'number' },
-                  cooling_set_point_fahrenheit: { type: 'number' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   device_id: { format: 'uuid', type: 'string' },
-                  heating_set_point_celsius: { type: 'number' },
-                  heating_set_point_fahrenheit: { type: 'number' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
                   sync: { default: false, type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -11131,11 +11388,7 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: {
-                    format: 'date-time',
-                    nullable: true,
-                    type: 'string',
-                  },
+                  created_before: { format: 'date-time', type: 'string' },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
@@ -11278,7 +11531,7 @@ export default {
                     },
                     type: 'array',
                   },
-                  limit: { default: 500, nullable: true, type: 'number' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   manufacturer: {
                     enum: [
                       'akuvox',
@@ -11476,10 +11729,22 @@ export default {
                     properties: {
                       automatic_cooling_enabled: { type: 'boolean' },
                       automatic_heating_enabled: { type: 'boolean' },
-                      cooling_set_point_celsius: { type: 'number' },
-                      cooling_set_point_fahrenheit: { type: 'number' },
-                      heating_set_point_celsius: { type: 'number' },
-                      heating_set_point_fahrenheit: { type: 'number' },
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
                       hvac_mode_setting: {
                         enum: ['off', 'heat', 'cool', 'heat_cool'],
                         type: 'string',
@@ -11533,10 +11798,22 @@ export default {
                     properties: {
                       automatic_cooling_enabled: { type: 'boolean' },
                       automatic_heating_enabled: { type: 'boolean' },
-                      cooling_set_point_celsius: { type: 'number' },
-                      cooling_set_point_fahrenheit: { type: 'number' },
-                      heating_set_point_celsius: { type: 'number' },
-                      heating_set_point_fahrenheit: { type: 'number' },
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
                       hvac_mode_setting: {
                         enum: ['off', 'heat', 'cool', 'heat_cool'],
                         type: 'string',
@@ -12220,10 +12497,10 @@ export default {
                 schema: {
                   properties: {
                     accessible_devices: {
-                      description:
-                        '\n      ---\n      deprecated: use devices.\n      ---\n    ',
+                      deprecated: true,
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
+                      'x-deprecated': 'use devices.',
                     },
                     devices: {
                       items: { $ref: '#/components/schemas/device' },
@@ -12852,10 +13129,10 @@ export default {
                 properties: {
                   company_name: { type: 'string' },
                   connect_partner_name: {
-                    description:
-                      '\n    ---\n    deprecated: use company_name\n    ---\n  ',
+                    deprecated: true,
                     nullable: true,
                     type: 'string',
+                    'x-deprecated': 'use company_name',
                   },
                   is_sandbox: { default: false, type: 'boolean' },
                   name: { type: 'string' },
