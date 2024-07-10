@@ -389,40 +389,96 @@ export default {
         type: 'object',
       },
       acs_system: {
+        description:
+          'Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
         properties: {
-          acs_system_id: { format: 'uuid', type: 'string' },
-          can_add_acs_users_to_acs_access_groups: { type: 'boolean' },
-          can_automate_enrollment: { type: 'boolean' },
-          can_create_acs_access_groups: { type: 'boolean' },
-          can_remove_acs_users_from_acs_access_groups: { type: 'boolean' },
+          acs_system_id: {
+            description: 'ID of the `acs_system`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          can_add_acs_users_to_acs_access_groups: {
+            description:
+              'Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+            type: 'boolean',
+          },
+          can_automate_enrollment: {
+            description:
+              'Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.',
+            type: 'boolean',
+          },
+          can_create_acs_access_groups: {
+            description:
+              'Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+            type: 'boolean',
+          },
+          can_remove_acs_users_from_acs_access_groups: {
+            description:
+              'Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+            type: 'boolean',
+          },
           connected_account_ids: {
+            description:
+              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
-          created_at: { format: 'date-time', type: 'string' },
+          created_at: {
+            description: 'Date and time at which the `acs_system` was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           errors: {
+            description: 'Errors associated with the `acs_system`.',
             items: {
+              description: 'Error associated with the `acs_system`.',
               oneOf: [
                 {
+                  description:
+                    'Indicates that the Seam API cannot communicate with the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  This error might also occur if the Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['seam_bridge_disconnected'],
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
+                  description:
+                    'Indicates that the Seam Bridge is functioning correctly and the Seam API can communicate with the Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).\n  For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).',
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['visionline_instance_unreachable'],
                       type: 'string',
                     },
-                    message: { type: 'string' },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                   },
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
@@ -432,6 +488,8 @@ export default {
             type: 'array',
           },
           external_type: {
+            description:
+              'Brand-specific terminology for the `acs_system` type.',
             enum: [
               'pti_site',
               'alta_org',
@@ -444,10 +502,20 @@ export default {
             ],
             type: 'string',
           },
-          external_type_display_name: { type: 'string' },
-          image_alt_text: { type: 'string' },
-          image_url: { type: 'string' },
-          name: { type: 'string' },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the `acs_system` type.',
+            type: 'string',
+          },
+          image_alt_text: {
+            description: 'Alternative text for the `acs_system` image.',
+            type: 'string',
+          },
+          image_url: {
+            description: 'URL for the image that represents the `acs_system`.',
+            type: 'string',
+          },
+          name: { description: 'Name of the `acs_system`.', type: 'string' },
           system_type: {
             deprecated: true,
             enum: [
@@ -461,18 +529,30 @@ export default {
               'latch_building',
             ],
             type: 'string',
-            'x-deprecated': 'use external_type',
+            'x-deprecated': 'Use `external_type`.',
           },
           system_type_display_name: {
             deprecated: true,
             type: 'string',
-            'x-deprecated': 'use external_type_display_name',
+            'x-deprecated': 'Use `external_type_display_name`.',
           },
           warnings: {
-            items: { properties: {}, type: 'object' },
+            items: {
+              description:
+                '\n      ---\n      undocumented: Currently, no warnings defined for `acs_system`s.\n      ---\n      ',
+              properties: {},
+              type: 'object',
+            },
             type: 'array',
+            'x-undocumented':
+              'Currently, no warnings defined for `acs_system`s.',
           },
-          workspace_id: { format: 'uuid', type: 'string' },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'acs_system_id',
