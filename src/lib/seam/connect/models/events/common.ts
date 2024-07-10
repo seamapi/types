@@ -1,6 +1,12 @@
 import { z } from 'zod'
 
 export const common_event = z.object({
+  event_id: z.string().uuid().describe(`
+    ---
+    title: Event ID
+    ---
+    The ID of the event.
+  `),
   workspace_id: z.string().uuid().describe(`
     ---
     title: Workspace ID
