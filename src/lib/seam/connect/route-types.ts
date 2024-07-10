@@ -2943,8 +2943,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /** Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_system: {
+        /** ID of the `acs_system`. */
         acs_system_id: string
+        /** Brand-specific terminology for the `acs_system` type. */
         external_type?:
           | (
               | 'pti_site'
@@ -2957,9 +2960,10 @@ export interface Routes {
               | 'latch_building'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         system_type?:
           | (
               | 'pti_site'
@@ -2973,30 +2977,48 @@ export interface Routes {
             )
           | undefined
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        /** Name of the `acs_system`. */
         name: string
+        /** Date and time at which the `acs_system` was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
+        /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_ids: string[]
+        /** URL for the image that represents the `acs_system`. */
         image_url: string
+        /** Alternative text for the `acs_system` image. */
         image_alt_text: string
+        /** Errors associated with the `acs_system`. */
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
         >
+        /**  */
         warnings: Array<{}>
+        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
+        /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_create_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }
     }
@@ -3012,7 +3034,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the `acs_system`. */
         acs_system_id: string
+        /** Brand-specific terminology for the `acs_system` type. */
         external_type?:
           | (
               | 'pti_site'
@@ -3025,9 +3049,10 @@ export interface Routes {
               | 'latch_building'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         system_type?:
           | (
               | 'pti_site'
@@ -3041,30 +3066,48 @@ export interface Routes {
             )
           | undefined
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        /** Name of the `acs_system`. */
         name: string
+        /** Date and time at which the `acs_system` was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
+        /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_ids: string[]
+        /** URL for the image that represents the `acs_system`. */
         image_url: string
+        /** Alternative text for the `acs_system` image. */
         image_alt_text: string
+        /** Errors associated with the `acs_system`. */
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
         >
+        /**  */
         warnings: Array<{}>
+        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
+        /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_create_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }>
     }
@@ -3080,7 +3123,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the `acs_system`. */
         acs_system_id: string
+        /** Brand-specific terminology for the `acs_system` type. */
         external_type?:
           | (
               | 'pti_site'
@@ -3093,9 +3138,10 @@ export interface Routes {
               | 'latch_building'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         system_type?:
           | (
               | 'pti_site'
@@ -3109,30 +3155,48 @@ export interface Routes {
             )
           | undefined
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        /** Name of the `acs_system`. */
         name: string
+        /** Date and time at which the `acs_system` was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
+        /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_ids: string[]
+        /** URL for the image that represents the `acs_system`. */
         image_url: string
+        /** Alternative text for the `acs_system` image. */
         image_alt_text: string
+        /** Errors associated with the `acs_system`. */
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
         >
+        /**  */
         warnings: Array<{}>
+        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
+        /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_create_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }>
     }
@@ -18166,7 +18230,9 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the `acs_system`. */
         acs_system_id: string
+        /** Brand-specific terminology for the `acs_system` type. */
         external_type?:
           | (
               | 'pti_site'
@@ -18179,9 +18245,10 @@ export interface Routes {
               | 'latch_building'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         system_type?:
           | (
               | 'pti_site'
@@ -18195,30 +18262,48 @@ export interface Routes {
             )
           | undefined
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        /** Name of the `acs_system`. */
         name: string
+        /** Date and time at which the `acs_system` was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
+        /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_ids: string[]
+        /** URL for the image that represents the `acs_system`. */
         image_url: string
+        /** Alternative text for the `acs_system` image. */
         image_alt_text: string
+        /** Errors associated with the `acs_system`. */
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
         >
+        /**  */
         warnings: Array<{}>
+        /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
+        /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_create_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_remove_acs_users_from_acs_access_groups?: boolean | undefined
+        /** Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
         can_add_acs_users_to_acs_access_groups?: boolean | undefined
       }>
     }
