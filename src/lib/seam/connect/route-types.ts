@@ -2717,6 +2717,8 @@ export interface Routes {
           user_identity_id: string
         }
     ) & {
+      limit?: number
+      created_before?: Date | undefined
       is_multi_phone_sync_credential?: boolean | undefined
     }
     formData: {}
