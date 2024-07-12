@@ -450,9 +450,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -523,9 +542,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1019,9 +1057,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1079,9 +1136,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1137,9 +1213,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1191,9 +1286,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -1663,9 +1777,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -1700,9 +1833,28 @@ export interface Routes {
         /** Date and time at which the access code was created. */
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings?: any
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -4713,8 +4865,15 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors?: any
-        warnings?: any
+        errors: Array<{
+          message: string
+          is_connected_account_error: true
+          error_code: string
+        }>
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
@@ -4745,8 +4904,15 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors?: any
-        warnings?: any
+        errors: Array<{
+          message: string
+          is_connected_account_error: true
+          error_code: string
+        }>
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }>
@@ -4778,8 +4944,15 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors?: any
-        warnings?: any
+        errors: Array<{
+          message: string
+          is_connected_account_error: true
+          error_code: string
+        }>
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
@@ -5515,14 +5688,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -6403,14 +6584,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -6594,14 +6783,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -6882,14 +7079,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -7900,14 +8105,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -8630,14 +8843,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -9518,14 +9739,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -10248,14 +10477,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -12535,14 +12772,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -12622,14 +12867,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -13947,14 +14200,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -15679,14 +15940,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -17463,14 +17732,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -18195,14 +18472,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
