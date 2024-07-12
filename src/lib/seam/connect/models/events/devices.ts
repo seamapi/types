@@ -282,7 +282,11 @@ export type DeviceAccessoryKeypadDisconnectedEvent = z.infer<
 export const noise_sensor_noise_threshold_triggered_event = device_event
   .extend({
     event_type: z.literal('noise_sensor.noise_threshold_triggered'),
-    // TODO: import from ../devices
+    noise_level_decibels: z.number().optional(),
+    noise_level_nrs: z.number().optional(),
+    noise_threshold_id: z.string().uuid().optional(),
+    noise_threshold_name: z.string().optional(),
+    // TODO: remove metadata from this event
     noiseaware_metadata: z.record(z.unknown()).optional().describe(`
       ---
       title: Noiseaware Metadata
