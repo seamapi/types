@@ -6158,7 +6158,9 @@ export default {
                   },
                   {
                     properties: {
+                      created_before: { format: 'date-time', type: 'string' },
                       is_multi_phone_sync_credential: { type: 'boolean' },
+                      limit: { default: 500, format: 'float', type: 'number' },
                     },
                     type: 'object',
                   },
