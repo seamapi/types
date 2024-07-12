@@ -2,6 +2,7 @@ import { z } from 'zod'
 
 import { schemas as devicedb_schemas } from '@seamapi/types/devicedb'
 
+import { connected_account_error } from '../connected-accounts/index.js'
 import { custom_metadata } from '../custom-metadata.js'
 import { capabilities } from './capabilities-supported.js'
 import { capability_properties } from './capability-properties/index.js'
@@ -19,6 +20,27 @@ export const device_capability_flags =
 export const battery_status = z.enum(['critical', 'low', 'good', 'full'])
 
 export type BatteryStatus = z.infer<typeof battery_status>
+
+const common_device_error = z.object({
+  message: z.string(),
+  is_device_error: z.literal(true),
+})
+
+const common_device_warning = z.object({
+  message: z.string(),
+})
+
+export const device_error = common_device_error.extend({
+  error_code: z.string(),
+})
+
+export type DeviceError = z.infer<typeof device_error>
+
+const device_warning = common_device_warning.extend({
+  warning_code: z.string(),
+})
+
+export type DeviceWarning = z.infer<typeof device_warning>
 
 export const common_device_properties = z.object({
   online: z.boolean().describe('Indicates whether the device is online.'),
@@ -215,22 +237,12 @@ export const device = z
         'Unique identifier for the Seam workspace associated with the device.',
       ),
     errors: z
-      .array(
-        z.object({
-          error_code: z.string(),
-          message: z.string(),
-        }),
-      )
+      .array(z.union([device_error, connected_account_error]))
       .describe(
         'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
       ),
     warnings: z
-      .array(
-        z.object({
-          warning_code: z.string(),
-          message: z.string(),
-        }),
-      )
+      .array(device_warning)
       .describe(
         'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
       ),

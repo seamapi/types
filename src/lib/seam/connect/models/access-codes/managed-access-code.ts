@@ -1,5 +1,29 @@
 import { z } from 'zod'
 
+import { connected_account_error } from '../connected-accounts/index.js'
+import { device_error } from '../devices/index.js'
+
+const common_access_code_error = z.object({
+  message: z.string(),
+  is_access_code_error: z.literal(true),
+})
+
+const common_access_code_warning = z.object({
+  message: z.string(),
+})
+
+const access_code_error = common_access_code_error.extend({
+  error_code: z.string(),
+})
+
+export type AccessCodeError = z.infer<typeof access_code_error>
+
+const access_code_warning = common_access_code_warning.extend({
+  warning_code: z.string(),
+})
+
+export type AccessCodeWarning = z.infer<typeof access_code_warning>
+
 export const access_code = z.object({
   common_code_key: z
     .string()
@@ -51,12 +75,12 @@ export const access_code = z.object({
     .datetime()
     .describe('Date and time at which the access code was created.'),
   errors: z
-    .any()
+    .array(z.union([access_code_error, device_error, connected_account_error]))
     .describe(
       'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
     ),
   warnings: z
-    .any()
+    .array(access_code_warning)
     .describe(
       'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
     ),

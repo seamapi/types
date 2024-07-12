@@ -41,6 +41,45 @@ export default {
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+            items: {
+              oneOf: [
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_device_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
           },
           is_backup: {
             description: 'Indicates whether the access code is a backup code.',
@@ -116,6 +155,15 @@ export default {
           warnings: {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
           },
         },
         required: [
@@ -126,6 +174,8 @@ export default {
           'name',
           'code',
           'created_at',
+          'errors',
+          'warnings',
           'is_managed',
           'status',
           'is_backup_access_code_available',
@@ -1869,7 +1919,18 @@ export default {
             },
             type: 'object',
           },
-          errors: {},
+          errors: {
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                is_connected_account_error: { enum: [true], type: 'boolean' },
+                message: { type: 'string' },
+              },
+              required: ['message', 'is_connected_account_error', 'error_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           user_identifier: {
             properties: {
               api_url: { type: 'string' },
@@ -1880,10 +1941,22 @@ export default {
             },
             type: 'object',
           },
-          warnings: {},
+          warnings: {
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
         },
         required: [
           'account_type_display_name',
+          'errors',
+          'warnings',
           'custom_metadata',
           'automatically_manage_new_devices',
         ],
@@ -1995,12 +2068,33 @@ export default {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                error_code: { type: 'string' },
-                message: { type: 'string' },
-              },
-              required: ['error_code', 'message'],
-              type: 'object',
+              oneOf: [
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_device_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -3356,7 +3450,7 @@ export default {
                 message: { type: 'string' },
                 warning_code: { type: 'string' },
               },
-              required: ['warning_code', 'message'],
+              required: ['message', 'warning_code'],
               type: 'object',
             },
             type: 'array',
@@ -3576,12 +3670,33 @@ export default {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                error_code: { type: 'string' },
-                message: { type: 'string' },
-              },
-              required: ['error_code', 'message'],
-              type: 'object',
+              oneOf: [
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_device_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -3641,7 +3756,7 @@ export default {
                 message: { type: 'string' },
                 warning_code: { type: 'string' },
               },
-              required: ['warning_code', 'message'],
+              required: ['message', 'warning_code'],
               type: 'object',
             },
             type: 'array',
@@ -3712,6 +3827,45 @@ export default {
           errors: {
             description:
               'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+            items: {
+              oneOf: [
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_device_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
           },
           is_managed: { enum: [false], type: 'boolean' },
           name: {
@@ -3737,6 +3891,15 @@ export default {
           warnings: {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
+            items: {
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
           },
         },
         required: [
@@ -3746,6 +3909,8 @@ export default {
           'name',
           'code',
           'created_at',
+          'errors',
+          'warnings',
           'is_managed',
           'status',
         ],
@@ -3846,12 +4011,33 @@ export default {
             description:
               'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                error_code: { type: 'string' },
-                message: { type: 'string' },
-              },
-              required: ['error_code', 'message'],
-              type: 'object',
+              oneOf: [
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_device_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_device_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    error_code: { type: 'string' },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -3995,7 +4181,7 @@ export default {
                 message: { type: 'string' },
                 warning_code: { type: 'string' },
               },
-              required: ['warning_code', 'message'],
+              required: ['message', 'warning_code'],
               type: 'object',
             },
             type: 'array',
