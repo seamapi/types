@@ -10,7 +10,8 @@ export const access_code_code_constraint = z.object({
     'start_date_in_future', // Kwikset
     'no_ascending_or_descending_sequence', // Tedee
     'at_least_three_unique_digits', // Tedee
-    'cannot_contain_089', // TTLock (for some cylinder devices only)
+    'cannot_contain_089', // TTLock
+    'cannot_contain_0789', // TTLock (for some cylinder devices only)
   ]),
 })
 

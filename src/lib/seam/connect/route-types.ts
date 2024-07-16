@@ -5393,6 +5393,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -6289,6 +6290,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -7810,6 +7812,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -8548,6 +8551,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -9444,6 +9448,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -10182,6 +10187,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -13905,6 +13911,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -15645,6 +15652,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -17437,6 +17445,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -18177,6 +18186,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
