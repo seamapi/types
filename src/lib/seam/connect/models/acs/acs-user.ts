@@ -40,6 +40,11 @@ export const acs_user = z
     user_identity_full_name: z.string().nullable().optional(),
     user_identity_email_address: z.string().nullable().optional(),
     user_identity_phone_number: z.string().nullable().optional(),
+    latest_desired_state_synced_with_provider_at: z
+      .string()
+      .datetime()
+      .optional(),
+    is_latest_desired_state_synced_with_provider: z.boolean().optional(),
   })
   .merge(user_fields)
 
