@@ -2437,6 +2437,8 @@ export interface Routes {
         user_identity_full_name?: (string | null) | undefined
         user_identity_email_address?: (string | null) | undefined
         user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3419,6 +3421,8 @@ export interface Routes {
         user_identity_full_name?: (string | null) | undefined
         user_identity_email_address?: (string | null) | undefined
         user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3477,6 +3481,8 @@ export interface Routes {
         user_identity_full_name?: (string | null) | undefined
         user_identity_email_address?: (string | null) | undefined
         user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3527,6 +3533,8 @@ export interface Routes {
         user_identity_full_name?: (string | null) | undefined
         user_identity_email_address?: (string | null) | undefined
         user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -18633,6 +18641,8 @@ export interface Routes {
         user_identity_full_name?: (string | null) | undefined
         user_identity_email_address?: (string | null) | undefined
         user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
