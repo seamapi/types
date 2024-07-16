@@ -651,7 +651,12 @@ export default {
           external_type_display_name: { type: 'string' },
           full_name: { type: 'string' },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
+          is_latest_desired_state_synced_with_provider: { type: 'boolean' },
           is_suspended: { type: 'boolean' },
+          latest_desired_state_synced_with_provider_at: {
+            format: 'date-time',
+            type: 'string',
+          },
           phone_number: { type: 'string' },
           user_identity_email_address: { nullable: true, type: 'string' },
           user_identity_full_name: { nullable: true, type: 'string' },
