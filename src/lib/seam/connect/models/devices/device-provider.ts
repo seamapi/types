@@ -90,6 +90,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'kwikset',
     'igloohome',
     'wyze',
+    'lockly',
+    'tedee',
   ],
 
   thermostats: ['ecobee', 'nest'],
