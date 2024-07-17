@@ -8305,11 +8305,15 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      "Returns devices where the webview's custom_metadata contains all of the provided key/value pairs.",
+                      'Returns webviews whose custom_metadata contains all of the provided key/value pairs.',
                     type: 'object',
                   },
                   limit: { default: 500, format: 'float', type: 'number' },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Returns webviews that can be accessed by the provided user_identifier_key.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -8467,8 +8471,13 @@ export default {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
                     description:
-                      "Returns devices where the account's custom_metadata contains all of the provided key/value pairs.",
+                      'Returns accounts whose custom_metadata contains all of the provided key/value pairs.',
                     type: 'object',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'Returns accounts that can be accessed by the provided user_identifier_key.',
+                    type: 'string',
                   },
                 },
                 type: 'object',
