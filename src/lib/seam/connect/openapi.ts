@@ -4048,6 +4048,21 @@ export default {
             type: 'array',
           },
           is_managed: { enum: [false], type: 'boolean' },
+          location: {
+            description: 'Location information for the device.',
+            nullable: true,
+            properties: {
+              location_name: {
+                description: 'Name of the device location.',
+                type: 'string',
+              },
+              timezone: {
+                description: 'Time zone of the device location.',
+                type: 'string',
+              },
+            },
+            type: 'object',
+          },
           properties: {
             properties: {
               accessory_keypad: {
@@ -4203,6 +4218,7 @@ export default {
           'device_id',
           'device_type',
           'connected_account_id',
+          'location',
           'capabilities_supported',
           'workspace_id',
           'errors',
