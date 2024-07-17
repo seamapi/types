@@ -6783,6 +6783,13 @@ export interface Routes {
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Location information for the device. */
+        location: {
+          /** Name of the device location. */
+          location_name?: string | undefined
+          /** Time zone of the device location. */
+          timezone?: string | undefined
+        } | null
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
@@ -7079,6 +7086,13 @@ export interface Routes {
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
+        /** Location information for the device. */
+        location: {
+          /** Name of the device location. */
+          location_name?: string | undefined
+          /** Time zone of the device location. */
+          timezone?: string | undefined
+        } | null
         /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
         capabilities_supported: Array<
           | 'access_code'
