@@ -6697,6 +6697,13 @@ export interface Routes {
           | 'noise_sensors'
           | 'access_control_systems'
         >
+        can_remotely_unlock?: boolean | undefined
+        can_remotely_lock?: boolean | undefined
+        can_program_offline_access_codes?: boolean | undefined
+        can_program_online_access_codes?: boolean | undefined
+        can_simulate_removal?: boolean | undefined
+        can_simulate_connection?: boolean | undefined
+        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }

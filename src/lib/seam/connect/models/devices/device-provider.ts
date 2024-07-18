@@ -1,5 +1,7 @@
 import { z } from 'zod'
 
+import { device_capability_flags } from './device.js'
+
 export const DEVICE_PROVIDERS = {
   AKUVOX: 'akuvox',
   AUGUST: 'august',
@@ -112,11 +114,13 @@ export const PROVIDER_CATEGORIES: [ProviderCategory, ...ProviderCategory[]] =
 export const PUBLIC_PROVIDER_CATEGORIES: typeof PROVIDER_CATEGORIES =
   PROVIDER_CATEGORIES.filter((category) => category !== 'internal_beta') as any
 
-export const device_provider = z.object({
-  device_provider_name: z.enum(ALL_DEVICE_PROVIDERS),
-  display_name: z.string(),
-  image_url: z.string(),
-  provider_categories: z.array(z.enum(PUBLIC_PROVIDER_CATEGORIES)),
-})
+export const device_provider = z
+  .object({
+    device_provider_name: z.enum(ALL_DEVICE_PROVIDERS),
+    display_name: z.string(),
+    image_url: z.string(),
+    provider_categories: z.array(z.enum(PUBLIC_PROVIDER_CATEGORIES)),
+  })
+  .extend(device_capability_flags.shape)
 
 export type DeviceProvider = z.infer<typeof device_provider>
