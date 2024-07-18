@@ -3487,6 +3487,13 @@ export default {
       },
       device_provider: {
         properties: {
+          can_program_offline_access_codes: { type: 'boolean' },
+          can_program_online_access_codes: { type: 'boolean' },
+          can_remotely_lock: { type: 'boolean' },
+          can_remotely_unlock: { type: 'boolean' },
+          can_simulate_connection: { type: 'boolean' },
+          can_simulate_disconnection: { type: 'boolean' },
+          can_simulate_removal: { type: 'boolean' },
           device_provider_name: {
             enum: [
               'akuvox',
