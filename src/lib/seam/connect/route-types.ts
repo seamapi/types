@@ -3502,6 +3502,8 @@ export interface Routes {
       user_identity_phone_number?: string | undefined
       user_identity_email_address?: string | undefined
       acs_system_id?: string | undefined
+      limit?: number
+      created_before?: Date | undefined
     }
     formData: {}
     jsonResponse: {
