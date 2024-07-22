@@ -587,12 +587,7 @@ export default {
             'x-deprecated': 'Use `external_type_display_name`.',
           },
           warnings: {
-            items: {
-              description:
-                '\n      ---\n      undocumented: Currently, no warnings defined for `acs_system`s.\n      ---\n      ',
-              properties: {},
-              type: 'object',
-            },
+            items: { properties: {}, type: 'object' },
             type: 'array',
             'x-undocumented':
               'Currently, no warnings defined for `acs_system`s.',
