@@ -86,13 +86,7 @@ const acs_system_error_map = z.object({
 
 export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
 
-const acs_system_warning = z.object({}).describe(
-  `
-      ---
-      undocumented: Currently, no warnings defined for \`acs_system\`s.
-      ---
-      `,
-)
+const acs_system_warning = z.object({})
 
 const acs_system_warning_map = z.object({})
 
@@ -151,10 +145,10 @@ export const acs_system = z
       .describe('Errors associated with the `acs_system`.'),
     warnings: z.array(acs_system_warning).describe(
       `
-      ---
-      undocumented: Currently, no warnings defined for \`acs_system\`s.
-      ---
-      `,
+          ---
+          undocumented: Currently, no warnings defined for \`acs_system\`s.
+          ---
+          `,
     ),
   })
   .merge(acs_system_capability_flags)
