@@ -7069,6 +7069,8 @@ export default {
               schema: {
                 properties: {
                   acs_system_id: { format: 'uuid', type: 'string' },
+                  created_before: { format: 'date-time', type: 'string' },
+                  limit: { default: 500, format: 'float', type: 'number' },
                   user_identity_email_address: { type: 'string' },
                   user_identity_id: { format: 'uuid', type: 'string' },
                   user_identity_phone_number: { type: 'string' },
