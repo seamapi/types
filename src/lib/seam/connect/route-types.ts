@@ -3185,6 +3185,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the connected account by which to filter the list of returned access control systems. */
       connected_account_id?: string | undefined
     }
     formData: {}
