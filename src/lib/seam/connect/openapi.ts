@@ -6720,13 +6720,20 @@ export default {
     },
     '/acs/systems/list': {
       post: {
+        description:
+          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the \n`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the \nresponse includes all access control systems connected to your workspace.',
         operationId: 'acsSystemsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connected_account_id: { format: 'uuid', type: 'string' },
+                  connected_account_id: {
+                    description:
+                      'ID of the connected account by which to filter the list of returned access control systems.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -6766,6 +6773,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_systems',
+        'x-title': 'List ACS Systems',
       },
     },
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
