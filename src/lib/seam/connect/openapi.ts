@@ -657,6 +657,18 @@ export default {
           user_identity_full_name: { nullable: true, type: 'string' },
           user_identity_id: { type: 'string' },
           user_identity_phone_number: { nullable: true, type: 'string' },
+          warnings: {
+            items: {
+              properties: {
+                created_at: { format: 'date-time', type: 'string' },
+                message: { type: 'string' },
+                warning_code: { enum: ['being_deleted'], type: 'string' },
+              },
+              required: ['created_at', 'message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -666,6 +678,7 @@ export default {
           'created_at',
           'display_name',
           'is_suspended',
+          'warnings',
         ],
         type: 'object',
       },

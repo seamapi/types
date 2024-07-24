@@ -2439,6 +2439,11 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3424,6 +3429,11 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3484,6 +3494,11 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3538,6 +3553,11 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -18680,6 +18700,11 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
