@@ -13,6 +13,27 @@ export const acs_user_external_type = z.enum([
 
 export type AcsUserExternalType = z.infer<typeof acs_user_external_type>
 
+const common_acs_users_warning = z.object({
+  created_at: z.string().datetime(),
+  message: z.string(),
+})
+
+const acs_users_being_deleted = common_acs_users_warning.extend({
+  warning_code: z.literal('being_deleted'),
+})
+
+export const acs_users_warning_map = z.object({
+  being_deleted: acs_users_being_deleted.optional().nullable(),
+})
+
+export const acs_users_warning =
+  // TODO: once we have more than one warning we should use z.union
+  // z.union([
+  acs_users_being_deleted
+// ])
+
+export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
+
 const user_fields = z.object({
   full_name: z.string().optional(),
   email: z.string().email().optional().describe(`
@@ -45,6 +66,7 @@ export const acs_user = z
       .datetime()
       .optional(),
     is_latest_desired_state_synced_with_provider: z.boolean().optional(),
+    warnings: z.array(acs_users_warning),
   })
   .merge(user_fields)
 
