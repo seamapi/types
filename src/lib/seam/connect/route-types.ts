@@ -12003,6 +12003,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -12308,14 +12309,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
@@ -12733,6 +12742,7 @@ export interface Routes {
                             | 'no_ascending_or_descending_sequence'
                             | 'at_least_three_unique_digits'
                             | 'cannot_contain_089'
+                            | 'cannot_contain_0789'
                         }
                       | {
                           constraint_type: 'name_length' | 'name_must_be_unique'
@@ -13038,14 +13048,22 @@ export interface Routes {
         /** Unique identifier for the Seam workspace associated with the device. */
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<{
-          error_code: string
-          message: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<{
-          warning_code: string
           message: string
+          warning_code: string
         }>
         /** Date and time at which the device object was created. */
         created_at: string
