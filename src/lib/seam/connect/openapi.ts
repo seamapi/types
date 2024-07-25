@@ -586,6 +586,15 @@ export default {
             type: 'string',
             'x-deprecated': 'Use `external_type_display_name`.',
           },
+          visionline_metadata: {
+            properties: {
+              lan_address: { type: 'string' },
+              mobile_access_uuid: { type: 'string' },
+              system_id: { type: 'string' },
+            },
+            required: ['mobile_access_uuid', 'system_id', 'lan_address'],
+            type: 'object',
+          },
           warnings: {
             items: { properties: {}, type: 'object' },
             type: 'array',

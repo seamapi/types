@@ -104,6 +104,13 @@ export const acs_system = z
         'Display name that corresponds to the brand-specific terminology for the `acs_system` type.',
       )
       .optional(),
+    visionline_metadata: z
+      .object({
+        mobile_access_uuid: z.string(),
+        system_id: z.string(),
+        lan_address: z.string(),
+      })
+      .optional(),
     system_type: acs_system_external_type
       .describe(
         `

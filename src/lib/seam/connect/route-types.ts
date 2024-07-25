@@ -3123,6 +3123,13 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        visionline_metadata?:
+          | {
+              mobile_access_uuid: string
+              system_id: string
+              lan_address: string
+            }
+          | undefined
         /**
          * @deprecated Use `external_type`. */
         system_type?:
@@ -3213,6 +3220,13 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        visionline_metadata?:
+          | {
+              mobile_access_uuid: string
+              system_id: string
+              lan_address: string
+            }
+          | undefined
         /**
          * @deprecated Use `external_type`. */
         system_type?:
@@ -3302,6 +3316,13 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        visionline_metadata?:
+          | {
+              mobile_access_uuid: string
+              system_id: string
+              lan_address: string
+            }
+          | undefined
         /**
          * @deprecated Use `external_type`. */
         system_type?:
@@ -20235,6 +20256,13 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        visionline_metadata?:
+          | {
+              mobile_access_uuid: string
+              system_id: string
+              lan_address: string
+            }
+          | undefined
         /**
          * @deprecated Use `external_type`. */
         system_type?:
