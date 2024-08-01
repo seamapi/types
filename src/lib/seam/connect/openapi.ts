@@ -11066,6 +11066,7 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
                   owner_user_identity_id: { format: 'uuid', type: 'string' },
                 },
                 type: 'object',
