@@ -14451,6 +14451,7 @@ export interface Routes {
     jsonBody: {}
     commonParams: {
       owner_user_identity_id?: string | undefined
+      acs_credential_id?: string | undefined
     }
     formData: {}
     jsonResponse: {
