@@ -6795,6 +6795,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_systems',
+        'x-response-key': 'acs_systems',
         'x-title': 'List ACS Systems',
       },
     },
