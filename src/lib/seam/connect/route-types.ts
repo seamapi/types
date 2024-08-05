@@ -3294,6 +3294,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the ACS system for which you want to retrieve all compatible credential manager ACS systems. */
       acs_system_id: string
     }
     formData: {}
