@@ -3100,6 +3100,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired access control system. */
       acs_system_id: string
     }
     formData: {}
