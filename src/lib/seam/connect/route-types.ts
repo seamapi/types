@@ -3100,6 +3100,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired access control system. */
       acs_system_id: string
     }
     formData: {}
@@ -7303,6 +7304,7 @@ export interface Routes {
             workspace_id: string
             created_at: string
             occurred_at: string
+            event_description: string
           }
         | undefined
       message?: string | undefined
@@ -7464,6 +7466,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         occurred_at: string
+        event_description: string
       }>
     }
   }
