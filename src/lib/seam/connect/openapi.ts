@@ -3604,6 +3604,7 @@ export default {
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
           enrollment_automation_id: { format: 'uuid', type: 'string' },
+          event_description: { type: 'string' },
           event_id: { format: 'uuid', type: 'string' },
           event_type: { type: 'string' },
           occurred_at: { format: 'date-time', type: 'string' },
@@ -3615,6 +3616,7 @@ export default {
           'workspace_id',
           'created_at',
           'occurred_at',
+          'event_description',
         ],
         type: 'object',
       },
@@ -6695,13 +6697,19 @@ export default {
     },
     '/acs/systems/get': {
       post: {
+        description:
+          'Returns a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the desired access control system by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description: 'ID of the desired access control system.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_system_id'],
                 type: 'object',
@@ -6738,6 +6746,8 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'systems'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_system',
+        'x-response-key': 'acs_system',
+        'x-title': 'Get an ACS System',
       },
     },
     '/acs/systems/list': {
@@ -9759,6 +9769,8 @@ export default {
                       'connected_account.disconnected',
                       'connected_account.completed_first_sync',
                       'connected_account.completed_first_sync_after_reconnection',
+                      'connect_webview.login_succeeded',
+                      'connect_webview.login_failed',
                       'noise_sensor.noise_threshold_triggered',
                       'access_code.backup_access_code_pulled',
                       'acs_system.connected',
@@ -9824,6 +9836,8 @@ export default {
                         'connected_account.disconnected',
                         'connected_account.completed_first_sync',
                         'connected_account.completed_first_sync_after_reconnection',
+                        'connect_webview.login_succeeded',
+                        'connect_webview.login_failed',
                         'noise_sensor.noise_threshold_triggered',
                         'access_code.backup_access_code_pulled',
                         'acs_system.connected',

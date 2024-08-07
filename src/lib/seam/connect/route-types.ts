@@ -3100,6 +3100,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired access control system. */
       acs_system_id: string
     }
     formData: {}
@@ -7303,6 +7304,7 @@ export interface Routes {
             workspace_id: string
             created_at: string
             occurred_at: string
+            event_description: string
           }
         | undefined
       message?: string | undefined
@@ -7370,6 +7372,8 @@ export interface Routes {
             | 'connected_account.disconnected'
             | 'connected_account.completed_first_sync'
             | 'connected_account.completed_first_sync_after_reconnection'
+            | 'connect_webview.login_succeeded'
+            | 'connect_webview.login_failed'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
             | 'acs_system.connected'
@@ -7433,6 +7437,8 @@ export interface Routes {
             | 'connected_account.disconnected'
             | 'connected_account.completed_first_sync'
             | 'connected_account.completed_first_sync_after_reconnection'
+            | 'connect_webview.login_succeeded'
+            | 'connect_webview.login_failed'
             | 'noise_sensor.noise_threshold_triggered'
             | 'access_code.backup_access_code_pulled'
             | 'acs_system.connected'
@@ -7464,6 +7470,7 @@ export interface Routes {
         workspace_id: string
         created_at: string
         occurred_at: string
+        event_description: string
       }>
     }
   }
