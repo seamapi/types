@@ -107,10 +107,6 @@ const intercom = z.object({
     can_program_access_codes: z.boolean(),
     can_unlock_with_face_recognition: z.boolean().default(false),
     supports_onvif: z.boolean().default(false),
-    can_hvac_heat: z.boolean(),
-    can_hvac_cool: z.boolean(),
-    can_hvac_heat_cool: z.boolean(),
-    can_turn_off_hvac: z.boolean(),
   }),
 })
 

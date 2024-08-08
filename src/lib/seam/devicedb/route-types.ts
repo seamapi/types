@@ -157,10 +157,6 @@ export interface Routes {
               can_program_access_codes: boolean
               can_unlock_with_face_recognition?: boolean
               supports_onvif?: boolean
-              can_hvac_heat: boolean
-              can_hvac_cool: boolean
-              can_hvac_heat_cool: boolean
-              can_turn_off_hvac: boolean
             }
           }
         | {
@@ -353,10 +349,6 @@ export interface Routes {
                 can_program_access_codes: boolean
                 can_unlock_with_face_recognition?: boolean
                 supports_onvif?: boolean
-                can_hvac_heat: boolean
-                can_hvac_cool: boolean
-                can_hvac_heat_cool: boolean
-                can_turn_off_hvac: boolean
               }
             }
           | {
