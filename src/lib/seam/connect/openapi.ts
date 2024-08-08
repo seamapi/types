@@ -2417,7 +2417,12 @@ export default {
                       },
                       dormakaba_oracode_metadata: {
                         properties: {
-                          device_id: { format: 'float', type: 'number' },
+                          device_id: {
+                            oneOf: [
+                              { format: 'float', type: 'number' },
+                              { type: 'string' },
+                            ],
+                          },
                           door_id: { format: 'float', type: 'number' },
                           door_is_wireless: { type: 'boolean' },
                           door_name: { type: 'string' },
@@ -2458,11 +2463,15 @@ export default {
                             },
                             type: 'array',
                           },
-                          site_id: { format: 'float', type: 'number' },
+                          site_id: {
+                            description: '@DEPRECATED',
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
                           site_name: { type: 'string' },
                         },
                         required: [
-                          'door_id',
                           'door_name',
                           'door_is_wireless',
                           'site_id',
