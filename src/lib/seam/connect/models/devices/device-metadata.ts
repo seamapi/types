@@ -191,11 +191,11 @@ export const device_metadata = z
     }),
 
     dormakaba_oracode_metadata: z.object({
-      door_id: z.number(),
+      door_id: z.number().optional(),
       door_name: z.string(),
-      device_id: z.number().optional(),
+      device_id: z.number().or(z.string()).optional(),
       door_is_wireless: z.boolean(),
-      site_id: z.number(),
+      site_id: z.number().nullable().describe('@DEPRECATED'),
       site_name: z.string(),
       iana_timezone: z.string().optional(),
       predefined_time_slots: z.array(dormakaba_oracode_time_slot).optional(),
