@@ -5377,11 +5377,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -6274,11 +6275,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -7819,11 +7821,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -8558,11 +8561,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -9455,11 +9459,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -10194,11 +10199,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -11963,11 +11969,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -12702,11 +12709,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -15555,11 +15563,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -17296,11 +17305,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -19089,11 +19099,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
@@ -19830,11 +19841,12 @@ export interface Routes {
             | undefined
           dormakaba_oracode_metadata?:
             | {
-                door_id: number
+                door_id?: number | undefined
                 door_name: string
-                device_id?: number | undefined
+                device_id?: (number | string) | undefined
                 door_is_wireless: boolean
-                site_id: number
+                /** @DEPRECATED */
+                site_id: number | null
                 site_name: string
                 iana_timezone?: string | undefined
                 predefined_time_slots?:
