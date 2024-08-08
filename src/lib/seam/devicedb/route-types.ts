@@ -112,6 +112,10 @@ export interface Routes {
             can_remotely_unlock?: true | undefined
             can_program_offline_access_codes?: true | undefined
             can_program_online_access_codes?: true | undefined
+            can_hvac_heat?: true | undefined
+            can_hvac_cool?: true | undefined
+            can_hvac_heat_cool?: true | undefined
+            can_turn_off_hvac?: true | undefined
           }
         | {
             main_category: 'sensor'
@@ -153,6 +157,10 @@ export interface Routes {
               can_program_access_codes: boolean
               can_unlock_with_face_recognition?: boolean
               supports_onvif?: boolean
+              can_hvac_heat: boolean
+              can_hvac_cool: boolean
+              can_hvac_heat_cool: boolean
+              can_turn_off_hvac: boolean
             }
           }
         | {
@@ -300,6 +308,10 @@ export interface Routes {
               can_remotely_unlock?: true | undefined
               can_program_offline_access_codes?: true | undefined
               can_program_online_access_codes?: true | undefined
+              can_hvac_heat?: true | undefined
+              can_hvac_cool?: true | undefined
+              can_hvac_heat_cool?: true | undefined
+              can_turn_off_hvac?: true | undefined
             }
           | {
               main_category: 'sensor'
@@ -341,6 +353,10 @@ export interface Routes {
                 can_program_access_codes: boolean
                 can_unlock_with_face_recognition?: boolean
                 supports_onvif?: boolean
+                can_hvac_heat: boolean
+                can_hvac_cool: boolean
+                can_hvac_heat_cool: boolean
+                can_turn_off_hvac: boolean
               }
             }
           | {
