@@ -55,6 +55,10 @@ const smartlock = z
       can_remotely_unlock: true,
       can_program_offline_access_codes: true,
       can_program_online_access_codes: true,
+      can_hvac_heat: true,
+      can_hvac_cool: true,
+      can_hvac_heat_cool: true,
+      can_turn_off_hvac: true,
     }),
   )
 
@@ -103,6 +107,10 @@ const intercom = z.object({
     can_program_access_codes: z.boolean(),
     can_unlock_with_face_recognition: z.boolean().default(false),
     supports_onvif: z.boolean().default(false),
+    can_hvac_heat: z.boolean(),
+    can_hvac_cool: z.boolean(),
+    can_hvac_heat_cool: z.boolean(),
+    can_turn_off_hvac: z.boolean(),
   }),
 })
 
