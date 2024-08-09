@@ -41,14 +41,18 @@ export const connected_account_created_event = connected_account_event
 export type ConnectedAccountCreatedEvent = z.infer<
   typeof connected_account_created_event
 >
-
-export const connected_account_successful_login_event = connected_account_event
-  .extend({
+/** @deprecated */
+export const connected_account_successful_login_event =
+  connected_account_event.extend({
     event_type: z.literal('connected_account.successful_login'),
     connect_webview_id,
-  })
-  .describe('A connected account had a successful connect webview login.')
+  }).describe(`
+    ---
+    deprecated: Use \`connect_webview.login_succeeded\`.
+    ---
+    A connected account had a successful connect webview login.`)
 
+/** @deprecated Rely on ConnectWebviewLoginSucceededEvent instead */
 export type ConnectedAccountSuccessfulLoginEvent = z.infer<
   typeof connected_account_successful_login_event
 >
