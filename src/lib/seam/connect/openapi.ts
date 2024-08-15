@@ -2920,599 +2920,199 @@ export default {
                     type: 'object',
                   },
                   {
-                    oneOf: [
-                      {
+                    properties: {
+                      active_climate_setting_schedule: {
                         properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              device_id: { format: 'uuid', type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
-                              'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
-                            ],
-                            type: 'object',
-                          },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          default_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
+                          automatic_cooling_enabled: { type: 'boolean' },
+                          automatic_heating_enabled: { type: 'boolean' },
+                          climate_setting_schedule_id: {
+                            format: 'uuid',
                             type: 'string',
                           },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_cooling_set_point_celsius: {
+                          cooling_set_point_celsius: {
                             format: 'float',
                             type: 'number',
                           },
-                          max_cooling_set_point_fahrenheit: {
+                          cooling_set_point_fahrenheit: {
                             format: 'float',
                             type: 'number',
                           },
-                          max_heating_set_point_celsius: {
+                          created_at: { format: 'date-time', type: 'string' },
+                          device_id: { format: 'uuid', type: 'string' },
+                          errors: {
+                            description:
+                              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                          },
+                          heating_set_point_celsius: {
                             format: 'float',
                             type: 'number',
                           },
-                          max_heating_set_point_fahrenheit: {
+                          heating_set_point_fahrenheit: {
                             format: 'float',
                             type: 'number',
                           },
-                          min_cooling_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_cooling_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_cooling_delta_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_cooling_delta_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          relative_humidity: {
-                            format: 'float',
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          temperature_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              device_id: { format: 'uuid', type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
-                              'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
-                            ],
-                            type: 'object',
-                          },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          default_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
+                          hvac_mode_setting: {
+                            enum: ['off', 'heat', 'cool', 'heat_cool'],
                             type: 'string',
                           },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [false],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_heating_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          max_heating_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_heating_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          relative_humidity: {
-                            format: 'float',
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          temperature_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                        },
-                        type: 'object',
-                      },
-                      {
-                        properties: {
-                          active_climate_setting_schedule: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              climate_setting_schedule_id: {
-                                format: 'uuid',
-                                type: 'string',
-                              },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              device_id: { format: 'uuid', type: 'string' },
-                              errors: {
-                                description:
-                                  'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                              name: { type: 'string' },
-                              schedule_ends_at: { type: 'string' },
-                              schedule_starts_at: { type: 'string' },
-                              schedule_type: {
-                                enum: ['time_bound'],
-                                type: 'string',
-                              },
-                            },
-                            required: [
-                              'climate_setting_schedule_id',
-                              'schedule_type',
-                              'device_id',
-                              'schedule_starts_at',
-                              'schedule_ends_at',
-                              'created_at',
-                            ],
-                            type: 'object',
-                          },
-                          available_hvac_mode_settings: {
-                            items: {
-                              enum: ['off', 'heat', 'cool', 'heat_cool'],
-                              type: 'string',
-                            },
-                            type: 'array',
-                          },
-                          can_enable_automatic_cooling: { type: 'boolean' },
-                          can_enable_automatic_heating: { type: 'boolean' },
-                          current_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          default_climate_setting: {
-                            properties: {
-                              automatic_cooling_enabled: { type: 'boolean' },
-                              automatic_heating_enabled: { type: 'boolean' },
-                              cooling_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              cooling_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_celsius: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              heating_set_point_fahrenheit: {
-                                format: 'float',
-                                type: 'number',
-                              },
-                              hvac_mode_setting: {
-                                enum: ['off', 'heat', 'cool', 'heat_cool'],
-                                type: 'string',
-                              },
-                              manual_override_allowed: { type: 'boolean' },
-                            },
-                            required: [
-                              'automatic_heating_enabled',
-                              'automatic_cooling_enabled',
-                              'hvac_mode_setting',
-                              'manual_override_allowed',
-                            ],
-                            type: 'object',
-                          },
-                          fan_mode_setting: {
-                            enum: ['auto', 'on'],
+                          manual_override_allowed: { type: 'boolean' },
+                          name: { type: 'string' },
+                          schedule_ends_at: { type: 'string' },
+                          schedule_starts_at: { type: 'string' },
+                          schedule_type: {
+                            enum: ['time_bound'],
                             type: 'string',
                           },
-                          is_climate_setting_schedule_active: {
-                            type: 'boolean',
-                          },
-                          is_cooling: { type: 'boolean' },
-                          is_cooling_available: {
-                            enum: [true],
-                            type: 'boolean',
-                          },
-                          is_fan_running: { type: 'boolean' },
-                          is_heating: { type: 'boolean' },
-                          is_heating_available: {
-                            enum: [false],
-                            type: 'boolean',
-                          },
-                          is_temporary_manual_override_active: {
-                            type: 'boolean',
-                          },
-                          max_cooling_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          max_cooling_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_cooling_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          min_cooling_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          relative_humidity: {
-                            format: 'float',
-                            maximum: 1,
-                            minimum: 0,
-                            type: 'number',
-                          },
-                          temperature_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          temperature_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
                         },
+                        required: [
+                          'climate_setting_schedule_id',
+                          'schedule_type',
+                          'device_id',
+                          'schedule_starts_at',
+                          'schedule_ends_at',
+                          'created_at',
+                        ],
                         type: 'object',
                       },
-                    ],
+                      available_hvac_mode_settings: {
+                        items: {
+                          enum: ['off', 'heat', 'cool', 'heat_cool'],
+                          type: 'string',
+                        },
+                        type: 'array',
+                      },
+                      can_enable_automatic_cooling: { type: 'boolean' },
+                      can_enable_automatic_heating: { type: 'boolean' },
+                      current_climate_setting: {
+                        properties: {
+                          automatic_cooling_enabled: { type: 'boolean' },
+                          automatic_heating_enabled: { type: 'boolean' },
+                          cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          hvac_mode_setting: {
+                            enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            type: 'string',
+                          },
+                          manual_override_allowed: { type: 'boolean' },
+                        },
+                        required: [
+                          'automatic_heating_enabled',
+                          'automatic_cooling_enabled',
+                          'hvac_mode_setting',
+                          'manual_override_allowed',
+                        ],
+                        type: 'object',
+                      },
+                      default_climate_setting: {
+                        properties: {
+                          automatic_cooling_enabled: { type: 'boolean' },
+                          automatic_heating_enabled: { type: 'boolean' },
+                          cooling_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          cooling_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          heating_set_point_celsius: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          heating_set_point_fahrenheit: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          hvac_mode_setting: {
+                            enum: ['off', 'heat', 'cool', 'heat_cool'],
+                            type: 'string',
+                          },
+                          manual_override_allowed: { type: 'boolean' },
+                        },
+                        required: [
+                          'automatic_heating_enabled',
+                          'automatic_cooling_enabled',
+                          'hvac_mode_setting',
+                          'manual_override_allowed',
+                        ],
+                        type: 'object',
+                      },
+                      fan_mode_setting: {
+                        enum: ['auto', 'on'],
+                        type: 'string',
+                      },
+                      is_climate_setting_schedule_active: { type: 'boolean' },
+                      is_cooling: { type: 'boolean' },
+                      is_fan_running: { type: 'boolean' },
+                      is_heating: { type: 'boolean' },
+                      is_temporary_manual_override_active: { type: 'boolean' },
+                      max_cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      max_cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      max_heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      max_heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_heating_cooling_delta_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_heating_cooling_delta_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      min_heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      relative_humidity: {
+                        format: 'float',
+                        maximum: 1,
+                        minimum: 0,
+                        type: 'number',
+                      },
+                      temperature_celsius: { format: 'float', type: 'number' },
+                      temperature_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                    },
+                    type: 'object',
                   },
                 ],
               },
