@@ -12,8 +12,6 @@ export const thermostat_capability_properties = z
     temperature_fahrenheit: z.number(),
     temperature_celsius: z.number(),
     relative_humidity: z.number().min(0).max(1),
-    can_enable_automatic_heating: z.boolean(),
-    can_enable_automatic_cooling: z.boolean(),
     available_hvac_mode_settings: z.array(hvac_mode_setting),
     is_heating: z.boolean(),
     is_cooling: z.boolean(),
