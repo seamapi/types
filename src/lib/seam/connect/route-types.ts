@@ -5513,275 +5513,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -6411,275 +6217,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -7961,275 +7573,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -8701,275 +8119,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -9599,275 +8823,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -10339,275 +9369,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -12109,275 +10945,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -12849,275 +11491,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -15703,275 +14151,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -17445,275 +15699,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -19239,275 +17299,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
@@ -19981,275 +17847,81 @@ export interface Routes {
                 )
               | undefined
             door_open?: (boolean | undefined) | undefined
-          } & (
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-                min_heating_cooling_delta_celsius?: number | undefined
-                min_heating_cooling_delta_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: true | undefined
-                is_cooling_available?: false | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_heating_set_point_celsius?: number | undefined
-                min_heating_set_point_fahrenheit?: number | undefined
-                max_heating_set_point_celsius?: number | undefined
-                max_heating_set_point_fahrenheit?: number | undefined
-              }
-            | {
-                temperature_fahrenheit?: number | undefined
-                temperature_celsius?: number | undefined
-                relative_humidity?: number | undefined
-                can_enable_automatic_heating?: boolean | undefined
-                can_enable_automatic_cooling?: boolean | undefined
-                available_hvac_mode_settings?:
-                  | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
-                  | undefined
-                is_heating_available?: false | undefined
-                is_cooling_available?: true | undefined
-                is_heating?: boolean | undefined
-                is_cooling?: boolean | undefined
-                is_fan_running?: boolean | undefined
-                fan_mode_setting?: ('auto' | 'on') | undefined
-                is_temporary_manual_override_active?: boolean | undefined
-                current_climate_setting?:
-                  | {
-                      automatic_heating_enabled: boolean
-                      automatic_cooling_enabled: boolean
-                      hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                      cooling_set_point_celsius?: number | undefined
-                      heating_set_point_celsius?: number | undefined
-                      cooling_set_point_fahrenheit?: number | undefined
-                      heating_set_point_fahrenheit?: number | undefined
-                      manual_override_allowed: boolean
-                    }
-                  | undefined
-                default_climate_setting?:
-                  | (
-                      | {
-                          automatic_heating_enabled: boolean
-                          automatic_cooling_enabled: boolean
-                          hvac_mode_setting:
-                            | 'off'
-                            | 'heat'
-                            | 'cool'
-                            | 'heat_cool'
-                          cooling_set_point_celsius?: number | undefined
-                          heating_set_point_celsius?: number | undefined
-                          cooling_set_point_fahrenheit?: number | undefined
-                          heating_set_point_fahrenheit?: number | undefined
-                          manual_override_allowed: boolean
-                        }
-                      | undefined
-                    )
-                  | undefined
-                is_climate_setting_schedule_active?: boolean | undefined
-                active_climate_setting_schedule?:
-                  | (
-                      | {
-                          climate_setting_schedule_id: string
-                          schedule_type: 'time_bound'
-                          device_id: string
-                          name?: string | undefined
-                          schedule_starts_at: string
-                          schedule_ends_at: string
-                          created_at: string
-                          /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                          errors?: any
-                          automatic_heating_enabled?: boolean | undefined
-                          automatic_cooling_enabled?: boolean | undefined
-                          hvac_mode_setting?:
-                            | ('off' | 'heat' | 'cool' | 'heat_cool')
-                            | undefined
-                          cooling_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_celsius?:
-                            | (number | undefined)
-                            | undefined
-                          cooling_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          heating_set_point_fahrenheit?:
-                            | (number | undefined)
-                            | undefined
-                          manual_override_allowed?: boolean | undefined
-                        }
-                      | undefined
-                    )
-                  | undefined
-                min_cooling_set_point_celsius?: number | undefined
-                min_cooling_set_point_fahrenheit?: number | undefined
-                max_cooling_set_point_celsius?: number | undefined
-                max_cooling_set_point_fahrenheit?: number | undefined
-              }
-          ))
+          } & {
+            temperature_fahrenheit?: number | undefined
+            temperature_celsius?: number | undefined
+            relative_humidity?: number | undefined
+            available_hvac_mode_settings?:
+              | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
+              | undefined
+            is_heating?: boolean | undefined
+            is_cooling?: boolean | undefined
+            is_fan_running?: boolean | undefined
+            fan_mode_setting?: ('auto' | 'on') | undefined
+            is_temporary_manual_override_active?: boolean | undefined
+            current_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            default_climate_setting?:
+              | {
+                  automatic_heating_enabled: boolean
+                  automatic_cooling_enabled: boolean
+                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }
+              | undefined
+            is_climate_setting_schedule_active?: boolean | undefined
+            active_climate_setting_schedule?:
+              | {
+                  climate_setting_schedule_id: string
+                  schedule_type: 'time_bound'
+                  device_id: string
+                  name?: string | undefined
+                  schedule_starts_at: string
+                  schedule_ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                  automatic_heating_enabled?: boolean | undefined
+                  automatic_cooling_enabled?: boolean | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            min_cooling_set_point_celsius?: number | undefined
+            min_cooling_set_point_fahrenheit?: number | undefined
+            max_cooling_set_point_celsius?: number | undefined
+            max_cooling_set_point_fahrenheit?: number | undefined
+            min_heating_set_point_celsius?: number | undefined
+            min_heating_set_point_fahrenheit?: number | undefined
+            max_heating_set_point_celsius?: number | undefined
+            max_heating_set_point_fahrenheit?: number | undefined
+            min_heating_cooling_delta_celsius?: number | undefined
+            min_heating_cooling_delta_fahrenheit?: number | undefined
+          })
         /** Location information for the device. */
         location: {
           /** Name of the device location. */
