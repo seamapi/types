@@ -3178,9 +3178,24 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              error_code: 'salto_site_user_limit_reached'
+            }
         >
-        /**  */
-        warnings: Array<{}>
+        /** Warnings associated with the `acs_system`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+          warning_code: 'salto_site_user_limit_almost_reached'
+        }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -3275,9 +3290,24 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              error_code: 'salto_site_user_limit_reached'
+            }
         >
-        /**  */
-        warnings: Array<{}>
+        /** Warnings associated with the `acs_system`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+          warning_code: 'salto_site_user_limit_almost_reached'
+        }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -3372,9 +3402,24 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              error_code: 'salto_site_user_limit_reached'
+            }
         >
-        /**  */
-        warnings: Array<{}>
+        /** Warnings associated with the `acs_system`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+          warning_code: 'salto_site_user_limit_almost_reached'
+        }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -20331,9 +20376,24 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              error_code: 'salto_site_user_limit_reached'
+            }
         >
-        /**  */
-        warnings: Array<{}>
+        /** Warnings associated with the `acs_system`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+          warning_code: 'salto_site_user_limit_almost_reached'
+        }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
