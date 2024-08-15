@@ -73,8 +73,20 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).`)
 
+const salto_site_user_limit_reached = common_acs_system_error.extend({
+  error_code: z
+    .literal('salto_site_user_limit_reached')
+    .describe(
+      'You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
+    ),
+})
+
 const acs_system_error = z
-  .union([seam_bridge_disconnected, visionline_instance_unreachable])
+  .union([
+    seam_bridge_disconnected,
+    visionline_instance_unreachable,
+    salto_site_user_limit_reached,
+  ])
   .describe('Error associated with the `acs_system`.')
 
 const acs_system_error_map = z.object({
@@ -82,13 +94,44 @@ const acs_system_error_map = z.object({
   visionline_instance_unreachable: visionline_instance_unreachable
     .optional()
     .nullable(),
+  salto_site_user_limit_reached: salto_site_user_limit_reached
+    .optional()
+    .nullable(),
 })
 
 export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
 
-const acs_system_warning = z.object({})
+const common_acs_system_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
 
-const acs_system_warning_map = z.object({})
+const salto_site_user_limit_almost_reached = common_acs_system_warning.extend({
+  warning_code: z
+    .literal('salto_site_user_limit_almost_reached')
+    .describe(
+      'You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
+    ),
+})
+
+const acs_system_warning =
+  // z.union([
+  salto_site_user_limit_almost_reached
+    // ])
+    .describe('Warning associated with the `acs_system`.')
+
+const acs_system_warning_map = z.object({
+  salto_site_user_limit_almost_reached: salto_site_user_limit_almost_reached
+    .optional()
+    .nullable(),
+})
 
 export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
 
@@ -150,13 +193,9 @@ export const acs_system = z
     errors: z
       .array(acs_system_error)
       .describe('Errors associated with the `acs_system`.'),
-    warnings: z.array(acs_system_warning).describe(
-      `
-          ---
-          undocumented: Currently, no warnings defined for \`acs_system\`s.
-          ---
-          `,
-    ),
+    warnings: z
+      .array(acs_system_warning)
+      .describe('Warnings associated with the `acs_system`.'),
   })
   .merge(acs_system_capability_flags)
   .describe(

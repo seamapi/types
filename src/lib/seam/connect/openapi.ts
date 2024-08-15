@@ -533,6 +533,29 @@ export default {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
+                      enum: ['salto_site_user_limit_reached'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -596,10 +619,32 @@ export default {
             type: 'object',
           },
           warnings: {
-            items: { properties: {}, type: 'object' },
+            description: 'Warnings associated with the `acs_system`.',
+            items: {
+              description: 'Warning associated with the `acs_system`.',
+              properties: {
+                created_at: {
+                  description:
+                    'Date and time at which Seam created the warning.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                message: {
+                  description:
+                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                  type: 'string',
+                },
+                warning_code: {
+                  description:
+                    'You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
+                  enum: ['salto_site_user_limit_almost_reached'],
+                  type: 'string',
+                },
+              },
+              required: ['created_at', 'message', 'warning_code'],
+              type: 'object',
+            },
             type: 'array',
-            'x-undocumented':
-              'Currently, no warnings defined for `acs_system`s.',
           },
           workspace_id: {
             description:
