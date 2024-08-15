@@ -9365,6 +9365,7 @@ export default {
                     minItems: 2,
                     type: 'array',
                   },
+                  connect_webview_id: { format: 'uuid', type: 'string' },
                   connected_account_id: { format: 'uuid', type: 'string' },
                   device_id: { format: 'uuid', type: 'string' },
                   device_ids: {

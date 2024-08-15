@@ -7112,6 +7112,7 @@ export interface Routes {
           >
         | undefined
       connected_account_id?: string | undefined
+      connect_webview_id?: string | undefined
       limit?: number
     }
     formData: {}
