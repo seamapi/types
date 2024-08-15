@@ -2981,8 +2981,6 @@ export default {
                         },
                         type: 'array',
                       },
-                      can_enable_automatic_cooling: { type: 'boolean' },
-                      can_enable_automatic_heating: { type: 'boolean' },
                       current_climate_setting: {
                         properties: {
                           automatic_cooling_enabled: { type: 'boolean' },

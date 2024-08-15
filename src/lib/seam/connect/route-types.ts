@@ -5517,8 +5517,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -6223,8 +6221,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -7581,8 +7577,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -8129,8 +8123,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -8835,8 +8827,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -9383,8 +9373,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -10961,8 +10949,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -11509,8 +11495,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -14171,8 +14155,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -15721,8 +15703,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -17323,8 +17303,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
@@ -17873,8 +17851,6 @@ export interface Routes {
             temperature_fahrenheit?: number | undefined
             temperature_celsius?: number | undefined
             relative_humidity?: number | undefined
-            can_enable_automatic_heating?: boolean | undefined
-            can_enable_automatic_cooling?: boolean | undefined
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
