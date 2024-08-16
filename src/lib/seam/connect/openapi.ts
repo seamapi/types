@@ -5323,6 +5323,56 @@ export default {
         'x-fern-sdk-return-value': 'acs_access_groups',
       },
     },
+    '/acs/access_groups/list_accessible_entrances': {
+      post: {
+        operationId: 'acsAccessGroupsListAccessibleEntrancesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_access_group_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_entrances: {
+                      items: { $ref: '#/components/schemas/acs_entrance' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_entrances', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/acs/access_groups/list_accessible_entrances',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups'],
+        'x-fern-sdk-method-name': 'list_accessible_entrances',
+        'x-fern-sdk-return-value': 'acs_entrances',
+      },
+    },
     '/acs/access_groups/list_users': {
       post: {
         operationId: 'acsAccessGroupsListUsersPost',
