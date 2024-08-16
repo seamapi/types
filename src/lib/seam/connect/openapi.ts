@@ -1862,8 +1862,6 @@ export default {
       },
       climate_setting_schedule: {
         properties: {
-          automatic_cooling_enabled: { type: 'boolean' },
-          automatic_heating_enabled: { type: 'boolean' },
           climate_setting_schedule_id: { format: 'uuid', type: 'string' },
           cooling_set_point_celsius: { format: 'float', type: 'number' },
           cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
@@ -2923,8 +2921,6 @@ export default {
                     properties: {
                       active_climate_setting_schedule: {
                         properties: {
-                          automatic_cooling_enabled: { type: 'boolean' },
-                          automatic_heating_enabled: { type: 'boolean' },
                           climate_setting_schedule_id: {
                             format: 'uuid',
                             type: 'string',
@@ -2983,8 +2979,6 @@ export default {
                       },
                       current_climate_setting: {
                         properties: {
-                          automatic_cooling_enabled: { type: 'boolean' },
-                          automatic_heating_enabled: { type: 'boolean' },
                           cooling_set_point_celsius: {
                             format: 'float',
                             type: 'number',
@@ -3008,8 +3002,6 @@ export default {
                           manual_override_allowed: { type: 'boolean' },
                         },
                         required: [
-                          'automatic_heating_enabled',
-                          'automatic_cooling_enabled',
                           'hvac_mode_setting',
                           'manual_override_allowed',
                         ],
@@ -3017,8 +3009,6 @@ export default {
                       },
                       default_climate_setting: {
                         properties: {
-                          automatic_cooling_enabled: { type: 'boolean' },
-                          automatic_heating_enabled: { type: 'boolean' },
                           cooling_set_point_celsius: {
                             format: 'float',
                             type: 'number',
@@ -3042,8 +3032,6 @@ export default {
                           manual_override_allowed: { type: 'boolean' },
                         },
                         required: [
-                          'automatic_heating_enabled',
-                          'automatic_cooling_enabled',
                           'hvac_mode_setting',
                           'manual_override_allowed',
                         ],
@@ -10927,8 +10915,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  automatic_cooling_enabled: { type: 'boolean' },
-                  automatic_heating_enabled: { type: 'boolean' },
                   cooling_set_point_celsius: {
                     format: 'float',
                     type: 'number',
@@ -11210,8 +11196,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  automatic_cooling_enabled: { type: 'boolean' },
-                  automatic_heating_enabled: { type: 'boolean' },
                   climate_setting_schedule_id: {
                     format: 'uuid',
                     type: 'string',
@@ -11290,8 +11274,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  automatic_cooling_enabled: { type: 'boolean' },
-                  automatic_heating_enabled: { type: 'boolean' },
                   climate_setting_schedule_id: {
                     format: 'uuid',
                     type: 'string',
@@ -11371,8 +11353,6 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  automatic_cooling_enabled: { type: 'boolean' },
-                  automatic_heating_enabled: { type: 'boolean' },
                   climate_setting_schedule_id: {
                     format: 'uuid',
                     type: 'string',
@@ -12036,8 +12016,6 @@ export default {
                 properties: {
                   default_climate_setting: {
                     properties: {
-                      automatic_cooling_enabled: { type: 'boolean' },
-                      automatic_heating_enabled: { type: 'boolean' },
                       cooling_set_point_celsius: {
                         format: 'float',
                         type: 'number',
@@ -12105,8 +12083,6 @@ export default {
                 properties: {
                   default_climate_setting: {
                     properties: {
-                      automatic_cooling_enabled: { type: 'boolean' },
-                      automatic_heating_enabled: { type: 'boolean' },
                       cooling_set_point_celsius: {
                         format: 'float',
                         type: 'number',

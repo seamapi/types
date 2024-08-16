@@ -5574,8 +5574,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -5586,8 +5584,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -5608,8 +5604,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -6278,8 +6272,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -6290,8 +6282,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -6312,8 +6302,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -7635,8 +7623,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -7647,8 +7633,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -7669,8 +7653,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -8181,8 +8163,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -8193,8 +8173,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -8215,8 +8193,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -8885,8 +8861,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -8897,8 +8871,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -8919,8 +8891,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -9431,8 +9401,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -9443,8 +9411,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -9465,8 +9431,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -11007,8 +10971,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -11019,8 +10981,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -11041,8 +11001,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -11553,8 +11511,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -11565,8 +11521,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -11587,8 +11541,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -13187,8 +13139,6 @@ export interface Routes {
       name?: string | undefined
       schedule_starts_at: string
       schedule_ends_at: string
-      automatic_heating_enabled?: boolean | undefined
-      automatic_cooling_enabled?: boolean | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
@@ -13209,8 +13159,6 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors?: any
-        automatic_heating_enabled?: boolean | undefined
-        automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
@@ -13252,8 +13200,6 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors?: any
-        automatic_heating_enabled?: boolean | undefined
-        automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
@@ -13284,8 +13230,6 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors?: any
-        automatic_heating_enabled?: boolean | undefined
-        automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
@@ -13305,8 +13249,6 @@ export interface Routes {
       name?: string | undefined
       schedule_starts_at?: string | undefined
       schedule_ends_at?: string | undefined
-      automatic_heating_enabled?: boolean | undefined
-      automatic_cooling_enabled?: boolean | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: (number | undefined) | undefined
       heating_set_point_celsius?: (number | undefined) | undefined
@@ -13327,8 +13269,6 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors?: any
-        automatic_heating_enabled?: boolean | undefined
-        automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
@@ -14213,8 +14153,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -14225,8 +14163,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -14247,8 +14183,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -15761,8 +15695,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -15773,8 +15705,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -15795,8 +15725,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -16713,8 +16641,6 @@ export interface Routes {
     jsonBody: {
       device_id: string
       default_climate_setting: {
-        automatic_heating_enabled?: boolean | undefined
-        automatic_cooling_enabled?: boolean | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: (number | undefined) | undefined
         heating_set_point_celsius?: (number | undefined) | undefined
@@ -17361,8 +17287,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -17373,8 +17297,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -17395,8 +17317,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -17909,8 +17829,6 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -17921,8 +17839,6 @@ export interface Routes {
               | undefined
             default_climate_setting?:
               | {
-                  automatic_heating_enabled: boolean
-                  automatic_cooling_enabled: boolean
                   hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
                   cooling_set_point_celsius?: number | undefined
                   heating_set_point_celsius?: number | undefined
@@ -17943,8 +17859,6 @@ export interface Routes {
                   created_at: string
                   /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
                   errors?: any
-                  automatic_heating_enabled?: boolean | undefined
-                  automatic_cooling_enabled?: boolean | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
