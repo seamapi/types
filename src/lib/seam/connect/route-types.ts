@@ -2399,6 +2399,53 @@ export interface Routes {
       }>
     }
   }
+  '/acs/access_groups/list_accessible_entrances': {
+    route: '/acs/access_groups/list_accessible_entrances'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_entrances: Array<{
+        acs_system_id: string
+        acs_entrance_id: string
+        created_at: string
+        display_name: string
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        latch_metadata?:
+          | {
+              accessibility_type: string
+              door_name: string
+              door_type: string
+              is_connected: boolean
+            }
+          | undefined
+        visionline_metadata?:
+          | {
+              door_name: string
+              door_category:
+                | 'entrance'
+                | 'guest'
+                | 'elevator reader'
+                | 'common'
+                | 'common (PMS)'
+              profiles?:
+                | Array<{
+                    visionline_door_profile_id: string
+                    visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
+                  }>
+                | undefined
+            }
+          | undefined
+      }>
+    }
+  }
   '/acs/access_groups/list_users': {
     route: '/acs/access_groups/list_users'
     method: 'GET' | 'POST'
