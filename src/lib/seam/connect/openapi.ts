@@ -7080,6 +7080,7 @@ export default {
               schema: {
                 properties: {
                   access_schedule: {
+                    nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
                       starts_at: { format: 'date-time', type: 'string' },
@@ -7138,6 +7139,7 @@ export default {
               schema: {
                 properties: {
                   access_schedule: {
+                    nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
                       starts_at: { format: 'date-time', type: 'string' },

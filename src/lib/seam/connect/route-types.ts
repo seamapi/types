@@ -3780,10 +3780,10 @@ export interface Routes {
     queryParams: {}
     jsonBody: {
       access_schedule?:
-        | {
+        | ({
             starts_at: string
             ends_at: string
-          }
+          } | null)
         | undefined
       acs_user_id: string
       full_name?: string | undefined
