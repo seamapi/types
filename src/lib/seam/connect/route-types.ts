@@ -3230,7 +3230,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
         >
@@ -3342,7 +3342,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
         >
@@ -3454,7 +3454,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
         >
@@ -18015,7 +18015,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
+              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
         >
