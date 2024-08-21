@@ -543,7 +543,7 @@ export default {
                     },
                     error_code: {
                       description:
-                        'You have reached the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
+                        'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
                       enum: ['salto_site_user_limit_reached'],
                       type: 'string',
                     },
