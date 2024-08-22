@@ -8,6 +8,7 @@ export const acs_credential_external_type = z.enum([
   'brivo_credential',
   'hid_credential',
   'visionline_card',
+  'salto_ks_credential',
 ])
 
 export const acs_credential_access_method_type = z.enum([

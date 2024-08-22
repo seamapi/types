@@ -265,6 +265,7 @@ export default {
               'brivo_credential',
               'hid_credential',
               'visionline_card',
+              'salto_ks_credential',
             ],
             type: 'string',
           },
