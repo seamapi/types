@@ -2582,6 +2582,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -2657,6 +2658,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -2722,6 +2724,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -2792,6 +2795,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -2894,6 +2898,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -2950,6 +2955,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
@@ -3112,6 +3118,7 @@ export interface Routes {
               | 'brivo_credential'
               | 'hid_credential'
               | 'visionline_card'
+              | 'salto_ks_credential'
             )
           | undefined
         external_type_display_name?: string | undefined
