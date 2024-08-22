@@ -7030,6 +7030,51 @@ export default {
         'x-fern-sdk-method-name': 'suspend',
       },
     },
+    '/acs/users/unmanaged/get': {
+      post: {
+        operationId: 'acsUsersUnmanagedGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_user: { $ref: '#/components/schemas/acs_user' },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_user', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/unmanaged/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_user',
+      },
+    },
     '/acs/users/unsuspend': {
       post: {
         operationId: 'acsUsersUnsuspendPost',

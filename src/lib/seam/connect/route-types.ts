@@ -3763,6 +3763,60 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/acs/users/unmanaged/get': {
+    route: '/acs/users/unmanaged/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_user_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_user: {
+        acs_user_id: string
+        acs_system_id: string
+        hid_acs_system_id?: string | undefined
+        workspace_id: string
+        created_at: string
+        display_name: string
+        external_type?:
+          | (
+              | 'pti_user'
+              | 'brivo_user'
+              | 'hid_credential_manager_user'
+              | 'salto_site_user'
+              | 'latch_user'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
+        is_suspended: boolean
+        access_schedule?:
+          | {
+              starts_at: string
+              ends_at: string
+            }
+          | undefined
+        user_identity_id?: string | undefined
+        user_identity_full_name?: (string | null) | undefined
+        user_identity_email_address?: (string | null) | undefined
+        user_identity_phone_number?: (string | null) | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        warnings: Array<{
+          created_at: string
+          message: string
+          warning_code: 'being_deleted'
+        }>
+        full_name?: string | undefined
+        /**
+         * @deprecated use email_address. */
+        email?: string | undefined
+        email_address?: string | undefined
+        phone_number?: string | undefined
+      }
+    }
+  }
   '/acs/users/unsuspend': {
     route: '/acs/users/unsuspend'
     method: 'POST'
