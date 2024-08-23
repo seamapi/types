@@ -7076,6 +7076,57 @@ export default {
         'x-fern-sdk-return-value': 'acs_user',
       },
     },
+    '/acs/users/unmanaged/list': {
+      post: {
+        operationId: 'acsUsersUnmanagedListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_system_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_users: {
+                      items: { $ref: '#/components/schemas/acs_user' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_users', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/users/unmanaged/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_users',
+      },
+    },
     '/acs/users/unsuspend': {
       post: {
         operationId: 'acsUsersUnsuspendPost',
