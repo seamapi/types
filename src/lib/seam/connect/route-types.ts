@@ -5782,6 +5782,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -5925,6 +5929,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -5936,6 +5944,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -6480,6 +6492,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -6556,6 +6572,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -6747,6 +6767,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -6890,6 +6914,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -6901,6 +6929,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -7050,6 +7082,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -7831,6 +7867,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -8371,6 +8411,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -8514,6 +8558,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -8525,6 +8573,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -9069,6 +9121,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -9609,6 +9665,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -10624,6 +10684,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -10635,6 +10699,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -11179,6 +11247,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -11719,6 +11791,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -13143,6 +13219,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -13238,6 +13318,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -14361,6 +14445,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -15348,6 +15436,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -15359,6 +15451,10 @@ export interface Routes {
             | 'can_remotely_lock'
             | 'can_program_offline_access_codes'
             | 'can_program_online_access_codes'
+            | 'can_hvac_heat'
+            | 'can_hvac_cool'
+            | 'can_hvac_heat_cool'
+            | 'can_turn_off_hvac'
             | 'can_simulate_removal'
             | 'can_simulate_connection'
             | 'can_simulate_disconnection'
@@ -15903,6 +15999,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -17495,6 +17595,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
@@ -18037,6 +18141,10 @@ export interface Routes {
         can_remotely_lock?: boolean | undefined
         can_program_offline_access_codes?: boolean | undefined
         can_program_online_access_codes?: boolean | undefined
+        can_hvac_heat?: boolean | undefined
+        can_hvac_cool?: boolean | undefined
+        can_hvac_heat_cool?: boolean | undefined
+        can_turn_off_hvac?: boolean | undefined
         can_simulate_removal?: boolean | undefined
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
