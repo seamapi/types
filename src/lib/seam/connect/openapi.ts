@@ -7565,7 +7565,6 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { pat_with_workspace: [] },
           { console_session: [] },
           { api_key: [] },
