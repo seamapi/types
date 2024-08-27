@@ -45,7 +45,7 @@ const user_fields = z.object({
   phone_number: phone_number.optional(),
 })
 
-export const acs_user = z
+const common_acs_user = z
   .object({
     acs_user_id: z.string().uuid(),
     acs_system_id: z.string().uuid(),
@@ -70,4 +70,17 @@ export const acs_user = z
   })
   .merge(user_fields)
 
+export const acs_user = common_acs_user.merge(
+  z.object({
+    is_managed: z.literal(true),
+  }),
+)
+
+export const acs_unmanaged_user = common_acs_user.merge(
+  z.object({
+    is_managed: z.literal(false),
+  }),
+)
+
 export type AcsUser = z.output<typeof acs_user>
+export type AcsUnmanagedUser = z.output<typeof acs_unmanaged_user>
