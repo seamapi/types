@@ -17,6 +17,7 @@ export {
   noise_threshold,
   seam_event,
   unmanaged_access_code,
+  unmanaged_acs_access_group,
   unmanaged_acs_credential,
   unmanaged_device,
   user_identity,
