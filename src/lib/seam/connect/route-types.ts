@@ -2359,6 +2359,7 @@ export interface Routes {
           | 'brivo_group'
         external_type_display_name: string
         created_at: string
+        is_managed: true
       }
     }
   }
@@ -2396,6 +2397,7 @@ export interface Routes {
           | 'brivo_group'
         external_type_display_name: string
         created_at: string
+        is_managed: true
       }>
     }
   }
@@ -2512,6 +2514,81 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {}
+  }
+  '/acs/access_groups/unmanaged/get': {
+    route: '/acs/access_groups/unmanaged/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_access_group_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_access_group: {
+        acs_access_group_id: string
+        acs_system_id: string
+        workspace_id: string
+        name: string
+        /**
+         * @deprecated use external_type */
+        access_group_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
+        /**
+         * @deprecated use external_type_display_name */
+        access_group_type_display_name: string
+        display_name: string
+        external_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
+        external_type_display_name: string
+        created_at: string
+        is_managed: false
+      }
+    }
+  }
+  '/acs/access_groups/unmanaged/list': {
+    route: '/acs/access_groups/unmanaged/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_system_id?: string | undefined
+      acs_user_id?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      acs_access_groups: Array<{
+        acs_access_group_id: string
+        acs_system_id: string
+        workspace_id: string
+        name: string
+        /**
+         * @deprecated use external_type */
+        access_group_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
+        /**
+         * @deprecated use external_type_display_name */
+        access_group_type_display_name: string
+        display_name: string
+        external_type:
+          | 'pti_unit'
+          | 'pti_access_level'
+          | 'salto_access_group'
+          | 'brivo_group'
+        external_type_display_name: string
+        created_at: string
+        is_managed: false
+      }>
+    }
   }
   '/acs/credential_pools/list': {
     route: '/acs/credential_pools/list'
