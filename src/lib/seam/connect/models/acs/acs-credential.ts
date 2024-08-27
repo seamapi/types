@@ -21,7 +21,7 @@ export type AcsCredentialExternalType = z.infer<
   typeof acs_credential_external_type
 >
 
-export const acs_credential = z.object({
+const common_acs_credential = z.object({
   acs_credential_id: z.string().uuid(),
   acs_user_id: z.string().uuid().optional(),
   acs_credential_pool_id: z.string().uuid().optional(),
@@ -57,4 +57,17 @@ export const acs_credential = z.object({
   visionline_metadata: acs_credential_visionline_metadata.optional(),
 })
 
+export const acs_credential = common_acs_credential.merge(
+  z.object({
+    is_managed: z.literal(true),
+  }),
+)
+
+export const unmanaged_acs_credential = common_acs_credential.merge(
+  z.object({
+    is_managed: z.literal(false),
+  }),
+)
+
 export type AcsCredential = z.output<typeof acs_credential>
+export type UnmanagedAcsCredential = z.output<typeof unmanaged_acs_credential>
