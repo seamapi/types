@@ -2608,8 +2608,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }
     }
   }
@@ -2684,8 +2688,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }
     }
   }
@@ -2750,8 +2758,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }
     }
   }
@@ -2821,8 +2833,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }>
     }
   }
@@ -2924,9 +2940,142 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }
+    }
+  }
+  '/acs/credentials/unmanaged/get': {
+    route: '/acs/credentials/unmanaged/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      acs_credential_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      acs_credential: {
+        acs_credential_id: string
+        acs_user_id?: string | undefined
+        acs_credential_pool_id?: string | undefined
+        acs_system_id: string
+        parent_acs_credential_id?: string | undefined
+        display_name: string
+        code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+              | 'salto_ks_credential'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
+        created_at: string
+        workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        visionline_metadata?:
+          | {
+              card_function_type: 'guest' | 'staff'
+              joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
+            }
+          | undefined
+        is_managed: false
+      }
+    }
+  }
+  '/acs/credentials/unmanaged/list': {
+    route: '/acs/credentials/unmanaged/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams:
+      | {
+          acs_user_id: string
+        }
+      | {
+          acs_system_id: string
+        }
+      | {
+          acs_user_id: string
+          acs_system_id: string
+        }
+      | {
+          user_identity_id: string
+        }
+    formData: {}
+    jsonResponse: {
+      acs_credentials: Array<{
+        acs_credential_id: string
+        acs_user_id?: string | undefined
+        acs_credential_pool_id?: string | undefined
+        acs_system_id: string
+        parent_acs_credential_id?: string | undefined
+        display_name: string
+        code?: (string | undefined) | null
+        access_method: 'code' | 'card' | 'mobile_key'
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+              | 'salto_ks_credential'
+            )
+          | undefined
+        external_type_display_name?: string | undefined
+        created_at: string
+        workspace_id: string
+        starts_at?: string | undefined
+        ends_at?: string | undefined
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        is_multi_phone_sync_credential?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        visionline_metadata?:
+          | {
+              card_function_type: 'guest' | 'staff'
+              joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
+            }
+          | undefined
+        is_managed: false
+      }>
     }
   }
   '/acs/credentials/update': {
@@ -2981,8 +3130,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }
     }
   }
@@ -3144,8 +3297,12 @@ export interface Routes {
               joiner_acs_credential_ids?: string[] | undefined
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
             }
           | undefined
+        is_managed: true
       }>
     }
   }
