@@ -217,6 +217,7 @@ export default {
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
+          is_managed: { enum: [true], type: 'boolean' },
           name: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
@@ -231,6 +232,7 @@ export default {
           'external_type',
           'external_type_display_name',
           'created_at',
+          'is_managed',
         ],
         type: 'object',
       },
@@ -5477,6 +5479,206 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'remove_user',
+      },
+    },
+    '/acs/access_groups/unmanaged/get': {
+      post: {
+        operationId: 'acsAccessGroupsUnmanagedGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_access_group_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_group: {
+                      properties: {
+                        access_group_type: {
+                          deprecated: true,
+                          enum: [
+                            'pti_unit',
+                            'pti_access_level',
+                            'salto_access_group',
+                            'brivo_group',
+                          ],
+                          type: 'string',
+                          'x-deprecated': 'use external_type',
+                        },
+                        access_group_type_display_name: {
+                          deprecated: true,
+                          type: 'string',
+                          'x-deprecated': 'use external_type_display_name',
+                        },
+                        acs_access_group_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        external_type: {
+                          enum: [
+                            'pti_unit',
+                            'pti_access_level',
+                            'salto_access_group',
+                            'brivo_group',
+                          ],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        is_managed: { enum: [false], type: 'boolean' },
+                        name: { type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_access_group_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'name',
+                        'access_group_type',
+                        'access_group_type_display_name',
+                        'display_name',
+                        'external_type',
+                        'external_type_display_name',
+                        'created_at',
+                        'is_managed',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_group', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/unmanaged/get',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'acs_users',
+      },
+    },
+    '/acs/access_groups/unmanaged/list': {
+      post: {
+        operationId: 'acsAccessGroupsUnmanagedListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: { format: 'uuid', type: 'string' },
+                },
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_access_groups: {
+                      items: {
+                        properties: {
+                          access_group_type: {
+                            deprecated: true,
+                            enum: [
+                              'pti_unit',
+                              'pti_access_level',
+                              'salto_access_group',
+                              'brivo_group',
+                            ],
+                            type: 'string',
+                            'x-deprecated': 'use external_type',
+                          },
+                          access_group_type_display_name: {
+                            deprecated: true,
+                            type: 'string',
+                            'x-deprecated': 'use external_type_display_name',
+                          },
+                          acs_access_group_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { type: 'string' },
+                          external_type: {
+                            enum: [
+                              'pti_unit',
+                              'pti_access_level',
+                              'salto_access_group',
+                              'brivo_group',
+                            ],
+                            type: 'string',
+                          },
+                          external_type_display_name: { type: 'string' },
+                          is_managed: { enum: [false], type: 'boolean' },
+                          name: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'acs_access_group_id',
+                          'acs_system_id',
+                          'workspace_id',
+                          'name',
+                          'access_group_type',
+                          'access_group_type_display_name',
+                          'display_name',
+                          'external_type',
+                          'external_type_display_name',
+                          'created_at',
+                          'is_managed',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_access_groups', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/access_groups/unmanaged/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'acs_users',
       },
     },
     '/acs/credential_pools/list': {
