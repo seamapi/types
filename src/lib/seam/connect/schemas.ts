@@ -4,6 +4,7 @@ export {
   acs_credential,
   acs_entrance,
   acs_system,
+  acs_unmanaged_user,
   acs_user,
   action_attempt,
   client_session,

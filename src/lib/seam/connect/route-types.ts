@@ -2497,6 +2497,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }>
     }
   }
@@ -3562,6 +3563,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }
     }
   }
@@ -3627,6 +3629,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }
     }
   }
@@ -3686,6 +3689,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }>
     }
   }
@@ -3821,6 +3825,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }
     }
   }
@@ -3830,7 +3835,11 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      acs_system_id: string
+      user_identity_id?: string | undefined
+      user_identity_phone_number?: string | undefined
+      user_identity_email_address?: string | undefined
+      acs_system_id?: string | undefined
+      limit?: number
     }
     formData: {}
     jsonResponse: {
@@ -3875,6 +3884,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: false
       }>
     }
   }
@@ -18313,6 +18323,7 @@ export interface Routes {
         email?: string | undefined
         email_address?: string | undefined
         phone_number?: string | undefined
+        is_managed: true
       }>
     }
   }
