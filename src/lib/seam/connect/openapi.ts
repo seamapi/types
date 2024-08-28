@@ -7605,7 +7605,95 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    acs_user: { $ref: '#/components/schemas/acs_user' },
+                    acs_user: {
+                      properties: {
+                        access_schedule: {
+                          properties: {
+                            ends_at: { format: 'date-time', type: 'string' },
+                            starts_at: { format: 'date-time', type: 'string' },
+                          },
+                          required: ['starts_at', 'ends_at'],
+                          type: 'object',
+                        },
+                        acs_system_id: { format: 'uuid', type: 'string' },
+                        acs_user_id: { format: 'uuid', type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        display_name: { type: 'string' },
+                        email: {
+                          deprecated: true,
+                          format: 'email',
+                          type: 'string',
+                          'x-deprecated': 'use email_address.',
+                        },
+                        email_address: { format: 'email', type: 'string' },
+                        external_type: {
+                          enum: [
+                            'pti_user',
+                            'brivo_user',
+                            'hid_credential_manager_user',
+                            'salto_site_user',
+                            'latch_user',
+                          ],
+                          type: 'string',
+                        },
+                        external_type_display_name: { type: 'string' },
+                        full_name: { type: 'string' },
+                        hid_acs_system_id: { format: 'uuid', type: 'string' },
+                        is_latest_desired_state_synced_with_provider: {
+                          type: 'boolean',
+                        },
+                        is_managed: { enum: [false], type: 'boolean' },
+                        is_suspended: { type: 'boolean' },
+                        latest_desired_state_synced_with_provider_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        phone_number: { type: 'string' },
+                        user_identity_email_address: {
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_full_name: {
+                          nullable: true,
+                          type: 'string',
+                        },
+                        user_identity_id: { type: 'string' },
+                        user_identity_phone_number: {
+                          nullable: true,
+                          type: 'string',
+                        },
+                        warnings: {
+                          items: {
+                            properties: {
+                              created_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              message: { type: 'string' },
+                              warning_code: {
+                                enum: ['being_deleted'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['created_at', 'message', 'warning_code'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: [
+                        'acs_user_id',
+                        'acs_system_id',
+                        'workspace_id',
+                        'created_at',
+                        'display_name',
+                        'is_suspended',
+                        'warnings',
+                        'is_managed',
+                      ],
+                      type: 'object',
+                    },
                     ok: { type: 'boolean' },
                   },
                   required: ['acs_user', 'ok'],

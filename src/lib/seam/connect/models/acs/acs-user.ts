@@ -76,11 +76,11 @@ export const acs_user = common_acs_user.merge(
   }),
 )
 
-export const acs_unmanaged_user = common_acs_user.merge(
+export const unmanaged_acs_user = common_acs_user.merge(
   z.object({
     is_managed: z.literal(false),
   }),
 )
 
 export type AcsUser = z.output<typeof acs_user>
-export type AcsUnmanagedUser = z.output<typeof acs_unmanaged_user>
+export type AcsUnmanagedUser = z.output<typeof unmanaged_acs_user>
