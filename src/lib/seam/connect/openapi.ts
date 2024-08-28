@@ -5575,7 +5575,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
-        'x-fern-sdk-return-value': 'acs_users',
+        'x-fern-sdk-return-value': 'acs_access_group',
       },
     },
     '/acs/access_groups/unmanaged/list': {
@@ -5678,7 +5678,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'acs_users',
+        'x-fern-sdk-return-value': 'acs_access_groups',
       },
     },
     '/acs/credential_pools/list': {
