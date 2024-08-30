@@ -16,6 +16,7 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
       is_external_modification_allowed?: boolean | undefined
+      preferred_code_length?: number | undefined
       use_offline_access_code?: boolean | undefined
       is_offline_access_code?: boolean | undefined
       is_one_time_use?: boolean | undefined
@@ -1894,6 +1895,7 @@ export interface Routes {
       use_backup_access_code_pool?: boolean | undefined
       allow_external_modification?: boolean | undefined
       is_external_modification_allowed?: boolean | undefined
+      preferred_code_length?: number | undefined
       use_offline_access_code?: boolean | undefined
       is_offline_access_code?: boolean | undefined
       is_one_time_use?: boolean | undefined
