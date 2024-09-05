@@ -695,6 +695,7 @@ export default {
             'x-deprecated': 'use email_address.',
           },
           email_address: { format: 'email', type: 'string' },
+          errors: {},
           external_type: {
             enum: [
               'pti_user',
@@ -722,13 +723,41 @@ export default {
           user_identity_phone_number: { nullable: true, type: 'string' },
           warnings: {
             items: {
-              properties: {
-                created_at: { format: 'date-time', type: 'string' },
-                message: { type: 'string' },
-                warning_code: { enum: ['being_deleted'], type: 'string' },
-              },
-              required: ['created_at', 'message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: { enum: ['being_deleted'], type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['salto_ks_user_not_subscribed'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['salto_site_user_suspended'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -7630,6 +7659,7 @@ export default {
                           'x-deprecated': 'use email_address.',
                         },
                         email_address: { format: 'email', type: 'string' },
+                        errors: { $ref: '#/components/schemas/access_code' },
                         external_type: {
                           enum: [
                             'pti_user',
@@ -7668,19 +7698,65 @@ export default {
                         },
                         warnings: {
                           items: {
-                            properties: {
-                              created_at: {
-                                format: 'date-time',
-                                type: 'string',
+                            oneOf: [
+                              {
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
+                                    enum: ['being_deleted'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
                               },
-                              message: { type: 'string' },
-                              warning_code: {
-                                enum: ['being_deleted'],
-                                type: 'string',
+                              {
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
+                                    enum: ['salto_ks_user_not_subscribed'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
                               },
-                            },
-                            required: ['created_at', 'message', 'warning_code'],
-                            type: 'object',
+                              {
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
+                                    enum: ['salto_site_user_suspended'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
                           },
                           type: 'array',
                         },
@@ -7772,6 +7848,7 @@ export default {
                             'x-deprecated': 'use email_address.',
                           },
                           email_address: { format: 'email', type: 'string' },
+                          errors: { $ref: '#/components/schemas/access_code' },
                           external_type: {
                             enum: [
                               'pti_user',
@@ -7810,23 +7887,65 @@ export default {
                           },
                           warnings: {
                             items: {
-                              properties: {
-                                created_at: {
-                                  format: 'date-time',
-                                  type: 'string',
+                              oneOf: [
+                                {
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
                                 },
-                                message: { type: 'string' },
-                                warning_code: {
-                                  enum: ['being_deleted'],
-                                  type: 'string',
+                                {
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: ['salto_ks_user_not_subscribed'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
                                 },
-                              },
-                              required: [
-                                'created_at',
-                                'message',
-                                'warning_code',
+                                {
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: ['salto_site_user_suspended'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
-                              type: 'object',
                             },
                             type: 'array',
                           },
