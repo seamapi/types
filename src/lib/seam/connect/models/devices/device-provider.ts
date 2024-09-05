@@ -40,6 +40,7 @@ export const DEVICE_PROVIDERS = {
   TEDEE: 'tedee',
   HONEYWELL_RESIDEO: 'honeywell_resideo',
   LATCH: 'latch',
+  AKILES: 'akiles',
 } as const
 
 export type DeviceProviderName =

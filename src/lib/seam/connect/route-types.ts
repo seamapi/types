@@ -5275,6 +5275,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'latch'
+            | 'akiles'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -6883,6 +6884,7 @@ export interface Routes {
           | 'tedee'
           | 'honeywell_resideo'
           | 'latch'
+          | 'akiles'
         display_name: string
         image_url: string
         provider_categories: Array<
