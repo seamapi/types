@@ -2490,11 +2490,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3788,11 +3801,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3854,11 +3880,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3914,11 +3953,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -4050,11 +4102,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -4109,11 +4174,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -18548,11 +18626,24 @@ export interface Routes {
         user_identity_phone_number?: (string | null) | undefined
         latest_desired_state_synced_with_provider_at?: string | undefined
         is_latest_desired_state_synced_with_provider?: boolean | undefined
-        warnings: Array<{
-          created_at: string
-          message: string
-          warning_code: 'being_deleted'
-        }>
+        warnings: Array<
+          | {
+              created_at: string
+              message: string
+              warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'salto_site_user_suspended'
+            }
+        >
+        errors?: any
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */

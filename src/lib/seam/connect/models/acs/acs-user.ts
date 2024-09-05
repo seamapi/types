@@ -22,15 +22,30 @@ const acs_users_being_deleted = common_acs_users_warning.extend({
   warning_code: z.literal('being_deleted'),
 })
 
-export const acs_users_warning_map = z.object({
-  being_deleted: acs_users_being_deleted.optional().nullable(),
+const acs_users_salto_ks_user_not_subscribed = common_acs_users_warning.extend({
+  warning_code: z.literal('salto_ks_user_not_subscribed'),
 })
 
-export const acs_users_warning =
-  // TODO: once we have more than one warning we should use z.union
-  // z.union([
-  acs_users_being_deleted
-// ])
+// TODO: Some acs_users already have this warning, so we need to keep it here until we migrate
+const acs_users_salto_site_user_suspended = common_acs_users_warning.extend({
+  warning_code: z.literal('salto_site_user_suspended'),
+})
+
+export const acs_users_warning_map = z.object({
+  being_deleted: acs_users_being_deleted.optional().nullable(),
+  salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
+    .optional()
+    .nullable(),
+  salto_site_user_suspended: acs_users_salto_site_user_suspended
+    .optional()
+    .nullable(),
+})
+
+export const acs_users_warning = z.union([
+  acs_users_being_deleted,
+  acs_users_salto_ks_user_not_subscribed,
+  acs_users_salto_site_user_suspended,
+])
 
 export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
 
@@ -67,6 +82,7 @@ const common_acs_user = z
       .optional(),
     is_latest_desired_state_synced_with_provider: z.boolean().optional(),
     warnings: z.array(acs_users_warning),
+    errors: z.any(),
   })
   .merge(user_fields)
 
