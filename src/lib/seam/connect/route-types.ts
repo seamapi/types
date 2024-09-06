@@ -3490,6 +3490,14 @@ export interface Routes {
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
+              error_code: 'salto_seam_integration_blocked'
+            }
         >
         /** Warnings associated with the `acs_system`. */
         warnings: Array<{
@@ -3602,6 +3610,14 @@ export interface Routes {
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
+              error_code: 'salto_seam_integration_blocked'
+            }
         >
         /** Warnings associated with the `acs_system`. */
         warnings: Array<{
@@ -3713,6 +3729,14 @@ export interface Routes {
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
+              error_code: 'salto_seam_integration_blocked'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -18566,6 +18590,14 @@ export interface Routes {
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
               error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
+              error_code: 'salto_seam_integration_blocked'
             }
         >
         /** Warnings associated with the `acs_system`. */
