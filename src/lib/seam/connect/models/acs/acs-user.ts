@@ -26,6 +26,11 @@ const acs_users_salto_ks_user_not_subscribed = common_acs_users_warning.extend({
   warning_code: z.literal('salto_ks_user_not_subscribed'),
 })
 
+const acs_users_failed_to_update_acs_user_on_acs_system =
+  common_acs_users_warning.extend({
+    warning_code: z.literal('failed_to_update_acs_user_on_acs_system'),
+  })
+
 // TODO: Some acs_users already have this warning, so we need to keep it here until we migrate
 const acs_users_salto_site_user_suspended = common_acs_users_warning.extend({
   warning_code: z.literal('salto_site_user_suspended'),
@@ -33,6 +38,8 @@ const acs_users_salto_site_user_suspended = common_acs_users_warning.extend({
 
 export const acs_users_warning_map = z.object({
   being_deleted: acs_users_being_deleted.optional().nullable(),
+  failed_to_update_acs_user_on_acs_system:
+    acs_users_failed_to_update_acs_user_on_acs_system.optional().nullable(),
   salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
     .optional()
     .nullable(),
@@ -43,6 +50,7 @@ export const acs_users_warning_map = z.object({
 
 export const acs_users_warning = z.union([
   acs_users_being_deleted,
+  acs_users_failed_to_update_acs_user_on_acs_system,
   acs_users_salto_ks_user_not_subscribed,
   acs_users_salto_site_user_suspended,
 ])
