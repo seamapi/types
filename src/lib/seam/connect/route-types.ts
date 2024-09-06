@@ -2499,6 +2499,11 @@ export interface Routes {
           | {
               created_at: string
               message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
+            }
+          | {
+              created_at: string
+              message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
           | {
@@ -3834,6 +3839,11 @@ export interface Routes {
           | {
               created_at: string
               message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
+            }
+          | {
+              created_at: string
+              message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
           | {
@@ -3913,6 +3923,11 @@ export interface Routes {
           | {
               created_at: string
               message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
+            }
+          | {
+              created_at: string
+              message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
           | {
@@ -3982,6 +3997,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
             }
           | {
               created_at: string
@@ -4135,6 +4155,11 @@ export interface Routes {
           | {
               created_at: string
               message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
+            }
+          | {
+              created_at: string
+              message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
           | {
@@ -4203,6 +4228,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
             }
           | {
               created_at: string
@@ -18665,6 +18695,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'being_deleted'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'failed_to_update_acs_user_on_acs_system'
             }
           | {
               created_at: string

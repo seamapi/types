@@ -761,6 +761,18 @@ export default {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
+                      enum: ['failed_to_update_acs_user_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
                       enum: ['salto_ks_user_not_subscribed'],
                       type: 'string',
                     },
@@ -7750,6 +7762,27 @@ export default {
                                   },
                                   message: { type: 'string' },
                                   warning_code: {
+                                    enum: [
+                                      'failed_to_update_acs_user_on_acs_system',
+                                    ],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
                                     enum: ['salto_ks_user_not_subscribed'],
                                     type: 'string',
                                   },
@@ -7921,6 +7954,27 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: [
+                                        'failed_to_update_acs_user_on_acs_system',
+                                      ],
                                       type: 'string',
                                     },
                                   },
