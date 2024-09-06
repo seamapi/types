@@ -81,11 +81,19 @@ const salto_site_user_limit_reached = common_acs_system_error.extend({
     ),
 })
 
+const salto_seam_integration_blocked = common_acs_system_error.extend({
+  error_code: z
+    .literal('salto_seam_integration_blocked')
+    .describe(
+      "Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block",
+    ),
+})
 const acs_system_error = z
   .union([
     seam_bridge_disconnected,
     visionline_instance_unreachable,
     salto_site_user_limit_reached,
+    salto_seam_integration_blocked,
   ])
   .describe('Error associated with the `acs_system`.')
 
@@ -95,6 +103,9 @@ const acs_system_error_map = z.object({
     .optional()
     .nullable(),
   salto_site_user_limit_reached: salto_site_user_limit_reached
+    .optional()
+    .nullable(),
+  salto_seam_integration_blocked: salto_seam_integration_blocked
     .optional()
     .nullable(),
 })

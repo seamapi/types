@@ -564,6 +564,29 @@ export default {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        "Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block",
+                      enum: ['salto_seam_integration_blocked'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
