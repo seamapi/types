@@ -104,6 +104,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'visionline',
     'assa_abloy_credential_service',
     'latch',
+    'salto',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
