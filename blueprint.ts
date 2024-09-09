@@ -7,7 +7,7 @@ import * as types from '@seamapi/types/connect'
 
 const typesModule = TypesModuleSchema.parse(types)
 
-const blueprint = createBlueprint(typesModule)
+const blueprint = await createBlueprint(typesModule)
 
 const content = JSON.stringify(blueprint, null, 2)
 
