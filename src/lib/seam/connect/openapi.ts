@@ -718,7 +718,81 @@ export default {
             'x-deprecated': 'use email_address.',
           },
           email_address: { format: 'email', type: 'string' },
-          errors: {},
+          errors: {
+            items: {
+              description: 'Error associated with the `acs_user`.',
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['user_deleted_externally'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['salto_site_user_limit_reached'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
           external_type: {
             enum: [
               'pti_user',
@@ -746,8 +820,11 @@ export default {
           user_identity_phone_number: { nullable: true, type: 'string' },
           warnings: {
             items: {
+              description: 'Warning associated with the `acs_user`.',
               oneOf: [
                 {
+                  description:
+                    'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
@@ -757,11 +834,13 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
-                      enum: ['failed_to_update_acs_user_on_acs_system'],
+                      enum: ['failed_to_update_on_acs_system'],
                       type: 'string',
                     },
                   },
@@ -769,6 +848,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
@@ -806,6 +887,7 @@ export default {
           'display_name',
           'is_suspended',
           'warnings',
+          'errors',
           'is_managed',
         ],
         type: 'object',
@@ -7695,7 +7777,96 @@ export default {
                           'x-deprecated': 'use email_address.',
                         },
                         email_address: { format: 'email', type: 'string' },
-                        errors: { $ref: '#/components/schemas/access_code' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `acs_user`.',
+                            oneOf: [
+                              {
+                                description:
+                                  'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    enum: ['user_deleted_externally'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    enum: [
+                                      'salto_ks_subscription_limit_exceeded',
+                                    ],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    enum: ['salto_site_user_limit_reached'],
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         external_type: {
                           enum: [
                             'pti_user',
@@ -7734,8 +7905,12 @@ export default {
                         },
                         warnings: {
                           items: {
+                            description:
+                              'Warning associated with the `acs_user`.',
                             oneOf: [
                               {
+                                description:
+                                  'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
                                 properties: {
                                   created_at: {
                                     format: 'date-time',
@@ -7755,6 +7930,8 @@ export default {
                                 type: 'object',
                               },
                               {
+                                description:
+                                  "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                 properties: {
                                   created_at: {
                                     format: 'date-time',
@@ -7762,9 +7939,7 @@ export default {
                                   },
                                   message: { type: 'string' },
                                   warning_code: {
-                                    enum: [
-                                      'failed_to_update_acs_user_on_acs_system',
-                                    ],
+                                    enum: ['failed_to_update_on_acs_system'],
                                     type: 'string',
                                   },
                                 },
@@ -7776,6 +7951,8 @@ export default {
                                 type: 'object',
                               },
                               {
+                                description:
+                                  'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                                 properties: {
                                   created_at: {
                                     format: 'date-time',
@@ -7827,6 +8004,7 @@ export default {
                         'display_name',
                         'is_suspended',
                         'warnings',
+                        'errors',
                         'is_managed',
                       ],
                       type: 'object',
@@ -7905,7 +8083,96 @@ export default {
                             'x-deprecated': 'use email_address.',
                           },
                           email_address: { format: 'email', type: 'string' },
-                          errors: { $ref: '#/components/schemas/access_code' },
+                          errors: {
+                            items: {
+                              description:
+                                'Error associated with the `acs_user`.',
+                              oneOf: [
+                                {
+                                  description:
+                                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      enum: ['user_deleted_externally'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      enum: [
+                                        'salto_ks_subscription_limit_exceeded',
+                                      ],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    error_code: {
+                                      enum: ['salto_site_user_limit_reached'],
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'error_code',
+                                  ],
+                                  type: 'object',
+                                },
+                              ],
+                            },
+                            type: 'array',
+                          },
                           external_type: {
                             enum: [
                               'pti_user',
@@ -7944,8 +8211,12 @@ export default {
                           },
                           warnings: {
                             items: {
+                              description:
+                                'Warning associated with the `acs_user`.',
                               oneOf: [
                                 {
+                                  description:
+                                    'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
                                   properties: {
                                     created_at: {
                                       format: 'date-time',
@@ -7965,6 +8236,8 @@ export default {
                                   type: 'object',
                                 },
                                 {
+                                  description:
+                                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                   properties: {
                                     created_at: {
                                       format: 'date-time',
@@ -7972,9 +8245,7 @@ export default {
                                     },
                                     message: { type: 'string' },
                                     warning_code: {
-                                      enum: [
-                                        'failed_to_update_acs_user_on_acs_system',
-                                      ],
+                                      enum: ['failed_to_update_on_acs_system'],
                                       type: 'string',
                                     },
                                   },
@@ -7986,6 +8257,8 @@ export default {
                                   type: 'object',
                                 },
                                 {
+                                  description:
+                                    'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
                                   properties: {
                                     created_at: {
                                       format: 'date-time',
@@ -8037,6 +8310,7 @@ export default {
                           'display_name',
                           'is_suspended',
                           'warnings',
+                          'errors',
                           'is_managed',
                         ],
                         type: 'object',

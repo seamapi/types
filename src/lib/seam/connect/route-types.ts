@@ -2499,7 +2499,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -2512,7 +2512,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3839,7 +3861,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -3852,7 +3874,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -3923,7 +3967,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -3936,7 +3980,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -4001,7 +4067,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -4014,7 +4080,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -4155,7 +4243,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -4168,7 +4256,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -4232,7 +4342,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -4245,7 +4355,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
@@ -18699,7 +18831,7 @@ export interface Routes {
           | {
               created_at: string
               message: string
-              warning_code: 'failed_to_update_acs_user_on_acs_system'
+              warning_code: 'failed_to_update_on_acs_system'
             }
           | {
               created_at: string
@@ -18712,7 +18844,29 @@ export interface Routes {
               warning_code: 'salto_site_user_suspended'
             }
         >
-        errors?: any
+        errors: Array<
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'user_deleted_externally'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_ks_subscription_limit_exceeded'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              error_code: 'salto_site_user_limit_reached'
+            }
+        >
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
