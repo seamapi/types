@@ -724,7 +724,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -733,7 +733,7 @@ export default {
                       type: 'string',
                     },
                     error_code: {
-                      enum: ['user_deleted_externally'],
+                      enum: ['deleted_externally'],
                       type: 'string',
                     },
                     message: {
@@ -769,6 +769,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                   properties: {
                     created_at: {
                       description:
@@ -776,8 +778,27 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
-                    error_code: {
-                      enum: ['salto_site_user_limit_reached'],
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
                       type: 'string',
                     },
                     message: {
@@ -785,8 +806,35 @@ export default {
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    warning_code: {
+                      enum: ['failed_to_update_on_acs_system'],
+                      type: 'string',
+                    },
                   },
-                  required: ['created_at', 'message', 'error_code'],
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['failed_to_delete_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
               ],
@@ -837,8 +885,17 @@ export default {
                   description:
                     "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       enum: ['failed_to_update_on_acs_system'],
                       type: 'string',
@@ -855,18 +912,6 @@ export default {
                     message: { type: 'string' },
                     warning_code: {
                       enum: ['salto_ks_user_not_subscribed'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      enum: ['salto_site_user_suspended'],
                       type: 'string',
                     },
                   },
@@ -1512,6 +1557,91 @@ export default {
             type: 'object',
           },
           {
+            description: 'Activating climate preset.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: {
+                enum: ['ACTIVATE_CLIMATE_PRESET'],
+                type: 'string',
+              },
+              error: { nullable: true },
+              result: { nullable: true },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Activating climate preset succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: {
+                enum: ['ACTIVATE_CLIMATE_PRESET'],
+                type: 'string',
+              },
+              error: { nullable: true },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Activating climate preset failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: {
+                enum: ['ACTIVATE_CLIMATE_PRESET'],
+                type: 'string',
+              },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { nullable: true },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -2013,39 +2143,6 @@ export default {
           'connected_account_ids',
           'connect_webview_ids',
           'user_identity_ids',
-        ],
-        type: 'object',
-      },
-      climate_setting_schedule: {
-        properties: {
-          climate_setting_schedule_id: { format: 'uuid', type: 'string' },
-          cooling_set_point_celsius: { format: 'float', type: 'number' },
-          cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
-          created_at: { format: 'date-time', type: 'string' },
-          device_id: { format: 'uuid', type: 'string' },
-          errors: {
-            description:
-              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
-          },
-          heating_set_point_celsius: { format: 'float', type: 'number' },
-          heating_set_point_fahrenheit: { format: 'float', type: 'number' },
-          hvac_mode_setting: {
-            enum: ['off', 'heat', 'cool', 'heat_cool'],
-            type: 'string',
-          },
-          manual_override_allowed: { type: 'boolean' },
-          name: { type: 'string' },
-          schedule_ends_at: { type: 'string' },
-          schedule_starts_at: { type: 'string' },
-          schedule_type: { enum: ['time_bound'], type: 'string' },
-        },
-        required: [
-          'climate_setting_schedule_id',
-          'schedule_type',
-          'device_id',
-          'schedule_starts_at',
-          'schedule_ends_at',
-          'created_at',
         ],
         type: 'object',
       },
@@ -3079,56 +3176,85 @@ export default {
                   },
                   {
                     properties: {
-                      active_climate_setting_schedule: {
+                      active_thermostat_schedule: {
+                        default: null,
+                        nullable: true,
                         properties: {
-                          climate_setting_schedule_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          cooling_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          cooling_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
+                          climate_preset_key: { type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           device_id: { format: 'uuid', type: 'string' },
+                          ends_at: { format: 'date-time', type: 'string' },
                           errors: {
                             description:
-                              'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                              'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
                           },
-                          heating_set_point_celsius: {
-                            format: 'float',
-                            type: 'number',
+                          max_override_period_minutes: {
+                            default: 0,
+                            minimum: 0,
+                            type: 'integer',
                           },
-                          heating_set_point_fahrenheit: {
-                            format: 'float',
-                            type: 'number',
-                          },
-                          hvac_mode_setting: {
-                            enum: ['off', 'heat', 'cool', 'heat_cool'],
-                            type: 'string',
-                          },
-                          manual_override_allowed: { type: 'boolean' },
                           name: { type: 'string' },
-                          schedule_ends_at: { type: 'string' },
-                          schedule_starts_at: { type: 'string' },
-                          schedule_type: {
-                            enum: ['time_bound'],
+                          starts_at: { format: 'date-time', type: 'string' },
+                          thermostat_schedule_id: {
+                            format: 'uuid',
                             type: 'string',
                           },
                         },
                         required: [
-                          'climate_setting_schedule_id',
-                          'schedule_type',
+                          'thermostat_schedule_id',
                           'device_id',
-                          'schedule_starts_at',
-                          'schedule_ends_at',
+                          'climate_preset_key',
+                          'starts_at',
+                          'ends_at',
                           'created_at',
                         ],
                         type: 'object',
+                      },
+                      available_climate_presets: {
+                        items: {
+                          properties: {
+                            can_delete: { type: 'boolean' },
+                            can_edit: { type: 'boolean' },
+                            climate_preset_key: { type: 'string' },
+                            cooling_set_point_celsius: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            cooling_set_point_fahrenheit: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            display_name: { type: 'string' },
+                            fan_mode_setting: {
+                              enum: ['auto', 'on'],
+                              type: 'string',
+                            },
+                            heating_set_point_celsius: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            heating_set_point_fahrenheit: {
+                              format: 'float',
+                              type: 'number',
+                            },
+                            hvac_mode_setting: {
+                              enum: ['off', 'heat', 'cool', 'heat_cool'],
+                              type: 'string',
+                            },
+                            manual_override_allowed: { type: 'boolean' },
+                            name: { nullable: true, type: 'string' },
+                          },
+                          required: [
+                            'climate_preset_key',
+                            'can_edit',
+                            'can_delete',
+                            'name',
+                            'display_name',
+                            'manual_override_allowed',
+                          ],
+                          type: 'object',
+                        },
+                        type: 'array',
                       },
                       available_hvac_mode_settings: {
                         items: {
@@ -3139,6 +3265,9 @@ export default {
                       },
                       current_climate_setting: {
                         properties: {
+                          can_delete: { type: 'boolean' },
+                          can_edit: { type: 'boolean' },
+                          climate_preset_key: { type: 'string' },
                           cooling_set_point_celsius: {
                             format: 'float',
                             type: 'number',
@@ -3146,6 +3275,11 @@ export default {
                           cooling_set_point_fahrenheit: {
                             format: 'float',
                             type: 'number',
+                          },
+                          display_name: { type: 'string' },
+                          fan_mode_setting: {
+                            enum: ['auto', 'on'],
+                            type: 'string',
                           },
                           heating_set_point_celsius: {
                             format: 'float',
@@ -3160,15 +3294,16 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: { type: 'boolean' },
+                          name: { nullable: true, type: 'string' },
                         },
-                        required: [
-                          'hvac_mode_setting',
-                          'manual_override_allowed',
-                        ],
                         type: 'object',
                       },
                       default_climate_setting: {
+                        deprecated: true,
                         properties: {
+                          can_delete: { type: 'boolean' },
+                          can_edit: { type: 'boolean' },
+                          climate_preset_key: { type: 'string' },
                           cooling_set_point_celsius: {
                             format: 'float',
                             type: 'number',
@@ -3176,6 +3311,11 @@ export default {
                           cooling_set_point_fahrenheit: {
                             format: 'float',
                             type: 'number',
+                          },
+                          display_name: { type: 'string' },
+                          fan_mode_setting: {
+                            enum: ['auto', 'on'],
+                            type: 'string',
                           },
                           heating_set_point_celsius: {
                             format: 'float',
@@ -3190,18 +3330,25 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: { type: 'boolean' },
+                          name: { nullable: true, type: 'string' },
                         },
-                        required: [
-                          'hvac_mode_setting',
-                          'manual_override_allowed',
-                        ],
                         type: 'object',
+                        'x-deprecated':
+                          'use fallback_climate_preset_key to specify a fallback climate preset instead.',
                       },
-                      fan_mode_setting: {
-                        enum: ['auto', 'on'],
+                      fallback_climate_preset_key: {
+                        default: null,
+                        minLength: 1,
+                        nullable: true,
                         type: 'string',
                       },
-                      is_climate_setting_schedule_active: { type: 'boolean' },
+                      fan_mode_setting: {
+                        deprecated: true,
+                        enum: ['auto', 'on'],
+                        type: 'string',
+                        'x-deprecated':
+                          'use current_climate_setting.fan_mode_setting instead.',
+                      },
                       is_cooling: { type: 'boolean' },
                       is_fan_running: { type: 'boolean' },
                       is_heating: { type: 'boolean' },
@@ -3632,6 +3779,35 @@ export default {
           status: { enum: ['healthy', 'degraded', 'down'], type: 'string' },
         },
         required: ['service', 'status', 'description'],
+        type: 'object',
+      },
+      thermostat_schedule: {
+        properties: {
+          climate_preset_key: { type: 'string' },
+          created_at: { format: 'date-time', type: 'string' },
+          device_id: { format: 'uuid', type: 'string' },
+          ends_at: { format: 'date-time', type: 'string' },
+          errors: {
+            description:
+              'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+          },
+          max_override_period_minutes: {
+            default: 0,
+            minimum: 0,
+            type: 'integer',
+          },
+          name: { type: 'string' },
+          starts_at: { format: 'date-time', type: 'string' },
+          thermostat_schedule_id: { format: 'uuid', type: 'string' },
+        },
+        required: [
+          'thermostat_schedule_id',
+          'device_id',
+          'climate_preset_key',
+          'starts_at',
+          'ends_at',
+          'created_at',
+        ],
         type: 'object',
       },
       unmanaged_access_code: {
@@ -7759,12 +7935,7 @@ export default {
                     acs_user: {
                       properties: {
                         access_schedule: {
-                          properties: {
-                            ends_at: { format: 'date-time', type: 'string' },
-                            starts_at: { format: 'date-time', type: 'string' },
-                          },
-                          required: ['starts_at', 'ends_at'],
-                          type: 'object',
+                          $ref: '#/components/schemas/thermostat_schedule',
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
@@ -7784,7 +7955,7 @@ export default {
                             oneOf: [
                               {
                                 description:
-                                  'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                  'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -7793,7 +7964,7 @@ export default {
                                     type: 'string',
                                   },
                                   error_code: {
-                                    enum: ['user_deleted_externally'],
+                                    enum: ['deleted_externally'],
                                     type: 'string',
                                   },
                                   message: {
@@ -7839,6 +8010,8 @@ export default {
                                 type: 'object',
                               },
                               {
+                                description:
+                                  "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                 properties: {
                                   created_at: {
                                     description:
@@ -7846,8 +8019,31 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
-                                  error_code: {
-                                    enum: ['salto_site_user_limit_reached'],
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    enum: ['failed_to_create_on_acs_system'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
                                     type: 'string',
                                   },
                                   message: {
@@ -7855,11 +8051,42 @@ export default {
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                     type: 'string',
                                   },
+                                  warning_code: {
+                                    enum: ['failed_to_update_on_acs_system'],
+                                    type: 'string',
+                                  },
                                 },
                                 required: [
                                   'created_at',
                                   'message',
-                                  'error_code',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    enum: ['failed_to_delete_on_acs_system'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
                                 ],
                                 type: 'object',
                               },
@@ -7934,10 +8161,16 @@ export default {
                                   "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                 properties: {
                                   created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
                                     format: 'date-time',
                                     type: 'string',
                                   },
-                                  message: { type: 'string' },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
                                   warning_code: {
                                     enum: ['failed_to_update_on_acs_system'],
                                     type: 'string',
@@ -7961,25 +8194,6 @@ export default {
                                   message: { type: 'string' },
                                   warning_code: {
                                     enum: ['salto_ks_user_not_subscribed'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                  warning_code: {
-                                    enum: ['salto_site_user_suspended'],
                                     type: 'string',
                                   },
                                 },
@@ -8062,15 +8276,7 @@ export default {
                       items: {
                         properties: {
                           access_schedule: {
-                            properties: {
-                              ends_at: { format: 'date-time', type: 'string' },
-                              starts_at: {
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                            },
-                            required: ['starts_at', 'ends_at'],
-                            type: 'object',
+                            $ref: '#/components/schemas/thermostat_schedule',
                           },
                           acs_system_id: { format: 'uuid', type: 'string' },
                           acs_user_id: { format: 'uuid', type: 'string' },
@@ -8090,7 +8296,7 @@ export default {
                               oneOf: [
                                 {
                                   description:
-                                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -8099,7 +8305,7 @@ export default {
                                       type: 'string',
                                     },
                                     error_code: {
-                                      enum: ['user_deleted_externally'],
+                                      enum: ['deleted_externally'],
                                       type: 'string',
                                     },
                                     message: {
@@ -8145,6 +8351,8 @@ export default {
                                   type: 'object',
                                 },
                                 {
+                                  description:
+                                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                   properties: {
                                     created_at: {
                                       description:
@@ -8152,8 +8360,31 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
-                                    error_code: {
-                                      enum: ['salto_site_user_limit_reached'],
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      enum: ['failed_to_create_on_acs_system'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
                                       type: 'string',
                                     },
                                     message: {
@@ -8161,11 +8392,42 @@ export default {
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                       type: 'string',
                                     },
+                                    warning_code: {
+                                      enum: ['failed_to_update_on_acs_system'],
+                                      type: 'string',
+                                    },
                                   },
                                   required: [
                                     'created_at',
                                     'message',
-                                    'error_code',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      enum: ['failed_to_delete_on_acs_system'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8240,10 +8502,16 @@ export default {
                                     "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                   properties: {
                                     created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
                                       format: 'date-time',
                                       type: 'string',
                                     },
-                                    message: { type: 'string' },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
                                     warning_code: {
                                       enum: ['failed_to_update_on_acs_system'],
                                       type: 'string',
@@ -8267,25 +8535,6 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['salto_ks_user_not_subscribed'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  properties: {
-                                    created_at: {
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: { type: 'string' },
-                                    warning_code: {
-                                      enum: ['salto_site_user_suspended'],
                                       type: 'string',
                                     },
                                   },
@@ -12254,194 +12503,18 @@ export default {
         'x-fern-sdk-return-value': 'phone',
       },
     },
-    '/thermostats/climate_setting_schedules/create': {
+    '/thermostats/activate_climate_preset': {
       post: {
-        operationId: 'thermostatsClimateSettingSchedulesCreatePost',
+        operationId: 'thermostatsActivateClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  cooling_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  cooling_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  device_id: { type: 'string' },
-                  heating_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  hvac_mode_setting: {
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
-                    type: 'string',
-                  },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { type: 'string' },
-                  schedule_ends_at: { type: 'string' },
-                  schedule_starts_at: { type: 'string' },
-                  schedule_type: {
-                    default: 'time_bound',
-                    enum: ['time_bound'],
-                    type: 'string',
-                  },
-                },
-                required: [
-                  'device_id',
-                  'schedule_starts_at',
-                  'schedule_ends_at',
-                ],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    climate_setting_schedule: {
-                      $ref: '#/components/schemas/climate_setting_schedule',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_setting_schedule', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/create',
-        tags: ['/thermostats'],
-        'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
-        'x-fern-sdk-method-name': 'create',
-        'x-fern-sdk-return-value': 'climate_setting_schedule',
-      },
-    },
-    '/thermostats/climate_setting_schedules/delete': {
-      post: {
-        operationId: 'thermostatsClimateSettingSchedulesDeletePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['climate_setting_schedule_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/delete',
-        tags: ['/thermostats'],
-        'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
-        'x-fern-sdk-method-name': 'delete',
-      },
-      put: {
-        operationId: 'thermostatsClimateSettingSchedulesDeletePut',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                },
-                required: ['climate_setting_schedule_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/delete',
-        tags: ['/thermostats'],
-        'x-fern-ignore': true,
-      },
-    },
-    '/thermostats/climate_setting_schedules/get': {
-      post: {
-        operationId: 'thermostatsClimateSettingSchedulesGetPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
+                  climate_preset_key: { type: 'string' },
                   device_id: { format: 'uuid', type: 'string' },
                 },
+                required: ['device_id', 'climate_preset_key'],
                 type: 'object',
               },
             },
@@ -12453,12 +12526,12 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    climate_setting_schedule: {
-                      $ref: '#/components/schemas/climate_setting_schedule',
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['climate_setting_schedule', 'ok'],
+                  required: ['action_attempt', 'ok'],
                   type: 'object',
                 },
               },
@@ -12469,307 +12542,15 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { client_session: [] },
           { pat_with_workspace: [] },
           { console_session: [] },
           { api_key: [] },
         ],
-        summary: '/thermostats/climate_setting_schedules/get',
+        summary: '/thermostats/activate_climate_preset',
         tags: ['/thermostats'],
-        'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
-        'x-fern-sdk-method-name': 'get',
-        'x-fern-sdk-return-value': 'climate_setting_schedule',
-      },
-    },
-    '/thermostats/climate_setting_schedules/list': {
-      post: {
-        operationId: 'thermostatsClimateSettingSchedulesListPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identifier_key: { type: 'string' },
-                },
-                required: ['device_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    climate_setting_schedules: {
-                      items: {
-                        $ref: '#/components/schemas/climate_setting_schedule',
-                      },
-                      type: 'array',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_setting_schedules', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { api_key: [] },
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/list',
-        tags: ['/thermostats'],
-        'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
-        'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'climate_setting_schedules',
-      },
-    },
-    '/thermostats/climate_setting_schedules/update': {
-      patch: {
-        operationId: 'thermostatsClimateSettingSchedulesUpdatePatch',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  cooling_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  cooling_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  hvac_mode_setting: {
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
-                    type: 'string',
-                  },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { type: 'string' },
-                  schedule_ends_at: { type: 'string' },
-                  schedule_starts_at: { type: 'string' },
-                  schedule_type: {
-                    default: 'time_bound',
-                    enum: ['time_bound'],
-                    type: 'string',
-                  },
-                },
-                required: ['climate_setting_schedule_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    climate_setting_schedule: {
-                      $ref: '#/components/schemas/climate_setting_schedule',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_setting_schedule', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/update',
-        tags: ['/thermostats'],
-        'x-fern-ignore': true,
-      },
-      post: {
-        operationId: 'thermostatsClimateSettingSchedulesUpdatePost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  cooling_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  cooling_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  hvac_mode_setting: {
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
-                    type: 'string',
-                  },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { type: 'string' },
-                  schedule_ends_at: { type: 'string' },
-                  schedule_starts_at: { type: 'string' },
-                  schedule_type: {
-                    default: 'time_bound',
-                    enum: ['time_bound'],
-                    type: 'string',
-                  },
-                },
-                required: ['climate_setting_schedule_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    climate_setting_schedule: {
-                      $ref: '#/components/schemas/climate_setting_schedule',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_setting_schedule', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/update',
-        tags: ['/thermostats'],
-        'x-fern-sdk-group-name': ['thermostats', 'climate_setting_schedules'],
-        'x-fern-sdk-method-name': 'update',
-      },
-      put: {
-        operationId: 'thermostatsClimateSettingSchedulesUpdatePut',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  climate_setting_schedule_id: {
-                    format: 'uuid',
-                    type: 'string',
-                  },
-                  cooling_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  cooling_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_celsius: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  heating_set_point_fahrenheit: {
-                    format: 'float',
-                    type: 'number',
-                  },
-                  hvac_mode_setting: {
-                    enum: ['off', 'heat', 'cool', 'heat_cool'],
-                    type: 'string',
-                  },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { type: 'string' },
-                  schedule_ends_at: { type: 'string' },
-                  schedule_starts_at: { type: 'string' },
-                  schedule_type: {
-                    default: 'time_bound',
-                    enum: ['time_bound'],
-                    type: 'string',
-                  },
-                },
-                required: ['climate_setting_schedule_id'],
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    climate_setting_schedule: {
-                      $ref: '#/components/schemas/climate_setting_schedule',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_setting_schedule', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { client_session: [] },
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/thermostats/climate_setting_schedules/update',
-        tags: ['/thermostats'],
-        'x-fern-ignore': true,
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'activate_climate_preset',
+        'x-fern-sdk-return-value': 'action_attempt',
       },
     },
     '/thermostats/cool': {
@@ -12829,6 +12610,167 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'cool',
         'x-fern-sdk-return-value': 'action_attempt',
+      },
+    },
+    '/thermostats/create_climate_preset': {
+      post: {
+        operationId: 'thermostatsCreateClimatePresetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  device_id: { format: 'uuid', type: 'string' },
+                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  hvac_mode_setting: {
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    type: 'string',
+                  },
+                  manual_override_allowed: { type: 'boolean' },
+                  name: { nullable: true, type: 'string' },
+                },
+                required: [
+                  'device_id',
+                  'climate_preset_key',
+                  'name',
+                  'manual_override_allowed',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    climate_preset: {
+                      properties: {
+                        can_delete: { type: 'boolean' },
+                        can_edit: { type: 'boolean' },
+                        climate_preset_key: { type: 'string' },
+                        cooling_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        cooling_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        display_name: { type: 'string' },
+                        fan_mode_setting: {
+                          enum: ['auto', 'on'],
+                          type: 'string',
+                        },
+                        heating_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        heating_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        hvac_mode_setting: {
+                          enum: ['off', 'heat', 'cool', 'heat_cool'],
+                          type: 'string',
+                        },
+                        manual_override_allowed: { type: 'boolean' },
+                        name: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'climate_preset_key',
+                        'can_edit',
+                        'can_delete',
+                        'name',
+                        'display_name',
+                        'manual_override_allowed',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['climate_preset', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/create_climate_preset',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'create_climate_preset',
+      },
+    },
+    '/thermostats/delete_climate_preset': {
+      post: {
+        operationId: 'thermostatsDeleteClimatePresetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'climate_preset_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/delete_climate_preset',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'delete_climate_preset',
       },
     },
     '/thermostats/get': {
@@ -13309,6 +13251,367 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
       },
     },
+    '/thermostats/schedules/create': {
+      post: {
+        operationId: 'thermostatsSchedulesCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  device_id: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  max_override_period_minutes: {
+                    default: 0,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  name: { type: 'string' },
+                  starts_at: { type: 'string' },
+                },
+                required: [
+                  'device_id',
+                  'climate_preset_key',
+                  'starts_at',
+                  'ends_at',
+                ],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedule: {
+                      $ref: '#/components/schemas/thermostat_schedule',
+                    },
+                  },
+                  required: ['thermostat_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/create',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'thermostat_schedule',
+      },
+    },
+    '/thermostats/schedules/delete': {
+      post: {
+        operationId: 'thermostatsSchedulesDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['thermostat_schedule_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/delete',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'delete',
+      },
+    },
+    '/thermostats/schedules/get': {
+      post: {
+        operationId: 'thermostatsSchedulesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['thermostat_schedule_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedule: {
+                      $ref: '#/components/schemas/thermostat_schedule',
+                    },
+                  },
+                  required: ['thermostat_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/get',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'thermostat_schedule',
+      },
+    },
+    '/thermostats/schedules/list': {
+      post: {
+        operationId: 'thermostatsSchedulesListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  user_identifier_key: { type: 'string' },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedules: {
+                      items: {
+                        $ref: '#/components/schemas/thermostat_schedule',
+                      },
+                      type: 'array',
+                    },
+                  },
+                  required: ['thermostat_schedules', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/thermostats/schedules/list',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'thermostat_schedules',
+      },
+    },
+    '/thermostats/schedules/update': {
+      patch: {
+        operationId: 'thermostatsSchedulesUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  max_override_period_minutes: { minimum: 0, type: 'integer' },
+                  name: { type: 'string' },
+                  starts_at: { type: 'string' },
+                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['thermostat_schedule_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedule: {
+                      $ref: '#/components/schemas/thermostat_schedule',
+                    },
+                  },
+                  required: ['thermostat_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/update',
+        tags: ['/thermostats'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'thermostatsSchedulesUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  max_override_period_minutes: { minimum: 0, type: 'integer' },
+                  name: { type: 'string' },
+                  starts_at: { type: 'string' },
+                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['thermostat_schedule_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    thermostat_schedule: {
+                      $ref: '#/components/schemas/thermostat_schedule',
+                    },
+                  },
+                  required: ['thermostat_schedule', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/schedules/update',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'schedules'],
+        'x-fern-sdk-method-name': 'update',
+      },
+    },
+    '/thermostats/set_fallback_climate_preset': {
+      post: {
+        operationId: 'thermostatsSetFallbackClimatePresetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  climate_preset_key: { type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'climate_preset_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/set_fallback_climate_preset',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'set_fallback_climate_preset',
+      },
+    },
     '/thermostats/set_fan_mode': {
       post: {
         operationId: 'thermostatsSetFanModePost',
@@ -13318,7 +13621,12 @@ export default {
               schema: {
                 properties: {
                   device_id: { format: 'uuid', type: 'string' },
-                  fan_mode: { enum: ['auto', 'on'], type: 'string' },
+                  fan_mode: {
+                    deprecated: true,
+                    enum: ['auto', 'on'],
+                    type: 'string',
+                    'x-deprecated': 'use fan_mode_setting instead.',
+                  },
                   fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
                   sync: { default: false, type: 'boolean' },
                 },
@@ -13362,43 +13670,46 @@ export default {
         'x-fern-sdk-return-value': 'action_attempt',
       },
     },
-    '/thermostats/update': {
+    '/thermostats/update_climate_preset': {
       patch: {
-        operationId: 'thermostatsUpdatePatch',
+        operationId: 'thermostatsUpdateClimatePresetPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  default_climate_setting: {
-                    properties: {
-                      cooling_set_point_celsius: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      cooling_set_point_fahrenheit: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      heating_set_point_celsius: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      heating_set_point_fahrenheit: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      hvac_mode_setting: {
-                        enum: ['off', 'heat', 'cool', 'heat_cool'],
-                        type: 'string',
-                      },
-                      manual_override_allowed: { type: 'boolean' },
-                    },
-                    type: 'object',
+                  climate_preset_key: { type: 'string' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
                   },
                   device_id: { format: 'uuid', type: 'string' },
+                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  hvac_mode_setting: {
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    type: 'string',
+                  },
+                  manual_override_allowed: { type: 'boolean' },
+                  name: { nullable: true, type: 'string' },
                 },
-                required: ['device_id', 'default_climate_setting'],
+                required: [
+                  'device_id',
+                  'climate_preset_key',
+                  'name',
+                  'manual_override_allowed',
+                ],
                 type: 'object',
               },
             },
@@ -13409,8 +13720,53 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    climate_preset: {
+                      properties: {
+                        can_delete: { type: 'boolean' },
+                        can_edit: { type: 'boolean' },
+                        climate_preset_key: { type: 'string' },
+                        cooling_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        cooling_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        display_name: { type: 'string' },
+                        fan_mode_setting: {
+                          enum: ['auto', 'on'],
+                          type: 'string',
+                        },
+                        heating_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        heating_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        hvac_mode_setting: {
+                          enum: ['off', 'heat', 'cool', 'heat_cool'],
+                          type: 'string',
+                        },
+                        manual_override_allowed: { type: 'boolean' },
+                        name: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'climate_preset_key',
+                        'can_edit',
+                        'can_delete',
+                        'name',
+                        'display_name',
+                        'manual_override_allowed',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['climate_preset', 'ok'],
                   type: 'object',
                 },
               },
@@ -13421,51 +13777,53 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { api_key: [] },
           { pat_with_workspace: [] },
           { console_session: [] },
-          { client_session: [] },
+          { api_key: [] },
         ],
-        summary: '/thermostats/update',
+        summary: '/thermostats/update_climate_preset',
         tags: ['/thermostats'],
         'x-fern-ignore': true,
       },
       post: {
-        operationId: 'thermostatsUpdatePost',
+        operationId: 'thermostatsUpdateClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  default_climate_setting: {
-                    properties: {
-                      cooling_set_point_celsius: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      cooling_set_point_fahrenheit: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      heating_set_point_celsius: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      heating_set_point_fahrenheit: {
-                        format: 'float',
-                        type: 'number',
-                      },
-                      hvac_mode_setting: {
-                        enum: ['off', 'heat', 'cool', 'heat_cool'],
-                        type: 'string',
-                      },
-                      manual_override_allowed: { type: 'boolean' },
-                    },
-                    type: 'object',
+                  climate_preset_key: { type: 'string' },
+                  cooling_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  cooling_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
                   },
                   device_id: { format: 'uuid', type: 'string' },
+                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  heating_set_point_celsius: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  heating_set_point_fahrenheit: {
+                    format: 'float',
+                    type: 'number',
+                  },
+                  hvac_mode_setting: {
+                    enum: ['off', 'heat', 'cool', 'heat_cool'],
+                    type: 'string',
+                  },
+                  manual_override_allowed: { type: 'boolean' },
+                  name: { nullable: true, type: 'string' },
                 },
-                required: ['device_id', 'default_climate_setting'],
+                required: [
+                  'device_id',
+                  'climate_preset_key',
+                  'name',
+                  'manual_override_allowed',
+                ],
                 type: 'object',
               },
             },
@@ -13476,8 +13834,53 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: { ok: { type: 'boolean' } },
-                  required: ['ok'],
+                  properties: {
+                    climate_preset: {
+                      properties: {
+                        can_delete: { type: 'boolean' },
+                        can_edit: { type: 'boolean' },
+                        climate_preset_key: { type: 'string' },
+                        cooling_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        cooling_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        display_name: { type: 'string' },
+                        fan_mode_setting: {
+                          enum: ['auto', 'on'],
+                          type: 'string',
+                        },
+                        heating_set_point_celsius: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        heating_set_point_fahrenheit: {
+                          format: 'float',
+                          type: 'number',
+                        },
+                        hvac_mode_setting: {
+                          enum: ['off', 'heat', 'cool', 'heat_cool'],
+                          type: 'string',
+                        },
+                        manual_override_allowed: { type: 'boolean' },
+                        name: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'climate_preset_key',
+                        'can_edit',
+                        'can_delete',
+                        'name',
+                        'display_name',
+                        'manual_override_allowed',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['climate_preset', 'ok'],
                   type: 'object',
                 },
               },
@@ -13488,15 +13891,15 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
-          { api_key: [] },
           { pat_with_workspace: [] },
           { console_session: [] },
-          { client_session: [] },
+          { api_key: [] },
         ],
-        summary: '/thermostats/update',
+        summary: '/thermostats/update_climate_preset',
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
-        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-method-name': 'update_climate_preset',
+        'x-fern-sdk-return-value': 'climate_preset',
       },
     },
     '/user_identities/add_acs_user': {

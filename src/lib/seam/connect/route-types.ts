@@ -248,6 +248,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -814,6 +841,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -1567,6 +1621,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -2131,6 +2212,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -2497,7 +2605,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -2506,11 +2616,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -2518,7 +2623,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -2532,7 +2637,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -3859,7 +3978,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -3868,11 +3989,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -3880,7 +3996,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -3894,7 +4010,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -3965,7 +4095,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -3974,11 +4106,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -3986,7 +4113,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4000,7 +4127,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4065,7 +4206,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4074,11 +4217,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4086,7 +4224,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4100,7 +4238,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4241,7 +4393,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4250,11 +4404,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4262,7 +4411,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4276,7 +4425,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4340,7 +4503,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4349,11 +4514,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4361,7 +4521,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4375,7 +4535,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4645,6 +4819,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -5063,6 +5264,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -6196,42 +6424,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -6243,6 +6449,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -6906,42 +7169,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -6953,6 +7194,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -8282,42 +8580,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -8329,6 +8605,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -8826,42 +9159,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -8873,6 +9184,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -9536,42 +9904,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -9583,6 +9929,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -10080,42 +10483,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -10127,6 +10508,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -10410,6 +10848,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -10829,6 +11294,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -11662,42 +12154,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -11709,6 +12179,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -12206,42 +12733,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -12253,6 +12758,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -12541,6 +13103,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -12970,6 +13559,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -13449,6 +14065,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -13840,153 +14483,450 @@ export interface Routes {
       }
     }
   }
-  '/thermostats/climate_setting_schedules/create': {
-    route: '/thermostats/climate_setting_schedules/create'
+  '/thermostats/activate_climate_preset': {
+    route: '/thermostats/activate_climate_preset'
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      schedule_type?: 'time_bound'
       device_id: string
-      name?: string | undefined
-      schedule_starts_at: string
-      schedule_ends_at: string
-      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-      cooling_set_point_celsius?: (number | undefined) | undefined
-      heating_set_point_celsius?: (number | undefined) | undefined
-      cooling_set_point_fahrenheit?: (number | undefined) | undefined
-      heating_set_point_fahrenheit?: (number | undefined) | undefined
-      manual_override_allowed?: boolean | undefined
+      climate_preset_key: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      climate_setting_schedule: {
-        climate_setting_schedule_id: string
-        schedule_type: 'time_bound'
-        device_id: string
-        name?: string | undefined
-        schedule_starts_at: string
-        schedule_ends_at: string
-        created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: (number | undefined) | undefined
-        heating_set_point_celsius?: (number | undefined) | undefined
-        cooling_set_point_fahrenheit?: (number | undefined) | undefined
-        heating_set_point_fahrenheit?: (number | undefined) | undefined
-        manual_override_allowed?: boolean | undefined
-      }
-    }
-  }
-  '/thermostats/climate_setting_schedules/delete': {
-    route: '/thermostats/climate_setting_schedules/delete'
-    method: 'DELETE' | 'POST' | 'PUT'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      climate_setting_schedule_id: string
-    }
-    formData: {}
-    jsonResponse: {}
-  }
-  '/thermostats/climate_setting_schedules/get': {
-    route: '/thermostats/climate_setting_schedules/get'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      climate_setting_schedule_id?: string | undefined
-      device_id?: string | undefined
-    }
-    formData: {}
-    jsonResponse: {
-      climate_setting_schedule: {
-        climate_setting_schedule_id: string
-        schedule_type: 'time_bound'
-        device_id: string
-        name?: string | undefined
-        schedule_starts_at: string
-        schedule_ends_at: string
-        created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: (number | undefined) | undefined
-        heating_set_point_celsius?: (number | undefined) | undefined
-        cooling_set_point_fahrenheit?: (number | undefined) | undefined
-        heating_set_point_fahrenheit?: (number | undefined) | undefined
-        manual_override_allowed?: boolean | undefined
-      }
-    }
-  }
-  '/thermostats/climate_setting_schedules/list': {
-    route: '/thermostats/climate_setting_schedules/list'
-    method: 'GET' | 'POST'
-    queryParams: {}
-    jsonBody: {}
-    commonParams: {
-      device_id: string
-      user_identifier_key?: string | undefined
-    }
-    formData: {}
-    jsonResponse: {
-      climate_setting_schedules: Array<{
-        climate_setting_schedule_id: string
-        schedule_type: 'time_bound'
-        device_id: string
-        name?: string | undefined
-        schedule_starts_at: string
-        schedule_ends_at: string
-        created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: (number | undefined) | undefined
-        heating_set_point_celsius?: (number | undefined) | undefined
-        cooling_set_point_fahrenheit?: (number | undefined) | undefined
-        heating_set_point_fahrenheit?: (number | undefined) | undefined
-        manual_override_allowed?: boolean | undefined
-      }>
-    }
-  }
-  '/thermostats/climate_setting_schedules/update': {
-    route: '/thermostats/climate_setting_schedules/update'
-    method: 'PATCH' | 'POST' | 'PUT'
-    queryParams: {}
-    jsonBody: {
-      climate_setting_schedule_id: string
-      schedule_type?: 'time_bound'
-      name?: string | undefined
-      schedule_starts_at?: string | undefined
-      schedule_ends_at?: string | undefined
-      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-      cooling_set_point_celsius?: (number | undefined) | undefined
-      heating_set_point_celsius?: (number | undefined) | undefined
-      cooling_set_point_fahrenheit?: (number | undefined) | undefined
-      heating_set_point_fahrenheit?: (number | undefined) | undefined
-      manual_override_allowed?: boolean | undefined
-    }
-    commonParams: {}
-    formData: {}
-    jsonResponse: {
-      climate_setting_schedule: {
-        climate_setting_schedule_id: string
-        schedule_type: 'time_bound'
-        device_id: string
-        name?: string | undefined
-        schedule_starts_at: string
-        schedule_ends_at: string
-        created_at: string
-        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: (number | undefined) | undefined
-        heating_set_point_celsius?: (number | undefined) | undefined
-        cooling_set_point_fahrenheit?: (number | undefined) | undefined
-        heating_set_point_fahrenheit?: (number | undefined) | undefined
-        manual_override_allowed?: boolean | undefined
-      }
+      action_attempt:
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/thermostats/cool': {
@@ -14225,6 +15165,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -14409,6 +15376,53 @@ export interface Routes {
             }
           }
     }
+  }
+  '/thermostats/create_climate_preset': {
+    route: '/thermostats/create_climate_preset'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      climate_preset_key: string
+      name: string | null
+      fan_mode_setting?: ('auto' | 'on') | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+      cooling_set_point_celsius?: number | undefined
+      heating_set_point_celsius?: number | undefined
+      cooling_set_point_fahrenheit?: number | undefined
+      heating_set_point_fahrenheit?: number | undefined
+      manual_override_allowed: boolean
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      climate_preset: {
+        climate_preset_key: string
+        can_edit: boolean
+        can_delete: boolean
+        name: string | null
+        display_name: string
+        fan_mode_setting?: ('auto' | 'on') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+        cooling_set_point_celsius?: number | undefined
+        heating_set_point_celsius?: number | undefined
+        cooling_set_point_fahrenheit?: number | undefined
+        heating_set_point_fahrenheit?: number | undefined
+        manual_override_allowed: boolean
+      }
+    }
+  }
+  '/thermostats/delete_climate_preset': {
+    route: '/thermostats/delete_climate_preset'
+    method: 'POST' | 'DELETE'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      climate_preset_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/thermostats/get': {
     route: '/thermostats/get'
@@ -14860,42 +15874,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -14907,6 +15899,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -15192,6 +16241,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -15615,6 +16691,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
@@ -16414,42 +17517,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -16461,6 +17542,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -16755,6 +17893,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -16940,12 +18105,144 @@ export interface Routes {
           }
     }
   }
+  '/thermostats/schedules/create': {
+    route: '/thermostats/schedules/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      name?: string | undefined
+      climate_preset_key: string
+      max_override_period_minutes?: number
+      starts_at: string
+      ends_at: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_schedule: {
+        thermostat_schedule_id: string
+        device_id: string
+        name?: string | undefined
+        climate_preset_key: string
+        max_override_period_minutes?: number
+        starts_at: string
+        ends_at: string
+        created_at: string
+        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
+      }
+    }
+  }
+  '/thermostats/schedules/delete': {
+    route: '/thermostats/schedules/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      thermostat_schedule_id: string
+    }
+    formData: {}
+    jsonResponse: {}
+  }
+  '/thermostats/schedules/get': {
+    route: '/thermostats/schedules/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      thermostat_schedule_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      thermostat_schedule: {
+        thermostat_schedule_id: string
+        device_id: string
+        name?: string | undefined
+        climate_preset_key: string
+        max_override_period_minutes?: number
+        starts_at: string
+        ends_at: string
+        created_at: string
+        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
+      }
+    }
+  }
+  '/thermostats/schedules/list': {
+    route: '/thermostats/schedules/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      device_id: string
+      user_identifier_key?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      thermostat_schedules: Array<{
+        thermostat_schedule_id: string
+        device_id: string
+        name?: string | undefined
+        climate_preset_key: string
+        max_override_period_minutes?: number
+        starts_at: string
+        ends_at: string
+        created_at: string
+        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
+      }>
+    }
+  }
+  '/thermostats/schedules/update': {
+    route: '/thermostats/schedules/update'
+    method: 'PATCH' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      thermostat_schedule_id: string
+      name?: string | undefined
+      climate_preset_key?: string | undefined
+      max_override_period_minutes?: number | undefined
+      starts_at?: string | undefined
+      ends_at?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      thermostat_schedule: {
+        thermostat_schedule_id: string
+        device_id: string
+        name?: string | undefined
+        climate_preset_key: string
+        max_override_period_minutes?: number
+        starts_at: string
+        ends_at: string
+        created_at: string
+        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors?: any
+      }
+    }
+  }
+  '/thermostats/set_fallback_climate_preset': {
+    route: '/thermostats/set_fallback_climate_preset'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      climate_preset_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/set_fan_mode': {
     route: '/thermostats/set_fan_mode'
     method: 'POST'
     queryParams: {}
     jsonBody: {
       device_id: string
+      /**
+       * @deprecated use fan_mode_setting instead. */
       fan_mode?: ('auto' | 'on') | undefined
       fan_mode_setting?: ('auto' | 'on') | undefined
       sync?: boolean
@@ -17176,6 +18473,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
@@ -17361,24 +18685,40 @@ export interface Routes {
           }
     }
   }
-  '/thermostats/update': {
-    route: '/thermostats/update'
-    method: 'PATCH' | 'POST'
+  '/thermostats/update_climate_preset': {
+    route: '/thermostats/update_climate_preset'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
       device_id: string
-      default_climate_setting: {
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: (number | undefined) | undefined
-        heating_set_point_celsius?: (number | undefined) | undefined
-        cooling_set_point_fahrenheit?: (number | undefined) | undefined
-        heating_set_point_fahrenheit?: (number | undefined) | undefined
-        manual_override_allowed?: boolean | undefined
-      }
+      climate_preset_key: string
+      name: string | null
+      fan_mode_setting?: ('auto' | 'on') | undefined
+      hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+      cooling_set_point_celsius?: number | undefined
+      heating_set_point_celsius?: number | undefined
+      cooling_set_point_fahrenheit?: number | undefined
+      heating_set_point_fahrenheit?: number | undefined
+      manual_override_allowed: boolean
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {}
+    jsonResponse: {
+      climate_preset: {
+        climate_preset_key: string
+        can_edit: boolean
+        can_delete: boolean
+        name: string | null
+        display_name: string
+        fan_mode_setting?: ('auto' | 'on') | undefined
+        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+        cooling_set_point_celsius?: number | undefined
+        heating_set_point_celsius?: number | undefined
+        cooling_set_point_fahrenheit?: number | undefined
+        heating_set_point_fahrenheit?: number | undefined
+        manual_override_allowed: boolean
+      }
+    }
   }
   '/user_identities/add_acs_user': {
     route: '/user_identities/add_acs_user'
@@ -18010,42 +19350,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -18057,6 +19375,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -18556,42 +19931,20 @@ export interface Routes {
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
+            /**
+             * @deprecated use current_climate_setting.fan_mode_setting instead. */
             fan_mode_setting?: ('auto' | 'on') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            default_climate_setting?:
-              | {
-                  hvac_mode_setting: 'off' | 'heat' | 'cool' | 'heat_cool'
-                  cooling_set_point_celsius?: number | undefined
-                  heating_set_point_celsius?: number | undefined
-                  cooling_set_point_fahrenheit?: number | undefined
-                  heating_set_point_fahrenheit?: number | undefined
-                  manual_override_allowed: boolean
-                }
-              | undefined
-            is_climate_setting_schedule_active?: boolean | undefined
-            active_climate_setting_schedule?:
-              | {
-                  climate_setting_schedule_id: string
-                  schedule_type: 'time_bound'
-                  device_id: string
-                  name?: string | undefined
-                  schedule_starts_at: string
-                  schedule_ends_at: string
-                  created_at: string
-                  /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-                  errors?: any
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
                   hvac_mode_setting?:
-                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
                   cooling_set_point_celsius?: (number | undefined) | undefined
                   heating_set_point_celsius?: (number | undefined) | undefined
@@ -18603,6 +19956,63 @@ export interface Routes {
                     | undefined
                   manual_override_allowed?: boolean | undefined
                 }
+              | undefined
+            /**
+             * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
+            default_climate_setting?:
+              | {
+                  climate_preset_key?: string | undefined
+                  can_edit?: boolean | undefined
+                  can_delete?: boolean | undefined
+                  name?: (string | null) | undefined
+                  display_name?: string | undefined
+                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  hvac_mode_setting?:
+                    | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
+                    | undefined
+                  cooling_set_point_celsius?: (number | undefined) | undefined
+                  heating_set_point_celsius?: (number | undefined) | undefined
+                  cooling_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  heating_set_point_fahrenheit?:
+                    | (number | undefined)
+                    | undefined
+                  manual_override_allowed?: boolean | undefined
+                }
+              | undefined
+            available_climate_presets?:
+              | Array<{
+                  climate_preset_key: string
+                  can_edit: boolean
+                  can_delete: boolean
+                  name: string | null
+                  display_name: string
+                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  hvac_mode_setting?:
+                    | ('off' | 'heat' | 'cool' | 'heat_cool')
+                    | undefined
+                  cooling_set_point_celsius?: number | undefined
+                  heating_set_point_celsius?: number | undefined
+                  cooling_set_point_fahrenheit?: number | undefined
+                  heating_set_point_fahrenheit?: number | undefined
+                  manual_override_allowed: boolean
+                }>
+              | undefined
+            fallback_climate_preset_key?: (string | null) | undefined
+            active_thermostat_schedule?:
+              | ({
+                  thermostat_schedule_id: string
+                  device_id: string
+                  name?: string | undefined
+                  climate_preset_key: string
+                  max_override_period_minutes?: number
+                  starts_at: string
+                  ends_at: string
+                  created_at: string
+                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  errors?: any
+                } | null)
               | undefined
             min_cooling_set_point_celsius?: number | undefined
             min_cooling_set_point_fahrenheit?: number | undefined
@@ -18829,7 +20239,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -18838,11 +20250,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -18850,7 +20257,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -18864,7 +20271,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -19278,6 +20699,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
               type: string
               message: string
