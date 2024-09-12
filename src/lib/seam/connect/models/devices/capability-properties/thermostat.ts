@@ -1,10 +1,11 @@
 import { z } from 'zod'
 
 import {
+  climate_preset,
   climate_setting,
-  climate_setting_schedule,
   fan_mode_setting,
   hvac_mode_setting,
+  thermostat_schedule,
 } from '../../thermostats/index.js'
 
 export const thermostat_capability_properties = z
@@ -16,7 +17,11 @@ export const thermostat_capability_properties = z
     is_heating: z.boolean(),
     is_cooling: z.boolean(),
     is_fan_running: z.boolean(),
-    fan_mode_setting,
+    fan_mode_setting: fan_mode_setting.describe(`
+      ---
+      deprecated: use current_climate_setting.fan_mode_setting instead.
+      ---
+    `),
 
     /**
      * this is true if the current thermostat settings differ that what is on seam, and `current_climate_setting.manual_override_allowed: true`
@@ -24,12 +29,17 @@ export const thermostat_capability_properties = z
     is_temporary_manual_override_active: z.boolean(),
 
     /**
-     * can be derived from `default_climate_setting`, or `active_climate_setting_schedule` if one is active
+     * can be derived from `fallback_climate_preset_key`, or `active_thermostat_schedule` if one is active
      */
     current_climate_setting: climate_setting,
-    default_climate_setting: climate_setting,
-    is_climate_setting_schedule_active: z.boolean(),
-    active_climate_setting_schedule: climate_setting_schedule,
+    default_climate_setting: climate_setting.describe(`
+      ---
+      deprecated: use fallback_climate_preset_key to specify a fallback climate preset instead.
+      ---
+    `),
+    available_climate_presets: z.array(climate_preset),
+    fallback_climate_preset_key: z.string().min(1).nullable().default(null),
+    active_thermostat_schedule: thermostat_schedule.nullable().default(null),
     min_cooling_set_point_celsius: z.number(),
     min_cooling_set_point_fahrenheit: z.number(),
     max_cooling_set_point_celsius: z.number(),
