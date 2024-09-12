@@ -724,7 +724,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                   properties: {
                     created_at: {
                       description:
@@ -733,7 +733,7 @@ export default {
                       type: 'string',
                     },
                     error_code: {
-                      enum: ['user_deleted_externally'],
+                      enum: ['deleted_externally'],
                       type: 'string',
                     },
                     message: {
@@ -769,6 +769,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                   properties: {
                     created_at: {
                       description:
@@ -776,8 +778,27 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
-                    error_code: {
-                      enum: ['salto_site_user_limit_reached'],
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
                       type: 'string',
                     },
                     message: {
@@ -785,8 +806,35 @@ export default {
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    warning_code: {
+                      enum: ['failed_to_update_on_acs_system'],
+                      type: 'string',
+                    },
                   },
-                  required: ['created_at', 'message', 'error_code'],
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      enum: ['failed_to_delete_on_acs_system'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
               ],
@@ -837,8 +885,17 @@ export default {
                   description:
                     "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                   properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
                     warning_code: {
                       enum: ['failed_to_update_on_acs_system'],
                       type: 'string',
@@ -855,18 +912,6 @@ export default {
                     message: { type: 'string' },
                     warning_code: {
                       enum: ['salto_ks_user_not_subscribed'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      enum: ['salto_site_user_suspended'],
                       type: 'string',
                     },
                   },
@@ -7910,7 +7955,7 @@ export default {
                             oneOf: [
                               {
                                 description:
-                                  'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                  'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                                 properties: {
                                   created_at: {
                                     description:
@@ -7919,7 +7964,7 @@ export default {
                                     type: 'string',
                                   },
                                   error_code: {
-                                    enum: ['user_deleted_externally'],
+                                    enum: ['deleted_externally'],
                                     type: 'string',
                                   },
                                   message: {
@@ -7965,6 +8010,8 @@ export default {
                                 type: 'object',
                               },
                               {
+                                description:
+                                  "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                 properties: {
                                   created_at: {
                                     description:
@@ -7972,8 +8019,31 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
-                                  error_code: {
-                                    enum: ['salto_site_user_limit_reached'],
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    enum: ['failed_to_create_on_acs_system'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
                                     type: 'string',
                                   },
                                   message: {
@@ -7981,11 +8051,42 @@ export default {
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                     type: 'string',
                                   },
+                                  warning_code: {
+                                    enum: ['failed_to_update_on_acs_system'],
+                                    type: 'string',
+                                  },
                                 },
                                 required: [
                                   'created_at',
                                   'message',
-                                  'error_code',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    enum: ['failed_to_delete_on_acs_system'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
                                 ],
                                 type: 'object',
                               },
@@ -8060,10 +8161,16 @@ export default {
                                   "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                 properties: {
                                   created_at: {
+                                    description:
+                                      'Date and time at which Seam created the error.',
                                     format: 'date-time',
                                     type: 'string',
                                   },
-                                  message: { type: 'string' },
+                                  message: {
+                                    description:
+                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
                                   warning_code: {
                                     enum: ['failed_to_update_on_acs_system'],
                                     type: 'string',
@@ -8087,25 +8194,6 @@ export default {
                                   message: { type: 'string' },
                                   warning_code: {
                                     enum: ['salto_ks_user_not_subscribed'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                  warning_code: {
-                                    enum: ['salto_site_user_suspended'],
                                     type: 'string',
                                   },
                                 },
@@ -8208,7 +8296,7 @@ export default {
                               oneOf: [
                                 {
                                   description:
-                                    'Indicates that the user was deleted from the ACS system outside of Seam.',
+                                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
                                   properties: {
                                     created_at: {
                                       description:
@@ -8217,7 +8305,7 @@ export default {
                                       type: 'string',
                                     },
                                     error_code: {
-                                      enum: ['user_deleted_externally'],
+                                      enum: ['deleted_externally'],
                                       type: 'string',
                                     },
                                     message: {
@@ -8263,6 +8351,8 @@ export default {
                                   type: 'object',
                                 },
                                 {
+                                  description:
+                                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                   properties: {
                                     created_at: {
                                       description:
@@ -8270,8 +8360,31 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
-                                    error_code: {
-                                      enum: ['salto_site_user_limit_reached'],
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      enum: ['failed_to_create_on_acs_system'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
                                       type: 'string',
                                     },
                                     message: {
@@ -8279,11 +8392,42 @@ export default {
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                                       type: 'string',
                                     },
+                                    warning_code: {
+                                      enum: ['failed_to_update_on_acs_system'],
+                                      type: 'string',
+                                    },
                                   },
                                   required: [
                                     'created_at',
                                     'message',
-                                    'error_code',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      enum: ['failed_to_delete_on_acs_system'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8358,10 +8502,16 @@ export default {
                                     "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
                                   properties: {
                                     created_at: {
+                                      description:
+                                        'Date and time at which Seam created the error.',
                                       format: 'date-time',
                                       type: 'string',
                                     },
-                                    message: { type: 'string' },
+                                    message: {
+                                      description:
+                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
                                     warning_code: {
                                       enum: ['failed_to_update_on_acs_system'],
                                       type: 'string',
@@ -8385,25 +8535,6 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['salto_ks_user_not_subscribed'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  properties: {
-                                    created_at: {
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: { type: 'string' },
-                                    warning_code: {
-                                      enum: ['salto_site_user_suspended'],
                                       type: 'string',
                                     },
                                   },

@@ -2605,7 +2605,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -2614,11 +2616,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -2626,7 +2623,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -2640,7 +2637,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -3967,7 +3978,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -3976,11 +3989,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -3988,7 +3996,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4002,7 +4010,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4073,7 +4095,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4082,11 +4106,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4094,7 +4113,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4108,7 +4127,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4173,7 +4206,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4182,11 +4217,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4194,7 +4224,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4208,7 +4238,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4349,7 +4393,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4358,11 +4404,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4370,7 +4411,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4384,7 +4425,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -4448,7 +4503,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -4457,11 +4514,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -4469,7 +4521,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -4483,7 +4535,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
@@ -20173,7 +20239,9 @@ export interface Routes {
               warning_code: 'being_deleted'
             }
           | {
+              /** Date and time at which Seam created the error. */
               created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               warning_code: 'failed_to_update_on_acs_system'
             }
@@ -20182,11 +20250,6 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
-          | {
-              created_at: string
-              message: string
-              warning_code: 'salto_site_user_suspended'
-            }
         >
         errors: Array<
           | {
@@ -20194,7 +20257,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'user_deleted_externally'
+              error_code: 'deleted_externally'
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -20208,7 +20271,21 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              error_code: 'salto_site_user_limit_reached'
+              warning_code: 'failed_to_create_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_update_on_acs_system'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              warning_code: 'failed_to_delete_on_acs_system'
             }
         >
         full_name?: string | undefined
