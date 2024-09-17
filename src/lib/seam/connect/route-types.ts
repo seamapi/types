@@ -6479,7 +6479,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -7224,7 +7224,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -8635,7 +8635,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -9214,7 +9214,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -9959,7 +9959,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -10538,7 +10538,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -12209,7 +12209,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -12788,7 +12788,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -15384,7 +15384,7 @@ export interface Routes {
     jsonBody: {
       device_id: string
       climate_preset_key: string
-      name: string | null
+      name?: string | null
       fan_mode_setting?: ('auto' | 'on') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
@@ -15400,7 +15400,7 @@ export interface Routes {
         climate_preset_key: string
         can_edit: boolean
         can_delete: boolean
-        name: string | null
+        name?: string | null
         display_name: string
         fan_mode_setting?: ('auto' | 'on') | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -15929,7 +15929,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -17572,7 +17572,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -18692,7 +18692,7 @@ export interface Routes {
     jsonBody: {
       device_id: string
       climate_preset_key: string
-      name: string | null
+      name?: string | null
       fan_mode_setting?: ('auto' | 'on') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
@@ -18708,7 +18708,7 @@ export interface Routes {
         climate_preset_key: string
         can_edit: boolean
         can_delete: boolean
-        name: string | null
+        name?: string | null
         display_name: string
         fan_mode_setting?: ('auto' | 'on') | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -19405,7 +19405,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
@@ -19986,7 +19986,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name: string | null
+                  name?: string | null
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on') | undefined
                   hvac_mode_setting?:
