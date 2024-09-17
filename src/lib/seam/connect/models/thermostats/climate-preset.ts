@@ -6,7 +6,7 @@ export const climate_preset = z.object({
   climate_preset_key: z.string(),
   can_edit: z.boolean(),
   can_delete: z.boolean(),
-  name: z.string().nullable(),
+  name: z.string().nullable().default(null),
   display_name: z.string(),
   fan_mode_setting: fan_mode_setting.optional(),
   hvac_mode_setting: hvac_mode_setting.optional(),
