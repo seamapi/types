@@ -55,10 +55,6 @@ const smartlock = z
       can_remotely_unlock: true,
       can_program_offline_access_codes: true,
       can_program_online_access_codes: true,
-      can_hvac_heat: true,
-      can_hvac_cool: true,
-      can_hvac_heat_cool: true,
-      can_turn_off_hvac: true,
     }),
   )
 
@@ -72,21 +68,30 @@ const sensor = z.object({
   }),
 })
 
-export const thermostat = z.object({
-  main_category: z.literal(device_category.enum.thermostat),
-  physical_properties: z.object({
-    available_modes: z.enum(['heat', 'cool', 'fan', 'eco']).array(),
-    is_heat_pump_compatible: z.boolean(),
-    has_occupancy_detection: z.boolean(),
-    supports_demand_response: z.boolean(),
-    has_humidity_sensor: z.boolean(),
-    has_temperature_sensor: z.boolean(),
-    supports_emergency_heating_mode: z.boolean(),
-  }),
-  software_features: z.object({
-    can_program_climate_schedules: z.boolean(),
-  }),
-})
+export const thermostat = z
+  .object({
+    main_category: z.literal(device_category.enum.thermostat),
+    physical_properties: z.object({
+      available_modes: z.enum(['heat', 'cool', 'fan', 'eco']).array(),
+      is_heat_pump_compatible: z.boolean(),
+      has_occupancy_detection: z.boolean(),
+      supports_demand_response: z.boolean(),
+      has_humidity_sensor: z.boolean(),
+      has_temperature_sensor: z.boolean(),
+      supports_emergency_heating_mode: z.boolean(),
+    }),
+    software_features: z.object({
+      can_program_climate_schedules: z.boolean(),
+    }),
+  })
+  .merge(
+    device_model_capability_flags.pick({
+      can_hvac_heat: true,
+      can_hvac_cool: true,
+      can_hvac_heat_cool: true,
+      can_turn_off_hvac: true,
+    }),
+  )
 
 export type ThermostatProperties = z.infer<typeof thermostat>
 
