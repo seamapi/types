@@ -18,4 +18,7 @@ export const acs_system_added_event = acs_system_event
   })
   .describe('An ACS system was added.')
 
-export const acs_system_events = [acs_system_connected_event, acs_system_added_event] as const
+export const acs_system_events = [
+  acs_system_connected_event,
+  acs_system_added_event,
+] as const
