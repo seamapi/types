@@ -73,41 +73,49 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).`)
 
-const salto_site_user_limit_reached = common_acs_system_error.extend({
+const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
   error_code: z
-    .literal('salto_site_user_limit_reached')
+    .literal('salto_ks_subscription_limit_exceeded')
     .describe(
       'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
     ),
 })
 
-const salto_seam_integration_blocked = common_acs_system_error.extend({
+const acs_system_disconnected = common_acs_system_error.extend({
   error_code: z
-    .literal('salto_seam_integration_blocked')
+    .literal('acs_system_disconnected')
     .describe(
-      "Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block",
+      'Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
+    ),
+})
+
+const account_disconnected = common_acs_system_error.extend({
+  error_code: z
+    .literal('account_disconnected')
+    .describe(
+      'Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access.',
     ),
 })
 const acs_system_error = z
   .union([
     seam_bridge_disconnected,
     visionline_instance_unreachable,
-    salto_site_user_limit_reached,
-    salto_seam_integration_blocked,
+    salto_ks_subscription_limit_exceeded,
+    acs_system_disconnected,
+    account_disconnected,
   ])
   .describe('Error associated with the `acs_system`.')
 
-const acs_system_error_map = z.object({
+export const acs_system_error_map = z.object({
   seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
   visionline_instance_unreachable: visionline_instance_unreachable
     .optional()
     .nullable(),
-  salto_site_user_limit_reached: salto_site_user_limit_reached
+  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .optional()
     .nullable(),
-  salto_seam_integration_blocked: salto_seam_integration_blocked
-    .optional()
-    .nullable(),
+  acs_system_disconnected: acs_system_disconnected.optional().nullable(),
+  account_disconnected: account_disconnected.optional().nullable(),
 })
 
 export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
@@ -124,24 +132,24 @@ const common_acs_system_warning = z.object({
     ),
 })
 
-const salto_site_user_limit_almost_reached = common_acs_system_warning.extend({
-  warning_code: z
-    .literal('salto_site_user_limit_almost_reached')
-    .describe(
-      'You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
-    ),
-})
+const salto_ks_subscription_limit_almost_reached =
+  common_acs_system_warning.extend({
+    warning_code: z
+      .literal('salto_ks_subscription_limit_almost_reached')
+      .describe(
+        'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+      ),
+  })
 
 const acs_system_warning =
   // z.union([
-  salto_site_user_limit_almost_reached
+  salto_ks_subscription_limit_almost_reached
     // ])
     .describe('Warning associated with the `acs_system`.')
 
-const acs_system_warning_map = z.object({
-  salto_site_user_limit_almost_reached: salto_site_user_limit_almost_reached
-    .optional()
-    .nullable(),
+export const acs_system_warning_map = z.object({
+  salto_ks_subscription_limit_almost_reached:
+    salto_ks_subscription_limit_almost_reached.optional().nullable(),
 })
 
 export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>

@@ -3634,15 +3634,23 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
-              error_code: 'salto_site_user_limit_reached'
+              error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
-              error_code: 'salto_seam_integration_blocked'
+              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              error_code: 'acs_system_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              error_code: 'account_disconnected'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -3651,8 +3659,8 @@ export interface Routes {
           created_at: string
           /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
           message: string
-          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
-          warning_code: 'salto_site_user_limit_almost_reached'
+          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+          warning_code: 'salto_ks_subscription_limit_almost_reached'
         }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
@@ -3754,15 +3762,23 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
-              error_code: 'salto_site_user_limit_reached'
+              error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
-              error_code: 'salto_seam_integration_blocked'
+              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              error_code: 'acs_system_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              error_code: 'account_disconnected'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -3771,8 +3787,8 @@ export interface Routes {
           created_at: string
           /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
           message: string
-          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
-          warning_code: 'salto_site_user_limit_almost_reached'
+          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+          warning_code: 'salto_ks_subscription_limit_almost_reached'
         }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
@@ -3874,15 +3890,23 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
-              error_code: 'salto_site_user_limit_reached'
+              error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
-              error_code: 'salto_seam_integration_blocked'
+              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              error_code: 'acs_system_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              error_code: 'account_disconnected'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -3891,8 +3915,8 @@ export interface Routes {
           created_at: string
           /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
           message: string
-          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
-          warning_code: 'salto_site_user_limit_almost_reached'
+          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+          warning_code: 'salto_ks_subscription_limit_almost_reached'
         }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
@@ -20161,15 +20185,23 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
-              error_code: 'salto_site_user_limit_reached'
+              error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
               /** Date and time at which Seam created the error. */
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block */
-              error_code: 'salto_seam_integration_blocked'
+              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              error_code: 'acs_system_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              error_code: 'account_disconnected'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -20178,8 +20210,8 @@ export interface Routes {
           created_at: string
           /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
           message: string
-          /** You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit. */
-          warning_code: 'salto_site_user_limit_almost_reached'
+          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+          warning_code: 'salto_ks_subscription_limit_almost_reached'
         }>
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
