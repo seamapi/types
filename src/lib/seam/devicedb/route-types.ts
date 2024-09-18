@@ -112,10 +112,6 @@ export interface Routes {
             can_remotely_unlock?: true | undefined
             can_program_offline_access_codes?: true | undefined
             can_program_online_access_codes?: true | undefined
-            can_hvac_heat?: true | undefined
-            can_hvac_cool?: true | undefined
-            can_hvac_heat_cool?: true | undefined
-            can_turn_off_hvac?: true | undefined
           }
         | {
             main_category: 'sensor'
@@ -140,6 +136,10 @@ export interface Routes {
             software_features: {
               can_program_climate_schedules: boolean
             }
+            can_hvac_heat?: true | undefined
+            can_hvac_cool?: true | undefined
+            can_hvac_heat_cool?: true | undefined
+            can_turn_off_hvac?: true | undefined
           }
         | {
             main_category: 'relay'
@@ -304,10 +304,6 @@ export interface Routes {
               can_remotely_unlock?: true | undefined
               can_program_offline_access_codes?: true | undefined
               can_program_online_access_codes?: true | undefined
-              can_hvac_heat?: true | undefined
-              can_hvac_cool?: true | undefined
-              can_hvac_heat_cool?: true | undefined
-              can_turn_off_hvac?: true | undefined
             }
           | {
               main_category: 'sensor'
@@ -332,6 +328,10 @@ export interface Routes {
               software_features: {
                 can_program_climate_schedules: boolean
               }
+              can_hvac_heat?: true | undefined
+              can_hvac_cool?: true | undefined
+              can_hvac_heat_cool?: true | undefined
+              can_turn_off_hvac?: true | undefined
             }
           | {
               main_category: 'relay'
