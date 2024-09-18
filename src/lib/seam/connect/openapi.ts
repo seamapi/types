@@ -552,7 +552,7 @@ export default {
                     error_code: {
                       description:
                         'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
-                      enum: ['salto_site_user_limit_reached'],
+                      enum: ['salto_ks_subscription_limit_exceeded'],
                       type: 'string',
                     },
                     message: {
@@ -574,8 +574,31 @@ export default {
                     },
                     error_code: {
                       description:
-                        "Indicates that the Seam Integration user site is blocked. This means that Seam does not have permission to access Salto resources. Go to Salto Dashboard to remove 'Seam Integration' block",
-                      enum: ['salto_seam_integration_blocked'],
+                        'Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
+                      enum: ['acs_system_disconnected'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access.',
+                      enum: ['account_disconnected'],
                       type: 'string',
                     },
                     message: {
@@ -667,8 +690,8 @@ export default {
                 },
                 warning_code: {
                   description:
-                    'You have reached more than 80% of the maximum number of users allowed for your site; Please contact Salto support to increase your user limit.',
-                  enum: ['salto_site_user_limit_almost_reached'],
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                  enum: ['salto_ks_subscription_limit_almost_reached'],
                   type: 'string',
                 },
               },
