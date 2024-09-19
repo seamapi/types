@@ -8308,6 +8308,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_user',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unmanaged/list': {
@@ -8624,6 +8625,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unsuspend': {
