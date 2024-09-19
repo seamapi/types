@@ -801,17 +801,17 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
+                    error_code: {
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    warning_code: {
-                      enum: ['failed_to_create_on_acs_system'],
-                      type: 'string',
-                    },
                   },
-                  required: ['created_at', 'message', 'warning_code'],
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
@@ -824,17 +824,17 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
+                    error_code: {
+                      enum: ['failed_to_update_on_acs_system'],
+                      type: 'string',
+                    },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    warning_code: {
-                      enum: ['failed_to_update_on_acs_system'],
-                      type: 'string',
-                    },
                   },
-                  required: ['created_at', 'message', 'warning_code'],
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
@@ -847,17 +847,17 @@ export default {
                       format: 'date-time',
                       type: 'string',
                     },
+                    error_code: {
+                      enum: ['failed_to_delete_on_acs_system'],
+                      type: 'string',
+                    },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
-                    warning_code: {
-                      enum: ['failed_to_delete_on_acs_system'],
-                      type: 'string',
-                    },
                   },
-                  required: ['created_at', 'message', 'warning_code'],
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
               ],
@@ -900,29 +900,6 @@ export default {
                     created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: { enum: ['being_deleted'], type: 'string' },
-                  },
-                  required: ['created_at', 'message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                  properties: {
-                    created_at: {
-                      description:
-                        'Date and time at which Seam created the error.',
-                      format: 'date-time',
-                      type: 'string',
-                    },
-                    message: {
-                      description:
-                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                      type: 'string',
-                    },
-                    warning_code: {
-                      enum: ['failed_to_update_on_acs_system'],
-                      type: 'string',
-                    },
                   },
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
@@ -8093,20 +8070,20 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
+                                  error_code: {
+                                    enum: ['failed_to_create_on_acs_system'],
+                                    type: 'string',
+                                  },
                                   message: {
                                     description:
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    enum: ['failed_to_create_on_acs_system'],
                                     type: 'string',
                                   },
                                 },
                                 required: [
                                   'created_at',
                                   'message',
-                                  'warning_code',
+                                  'error_code',
                                 ],
                                 type: 'object',
                               },
@@ -8120,20 +8097,20 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
+                                  error_code: {
+                                    enum: ['failed_to_update_on_acs_system'],
+                                    type: 'string',
+                                  },
                                   message: {
                                     description:
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    enum: ['failed_to_update_on_acs_system'],
                                     type: 'string',
                                   },
                                 },
                                 required: [
                                   'created_at',
                                   'message',
-                                  'warning_code',
+                                  'error_code',
                                 ],
                                 type: 'object',
                               },
@@ -8147,20 +8124,20 @@ export default {
                                     format: 'date-time',
                                     type: 'string',
                                   },
+                                  error_code: {
+                                    enum: ['failed_to_delete_on_acs_system'],
+                                    type: 'string',
+                                  },
                                   message: {
                                     description:
                                       'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    enum: ['failed_to_delete_on_acs_system'],
                                     type: 'string',
                                   },
                                 },
                                 required: [
                                   'created_at',
                                   'message',
-                                  'warning_code',
+                                  'error_code',
                                 ],
                                 type: 'object',
                               },
@@ -8220,33 +8197,6 @@ export default {
                                   message: { type: 'string' },
                                   warning_code: {
                                     enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    enum: ['failed_to_update_on_acs_system'],
                                     type: 'string',
                                   },
                                 },
@@ -8434,20 +8384,20 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
+                                    error_code: {
+                                      enum: ['failed_to_create_on_acs_system'],
+                                      type: 'string',
+                                    },
                                     message: {
                                       description:
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      enum: ['failed_to_create_on_acs_system'],
                                       type: 'string',
                                     },
                                   },
                                   required: [
                                     'created_at',
                                     'message',
-                                    'warning_code',
+                                    'error_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8461,20 +8411,20 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
+                                    error_code: {
+                                      enum: ['failed_to_update_on_acs_system'],
+                                      type: 'string',
+                                    },
                                     message: {
                                       description:
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      enum: ['failed_to_update_on_acs_system'],
                                       type: 'string',
                                     },
                                   },
                                   required: [
                                     'created_at',
                                     'message',
-                                    'warning_code',
+                                    'error_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8488,20 +8438,20 @@ export default {
                                       format: 'date-time',
                                       type: 'string',
                                     },
+                                    error_code: {
+                                      enum: ['failed_to_delete_on_acs_system'],
+                                      type: 'string',
+                                    },
                                     message: {
                                       description:
                                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      enum: ['failed_to_delete_on_acs_system'],
                                       type: 'string',
                                     },
                                   },
                                   required: [
                                     'created_at',
                                     'message',
-                                    'warning_code',
+                                    'error_code',
                                   ],
                                   type: 'object',
                                 },
@@ -8561,33 +8511,6 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      enum: ['failed_to_update_on_acs_system'],
                                       type: 'string',
                                     },
                                   },

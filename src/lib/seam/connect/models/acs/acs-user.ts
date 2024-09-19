@@ -43,7 +43,7 @@ const acs_users_salto_ks_subscription_limit_exceeded = common_acs_user_error
 
 const acs_users_failed_to_create_on_acs_system = common_acs_user_error
   .extend({
-    warning_code: z.literal('failed_to_create_on_acs_system'),
+    error_code: z.literal('failed_to_create_on_acs_system'),
   })
   .describe(
     `Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.`,
@@ -51,7 +51,7 @@ const acs_users_failed_to_create_on_acs_system = common_acs_user_error
 
 const acs_users_failed_to_update_on_acs_system = common_acs_user_error
   .extend({
-    warning_code: z.literal('failed_to_update_on_acs_system'),
+    error_code: z.literal('failed_to_update_on_acs_system'),
   })
   .describe(
     `Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.`,
@@ -59,7 +59,7 @@ const acs_users_failed_to_update_on_acs_system = common_acs_user_error
 
 const acs_users_failed_to_delete_on_acs_system = common_acs_user_error
   .extend({
-    warning_code: z.literal('failed_to_delete_on_acs_system'),
+    error_code: z.literal('failed_to_delete_on_acs_system'),
   })
   .describe(
     `Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.`,
@@ -121,11 +121,7 @@ export const acs_users_warning_map = z.object({
 })
 
 export const acs_users_warnings = z
-  .union([
-    acs_users_being_deleted,
-    acs_users_failed_to_update_on_acs_system,
-    acs_users_salto_ks_user_not_subscribed,
-  ])
+  .union([acs_users_being_deleted, acs_users_salto_ks_user_not_subscribed])
   .describe('Warning associated with the `acs_user`.')
 
 export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
