@@ -3569,8 +3569,11 @@ export interface Routes {
         external_type_display_name?: string | undefined
         visionline_metadata?:
           | {
+              /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
               mobile_access_uuid: string
+              /** Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager. */
               system_id: string
+              /** IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network. */
               lan_address: string
             }
           | undefined
@@ -3697,8 +3700,11 @@ export interface Routes {
         external_type_display_name?: string | undefined
         visionline_metadata?:
           | {
+              /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
               mobile_access_uuid: string
+              /** Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager. */
               system_id: string
+              /** IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network. */
               lan_address: string
             }
           | undefined
@@ -3825,8 +3831,11 @@ export interface Routes {
         external_type_display_name?: string | undefined
         visionline_metadata?:
           | {
+              /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
               mobile_access_uuid: string
+              /** Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager. */
               system_id: string
+              /** IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network. */
               lan_address: string
             }
           | undefined
@@ -20253,8 +20262,11 @@ export interface Routes {
         external_type_display_name?: string | undefined
         visionline_metadata?:
           | {
+              /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
               mobile_access_uuid: string
+              /** Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager. */
               system_id: string
+              /** IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network. */
               lan_address: string
             }
           | undefined
