@@ -6301,6 +6301,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -7046,6 +7060,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -8457,6 +8485,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -9036,6 +9078,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -9781,6 +9837,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -10360,6 +10430,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -12031,6 +12115,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -12610,6 +12708,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -15751,6 +15863,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -17394,6 +17520,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -19227,6 +19367,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:
@@ -19808,6 +19962,20 @@ export interface Routes {
                 lock_id: number
                 lock_alias: string
                 feature_value: string
+                features: {
+                  passcode: boolean
+                  passcode_management: boolean
+                  unlock_via_gateway: boolean
+                  lock_command: boolean
+                  incomplete_keyboard_passcode: boolean
+                }
+                has_gateway?: boolean | undefined
+                wireless_keypads?:
+                  | Array<{
+                      wireless_keypad_id: number
+                      wireless_keypad_name: string
+                    }>
+                  | undefined
               }
             | undefined
           seam_bridge_metadata?:

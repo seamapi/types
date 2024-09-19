@@ -152,6 +152,22 @@ export const device_metadata = z
       lock_id: z.number(),
       lock_alias: z.string(),
       feature_value: z.string(),
+      features: z.object({
+        passcode: z.boolean(),
+        passcode_management: z.boolean(),
+        unlock_via_gateway: z.boolean(),
+        lock_command: z.boolean(),
+        incomplete_keyboard_passcode: z.boolean(),
+      }),
+      has_gateway: z.boolean().optional(),
+      wireless_keypads: z
+        .array(
+          z.object({
+            wireless_keypad_id: z.number(),
+            wireless_keypad_name: z.string(),
+          }),
+        )
+        .optional(),
     }),
 
     seam_bridge_metadata: z.object({
