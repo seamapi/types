@@ -3084,10 +3084,50 @@ export default {
                       ttlock_metadata: {
                         properties: {
                           feature_value: { type: 'string' },
+                          features: {
+                            properties: {
+                              incomplete_keyboard_passcode: { type: 'boolean' },
+                              lock_command: { type: 'boolean' },
+                              passcode: { type: 'boolean' },
+                              passcode_management: { type: 'boolean' },
+                              unlock_via_gateway: { type: 'boolean' },
+                            },
+                            required: [
+                              'passcode',
+                              'passcode_management',
+                              'unlock_via_gateway',
+                              'lock_command',
+                              'incomplete_keyboard_passcode',
+                            ],
+                            type: 'object',
+                          },
+                          has_gateway: { type: 'boolean' },
                           lock_alias: { type: 'string' },
                           lock_id: { format: 'float', type: 'number' },
+                          wireless_keypads: {
+                            items: {
+                              properties: {
+                                wireless_keypad_id: {
+                                  format: 'float',
+                                  type: 'number',
+                                },
+                                wireless_keypad_name: { type: 'string' },
+                              },
+                              required: [
+                                'wireless_keypad_id',
+                                'wireless_keypad_name',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                         },
-                        required: ['lock_id', 'lock_alias', 'feature_value'],
+                        required: [
+                          'lock_id',
+                          'lock_alias',
+                          'feature_value',
+                          'features',
+                        ],
                         type: 'object',
                       },
                       two_n_metadata: {
