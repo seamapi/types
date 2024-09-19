@@ -2146,6 +2146,33 @@ export default {
         ],
         type: 'object',
       },
+      climate_preset: {
+        properties: {
+          can_delete: { type: 'boolean' },
+          can_edit: { type: 'boolean' },
+          climate_preset_key: { type: 'string' },
+          cooling_set_point_celsius: { format: 'float', type: 'number' },
+          cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
+          display_name: { type: 'string' },
+          fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+          heating_set_point_celsius: { format: 'float', type: 'number' },
+          heating_set_point_fahrenheit: { format: 'float', type: 'number' },
+          hvac_mode_setting: {
+            enum: ['off', 'heat', 'cool', 'heat_cool'],
+            type: 'string',
+          },
+          manual_override_allowed: { type: 'boolean' },
+          name: { default: null, nullable: true, type: 'string' },
+        },
+        required: [
+          'climate_preset_key',
+          'can_edit',
+          'can_delete',
+          'display_name',
+          'manual_override_allowed',
+        ],
+        type: 'object',
+      },
       connect_webview: {
         properties: {
           accepted_devices: {
@@ -12660,46 +12687,7 @@ export default {
                 schema: {
                   properties: {
                     climate_preset: {
-                      properties: {
-                        can_delete: { type: 'boolean' },
-                        can_edit: { type: 'boolean' },
-                        climate_preset_key: { type: 'string' },
-                        cooling_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        cooling_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        display_name: { type: 'string' },
-                        fan_mode_setting: {
-                          enum: ['auto', 'on'],
-                          type: 'string',
-                        },
-                        heating_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        heating_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        hvac_mode_setting: {
-                          enum: ['off', 'heat', 'cool', 'heat_cool'],
-                          type: 'string',
-                        },
-                        manual_override_allowed: { type: 'boolean' },
-                        name: { default: null, nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'climate_preset_key',
-                        'can_edit',
-                        'can_delete',
-                        'display_name',
-                        'manual_override_allowed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/climate_preset',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -13716,46 +13704,7 @@ export default {
                 schema: {
                   properties: {
                     climate_preset: {
-                      properties: {
-                        can_delete: { type: 'boolean' },
-                        can_edit: { type: 'boolean' },
-                        climate_preset_key: { type: 'string' },
-                        cooling_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        cooling_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        display_name: { type: 'string' },
-                        fan_mode_setting: {
-                          enum: ['auto', 'on'],
-                          type: 'string',
-                        },
-                        heating_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        heating_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        hvac_mode_setting: {
-                          enum: ['off', 'heat', 'cool', 'heat_cool'],
-                          type: 'string',
-                        },
-                        manual_override_allowed: { type: 'boolean' },
-                        name: { default: null, nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'climate_preset_key',
-                        'can_edit',
-                        'can_delete',
-                        'display_name',
-                        'manual_override_allowed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/climate_preset',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -13828,46 +13777,7 @@ export default {
                 schema: {
                   properties: {
                     climate_preset: {
-                      properties: {
-                        can_delete: { type: 'boolean' },
-                        can_edit: { type: 'boolean' },
-                        climate_preset_key: { type: 'string' },
-                        cooling_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        cooling_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        display_name: { type: 'string' },
-                        fan_mode_setting: {
-                          enum: ['auto', 'on'],
-                          type: 'string',
-                        },
-                        heating_set_point_celsius: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        heating_set_point_fahrenheit: {
-                          format: 'float',
-                          type: 'number',
-                        },
-                        hvac_mode_setting: {
-                          enum: ['off', 'heat', 'cool', 'heat_cool'],
-                          type: 'string',
-                        },
-                        manual_override_allowed: { type: 'boolean' },
-                        name: { default: null, nullable: true, type: 'string' },
-                      },
-                      required: [
-                        'climate_preset_key',
-                        'can_edit',
-                        'can_delete',
-                        'display_name',
-                        'manual_override_allowed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/climate_preset',
                     },
                     ok: { type: 'boolean' },
                   },
