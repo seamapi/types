@@ -168,9 +168,21 @@ export const acs_system = z
       .optional(),
     visionline_metadata: z
       .object({
-        mobile_access_uuid: z.string(),
-        system_id: z.string(),
-        lan_address: z.string(),
+        mobile_access_uuid: z
+          .string()
+          .describe(
+            'Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.',
+          ),
+        system_id: z
+          .string()
+          .describe(
+            'Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.',
+          ),
+        lan_address: z
+          .string()
+          .describe(
+            'IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.',
+          ),
       })
       .optional(),
     system_type: acs_system_external_type

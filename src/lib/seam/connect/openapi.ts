@@ -665,9 +665,21 @@ export default {
           },
           visionline_metadata: {
             properties: {
-              lan_address: { type: 'string' },
-              mobile_access_uuid: { type: 'string' },
-              system_id: { type: 'string' },
+              lan_address: {
+                description:
+                  'IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.',
+                type: 'string',
+              },
+              mobile_access_uuid: {
+                description:
+                  'Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset.',
+                type: 'string',
+              },
+              system_id: {
+                description:
+                  'Unique ID assigned by the ASSA ABLOY licensing team that identifies each hotel in your credential manager.',
+                type: 'string',
+              },
             },
             required: ['mobile_access_uuid', 'system_id', 'lan_address'],
             type: 'object',
@@ -8296,6 +8308,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_user',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unmanaged/list': {
@@ -8612,6 +8625,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
     '/acs/users/unsuspend': {
