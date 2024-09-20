@@ -2569,12 +2569,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_users: Array<{
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -2584,20 +2590,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -2610,6 +2626,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -2647,11 +2664,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: true
       }>
@@ -3963,23 +3983,32 @@ export interface Routes {
             ends_at: string
           }
         | undefined
+      /** Full name of the `acs_user`. */
       full_name?: string | undefined
       /**
        * @deprecated use email_address. */
       email?: string | undefined
+      /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
       phone_number?: string | undefined
+      /** Email address of the `acs_user`. */
       email_address?: string | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
       acs_user: {
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -3989,20 +4018,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -4015,6 +4054,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -4052,11 +4092,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: true
       }
@@ -4086,12 +4129,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_user: {
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -4101,20 +4150,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -4127,6 +4186,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -4164,11 +4224,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: true
       }
@@ -4194,12 +4257,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_users: Array<{
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -4209,20 +4278,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -4235,6 +4314,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -4272,11 +4352,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: true
       }>
@@ -4379,12 +4462,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_user: {
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -4394,20 +4483,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -4420,6 +4519,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -4457,11 +4557,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: false
       }
@@ -4482,12 +4585,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_users: Array<{
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -4497,20 +4606,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -4523,6 +4642,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -4560,11 +4680,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: false
       }>
@@ -4594,12 +4717,16 @@ export interface Routes {
             ends_at: string
           } | null)
         | undefined
+      /** ID of the `acs_user`. */
       acs_user_id: string
+      /** Full name of the `acs_user`. */
       full_name?: string | undefined
       /**
        * @deprecated use email_address. */
       email?: string | undefined
+      /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
       phone_number?: string | undefined
+      /** Email address of the `acs_user`. */
       email_address?: string | undefined
       hid_acs_system_id?: string | undefined
     }
@@ -20392,12 +20519,18 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_users: Array<{
+        /** ID of the `acs_user`. */
         acs_user_id: string
+        /** ID of the access control system that contains the `acs_user`. */
         acs_system_id: string
         hid_acs_system_id?: string | undefined
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`. */
         workspace_id: string
+        /** Date and time at which the `acs_user` was created. */
         created_at: string
+        /** Display name for the `acs_user`. */
         display_name: string
+        /** Brand-specific terminology for the `acs_user` type. */
         external_type?:
           | (
               | 'pti_user'
@@ -20407,20 +20540,30 @@ export interface Routes {
               | 'latch_user'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
+        /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
         is_suspended: boolean
+        /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
               starts_at: string
               ends_at: string
             }
           | undefined
+        /** ID of the user identity associated with the `acs_user`. */
         user_identity_id?: string | undefined
+        /** Full name of the user identity associated with the `acs_user`. */
         user_identity_full_name?: (string | null) | undefined
+        /** Email address of the user identity associated with the `acs_user`. */
         user_identity_email_address?: (string | null) | undefined
+        /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
+        /**  */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /**  */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
               created_at: string
@@ -20433,6 +20576,7 @@ export interface Routes {
               warning_code: 'salto_ks_user_not_subscribed'
             }
         >
+        /** Errors associated with the `acs_user`. */
         errors: Array<
           | {
               /** Date and time at which Seam created the error. */
@@ -20470,11 +20614,14 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /** Full name of the `acs_user`. */
         full_name?: string | undefined
         /**
          * @deprecated use email_address. */
         email?: string | undefined
+        /** Email address of the `acs_user`. */
         email_address?: string | undefined
+        /** Phone number of the `acs_user` in E.164 format (for example, `+15555550100`). */
         phone_number?: string | undefined
         is_managed: true
       }>

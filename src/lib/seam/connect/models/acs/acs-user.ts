@@ -127,39 +127,109 @@ export const acs_users_warnings = z
 export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
 
 const user_fields = z.object({
-  full_name: z.string().optional(),
+  full_name: z.string().optional().describe('Full name of the `acs_user`.'),
   email: z.string().email().optional().describe(`
     ---
     deprecated: use email_address.
     ---
     `),
-  email_address: z.string().email().optional(),
-  phone_number: phone_number.optional(),
+  email_address: z
+    .string()
+    .email()
+    .optional()
+    .describe('Email address of the `acs_user`.'),
+  phone_number: phone_number
+    .optional()
+    .describe(
+      'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+    ),
 })
 
 const common_acs_user = z
   .object({
-    acs_user_id: z.string().uuid(),
-    acs_system_id: z.string().uuid(),
+    acs_user_id: z.string().uuid().describe('ID of the `acs_user`.'),
+    acs_system_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the access control system that contains the `acs_user`.',
+      ),
     hid_acs_system_id: z.string().uuid().optional(),
-    workspace_id: z.string().uuid(),
-    created_at: z.string().datetime(),
-    display_name: z.string(),
-    external_type: acs_user_external_type.optional(),
-    external_type_display_name: z.string().optional(),
-    is_suspended: z.boolean(),
-    access_schedule: schedule.optional(),
-    user_identity_id: z.string().optional(),
-    user_identity_full_name: z.string().nullable().optional(),
-    user_identity_email_address: z.string().nullable().optional(),
-    user_identity_phone_number: z.string().nullable().optional(),
+    workspace_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
+      ),
+    created_at: z
+      .string()
+      .datetime()
+      .describe('Date and time at which the `acs_user` was created.'),
+    display_name: z.string().describe('Display name for the `acs_user`.'),
+    external_type: acs_user_external_type
+      .optional()
+      .describe('Brand-specific terminology for the `acs_user` type.'),
+    external_type_display_name: z
+      .string()
+      .optional()
+      .describe(
+        'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
+      ),
+    is_suspended: z
+      .boolean()
+      .describe(
+        'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+      ),
+    access_schedule: schedule
+      .optional()
+      .describe(
+        "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
+      ),
+    user_identity_id: z
+      .string()
+      .optional()
+      .describe('ID of the user identity associated with the `acs_user`.'),
+    user_identity_full_name: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        'Full name of the user identity associated with the `acs_user`.',
+      ),
+    user_identity_email_address: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        'Email address of the user identity associated with the `acs_user`.',
+      ),
+    user_identity_phone_number: z
+      .string()
+      .nullable()
+      .optional()
+      .describe(
+        'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
+      ),
     latest_desired_state_synced_with_provider_at: z
       .string()
       .datetime()
-      .optional(),
-    is_latest_desired_state_synced_with_provider: z.boolean().optional(),
-    warnings: z.array(acs_users_warnings),
-    errors: z.array(acs_user_errors),
+      .optional().describe(`
+      ---
+      undocumented: Only used internally.
+      ---
+      `),
+    is_latest_desired_state_synced_with_provider: z.boolean().optional()
+      .describe(`
+      ---
+      undocumented: Only used internally.
+      ---
+      `),
+    warnings: z
+      .array(acs_users_warnings)
+      .describe('Warnings associated with the `acs_user`.'),
+    errors: z
+      .array(acs_user_errors)
+      .describe('Errors associated with the `acs_user`.'),
   })
   .merge(user_fields)
 

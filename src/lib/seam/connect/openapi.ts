@@ -735,6 +735,8 @@ export default {
       acs_user: {
         properties: {
           access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
             properties: {
               ends_at: { format: 'date-time', type: 'string' },
               starts_at: { format: 'date-time', type: 'string' },
@@ -742,18 +744,39 @@ export default {
             required: ['starts_at', 'ends_at'],
             type: 'object',
           },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          acs_user_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          display_name: { type: 'string' },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_user_id: {
+            description: 'ID of the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the `acs_user` was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the `acs_user`.',
+            type: 'string',
+          },
           email: {
             deprecated: true,
             format: 'email',
             type: 'string',
             'x-deprecated': 'use email_address.',
           },
-          email_address: { format: 'email', type: 'string' },
+          email_address: {
+            description: 'Email address of the `acs_user`.',
+            format: 'email',
+            type: 'string',
+          },
           errors: {
+            description: 'Errors associated with the `acs_user`.',
             items: {
               description: 'Error associated with the `acs_user`.',
               oneOf: [
@@ -877,6 +900,7 @@ export default {
             type: 'array',
           },
           external_type: {
+            description: 'Brand-specific terminology for the `acs_user` type.',
             enum: [
               'pti_user',
               'brivo_user',
@@ -886,22 +910,61 @@ export default {
             ],
             type: 'string',
           },
-          external_type_display_name: { type: 'string' },
-          full_name: { type: 'string' },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
+            type: 'string',
+          },
+          full_name: {
+            description: 'Full name of the `acs_user`.',
+            type: 'string',
+          },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
-          is_latest_desired_state_synced_with_provider: { type: 'boolean' },
+          is_latest_desired_state_synced_with_provider: {
+            type: 'boolean',
+            'x-undocumented': 'Only used internally.',
+          },
           is_managed: { enum: [true], type: 'boolean' },
-          is_suspended: { type: 'boolean' },
+          is_suspended: {
+            description:
+              'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+            type: 'boolean',
+          },
           latest_desired_state_synced_with_provider_at: {
             format: 'date-time',
             type: 'string',
+            'x-undocumented': 'Only used internally.',
           },
-          phone_number: { type: 'string' },
-          user_identity_email_address: { nullable: true, type: 'string' },
-          user_identity_full_name: { nullable: true, type: 'string' },
-          user_identity_id: { type: 'string' },
-          user_identity_phone_number: { nullable: true, type: 'string' },
+          phone_number: {
+            description:
+              'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+            type: 'string',
+          },
+          user_identity_email_address: {
+            description:
+              'Email address of the user identity associated with the `acs_user`.',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_full_name: {
+            description:
+              'Full name of the user identity associated with the `acs_user`.',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the user identity associated with the `acs_user`.',
+            type: 'string',
+          },
+          user_identity_phone_number: {
+            description:
+              'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
+            nullable: true,
+            type: 'string',
+          },
           warnings: {
+            description: 'Warnings associated with the `acs_user`.',
             items: {
               description: 'Warning associated with the `acs_user`.',
               oneOf: [
@@ -934,7 +997,12 @@ export default {
             },
             type: 'array',
           },
-          workspace_id: { format: 'uuid', type: 'string' },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'acs_user_id',
@@ -7677,9 +7745,20 @@ export default {
                     type: 'string',
                     'x-deprecated': 'use email_address.',
                   },
-                  email_address: { format: 'email', type: 'string' },
-                  full_name: { type: 'string' },
-                  phone_number: { type: 'string' },
+                  email_address: {
+                    description: 'Email address of the `acs_user`.',
+                    format: 'email',
+                    type: 'string',
+                  },
+                  full_name: {
+                    description: 'Full name of the `acs_user`.',
+                    type: 'string',
+                  },
+                  phone_number: {
+                    description:
+                      'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+                    type: 'string',
+                  },
                   user_identity_id: {
                     description:
                       'ID of the user identity with which to associate the new `acs_user`.',
@@ -8145,20 +8224,49 @@ export default {
                     acs_user: {
                       properties: {
                         access_schedule: {
-                          $ref: '#/components/schemas/thermostat_schedule',
+                          description:
+                            "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
+                          properties: {
+                            ends_at: { format: 'date-time', type: 'string' },
+                            starts_at: { format: 'date-time', type: 'string' },
+                          },
+                          required: ['starts_at', 'ends_at'],
+                          type: 'object',
                         },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { type: 'string' },
+                        acs_system_id: {
+                          description:
+                            'ID of the access control system that contains the `acs_user`.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_user_id: {
+                          description: 'ID of the `acs_user`.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the `acs_user` was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name for the `acs_user`.',
+                          type: 'string',
+                        },
                         email: {
                           deprecated: true,
                           format: 'email',
                           type: 'string',
                           'x-deprecated': 'use email_address.',
                         },
-                        email_address: { format: 'email', type: 'string' },
+                        email_address: {
+                          description: 'Email address of the `acs_user`.',
+                          format: 'email',
+                          type: 'string',
+                        },
                         errors: {
+                          description: 'Errors associated with the `acs_user`.',
                           items: {
                             description:
                               'Error associated with the `acs_user`.',
@@ -8305,6 +8413,8 @@ export default {
                           type: 'array',
                         },
                         external_type: {
+                          description:
+                            'Brand-specific terminology for the `acs_user` type.',
                           enum: [
                             'pti_user',
                             'brivo_user',
@@ -8314,33 +8424,62 @@ export default {
                           ],
                           type: 'string',
                         },
-                        external_type_display_name: { type: 'string' },
-                        full_name: { type: 'string' },
+                        external_type_display_name: {
+                          description:
+                            'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
+                          type: 'string',
+                        },
+                        full_name: {
+                          description: 'Full name of the `acs_user`.',
+                          type: 'string',
+                        },
                         hid_acs_system_id: { format: 'uuid', type: 'string' },
                         is_latest_desired_state_synced_with_provider: {
                           type: 'boolean',
+                          'x-undocumented': 'Only used internally.',
                         },
                         is_managed: { enum: [false], type: 'boolean' },
-                        is_suspended: { type: 'boolean' },
+                        is_suspended: {
+                          description:
+                            'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+                          type: 'boolean',
+                        },
                         latest_desired_state_synced_with_provider_at: {
                           format: 'date-time',
                           type: 'string',
+                          'x-undocumented': 'Only used internally.',
                         },
-                        phone_number: { type: 'string' },
+                        phone_number: {
+                          description:
+                            'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+                          type: 'string',
+                        },
                         user_identity_email_address: {
+                          description:
+                            'Email address of the user identity associated with the `acs_user`.',
                           nullable: true,
                           type: 'string',
                         },
                         user_identity_full_name: {
+                          description:
+                            'Full name of the user identity associated with the `acs_user`.',
                           nullable: true,
                           type: 'string',
                         },
-                        user_identity_id: { type: 'string' },
+                        user_identity_id: {
+                          description:
+                            'ID of the user identity associated with the `acs_user`.',
+                          type: 'string',
+                        },
                         user_identity_phone_number: {
+                          description:
+                            'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
                           nullable: true,
                           type: 'string',
                         },
                         warnings: {
+                          description:
+                            'Warnings associated with the `acs_user`.',
                           items: {
                             description:
                               'Warning associated with the `acs_user`.',
@@ -8391,7 +8530,12 @@ export default {
                           },
                           type: 'array',
                         },
-                        workspace_id: { format: 'uuid', type: 'string' },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                       },
                       required: [
                         'acs_user_id',
@@ -8460,20 +8604,53 @@ export default {
                       items: {
                         properties: {
                           access_schedule: {
-                            $ref: '#/components/schemas/thermostat_schedule',
+                            description:
+                              "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
+                            properties: {
+                              ends_at: { format: 'date-time', type: 'string' },
+                              starts_at: {
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                            },
+                            required: ['starts_at', 'ends_at'],
+                            type: 'object',
                           },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the `acs_user`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description: 'ID of the `acs_user`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the `acs_user` was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name for the `acs_user`.',
+                            type: 'string',
+                          },
                           email: {
                             deprecated: true,
                             format: 'email',
                             type: 'string',
                             'x-deprecated': 'use email_address.',
                           },
-                          email_address: { format: 'email', type: 'string' },
+                          email_address: {
+                            description: 'Email address of the `acs_user`.',
+                            format: 'email',
+                            type: 'string',
+                          },
                           errors: {
+                            description:
+                              'Errors associated with the `acs_user`.',
                             items: {
                               description:
                                 'Error associated with the `acs_user`.',
@@ -8620,6 +8797,8 @@ export default {
                             type: 'array',
                           },
                           external_type: {
+                            description:
+                              'Brand-specific terminology for the `acs_user` type.',
                             enum: [
                               'pti_user',
                               'brivo_user',
@@ -8629,33 +8808,62 @@ export default {
                             ],
                             type: 'string',
                           },
-                          external_type_display_name: { type: 'string' },
-                          full_name: { type: 'string' },
+                          external_type_display_name: {
+                            description:
+                              'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
+                            type: 'string',
+                          },
+                          full_name: {
+                            description: 'Full name of the `acs_user`.',
+                            type: 'string',
+                          },
                           hid_acs_system_id: { format: 'uuid', type: 'string' },
                           is_latest_desired_state_synced_with_provider: {
                             type: 'boolean',
+                            'x-undocumented': 'Only used internally.',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
-                          is_suspended: { type: 'boolean' },
+                          is_suspended: {
+                            description:
+                              'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+                            type: 'boolean',
+                          },
                           latest_desired_state_synced_with_provider_at: {
                             format: 'date-time',
                             type: 'string',
+                            'x-undocumented': 'Only used internally.',
                           },
-                          phone_number: { type: 'string' },
+                          phone_number: {
+                            description:
+                              'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+                            type: 'string',
+                          },
                           user_identity_email_address: {
+                            description:
+                              'Email address of the user identity associated with the `acs_user`.',
                             nullable: true,
                             type: 'string',
                           },
                           user_identity_full_name: {
+                            description:
+                              'Full name of the user identity associated with the `acs_user`.',
                             nullable: true,
                             type: 'string',
                           },
-                          user_identity_id: { type: 'string' },
+                          user_identity_id: {
+                            description:
+                              'ID of the user identity associated with the `acs_user`.',
+                            type: 'string',
+                          },
                           user_identity_phone_number: {
+                            description:
+                              'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
                             nullable: true,
                             type: 'string',
                           },
                           warnings: {
+                            description:
+                              'Warnings associated with the `acs_user`.',
                             items: {
                               description:
                                 'Warning associated with the `acs_user`.',
@@ -8706,7 +8914,12 @@ export default {
                             },
                             type: 'array',
                           },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'acs_user_id',
@@ -8819,17 +9032,32 @@ export default {
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
                   },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: {
+                    description: 'ID of the `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   email: {
                     deprecated: true,
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
                   },
-                  email_address: { format: 'email', type: 'string' },
-                  full_name: { type: 'string' },
+                  email_address: {
+                    description: 'Email address of the `acs_user`.',
+                    format: 'email',
+                    type: 'string',
+                  },
+                  full_name: {
+                    description: 'Full name of the `acs_user`.',
+                    type: 'string',
+                  },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
-                  phone_number: { type: 'string' },
+                  phone_number: {
+                    description:
+                      'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id'],
                 type: 'object',
@@ -8883,17 +9111,32 @@ export default {
                     required: ['starts_at', 'ends_at'],
                     type: 'object',
                   },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: {
+                    description: 'ID of the `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   email: {
                     deprecated: true,
                     format: 'email',
                     type: 'string',
                     'x-deprecated': 'use email_address.',
                   },
-                  email_address: { format: 'email', type: 'string' },
-                  full_name: { type: 'string' },
+                  email_address: {
+                    description: 'Email address of the `acs_user`.',
+                    format: 'email',
+                    type: 'string',
+                  },
+                  full_name: {
+                    description: 'Full name of the `acs_user`.',
+                    type: 'string',
+                  },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
-                  phone_number: { type: 'string' },
+                  phone_number: {
+                    description:
+                      'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id'],
                 type: 'object',
