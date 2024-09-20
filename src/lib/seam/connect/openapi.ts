@@ -7533,14 +7533,24 @@ export default {
     },
     '/acs/users/add_to_access_group': {
       post: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_access_group_id'],
                 type: 'object',
@@ -7573,16 +7583,27 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'add_to_access_group',
+        'x-title': 'Add an ACS User to an Access Group',
       },
       put: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersAddToAccessGroupPut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_access_group_id'],
                 type: 'object',
@@ -7614,10 +7635,13 @@ export default {
         summary: '/acs/users/add_to_access_group',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-title': 'Add an ACS User to an Access Group',
       },
     },
     '/acs/users/create': {
       post: {
+        description:
+          'Creates a new [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersCreatePost',
         requestBody: {
           content: {
@@ -7625,6 +7649,8 @@ export default {
               schema: {
                 properties: {
                   access_schedule: {
+                    description:
+                      "`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
                       starts_at: { format: 'date-time', type: 'string' },
@@ -7634,10 +7660,17 @@ export default {
                   },
                   acs_access_group_ids: {
                     default: [],
+                    description:
+                      'Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the `acs_system` to which to add the new `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   email: {
                     deprecated: true,
                     format: 'email',
@@ -7647,7 +7680,12 @@ export default {
                   email_address: { format: 'email', type: 'string' },
                   full_name: { type: 'string' },
                   phone_number: { type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity with which to associate the new `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_system_id'],
                 type: 'object',
@@ -7684,16 +7722,26 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'acs_user',
+        'x-response-key': 'acs_user',
+        'x-title': 'Create an ACS User',
       },
     },
     '/acs/users/delete': {
       post: {
+        description:
+          "Deletes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) and invalidates the ACS user's [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).",
         operationId: 'acsUsersDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -7725,16 +7773,25 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'delete',
+        'x-title': 'Delete an ACS User',
       },
     },
     '/acs/users/get': {
       post: {
+        description:
+          'Returns a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -7770,22 +7827,44 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_user',
+        'x-response-key': 'acs_user',
+        'x-title': 'Get an ACS User',
       },
     },
     '/acs/users/list': {
       post: {
+        description:
+          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the `acs_system` for which you want to retrieve all `acs_user`s.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   created_before: { format: 'date-time', type: 'string' },
                   limit: { default: 500, format: 'float', type: 'number' },
-                  user_identity_email_address: { type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
-                  user_identity_phone_number: { type: 'string' },
+                  user_identity_email_address: {
+                    description:
+                      'Email address of the user identity for which you want to retrieve all `acs_user`s.',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all `acs_user`s.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_phone_number: {
+                    description:
+                      'Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`).',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -7825,16 +7904,26 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users',
       },
     },
     '/acs/users/list_accessible_entrances': {
       post: {
+        description:
+          'Lists the [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) has access.',
         operationId: 'acsUsersListAccessibleEntrancesPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -7874,18 +7963,30 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'list_accessible_entrances',
         'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
+        'x-title': 'List ACS User-Accessible Entrances',
       },
     },
     '/acs/users/remove_from_access_group': {
       post: {
+        description:
+          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsUsersRemoveFromAccessGroupPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_access_group_id'],
                 type: 'object',
@@ -7918,16 +8019,25 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'remove_from_access_group',
+        'x-title': 'Remove an ACS User from an Access Group',
       },
     },
     '/acs/users/revoke_access_to_all_entrances': {
       post: {
+        description:
+          'Revokes access to all [entrances](https://docs.seam.co/latest/api/acs/entrances) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersRevokeAccessToAllEntrancesPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -7959,16 +8069,25 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'revoke_access_to_all_entrances',
+        'x-title': 'Revoke ACS User Access to All Entrances',
       },
     },
     '/acs/users/suspend': {
       post: {
+        description:
+          "[Suspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#suspend-an-acs-user) a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). Suspending an ACS user revokes their access temporarily. To restore an ACS user's access, you can [unsuspend](https://docs.seam.co/latest/api/acs/users/unsuspend) them.",
         operationId: 'acsUsersSuspendPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -8000,6 +8119,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'suspend',
+        'x-title': 'Suspend an ACS User',
       },
     },
     '/acs/users/unmanaged/get': {
@@ -8630,12 +8750,20 @@ export default {
     },
     '/acs/users/unsuspend': {
       post: {
+        description:
+          '[Unsuspends](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users#unsuspend-an-acs-user) a specified suspended [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). While [suspending an ACS user](https://docs.seam.co/latest/api/acs/users/suspend) revokes their access temporarily, unsuspending the ACS user restores their access.',
         operationId: 'acsUsersUnsuspendPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { acs_user_id: { format: 'uuid', type: 'string' } },
+                properties: {
+                  acs_user_id: {
+                    description: 'ID of the desired `acs_user`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
                 required: ['acs_user_id'],
                 type: 'object',
               },
@@ -8667,10 +8795,13 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'unsuspend',
+        'x-title': 'Unsuspend an ACS User',
       },
     },
     '/acs/users/update': {
       patch: {
+        description:
+          'Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUpdatePatch',
         requestBody: {
           content: {
@@ -8678,6 +8809,8 @@ export default {
               schema: {
                 properties: {
                   access_schedule: {
+                    description:
+                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
                     nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
@@ -8728,8 +8861,11 @@ export default {
         summary: '/acs/users/update',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-title': 'Update an ACS User',
       },
       post: {
+        description:
+          'Updates the properties of a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsUsersUpdatePost',
         requestBody: {
           content: {
@@ -8737,6 +8873,8 @@ export default {
               schema: {
                 properties: {
                   access_schedule: {
+                    description:
+                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
                     nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
@@ -8788,6 +8926,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'update',
+        'x-title': 'Update an ACS User',
       },
     },
     '/action_attempts/get': {
