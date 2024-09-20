@@ -3937,7 +3937,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
+      /** ID of the desired access group. */
       acs_access_group_id: string
     }
     formData: {}
@@ -3948,9 +3950,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the `acs_system` to which to add the new `acs_user`. */
       acs_system_id: string
+      /** Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`. */
       acs_access_group_ids?: string[]
+      /** ID of the user identity with which to associate the new `acs_user`. */
       user_identity_id?: string | undefined
+      /** `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems. */
       access_schedule?:
         | {
             starts_at: string
@@ -4062,6 +4068,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     formData: {}
@@ -4073,6 +4080,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     formData: {}
@@ -4172,9 +4180,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all `acs_user`s. */
       user_identity_id?: string | undefined
+      /** Phone number of the user identity for which you want to retrieve all `acs_user`s, in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, `+15555550100`). */
       user_identity_phone_number?: string | undefined
+      /** Email address of the user identity for which you want to retrieve all `acs_user`s. */
       user_identity_email_address?: string | undefined
+      /** ID of the `acs_system` for which you want to retrieve all `acs_user`s. */
       acs_system_id?: string | undefined
       limit?: number
       created_before?: Date | undefined
@@ -4276,6 +4288,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     formData: {}
@@ -4323,7 +4336,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
+      /** ID of the desired access group. */
       acs_access_group_id: string
     }
     formData: {}
@@ -4334,6 +4349,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     commonParams: {}
@@ -4346,6 +4362,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     formData: {}
@@ -4559,6 +4576,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired `acs_user`. */
       acs_user_id: string
     }
     formData: {}
@@ -4569,6 +4587,7 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems. */
       access_schedule?:
         | ({
             starts_at: string
