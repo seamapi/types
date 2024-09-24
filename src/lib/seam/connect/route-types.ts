@@ -18485,20 +18485,7 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {
-      thermostat_schedule: {
-        thermostat_schedule_id: string
-        device_id: string
-        name?: string | undefined
-        climate_preset_key: string
-        max_override_period_minutes?: number
-        starts_at: string
-        ends_at: string
-        created_at: string
-        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
-        errors?: any
-      }
-    }
+    jsonResponse: {}
   }
   '/thermostats/set_fallback_climate_preset': {
     route: '/thermostats/set_fallback_climate_preset'
@@ -18980,22 +18967,7 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {
-      climate_preset: {
-        climate_preset_key: string
-        can_edit: boolean
-        can_delete: boolean
-        name?: string | null
-        display_name: string
-        fan_mode_setting?: ('auto' | 'on') | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: number | undefined
-        heating_set_point_celsius?: number | undefined
-        cooling_set_point_fahrenheit?: number | undefined
-        heating_set_point_fahrenheit?: number | undefined
-        manual_override_allowed: boolean
-      }
-    }
+    jsonResponse: {}
   }
   '/user_identities/add_acs_user': {
     route: '/user_identities/add_acs_user'
