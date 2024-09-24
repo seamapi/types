@@ -13868,13 +13868,8 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: {
-                    ok: { type: 'boolean' },
-                    thermostat_schedule: {
-                      $ref: '#/components/schemas/thermostat_schedule',
-                    },
-                  },
-                  required: ['thermostat_schedule', 'ok'],
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
                   type: 'object',
                 },
               },
@@ -13919,13 +13914,8 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: {
-                    ok: { type: 'boolean' },
-                    thermostat_schedule: {
-                      $ref: '#/components/schemas/thermostat_schedule',
-                    },
-                  },
-                  required: ['thermostat_schedule', 'ok'],
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
                   type: 'object',
                 },
               },
@@ -14098,13 +14088,8 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: {
-                    climate_preset: {
-                      $ref: '#/components/schemas/climate_preset',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_preset', 'ok'],
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
                   type: 'object',
                 },
               },
@@ -14171,13 +14156,8 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: {
-                    climate_preset: {
-                      $ref: '#/components/schemas/climate_preset',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_preset', 'ok'],
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
                   type: 'object',
                 },
               },
