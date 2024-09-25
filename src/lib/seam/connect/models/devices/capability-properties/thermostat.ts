@@ -14,6 +14,7 @@ export const thermostat_capability_properties = z
     temperature_celsius: z.number(),
     relative_humidity: z.number().min(0).max(1),
     available_hvac_mode_settings: z.array(hvac_mode_setting),
+    available_fan_mode_settings: z.array(fan_mode_setting),
     is_heating: z.boolean(),
     is_cooling: z.boolean(),
     is_fan_running: z.boolean(),
