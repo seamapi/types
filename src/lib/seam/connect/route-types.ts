@@ -2827,6 +2827,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -2907,6 +2910,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -2977,6 +2983,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3052,6 +3061,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3159,6 +3171,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3218,6 +3233,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3288,6 +3306,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3349,6 +3370,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3516,6 +3540,9 @@ export interface Routes {
         parent_acs_credential_id?: string | undefined
         display_name: string
         code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_encoded?: boolean | undefined
+        encoded_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (

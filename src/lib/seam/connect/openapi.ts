@@ -246,9 +246,11 @@ export default {
           acs_credential_pool_id: { format: 'uuid', type: 'string' },
           acs_system_id: { format: 'uuid', type: 'string' },
           acs_user_id: { format: 'uuid', type: 'string' },
+          card_number: { nullable: true, type: 'string' },
           code: { nullable: true, type: 'string' },
           created_at: { format: 'date-time', type: 'string' },
           display_name: { minLength: 1, type: 'string' },
+          encoded_at: { format: 'date-time', nullable: true, type: 'string' },
           ends_at: { type: 'string' },
           errors: {
             items: {
@@ -272,6 +274,7 @@ export default {
             type: 'string',
           },
           external_type_display_name: { type: 'string' },
+          is_encoded: { type: 'boolean' },
           is_latest_desired_state_synced_with_provider: { type: 'boolean' },
           is_managed: { enum: [true], type: 'boolean' },
           is_multi_phone_sync_credential: { type: 'boolean' },
@@ -6833,9 +6836,15 @@ export default {
                         },
                         acs_system_id: { format: 'uuid', type: 'string' },
                         acs_user_id: { format: 'uuid', type: 'string' },
+                        card_number: { nullable: true, type: 'string' },
                         code: { nullable: true, type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
                         display_name: { minLength: 1, type: 'string' },
+                        encoded_at: {
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
                         ends_at: { type: 'string' },
                         errors: {
                           items: {
@@ -6859,6 +6868,7 @@ export default {
                           type: 'string',
                         },
                         external_type_display_name: { type: 'string' },
+                        is_encoded: { type: 'boolean' },
                         is_latest_desired_state_synced_with_provider: {
                           type: 'boolean',
                         },
@@ -7010,9 +7020,15 @@ export default {
                           },
                           acs_system_id: { format: 'uuid', type: 'string' },
                           acs_user_id: { format: 'uuid', type: 'string' },
+                          card_number: { nullable: true, type: 'string' },
                           code: { nullable: true, type: 'string' },
                           created_at: { format: 'date-time', type: 'string' },
                           display_name: { minLength: 1, type: 'string' },
+                          encoded_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
                           ends_at: { type: 'string' },
                           errors: {
                             items: {
@@ -7036,6 +7052,7 @@ export default {
                             type: 'string',
                           },
                           external_type_display_name: { type: 'string' },
+                          is_encoded: { type: 'boolean' },
                           is_latest_desired_state_synced_with_provider: {
                             type: 'boolean',
                           },
