@@ -6599,12 +6599,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -6613,7 +6616,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -6637,7 +6642,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -6659,7 +6666,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -7358,12 +7365,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -7372,7 +7382,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -7396,7 +7408,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -7418,7 +7432,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -8783,12 +8797,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -8797,7 +8814,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -8821,7 +8840,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -8843,7 +8864,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -9376,12 +9397,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -9390,7 +9414,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -9414,7 +9440,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -9436,7 +9464,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -10135,12 +10163,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -10149,7 +10180,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -10173,7 +10206,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -10195,7 +10230,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -10728,12 +10763,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -10742,7 +10780,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -10766,7 +10806,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -10788,7 +10830,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -12413,12 +12455,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -12427,7 +12472,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -12451,7 +12498,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -12473,7 +12522,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -13006,12 +13055,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -13020,7 +13072,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -13044,7 +13098,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -13066,7 +13122,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -15661,7 +15717,7 @@ export interface Routes {
       device_id: string
       climate_preset_key: string
       name?: string | null
-      fan_mode_setting?: ('auto' | 'on') | undefined
+      fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
       heating_set_point_celsius?: number | undefined
@@ -15678,7 +15734,7 @@ export interface Routes {
         can_delete: boolean
         name?: string | null
         display_name: string
-        fan_mode_setting?: ('auto' | 'on') | undefined
+        fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
         cooling_set_point_celsius?: number | undefined
         heating_set_point_celsius?: number | undefined
@@ -16161,12 +16217,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -16175,7 +16234,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -16199,7 +16260,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -16221,7 +16284,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -17818,12 +17881,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -17832,7 +17898,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -17856,7 +17924,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -17878,7 +17948,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -18534,8 +18604,8 @@ export interface Routes {
       device_id: string
       /**
        * @deprecated use fan_mode_setting instead. */
-      fan_mode?: ('auto' | 'on') | undefined
-      fan_mode_setting?: ('auto' | 'on') | undefined
+      fan_mode?: ('auto' | 'on' | 'circulate') | undefined
+      fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       sync?: boolean
     }
     commonParams: {}
@@ -18984,7 +19054,7 @@ export interface Routes {
       device_id: string
       climate_preset_key: string
       name?: string | null
-      fan_mode_setting?: ('auto' | 'on') | undefined
+      fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
       heating_set_point_celsius?: number | undefined
@@ -19637,12 +19707,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -19651,7 +19724,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -19675,7 +19750,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -19697,7 +19774,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
@@ -20232,12 +20309,15 @@ export interface Routes {
             available_hvac_mode_settings?:
               | Array<'off' | 'heat' | 'cool' | 'heat_cool'>
               | undefined
+            available_fan_mode_settings?:
+              | Array<'auto' | 'on' | 'circulate'>
+              | undefined
             is_heating?: boolean | undefined
             is_cooling?: boolean | undefined
             is_fan_running?: boolean | undefined
             /**
              * @deprecated use current_climate_setting.fan_mode_setting instead. */
-            fan_mode_setting?: ('auto' | 'on') | undefined
+            fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
@@ -20246,7 +20326,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -20270,7 +20352,9 @@ export interface Routes {
                   can_delete?: boolean | undefined
                   name?: (string | null) | undefined
                   display_name?: string | undefined
-                  fan_mode_setting?: (('auto' | 'on') | undefined) | undefined
+                  fan_mode_setting?:
+                    | (('auto' | 'on' | 'circulate') | undefined)
+                    | undefined
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
@@ -20292,7 +20376,7 @@ export interface Routes {
                   can_delete: boolean
                   name?: string | null
                   display_name: string
-                  fan_mode_setting?: ('auto' | 'on') | undefined
+                  fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined

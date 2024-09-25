@@ -2237,7 +2237,10 @@ export default {
           cooling_set_point_celsius: { format: 'float', type: 'number' },
           cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
           display_name: { type: 'string' },
-          fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+          fan_mode_setting: {
+            enum: ['auto', 'on', 'circulate'],
+            type: 'string',
+          },
           heating_set_point_celsius: { format: 'float', type: 'number' },
           heating_set_point_fahrenheit: { format: 'float', type: 'number' },
           hvac_mode_setting: {
@@ -3376,7 +3379,7 @@ export default {
                             },
                             display_name: { type: 'string' },
                             fan_mode_setting: {
-                              enum: ['auto', 'on'],
+                              enum: ['auto', 'on', 'circulate'],
                               type: 'string',
                             },
                             heating_set_point_celsius: {
@@ -3409,6 +3412,13 @@ export default {
                         },
                         type: 'array',
                       },
+                      available_fan_mode_settings: {
+                        items: {
+                          enum: ['auto', 'on', 'circulate'],
+                          type: 'string',
+                        },
+                        type: 'array',
+                      },
                       available_hvac_mode_settings: {
                         items: {
                           enum: ['off', 'heat', 'cool', 'heat_cool'],
@@ -3431,7 +3441,7 @@ export default {
                           },
                           display_name: { type: 'string' },
                           fan_mode_setting: {
-                            enum: ['auto', 'on'],
+                            enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
@@ -3471,7 +3481,7 @@ export default {
                           },
                           display_name: { type: 'string' },
                           fan_mode_setting: {
-                            enum: ['auto', 'on'],
+                            enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
@@ -3505,7 +3515,7 @@ export default {
                       },
                       fan_mode_setting: {
                         deprecated: true,
-                        enum: ['auto', 'on'],
+                        enum: ['auto', 'on', 'circulate'],
                         type: 'string',
                         'x-deprecated':
                           'use current_climate_setting.fan_mode_setting instead.',
@@ -13067,7 +13077,10 @@ export default {
                     type: 'number',
                   },
                   device_id: { format: 'uuid', type: 'string' },
-                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  fan_mode_setting: {
+                    enum: ['auto', 'on', 'circulate'],
+                    type: 'string',
+                  },
                   heating_set_point_celsius: {
                     format: 'float',
                     type: 'number',
@@ -14009,11 +14022,14 @@ export default {
                   device_id: { format: 'uuid', type: 'string' },
                   fan_mode: {
                     deprecated: true,
-                    enum: ['auto', 'on'],
+                    enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                     'x-deprecated': 'use fan_mode_setting instead.',
                   },
-                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  fan_mode_setting: {
+                    enum: ['auto', 'on', 'circulate'],
+                    type: 'string',
+                  },
                   sync: { default: false, type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -14074,7 +14090,10 @@ export default {
                     type: 'number',
                   },
                   device_id: { format: 'uuid', type: 'string' },
-                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  fan_mode_setting: {
+                    enum: ['auto', 'on', 'circulate'],
+                    type: 'string',
+                  },
                   heating_set_point_celsius: {
                     format: 'float',
                     type: 'number',
@@ -14142,7 +14161,10 @@ export default {
                     type: 'number',
                   },
                   device_id: { format: 'uuid', type: 'string' },
-                  fan_mode_setting: { enum: ['auto', 'on'], type: 'string' },
+                  fan_mode_setting: {
+                    enum: ['auto', 'on', 'circulate'],
+                    type: 'string',
+                  },
                   heating_set_point_celsius: {
                     format: 'float',
                     type: 'number',
