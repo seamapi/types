@@ -1,5 +1,6 @@
 import { z } from 'zod'
 
+import { climate_setting } from '../thermostats/climate-preset.js'
 import { common_event } from './common.js'
 
 const device_event = common_event.extend({
@@ -341,6 +342,36 @@ export const lock_access_denied_event = device_event
 
 export type LockAccessDeniedEvent = z.infer<typeof lock_access_denied_event>
 
+export const thermostat_climate_preset_activated_event = device_event
+  .extend({
+    event_type: z.literal('thermostat.climate_preset_activated'),
+    thermostat_schedule_id: z.string().uuid().nullable(),
+    climate_preset_key: z.string(),
+    is_fallback_climate_preset: z.boolean(),
+  })
+  .describe('A thermostat climate preset was activated.')
+
+export type ThermostatClimatePresetActivatedEvent = z.infer<
+  typeof thermostat_climate_preset_activated_event
+>
+
+export const thermostat_manually_adjusted_event = device_event
+  .merge(
+    climate_setting.pick({
+      fan_mode_setting: true,
+      hvac_mode_setting: true,
+      cooling_set_point_celsius: true,
+      heating_set_point_celsius: true,
+      cooling_set_point_fahrenheit: true,
+      heating_set_point_fahrenheit: true,
+    }),
+  )
+  .describe('A thermostat was manually adjusted.')
+
+export type ThermostatManuallyAdjustedEvent = z.infer<
+  typeof thermostat_manually_adjusted_event
+>
+
 export const device_events = [
   device_connected_event,
   device_converted_to_unmanaged_event,
@@ -367,4 +398,6 @@ export const device_events = [
   lock_locked_event,
   lock_unlocked_event,
   lock_access_denied_event,
+  // thermostat_climate_preset_activated_event,
+  // thermostat_manually_adjusted_event,
 ] as const
