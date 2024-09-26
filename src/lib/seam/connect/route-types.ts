@@ -86,6 +86,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -679,6 +711,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -1459,6 +1523,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -2039,6 +2135,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -3150,6 +3278,488 @@ export interface Routes {
             }
           | undefined
       }>
+    }
+  }
+  '/acs/credentials/read_card': {
+    route: '/acs/credentials/read_card'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams:
+      | {
+          acs_system_id: string
+          device_name: string
+        }
+      | {
+          device_id: string
+        }
+    formData: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result?: any
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
     }
   }
   '/acs/credentials/unassign': {
@@ -4832,6 +5442,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -5266,6 +5908,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -10989,6 +11663,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -11424,6 +12130,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -13286,6 +14024,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -13731,6 +14501,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -14226,6 +15028,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -14889,6 +15723,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -15326,6 +16192,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -16445,6 +17343,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -16884,6 +17814,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -18107,6 +19069,38 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
@@ -18663,6 +19657,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
@@ -20951,6 +21977,38 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'READ_CARD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'READ_CARD'
+            result: {
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_id: string | null
+              /** A number or sting that physically identifies this card. */
+              card_number: string | null
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'READ_CARD'
             error: {
               type: string
               message: string
