@@ -13294,6 +13294,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'create_climate_preset',
+        'x-fern-sdk-return-value': 'climate_preset',
       },
     },
     '/thermostats/delete_climate_preset': {
@@ -14373,7 +14374,6 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'update_climate_preset',
-        'x-fern-sdk-return-value': 'climate_preset',
       },
     },
     '/user_identities/add_acs_user': {
