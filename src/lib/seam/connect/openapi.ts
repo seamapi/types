@@ -2441,36 +2441,6 @@ export default {
         ],
         type: 'object',
       },
-      climate_preset: {
-        properties: {
-          can_delete: { type: 'boolean' },
-          can_edit: { type: 'boolean' },
-          climate_preset_key: { type: 'string' },
-          cooling_set_point_celsius: { format: 'float', type: 'number' },
-          cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
-          display_name: { type: 'string' },
-          fan_mode_setting: {
-            enum: ['auto', 'on', 'circulate'],
-            type: 'string',
-          },
-          heating_set_point_celsius: { format: 'float', type: 'number' },
-          heating_set_point_fahrenheit: { format: 'float', type: 'number' },
-          hvac_mode_setting: {
-            enum: ['off', 'heat', 'cool', 'heat_cool'],
-            type: 'string',
-          },
-          manual_override_allowed: { type: 'boolean' },
-          name: { default: null, nullable: true, type: 'string' },
-        },
-        required: [
-          'climate_preset_key',
-          'can_edit',
-          'can_delete',
-          'display_name',
-          'manual_override_allowed',
-        ],
-        type: 'object',
-      },
       connect_webview: {
         properties: {
           accepted_devices: {
@@ -13564,13 +13534,8 @@ export default {
             content: {
               'application/json': {
                 schema: {
-                  properties: {
-                    climate_preset: {
-                      $ref: '#/components/schemas/climate_preset',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['climate_preset', 'ok'],
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
                   type: 'object',
                 },
               },
@@ -13589,7 +13554,6 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'create_climate_preset',
-        'x-fern-sdk-return-value': 'climate_preset',
       },
     },
     '/thermostats/delete_climate_preset': {
