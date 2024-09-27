@@ -2811,6 +2811,18 @@ export interface Routes {
                 | undefined
             }
           | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
+            }
+          | undefined
       }>
     }
   }
@@ -3119,6 +3131,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3150,6 +3163,7 @@ export interface Routes {
              * @deprecated use override. */
             is_override_key?: boolean | undefined
             override?: boolean | undefined
+            auto_join?: boolean | undefined
             joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
@@ -3202,6 +3216,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3275,6 +3290,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3353,6 +3369,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3403,6 +3420,18 @@ export interface Routes {
                     visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
                   }>
                 | undefined
+            }
+          | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
             }
           | undefined
       }>
@@ -3463,6 +3492,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3525,6 +3555,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3598,6 +3629,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3662,6 +3694,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -4742,6 +4775,18 @@ export interface Routes {
                 | undefined
             }
           | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
+            }
+          | undefined
       }
     }
   }
@@ -4802,6 +4847,18 @@ export interface Routes {
                 | undefined
             }
           | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
+            }
+          | undefined
       }>
     }
   }
@@ -4860,6 +4917,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -5719,6 +5777,18 @@ export interface Routes {
                     visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
                   }>
                 | undefined
+            }
+          | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
             }
           | undefined
       }>
