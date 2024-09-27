@@ -405,6 +405,29 @@ export default {
             ],
             type: 'object',
           },
+          salto_ks_metadata: {
+            properties: {
+              battery_level: { type: 'string' },
+              door_name: { type: 'string' },
+              intrusion_alarm: { type: 'boolean' },
+              left_open_alarm: { type: 'boolean' },
+              lock_type: { type: 'string' },
+              locked_state: { type: 'string' },
+              online: { type: 'boolean' },
+              privacy_mode: { type: 'boolean' },
+            },
+            required: [
+              'door_name',
+              'locked_state',
+              'lock_type',
+              'online',
+              'battery_level',
+              'left_open_alarm',
+              'intrusion_alarm',
+              'privacy_mode',
+            ],
+            type: 'object',
+          },
           visionline_metadata: {
             properties: {
               door_category: {
@@ -1248,6 +1271,100 @@ export default {
                 'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['READ_CARD'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { nullable: true },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Encoding card data from physical encoder.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Encoding card data from physical encoder succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              error: { nullable: true },
+              result: {
+                properties: {
+                  acs_credential_id: {
+                    description:
+                      'Matching acs_credential currently encoded on this card.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  card_number: {
+                    description:
+                      'A number or sting that physically identifies this card.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['acs_credential_id', 'card_number'],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Encoding card data from physical encoder failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
               error: {
                 properties: {
                   message: { type: 'string' },
@@ -3824,13 +3941,22 @@ export default {
           acs_user_id: { format: 'uuid', type: 'string' },
           action_attempt_id: { format: 'uuid', type: 'string' },
           client_session_id: { format: 'uuid', type: 'string' },
+          climate_preset_key: { type: 'string' },
+          cooling_set_point_celsius: { format: 'float', type: 'number' },
+          cooling_set_point_fahrenheit: { format: 'float', type: 'number' },
           created_at: { format: 'date-time', type: 'string' },
           device_id: { format: 'uuid', type: 'string' },
           enrollment_automation_id: { format: 'uuid', type: 'string' },
           event_description: { type: 'string' },
           event_id: { format: 'uuid', type: 'string' },
           event_type: { type: 'string' },
+          fan_mode_setting: { type: 'string' },
+          heating_set_point_celsius: { format: 'float', type: 'number' },
+          heating_set_point_fahrenheit: { format: 'float', type: 'number' },
+          hvac_mode_setting: { type: 'string' },
+          is_fallback_climate_preset: { type: 'boolean' },
           occurred_at: { format: 'date-time', type: 'string' },
+          thermostat_schedule_id: { format: 'uuid', type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
@@ -7350,6 +7476,68 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'update',
+      },
+    },
+    '/acs/encoders/encode_card': {
+      post: {
+        operationId: 'acsEncodersEncodeCardPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      acs_system_id: { format: 'uuid', type: 'string' },
+                      device_name: { type: 'string' },
+                    },
+                    required: ['acs_system_id', 'device_name'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: ['device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/encode_card',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'encode_card',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-undocumented': 'Encoding a card is currently unimplemented.',
       },
     },
     '/acs/encoders/read_card': {
@@ -11667,6 +11855,8 @@ export default {
                       'action_attempt.lock_door.failed',
                       'action_attempt.unlock_door.succeeded',
                       'action_attempt.unlock_door.failed',
+                      'thermostat.climate_preset_activated',
+                      'thermostat.manually_adjusted',
                     ],
                     type: 'string',
                   },
@@ -11735,6 +11925,8 @@ export default {
                         'action_attempt.lock_door.failed',
                         'action_attempt.unlock_door.succeeded',
                         'action_attempt.unlock_door.failed',
+                        'thermostat.climate_preset_activated',
+                        'thermostat.manually_adjusted',
                       ],
                       type: 'string',
                     },
