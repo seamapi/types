@@ -18368,22 +18368,7 @@ export interface Routes {
     }
     commonParams: {}
     formData: {}
-    jsonResponse: {
-      climate_preset: {
-        climate_preset_key: string
-        can_edit: boolean
-        can_delete: boolean
-        name?: (string | null) | undefined
-        display_name: string
-        fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
-        hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
-        cooling_set_point_celsius?: number | undefined
-        heating_set_point_celsius?: number | undefined
-        cooling_set_point_fahrenheit?: number | undefined
-        heating_set_point_fahrenheit?: number | undefined
-        manual_override_allowed: boolean
-      }
-    }
+    jsonResponse: {}
   }
   '/thermostats/delete_climate_preset': {
     route: '/thermostats/delete_climate_preset'
