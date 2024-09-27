@@ -22,14 +22,3 @@ export type ClimatePreset = z.infer<typeof climate_preset>
 export const climate_setting = climate_preset.partial()
 
 export type ClimateSetting = z.infer<typeof climate_setting>
-
-export const climate_setting_manual = climate_setting.pick({
-  fan_mode_setting: true,
-  hvac_mode_setting: true,
-  cooling_set_point_celsius: true,
-  heating_set_point_celsius: true,
-  cooling_set_point_fahrenheit: true,
-  heating_set_point_fahrenheit: true,
-})
-
-export type ClimateSettingManual = z.infer<typeof climate_setting_manual>
