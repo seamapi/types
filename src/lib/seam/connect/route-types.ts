@@ -8858,6 +8858,15 @@ export interface Routes {
             created_at: string
             occurred_at: string
             event_description: string
+            thermostat_schedule_id?: string | undefined
+            is_fallback_climate_preset?: boolean | undefined
+            climate_preset_key?: string | undefined
+            hvac_mode_setting?: string | undefined
+            fan_mode_setting?: string | undefined
+            cooling_set_point_celsius?: number | undefined
+            heating_set_point_celsius?: number | undefined
+            cooling_set_point_fahrenheit?: number | undefined
+            heating_set_point_fahrenheit?: number | undefined
           }
         | undefined
       message?: string | undefined
@@ -8939,6 +8948,8 @@ export interface Routes {
             | 'action_attempt.lock_door.failed'
             | 'action_attempt.unlock_door.succeeded'
             | 'action_attempt.unlock_door.failed'
+            | 'thermostat.climate_preset_activated'
+            | 'thermostat.manually_adjusted'
           )
         | undefined
       event_types?:
@@ -9005,6 +9016,8 @@ export interface Routes {
             | 'action_attempt.lock_door.failed'
             | 'action_attempt.unlock_door.succeeded'
             | 'action_attempt.unlock_door.failed'
+            | 'thermostat.climate_preset_activated'
+            | 'thermostat.manually_adjusted'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -9027,6 +9040,15 @@ export interface Routes {
         created_at: string
         occurred_at: string
         event_description: string
+        thermostat_schedule_id?: string | undefined
+        is_fallback_climate_preset?: boolean | undefined
+        climate_preset_key?: string | undefined
+        hvac_mode_setting?: string | undefined
+        fan_mode_setting?: string | undefined
+        cooling_set_point_celsius?: number | undefined
+        heating_set_point_celsius?: number | undefined
+        cooling_set_point_fahrenheit?: number | undefined
+        heating_set_point_fahrenheit?: number | undefined
       }>
     }
   }
