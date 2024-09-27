@@ -286,6 +286,7 @@ export default {
           starts_at: { type: 'string' },
           visionline_metadata: {
             properties: {
+              auto_join: { type: 'boolean' },
               card_function_type: { enum: ['guest', 'staff'], type: 'string' },
               card_id: { type: 'string' },
               common_acs_entrance_ids: {
@@ -402,6 +403,29 @@ export default {
               'door_name',
               'door_type',
               'is_connected',
+            ],
+            type: 'object',
+          },
+          salto_ks_metadata: {
+            properties: {
+              battery_level: { type: 'string' },
+              door_name: { type: 'string' },
+              intrusion_alarm: { type: 'boolean' },
+              left_open_alarm: { type: 'boolean' },
+              lock_type: { type: 'string' },
+              locked_state: { type: 'string' },
+              online: { type: 'boolean' },
+              privacy_mode: { type: 'boolean' },
+            },
+            required: [
+              'door_name',
+              'locked_state',
+              'lock_type',
+              'online',
+              'battery_level',
+              'left_open_alarm',
+              'intrusion_alarm',
+              'privacy_mode',
             ],
             type: 'object',
           },
@@ -6627,6 +6651,7 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      auto_join: { type: 'boolean' },
                       card_format: {
                         enum: ['TLCode', 'rfid48'],
                         type: 'string',
@@ -7099,6 +7124,7 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            auto_join: { type: 'boolean' },
                             card_function_type: {
                               enum: ['guest', 'staff'],
                               type: 'string',
@@ -7283,6 +7309,7 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              auto_join: { type: 'boolean' },
                               card_function_type: {
                                 enum: ['guest', 'staff'],
                                 type: 'string',
@@ -7515,6 +7542,90 @@ export default {
         'x-fern-sdk-method-name': 'encode_card',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-undocumented': 'Encoding a card is currently unimplemented.',
+      },
+    },
+    '/acs/encoders/list': {
+      post: {
+        operationId: 'acsEncodersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      acs_system_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      device_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['acs_system_ids', 'device_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['device_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      acs_system_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['acs_system_ids'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
       },
     },
     '/acs/encoders/read_card': {
