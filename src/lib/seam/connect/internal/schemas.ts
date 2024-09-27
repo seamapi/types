@@ -18,6 +18,7 @@ export {
   battery_status,
   capabilities,
   climate_preset,
+  climate_setting,
   common_device_properties,
   connect_webview_device_selection_mode,
   connected_account,
