@@ -3131,6 +3131,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3162,6 +3163,7 @@ export interface Routes {
              * @deprecated use override. */
             is_override_key?: boolean | undefined
             override?: boolean | undefined
+            auto_join?: boolean | undefined
             joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
@@ -3214,6 +3216,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3287,6 +3290,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3365,6 +3369,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3487,6 +3492,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3549,6 +3555,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3622,6 +3629,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -3686,6 +3694,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }
@@ -4908,6 +4917,7 @@ export interface Routes {
               guest_acs_entrance_ids?: string[] | undefined
               common_acs_entrance_ids?: string[] | undefined
               is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
             }

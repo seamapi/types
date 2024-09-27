@@ -286,6 +286,7 @@ export default {
           starts_at: { type: 'string' },
           visionline_metadata: {
             properties: {
+              auto_join: { type: 'boolean' },
               card_function_type: { enum: ['guest', 'staff'], type: 'string' },
               card_id: { type: 'string' },
               common_acs_entrance_ids: {
@@ -6650,6 +6651,7 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      auto_join: { type: 'boolean' },
                       card_format: {
                         enum: ['TLCode', 'rfid48'],
                         type: 'string',
@@ -7122,6 +7124,7 @@ export default {
                         starts_at: { type: 'string' },
                         visionline_metadata: {
                           properties: {
+                            auto_join: { type: 'boolean' },
                             card_function_type: {
                               enum: ['guest', 'staff'],
                               type: 'string',
@@ -7306,6 +7309,7 @@ export default {
                           starts_at: { type: 'string' },
                           visionline_metadata: {
                             properties: {
+                              auto_join: { type: 'boolean' },
                               card_function_type: {
                                 enum: ['guest', 'staff'],
                                 type: 'string',

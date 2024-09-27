@@ -25,6 +25,7 @@ export const acs_credential_visionline_metadata = z.object({
   guest_acs_entrance_ids: z.array(z.string().uuid()).optional(),
   common_acs_entrance_ids: z.array(z.string().uuid()).optional(),
   is_valid: z.boolean().optional(),
+  auto_join: z.boolean().optional(),
   card_id: z.string().optional(),
   credential_id: z.string().optional(),
 })
