@@ -356,6 +356,9 @@ export type ThermostatClimatePresetActivatedEvent = z.infer<
 >
 
 export const thermostat_manually_adjusted_event = device_event
+  .extend({
+    event_type: z.literal('thermostat.manually_adjusted'),
+  })
   .merge(
     climate_setting.pick({
       fan_mode_setting: true,
@@ -398,6 +401,6 @@ export const device_events = [
   lock_locked_event,
   lock_unlocked_event,
   lock_access_denied_event,
-  // thermostat_climate_preset_activated_event,
-  // thermostat_manually_adjusted_event,
+  thermostat_climate_preset_activated_event,
+  thermostat_manually_adjusted_event,
 ] as const
