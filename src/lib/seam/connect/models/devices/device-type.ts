@@ -101,11 +101,28 @@ export const phone_device_type = z.enum(
 
 export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
+/** Encoders */
+export const ENCODER_DEVICE_TYPE = {
+  VISIONLINE_ENCODER: 'visionline_encoder',
+} as const
+
+type EncoderDeviceTypeFromMapping =
+  (typeof ENCODER_DEVICE_TYPE)[keyof typeof ENCODER_DEVICE_TYPE]
+
+export const ENCODER_DEVICE_TYPE_LIST = Object.values(ENCODER_DEVICE_TYPE)
+
+export const encoder_device_type = z.enum(
+  Object.values(ENCODER_DEVICE_TYPE_LIST) as [EncoderDeviceTypeFromMapping],
+)
+
+export type EncoderDeviceType = z.infer<typeof encoder_device_type>
+
 export const any_device_type = z.union([
   lock_device_type,
   noise_sensor_device_type,
   thermostat_device_type,
   phone_device_type,
+  encoder_device_type,
 ])
 
 export type AnyDeviceType = z.infer<typeof any_device_type>

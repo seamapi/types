@@ -237,6 +237,10 @@ export const device_metadata = z
       bridge_name: z.string(),
       keypad_id: z.number().optional(),
     }),
+
+    visionline_metadata: z.object({
+      encoder_id: z.string(),
+    }),
   })
   .partial()
 

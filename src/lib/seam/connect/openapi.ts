@@ -2586,6 +2586,7 @@ export default {
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
+              { enum: ['visionline_encoder'], type: 'string' },
             ],
           },
           display_name: {
@@ -3320,6 +3321,11 @@ export default {
                           device_name: { type: 'string' },
                         },
                         required: ['device_id', 'device_name'],
+                        type: 'object',
+                      },
+                      visionline_metadata: {
+                        properties: { encoder_id: { type: 'string' } },
+                        required: ['encoder_id'],
                         type: 'object',
                       },
                       wyze_metadata: {
@@ -4291,6 +4297,7 @@ export default {
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
+              { enum: ['visionline_encoder'], type: 'string' },
             ],
           },
           errors: {
@@ -10654,6 +10661,7 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      { enum: ['visionline_encoder'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -10706,6 +10714,7 @@ export default {
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
+                        { enum: ['visionline_encoder'], type: 'string' },
                       ],
                     },
                     type: 'array',
@@ -11136,6 +11145,7 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      { enum: ['visionline_encoder'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -11188,6 +11198,7 @@ export default {
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
+                        { enum: ['visionline_encoder'], type: 'string' },
                       ],
                     },
                     type: 'array',
@@ -11898,6 +11909,7 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      { enum: ['visionline_encoder'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -11950,6 +11962,7 @@ export default {
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
+                        { enum: ['visionline_encoder'], type: 'string' },
                       ],
                     },
                     type: 'array',
@@ -12343,6 +12356,7 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      { enum: ['visionline_encoder'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -12395,6 +12409,7 @@ export default {
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
+                        { enum: ['visionline_encoder'], type: 'string' },
                       ],
                     },
                     type: 'array',
@@ -13592,6 +13607,7 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      { enum: ['visionline_encoder'], type: 'string' },
                     ],
                   },
                   device_types: {
@@ -13644,6 +13660,7 @@ export default {
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
+                        { enum: ['visionline_encoder'], type: 'string' },
                       ],
                     },
                     type: 'array',
