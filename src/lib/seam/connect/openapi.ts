@@ -1269,6 +1269,100 @@ export default {
             type: 'object',
           },
           {
+            description: 'Encoding card data from physical encoder.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Encoding card data from physical encoder succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              error: { nullable: true },
+              result: {
+                properties: {
+                  acs_credential_id: {
+                    description:
+                      'Matching acs_credential currently encoded on this card.',
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  card_number: {
+                    description:
+                      'A number or sting that physically identifies this card.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['acs_credential_id', 'card_number'],
+                type: 'object',
+              },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Encoding card data from physical encoder failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { nullable: true },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             description: 'Resetting sandbox workspace.',
             properties: {
               action_attempt_id: {
@@ -7359,6 +7453,68 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'update',
+      },
+    },
+    '/acs/encoders/encode_card': {
+      post: {
+        operationId: 'acsEncodersEncodeCardPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      acs_system_id: { format: 'uuid', type: 'string' },
+                      device_name: { type: 'string' },
+                    },
+                    required: ['acs_system_id', 'device_name'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: ['device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/encode_card',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'encode_card',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-undocumented': 'Encoding a card is currently unimplemented.',
       },
     },
     '/acs/encoders/read_card': {
