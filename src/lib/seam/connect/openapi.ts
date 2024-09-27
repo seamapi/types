@@ -7544,6 +7544,90 @@ export default {
         'x-undocumented': 'Encoding a card is currently unimplemented.',
       },
     },
+    '/acs/encoders/list': {
+      post: {
+        operationId: 'acsEncodersListPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      acs_system_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      device_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['acs_system_ids', 'device_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['device_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      acs_system_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['acs_system_ids'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['devices', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/list',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'devices',
+      },
+    },
     '/acs/encoders/read_card': {
       post: {
         operationId: 'acsEncodersReadCardPost',
