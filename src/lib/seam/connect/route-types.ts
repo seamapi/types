@@ -7294,7 +7294,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -7320,7 +7320,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -7344,7 +7344,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -8068,7 +8068,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -8094,7 +8094,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -8118,7 +8118,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -9512,7 +9512,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -9538,7 +9538,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -9562,7 +9562,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -10118,7 +10118,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -10144,7 +10144,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -10168,7 +10168,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -10892,7 +10892,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -10918,7 +10918,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -10942,7 +10942,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -11498,7 +11498,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -11524,7 +11524,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -11548,7 +11548,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -13262,7 +13262,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -13288,7 +13288,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -13312,7 +13312,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -13868,7 +13868,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -13894,7 +13894,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -13918,7 +13918,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -16674,7 +16674,7 @@ export interface Routes {
     jsonBody: {
       device_id: string
       climate_preset_key: string
-      name?: string | null
+      name?: (string | null) | undefined
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
@@ -16690,7 +16690,7 @@ export interface Routes {
         climate_preset_key: string
         can_edit: boolean
         can_delete: boolean
-        name?: string | null
+        name?: (string | null) | undefined
         display_name: string
         fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
         hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
@@ -17196,7 +17196,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -17222,7 +17222,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -17246,7 +17246,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -18932,7 +18932,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -18958,7 +18958,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -18982,7 +18982,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -20153,7 +20153,7 @@ export interface Routes {
     jsonBody: {
       device_id: string
       climate_preset_key: string
-      name?: string | null
+      name?: (string | null) | undefined
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
       cooling_set_point_celsius?: number | undefined
@@ -20828,7 +20828,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -20854,7 +20854,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -20878,7 +20878,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
@@ -21436,7 +21436,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -21462,7 +21462,7 @@ export interface Routes {
                   climate_preset_key?: string | undefined
                   can_edit?: boolean | undefined
                   can_delete?: boolean | undefined
-                  name?: (string | null) | undefined
+                  name?: ((string | null) | undefined) | undefined
                   display_name?: string | undefined
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
@@ -21486,7 +21486,7 @@ export interface Routes {
                   climate_preset_key: string
                   can_edit: boolean
                   can_delete: boolean
-                  name?: string | null
+                  name?: (string | null) | undefined
                   display_name: string
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
                   hvac_mode_setting?:
