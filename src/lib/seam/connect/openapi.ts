@@ -6810,68 +6810,6 @@ export default {
         'x-fern-sdk-return-value': 'acs_entrances',
       },
     },
-    '/acs/credentials/read_card': {
-      post: {
-        operationId: 'acsCredentialsReadCardPost',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                oneOf: [
-                  {
-                    properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      device_name: { type: 'string' },
-                    },
-                    required: ['acs_system_id', 'device_name'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      device_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: ['device_id'],
-                    type: 'object',
-                  },
-                ],
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    action_attempt: {
-                      $ref: '#/components/schemas/action_attempt',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['action_attempt', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        security: [
-          { pat_with_workspace: [] },
-          { console_session: [] },
-          { api_key: [] },
-        ],
-        summary: '/acs/credentials/read_card',
-        tags: ['/acs'],
-        'x-fern-sdk-group-name': ['acs', 'credentials'],
-        'x-fern-sdk-method-name': 'read_card',
-        'x-fern-sdk-return-value': 'action_attempt',
-        'x-undocumented': 'Reading a card is currently unimplemented.',
-      },
-    },
     '/acs/credentials/unassign': {
       patch: {
         operationId: 'acsCredentialsUnassignPatch',
@@ -7405,6 +7343,68 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'update',
+      },
+    },
+    '/acs/encoders/read_card': {
+      post: {
+        operationId: 'acsEncodersReadCardPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    properties: {
+                      acs_system_id: { format: 'uuid', type: 'string' },
+                      device_name: { type: 'string' },
+                    },
+                    required: ['acs_system_id', 'device_name'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: ['device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/encoders/read_card',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders'],
+        'x-fern-sdk-method-name': 'read_card',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-undocumented': 'Reading a card is currently unimplemented.',
       },
     },
     '/acs/entrances/get': {
