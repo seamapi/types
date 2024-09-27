@@ -2811,6 +2811,18 @@ export interface Routes {
                 | undefined
             }
           | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
+            }
+          | undefined
       }>
     }
   }
@@ -3403,6 +3415,18 @@ export interface Routes {
                     visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
                   }>
                 | undefined
+            }
+          | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
             }
           | undefined
       }>
@@ -4742,6 +4766,18 @@ export interface Routes {
                 | undefined
             }
           | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
+            }
+          | undefined
       }
     }
   }
@@ -4800,6 +4836,18 @@ export interface Routes {
                     visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
                   }>
                 | undefined
+            }
+          | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
             }
           | undefined
       }>
@@ -5719,6 +5767,18 @@ export interface Routes {
                     visionline_door_profile_type: 'BLE' | 'commonDoor' | 'touch'
                   }>
                 | undefined
+            }
+          | undefined
+        salto_ks_metadata?:
+          | {
+              door_name: string
+              locked_state: string
+              lock_type: string
+              online: boolean
+              battery_level: string
+              left_open_alarm: boolean
+              intrusion_alarm: boolean
+              privacy_mode: boolean
             }
           | undefined
       }>
