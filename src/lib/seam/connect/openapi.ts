@@ -7596,6 +7596,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-undocumented': 'Encoders are in alpha.',
       },
     },
     '/acs/encoders/read_card': {
