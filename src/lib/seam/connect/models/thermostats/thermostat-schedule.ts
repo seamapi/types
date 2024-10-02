@@ -5,7 +5,7 @@ export const thermostat_schedule = z.object({
   device_id: z.string().uuid(),
   name: z.string().optional(),
   climate_preset_key: z.string(),
-  max_override_period_minutes: z.number().int().nonnegative().default(0),
+  max_override_period_minutes: z.number().int().nonnegative(),
   starts_at: z.string().datetime(),
   ends_at: z.string().datetime(),
   created_at: z.string().datetime(),

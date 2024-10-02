@@ -3530,7 +3530,6 @@ export default {
                               'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
                           },
                           max_override_period_minutes: {
-                            default: 0,
                             minimum: 0,
                             type: 'integer',
                           },
@@ -3545,6 +3544,7 @@ export default {
                           'thermostat_schedule_id',
                           'device_id',
                           'climate_preset_key',
+                          'max_override_period_minutes',
                           'starts_at',
                           'ends_at',
                           'created_at',
@@ -4159,11 +4159,7 @@ export default {
             description:
               'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
           },
-          max_override_period_minutes: {
-            default: 0,
-            minimum: 0,
-            type: 'integer',
-          },
+          max_override_period_minutes: { minimum: 0, type: 'integer' },
           name: { type: 'string' },
           starts_at: { format: 'date-time', type: 'string' },
           thermostat_schedule_id: { format: 'uuid', type: 'string' },
@@ -4172,6 +4168,7 @@ export default {
           'thermostat_schedule_id',
           'device_id',
           'climate_preset_key',
+          'max_override_period_minutes',
           'starts_at',
           'ends_at',
           'created_at',

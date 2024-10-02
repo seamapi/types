@@ -4779,7 +4779,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -8801,7 +8801,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -9575,7 +9575,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -11041,7 +11041,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -11647,7 +11647,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -12421,7 +12421,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -13027,7 +13027,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -14855,7 +14855,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -15461,7 +15461,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -18934,7 +18934,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -20734,7 +20734,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -21331,7 +21331,7 @@ export interface Routes {
         device_id: string
         name?: string | undefined
         climate_preset_key: string
-        max_override_period_minutes?: number
+        max_override_period_minutes: number
         starts_at: string
         ends_at: string
         created_at: string
@@ -21366,7 +21366,7 @@ export interface Routes {
         device_id: string
         name?: string | undefined
         climate_preset_key: string
-        max_override_period_minutes?: number
+        max_override_period_minutes: number
         starts_at: string
         ends_at: string
         created_at: string
@@ -21391,7 +21391,7 @@ export interface Routes {
         device_id: string
         name?: string | undefined
         climate_preset_key: string
-        max_override_period_minutes?: number
+        max_override_period_minutes: number
         starts_at: string
         ends_at: string
         created_at: string
@@ -22694,7 +22694,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
@@ -23302,7 +23302,7 @@ export interface Routes {
                   device_id: string
                   name?: string | undefined
                   climate_preset_key: string
-                  max_override_period_minutes?: number
+                  max_override_period_minutes: number
                   starts_at: string
                   ends_at: string
                   created_at: string
