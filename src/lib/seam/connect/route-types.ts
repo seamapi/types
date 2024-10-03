@@ -10324,7 +10324,7 @@ export interface Routes {
             created_at: string
             occurred_at: string
             event_description: string
-            thermostat_schedule_id?: string | undefined
+            thermostat_schedule_id?: (string | undefined) | null
             is_fallback_climate_preset?: boolean | undefined
             climate_preset_key?: string | undefined
             hvac_mode_setting?: string | undefined
@@ -10506,7 +10506,7 @@ export interface Routes {
         created_at: string
         occurred_at: string
         event_description: string
-        thermostat_schedule_id?: string | undefined
+        thermostat_schedule_id?: (string | undefined) | null
         is_fallback_climate_preset?: boolean | undefined
         climate_preset_key?: string | undefined
         hvac_mode_setting?: string | undefined
