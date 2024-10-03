@@ -3936,7 +3936,11 @@ export default {
           hvac_mode_setting: { type: 'string' },
           is_fallback_climate_preset: { type: 'boolean' },
           occurred_at: { format: 'date-time', type: 'string' },
-          thermostat_schedule_id: { format: 'uuid', type: 'string' },
+          thermostat_schedule_id: {
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
