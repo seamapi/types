@@ -94,12 +94,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -762,12 +757,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -1595,12 +1585,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -2250,12 +2235,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -3795,12 +3775,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -4872,6 +4847,7 @@ export interface Routes {
           device_name: string
         }
       | {
+          acs_system_id: string
           device_id: string
         }
     formData: {}
@@ -4945,12 +4921,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -6850,12 +6821,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -7359,12 +7325,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -13254,12 +13215,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -13764,12 +13720,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -15710,12 +15661,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -16230,12 +16176,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -16789,12 +16730,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -17505,12 +17441,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18017,12 +17948,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19187,12 +19113,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19701,12 +19622,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -20995,12 +20911,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -21626,12 +21537,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -24004,12 +23910,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'READ_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or sting that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */

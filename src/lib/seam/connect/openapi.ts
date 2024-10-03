@@ -1248,25 +1248,7 @@ export default {
               },
               action_type: { enum: ['READ_CARD'], type: 'string' },
               error: { nullable: true },
-              result: {
-                properties: {
-                  acs_credential_id: {
-                    description:
-                      'Matching acs_credential currently encoded on this card.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  card_number: {
-                    description:
-                      'A number or sting that physically identifies this card.',
-                    nullable: true,
-                    type: 'string',
-                  },
-                },
-                required: ['acs_credential_id', 'card_number'],
-                type: 'object',
-              },
+              result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7644,9 +7626,10 @@ export default {
                   },
                   {
                     properties: {
+                      acs_system_id: { format: 'uuid', type: 'string' },
                       device_id: { format: 'uuid', type: 'string' },
                     },
-                    required: ['device_id'],
+                    required: ['acs_system_id', 'device_id'],
                     type: 'object',
                   },
                 ],
