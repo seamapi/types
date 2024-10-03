@@ -376,10 +376,26 @@ export default {
       },
       acs_entrance: {
         properties: {
-          acs_entrance_id: { format: 'uuid', type: 'string' },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          display_name: { type: 'string' },
+          acs_entrance_id: {
+            description: 'ID of the entrance.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the entrance.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the entrance was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the entrance.',
+            type: 'string',
+          },
           errors: {
             items: {
               properties: {
@@ -3936,7 +3952,11 @@ export default {
           hvac_mode_setting: { type: 'string' },
           is_fallback_climate_preset: { type: 'boolean' },
           occurred_at: { format: 'date-time', type: 'string' },
-          thermostat_schedule_id: { format: 'uuid', type: 'string' },
+          thermostat_schedule_id: {
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+          },
           workspace_id: { format: 'uuid', type: 'string' },
         },
         required: [
