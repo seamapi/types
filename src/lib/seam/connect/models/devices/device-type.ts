@@ -28,6 +28,7 @@ export const LOCK_DEVICE_TYPE = {
   FOUR_SUITES_DOOR: 'four_suites_door',
   DORMAKABA_ORACODE_DOOR: 'dormakaba_oracode_door',
   TEDEE_LOCK: 'tedee_lock',
+  AKILES_LOCK: 'akiles_lock',
 } as const
 
 type LockDeviceTypeFromMapping =
