@@ -241,6 +241,11 @@ export const device_metadata = z
     visionline_metadata: z.object({
       encoder_id: z.string(),
     }),
+
+    akiles_metadata: z.object({
+      gadget_name: z.string(),
+      gadget_id: z.string(),
+    }),
   })
   .partial()
 

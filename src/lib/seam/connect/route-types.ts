@@ -4270,6 +4270,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -4641,6 +4642,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -8292,6 +8299,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -8663,6 +8671,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -8907,6 +8921,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -8947,6 +8962,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -8994,6 +9010,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'akiles'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -9066,6 +9083,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -9437,6 +9455,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -9799,6 +9823,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -9958,6 +9983,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -9998,6 +10024,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -10045,6 +10072,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'akiles'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -10117,6 +10145,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -10295,7 +10324,7 @@ export interface Routes {
             created_at: string
             occurred_at: string
             event_description: string
-            thermostat_schedule_id?: string | undefined
+            thermostat_schedule_id?: (string | undefined) | null
             is_fallback_climate_preset?: boolean | undefined
             climate_preset_key?: string | undefined
             hvac_mode_setting?: string | undefined
@@ -10477,7 +10506,7 @@ export interface Routes {
         created_at: string
         occurred_at: string
         event_description: string
-        thermostat_schedule_id?: string | undefined
+        thermostat_schedule_id?: (string | undefined) | null
         is_fallback_climate_preset?: boolean | undefined
         climate_preset_key?: string | undefined
         hvac_mode_setting?: string | undefined
@@ -10532,6 +10561,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -10903,6 +10933,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -11138,6 +11174,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -11509,6 +11546,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -11753,6 +11796,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -11793,6 +11837,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -11840,6 +11885,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'akiles'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -11912,6 +11958,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -12283,6 +12330,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -12518,6 +12571,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -12889,6 +12943,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -14187,6 +14247,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -14227,6 +14288,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -14274,6 +14336,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'akiles'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -14346,6 +14409,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -14717,6 +14781,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -14952,6 +15022,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -15323,6 +15394,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -18425,6 +18502,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -18796,6 +18874,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -20066,6 +20150,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -20106,6 +20191,7 @@ export interface Routes {
                 | 'four_suites_door'
                 | 'dormakaba_oracode_door'
                 | 'tedee_lock'
+                | 'akiles_lock'
               )
             | ('noiseaware_activity_zone' | 'minut_sensor')
             | (
@@ -20153,6 +20239,7 @@ export interface Routes {
             | 'dormakaba_oracode'
             | 'tedee'
             | 'honeywell_resideo'
+            | 'akiles'
           )
         | undefined
       device_ids?: string[] | undefined
@@ -20225,6 +20312,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -20596,6 +20684,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -22185,6 +22279,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -22556,6 +22651,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
@@ -22793,6 +22894,7 @@ export interface Routes {
               | 'four_suites_door'
               | 'dormakaba_oracode_door'
               | 'tedee_lock'
+              | 'akiles_lock'
             )
           | ('noiseaware_activity_zone' | 'minut_sensor')
           | (
@@ -23164,6 +23266,12 @@ export interface Routes {
           visionline_metadata?:
             | {
                 encoder_id: string
+              }
+            | undefined
+          akiles_metadata?:
+            | {
+                gadget_name: string
+                gadget_id: string
               }
             | undefined
         }) &
