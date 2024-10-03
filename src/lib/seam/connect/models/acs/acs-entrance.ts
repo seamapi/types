@@ -7,10 +7,16 @@ import {
 } from './metadata/index.js'
 
 export const acs_entrance = z.object({
-  acs_system_id: z.string().uuid(),
-  acs_entrance_id: z.string().uuid(),
-  created_at: z.string().datetime(),
-  display_name: z.string(),
+  acs_system_id: z
+    .string()
+    .uuid()
+    .describe('ID of the access control system that contains the entrance.'),
+  acs_entrance_id: z.string().uuid().describe('ID of the entrance.'),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the entrance was created.'),
+  display_name: z.string().describe('Display name for the entrance.'),
   errors: z.array(
     z.object({
       error_code: z.string(),

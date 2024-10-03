@@ -376,10 +376,26 @@ export default {
       },
       acs_entrance: {
         properties: {
-          acs_entrance_id: { format: 'uuid', type: 'string' },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          display_name: { type: 'string' },
+          acs_entrance_id: {
+            description: 'ID of the entrance.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the entrance.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the entrance was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the entrance.',
+            type: 'string',
+          },
           errors: {
             items: {
               properties: {
@@ -1232,25 +1248,7 @@ export default {
               },
               action_type: { enum: ['READ_CARD'], type: 'string' },
               error: { nullable: true },
-              result: {
-                properties: {
-                  acs_credential_id: {
-                    description:
-                      'Matching acs_credential currently encoded on this card.',
-                    format: 'uuid',
-                    nullable: true,
-                    type: 'string',
-                  },
-                  card_number: {
-                    description:
-                      'A number or sting that physically identifies this card.',
-                    nullable: true,
-                    type: 'string',
-                  },
-                },
-                required: ['acs_credential_id', 'card_number'],
-                type: 'object',
-              },
+              result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7628,9 +7626,10 @@ export default {
                   },
                   {
                     properties: {
+                      acs_system_id: { format: 'uuid', type: 'string' },
                       device_id: { format: 'uuid', type: 'string' },
                     },
-                    required: ['device_id'],
+                    required: ['acs_system_id', 'device_id'],
                     type: 'object',
                   },
                 ],

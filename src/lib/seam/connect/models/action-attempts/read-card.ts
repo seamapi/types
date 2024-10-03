@@ -14,15 +14,15 @@ const error = z.object({
 })
 
 const result = z.object({
-  acs_credential_id: z
-    .string()
-    .uuid()
-    .nullable()
-    .describe('Matching acs_credential currently encoded on this card.'),
-  card_number: z
-    .string()
-    .nullable()
-    .describe('A number or sting that physically identifies this card.'),
+  // TODO acs_credential_id: z
+  //   .string()
+  //   .uuid()
+  //   .nullable()
+  //   .describe("Matching acs_credential currently encoded on this card."),
+  // card_number: z
+  //   .string()
+  //   .nullable()
+  //   .describe("A number or sting that physically identifies this card."),
   // TODO visionline_metadata: visionline_credential_metadata,
 })
 
