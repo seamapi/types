@@ -2778,9 +2778,13 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
+        /** ID of the access control system that contains the entrance. */
         acs_system_id: string
+        /** ID of the entrance. */
         acs_entrance_id: string
+        /** Date and time at which the entrance was created. */
         created_at: string
+        /** Display name for the entrance. */
         display_name: string
         errors: Array<{
           error_code: string
@@ -3389,9 +3393,13 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
+        /** ID of the access control system that contains the entrance. */
         acs_system_id: string
+        /** ID of the entrance. */
         acs_entrance_id: string
+        /** Date and time at which the entrance was created. */
         created_at: string
+        /** Display name for the entrance. */
         display_name: string
         errors: Array<{
           error_code: string
@@ -5378,9 +5386,13 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrance: {
+        /** ID of the access control system that contains the entrance. */
         acs_system_id: string
+        /** ID of the entrance. */
         acs_entrance_id: string
+        /** Date and time at which the entrance was created. */
         created_at: string
+        /** Display name for the entrance. */
         display_name: string
         errors: Array<{
           error_code: string
@@ -5450,9 +5462,13 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
+        /** ID of the access control system that contains the entrance. */
         acs_system_id: string
+        /** ID of the entrance. */
         acs_entrance_id: string
+        /** Date and time at which the entrance was created. */
         created_at: string
+        /** Display name for the entrance. */
         display_name: string
         errors: Array<{
           error_code: string
@@ -6382,9 +6398,13 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_entrances: Array<{
+        /** ID of the access control system that contains the entrance. */
         acs_system_id: string
+        /** ID of the entrance. */
         acs_entrance_id: string
+        /** Date and time at which the entrance was created. */
         created_at: string
+        /** Display name for the entrance. */
         display_name: string
         errors: Array<{
           error_code: string
