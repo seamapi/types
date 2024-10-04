@@ -22,7 +22,7 @@ const result = z.object({
   card_number: z
     .string()
     .nullable()
-    .describe('A number or sting that physically identifies this card.'),
+    .describe('A number or string that physically identifies this card.'),
   // TODO visionline_metadata: visionline_credential_metadata,
 })
 

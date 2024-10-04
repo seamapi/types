@@ -1248,7 +1248,18 @@ export default {
               },
               action_type: { enum: ['READ_CARD'], type: 'string' },
               error: { nullable: true },
-              result: { properties: {}, type: 'object' },
+              result: {
+                properties: {
+                  card_number: {
+                    description:
+                      'A number or string that physically identifies this card.',
+                    nullable: true,
+                    type: 'string',
+                  },
+                },
+                required: ['card_number'],
+                type: 'object',
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -1335,7 +1346,7 @@ export default {
                   },
                   card_number: {
                     description:
-                      'A number or sting that physically identifies this card.',
+                      'A number or string that physically identifies this card.',
                     nullable: true,
                     type: 'string',
                   },
