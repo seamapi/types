@@ -9,7 +9,7 @@ import {
 const action_type = z.literal('READ_CARD')
 
 const error = z.object({
-  type: z.string(), // TODO This should be typed properly with the possible errors
+  type: z.literal('no_card_on_encoder'),
   message: z.string(),
 })
 
