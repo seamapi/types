@@ -1284,7 +1284,7 @@ export default {
               error: {
                 properties: {
                   message: { type: 'string' },
-                  type: { type: 'string' },
+                  type: { enum: ['no_card_on_encoder'], type: 'string' },
                 },
                 required: ['type', 'message'],
                 type: 'object',

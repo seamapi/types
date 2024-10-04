@@ -106,7 +106,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -772,7 +772,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -1603,7 +1603,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -2256,7 +2256,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -3799,7 +3799,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -4948,7 +4948,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -6851,7 +6851,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -7358,7 +7358,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -13251,7 +13251,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -13759,7 +13759,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -15703,7 +15703,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -16221,7 +16221,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -16778,7 +16778,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -17492,7 +17492,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -18002,7 +18002,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -19170,7 +19170,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -19682,7 +19682,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -20974,7 +20974,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -21603,7 +21603,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
@@ -23979,7 +23979,7 @@ export interface Routes {
             result: null
             action_type: 'READ_CARD'
             error: {
-              type: string
+              type: 'no_card_on_encoder'
               message: string
             }
           }
