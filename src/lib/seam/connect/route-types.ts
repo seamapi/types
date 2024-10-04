@@ -3092,8 +3092,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3177,8 +3177,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3251,8 +3251,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3330,8 +3330,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3457,8 +3457,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3520,8 +3520,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3594,8 +3594,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -3659,8 +3659,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
@@ -5523,8 +5523,8 @@ export interface Routes {
         display_name: string
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
-        is_encoded?: boolean | undefined
-        encoded_at?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
         access_method: 'code' | 'card' | 'mobile_key'
         external_type?:
           | (
