@@ -4819,6 +4819,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
       },
     },
     '/access_codes/create_multiple': {
@@ -4904,6 +4905,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'create_multiple',
         'x-fern-sdk-return-value': 'access_codes',
+        'x-response-key': 'access_codes',
       },
       put: {
         operationId: 'accessCodesCreateMultiplePut',
@@ -4985,6 +4987,7 @@ export default {
         summary: '/access_codes/create_multiple',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': 'access_codes',
       },
     },
     '/access_codes/delete': {
@@ -5036,6 +5039,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/access_codes/generate_code': {
@@ -5084,6 +5088,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'generate_code',
         'x-fern-sdk-return-value': 'generated_code',
+        'x-response-key': 'generated_code',
       },
     },
     '/access_codes/get': {
@@ -5133,6 +5138,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
       },
     },
     '/access_codes/list': {
@@ -5188,6 +5194,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_codes',
+        'x-response-key': 'access_codes',
       },
     },
     '/access_codes/pull_backup_access_code': {
@@ -5238,6 +5245,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'pull_backup_access_code',
         'x-fern-sdk-return-value': 'backup_access_code',
+        'x-response-key': 'backup_access_code',
       },
     },
     '/access_codes/simulate/create_unmanaged_access_code': {
@@ -5295,6 +5303,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'simulate'],
         'x-fern-sdk-method-name': 'create_unmanaged_access_code',
         'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
       },
     },
     '/access_codes/unmanaged/convert_to_managed': {
@@ -5342,6 +5351,7 @@ export default {
         summary: '/access_codes/unmanaged/convert_to_managed',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'accessCodesUnmanagedConvertToManagedPost',
@@ -5388,6 +5398,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'convert_to_managed',
+        'x-response-key': null,
       },
     },
     '/access_codes/unmanaged/delete': {
@@ -5438,6 +5449,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/access_codes/unmanaged/get': {
@@ -5489,6 +5501,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
       },
     },
     '/access_codes/unmanaged/list': {
@@ -5543,6 +5556,7 @@ export default {
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'access_codes',
+        'x-response-key': 'access_codes',
       },
     },
     '/access_codes/unmanaged/update': {
@@ -5590,6 +5604,7 @@ export default {
         summary: '/access_codes/unmanaged/update',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'accessCodesUnmanagedUpdatePost',
@@ -5636,6 +5651,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes', 'unmanaged'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/access_codes/update': {
@@ -5714,6 +5730,7 @@ export default {
         summary: '/access_codes/update',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'accessCodesUpdatePost',
@@ -5791,6 +5808,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
       put: {
         operationId: 'accessCodesUpdatePut',
@@ -5867,6 +5885,7 @@ export default {
         summary: '/access_codes/update',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/acs/access_groups/add_user': {
@@ -5911,6 +5930,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'add_user',
+        'x-response-key': null,
       },
       put: {
         operationId: 'acsAccessGroupsAddUserPut',
@@ -5952,6 +5972,7 @@ export default {
         summary: '/acs/access_groups/add_user',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/acs/access_groups/get': {
@@ -6001,6 +6022,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_access_group',
+        'x-response-key': 'acs_access_group',
       },
     },
     '/acs/access_groups/list': {
@@ -6051,6 +6073,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_access_groups',
+        'x-response-key': 'acs_access_groups',
       },
     },
     '/acs/access_groups/list_accessible_entrances': {
@@ -6101,6 +6124,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'list_accessible_entrances',
         'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
       },
     },
     '/acs/access_groups/list_users': {
@@ -6151,6 +6175,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'list_users',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
       },
     },
     '/acs/access_groups/remove_user': {
@@ -6195,6 +6220,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'remove_user',
+        'x-response-key': null,
       },
     },
     '/acs/access_groups/unmanaged/get': {
@@ -6292,6 +6318,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_access_group',
+        'x-response-key': 'acs_access_group',
       },
     },
     '/acs/access_groups/unmanaged/list': {
@@ -6395,6 +6422,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_access_groups',
+        'x-response-key': 'acs_access_groups',
       },
     },
     '/acs/credential_pools/list': {
@@ -6447,6 +6475,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credential_pools'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credential_pools',
+        'x-response-key': 'acs_credential_pools',
       },
     },
     '/acs/credential_provisioning_automations/launch': {
@@ -6509,6 +6538,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
+        'x-response-key': 'acs_credential_provisioning_automation',
       },
     },
     '/acs/credentials/assign': {
@@ -6557,6 +6587,7 @@ export default {
         summary: '/acs/credentials/assign',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'acsCredentialsAssignPost',
@@ -6604,6 +6635,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'assign',
+        'x-response-key': null,
       },
     },
     '/acs/credentials/create': {
@@ -6702,6 +6734,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
       },
     },
     '/acs/credentials/delete': {
@@ -6745,6 +6778,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/acs/credentials/get': {
@@ -6794,6 +6828,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
       },
     },
     '/acs/credentials/list': {
@@ -6883,6 +6918,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
       },
     },
     '/acs/credentials/list_accessible_entrances': {
@@ -6933,6 +6969,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'list_accessible_entrances',
         'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
       },
     },
     '/acs/credentials/unassign': {
@@ -6981,6 +7018,7 @@ export default {
         summary: '/acs/credentials/unassign',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'acsCredentialsUnassignPost',
@@ -7028,6 +7066,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'unassign',
+        'x-response-key': null,
       },
     },
     '/acs/credentials/unmanaged/get': {
@@ -7186,6 +7225,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
       },
     },
     '/acs/credentials/unmanaged/list': {
@@ -7373,6 +7413,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
       },
     },
     '/acs/credentials/update': {
@@ -7422,6 +7463,7 @@ export default {
         summary: '/acs/credentials/update',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'acsCredentialsUpdatePost',
@@ -7470,6 +7512,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/acs/encoders/encode_card': {
@@ -7531,6 +7574,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders'],
         'x-fern-sdk-method-name': 'encode_card',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-undocumented': 'Encoding a card is currently unimplemented.',
       },
     },
@@ -7616,6 +7660,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
         'x-undocumented': 'Encoders are in alpha.',
       },
     },
@@ -7679,6 +7724,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders'],
         'x-fern-sdk-method-name': 'read_card',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
         'x-undocumented': 'Reading a card is currently unimplemented.',
       },
     },
@@ -7728,6 +7774,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_entrance',
+        'x-response-key': 'acs_entrance',
       },
     },
     '/acs/entrances/grant_access': {
@@ -7772,6 +7819,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'grant_access',
+        'x-response-key': null,
       },
     },
     '/acs/entrances/list': {
@@ -7823,6 +7871,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_entrances',
+        'x-response-key': 'acs_entrances',
       },
     },
     '/acs/entrances/list_credentials_with_access': {
@@ -7881,6 +7930,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'list_credentials_with_access',
         'x-fern-sdk-return-value': 'acs_credentials',
+        'x-response-key': 'acs_credentials',
       },
     },
     '/acs/systems/get': {
@@ -8109,6 +8159,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'add_to_access_group',
+        'x-response-key': null,
         'x-title': 'Add an ACS User to an Access Group',
       },
       put: {
@@ -8161,6 +8212,7 @@ export default {
         summary: '/acs/users/add_to_access_group',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
         'x-title': 'Add an ACS User to an Access Group',
       },
     },
@@ -8310,6 +8362,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
         'x-title': 'Delete an ACS User',
       },
     },
@@ -8556,6 +8609,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'remove_from_access_group',
+        'x-response-key': null,
         'x-title': 'Remove an ACS User from an Access Group',
       },
     },
@@ -8606,6 +8660,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'revoke_access_to_all_entrances',
+        'x-response-key': null,
         'x-title': 'Revoke ACS User Access to All Entrances',
       },
     },
@@ -8656,6 +8711,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'suspend',
+        'x-response-key': null,
         'x-title': 'Suspend an ACS User',
       },
     },
@@ -9030,6 +9086,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_user',
+        'x-response-key': 'acs_user',
         'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
@@ -9416,6 +9473,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'users', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
         'x-undocumented': 'No unmanaged users are currently implemented.',
       },
     },
@@ -9466,6 +9524,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'unsuspend',
+        'x-response-key': null,
         'x-title': 'Unsuspend an ACS User',
       },
     },
@@ -9547,6 +9606,7 @@ export default {
         summary: '/acs/users/update',
         tags: ['/acs'],
         'x-fern-ignore': true,
+        'x-response-key': null,
         'x-title': 'Update an ACS User',
       },
       post: {
@@ -9627,6 +9687,7 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'users'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
         'x-title': 'Update an ACS User',
       },
     },
@@ -9678,6 +9739,7 @@ export default {
         'x-fern-sdk-group-name': ['action_attempts'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/action_attempts/list': {
@@ -9731,6 +9793,7 @@ export default {
         'x-fern-sdk-group-name': ['action_attempts'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'action_attempts',
+        'x-response-key': 'action_attempts',
       },
     },
     '/client_sessions/create': {
@@ -9787,6 +9850,7 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'client_session',
+        'x-response-key': 'client_session',
       },
       put: {
         operationId: 'clientSessionsCreatePut',
@@ -9839,6 +9903,7 @@ export default {
         summary: '/client_sessions/create',
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
+        'x-response-key': 'client_session',
       },
     },
     '/client_sessions/delete': {
@@ -9882,6 +9947,7 @@ export default {
         tags: ['/client_sessions'],
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/client_sessions/get': {
@@ -9932,6 +9998,7 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'client_session',
+        'x-response-key': 'client_session',
       },
     },
     '/client_sessions/get_or_create': {
@@ -9988,6 +10055,7 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'get_or_create',
         'x-fern-sdk-return-value': 'client_session',
+        'x-response-key': 'client_session',
       },
       put: {
         operationId: 'clientSessionsGetOrCreatePut',
@@ -10040,6 +10108,7 @@ export default {
         summary: '/client_sessions/get_or_create',
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
+        'x-response-key': 'client_session',
       },
     },
     '/client_sessions/grant_access': {
@@ -10099,6 +10168,7 @@ export default {
         summary: '/client_sessions/grant_access',
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'clientSessionsGrantAccessPost',
@@ -10157,6 +10227,7 @@ export default {
         tags: ['/client_sessions'],
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'grant_access',
+        'x-response-key': null,
       },
     },
     '/client_sessions/list': {
@@ -10210,6 +10281,7 @@ export default {
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'client_sessions',
+        'x-response-key': 'client_sessions',
       },
     },
     '/client_sessions/revoke': {
@@ -10253,6 +10325,7 @@ export default {
         tags: ['/client_sessions'],
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'revoke',
+        'x-response-key': null,
       },
     },
     '/connect_webviews/create': {
@@ -10382,6 +10455,7 @@ export default {
         'x-fern-sdk-group-name': ['connect_webviews'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'connect_webview',
+        'x-response-key': 'connect_webview',
       },
     },
     '/connect_webviews/delete': {
@@ -10425,6 +10499,7 @@ export default {
         tags: ['/connect_webviews'],
         'x-fern-sdk-group-name': ['connect_webviews'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/connect_webviews/get': {
@@ -10475,6 +10550,7 @@ export default {
         'x-fern-sdk-group-name': ['connect_webviews'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'connect_webview',
+        'x-response-key': 'connect_webview',
       },
     },
     '/connect_webviews/list': {
@@ -10538,6 +10614,7 @@ export default {
         'x-fern-sdk-group-name': ['connect_webviews'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'connect_webviews',
+        'x-response-key': 'connect_webviews',
       },
     },
     '/connected_accounts/delete': {
@@ -10582,6 +10659,7 @@ export default {
         tags: ['/connected_accounts'],
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/connected_accounts/get': {
@@ -10641,6 +10719,7 @@ export default {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'connected_account',
+        'x-response-key': 'connected_account',
       },
     },
     '/connected_accounts/list': {
@@ -10702,6 +10781,7 @@ export default {
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'connected_accounts',
+        'x-response-key': 'connected_accounts',
       },
     },
     '/connected_accounts/update': {
@@ -10761,7 +10841,7 @@ export default {
         tags: ['/connected_accounts'],
         'x-fern-sdk-group-name': ['connected_accounts'],
         'x-fern-sdk-method-name': 'update',
-        'x-fern-sdk-return-value': 'connected_account',
+        'x-response-key': null,
       },
     },
     '/devices/delete': {
@@ -10803,6 +10883,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/devices/get': {
@@ -10851,6 +10932,7 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
       },
     },
     '/devices/list': {
@@ -11108,6 +11190,7 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/devices/list_device_providers': {
@@ -11167,6 +11250,7 @@ export default {
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'list_device_providers',
         'x-fern-sdk-return-value': 'device_providers',
+        'x-response-key': 'device_providers',
       },
     },
     '/devices/simulate/connect': {
@@ -11208,6 +11292,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'connect',
+        'x-response-key': null,
       },
     },
     '/devices/simulate/disconnect': {
@@ -11249,6 +11334,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'disconnect',
+        'x-response-key': null,
       },
     },
     '/devices/simulate/remove': {
@@ -11290,6 +11376,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'remove',
+        'x-response-key': null,
       },
     },
     '/devices/unmanaged/get': {
@@ -11338,6 +11425,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'unmanaged'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
       },
     },
     '/devices/unmanaged/list': {
@@ -11594,6 +11682,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'unmanaged'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/devices/unmanaged/update': {
@@ -11637,6 +11726,7 @@ export default {
         summary: '/devices/unmanaged/update',
         tags: ['/devices'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'devicesUnmanagedUpdatePost',
@@ -11679,6 +11769,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices', 'unmanaged'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/devices/update': {
@@ -11737,6 +11828,7 @@ export default {
         summary: '/devices/update',
         tags: ['/devices'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'devicesUpdatePost',
@@ -11794,6 +11886,7 @@ export default {
         tags: ['/devices'],
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/events/get': {
@@ -11844,6 +11937,7 @@ export default {
         'x-fern-sdk-group-name': ['events'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'event',
+        'x-response-key': 'event',
       },
     },
     '/events/list': {
@@ -12059,6 +12153,7 @@ export default {
         'x-fern-sdk-group-name': ['events'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'events',
+        'x-response-key': 'events',
       },
     },
     '/locks/get': {
@@ -12109,6 +12204,7 @@ export default {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'device',
+        'x-response-key': 'device',
       },
     },
     '/locks/list': {
@@ -12370,6 +12466,7 @@ export default {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/locks/lock_door': {
@@ -12421,6 +12518,7 @@ export default {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'lock_door',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/locks/unlock_door': {
@@ -12472,6 +12570,7 @@ export default {
         'x-fern-sdk-group-name': ['locks'],
         'x-fern-sdk-method-name': 'unlock_door',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/networks/get': {
@@ -12517,6 +12616,7 @@ export default {
         'x-fern-sdk-group-name': ['networks'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'network',
+        'x-response-key': 'network',
       },
     },
     '/networks/list': {
@@ -12559,6 +12659,7 @@ export default {
         'x-fern-sdk-group-name': ['networks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'networks',
+        'x-response-key': 'networks',
       },
     },
     '/noise_sensors/list': {
@@ -12820,6 +12921,7 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/noise_sensors/noise_thresholds/create': {
@@ -12878,6 +12980,7 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'noise_threshold',
+        'x-response-key': 'noise_threshold',
       },
     },
     '/noise_sensors/noise_thresholds/delete': {
@@ -12928,6 +13031,7 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/noise_sensors/noise_thresholds/get': {
@@ -12977,6 +13081,7 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'noise_threshold',
+        'x-response-key': 'noise_threshold',
       },
     },
     '/noise_sensors/noise_thresholds/list': {
@@ -13029,6 +13134,7 @@ export default {
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'noise_thresholds',
+        'x-response-key': 'noise_thresholds',
       },
     },
     '/noise_sensors/noise_thresholds/update': {
@@ -13083,6 +13189,7 @@ export default {
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'noiseSensorsNoiseThresholdsUpdatePost',
@@ -13136,6 +13243,7 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'noise_thresholds'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
       put: {
         operationId: 'noiseSensorsNoiseThresholdsUpdatePut',
@@ -13188,6 +13296,7 @@ export default {
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/noise_sensors/simulate/trigger_noise_threshold': {
@@ -13229,6 +13338,7 @@ export default {
         tags: ['/noise_sensors'],
         'x-fern-sdk-group-name': ['noise_sensors', 'simulate'],
         'x-fern-sdk-method-name': 'trigger_noise_threshold',
+        'x-response-key': null,
       },
     },
     '/phones/deactivate': {
@@ -13271,6 +13381,7 @@ export default {
         tags: ['/phones'],
         'x-fern-sdk-group-name': ['phones'],
         'x-fern-sdk-method-name': 'deactivate',
+        'x-response-key': null,
       },
     },
     '/phones/list': {
@@ -13321,6 +13432,7 @@ export default {
         'x-fern-sdk-group-name': ['phones'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'phones',
+        'x-response-key': 'phones',
       },
     },
     '/phones/simulate/create_sandbox_phone': {
@@ -13405,6 +13517,7 @@ export default {
         'x-fern-sdk-group-name': ['phones', 'simulate'],
         'x-fern-sdk-method-name': 'create_sandbox_phone',
         'x-fern-sdk-return-value': 'phone',
+        'x-response-key': 'phone',
       },
     },
     '/thermostats/activate_climate_preset': {
@@ -13455,6 +13568,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'activate_climate_preset',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/cool': {
@@ -13514,6 +13628,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'cool',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/create_climate_preset': {
@@ -13588,6 +13703,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'create_climate_preset',
+        'x-response-key': null,
       },
     },
     '/thermostats/delete_climate_preset': {
@@ -13632,6 +13748,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'delete_climate_preset',
+        'x-response-key': null,
       },
     },
     '/thermostats/get': {
@@ -13681,6 +13798,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat',
+        'x-response-key': 'thermostat',
       },
     },
     '/thermostats/heat': {
@@ -13740,6 +13858,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'heat',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/heat_cool': {
@@ -13807,6 +13926,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'heat_cool',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/list': {
@@ -14064,6 +14184,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'thermostats',
+        'x-response-key': 'thermostats',
       },
     },
     '/thermostats/off': {
@@ -14115,6 +14236,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'off',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/schedules/create': {
@@ -14179,6 +14301,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'thermostat_schedule',
+        'x-response-key': 'thermostat_schedule',
       },
     },
     '/thermostats/schedules/delete': {
@@ -14223,6 +14346,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/thermostats/schedules/get': {
@@ -14273,6 +14397,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat_schedule',
+        'x-response-key': 'thermostat_schedule',
       },
     },
     '/thermostats/schedules/list': {
@@ -14327,6 +14452,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'thermostat_schedules',
+        'x-response-key': 'thermostat_schedules',
       },
     },
     '/thermostats/schedules/update': {
@@ -14375,6 +14501,7 @@ export default {
         summary: '/thermostats/schedules/update',
         tags: ['/thermostats'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'thermostatsSchedulesUpdatePost',
@@ -14422,6 +14549,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/thermostats/set_fallback_climate_preset': {
@@ -14466,6 +14594,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'set_fallback_climate_preset',
+        'x-response-key': null,
       },
     },
     '/thermostats/set_fan_mode': {
@@ -14527,6 +14656,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'set_fan_mode',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
     '/thermostats/update_climate_preset': {
@@ -14600,6 +14730,7 @@ export default {
         summary: '/thermostats/update_climate_preset',
         tags: ['/thermostats'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'thermostatsUpdateClimatePresetPost',
@@ -14672,6 +14803,7 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'update_climate_preset',
+        'x-response-key': null,
       },
     },
     '/user_identities/add_acs_user': {
@@ -14716,6 +14848,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'add_acs_user',
+        'x-response-key': null,
       },
       put: {
         operationId: 'userIdentitiesAddAcsUserPut',
@@ -14757,6 +14890,7 @@ export default {
         summary: '/user_identities/add_acs_user',
         tags: ['/user_identities'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/user_identities/create': {
@@ -14816,6 +14950,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'user_identity',
+        'x-response-key': 'user_identity',
       },
     },
     '/user_identities/delete': {
@@ -14859,6 +14994,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/user_identities/enrollment_automations/delete': {
@@ -14902,6 +15038,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/user_identities/enrollment_automations/get': {
@@ -14952,6 +15089,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'enrollment_automation',
+        'x-response-key': 'enrollment_automation',
       },
     },
     '/user_identities/enrollment_automations/launch': {
@@ -15039,6 +15177,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'enrollment_automation',
+        'x-response-key': 'enrollment_automation',
       },
     },
     '/user_identities/enrollment_automations/list': {
@@ -15092,6 +15231,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'enrollment_automations',
+        'x-response-key': 'enrollment_automations',
       },
     },
     '/user_identities/get': {
@@ -15150,6 +15290,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'user_identity',
+        'x-response-key': 'user_identity',
       },
     },
     '/user_identities/grant_access_to_device': {
@@ -15194,6 +15335,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'grant_access_to_device',
+        'x-response-key': null,
       },
       put: {
         operationId: 'userIdentitiesGrantAccessToDevicePut',
@@ -15235,6 +15377,7 @@ export default {
         summary: '/user_identities/grant_access_to_device',
         tags: ['/user_identities'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/user_identities/list': {
@@ -15288,6 +15431,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'user_identities',
+        'x-response-key': 'user_identities',
       },
     },
     '/user_identities/list_accessible_devices': {
@@ -15344,6 +15488,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_accessible_devices',
         'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/user_identities/list_acs_systems': {
@@ -15395,6 +15540,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_acs_systems',
         'x-fern-sdk-return-value': 'acs_systems',
+        'x-response-key': 'acs_systems',
       },
     },
     '/user_identities/list_acs_users': {
@@ -15445,6 +15591,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'list_acs_users',
         'x-fern-sdk-return-value': 'acs_users',
+        'x-response-key': 'acs_users',
       },
     },
     '/user_identities/remove_acs_user': {
@@ -15489,6 +15636,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'remove_acs_user',
+        'x-response-key': null,
       },
     },
     '/user_identities/revoke_access_to_device': {
@@ -15533,6 +15681,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'revoke_access_to_device',
+        'x-response-key': null,
       },
     },
     '/user_identities/update': {
@@ -15587,6 +15736,7 @@ export default {
         summary: '/user_identities/update',
         tags: ['/user_identities'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'userIdentitiesUpdatePost',
@@ -15640,6 +15790,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
     },
     '/webhooks/create': {
@@ -15692,6 +15843,7 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'webhook',
+        'x-response-key': 'webhook',
       },
     },
     '/webhooks/delete': {
@@ -15733,6 +15885,7 @@ export default {
         tags: ['/webhooks'],
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
       },
     },
     '/webhooks/get': {
@@ -15778,6 +15931,7 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'webhook',
+        'x-response-key': 'webhook',
       },
     },
     '/webhooks/list': {
@@ -15813,6 +15967,7 @@ export default {
         summary: '/webhooks/list',
         tags: ['/webhooks'],
         'x-fern-ignore': true,
+        'x-response-key': 'webhooks',
       },
       post: {
         operationId: 'webhooksListPost',
@@ -15848,6 +16003,7 @@ export default {
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'webhooks',
+        'x-response-key': 'webhooks',
       },
     },
     '/webhooks/update': {
@@ -15892,6 +16048,7 @@ export default {
         tags: ['/webhooks'],
         'x-fern-sdk-group-name': ['webhooks'],
         'x-fern-sdk-method-name': 'update',
+        'x-response-key': null,
       },
       put: {
         operationId: 'webhooksUpdatePut',
@@ -15933,6 +16090,7 @@ export default {
         summary: '/webhooks/update',
         tags: ['/webhooks'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
     },
     '/workspaces/create': {
@@ -15989,6 +16147,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'workspace',
+        'x-response-key': 'workspace',
       },
     },
     '/workspaces/get': {
@@ -16022,6 +16181,7 @@ export default {
         summary: '/workspaces/get',
         tags: ['/workspaces'],
         'x-fern-ignore': true,
+        'x-response-key': 'workspace',
       },
       post: {
         operationId: 'workspacesGetPost',
@@ -16055,6 +16215,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'workspace',
+        'x-response-key': 'workspace',
       },
     },
     '/workspaces/list': {
@@ -16093,6 +16254,7 @@ export default {
         summary: '/workspaces/list',
         tags: ['/workspaces'],
         'x-fern-ignore': true,
+        'x-response-key': 'workspaces',
       },
       post: {
         operationId: 'workspacesListPost',
@@ -16131,6 +16293,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'workspaces',
+        'x-response-key': 'workspaces',
       },
     },
     '/workspaces/reset_sandbox': {
@@ -16167,6 +16330,7 @@ export default {
         'x-fern-sdk-group-name': ['workspaces'],
         'x-fern-sdk-method-name': 'reset_sandbox',
         'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
       },
     },
   },
