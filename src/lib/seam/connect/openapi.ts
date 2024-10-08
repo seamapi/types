@@ -8100,7 +8100,7 @@ export default {
     '/acs/systems/list': {
       post: {
         description:
-          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the \n`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the \nresponse includes all access control systems connected to your workspace.',
+          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the\n`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the\nresponse includes all access control systems connected to your workspace.',
         operationId: 'acsSystemsListPost',
         requestBody: {
           content: {
@@ -8159,7 +8159,7 @@ export default {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       post: {
         description:
-          'Returns a list of all credential manager ACS systems that are compatible with a specified \n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS \nsystems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager ACS systems that are compatible with a specified\n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS\nsystems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
         requestBody: {
           content: {
