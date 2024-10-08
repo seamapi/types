@@ -5888,6 +5888,115 @@ export default {
         'x-response-key': null,
       },
     },
+    '/access_codes/update_multiple': {
+      patch: {
+        operationId: 'accessCodesUpdateMultiplePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  allow_external_modification: { type: 'boolean' },
+                  code: {
+                    maxLength: 9,
+                    minLength: 4,
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  common_code_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  is_external_modification_allowed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  prefer_native_scheduling: { type: 'boolean' },
+                  starts_at: { type: 'string' },
+                },
+                required: ['common_code_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/update_multiple',
+        tags: ['/access_codes'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'accessCodesUpdateMultiplePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  allow_external_modification: { type: 'boolean' },
+                  code: {
+                    maxLength: 9,
+                    minLength: 4,
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  common_code_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  is_external_modification_allowed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  prefer_native_scheduling: { type: 'boolean' },
+                  starts_at: { type: 'string' },
+                },
+                required: ['common_code_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/update_multiple',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'update_multiple',
+      },
+    },
     '/acs/access_groups/add_user': {
       post: {
         operationId: 'acsAccessGroupsAddUserPost',
