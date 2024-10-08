@@ -2672,6 +2672,24 @@ export interface Routes {
           }
     }
   }
+  '/access_codes/update_multiple': {
+    route: '/access_codes/update_multiple'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {
+      allow_external_modification?: boolean | undefined
+      is_external_modification_allowed?: boolean | undefined
+      code?: string | undefined
+      ends_at?: string | undefined
+      starts_at?: string | undefined
+      name?: string | undefined
+      prefer_native_scheduling?: boolean | undefined
+      common_code_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/acs/access_groups/add_user': {
     route: '/acs/access_groups/add_user'
     method: 'PUT' | 'POST'
