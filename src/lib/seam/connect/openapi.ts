@@ -14266,13 +14266,17 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
                     ok: { type: 'boolean' },
                     thermostats: {
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
                     },
                   },
-                  required: ['thermostats', 'ok'],
+                  required: ['thermostats', 'devices', 'ok'],
                   type: 'object',
                 },
               },
@@ -14292,8 +14296,8 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'thermostats',
-        'x-response-key': 'thermostats',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/thermostats/off': {
