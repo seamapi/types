@@ -5888,6 +5888,115 @@ export default {
         'x-response-key': null,
       },
     },
+    '/access_codes/update_multiple': {
+      patch: {
+        operationId: 'accessCodesUpdateMultiplePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  allow_external_modification: { type: 'boolean' },
+                  code: {
+                    maxLength: 9,
+                    minLength: 4,
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  common_code_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  is_external_modification_allowed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  prefer_native_scheduling: { type: 'boolean' },
+                  starts_at: { type: 'string' },
+                },
+                required: ['common_code_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/update_multiple',
+        tags: ['/access_codes'],
+        'x-fern-ignore': true,
+      },
+      post: {
+        operationId: 'accessCodesUpdateMultiplePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  allow_external_modification: { type: 'boolean' },
+                  code: {
+                    maxLength: 9,
+                    minLength: 4,
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  common_code_key: { type: 'string' },
+                  ends_at: { type: 'string' },
+                  is_external_modification_allowed: { type: 'boolean' },
+                  name: { type: 'string' },
+                  prefer_native_scheduling: { type: 'boolean' },
+                  starts_at: { type: 'string' },
+                },
+                required: ['common_code_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/access_codes/update_multiple',
+        tags: ['/access_codes'],
+        'x-fern-sdk-group-name': ['access_codes'],
+        'x-fern-sdk-method-name': 'update_multiple',
+      },
+    },
     '/acs/access_groups/add_user': {
       post: {
         operationId: 'acsAccessGroupsAddUserPost',
@@ -7991,7 +8100,7 @@ export default {
     '/acs/systems/list': {
       post: {
         description:
-          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the \n`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the \nresponse includes all access control systems connected to your workspace.',
+          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems).\n\nTo filter the list of returned access control systems by a specific connected account ID, include the\n`connected_account_id` in the request body. If you omit the `connected_account_id` parameter, the\nresponse includes all access control systems connected to your workspace.',
         operationId: 'acsSystemsListPost',
         requestBody: {
           content: {
@@ -8050,7 +8159,7 @@ export default {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       post: {
         description:
-          'Returns a list of all credential manager ACS systems that are compatible with a specified \n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS \nsystems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager ACS systems that are compatible with a specified\n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS\nsystems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
         requestBody: {
           content: {
@@ -14157,13 +14266,17 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
+                    devices: {
+                      items: { $ref: '#/components/schemas/device' },
+                      type: 'array',
+                    },
                     ok: { type: 'boolean' },
                     thermostats: {
                       items: { $ref: '#/components/schemas/device' },
                       type: 'array',
                     },
                   },
-                  required: ['thermostats', 'ok'],
+                  required: ['thermostats', 'devices', 'ok'],
                   type: 'object',
                 },
               },
@@ -14183,8 +14296,8 @@ export default {
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'thermostats',
-        'x-response-key': 'thermostats',
+        'x-fern-sdk-return-value': 'devices',
+        'x-response-key': 'devices',
       },
     },
     '/thermostats/off': {
