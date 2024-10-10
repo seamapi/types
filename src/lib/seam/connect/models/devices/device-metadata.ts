@@ -245,6 +245,11 @@ export const device_metadata = z
     akiles_metadata: z.object({
       gadget_name: z.string(),
       gadget_id: z.string(),
+
+      /**
+       * Group ID to add users to for this device
+       */
+      _member_group_id: z.string().optional(),
     }),
   })
   .partial()
