@@ -1223,7 +1223,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['READ_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CARD'], type: 'string' },
               error: { nullable: true },
               result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
@@ -1246,18 +1246,323 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['READ_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CARD'], type: 'string' },
               error: { nullable: true },
               result: {
                 properties: {
-                  card_number: {
+                  acs_credential_on_encoder: {
                     description:
-                      'A number or string that physically identifies this card.',
+                      'Snapshot of the card data read from the physical encoder.',
+                    properties: {
+                      card_number: {
+                        description:
+                          'A number or string that physically identifies this card.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      created_at: {
+                        description:
+                          'Date and time the credential was created.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time the credential will stop being useable.',
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      is_issued: { nullable: true, type: 'boolean' },
+                      starts_at: {
+                        description:
+                          'Date and time the credential will become useable.',
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      visionline_metadata: {
+                        properties: {
+                          cancelled: { type: 'boolean' },
+                          card_format: {
+                            enum: ['TLCode', 'rfid48'],
+                            type: 'string',
+                          },
+                          card_function_type: {
+                            enum: ['guest', 'staff'],
+                            type: 'string',
+                          },
+                          card_holder: { type: 'string' },
+                          card_id: { type: 'string' },
+                          discarded: { type: 'boolean' },
+                          expired: { type: 'boolean' },
+                          number_of_issued_cards: {
+                            format: 'float',
+                            type: 'number',
+                          },
+                          overridden: { type: 'boolean' },
+                          overwritten: { type: 'boolean' },
+                          pending_auto_update: { type: 'boolean' },
+                        },
+                        required: [
+                          'card_id',
+                          'card_function_type',
+                          'cancelled',
+                          'discarded',
+                          'expired',
+                          'overwritten',
+                          'pending_auto_update',
+                          'card_format',
+                          'number_of_issued_cards',
+                        ],
+                        type: 'object',
+                      },
+                    },
+                    required: [
+                      'created_at',
+                      'is_issued',
+                      'starts_at',
+                      'ends_at',
+                      'card_number',
+                    ],
+                    type: 'object',
+                  },
+                  acs_credential_on_seam: {
+                    description:
+                      'Matching acs_credential currently encoded on this card.',
                     nullable: true,
-                    type: 'string',
+                    oneOf: [
+                      {
+                        properties: {
+                          access_method: {
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_pool_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                          card_number: { nullable: true, type: 'string' },
+                          code: { nullable: true, type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { minLength: 1, type: 'string' },
+                          ends_at: { type: 'string' },
+                          errors: {
+                            items: {
+                              properties: {
+                                error_code: { type: 'string' },
+                                message: { type: 'string' },
+                              },
+                              required: ['error_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          external_type: {
+                            enum: [
+                              'pti_card',
+                              'brivo_credential',
+                              'hid_credential',
+                              'visionline_card',
+                              'salto_ks_credential',
+                            ],
+                            type: 'string',
+                          },
+                          external_type_display_name: { type: 'string' },
+                          is_issued: { type: 'boolean' },
+                          is_latest_desired_state_synced_with_provider: {
+                            type: 'boolean',
+                          },
+                          is_managed: { enum: [true], type: 'boolean' },
+                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          issued_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          latest_desired_state_synced_with_provider_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          parent_acs_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          starts_at: { type: 'string' },
+                          visionline_metadata: {
+                            properties: {
+                              auto_join: { type: 'boolean' },
+                              card_function_type: {
+                                enum: ['guest', 'staff'],
+                                type: 'string',
+                              },
+                              card_id: { type: 'string' },
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              credential_id: { type: 'string' },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              is_valid: { type: 'boolean' },
+                              joiner_acs_credential_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            required: ['card_function_type'],
+                            type: 'object',
+                          },
+                          warnings: {
+                            items: {
+                              properties: {
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: ['warning_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'acs_credential_id',
+                          'acs_system_id',
+                          'display_name',
+                          'access_method',
+                          'created_at',
+                          'workspace_id',
+                          'errors',
+                          'warnings',
+                          'is_managed',
+                        ],
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          access_method: {
+                            enum: ['code', 'card', 'mobile_key'],
+                            type: 'string',
+                          },
+                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_pool_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: { format: 'uuid', type: 'string' },
+                          card_number: { nullable: true, type: 'string' },
+                          code: { nullable: true, type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          display_name: { minLength: 1, type: 'string' },
+                          ends_at: { type: 'string' },
+                          errors: {
+                            items: {
+                              properties: {
+                                error_code: { type: 'string' },
+                                message: { type: 'string' },
+                              },
+                              required: ['error_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          external_type: {
+                            enum: [
+                              'pti_card',
+                              'brivo_credential',
+                              'hid_credential',
+                              'visionline_card',
+                              'salto_ks_credential',
+                            ],
+                            type: 'string',
+                          },
+                          external_type_display_name: { type: 'string' },
+                          is_issued: { type: 'boolean' },
+                          is_latest_desired_state_synced_with_provider: {
+                            type: 'boolean',
+                          },
+                          is_managed: { enum: [false], type: 'boolean' },
+                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          issued_at: {
+                            format: 'date-time',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          latest_desired_state_synced_with_provider_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          parent_acs_credential_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          starts_at: { type: 'string' },
+                          visionline_metadata: {
+                            properties: {
+                              auto_join: { type: 'boolean' },
+                              card_function_type: {
+                                enum: ['guest', 'staff'],
+                                type: 'string',
+                              },
+                              card_id: { type: 'string' },
+                              common_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              credential_id: { type: 'string' },
+                              guest_acs_entrance_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                              is_valid: { type: 'boolean' },
+                              joiner_acs_credential_ids: {
+                                items: { format: 'uuid', type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            required: ['card_function_type'],
+                            type: 'object',
+                          },
+                          warnings: {
+                            items: {
+                              properties: {
+                                message: { type: 'string' },
+                                warning_code: { type: 'string' },
+                              },
+                              required: ['warning_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'acs_credential_id',
+                          'acs_system_id',
+                          'display_name',
+                          'access_method',
+                          'created_at',
+                          'workspace_id',
+                          'errors',
+                          'warnings',
+                          'is_managed',
+                        ],
+                        type: 'object',
+                      },
+                    ],
                   },
                 },
-                required: ['card_number'],
+                required: [
+                  'acs_credential_on_encoder',
+                  'acs_credential_on_seam',
+                ],
                 type: 'object',
               },
               status: { enum: ['success'], type: 'string' },
@@ -1280,7 +1585,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['READ_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CARD'], type: 'string' },
               error: {
                 properties: {
                   message: { type: 'string' },
@@ -7773,9 +8078,9 @@ export default {
         'x-undocumented': 'Encoders are in alpha.',
       },
     },
-    '/acs/encoders/read_card': {
+    '/acs/encoders/scan_card': {
       post: {
-        operationId: 'acsEncodersReadCardPost',
+        operationId: 'acsEncodersScanCardPost',
         requestBody: {
           content: {
             'application/json': {
@@ -7828,10 +8133,10 @@ export default {
           { console_session: [] },
           { api_key: [] },
         ],
-        summary: '/acs/encoders/read_card',
+        summary: '/acs/encoders/scan_card',
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'encoders'],
-        'x-fern-sdk-method-name': 'read_card',
+        'x-fern-sdk-method-name': 'scan_card',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-undocumented': 'Reading a card is currently unimplemented.',
