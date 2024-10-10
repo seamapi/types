@@ -1264,6 +1264,7 @@ export default {
                         description:
                           'Date and time the credential was created.',
                         format: 'date-time',
+                        nullable: true,
                         type: 'string',
                       },
                       ends_at: {

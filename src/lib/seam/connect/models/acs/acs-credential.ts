@@ -76,6 +76,7 @@ export const acs_credential_on_encoder = z.object({
   created_at: z
     .string()
     .datetime()
+    .nullable()
     .describe('Date and time the credential was created.'),
 
   is_issued: z.boolean().nullable(),
