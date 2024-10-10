@@ -98,7 +98,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -907,7 +907,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -1881,7 +1881,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -2677,7 +2677,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -4381,7 +4381,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -5674,7 +5674,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -7720,7 +7720,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -8370,7 +8370,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -14412,7 +14412,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -15063,7 +15063,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -17152,7 +17152,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -17813,7 +17813,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -18513,7 +18513,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -19370,7 +19370,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -20023,7 +20023,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -21335,7 +21335,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -21990,7 +21990,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -24039,7 +24039,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -24811,7 +24811,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
@@ -27332,7 +27332,7 @@ export interface Routes {
               /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
-                created_at: string
+                created_at: string | null
                 is_issued: boolean | null
                 /** Date and time the credential will become useable. */
                 starts_at: string | null
