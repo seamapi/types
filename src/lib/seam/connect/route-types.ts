@@ -86,17 +86,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -104,7 +244,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -752,17 +892,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -770,7 +1050,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -1583,17 +1863,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -1601,7 +2021,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -2236,17 +2656,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -2254,7 +2814,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -3797,17 +4357,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -3815,7 +4515,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -4869,8 +5569,8 @@ export interface Routes {
       }>
     }
   }
-  '/acs/encoders/read_card': {
-    route: '/acs/encoders/read_card'
+  '/acs/encoders/scan_card': {
+    route: '/acs/encoders/scan_card'
     method: 'POST'
     queryParams: {}
     jsonBody: {}
@@ -4946,17 +5646,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -4964,7 +5804,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -6849,17 +7689,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -6867,7 +7847,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -7356,17 +8336,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -7374,7 +8494,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -13249,17 +14369,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -13267,7 +14527,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -13757,17 +15017,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -13775,7 +15175,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -15701,17 +17101,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -15719,7 +17259,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -16219,17 +17759,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -16237,7 +17917,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -16776,17 +18456,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -16794,7 +18614,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -17490,17 +19310,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -17508,7 +19468,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -18000,17 +19960,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -18018,7 +20118,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -19168,17 +21268,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -19186,7 +21426,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -19680,17 +21920,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -19698,7 +22078,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -21585,17 +23965,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -21603,7 +24123,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -22214,17 +24734,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -22232,7 +24892,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string
@@ -24590,17 +27250,157 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             result: {
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
+              /** Snapshot of the card data read from the physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      card_function_type: 'guest' | 'staff'
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        acs_credential_id: string
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        acs_system_id: string
+                        parent_acs_credential_id?: string | undefined
+                        display_name: string
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        external_type_display_name?: string | undefined
+                        created_at: string
+                        workspace_id: string
+                        starts_at?: string | undefined
+                        ends_at?: string | undefined
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        warnings: Array<{
+                          warning_code: string
+                          message: string
+                        }>
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
             }
           }
         | {
@@ -24608,7 +27408,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'READ_CARD'
+            action_type: 'SCAN_CARD'
             error: {
               type: 'no_card_on_encoder'
               message: string

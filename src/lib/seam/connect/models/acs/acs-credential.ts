@@ -72,5 +72,53 @@ export const unmanaged_acs_credential = common_acs_credential.merge(
   }),
 )
 
+export const acs_credential_on_encoder = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time the credential was created.'),
+
+  is_issued: z.boolean().nullable(),
+
+  starts_at: z
+    .string()
+    .datetime()
+    .nullable()
+    .describe('Date and time the credential will become useable.'),
+  ends_at: z
+    .string()
+    .datetime()
+    .nullable()
+    .describe('Date and time the credential will stop being useable.'),
+
+  card_number: z
+    .string()
+    .nullable()
+    .describe('A number or string that physically identifies this card.'),
+
+  visionline_metadata: z
+    .object({
+      card_id: z.string(),
+      card_function_type: z.enum(['guest', 'staff']), // computed, looks at door ops, and checks is guest op is present.
+
+      cancelled: z.boolean(),
+      discarded: z.boolean(),
+      expired: z.boolean(),
+      overwritten: z.boolean(),
+      overridden: z.boolean().optional(),
+      pending_auto_update: z.boolean(),
+
+      card_format: z.enum(['TLCode', 'rfid48']),
+      card_holder: z.string().optional(),
+
+      number_of_issued_cards: z.number(),
+
+      // guest_acs_entrance_ids: z.array(z.string().uuid()).optional(), // computed
+      // common_acs_entrance_ids: z.array(z.string().uuid()).optional(), // computed
+    })
+    .optional(),
+})
+
 export type AcsCredential = z.output<typeof acs_credential>
 export type UnmanagedAcsCredential = z.output<typeof unmanaged_acs_credential>
+export type AcsCredentialOnEncoder = z.output<typeof acs_credential_on_encoder>

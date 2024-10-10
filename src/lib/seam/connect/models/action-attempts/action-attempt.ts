@@ -4,8 +4,8 @@ import { activate_climate_preset_action_attempt } from './activate-climate-prese
 import { deprecated_action_attempts } from './deprecated.js'
 import { encode_card_action_attempt } from './encode-card.js'
 import { lock_door_action_attempt } from './lock-door.js'
-import { read_card_action_attempt } from './read-card.js'
 import { reset_sandbox_workspace_action_attempt } from './reset-sandbox-workspace.js'
+import { scan_card_action_attempt } from './scan-card.js'
 import { set_cool_action_attempt } from './set-cool.js'
 import { set_fan_mode_action_attempt } from './set-fan-mode.js'
 import { set_heat_action_attempt } from './set-heat.js'
@@ -16,7 +16,7 @@ import { unlock_door_action_attempt } from './unlock-door.js'
 export const action_attempt = z.union([
   ...lock_door_action_attempt.options,
   ...unlock_door_action_attempt.options,
-  ...read_card_action_attempt.options,
+  ...scan_card_action_attempt.options,
   ...encode_card_action_attempt.options,
   ...reset_sandbox_workspace_action_attempt.options,
   ...set_cool_action_attempt.options,
