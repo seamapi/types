@@ -3296,6 +3296,7 @@ export default {
                     properties: {
                       akiles_metadata: {
                         properties: {
+                          _member_group_id: { type: 'string' },
                           gadget_id: { type: 'string' },
                           gadget_name: { type: 'string' },
                         },
