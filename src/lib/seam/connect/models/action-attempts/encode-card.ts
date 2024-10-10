@@ -13,18 +13,7 @@ const error = z.object({
   message: z.string(),
 })
 
-const result = z.object({
-  acs_credential_id: z
-    .string()
-    .uuid()
-    .nullable()
-    .describe('Matching acs_credential currently encoded on this card.'),
-  card_number: z
-    .string()
-    .nullable()
-    .describe('A number or string that physically identifies this card.'),
-  // TODO visionline_metadata: visionline_credential_metadata,
-})
+const result = z.object({})
 
 export const encode_card_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt

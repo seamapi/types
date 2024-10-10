@@ -264,12 +264,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -485,7 +480,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -512,7 +507,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -539,7 +536,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -566,7 +563,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -593,7 +592,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -620,7 +621,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -647,7 +648,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -1070,12 +1073,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -1291,7 +1289,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -1318,7 +1316,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -1345,7 +1345,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -1372,7 +1372,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -1399,7 +1401,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -1426,7 +1430,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -1453,7 +1457,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -2041,12 +2047,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -2262,7 +2263,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -2289,7 +2290,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -2316,7 +2319,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -2343,7 +2346,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -2370,7 +2375,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -2397,7 +2404,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -2424,7 +2431,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -2834,12 +2843,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -3055,7 +3059,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -3082,7 +3086,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -3109,7 +3115,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -3136,7 +3142,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -3163,7 +3171,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -3190,7 +3200,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -3217,7 +3227,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -4535,12 +4547,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -4756,7 +4763,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -4783,7 +4790,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -4810,7 +4819,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -4837,7 +4846,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -4864,7 +4875,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -4891,7 +4904,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -4918,7 +4931,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -5824,12 +5839,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -6045,7 +6055,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -6072,7 +6082,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -6099,7 +6111,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -6126,7 +6138,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -6153,7 +6167,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -6180,7 +6196,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -6207,7 +6223,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -7867,12 +7885,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8088,7 +8101,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8115,7 +8128,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8142,7 +8157,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8169,7 +8184,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8196,7 +8213,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8223,7 +8242,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8250,7 +8269,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8514,12 +8535,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8735,7 +8751,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8762,7 +8778,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8789,7 +8807,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8816,7 +8834,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8843,7 +8863,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -8870,7 +8892,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -8897,7 +8919,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -14547,12 +14571,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -14768,7 +14787,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -14795,7 +14814,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -14822,7 +14843,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -14849,7 +14870,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -14876,7 +14899,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -14903,7 +14928,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -14930,7 +14955,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -15195,12 +15222,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -15416,7 +15438,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -15443,7 +15465,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -15470,7 +15494,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -15497,7 +15521,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -15524,7 +15550,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -15551,7 +15579,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -15578,7 +15606,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -17279,12 +17309,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -17500,7 +17525,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -17527,7 +17552,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -17554,7 +17581,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -17581,7 +17608,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -17608,7 +17637,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -17635,7 +17666,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -17662,7 +17693,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -17937,12 +17970,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18158,7 +18186,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18185,7 +18213,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18212,7 +18242,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18239,7 +18269,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18266,7 +18298,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18293,7 +18327,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18320,7 +18354,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18634,12 +18670,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18855,7 +18886,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18882,7 +18913,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18909,7 +18942,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -18936,7 +18969,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18963,7 +18998,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -18990,7 +19027,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19017,7 +19054,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -19488,12 +19527,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19709,7 +19743,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19736,7 +19770,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -19763,7 +19799,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19790,7 +19826,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -19817,7 +19855,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -19844,7 +19884,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -19871,7 +19911,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -20138,12 +20180,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -20359,7 +20396,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -20386,7 +20423,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -20413,7 +20452,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -20440,7 +20479,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -20467,7 +20508,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -20494,7 +20537,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -20521,7 +20564,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -21446,12 +21491,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -21667,7 +21707,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -21694,7 +21734,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -21721,7 +21763,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -21748,7 +21790,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -21775,7 +21819,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -21802,7 +21848,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -21829,7 +21875,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -22098,12 +22146,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -22319,7 +22362,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -22346,7 +22389,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -22373,7 +22418,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -22400,7 +22445,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -22427,7 +22474,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -22454,7 +22503,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -22481,7 +22530,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -24143,12 +24194,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -24364,7 +24410,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -24391,7 +24437,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -24418,7 +24466,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -24445,7 +24493,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -24472,7 +24522,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -24499,7 +24551,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -24526,7 +24578,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -24912,12 +24966,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -25133,7 +25182,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -25160,7 +25209,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -25187,7 +25238,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -25214,7 +25265,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -25241,7 +25294,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -25268,7 +25323,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -25295,7 +25350,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -27428,12 +27485,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
-            result: {
-              /** Matching acs_credential currently encoded on this card. */
-              acs_credential_id: string | null
-              /** A number or string that physically identifies this card. */
-              card_number: string | null
-            }
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -27649,7 +27701,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'SYNC_ACCESS_CODES'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -27676,7 +27728,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -27703,7 +27757,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_ACCESS_CODE'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -27730,7 +27784,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
-            result?: any
+            result: {
+              access_code?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -27757,7 +27813,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */
@@ -27784,7 +27842,7 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
-            result?: any
+            result: {}
           }
         | {
             /** The ID of the action attempt. */
@@ -27811,7 +27869,9 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
-            result?: any
+            result: {
+              noise_threshold?: any
+            }
           }
         | {
             /** The ID of the action attempt. */

@@ -11,7 +11,7 @@ const error = z.object({
   message: z.string(),
 })
 
-const result = z.any()
+const result = z.object({})
 
 const sync_access_codes_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt.extend({
@@ -33,7 +33,9 @@ const create_access_code_action_attempt = z.discriminatedUnion('status', [
   }),
   common_succeeded_action_attempt.extend({
     action_type: z.literal('CREATE_ACCESS_CODE'),
-    result,
+    result: z.object({
+      access_code: z.any(),
+    }),
   }),
   common_failed_action_attempt.extend({
     action_type: z.literal('CREATE_ACCESS_CODE'),
@@ -61,7 +63,9 @@ const update_access_code_action_attempt = z.discriminatedUnion('status', [
   }),
   common_succeeded_action_attempt.extend({
     action_type: z.literal('UPDATE_ACCESS_CODE'),
-    result,
+    result: z.object({
+      access_code: z.any(),
+    }),
   }),
   common_failed_action_attempt.extend({
     action_type: z.literal('UPDATE_ACCESS_CODE'),
@@ -75,7 +79,9 @@ const create_noise_threshold_action_attempt = z.discriminatedUnion('status', [
   }),
   common_succeeded_action_attempt.extend({
     action_type: z.literal('CREATE_NOISE_THRESHOLD'),
-    result,
+    result: z.object({
+      noise_threshold: z.any(),
+    }),
   }),
   common_failed_action_attempt.extend({
     action_type: z.literal('CREATE_NOISE_THRESHOLD'),
@@ -103,7 +109,9 @@ const update_noise_threshold_action_attempt = z.discriminatedUnion('status', [
   }),
   common_succeeded_action_attempt.extend({
     action_type: z.literal('UPDATE_NOISE_THRESHOLD'),
-    result,
+    result: z.object({
+      noise_threshold: z.any(),
+    }),
   }),
   common_failed_action_attempt.extend({
     action_type: z.literal('UPDATE_NOISE_THRESHOLD'),
