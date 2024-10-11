@@ -23750,6 +23750,7 @@ export interface Routes {
             | {
                 gadget_name: string
                 gadget_id: string
+                _member_group_id?: string | undefined
               }
             | undefined
         }) &
