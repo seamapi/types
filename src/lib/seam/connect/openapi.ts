@@ -8170,6 +8170,8 @@ export default {
     },
     '/acs/entrances/get': {
       post: {
+        description:
+          'Returns a specified [ACS entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesGetPost',
         requestBody: {
           content: {
@@ -8215,6 +8217,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_entrance',
         'x-response-key': 'acs_entrance',
+        'x-title': 'Get an Entrance',
       },
     },
     '/acs/entrances/grant_access': {
@@ -8264,6 +8267,8 @@ export default {
     },
     '/acs/entrances/list': {
       post: {
+        description:
+          'Returns a list of all [ACS entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesListPost',
         requestBody: {
           content: {
@@ -8312,10 +8317,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_entrances',
         'x-response-key': 'acs_entrances',
+        'x-title': 'List Entrances',
       },
     },
     '/acs/entrances/list_credentials_with_access': {
       post: {
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with access to a specified [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
         operationId: 'acsEntrancesListCredentialsWithAccessPost',
         requestBody: {
           content: {
@@ -8371,6 +8379,7 @@ export default {
         'x-fern-sdk-method-name': 'list_credentials_with_access',
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials with Access to an Entrance',
       },
     },
     '/acs/systems/get': {
