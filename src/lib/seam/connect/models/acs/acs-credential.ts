@@ -100,7 +100,7 @@ export const acs_credential_on_encoder = z.object({
   visionline_metadata: z
     .object({
       card_id: z.string(),
-      card_function_type: z.enum(['guest', 'staff']), // computed, looks at door ops, and checks is guest op is present.
+      // TODO card_function_type: z.enum(["guest", "staff"]), // computed, looks at door ops, and checks is guest op is present.
 
       cancelled: z.boolean(),
       discarded: z.boolean(),
@@ -114,8 +114,8 @@ export const acs_credential_on_encoder = z.object({
 
       number_of_issued_cards: z.number(),
 
-      // guest_acs_entrance_ids: z.array(z.string().uuid()).optional(), // computed
-      // common_acs_entrance_ids: z.array(z.string().uuid()).optional(), // computed
+      guest_acs_entrance_ids: z.array(z.string().uuid()).optional(),
+      common_acs_entrance_ids: z.array(z.string().uuid()).optional(),
     })
     .optional(),
 })
