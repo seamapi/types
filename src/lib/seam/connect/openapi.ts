@@ -1289,14 +1289,18 @@ export default {
                             enum: ['TLCode', 'rfid48'],
                             type: 'string',
                           },
-                          card_function_type: {
-                            enum: ['guest', 'staff'],
-                            type: 'string',
-                          },
                           card_holder: { type: 'string' },
                           card_id: { type: 'string' },
+                          common_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           discarded: { type: 'boolean' },
                           expired: { type: 'boolean' },
+                          guest_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
                           number_of_issued_cards: {
                             format: 'float',
                             type: 'number',
@@ -1307,7 +1311,6 @@ export default {
                         },
                         required: [
                           'card_id',
-                          'card_function_type',
                           'cancelled',
                           'discarded',
                           'expired',

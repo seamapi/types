@@ -109,7 +109,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -119,6 +118,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -918,7 +919,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -928,6 +928,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -1892,7 +1894,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -1902,6 +1903,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -2688,7 +2691,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -2698,6 +2700,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -4392,7 +4396,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -4402,6 +4405,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -5685,7 +5690,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -5695,6 +5699,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -7731,7 +7737,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -7741,6 +7746,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -8381,7 +8388,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -8391,6 +8397,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -14423,7 +14431,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -14433,6 +14440,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -15074,7 +15083,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -15084,6 +15092,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -17163,7 +17173,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -17173,6 +17182,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -17824,7 +17835,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -17834,6 +17844,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -18524,7 +18536,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -18534,6 +18545,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -19381,7 +19394,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -19391,6 +19403,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -20034,7 +20048,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -20044,6 +20057,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -21346,7 +21361,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -21356,6 +21370,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -22001,7 +22017,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -22011,6 +22026,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -24051,7 +24068,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -24061,6 +24077,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -24823,7 +24841,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -24833,6 +24850,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
@@ -27344,7 +27363,6 @@ export interface Routes {
                 visionline_metadata?:
                   | {
                       card_id: string
-                      card_function_type: 'guest' | 'staff'
                       cancelled: boolean
                       discarded: boolean
                       expired: boolean
@@ -27354,6 +27372,8 @@ export interface Routes {
                       card_format: 'TLCode' | 'rfid48'
                       card_holder?: string | undefined
                       number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
               }
