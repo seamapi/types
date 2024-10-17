@@ -156,6 +156,19 @@ export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
 
 export const acs_system = z
   .object({
+    default_credential_manager_acs_system_id: z
+      .string()
+      .uuid()
+      .nullable()
+      .optional()
+      .describe(
+        `
+        ---
+        draft: Needs review
+        ---
+        ID of the default credential manager acs_system for this access control system.
+        `,
+      ),
     acs_system_id: z.string().uuid().describe('ID of the `acs_system`.'),
     external_type: acs_system_external_type
       .describe('Brand-specific terminology for the `acs_system` type.')
