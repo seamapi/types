@@ -685,6 +685,11 @@ export default {
             description: 'URL for the image that represents the `acs_system`.',
             type: 'string',
           },
+          is_credential_manager: {
+            description:
+              'Indicates if the `acs_system` is a credential manager.',
+            type: 'boolean',
+          },
           name: { description: 'Name of the `acs_system`.', type: 'string' },
           system_type: {
             deprecated: true,
@@ -764,6 +769,7 @@ export default {
         },
         required: [
           'acs_system_id',
+          'is_credential_manager',
           'name',
           'created_at',
           'workspace_id',
