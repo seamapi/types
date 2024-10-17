@@ -6463,6 +6463,8 @@ export interface Routes {
     jsonResponse: {
       /** Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_system: {
+        /** ID of the default credential manager acs_system for this access control system. */
+        default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the `acs_system`. */
         acs_system_id: string
         /** Brand-specific terminology for the `acs_system` type. */
@@ -6596,6 +6598,8 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the default credential manager acs_system for this access control system. */
+        default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the `acs_system`. */
         acs_system_id: string
         /** Brand-specific terminology for the `acs_system` type. */
@@ -6729,6 +6733,8 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the default credential manager acs_system for this access control system. */
+        default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the `acs_system`. */
         acs_system_id: string
         /** Brand-specific terminology for the `acs_system` type. */
@@ -26858,6 +26864,8 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_systems: Array<{
+        /** ID of the default credential manager acs_system for this access control system. */
+        default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the `acs_system`. */
         acs_system_id: string
         /** Brand-specific terminology for the `acs_system` type. */

@@ -529,6 +529,14 @@ export default {
             format: 'date-time',
             type: 'string',
           },
+          default_credential_manager_acs_system_id: {
+            description:
+              'ID of the default credential manager acs_system for this access control system.',
+            format: 'uuid',
+            nullable: true,
+            type: 'string',
+            'x-draft': 'Needs review',
+          },
           errors: {
             description: 'Errors associated with the `acs_system`.',
             items: {
