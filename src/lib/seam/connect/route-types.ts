@@ -6480,6 +6480,8 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        /** Indicates if the `acs_system` is a credential manager. */
+        is_credential_manager: boolean
         visionline_metadata?:
           | {
               /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
@@ -6611,6 +6613,8 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        /** Indicates if the `acs_system` is a credential manager. */
+        is_credential_manager: boolean
         visionline_metadata?:
           | {
               /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
@@ -6742,6 +6746,8 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        /** Indicates if the `acs_system` is a credential manager. */
+        is_credential_manager: boolean
         visionline_metadata?:
           | {
               /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */
@@ -26869,6 +26875,8 @@ export interface Routes {
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
         external_type_display_name?: string | undefined
+        /** Indicates if the `acs_system` is a credential manager. */
+        is_credential_manager: boolean
         visionline_metadata?:
           | {
               /** Keyset loaded into a reader. Mobile keys and reader administration tools securely authenticate only with readers programmed with a matching keyset. */

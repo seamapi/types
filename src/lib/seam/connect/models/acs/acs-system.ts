@@ -166,6 +166,9 @@ export const acs_system = z
         'Display name that corresponds to the brand-specific terminology for the `acs_system` type.',
       )
       .optional(),
+    is_credential_manager: z
+      .boolean()
+      .describe('Indicates if the `acs_system` is a credential manager.'),
     visionline_metadata: z
       .object({
         mobile_access_uuid: z
