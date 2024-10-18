@@ -6929,10 +6929,13 @@ export default {
         ],
         summary: '/acs/credential_pools/list',
         tags: ['/acs'],
+        'x-deprecated':
+          'Use `/user_identities/enrollment_automations/list` instead.',
         'x-fern-sdk-group-name': ['acs', 'credential_pools'],
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credential_pools',
         'x-response-key': 'acs_credential_pools',
+        'x-undocumented': 'Replaced by enrollment automations.',
       },
     },
     '/acs/credential_provisioning_automations/launch': {
@@ -6992,10 +6995,13 @@ export default {
         ],
         summary: '/acs/credential_provisioning_automations/launch',
         tags: ['/acs'],
+        'x-deprecated':
+          'Use `/user_identities/enrollment_automations/launch` instead.',
         'x-fern-sdk-group-name': ['acs', 'credential_provisioning_automations'],
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'acs_credential_provisioning_automation',
         'x-response-key': 'acs_credential_provisioning_automation',
+        'x-undocumented': 'Replaced by enrollment automations.',
       },
     },
     '/acs/credentials/assign': {
