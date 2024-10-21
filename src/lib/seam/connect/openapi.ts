@@ -4292,6 +4292,7 @@ export default {
           heating_set_point_fahrenheit: { format: 'float', type: 'number' },
           hvac_mode_setting: { type: 'string' },
           is_fallback_climate_preset: { type: 'boolean' },
+          method: { type: 'string' },
           occurred_at: { format: 'date-time', type: 'string' },
           thermostat_schedule_id: {
             format: 'uuid',
