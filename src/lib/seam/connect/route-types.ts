@@ -11523,6 +11523,7 @@ export interface Routes {
             heating_set_point_celsius?: number | undefined
             cooling_set_point_fahrenheit?: number | undefined
             heating_set_point_fahrenheit?: number | undefined
+            method?: string | undefined
           }
         | undefined
       message?: string | undefined
@@ -11705,6 +11706,7 @@ export interface Routes {
         heating_set_point_celsius?: number | undefined
         cooling_set_point_fahrenheit?: number | undefined
         heating_set_point_fahrenheit?: number | undefined
+        method?: string | undefined
       }>
     }
   }
