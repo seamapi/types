@@ -31,7 +31,7 @@ export const acs_system_capability_flags = z.object({
 export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
-  'salto_site',
+  'salto_ks_site',
   'brivo_account',
   'hid_credential_manager_organization',
   'visionline_system',

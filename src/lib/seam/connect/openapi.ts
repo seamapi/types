@@ -671,7 +671,7 @@ export default {
             enum: [
               'pti_site',
               'alta_org',
-              'salto_site',
+              'salto_ks_site',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
@@ -704,7 +704,7 @@ export default {
             enum: [
               'pti_site',
               'alta_org',
-              'salto_site',
+              'salto_ks_site',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
