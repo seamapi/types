@@ -12448,6 +12448,7 @@ export default {
                     enum: [
                       'device.accessory_keypad_connected',
                       'device.accessory_keypad_disconnected',
+                      'device.added',
                       'device.connected',
                       'device.unmanaged.connected',
                       'device.disconnected',
@@ -12502,6 +12503,7 @@ export default {
                       'acs_system.connected',
                       'acs_user.deleted',
                       'acs_credential.deleted',
+                      'acs_credential.issued',
                       'enrollment_automation.deleted',
                       'client_session.deleted',
                       'action_attempt.lock_door.succeeded',
@@ -12518,6 +12520,7 @@ export default {
                       enum: [
                         'device.accessory_keypad_connected',
                         'device.accessory_keypad_disconnected',
+                        'device.added',
                         'device.connected',
                         'device.unmanaged.connected',
                         'device.disconnected',
@@ -12572,6 +12575,7 @@ export default {
                         'acs_system.connected',
                         'acs_user.deleted',
                         'acs_credential.deleted',
+                        'acs_credential.issued',
                         'enrollment_automation.deleted',
                         'client_session.deleted',
                         'action_attempt.lock_door.succeeded',
