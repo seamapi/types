@@ -671,7 +671,7 @@ export default {
             enum: [
               'pti_site',
               'alta_org',
-              'salto_site',
+              'salto_ks_site',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
@@ -704,7 +704,7 @@ export default {
             enum: [
               'pti_site',
               'alta_org',
-              'salto_site',
+              'salto_ks_site',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
@@ -12503,6 +12503,7 @@ export default {
                       'acs_system.connected',
                       'acs_user.deleted',
                       'acs_credential.deleted',
+                      'acs_credential.issued',
                       'enrollment_automation.deleted',
                       'client_session.deleted',
                       'action_attempt.lock_door.succeeded',
@@ -12574,6 +12575,7 @@ export default {
                         'acs_system.connected',
                         'acs_user.deleted',
                         'acs_credential.deleted',
+                        'acs_credential.issued',
                         'enrollment_automation.deleted',
                         'client_session.deleted',
                         'action_attempt.lock_door.succeeded',
