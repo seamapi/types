@@ -12448,6 +12448,7 @@ export default {
                     enum: [
                       'device.accessory_keypad_connected',
                       'device.accessory_keypad_disconnected',
+                      'device.added',
                       'device.connected',
                       'device.unmanaged.connected',
                       'device.disconnected',
@@ -12518,6 +12519,7 @@ export default {
                       enum: [
                         'device.accessory_keypad_connected',
                         'device.accessory_keypad_disconnected',
+                        'device.added',
                         'device.connected',
                         'device.unmanaged.connected',
                         'device.disconnected',
