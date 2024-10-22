@@ -363,9 +363,12 @@ export type ThermostatClimatePresetActivatedEvent = z.infer<
   typeof thermostat_climate_preset_activated_event
 >
 
+export const thermostat_manually_adjusted_method = z.enum(['seam', 'external'])
+
 export const thermostat_manually_adjusted_event = device_event
   .extend({
     event_type: z.literal('thermostat.manually_adjusted'),
+    method: thermostat_manually_adjusted_method,
   })
   .merge(
     climate_setting.pick({
