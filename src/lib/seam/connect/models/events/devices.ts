@@ -66,6 +66,14 @@ export const device_connected_event = device_event
 
 export type DeviceConnectedEvent = z.infer<typeof device_connected_event>
 
+export const device_added_event = device_event
+  .extend({
+    event_type: z.literal('device.added'),
+  })
+  .describe('A device has been added or reconnected to Seam.')
+
+export type DeviceAddedEvent = z.infer<typeof device_added_event>
+
 export const device_converted_to_unmanaged_event = device_event
   .extend({
     event_type: z.literal('device.converted_to_unmanaged'),
@@ -377,6 +385,7 @@ export type ThermostatManuallyAdjustedEvent = z.infer<
 
 export const device_events = [
   device_connected_event,
+  device_added_event,
   device_converted_to_unmanaged_event,
   unmanaged_device_converted_to_managed_event,
   unmanaged_device_connected_event,

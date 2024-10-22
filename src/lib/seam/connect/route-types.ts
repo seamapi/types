@@ -11545,6 +11545,7 @@ export interface Routes {
         | (
             | 'device.accessory_keypad_connected'
             | 'device.accessory_keypad_disconnected'
+            | 'device.added'
             | 'device.connected'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
@@ -11613,6 +11614,7 @@ export interface Routes {
         | Array<
             | 'device.accessory_keypad_connected'
             | 'device.accessory_keypad_disconnected'
+            | 'device.added'
             | 'device.connected'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
