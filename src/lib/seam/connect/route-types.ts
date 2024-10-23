@@ -9160,6 +9160,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'latch'
             | 'akiles'
+            | 'vostio'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -10914,6 +10915,7 @@ export interface Routes {
           | 'honeywell_resideo'
           | 'latch'
           | 'akiles'
+          | 'vostio'
         display_name: string
         image_url: string
         provider_categories: Array<
