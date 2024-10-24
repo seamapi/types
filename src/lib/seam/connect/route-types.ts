@@ -4742,17 +4742,10 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams:
-      | {
-          acs_system_id: string
-          device_name: string
-          acs_credential_id: string
-        }
-      | {
-          acs_system_id: string
-          device_id: string
-          acs_credential_id: string
-        }
+    commonParams: {
+      device_id: string
+      acs_credential_id: string
+    }
     formData: {}
     jsonResponse: {
       action_attempt:
@@ -6148,15 +6141,10 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {}
-    commonParams:
-      | {
-          acs_system_id: string
-          device_name: string
-        }
-      | {
-          acs_system_id: string
-          device_id: string
-        }
+    commonParams: {
+      acs_system_id: string
+      device_id: string
+    }
     formData: {}
     jsonResponse: {
       action_attempt:
