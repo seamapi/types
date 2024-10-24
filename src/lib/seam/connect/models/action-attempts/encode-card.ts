@@ -1,6 +1,10 @@
 import { z } from 'zod'
 
 import {
+  acs_credential,
+  unmanaged_acs_credential,
+} from '../acs/acs-credential.js'
+import {
   common_failed_action_attempt,
   common_pending_action_attempt,
   common_succeeded_action_attempt,
@@ -13,7 +17,7 @@ const error = z.object({
   message: z.string(),
 })
 
-const result = z.object({})
+const result = acs_credential.or(unmanaged_acs_credential)
 
 export const encode_card_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt

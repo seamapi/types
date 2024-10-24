@@ -1658,7 +1658,234 @@ export default {
               },
               action_type: { enum: ['ENCODE_CARD'], type: 'string' },
               error: { nullable: true },
-              result: { properties: {}, type: 'object' },
+              result: {
+                oneOf: [
+                  {
+                    properties: {
+                      access_method: {
+                        enum: ['code', 'card', 'mobile_key'],
+                        type: 'string',
+                      },
+                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_credential_pool_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_system_id: { format: 'uuid', type: 'string' },
+                      acs_user_id: { format: 'uuid', type: 'string' },
+                      card_number: { nullable: true, type: 'string' },
+                      code: { nullable: true, type: 'string' },
+                      created_at: { format: 'date-time', type: 'string' },
+                      display_name: { minLength: 1, type: 'string' },
+                      ends_at: { type: 'string' },
+                      errors: {
+                        items: {
+                          properties: {
+                            error_code: { type: 'string' },
+                            message: { type: 'string' },
+                          },
+                          required: ['error_code', 'message'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      external_type: {
+                        enum: [
+                          'pti_card',
+                          'brivo_credential',
+                          'hid_credential',
+                          'visionline_card',
+                          'salto_ks_credential',
+                        ],
+                        type: 'string',
+                      },
+                      external_type_display_name: { type: 'string' },
+                      is_issued: { type: 'boolean' },
+                      is_latest_desired_state_synced_with_provider: {
+                        type: 'boolean',
+                      },
+                      is_managed: { enum: [true], type: 'boolean' },
+                      is_multi_phone_sync_credential: { type: 'boolean' },
+                      issued_at: {
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      latest_desired_state_synced_with_provider_at: {
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      parent_acs_credential_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      starts_at: { type: 'string' },
+                      visionline_metadata: {
+                        properties: {
+                          auto_join: { type: 'boolean' },
+                          card_function_type: {
+                            enum: ['guest', 'staff'],
+                            type: 'string',
+                          },
+                          card_id: { type: 'string' },
+                          common_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          credential_id: { type: 'string' },
+                          guest_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          is_valid: { type: 'boolean' },
+                          joiner_acs_credential_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['card_function_type'],
+                        type: 'object',
+                      },
+                      warnings: {
+                        items: {
+                          properties: {
+                            message: { type: 'string' },
+                            warning_code: { type: 'string' },
+                          },
+                          required: ['warning_code', 'message'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      workspace_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: [
+                      'acs_credential_id',
+                      'acs_system_id',
+                      'display_name',
+                      'access_method',
+                      'created_at',
+                      'workspace_id',
+                      'errors',
+                      'warnings',
+                      'is_managed',
+                    ],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      access_method: {
+                        enum: ['code', 'card', 'mobile_key'],
+                        type: 'string',
+                      },
+                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_credential_pool_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_system_id: { format: 'uuid', type: 'string' },
+                      acs_user_id: { format: 'uuid', type: 'string' },
+                      card_number: { nullable: true, type: 'string' },
+                      code: { nullable: true, type: 'string' },
+                      created_at: { format: 'date-time', type: 'string' },
+                      display_name: { minLength: 1, type: 'string' },
+                      ends_at: { type: 'string' },
+                      errors: {
+                        items: {
+                          properties: {
+                            error_code: { type: 'string' },
+                            message: { type: 'string' },
+                          },
+                          required: ['error_code', 'message'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      external_type: {
+                        enum: [
+                          'pti_card',
+                          'brivo_credential',
+                          'hid_credential',
+                          'visionline_card',
+                          'salto_ks_credential',
+                        ],
+                        type: 'string',
+                      },
+                      external_type_display_name: { type: 'string' },
+                      is_issued: { type: 'boolean' },
+                      is_latest_desired_state_synced_with_provider: {
+                        type: 'boolean',
+                      },
+                      is_managed: { enum: [false], type: 'boolean' },
+                      is_multi_phone_sync_credential: { type: 'boolean' },
+                      issued_at: {
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      latest_desired_state_synced_with_provider_at: {
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      parent_acs_credential_id: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      starts_at: { type: 'string' },
+                      visionline_metadata: {
+                        properties: {
+                          auto_join: { type: 'boolean' },
+                          card_function_type: {
+                            enum: ['guest', 'staff'],
+                            type: 'string',
+                          },
+                          card_id: { type: 'string' },
+                          common_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          credential_id: { type: 'string' },
+                          guest_acs_entrance_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          is_valid: { type: 'boolean' },
+                          joiner_acs_credential_ids: {
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        required: ['card_function_type'],
+                        type: 'object',
+                      },
+                      warnings: {
+                        items: {
+                          properties: {
+                            message: { type: 'string' },
+                            warning_code: { type: 'string' },
+                          },
+                          required: ['warning_code', 'message'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      workspace_id: { format: 'uuid', type: 'string' },
+                    },
+                    required: [
+                      'acs_credential_id',
+                      'acs_system_id',
+                      'display_name',
+                      'access_method',
+                      'created_at',
+                      'workspace_id',
+                      'errors',
+                      'warnings',
+                      'is_managed',
+                    ],
+                    type: 'object',
+                  },
+                ],
+              },
               status: { enum: ['success'], type: 'string' },
             },
             required: [
@@ -7990,17 +8217,28 @@ export default {
                 oneOf: [
                   {
                     properties: {
+                      acs_credential_id: { format: 'uuid', type: 'string' },
                       acs_system_id: { format: 'uuid', type: 'string' },
                       device_name: { type: 'string' },
                     },
-                    required: ['acs_system_id', 'device_name'],
+                    required: [
+                      'acs_system_id',
+                      'device_name',
+                      'acs_credential_id',
+                    ],
                     type: 'object',
                   },
                   {
                     properties: {
+                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_system_id: { format: 'uuid', type: 'string' },
                       device_id: { format: 'uuid', type: 'string' },
                     },
-                    required: ['device_id'],
+                    required: [
+                      'acs_system_id',
+                      'device_id',
+                      'acs_credential_id',
+                    ],
                     type: 'object',
                   },
                 ],
