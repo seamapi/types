@@ -8214,34 +8214,12 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
-                  {
-                    properties: {
-                      acs_credential_id: { format: 'uuid', type: 'string' },
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      device_name: { type: 'string' },
-                    },
-                    required: [
-                      'acs_system_id',
-                      'device_name',
-                      'acs_credential_id',
-                    ],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_credential_id: { format: 'uuid', type: 'string' },
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      device_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: [
-                      'acs_system_id',
-                      'device_id',
-                      'acs_credential_id',
-                    ],
-                    type: 'object',
-                  },
-                ],
+                properties: {
+                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'acs_credential_id'],
+                type: 'object',
               },
             },
           },
@@ -8374,24 +8352,12 @@ export default {
           content: {
             'application/json': {
               schema: {
-                oneOf: [
-                  {
-                    properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      device_name: { type: 'string' },
-                    },
-                    required: ['acs_system_id', 'device_name'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      device_id: { format: 'uuid', type: 'string' },
-                    },
-                    required: ['acs_system_id', 'device_id'],
-                    type: 'object',
-                  },
-                ],
+                properties: {
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['acs_system_id', 'device_id'],
+                type: 'object',
               },
             },
           },
