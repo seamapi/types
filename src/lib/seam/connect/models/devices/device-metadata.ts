@@ -188,6 +188,7 @@ export const device_metadata = z
       nest_device_id: z.string(),
       device_name: z.string(), // set by Google
       custom_name: z.string(), // set by device owner
+      display_name: z.string().optional(),
     }),
 
     ecobee_metadata: z.object({

@@ -3826,6 +3826,7 @@ export default {
                         properties: {
                           custom_name: { type: 'string' },
                           device_name: { type: 'string' },
+                          display_name: { type: 'string' },
                           nest_device_id: { type: 'string' },
                         },
                         required: [

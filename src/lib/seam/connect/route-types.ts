@@ -5851,6 +5851,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -10658,6 +10659,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -11443,6 +11445,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -12929,6 +12932,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -13543,6 +13547,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -14328,6 +14333,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -14942,6 +14948,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -17285,6 +17292,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -17899,6 +17907,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -22640,6 +22649,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -24955,6 +24965,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -25569,6 +25580,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -28041,6 +28053,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
@@ -28657,6 +28670,7 @@ export interface Routes {
                 nest_device_id: string
                 device_name: string
                 custom_name: string
+                display_name?: string | undefined
               }
             | undefined
           ecobee_metadata?:
