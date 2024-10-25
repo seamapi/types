@@ -13,10 +13,20 @@ export type AcsAccessGroupExternalType = z.infer<
 >
 
 const common_acs_access_group = z.object({
-  acs_access_group_id: z.string().uuid(),
-  acs_system_id: z.string().uuid(),
-  workspace_id: z.string().uuid(),
-  name: z.string(),
+  acs_access_group_id: z.string().uuid().describe('ID of the access group.'),
+  acs_system_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the access control system that contains the access group.',
+    ),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
+    ),
+  name: z.string().describe('Name of the access group.'),
   access_group_type: acs_access_group_external_type.describe(`
     ---
     deprecated: use external_type
@@ -28,14 +38,27 @@ const common_acs_access_group = z.object({
     ---
     `),
   display_name: z.string(),
-  external_type: acs_access_group_external_type,
-  external_type_display_name: z.string(),
-  created_at: z.string().datetime(),
+  external_type: acs_access_group_external_type.describe(
+    'Brand-specific terminology for the access group type.',
+  ),
+  external_type_display_name: z
+    .string()
+    .describe(
+      'Display name that corresponds to the brand-specific terminology for the access group type.',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the access group was created.'),
 })
 
 export const acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(true),
-})
+}).describe(`
+    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
+    
+    The \`acs_access_group\` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  `)
 export const unmanaged_acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(false),
 })
