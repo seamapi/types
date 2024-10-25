@@ -386,6 +386,42 @@ export type ThermostatManuallyAdjustedEvent = z.infer<
   typeof thermostat_manually_adjusted_event
 >
 
+export const temperature_threshold_exceeded_event = device_event
+  .extend({
+    event_type: z.literal('thermostat.temperature_threshold_exceeded'),
+    temperature_celsius: z.number(),
+    temperature_fahrenheit: z.number(),
+    upper_limit_celsius: z.number().nullable(),
+    upper_limit_fahrenheit: z.number().nullable(),
+    lower_limit_celsius: z.number().nullable(),
+    lower_limit_fahrenheit: z.number().nullable(),
+  })
+  .describe("A thermostat's temperature reading exceeded the set threshold.")
+
+export type TemperatureThresholdExceededEvent = z.infer<
+  typeof temperature_threshold_exceeded_event
+>
+
+export const temperature_threshold_no_longer_exceeded_event = device_event
+  .extend({
+    event_type: z.literal(
+      'thermostat.temperature_threshold_no_longer_exceeded',
+    ),
+    temperature_celsius: z.number(),
+    temperature_fahrenheit: z.number(),
+    upper_limit_celsius: z.number().nullable(),
+    upper_limit_fahrenheit: z.number().nullable(),
+    lower_limit_celsius: z.number().nullable(),
+    lower_limit_fahrenheit: z.number().nullable(),
+  })
+  .describe(
+    "A thermostat's temperature reading is no longer exceeding the set threshold.",
+  )
+
+export type TemperatureThresholdNoLongerExceededEvent = z.infer<
+  typeof temperature_threshold_no_longer_exceeded_event
+>
+
 export const device_events = [
   device_connected_event,
   device_added_event,
@@ -415,4 +451,6 @@ export const device_events = [
   lock_access_denied_event,
   thermostat_climate_preset_activated_event,
   thermostat_manually_adjusted_event,
+  temperature_threshold_exceeded_event,
+  temperature_threshold_no_longer_exceeded_event,
 ] as const

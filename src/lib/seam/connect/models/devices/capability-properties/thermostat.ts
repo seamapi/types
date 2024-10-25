@@ -51,5 +51,13 @@ export const thermostat_capability_properties = z
     max_heating_set_point_fahrenheit: z.number(),
     min_heating_cooling_delta_celsius: z.number(),
     min_heating_cooling_delta_fahrenheit: z.number(),
+    temperature_threshold: z
+      .object({
+        lower_limit_celsius: z.number().nullable(),
+        lower_limit_fahrenheit: z.number().nullable(),
+        upper_limit_celsius: z.number().nullable(),
+        upper_limit_fahrenheit: z.number().nullable(),
+      })
+      .optional(),
   })
   .partial()
