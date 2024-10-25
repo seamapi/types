@@ -72,8 +72,18 @@ export const device_metadata = z
       device_name: z.string(),
       model_number: z.string(),
     }),
-
     salto_metadata: z.object({
+      lock_id: z.string(),
+      customer_reference: z.string(),
+      lock_type: z.string(),
+      battery_level: z.string(),
+      locked_state: z.string(),
+      model: z.string().optional(),
+    }).describe(`
+    ---
+    deprecated: Use \`salto_ks_metadata \` instead.
+    `),
+    salto_ks_metadata: z.object({
       lock_id: z.string(),
       customer_reference: z.string(),
       lock_type: z.string(),
