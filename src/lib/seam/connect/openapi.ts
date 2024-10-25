@@ -186,6 +186,8 @@ export default {
         type: 'object',
       },
       acs_access_group: {
+        description:
+          '\n    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n    \n    The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n  ',
         properties: {
           access_group_type: {
             deprecated: true,
@@ -203,11 +205,26 @@ export default {
             type: 'string',
             'x-deprecated': 'use external_type_display_name',
           },
-          acs_access_group_id: { format: 'uuid', type: 'string' },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
+          acs_access_group_id: {
+            description: 'ID of the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the access group was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           display_name: { type: 'string' },
           external_type: {
+            description:
+              'Brand-specific terminology for the access group type.',
             enum: [
               'pti_unit',
               'pti_access_level',
@@ -216,10 +233,19 @@ export default {
             ],
             type: 'string',
           },
-          external_type_display_name: { type: 'string' },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the access group type.',
+            type: 'string',
+          },
           is_managed: { enum: [true], type: 'boolean' },
-          name: { type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          name: { description: 'Name of the access group.', type: 'string' },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'acs_access_group_id',
@@ -6577,14 +6603,24 @@ export default {
     },
     '/acs/access_groups/add_user': {
       post: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id', 'acs_user_id'],
                 type: 'object',
@@ -6620,14 +6656,24 @@ export default {
         'x-response-key': null,
       },
       put: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsAddUserPut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id', 'acs_user_id'],
                 type: 'object',
@@ -6664,13 +6710,19 @@ export default {
     },
     '/acs/access_groups/get': {
       post: {
+        description:
+          'Returns a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id'],
                 type: 'object',
@@ -6714,14 +6766,26 @@ export default {
     },
     '/acs/access_groups/list': {
       post: {
+        description:
+          'Returns a list of all [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the access control system for which you want to retrieve all access groups.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the user for which you want to retrieve all access groups.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -6765,13 +6829,20 @@ export default {
     },
     '/acs/access_groups/list_accessible_entrances': {
       post: {
+        description:
+          'Returns a list of all accessible entrances for a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListAccessibleEntrancesPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description:
+                      'ID of the access group for which you want to retrieve all accessible entrances.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id'],
                 type: 'object',
@@ -6816,13 +6887,20 @@ export default {
     },
     '/acs/access_groups/list_users': {
       post: {
+        description:
+          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsListUsersPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description:
+                      'ID of the access group for which you want to retrieve all users.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id'],
                 type: 'object',
@@ -6867,14 +6945,24 @@ export default {
     },
     '/acs/access_groups/remove_user': {
       post: {
+        description:
+          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsRemoveUserPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id', 'acs_user_id'],
                 type: 'object',
@@ -6912,13 +7000,19 @@ export default {
     },
     '/acs/access_groups/unmanaged/get': {
       post: {
+        description:
+          'Returns a specified unmanaged [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_access_group_id: { format: 'uuid', type: 'string' },
+                  acs_access_group_id: {
+                    description: 'ID of the desired unmanaged access group.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_access_group_id'],
                 type: 'object',
@@ -6950,11 +7044,27 @@ export default {
                           type: 'string',
                           'x-deprecated': 'use external_type_display_name',
                         },
-                        acs_access_group_id: { format: 'uuid', type: 'string' },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
+                        acs_access_group_id: {
+                          description: 'ID of the access group.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_system_id: {
+                          description:
+                            'ID of the access control system that contains the access group.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access group was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
                         display_name: { type: 'string' },
                         external_type: {
+                          description:
+                            'Brand-specific terminology for the access group type.',
                           enum: [
                             'pti_unit',
                             'pti_access_level',
@@ -6963,10 +7073,22 @@ export default {
                           ],
                           type: 'string',
                         },
-                        external_type_display_name: { type: 'string' },
+                        external_type_display_name: {
+                          description:
+                            'Display name that corresponds to the brand-specific terminology for the access group type.',
+                          type: 'string',
+                        },
                         is_managed: { enum: [false], type: 'boolean' },
-                        name: { type: 'string' },
-                        workspace_id: { format: 'uuid', type: 'string' },
+                        name: {
+                          description: 'Name of the access group.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                       },
                       required: [
                         'acs_access_group_id',
@@ -7010,14 +7132,26 @@ export default {
     },
     '/acs/access_groups/unmanaged/list': {
       post: {
+        description:
+          'Returns a list of all unmanaged [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups).',
         operationId: 'acsAccessGroupsUnmanagedListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description:
+                      'ID of the access control system for which you want to retrieve all unmanaged access groups.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description:
+                      'ID of the user for which you want to retrieve all unmanaged access groups.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -7050,13 +7184,26 @@ export default {
                             'x-deprecated': 'use external_type_display_name',
                           },
                           acs_access_group_id: {
+                            description: 'ID of the access group.',
                             format: 'uuid',
                             type: 'string',
                           },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the access group.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the access group was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
                           display_name: { type: 'string' },
                           external_type: {
+                            description:
+                              'Brand-specific terminology for the access group type.',
                             enum: [
                               'pti_unit',
                               'pti_access_level',
@@ -7065,10 +7212,22 @@ export default {
                             ],
                             type: 'string',
                           },
-                          external_type_display_name: { type: 'string' },
+                          external_type_display_name: {
+                            description:
+                              'Display name that corresponds to the brand-specific terminology for the access group type.',
+                            type: 'string',
+                          },
                           is_managed: { enum: [false], type: 'boolean' },
-                          name: { type: 'string' },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          name: {
+                            description: 'Name of the access group.',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'acs_access_group_id',
