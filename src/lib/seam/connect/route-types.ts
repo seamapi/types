@@ -5769,7 +5769,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -10577,7 +10591,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -11363,7 +11391,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -12850,7 +12892,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -13465,7 +13521,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -14251,7 +14321,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -14866,7 +14950,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -17210,7 +17308,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -17825,7 +17937,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -22567,7 +22693,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -24883,7 +25023,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -25498,7 +25652,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -27971,7 +28139,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -28588,7 +28770,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string

@@ -3896,7 +3896,27 @@ export default {
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
+                      salto_ks_metadata: {
+                        properties: {
+                          battery_level: { type: 'string' },
+                          customer_reference: { type: 'string' },
+                          lock_id: { type: 'string' },
+                          lock_type: { type: 'string' },
+                          locked_state: { type: 'string' },
+                          model: { type: 'string' },
+                        },
+                        required: [
+                          'lock_id',
+                          'customer_reference',
+                          'lock_type',
+                          'battery_level',
+                          'locked_state',
+                        ],
+                        type: 'object',
+                      },
                       salto_metadata: {
+                        description:
+                          '\n    ---\n    deprecated: Use `salto_ks_metadata ` instead.\n    ',
                         properties: {
                           battery_level: { type: 'string' },
                           customer_reference: { type: 'string' },
