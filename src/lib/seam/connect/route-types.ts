@@ -5769,7 +5769,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -6133,6 +6147,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -10577,7 +10602,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -10941,6 +10980,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -11363,7 +11413,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -11727,6 +11791,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -12530,6 +12605,8 @@ export interface Routes {
             | 'action_attempt.unlock_door.failed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat.temperature_threshold_exceeded'
+            | 'thermostat.temperature_threshold_no_longer_exceeded'
           )
         | undefined
       event_types?:
@@ -12600,6 +12677,8 @@ export interface Routes {
             | 'action_attempt.unlock_door.failed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
+            | 'thermostat.temperature_threshold_exceeded'
+            | 'thermostat.temperature_threshold_no_longer_exceeded'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -12850,7 +12929,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -13214,6 +13307,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -13465,7 +13569,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -13829,6 +13947,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -14251,7 +14380,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -14615,6 +14758,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -14866,7 +15020,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -15230,6 +15398,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -17210,7 +17389,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -17574,6 +17767,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -17825,7 +18029,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -18189,6 +18407,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -22567,7 +22796,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -22931,6 +23174,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -24883,7 +25137,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -25247,6 +25515,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -25498,7 +25777,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -25862,6 +26155,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -27556,6 +27860,21 @@ export interface Routes {
           }
     }
   }
+  '/thermostats/set_temperature_threshold': {
+    route: '/thermostats/set_temperature_threshold'
+    method: 'POST' | 'PATCH'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      lower_limit_celsius?: (number | undefined) | null
+      lower_limit_fahrenheit?: (number | undefined) | null
+      upper_limit_celsius?: (number | undefined) | null
+      upper_limit_fahrenheit?: (number | undefined) | null
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/update_climate_preset': {
     route: '/thermostats/update_climate_preset'
     method: 'POST' | 'PATCH'
@@ -27971,7 +28290,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -28335,6 +28668,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {
@@ -28588,7 +28932,21 @@ export interface Routes {
                 model_number: string
               }
             | undefined
+          /**
+                ---
+                deprecated: Use `salto_ks_metadata ` instead.
+                 */
           salto_metadata?:
+            | {
+                lock_id: string
+                customer_reference: string
+                lock_type: string
+                battery_level: string
+                locked_state: string
+                model?: string | undefined
+              }
+            | undefined
+          salto_ks_metadata?:
             | {
                 lock_id: string
                 customer_reference: string
@@ -28952,6 +29310,17 @@ export interface Routes {
             max_heating_set_point_fahrenheit?: number | undefined
             min_heating_cooling_delta_celsius?: number | undefined
             min_heating_cooling_delta_fahrenheit?: number | undefined
+            temperature_threshold?:
+              | (
+                  | {
+                      lower_limit_celsius: number | null
+                      lower_limit_fahrenheit: number | null
+                      upper_limit_celsius: number | null
+                      upper_limit_fahrenheit: number | null
+                    }
+                  | undefined
+                )
+              | undefined
           })
         /** Location information for the device. */
         location: {

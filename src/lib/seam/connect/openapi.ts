@@ -3896,7 +3896,27 @@ export default {
                         required: ['device_id', 'device_name'],
                         type: 'object',
                       },
+                      salto_ks_metadata: {
+                        properties: {
+                          battery_level: { type: 'string' },
+                          customer_reference: { type: 'string' },
+                          lock_id: { type: 'string' },
+                          lock_type: { type: 'string' },
+                          locked_state: { type: 'string' },
+                          model: { type: 'string' },
+                        },
+                        required: [
+                          'lock_id',
+                          'customer_reference',
+                          'lock_type',
+                          'battery_level',
+                          'locked_state',
+                        ],
+                        type: 'object',
+                      },
                       salto_metadata: {
+                        description:
+                          '\n    ---\n    deprecated: Use `salto_ks_metadata ` instead.\n    ',
                         properties: {
                           battery_level: { type: 'string' },
                           customer_reference: { type: 'string' },
@@ -4382,6 +4402,37 @@ export default {
                       temperature_fahrenheit: {
                         format: 'float',
                         type: 'number',
+                      },
+                      temperature_threshold: {
+                        properties: {
+                          lower_limit_celsius: {
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
+                          lower_limit_fahrenheit: {
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
+                          upper_limit_celsius: {
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
+                          upper_limit_fahrenheit: {
+                            format: 'float',
+                            nullable: true,
+                            type: 'number',
+                          },
+                        },
+                        required: [
+                          'lower_limit_celsius',
+                          'lower_limit_fahrenheit',
+                          'upper_limit_celsius',
+                          'upper_limit_fahrenheit',
+                        ],
+                        type: 'object',
                       },
                     },
                     type: 'object',
@@ -12878,6 +12929,8 @@ export default {
                       'action_attempt.unlock_door.failed',
                       'thermostat.climate_preset_activated',
                       'thermostat.manually_adjusted',
+                      'thermostat.temperature_threshold_exceeded',
+                      'thermostat.temperature_threshold_no_longer_exceeded',
                     ],
                     type: 'string',
                   },
@@ -12950,6 +13003,8 @@ export default {
                         'action_attempt.unlock_door.failed',
                         'thermostat.climate_preset_activated',
                         'thermostat.manually_adjusted',
+                        'thermostat.temperature_threshold_exceeded',
+                        'thermostat.temperature_threshold_no_longer_exceeded',
                       ],
                       type: 'string',
                     },
@@ -15504,6 +15559,139 @@ export default {
         'x-fern-sdk-method-name': 'set_fan_mode',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+      },
+    },
+    '/thermostats/set_temperature_threshold': {
+      patch: {
+        operationId: 'thermostatsSetTemperatureThresholdPatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  lower_limit_celsius: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  lower_limit_fahrenheit: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  upper_limit_celsius: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  upper_limit_fahrenheit: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/thermostats/set_temperature_threshold',
+        tags: ['/thermostats'],
+        'x-fern-ignore': true,
+        'x-response-key': null,
+      },
+      post: {
+        operationId: 'thermostatsSetTemperatureThresholdPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  lower_limit_celsius: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  lower_limit_fahrenheit: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  upper_limit_celsius: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                  upper_limit_fahrenheit: {
+                    default: null,
+                    format: 'float',
+                    nullable: true,
+                    type: 'number',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+        ],
+        summary: '/thermostats/set_temperature_threshold',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'set_temperature_threshold',
+        'x-response-key': null,
       },
     },
     '/thermostats/update_climate_preset': {
