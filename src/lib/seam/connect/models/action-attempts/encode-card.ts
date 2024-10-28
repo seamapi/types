@@ -12,10 +12,20 @@ import {
 
 const action_type = z.literal('ENCODE_CARD')
 
-const error = z.object({
-  type: z.string(), // TODO This should be typed properly with the possible errors
+const no_card_on_encoder_error = z.object({
+  type: z.literal('no_card_on_encoder'),
   message: z.string(),
 })
+
+const incompatible_card_format_error = z.object({
+  type: z.literal('incompatible_card_format'),
+  message: z.string(),
+})
+
+const error = z.union([
+  no_card_on_encoder_error,
+  incompatible_card_format_error,
+])
 
 const result = acs_credential.or(unmanaged_acs_credential)
 
