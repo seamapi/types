@@ -12531,6 +12531,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      unstable_offset?: number | undefined
       since?: string | undefined
       between?: Array<string | Date> | undefined
       device_id?: string | undefined

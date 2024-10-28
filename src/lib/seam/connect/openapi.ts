@@ -13012,6 +13012,7 @@ export default {
                   },
                   limit: { default: 500, format: 'float', type: 'number' },
                   since: { type: 'string' },
+                  unstable_offset: { format: 'float', type: 'number' },
                 },
                 type: 'object',
               },
