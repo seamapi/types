@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 import {
+  acs_entrance_dormakaba_community_metadata,
   acs_entrance_latch_metadata,
   acs_entrance_salto_ks_metadata,
   acs_entrance_visionline_metadata,
@@ -26,6 +27,8 @@ export const acs_entrance = z.object({
   latch_metadata: acs_entrance_latch_metadata.optional(),
   visionline_metadata: acs_entrance_visionline_metadata.optional(),
   salto_ks_metadata: acs_entrance_salto_ks_metadata.optional(),
+  dormakaba_community_metadata:
+    acs_entrance_dormakaba_community_metadata.optional(),
 })
 
 export type AcsEntrance = z.infer<typeof acs_entrance>
