@@ -422,6 +422,11 @@ export default {
             description: 'Display name for the entrance.',
             type: 'string',
           },
+          dormakaba_community_metadata: {
+            properties: { access_point_name: { type: 'string' } },
+            required: ['access_point_name'],
+            type: 'object',
+          },
           errors: {
             items: {
               properties: {
@@ -703,6 +708,7 @@ export default {
               'visionline_system',
               'assa_abloy_credential_service',
               'latch_building',
+              'dormakaba_community',
             ],
             type: 'string',
           },
@@ -736,6 +742,7 @@ export default {
               'visionline_system',
               'assa_abloy_credential_service',
               'latch_building',
+              'dormakaba_community',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -990,6 +997,7 @@ export default {
               'hid_credential_manager_user',
               'salto_site_user',
               'latch_user',
+              'dormakaba_community_user',
             ],
             type: 'string',
           },
@@ -4494,6 +4502,7 @@ export default {
           can_turn_off_hvac: { type: 'boolean' },
           device_provider_name: {
             enum: [
+              'dormakaba_community',
               'akuvox',
               'august',
               'avigilon_alta',
@@ -9824,6 +9833,7 @@ export default {
                             'hid_credential_manager_user',
                             'salto_site_user',
                             'latch_user',
+                            'dormakaba_community_user',
                           ],
                           type: 'string',
                         },
@@ -10209,6 +10219,7 @@ export default {
                               'hid_credential_manager_user',
                               'salto_site_user',
                               'latch_user',
+                              'dormakaba_community_user',
                             ],
                             type: 'string',
                           },
@@ -11228,6 +11239,7 @@ export default {
                   accepted_providers: {
                     items: {
                       enum: [
+                        'dormakaba_community',
                         'akuvox',
                         'august',
                         'avigilon_alta',
