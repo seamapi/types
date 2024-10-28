@@ -3878,6 +3878,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }>
     }
   }
@@ -3912,6 +3917,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -4511,6 +4517,11 @@ export interface Routes {
               left_open_alarm: boolean
               intrusion_alarm: boolean
               privacy_mode: boolean
+            }
+          | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
             }
           | undefined
       }>
@@ -7029,6 +7040,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }
     }
   }
@@ -7103,6 +7119,11 @@ export interface Routes {
               left_open_alarm: boolean
               intrusion_alarm: boolean
               privacy_mode: boolean
+            }
+          | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
             }
           | undefined
       }>
@@ -7200,6 +7221,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7228,6 +7250,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7335,6 +7358,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7363,6 +7387,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7470,6 +7495,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7498,6 +7524,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7643,6 +7670,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -7775,6 +7803,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -7903,6 +7932,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -8053,6 +8083,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }>
     }
   }
@@ -8124,6 +8159,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -8247,6 +8283,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -10064,6 +10101,7 @@ export interface Routes {
       custom_redirect_failure_url?: string | undefined
       accepted_providers?:
         | Array<
+            | 'dormakaba_community'
             | 'akuvox'
             | 'august'
             | 'avigilon_alta'
@@ -11871,6 +11909,7 @@ export interface Routes {
     jsonResponse: {
       device_providers: Array<{
         device_provider_name:
+          | 'dormakaba_community'
           | 'akuvox'
           | 'august'
           | 'avigilon_alta'
@@ -12531,6 +12570,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      unstable_offset?: number | undefined
       since?: string | undefined
       between?: Array<string | Date> | undefined
       device_id?: string | undefined
@@ -29396,6 +29436,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -29424,6 +29465,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -29534,6 +29576,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
