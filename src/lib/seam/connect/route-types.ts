@@ -238,6 +238,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -383,10 +387,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -1158,6 +1167,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -1303,10 +1316,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -2243,6 +2261,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -2388,10 +2410,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -3150,6 +3177,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -3295,10 +3326,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -5017,6 +5053,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -5162,10 +5202,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -6442,6 +6487,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -6587,10 +6636,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -8637,6 +8691,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -8782,10 +8840,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -9398,6 +9461,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -9543,10 +9610,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -15722,6 +15794,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -15867,10 +15943,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -16484,6 +16565,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -16629,10 +16714,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -18736,6 +18826,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -18881,10 +18975,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -19508,6 +19607,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -19653,10 +19756,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -20319,6 +20427,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -20464,10 +20576,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -21287,6 +21404,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -21432,10 +21553,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -22051,6 +22177,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -22196,10 +22326,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -23500,6 +23635,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -23645,10 +23784,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -24266,6 +24410,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -24411,10 +24559,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -26479,6 +26632,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -26624,10 +26781,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -27362,6 +27524,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -27507,10 +27673,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -30068,6 +30239,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -30213,10 +30388,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */

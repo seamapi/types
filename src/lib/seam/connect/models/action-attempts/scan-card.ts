@@ -18,6 +18,11 @@ const error = z.object({
   message: z.string(),
 })
 
+const warning = z.object({
+  warning_code: z.literal('acs_credential_on_encoder_out_of_sync'),
+  warning_message: z.string(),
+})
+
 const acs_credential_on_seam = acs_credential.or(unmanaged_acs_credential)
 
 const result = z.object({
@@ -27,6 +32,7 @@ const result = z.object({
   acs_credential_on_seam: acs_credential_on_seam
     .nullable()
     .describe('Matching acs_credential currently encoded on this card.'),
+  warnings: z.array(warning),
 })
 
 export const scan_card_action_attempt = z.discriminatedUnion('status', [

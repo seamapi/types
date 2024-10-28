@@ -1610,10 +1610,25 @@ export default {
                       },
                     ],
                   },
+                  warnings: {
+                    items: {
+                      properties: {
+                        warning_code: {
+                          enum: ['acs_credential_on_encoder_out_of_sync'],
+                          type: 'string',
+                        },
+                        warning_message: { type: 'string' },
+                      },
+                      required: ['warning_code', 'warning_message'],
+                      type: 'object',
+                    },
+                    type: 'array',
+                  },
                 },
                 required: [
                   'acs_credential_on_encoder',
                   'acs_credential_on_seam',
+                  'warnings',
                 ],
                 type: 'object',
               },
@@ -1942,12 +1957,27 @@ export default {
               },
               action_type: { enum: ['ENCODE_CARD'], type: 'string' },
               error: {
-                properties: {
-                  message: { type: 'string' },
-                  type: { type: 'string' },
-                },
-                required: ['type', 'message'],
-                type: 'object',
+                oneOf: [
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: { enum: ['no_card_on_encoder'], type: 'string' },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: {
+                        enum: ['incompatible_card_format'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                ],
               },
               result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
