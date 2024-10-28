@@ -238,6 +238,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -383,10 +387,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -1158,6 +1167,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -1303,10 +1316,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -2243,6 +2261,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -2388,10 +2410,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -3150,6 +3177,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -3295,10 +3326,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -3878,6 +3914,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }>
     }
   }
@@ -3912,6 +3953,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -4513,6 +4555,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }>
     }
   }
@@ -5006,6 +5053,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -5151,10 +5202,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -6431,6 +6487,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -6576,10 +6636,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -7029,6 +7094,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }
     }
   }
@@ -7103,6 +7173,11 @@ export interface Routes {
               left_open_alarm: boolean
               intrusion_alarm: boolean
               privacy_mode: boolean
+            }
+          | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
             }
           | undefined
       }>
@@ -7200,6 +7275,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7228,6 +7304,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7335,6 +7412,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7363,6 +7441,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7470,6 +7549,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7498,6 +7578,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -7643,6 +7724,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -7775,6 +7857,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -7903,6 +7986,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -8053,6 +8137,11 @@ export interface Routes {
               privacy_mode: boolean
             }
           | undefined
+        dormakaba_community_metadata?:
+          | {
+              access_point_name: string
+            }
+          | undefined
       }>
     }
   }
@@ -8124,6 +8213,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -8247,6 +8337,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -8600,6 +8691,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -8745,10 +8840,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -9361,6 +9461,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -9506,10 +9610,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -10064,6 +10173,7 @@ export interface Routes {
       custom_redirect_failure_url?: string | undefined
       accepted_providers?:
         | Array<
+            | 'dormakaba_community'
             | 'akuvox'
             | 'august'
             | 'avigilon_alta'
@@ -11871,6 +11981,7 @@ export interface Routes {
     jsonResponse: {
       device_providers: Array<{
         device_provider_name:
+          | 'dormakaba_community'
           | 'akuvox'
           | 'august'
           | 'avigilon_alta'
@@ -12531,6 +12642,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      unstable_offset?: number | undefined
       since?: string | undefined
       between?: Array<string | Date> | undefined
       device_id?: string | undefined
@@ -15682,6 +15794,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -15827,10 +15943,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -16444,6 +16565,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -16589,10 +16714,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -18696,6 +18826,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -18841,10 +18975,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -19468,6 +19607,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -19613,10 +19756,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -20279,6 +20427,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -20424,10 +20576,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -21247,6 +21404,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -21392,10 +21553,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -22011,6 +22177,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -22156,10 +22326,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -23460,6 +23635,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -23605,10 +23784,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -24226,6 +24410,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -24371,10 +24559,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -26439,6 +26632,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -26584,10 +26781,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -27322,6 +27524,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -27467,10 +27673,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -29396,6 +29607,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -29424,6 +29636,7 @@ export interface Routes {
               | 'visionline_system'
               | 'assa_abloy_credential_service'
               | 'latch_building'
+              | 'dormakaba_community'
             )
           | undefined
         /**
@@ -29534,6 +29747,7 @@ export interface Routes {
               | 'hid_credential_manager_user'
               | 'salto_site_user'
               | 'latch_user'
+              | 'dormakaba_community_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -30025,6 +30239,10 @@ export interface Routes {
                       }
                   )
                 | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
             }
           }
         | {
@@ -30170,10 +30388,15 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'ENCODE_CARD'
-            error: {
-              type: string
-              message: string
-            }
+            error:
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
