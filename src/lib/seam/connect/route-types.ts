@@ -29964,6 +29964,7 @@ export interface Routes {
       connect_partner_name?: ((string | null) | null) | undefined
       is_sandbox?: boolean
       webview_primary_button_color?: string | undefined
+      webview_primary_button_text_color?: string | undefined
       webview_logo_shape?: ('circle' | 'square') | undefined
     }
     commonParams: {}
