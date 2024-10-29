@@ -7912,6 +7912,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7941,6 +7942,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /**
@@ -8049,6 +8051,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -8078,6 +8081,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /**
@@ -8186,6 +8190,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -8215,6 +8220,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /**
@@ -10992,7 +10998,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'latch'
             | 'akiles'
-            | 'vostio'
+            | 'assa_abloy_vostio'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -12800,7 +12806,7 @@ export interface Routes {
           | 'honeywell_resideo'
           | 'latch'
           | 'akiles'
-          | 'vostio'
+          | 'assa_abloy_vostio'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -13427,6 +13433,8 @@ export interface Routes {
       between?: Array<string | Date> | undefined
       device_id?: string | undefined
       device_ids?: string[] | undefined
+      acs_system_id?: string | undefined
+      acs_system_ids?: string[] | undefined
       access_code_id?: string | undefined
       access_code_ids?: string[] | undefined
       event_type?:
@@ -31180,6 +31188,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -31209,6 +31218,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'assa_abloy_vostio'
             )
           | undefined
         /**
@@ -31536,6 +31546,7 @@ export interface Routes {
       connect_partner_name?: ((string | null) | null) | undefined
       is_sandbox?: boolean
       webview_primary_button_color?: string | undefined
+      webview_primary_button_text_color?: string | undefined
       webview_logo_shape?: ('circle' | 'square') | undefined
     }
     commonParams: {}

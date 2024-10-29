@@ -42,7 +42,7 @@ export const DEVICE_PROVIDERS = {
   HONEYWELL_RESIDEO: 'honeywell_resideo',
   LATCH: 'latch',
   AKILES: 'akiles',
-  VOSTIO: 'vostio',
+  VOSTIO: 'assa_abloy_vostio',
 } as const
 
 export type DeviceProviderName =
