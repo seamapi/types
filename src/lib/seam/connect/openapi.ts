@@ -263,20 +263,54 @@ export default {
         type: 'object',
       },
       acs_credential: {
+        description:
+          'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
         properties: {
           access_method: {
+            description:
+              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
             enum: ['code', 'card', 'mobile_key'],
             type: 'string',
           },
-          acs_credential_id: { format: 'uuid', type: 'string' },
+          acs_credential_id: {
+            description: 'ID of the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
           acs_credential_pool_id: { format: 'uuid', type: 'string' },
-          acs_system_id: { format: 'uuid', type: 'string' },
-          acs_user_id: { format: 'uuid', type: 'string' },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_user_id: {
+            description: 'ID of the ACS user to whom the credential belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
           card_number: { nullable: true, type: 'string' },
-          code: { nullable: true, type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          display_name: { minLength: 1, type: 'string' },
-          ends_at: { type: 'string' },
+          code: {
+            description: 'Access (PIN) code for the credential.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the credential was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description:
+              'Display name that corresponds to the credential type.',
+            minLength: 1,
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+            type: 'string',
+          },
           errors: {
             items: {
               properties: {
@@ -289,6 +323,8 @@ export default {
             type: 'array',
           },
           external_type: {
+            description:
+              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
             enum: [
               'pti_card',
               'brivo_credential',
@@ -298,19 +334,42 @@ export default {
             ],
             type: 'string',
           },
-          external_type_display_name: { type: 'string' },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the credential type.',
+            type: 'string',
+          },
           is_issued: { type: 'boolean' },
-          is_latest_desired_state_synced_with_provider: { type: 'boolean' },
+          is_latest_desired_state_synced_with_provider: {
+            description:
+              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+            type: 'boolean',
+          },
           is_managed: { enum: [true], type: 'boolean' },
-          is_multi_phone_sync_credential: { type: 'boolean' },
+          is_multi_phone_sync_credential: {
+            description:
+              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+            type: 'boolean',
+          },
           issued_at: { format: 'date-time', nullable: true, type: 'string' },
           latest_desired_state_synced_with_provider_at: {
+            description:
+              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
             format: 'date-time',
             type: 'string',
           },
-          parent_acs_credential_id: { format: 'uuid', type: 'string' },
-          starts_at: { type: 'string' },
+          parent_acs_credential_id: {
+            description: 'ID of the parent credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+          starts_at: {
+            description:
+              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+            type: 'string',
+          },
           visionline_metadata: {
+            description: 'Visionline-specific metadata for the credential.',
             properties: {
               auto_join: { type: 'boolean' },
               card_function_type: { enum: ['guest', 'staff'], type: 'string' },
@@ -344,7 +403,12 @@ export default {
             },
             type: 'array',
           },
-          workspace_id: { format: 'uuid', type: 'string' },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'acs_credential_id',
@@ -1331,6 +1395,8 @@ export default {
                         type: 'string',
                       },
                       visionline_metadata: {
+                        description:
+                          'Visionline-specific metadata for the credential.',
                         properties: {
                           cancelled: { type: 'boolean' },
                           card_format: {
@@ -1385,23 +1451,60 @@ export default {
                     nullable: true,
                     oneOf: [
                       {
+                        description:
+                          'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
+                            description:
+                              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                             enum: ['code', 'card', 'mobile_key'],
                             type: 'string',
                           },
-                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_id: {
+                            description: 'ID of the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           acs_credential_pool_id: {
                             format: 'uuid',
                             type: 'string',
                           },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description:
+                              'ID of the ACS user to whom the credential belongs.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           card_number: { nullable: true, type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          ends_at: { type: 'string' },
+                          code: {
+                            description:
+                              'Access (PIN) code for the credential.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the credential was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description:
+                              'Display name that corresponds to the credential type.',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                            type: 'string',
+                          },
                           errors: {
                             items: {
                               properties: {
@@ -1414,6 +1517,8 @@ export default {
                             type: 'array',
                           },
                           external_type: {
+                            description:
+                              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                             enum: [
                               'pti_card',
                               'brivo_credential',
@@ -1423,28 +1528,47 @@ export default {
                             ],
                             type: 'string',
                           },
-                          external_type_display_name: { type: 'string' },
+                          external_type_display_name: {
+                            description:
+                              'Display name that corresponds to the brand-specific terminology for the credential type.',
+                            type: 'string',
+                          },
                           is_issued: { type: 'boolean' },
                           is_latest_desired_state_synced_with_provider: {
+                            description:
+                              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                             type: 'boolean',
                           },
                           is_managed: { enum: [true], type: 'boolean' },
-                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          is_multi_phone_sync_credential: {
+                            description:
+                              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                            type: 'boolean',
+                          },
                           issued_at: {
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           latest_desired_state_synced_with_provider_at: {
+                            description:
+                              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
                             type: 'string',
                           },
                           parent_acs_credential_id: {
+                            description: 'ID of the parent credential.',
                             format: 'uuid',
                             type: 'string',
                           },
-                          starts_at: { type: 'string' },
+                          starts_at: {
+                            description:
+                              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            type: 'string',
+                          },
                           visionline_metadata: {
+                            description:
+                              'Visionline-specific metadata for the credential.',
                             properties: {
                               auto_join: { type: 'boolean' },
                               card_function_type: {
@@ -1481,7 +1605,12 @@ export default {
                             },
                             type: 'array',
                           },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'acs_credential_id',
@@ -1497,23 +1626,60 @@ export default {
                         type: 'object',
                       },
                       {
+                        description:
+                          'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
+                            description:
+                              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                             enum: ['code', 'card', 'mobile_key'],
                             type: 'string',
                           },
-                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_id: {
+                            description: 'ID of the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           acs_credential_pool_id: {
                             format: 'uuid',
                             type: 'string',
                           },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description:
+                              'ID of the ACS user to whom the credential belongs.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           card_number: { nullable: true, type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          ends_at: { type: 'string' },
+                          code: {
+                            description:
+                              'Access (PIN) code for the credential.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the credential was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description:
+                              'Display name that corresponds to the credential type.',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                            type: 'string',
+                          },
                           errors: {
                             items: {
                               properties: {
@@ -1526,6 +1692,8 @@ export default {
                             type: 'array',
                           },
                           external_type: {
+                            description:
+                              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                             enum: [
                               'pti_card',
                               'brivo_credential',
@@ -1535,28 +1703,47 @@ export default {
                             ],
                             type: 'string',
                           },
-                          external_type_display_name: { type: 'string' },
+                          external_type_display_name: {
+                            description:
+                              'Display name that corresponds to the brand-specific terminology for the credential type.',
+                            type: 'string',
+                          },
                           is_issued: { type: 'boolean' },
                           is_latest_desired_state_synced_with_provider: {
+                            description:
+                              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                             type: 'boolean',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
-                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          is_multi_phone_sync_credential: {
+                            description:
+                              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                            type: 'boolean',
+                          },
                           issued_at: {
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           latest_desired_state_synced_with_provider_at: {
+                            description:
+                              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
                             type: 'string',
                           },
                           parent_acs_credential_id: {
+                            description: 'ID of the parent credential.',
                             format: 'uuid',
                             type: 'string',
                           },
-                          starts_at: { type: 'string' },
+                          starts_at: {
+                            description:
+                              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            type: 'string',
+                          },
                           visionline_metadata: {
+                            description:
+                              'Visionline-specific metadata for the credential.',
                             properties: {
                               auto_join: { type: 'boolean' },
                               card_function_type: {
@@ -1593,7 +1780,12 @@ export default {
                             },
                             type: 'array',
                           },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'acs_credential_id',
@@ -1708,25 +1900,63 @@ export default {
               action_type: { enum: ['ENCODE_CARD'], type: 'string' },
               error: { nullable: true },
               result: {
+                description:
+                  'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                 oneOf: [
                   {
+                    description:
+                      'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
+                        description:
+                          'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                         enum: ['code', 'card', 'mobile_key'],
                         type: 'string',
                       },
-                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_credential_id: {
+                        description: 'ID of the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       acs_credential_pool_id: {
                         format: 'uuid',
                         type: 'string',
                       },
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      acs_user_id: { format: 'uuid', type: 'string' },
+                      acs_system_id: {
+                        description:
+                          'ID of the access control system that contains the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_user_id: {
+                        description:
+                          'ID of the ACS user to whom the credential belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       card_number: { nullable: true, type: 'string' },
-                      code: { nullable: true, type: 'string' },
-                      created_at: { format: 'date-time', type: 'string' },
-                      display_name: { minLength: 1, type: 'string' },
-                      ends_at: { type: 'string' },
+                      code: {
+                        description: 'Access (PIN) code for the credential.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      created_at: {
+                        description:
+                          'Date and time at which the credential was created.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      display_name: {
+                        description:
+                          'Display name that corresponds to the credential type.',
+                        minLength: 1,
+                        type: 'string',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        type: 'string',
+                      },
                       errors: {
                         items: {
                           properties: {
@@ -1739,6 +1969,8 @@ export default {
                         type: 'array',
                       },
                       external_type: {
+                        description:
+                          'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                         enum: [
                           'pti_card',
                           'brivo_credential',
@@ -1748,28 +1980,47 @@ export default {
                         ],
                         type: 'string',
                       },
-                      external_type_display_name: { type: 'string' },
+                      external_type_display_name: {
+                        description:
+                          'Display name that corresponds to the brand-specific terminology for the credential type.',
+                        type: 'string',
+                      },
                       is_issued: { type: 'boolean' },
                       is_latest_desired_state_synced_with_provider: {
+                        description:
+                          'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                         type: 'boolean',
                       },
                       is_managed: { enum: [true], type: 'boolean' },
-                      is_multi_phone_sync_credential: { type: 'boolean' },
+                      is_multi_phone_sync_credential: {
+                        description:
+                          'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                        type: 'boolean',
+                      },
                       issued_at: {
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       latest_desired_state_synced_with_provider_at: {
+                        description:
+                          'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                         format: 'date-time',
                         type: 'string',
                       },
                       parent_acs_credential_id: {
+                        description: 'ID of the parent credential.',
                         format: 'uuid',
                         type: 'string',
                       },
-                      starts_at: { type: 'string' },
+                      starts_at: {
+                        description:
+                          'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        type: 'string',
+                      },
                       visionline_metadata: {
+                        description:
+                          'Visionline-specific metadata for the credential.',
                         properties: {
                           auto_join: { type: 'boolean' },
                           card_function_type: {
@@ -1806,7 +2057,12 @@ export default {
                         },
                         type: 'array',
                       },
-                      workspace_id: { format: 'uuid', type: 'string' },
+                      workspace_id: {
+                        description:
+                          'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: [
                       'acs_credential_id',
@@ -1822,23 +2078,59 @@ export default {
                     type: 'object',
                   },
                   {
+                    description:
+                      'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
+                        description:
+                          'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                         enum: ['code', 'card', 'mobile_key'],
                         type: 'string',
                       },
-                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_credential_id: {
+                        description: 'ID of the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       acs_credential_pool_id: {
                         format: 'uuid',
                         type: 'string',
                       },
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      acs_user_id: { format: 'uuid', type: 'string' },
+                      acs_system_id: {
+                        description:
+                          'ID of the access control system that contains the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_user_id: {
+                        description:
+                          'ID of the ACS user to whom the credential belongs.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       card_number: { nullable: true, type: 'string' },
-                      code: { nullable: true, type: 'string' },
-                      created_at: { format: 'date-time', type: 'string' },
-                      display_name: { minLength: 1, type: 'string' },
-                      ends_at: { type: 'string' },
+                      code: {
+                        description: 'Access (PIN) code for the credential.',
+                        nullable: true,
+                        type: 'string',
+                      },
+                      created_at: {
+                        description:
+                          'Date and time at which the credential was created.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      display_name: {
+                        description:
+                          'Display name that corresponds to the credential type.',
+                        minLength: 1,
+                        type: 'string',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        type: 'string',
+                      },
                       errors: {
                         items: {
                           properties: {
@@ -1851,6 +2143,8 @@ export default {
                         type: 'array',
                       },
                       external_type: {
+                        description:
+                          'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                         enum: [
                           'pti_card',
                           'brivo_credential',
@@ -1860,28 +2154,47 @@ export default {
                         ],
                         type: 'string',
                       },
-                      external_type_display_name: { type: 'string' },
+                      external_type_display_name: {
+                        description:
+                          'Display name that corresponds to the brand-specific terminology for the credential type.',
+                        type: 'string',
+                      },
                       is_issued: { type: 'boolean' },
                       is_latest_desired_state_synced_with_provider: {
+                        description:
+                          'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                         type: 'boolean',
                       },
                       is_managed: { enum: [false], type: 'boolean' },
-                      is_multi_phone_sync_credential: { type: 'boolean' },
+                      is_multi_phone_sync_credential: {
+                        description:
+                          'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                        type: 'boolean',
+                      },
                       issued_at: {
                         format: 'date-time',
                         nullable: true,
                         type: 'string',
                       },
                       latest_desired_state_synced_with_provider_at: {
+                        description:
+                          'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                         format: 'date-time',
                         type: 'string',
                       },
                       parent_acs_credential_id: {
+                        description: 'ID of the parent credential.',
                         format: 'uuid',
                         type: 'string',
                       },
-                      starts_at: { type: 'string' },
+                      starts_at: {
+                        description:
+                          'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        type: 'string',
+                      },
                       visionline_metadata: {
+                        description:
+                          'Visionline-specific metadata for the credential.',
                         properties: {
                           auto_join: { type: 'boolean' },
                           card_function_type: {
@@ -1918,7 +2231,12 @@ export default {
                         },
                         type: 'array',
                       },
-                      workspace_id: { format: 'uuid', type: 'string' },
+                      workspace_id: {
+                        description:
+                          'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: [
                       'acs_credential_id',
@@ -7485,14 +7803,24 @@ export default {
     },
     '/acs/credentials/assign': {
       patch: {
+        description:
+          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsAssignPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_credential_id'],
                 type: 'object',
@@ -7530,16 +7858,27 @@ export default {
         tags: ['/acs'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Assign a Credential to an ACS User',
       },
       post: {
+        description:
+          'Assigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) to a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsAssignPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_credential_id'],
                 type: 'object',
@@ -7578,10 +7917,13 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'assign',
         'x-response-key': null,
+        'x-title': 'Assign a Credential to an ACS User',
       },
     },
     '/acs/credentials/create': {
       post: {
+        description:
+          'Creates a new [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsCreatePost',
         requestBody: {
           content: {
@@ -7589,27 +7931,57 @@ export default {
               schema: {
                 properties: {
                   access_method: {
+                    description:
+                      'Access method for the new credential. Supported values: `code`, `card`, `mobile_key`.',
                     enum: ['code', 'card', 'mobile_key'],
                     type: 'string',
                   },
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                  allowed_acs_entrance_ids: {
-                    default: [],
-                    items: { format: 'uuid', type: 'string' },
-                    type: 'array',
-                  },
-                  code: { pattern: '^\\d+$', type: 'string' },
-                  credential_manager_acs_system_id: {
+                  acs_user_id: {
+                    description:
+                      'ID of the ACS user to whom the new credential belongs.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  ends_at: { format: 'date-time', type: 'string' },
+                  allowed_acs_entrance_ids: {
+                    default: [],
+                    description:
+                      'Set of IDs of the [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access.',
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  code: {
+                    description:
+                      'Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview).',
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  credential_manager_acs_system_id: {
+                    description:
+                      'ACS system ID of the credential manager for the new credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   is_multi_phone_sync_credential: {
                     default: false,
+                    description:
+                      'Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                     type: 'boolean',
                   },
-                  starts_at: { format: 'date-time', type: 'string' },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   visionline_metadata: {
+                    description:
+                      'Visionline-specific metadata for the new credential.',
                     properties: {
                       assa_abloy_credential_service_mobile_endpoint_id: {
                         format: 'uuid',
@@ -7677,17 +8049,24 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'acs_credential',
         'x-response-key': 'acs_credential',
+        'x-title': 'Create a Credential for an ACS User',
       },
     },
     '/acs/credentials/delete': {
       post: {
+        description:
+          'Deletes a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -7721,17 +8100,24 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Credential',
       },
     },
     '/acs/credentials/get': {
       post: {
+        description:
+          'Returns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -7771,10 +8157,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_credential',
         'x-response-key': 'acs_credential',
+        'x-title': 'Get a Credential',
       },
     },
     '/acs/credentials/list': {
       post: {
+        description:
+          'Returns a list of all [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsListPost',
         requestBody: {
           content: {
@@ -7785,29 +8174,54 @@ export default {
                     oneOf: [
                       {
                         properties: {
-                          acs_user_id: { format: 'uuid', type: 'string' },
+                          acs_user_id: {
+                            description:
+                              'ID of the ACS user for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: ['acs_user_id'],
                         type: 'object',
                       },
                       {
                         properties: {
-                          acs_system_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: ['acs_system_id'],
                         type: 'object',
                       },
                       {
                         properties: {
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description:
+                              'ID of the ACS user for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: ['acs_user_id', 'acs_system_id'],
                         type: 'object',
                       },
                       {
                         properties: {
-                          user_identity_id: { format: 'uuid', type: 'string' },
+                          user_identity_id: {
+                            description:
+                              'ID of the user identity for which you want to retrieve all credentials.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: ['user_identity_id'],
                         type: 'object',
@@ -7816,9 +8230,23 @@ export default {
                   },
                   {
                     properties: {
-                      created_before: { format: 'date-time', type: 'string' },
-                      is_multi_phone_sync_credential: { type: 'boolean' },
-                      limit: { default: 500, format: 'float', type: 'number' },
+                      created_before: {
+                        description:
+                          'Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      is_multi_phone_sync_credential: {
+                        description:
+                          'Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials.',
+                        type: 'boolean',
+                      },
+                      limit: {
+                        default: 500,
+                        description: 'Number of credentials to return.',
+                        format: 'float',
+                        type: 'number',
+                      },
                     },
                     type: 'object',
                   },
@@ -7861,17 +8289,25 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
+        'x-title': 'List Credentials',
       },
     },
     '/acs/credentials/list_accessible_entrances': {
       post: {
+        description:
+          'Returns a list of all [entrances](https://docs.seam.co/latest/api/acs/entrances) to which a [credential](https://docs.seam.co/latest/api/acs/credentials) grants access.',
         operationId: 'acsCredentialsListAccessibleEntrancesPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description:
+                      'ID of the credential for which you want to retrieve all entrances to which this credential grants access.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -7912,18 +8348,29 @@ export default {
         'x-fern-sdk-method-name': 'list_accessible_entrances',
         'x-fern-sdk-return-value': 'acs_entrances',
         'x-response-key': 'acs_entrances',
+        'x-title': 'List Accessible Entrances',
       },
     },
     '/acs/credentials/unassign': {
       patch: {
+        description:
+          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsUnassignPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_credential_id'],
                 type: 'object',
@@ -7961,16 +8408,27 @@ export default {
         tags: ['/acs'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Unassign a Credential from an ACS User',
       },
       post: {
+        description:
+          'Unassigns a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
         operationId: 'acsCredentialsUnassignPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  acs_user_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  acs_user_id: {
+                    description: 'ID of the desired user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_user_id', 'acs_credential_id'],
                 type: 'object',
@@ -8009,17 +8467,24 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'unassign',
         'x-response-key': null,
+        'x-title': 'Unassign a Credential from an ACS User',
       },
     },
     '/acs/credentials/unmanaged/get': {
       post: {
+        description:
+          'Returns a specified unmanaged [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired unmanaged credential.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -8034,23 +8499,59 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
+                      description:
+                        'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                       properties: {
                         access_method: {
+                          description:
+                            'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                           enum: ['code', 'card', 'mobile_key'],
                           type: 'string',
                         },
-                        acs_credential_id: { format: 'uuid', type: 'string' },
+                        acs_credential_id: {
+                          description: 'ID of the credential.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         acs_credential_pool_id: {
                           format: 'uuid',
                           type: 'string',
                         },
-                        acs_system_id: { format: 'uuid', type: 'string' },
-                        acs_user_id: { format: 'uuid', type: 'string' },
+                        acs_system_id: {
+                          description:
+                            'ID of the access control system that contains the credential.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        acs_user_id: {
+                          description:
+                            'ID of the ACS user to whom the credential belongs.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                         card_number: { nullable: true, type: 'string' },
-                        code: { nullable: true, type: 'string' },
-                        created_at: { format: 'date-time', type: 'string' },
-                        display_name: { minLength: 1, type: 'string' },
-                        ends_at: { type: 'string' },
+                        code: {
+                          description: 'Access (PIN) code for the credential.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the credential was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description:
+                            'Display name that corresponds to the credential type.',
+                          minLength: 1,
+                          type: 'string',
+                        },
+                        ends_at: {
+                          description:
+                            'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                          type: 'string',
+                        },
                         errors: {
                           items: {
                             properties: {
@@ -8063,6 +8564,8 @@ export default {
                           type: 'array',
                         },
                         external_type: {
+                          description:
+                            'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                           enum: [
                             'pti_card',
                             'brivo_credential',
@@ -8072,28 +8575,47 @@ export default {
                           ],
                           type: 'string',
                         },
-                        external_type_display_name: { type: 'string' },
+                        external_type_display_name: {
+                          description:
+                            'Display name that corresponds to the brand-specific terminology for the credential type.',
+                          type: 'string',
+                        },
                         is_issued: { type: 'boolean' },
                         is_latest_desired_state_synced_with_provider: {
+                          description:
+                            'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                           type: 'boolean',
                         },
                         is_managed: { enum: [false], type: 'boolean' },
-                        is_multi_phone_sync_credential: { type: 'boolean' },
+                        is_multi_phone_sync_credential: {
+                          description:
+                            'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                          type: 'boolean',
+                        },
                         issued_at: {
                           format: 'date-time',
                           nullable: true,
                           type: 'string',
                         },
                         latest_desired_state_synced_with_provider_at: {
+                          description:
+                            'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                           format: 'date-time',
                           type: 'string',
                         },
                         parent_acs_credential_id: {
+                          description: 'ID of the parent credential.',
                           format: 'uuid',
                           type: 'string',
                         },
-                        starts_at: { type: 'string' },
+                        starts_at: {
+                          description:
+                            'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                          type: 'string',
+                        },
                         visionline_metadata: {
+                          description:
+                            'Visionline-specific metadata for the credential.',
                           properties: {
                             auto_join: { type: 'boolean' },
                             card_function_type: {
@@ -8130,7 +8652,12 @@ export default {
                           },
                           type: 'array',
                         },
-                        workspace_id: { format: 'uuid', type: 'string' },
+                        workspace_id: {
+                          description:
+                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
                       },
                       required: [
                         'acs_credential_id',
@@ -8168,10 +8695,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_credential',
         'x-response-key': 'acs_credential',
+        'x-title': 'Get an Unmanaged Credential',
       },
     },
     '/acs/credentials/unmanaged/list': {
       post: {
+        description:
+          'Returns a list of all unmanaged [credentials](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUnmanagedListPost',
         requestBody: {
           content: {
@@ -8180,29 +8710,54 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      acs_user_id: { format: 'uuid', type: 'string' },
+                      acs_user_id: {
+                        description:
+                          'ID of the ACS user for which you want to retrieve all credentials.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['acs_user_id'],
                     type: 'object',
                   },
                   {
                     properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
+                      acs_system_id: {
+                        description:
+                          'ID of the access control system for which you want to retrieve all credentials.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['acs_system_id'],
                     type: 'object',
                   },
                   {
                     properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      acs_user_id: { format: 'uuid', type: 'string' },
+                      acs_system_id: {
+                        description:
+                          'ID of the access control system for which you want to retrieve all credentials.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_user_id: {
+                        description:
+                          'ID of the ACS user for which you want to retrieve all credentials.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['acs_user_id', 'acs_system_id'],
                     type: 'object',
                   },
                   {
                     properties: {
-                      user_identity_id: { format: 'uuid', type: 'string' },
+                      user_identity_id: {
+                        description:
+                          'ID of the user identity for which you want to retrieve all credentials.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['user_identity_id'],
                     type: 'object',
@@ -8220,23 +8775,60 @@ export default {
                   properties: {
                     acs_credentials: {
                       items: {
+                        description:
+                          'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
+                            description:
+                              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
                             enum: ['code', 'card', 'mobile_key'],
                             type: 'string',
                           },
-                          acs_credential_id: { format: 'uuid', type: 'string' },
+                          acs_credential_id: {
+                            description: 'ID of the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           acs_credential_pool_id: {
                             format: 'uuid',
                             type: 'string',
                           },
-                          acs_system_id: { format: 'uuid', type: 'string' },
-                          acs_user_id: { format: 'uuid', type: 'string' },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_user_id: {
+                            description:
+                              'ID of the ACS user to whom the credential belongs.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                           card_number: { nullable: true, type: 'string' },
-                          code: { nullable: true, type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          display_name: { minLength: 1, type: 'string' },
-                          ends_at: { type: 'string' },
+                          code: {
+                            description:
+                              'Access (PIN) code for the credential.',
+                            nullable: true,
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the credential was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description:
+                              'Display name that corresponds to the credential type.',
+                            minLength: 1,
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                            type: 'string',
+                          },
                           errors: {
                             items: {
                               properties: {
@@ -8249,6 +8841,8 @@ export default {
                             type: 'array',
                           },
                           external_type: {
+                            description:
+                              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
                             enum: [
                               'pti_card',
                               'brivo_credential',
@@ -8258,28 +8852,47 @@ export default {
                             ],
                             type: 'string',
                           },
-                          external_type_display_name: { type: 'string' },
+                          external_type_display_name: {
+                            description:
+                              'Display name that corresponds to the brand-specific terminology for the credential type.',
+                            type: 'string',
+                          },
                           is_issued: { type: 'boolean' },
                           is_latest_desired_state_synced_with_provider: {
+                            description:
+                              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
                             type: 'boolean',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
-                          is_multi_phone_sync_credential: { type: 'boolean' },
+                          is_multi_phone_sync_credential: {
+                            description:
+                              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                            type: 'boolean',
+                          },
                           issued_at: {
                             format: 'date-time',
                             nullable: true,
                             type: 'string',
                           },
                           latest_desired_state_synced_with_provider_at: {
+                            description:
+                              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
                             type: 'string',
                           },
                           parent_acs_credential_id: {
+                            description: 'ID of the parent credential.',
                             format: 'uuid',
                             type: 'string',
                           },
-                          starts_at: { type: 'string' },
+                          starts_at: {
+                            description:
+                              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            type: 'string',
+                          },
                           visionline_metadata: {
+                            description:
+                              'Visionline-specific metadata for the credential.',
                             properties: {
                               auto_join: { type: 'boolean' },
                               card_function_type: {
@@ -8316,7 +8929,12 @@ export default {
                             },
                             type: 'array',
                           },
-                          workspace_id: { format: 'uuid', type: 'string' },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
                         },
                         required: [
                           'acs_credential_id',
@@ -8356,19 +8974,35 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
+        'x-title': 'List Unmanaged Credentials',
       },
     },
     '/acs/credentials/update': {
       patch: {
+        description:
+          'Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { type: 'string' },
-                  code: { pattern: '^\\d+$', type: 'string' },
-                  ends_at: { format: 'date-time', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    type: 'string',
+                  },
+                  code: {
+                    description:
+                      'Replacement access (PIN) code for the credential.',
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -8406,17 +9040,33 @@ export default {
         tags: ['/acs'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Credential',
       },
       post: {
+        description:
+          'Updates the code and ends at date and time for a specified [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials).',
         operationId: 'acsCredentialsUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { type: 'string' },
-                  code: { pattern: '^\\d+$', type: 'string' },
-                  ends_at: { format: 'date-time', type: 'string' },
+                  acs_credential_id: {
+                    description: 'ID of the desired credential.',
+                    type: 'string',
+                  },
+                  code: {
+                    description:
+                      'Replacement access (PIN) code for the credential.',
+                    pattern: '^\\d+$',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_credential_id'],
                 type: 'object',
@@ -8455,6 +9105,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'credentials'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Credential',
       },
     },
     '/acs/encoders/encode_card': {

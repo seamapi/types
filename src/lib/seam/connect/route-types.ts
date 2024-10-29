@@ -106,6 +106,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -127,17 +128,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -147,10 +156,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -160,13 +174,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -182,17 +200,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -202,10 +228,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -215,13 +246,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -269,19 +304,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -291,10 +337,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -304,13 +355,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -326,17 +381,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -346,10 +409,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -359,13 +427,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -1035,6 +1107,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -1056,17 +1129,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -1076,10 +1157,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -1089,13 +1175,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -1111,17 +1201,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -1131,10 +1229,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -1144,13 +1247,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -1198,19 +1305,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -1220,10 +1338,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -1233,13 +1356,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -1255,17 +1382,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -1275,10 +1410,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -1288,13 +1428,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -2129,6 +2273,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -2150,17 +2295,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -2170,10 +2323,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -2183,13 +2341,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -2205,17 +2367,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -2225,10 +2395,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -2238,13 +2413,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -2292,19 +2471,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -2314,10 +2504,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -2327,13 +2522,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -2349,17 +2548,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -2369,10 +2576,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -2382,13 +2594,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -3045,6 +3261,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -3066,17 +3283,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -3086,10 +3311,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -3099,13 +3329,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -3121,17 +3355,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -3141,10 +3383,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -3154,13 +3401,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -3208,19 +3459,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -3230,10 +3492,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -3243,13 +3510,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -3265,17 +3536,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -3285,10 +3564,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -3298,13 +3582,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -4198,24 +4486,37 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired user. */
       acs_user_id: string
+      /** ID of the desired credential. */
       acs_credential_id: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4225,10 +4526,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4238,9 +4544,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4263,12 +4573,19 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ACS system ID of the credential manager for the new credential. */
       credential_manager_acs_system_id?: string | undefined
+      /** ID of the ACS user to whom the new credential belongs. */
       acs_user_id: string
+      /** Access method for the new credential. Supported values: `code`, `card`, `mobile_key`. */
       access_method: 'code' | 'card' | 'mobile_key'
+      /** Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview). */
       code?: string | undefined
+      /** Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
       is_multi_phone_sync_credential?: boolean
+      /** Set of IDs of the [entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access. */
       allowed_acs_entrance_ids?: string[]
+      /** Visionline-specific metadata for the new credential. */
       visionline_metadata?:
         | {
             assa_abloy_credential_service_mobile_endpoint_id?:
@@ -4284,23 +4601,36 @@ export interface Routes {
             joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
+      /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
       ends_at?: string | undefined
     }
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4310,10 +4640,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4323,9 +4658,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4348,6 +4687,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired credential. */
       acs_credential_id: string
     }
     formData: {}
@@ -4359,22 +4699,34 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired credential. */
       acs_credential_id: string
     }
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4384,10 +4736,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4397,9 +4754,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4423,37 +4784,53 @@ export interface Routes {
     jsonBody: {}
     commonParams: (
       | {
+          /** ID of the ACS user for which you want to retrieve all credentials. */
           acs_user_id: string
         }
       | {
+          /** ID of the access control system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
+          /** ID of the ACS user for which you want to retrieve all credentials. */
           acs_user_id: string
+          /** ID of the access control system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
+          /** ID of the user identity for which you want to retrieve all credentials. */
           user_identity_id: string
         }
     ) & {
+      /** Number of credentials to return. */
       limit?: number
+      /** Date and time, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format, before which events to return were created. */
       created_before?: Date | undefined
+      /** Indicates whether you want to retrieve only multi-phone sync credentials or non-multi-phone sync credentials. */
       is_multi_phone_sync_credential?: boolean | undefined
     }
     formData: {}
     jsonResponse: {
       acs_credentials: Array<{
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4463,10 +4840,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4476,9 +4858,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4501,6 +4887,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the credential for which you want to retrieve all entrances to which this credential grants access. */
       acs_credential_id: string
     }
     formData: {}
@@ -4568,24 +4955,37 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired user. */
       acs_user_id: string
+      /** ID of the desired credential. */
       acs_credential_id: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4595,10 +4995,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4608,9 +5013,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4633,22 +5042,34 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired unmanaged credential. */
       acs_credential_id: string
     }
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4658,10 +5079,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4671,9 +5097,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4697,32 +5127,45 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
+          /** ID of the ACS user for which you want to retrieve all credentials. */
           acs_user_id: string
         }
       | {
+          /** ID of the access control system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
+          /** ID of the ACS user for which you want to retrieve all credentials. */
           acs_user_id: string
+          /** ID of the access control system for which you want to retrieve all credentials. */
           acs_system_id: string
         }
       | {
+          /** ID of the user identity for which you want to retrieve all credentials. */
           user_identity_id: string
         }
     formData: {}
     jsonResponse: {
       acs_credentials: Array<{
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4732,10 +5175,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4745,9 +5193,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4769,25 +5221,39 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired credential. */
       acs_credential_id: string
+      /** Replacement access (PIN) code for the credential. */
       code?: string | undefined
+      /** Replacement date and time at which the validity of the credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after the `starts_at` value that you set when creating the credential. */
       ends_at?: string | undefined
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    
+          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -4797,10 +5263,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -4810,9 +5281,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -4921,6 +5396,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -4942,17 +5418,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -4962,10 +5446,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -4975,13 +5464,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -4997,17 +5490,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -5017,10 +5518,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -5030,13 +5536,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -5084,19 +5594,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -5106,10 +5627,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -5119,13 +5645,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -5141,17 +5671,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -5161,10 +5699,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -5174,13 +5717,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -6355,6 +6902,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -6376,17 +6924,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -6396,10 +6952,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -6409,13 +6970,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -6431,17 +6996,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -6451,10 +7024,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -6464,13 +7042,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -6518,19 +7100,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -6540,10 +7133,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -6553,13 +7151,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -6575,17 +7177,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -6595,10 +7205,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -6608,13 +7223,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -7195,17 +7814,25 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       acs_credentials: Array<{
+        /** ID of the credential. */
         acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
         acs_user_id?: string | undefined
         acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
         acs_system_id: string
+        /** ID of the parent credential. */
         parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
         display_name: string
+        /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
         access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
         external_type?:
           | (
               | 'pti_card'
@@ -7215,10 +7842,15 @@ export interface Routes {
               | 'salto_ks_credential'
             )
           | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
         external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
         workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
         errors: Array<{
           error_code: string
@@ -7228,9 +7860,13 @@ export interface Routes {
           warning_code: string
           message: string
         }>
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
         is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
         latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
               card_function_type: 'guest' | 'staff'
@@ -8559,6 +9195,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -8580,17 +9217,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -8600,10 +9245,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -8613,13 +9263,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -8635,17 +9289,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -8655,10 +9317,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -8668,13 +9335,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -8722,19 +9393,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -8744,10 +9426,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -8757,13 +9444,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -8779,17 +9470,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -8799,10 +9498,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -8812,13 +9516,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -9329,6 +10037,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -9350,17 +10059,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -9370,10 +10087,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -9383,13 +10105,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -9405,17 +10131,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -9425,10 +10159,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -9438,13 +10177,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -9492,19 +10235,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -9514,10 +10268,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -9527,13 +10286,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -9549,17 +10312,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -9569,10 +10340,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -9582,13 +10358,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -15662,6 +16442,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -15683,17 +16464,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -15703,10 +16492,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -15716,13 +16510,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -15738,17 +16536,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -15758,10 +16564,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -15771,13 +16582,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -15825,19 +16640,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -15847,10 +16673,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -15860,13 +16691,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -15882,17 +16717,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -15902,10 +16745,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -15915,13 +16763,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -16433,6 +17285,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -16454,17 +17307,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -16474,10 +17335,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -16487,13 +17353,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -16509,17 +17379,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -16529,10 +17407,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -16542,13 +17425,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -16596,19 +17483,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -16618,10 +17516,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -16631,13 +17534,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -16653,17 +17560,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -16673,10 +17588,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -16686,13 +17606,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -18694,6 +19618,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -18715,17 +19640,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -18735,10 +19668,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -18748,13 +19686,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -18770,17 +19712,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -18790,10 +19740,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -18803,13 +19758,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -18857,19 +19816,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -18879,10 +19849,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -18892,13 +19867,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -18914,17 +19893,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -18934,10 +19921,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -18947,13 +19939,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -19475,6 +20471,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -19496,17 +20493,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -19516,10 +20521,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -19529,13 +20539,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -19551,17 +20565,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -19571,10 +20593,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -19584,13 +20611,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -19638,19 +20669,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -19660,10 +20702,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -19673,13 +20720,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -19695,17 +20746,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -19715,10 +20774,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -19728,13 +20792,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -20295,6 +21363,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -20316,17 +21385,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -20336,10 +21413,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -20349,13 +21431,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -20371,17 +21457,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -20391,10 +21485,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -20404,13 +21503,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -20458,19 +21561,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -20480,10 +21594,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -20493,13 +21612,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -20515,17 +21638,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -20535,10 +21666,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -20548,13 +21684,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -21272,6 +22412,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -21293,17 +22434,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -21313,10 +22462,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -21326,13 +22480,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -21348,17 +22506,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -21368,10 +22534,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -21381,13 +22552,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -21435,19 +22610,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -21457,10 +22643,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -21470,13 +22661,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -21492,17 +22687,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -21512,10 +22715,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -21525,13 +22733,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -22045,6 +23257,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -22066,17 +23279,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -22086,10 +23307,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -22099,13 +23325,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -22121,17 +23351,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -22141,10 +23379,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -22154,13 +23397,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -22208,19 +23455,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -22230,10 +23488,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -22243,13 +23506,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -22265,17 +23532,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -22285,10 +23560,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -22298,13 +23578,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -23503,6 +24787,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -23524,17 +24809,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -23544,10 +24837,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -23557,13 +24855,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -23579,17 +24881,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -23599,10 +24909,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -23612,13 +24927,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -23666,19 +24985,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -23688,10 +25018,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -23701,13 +25036,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -23723,17 +25062,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -23743,10 +25090,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -23756,13 +25108,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -24278,6 +25634,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -24299,17 +25656,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -24319,10 +25684,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -24332,13 +25702,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -24354,17 +25728,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -24374,10 +25756,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -24387,13 +25774,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -24441,19 +25832,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -24463,10 +25865,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -24476,13 +25883,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -24498,17 +25909,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -24518,10 +25937,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -24531,13 +25955,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -26500,6 +27928,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -26521,17 +27950,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -26541,10 +27978,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -26554,13 +27996,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -26576,17 +28022,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -26596,10 +28050,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -26609,13 +28068,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -26663,19 +28126,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -26685,10 +28159,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -26698,13 +28177,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -26720,17 +28203,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -26740,10 +28231,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -26753,13 +28249,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -27392,6 +28892,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -27413,17 +28914,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -27433,10 +28942,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -27446,13 +28960,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -27468,17 +28986,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -27488,10 +29014,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -27501,13 +29032,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -27555,19 +29090,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -27577,10 +29123,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -27590,13 +29141,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -27612,17 +29167,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -27632,10 +29195,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -27645,13 +29213,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -30107,6 +31679,7 @@ export interface Routes {
                 ends_at: string | null
                 /** A number or string that physically identifies this card. */
                 card_number: string | null
+                /** Visionline-specific metadata for the credential. */
                 visionline_metadata?:
                   | {
                       card_id: string
@@ -30128,17 +31701,25 @@ export interface Routes {
               acs_credential_on_seam:
                 | (
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -30148,10 +31729,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -30161,13 +31747,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -30183,17 +31773,25 @@ export interface Routes {
                         is_managed: true
                       }
                     | {
+                        /** ID of the credential. */
                         acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
                         acs_user_id?: string | undefined
                         acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
                         acs_system_id: string
+                        /** ID of the parent credential. */
                         parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
                         display_name: string
+                        /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                         access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                         external_type?:
                           | (
                               | 'pti_card'
@@ -30203,10 +31801,15 @@ export interface Routes {
                               | 'salto_ks_credential'
                             )
                           | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
                         external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
                         created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                         workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                         starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
                         errors: Array<{
                           error_code: string
@@ -30216,13 +31819,17 @@ export interface Routes {
                           warning_code: string
                           message: string
                         }>
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
                           | boolean
                           | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
                           | string
                           | undefined
+                        /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
                           | {
                               card_function_type: 'guest' | 'staff'
@@ -30270,19 +31877,30 @@ export interface Routes {
             status: 'success'
             error: null
             action_type: 'ENCODE_CARD'
+            /** Means by which a user gains access at an entrance.
+        
+              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -30292,10 +31910,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -30305,13 +31928,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
@@ -30327,17 +31954,25 @@ export interface Routes {
                   is_managed: true
                 }
               | {
+                  /** ID of the credential. */
                   acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
                   acs_user_id?: string | undefined
                   acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
                   acs_system_id: string
+                  /** ID of the parent credential. */
                   parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
                   display_name: string
+                  /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
                   access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
                   external_type?:
                     | (
                         | 'pti_card'
@@ -30347,10 +31982,15 @@ export interface Routes {
                         | 'salto_ks_credential'
                       )
                     | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
                   external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
                   created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
                   workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
                   errors: Array<{
                     error_code: string
@@ -30360,13 +32000,17 @@ export interface Routes {
                     warning_code: string
                     message: string
                   }>
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
                     | boolean
                     | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
                     | string
                     | undefined
+                  /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
                     | {
                         card_function_type: 'guest' | 'staff'
