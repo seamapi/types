@@ -17844,6 +17844,7 @@ export default {
                     type: 'string',
                   },
                   webview_primary_button_color: { type: 'string' },
+                  webview_primary_button_text_color: { type: 'string' },
                 },
                 required: ['name'],
                 type: 'object',
