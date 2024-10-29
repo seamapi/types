@@ -13536,6 +13536,11 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   between: {
                     items: {
                       oneOf: [
@@ -17844,6 +17849,7 @@ export default {
                     type: 'string',
                   },
                   webview_primary_button_color: { type: 'string' },
+                  webview_primary_button_text_color: { type: 'string' },
                 },
                 required: ['name'],
                 type: 'object',
