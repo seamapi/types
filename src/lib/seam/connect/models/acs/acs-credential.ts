@@ -22,23 +22,70 @@ export type AcsCredentialExternalType = z.infer<
 >
 
 const common_acs_credential = z.object({
-  acs_credential_id: z.string().uuid(),
-  acs_user_id: z.string().uuid().optional(),
+  acs_credential_id: z.string().uuid().describe('ID of the credential.'),
+  acs_user_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('ID of the ACS user to whom the credential belongs.'),
   acs_credential_pool_id: z.string().uuid().optional(),
-  acs_system_id: z.string().uuid(),
-  parent_acs_credential_id: z.string().uuid().optional(),
-  display_name: z.string().min(1),
-  code: z.string().optional().nullable(),
+  acs_system_id: z
+    .string()
+    .uuid()
+    .describe('ID of the access control system that contains the credential.'),
+  parent_acs_credential_id: z
+    .string()
+    .uuid()
+    .optional()
+    .describe('ID of the parent credential.'),
+  display_name: z
+    .string()
+    .min(1)
+    .describe('Display name that corresponds to the credential type.'),
+  code: z
+    .string()
+    .optional()
+    .nullable()
+    .describe('Access (PIN) code for the credential.'),
   card_number: z.string().optional().nullable(),
   is_issued: z.boolean().optional(),
   issued_at: z.string().datetime().optional().nullable(),
-  access_method: acs_credential_access_method_type,
-  external_type: acs_credential_external_type.optional(),
-  external_type_display_name: z.string().optional(),
-  created_at: z.string().datetime(),
-  workspace_id: z.string().uuid(),
-  starts_at: z.string().optional(),
-  ends_at: z.string().optional(),
+  access_method: acs_credential_access_method_type.describe(
+    'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
+  ),
+  external_type: acs_credential_external_type
+    .optional()
+    .describe(
+      'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+    ),
+  external_type_display_name: z
+    .string()
+    .optional()
+    .describe(
+      'Display name that corresponds to the brand-specific terminology for the credential type.',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the credential was created.'),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+    ),
+  starts_at: z
+    .string()
+    .optional()
+    .describe(
+      'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+    ),
+  ends_at: z
+    .string()
+    .optional()
+    .describe(
+      'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+    ),
   errors: z.array(
     z.object({
       error_code: z.string(),
@@ -51,26 +98,57 @@ const common_acs_credential = z.object({
       message: z.string(),
     }),
   ),
-  is_multi_phone_sync_credential: z.boolean().optional(),
-  is_latest_desired_state_synced_with_provider: z.boolean().optional(),
+  is_multi_phone_sync_credential: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+    ),
+  is_latest_desired_state_synced_with_provider: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+    ),
   latest_desired_state_synced_with_provider_at: z
     .string()
     .datetime()
-    .optional(),
-  visionline_metadata: acs_credential_visionline_metadata.optional(),
+    .optional()
+    .describe(
+      'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
+    ),
+  visionline_metadata: acs_credential_visionline_metadata
+    .optional()
+    .describe('Visionline-specific metadata for the credential.'),
 })
 
-export const acs_credential = common_acs_credential.merge(
-  z.object({
-    is_managed: z.literal(true),
-  }),
-)
+export const acs_credential = common_acs_credential
+  .merge(
+    z.object({
+      is_managed: z.literal(true),
+    }),
+  )
+  .describe(getAcsCredentialDescription())
 
-export const unmanaged_acs_credential = common_acs_credential.merge(
-  z.object({
-    is_managed: z.literal(false),
-  }),
-)
+export const unmanaged_acs_credential = common_acs_credential
+  .merge(
+    z.object({
+      is_managed: z.literal(false),
+    }),
+  )
+  .describe(getAcsCredentialDescription(false))
+
+function getAcsCredentialDescription(is_managed = true): string {
+  const resource_name = is_managed
+    ? 'acs_credential'
+    : 'unmanaged_acs_credential'
+  const management_clause = is_managed ? '' : ', which is not managed by Seam,'
+
+  return `
+      Means by which a user gains access at an entrance.
+
+      The \`${resource_name}\` object${management_clause} represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.`.trim()
+}
 
 export const acs_credential_on_encoder = z.object({
   created_at: z
@@ -117,7 +195,8 @@ export const acs_credential_on_encoder = z.object({
       guest_acs_entrance_ids: z.array(z.string().uuid()).optional(),
       common_acs_entrance_ids: z.array(z.string().uuid()).optional(),
     })
-    .optional(),
+    .optional()
+    .describe('Visionline-specific metadata for the credential.'),
 })
 
 export type AcsCredential = z.output<typeof acs_credential>
