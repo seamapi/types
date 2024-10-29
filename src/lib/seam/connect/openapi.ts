@@ -13536,6 +13536,11 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  acs_system_id: { format: 'uuid', type: 'string' },
+                  acs_system_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   between: {
                     items: {
                       oneOf: [

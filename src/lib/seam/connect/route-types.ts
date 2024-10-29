@@ -13427,6 +13427,8 @@ export interface Routes {
       between?: Array<string | Date> | undefined
       device_id?: string | undefined
       device_ids?: string[] | undefined
+      acs_system_id?: string | undefined
+      acs_system_ids?: string[] | undefined
       access_code_id?: string | undefined
       access_code_ids?: string[] | undefined
       event_type?:
