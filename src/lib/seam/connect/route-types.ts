@@ -4275,6 +4275,19 @@ export interface Routes {
               access_point_name: string
             }
           | undefined
+        assa_abloy_vostio_metadata?:
+          | {
+              door_type:
+                | 'CommonDoor'
+                | 'EntranceDoor'
+                | 'GuestDoor'
+                | 'Elevator'
+              door_name: string
+              door_number?: number | undefined
+              stand_open?: boolean | undefined
+              pms_id?: string | undefined
+            }
+          | undefined
       }>
     }
   }
@@ -5013,6 +5026,19 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+            }
+          | undefined
+        assa_abloy_vostio_metadata?:
+          | {
+              door_type:
+                | 'CommonDoor'
+                | 'EntranceDoor'
+                | 'GuestDoor'
+                | 'Elevator'
+              door_name: string
+              door_number?: number | undefined
+              stand_open?: boolean | undefined
+              pms_id?: string | undefined
             }
           | undefined
       }>
@@ -7820,6 +7846,19 @@ export interface Routes {
               access_point_name: string
             }
           | undefined
+        assa_abloy_vostio_metadata?:
+          | {
+              door_type:
+                | 'CommonDoor'
+                | 'EntranceDoor'
+                | 'GuestDoor'
+                | 'Elevator'
+              door_name: string
+              door_number?: number | undefined
+              stand_open?: boolean | undefined
+              pms_id?: string | undefined
+            }
+          | undefined
       }
     }
   }
@@ -7899,6 +7938,19 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+            }
+          | undefined
+        assa_abloy_vostio_metadata?:
+          | {
+              door_type:
+                | 'CommonDoor'
+                | 'EntranceDoor'
+                | 'GuestDoor'
+                | 'Elevator'
+              door_name: string
+              door_number?: number | undefined
+              stand_open?: boolean | undefined
+              pms_id?: string | undefined
             }
           | undefined
       }>
@@ -8896,6 +8948,19 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+            }
+          | undefined
+        assa_abloy_vostio_metadata?:
+          | {
+              door_type:
+                | 'CommonDoor'
+                | 'EntranceDoor'
+                | 'GuestDoor'
+                | 'Elevator'
+              door_name: string
+              door_number?: number | undefined
+              stand_open?: boolean | undefined
+              pms_id?: string | undefined
             }
           | undefined
       }>
