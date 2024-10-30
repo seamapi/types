@@ -7913,6 +7913,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -7943,6 +7944,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /**
@@ -8052,6 +8054,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -8082,6 +8085,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /**
@@ -8191,6 +8195,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -8221,6 +8226,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /**
@@ -10999,6 +11005,7 @@ export interface Routes {
             | 'latch'
             | 'akiles'
             | 'assa_abloy_vostio'
+            | 'vostio_credential_service'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -12807,6 +12814,7 @@ export interface Routes {
           | 'latch'
           | 'akiles'
           | 'assa_abloy_vostio'
+          | 'vostio_credential_service'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -31189,6 +31197,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_system` type. */
@@ -31219,6 +31228,7 @@ export interface Routes {
               | 'latch_building'
               | 'dormakaba_community'
               | 'assa_abloy_vostio'
+              | 'vostio_credential_service'
             )
           | undefined
         /**

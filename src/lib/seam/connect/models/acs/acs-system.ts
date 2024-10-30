@@ -39,6 +39,7 @@ export const acs_system_external_type = z.enum([
   'latch_building',
   'dormakaba_community',
   'assa_abloy_vostio',
+  'vostio_credential_service',
 ])
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
