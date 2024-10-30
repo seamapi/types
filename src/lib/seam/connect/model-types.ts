@@ -4,6 +4,7 @@ export type {
   AccessCodeWarning,
   AcsAccessGroup,
   AcsCredential,
+  AcsEncoder,
   AcsEntrance,
   AcsSystem,
   AcsUser,
