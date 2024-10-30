@@ -7912,6 +7912,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -7943,6 +7944,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -8053,6 +8055,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -8084,6 +8087,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -8194,6 +8198,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -8225,6 +8230,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -10966,6 +10972,7 @@ export interface Routes {
       accepted_providers?:
         | Array<
             | 'dormakaba_community'
+            | 'legic_connect'
             | 'akuvox'
             | 'august'
             | 'avigilon_alta'
@@ -12775,6 +12782,7 @@ export interface Routes {
       device_providers: Array<{
         device_provider_name:
           | 'dormakaba_community'
+          | 'legic_connect'
           | 'akuvox'
           | 'august'
           | 'avigilon_alta'
@@ -31196,6 +31204,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
@@ -31227,6 +31236,7 @@ export interface Routes {
               | 'assa_abloy_credential_service'
               | 'latch_building'
               | 'dormakaba_community'
+              | 'legic_connect'
               | 'assa_abloy_vostio'
               | 'vostio_credential_service'
             )
