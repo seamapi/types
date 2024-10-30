@@ -477,6 +477,20 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          assa_abloy_vostio_metadata: {
+            properties: {
+              door_name: { type: 'string' },
+              door_number: { format: 'float', type: 'number' },
+              door_type: {
+                enum: ['CommonDoor', 'EntranceDoor', 'GuestDoor', 'Elevator'],
+                type: 'string',
+              },
+              pms_id: { type: 'string' },
+              stand_open: { type: 'boolean' },
+            },
+            required: ['door_type', 'door_name'],
+            type: 'object',
+          },
           created_at: {
             description: 'Date and time at which the entrance was created.',
             format: 'date-time',
