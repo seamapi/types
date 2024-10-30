@@ -6,6 +6,7 @@ import {
   unmanaged_acs_credential,
 } from '../acs/acs-credential.js'
 import {
+  common_action_attempt_errors,
   common_failed_action_attempt,
   common_pending_action_attempt,
   common_succeeded_action_attempt,
@@ -13,10 +14,15 @@ import {
 
 const action_type = z.literal('SCAN_CARD')
 
-const error = z.object({
+const no_card_on_encoder_error = z.object({
   type: z.literal('no_card_on_encoder'),
   message: z.string(),
 })
+
+const error = z.union([
+  ...common_action_attempt_errors,
+  no_card_on_encoder_error,
+])
 
 const warning = z.object({
   warning_code: z.literal('acs_credential_on_encoder_out_of_sync'),

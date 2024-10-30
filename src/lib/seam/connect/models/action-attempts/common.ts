@@ -25,3 +25,14 @@ export const common_failed_action_attempt = common_action_attempt.extend({
   status: z.literal('error'),
   result: z.null(),
 })
+
+export const common_action_attempt_errors = [
+  z.object({
+    type: z.literal('uncategorized_error'),
+    message: z.string(),
+  }),
+  z.object({
+    type: z.literal('action_attempt_expired'),
+    message: z.string(),
+  }),
+] as const

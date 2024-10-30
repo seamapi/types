@@ -1852,12 +1852,35 @@ export default {
               },
               action_type: { enum: ['SCAN_CARD'], type: 'string' },
               error: {
-                properties: {
-                  message: { type: 'string' },
-                  type: { enum: ['no_card_on_encoder'], type: 'string' },
-                },
-                required: ['type', 'message'],
-                type: 'object',
+                oneOf: [
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: { enum: ['uncategorized_error'], type: 'string' },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: {
+                        enum: ['action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: { enum: ['no_card_on_encoder'], type: 'string' },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                ],
               },
               result: { nullable: true },
               status: { enum: ['error'], type: 'string' },
@@ -2282,6 +2305,25 @@ export default {
               action_type: { enum: ['ENCODE_CARD'], type: 'string' },
               error: {
                 oneOf: [
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: { enum: ['uncategorized_error'], type: 'string' },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: {
+                        enum: ['action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                   {
                     properties: {
                       message: { type: 'string' },
