@@ -285,10 +285,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -460,6 +469,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -1286,10 +1303,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -1461,6 +1487,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -2452,10 +2486,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -2627,6 +2670,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -3440,10 +3491,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -3615,6 +3675,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -5575,10 +5643,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -5750,6 +5827,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -7081,10 +7166,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -7256,6 +7350,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -9392,10 +9494,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -9567,6 +9678,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -10234,10 +10353,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -10409,6 +10537,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -16645,10 +16781,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -16820,6 +16965,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -17488,10 +17641,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -17663,6 +17825,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -19821,10 +19991,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -19996,6 +20175,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -20674,10 +20861,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -20849,6 +21045,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -21566,10 +21770,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -21741,6 +21954,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -22615,10 +22836,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -22790,6 +23020,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -23460,10 +23698,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -23635,6 +23882,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -24990,10 +25245,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -25165,6 +25429,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -25837,10 +26109,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -26012,6 +26293,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -28131,10 +28420,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -28306,6 +28604,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -29095,10 +29401,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -29270,6 +29585,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string
@@ -31889,10 +32212,19 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SCAN_CARD'
-            error: {
-              type: 'no_card_on_encoder'
-              message: string
-            }
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -32064,6 +32396,14 @@ export interface Routes {
             result: null
             action_type: 'ENCODE_CARD'
             error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
               | {
                   type: 'no_card_on_encoder'
                   message: string

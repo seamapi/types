@@ -5,6 +5,7 @@ import {
   unmanaged_acs_credential,
 } from '../acs/acs-credential.js'
 import {
+  common_action_attempt_errors,
   common_failed_action_attempt,
   common_pending_action_attempt,
   common_succeeded_action_attempt,
@@ -23,6 +24,7 @@ const incompatible_card_format_error = z.object({
 })
 
 const error = z.union([
+  ...common_action_attempt_errors,
   no_card_on_encoder_error,
   incompatible_card_format_error,
 ])
