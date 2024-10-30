@@ -4,6 +4,7 @@ import { device_capability_flags } from './device.js'
 
 export const DEVICE_PROVIDERS = {
   DORMAKABA_COMMUNITY: 'dormakaba_community',
+  LEGIC_CONNECT: 'legic_connect',
   AKUVOX: 'akuvox',
   AUGUST: 'august',
   AVIGILON_ALTA: 'avigilon_alta',
@@ -106,7 +107,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'pti',
     'visionline',
     'assa_abloy_credential_service',
-    'dormakaba_community',
     'latch',
     'salto',
   ],
