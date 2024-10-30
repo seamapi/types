@@ -773,6 +773,7 @@ export default {
               'assa_abloy_credential_service',
               'latch_building',
               'dormakaba_community',
+              'legic_connect',
               'assa_abloy_vostio',
               'vostio_credential_service',
             ],
@@ -809,6 +810,7 @@ export default {
               'assa_abloy_credential_service',
               'latch_building',
               'dormakaba_community',
+              'legic_connect',
               'assa_abloy_vostio',
               'vostio_credential_service',
             ],
@@ -4855,6 +4857,7 @@ export default {
           device_provider_name: {
             enum: [
               'dormakaba_community',
+              'legic_connect',
               'akuvox',
               'august',
               'avigilon_alta',
@@ -11926,6 +11929,7 @@ export default {
                     items: {
                       enum: [
                         'dormakaba_community',
+                        'legic_connect',
                         'akuvox',
                         'august',
                         'avigilon_alta',
