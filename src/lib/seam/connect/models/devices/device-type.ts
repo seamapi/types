@@ -105,6 +105,7 @@ export type PhoneDeviceType = z.infer<typeof phone_device_type>
 /** Encoders */
 export const ENCODER_DEVICE_TYPE = {
   VISIONLINE_ENCODER: 'visionline_encoder',
+  ASSA_ABLOY_VOSTIO_ENCODER: 'assa_abloy_vostio_encoder',
 } as const
 
 type EncoderDeviceTypeFromMapping =

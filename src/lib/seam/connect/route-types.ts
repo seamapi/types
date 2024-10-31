@@ -4669,6 +4669,7 @@ export interface Routes {
       /** Visionline-specific metadata for the new credential. */
       visionline_metadata?:
         | {
+            /** DEPRECATED: DO NOT USE */
             assa_abloy_credential_service_mobile_endpoint_id?:
               | string
               | undefined
@@ -6320,7 +6321,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -6705,6 +6706,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -11550,7 +11556,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -11935,6 +11941,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -12199,7 +12210,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
       device_types?:
@@ -12240,7 +12251,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
       manufacturer?:
@@ -12361,7 +12372,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -12746,6 +12757,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -13132,7 +13148,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -13292,7 +13308,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
       device_types?:
@@ -13333,7 +13349,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
       manufacturer?:
@@ -13454,7 +13470,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Unique identifier for the account associated with the device. */
         connected_account_id: string
         /** Location information for the device. */
@@ -13883,7 +13899,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -14268,6 +14284,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -14523,7 +14544,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -14908,6 +14929,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -15172,7 +15198,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
       device_types?:
@@ -15213,7 +15239,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
       manufacturer?:
@@ -15334,7 +15360,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -15719,6 +15745,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -15974,7 +16005,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -16359,6 +16390,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -18377,7 +18413,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
       device_types?:
@@ -18418,7 +18454,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
       manufacturer?:
@@ -18539,7 +18575,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -18924,6 +18960,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -19179,7 +19220,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -19564,6 +19605,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -24436,7 +24482,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -24821,6 +24867,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -26811,7 +26862,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
       device_types?:
@@ -26852,7 +26903,7 @@ export interface Routes {
                 | 'honeywell_resideo_thermostat'
               )
             | ('ios_phone' | 'android_phone')
-            | 'visionline_encoder'
+            | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
       manufacturer?:
@@ -26973,7 +27024,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -27358,6 +27409,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -27613,7 +27669,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -27998,6 +28054,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -30322,7 +30383,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -30707,6 +30768,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
@@ -30964,7 +31030,7 @@ export interface Routes {
               | 'honeywell_resideo_thermostat'
             )
           | ('ios_phone' | 'android_phone')
-          | 'visionline_encoder'
+          | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
         /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
@@ -31349,6 +31415,11 @@ export interface Routes {
                 gadget_name: string
                 gadget_id: string
                 _member_group_id?: string | undefined
+              }
+            | undefined
+          assa_abloy_vostio_metadata?:
+            | {
+                encoder_id: string
               }
             | undefined
         }) &
