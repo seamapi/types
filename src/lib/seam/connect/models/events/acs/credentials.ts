@@ -16,4 +16,13 @@ export type AcsCredentialDeletedEvent = z.infer<
   typeof acs_credential_deleted_event
 >
 
-export const acs_credential_events = [acs_credential_deleted_event] as const
+export const acs_credential_issued = acs_credential_event
+  .extend({
+    event_type: z.literal('acs_credential.issued'),
+  })
+  .describe('An ACS credential was issued.')
+
+export const acs_credential_events = [
+  acs_credential_deleted_event,
+  acs_credential_issued,
+] as const
