@@ -7600,6 +7600,8 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_access_group',
         'x-response-key': 'acs_access_group',
+        'x-undocumented':
+          'No unmanaged access groups are currently implemented.',
       },
     },
     '/acs/access_groups/unmanaged/list': {
@@ -7741,6 +7743,8 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_access_groups',
         'x-response-key': 'acs_access_groups',
+        'x-undocumented':
+          'No unmanaged access groups are currently implemented.',
       },
     },
     '/acs/credential_pools/list': {
@@ -8760,6 +8764,7 @@ export default {
         'x-fern-sdk-return-value': 'acs_credential',
         'x-response-key': 'acs_credential',
         'x-title': 'Get an Unmanaged Credential',
+        'x-undocumented': 'No unmanaged credentials are currently implemented.',
       },
     },
     '/acs/credentials/unmanaged/list': {
@@ -9039,6 +9044,7 @@ export default {
         'x-fern-sdk-return-value': 'acs_credentials',
         'x-response-key': 'acs_credentials',
         'x-title': 'List Unmanaged Credentials',
+        'x-undocumented': 'No unmanaged credentials are currently implemented.',
       },
     },
     '/acs/credentials/update': {
