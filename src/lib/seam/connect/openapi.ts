@@ -8052,6 +8052,7 @@ export default {
                       'Visionline-specific metadata for the new credential.',
                     properties: {
                       assa_abloy_credential_service_mobile_endpoint_id: {
+                        description: 'DEPRECATED: DO NOT USE',
                         format: 'uuid',
                         type: 'string',
                       },
