@@ -4669,6 +4669,7 @@ export interface Routes {
       /** Visionline-specific metadata for the new credential. */
       visionline_metadata?:
         | {
+            /** DEPRECATED: DO NOT USE */
             assa_abloy_credential_service_mobile_endpoint_id?:
               | string
               | undefined
