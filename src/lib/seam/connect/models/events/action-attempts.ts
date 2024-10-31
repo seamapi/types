@@ -34,3 +34,22 @@ export const action_attempt_lock_door_failed_event = action_attempt_event
     event_type: z.literal('action_attempt.lock_door.failed'),
   })
   .describe('A lock door action attempt failed.')
+
+export const action_attempt_unlock_door_succeeded_event = action_attempt_event
+  .extend({
+    event_type: z.literal('action_attempt.unlock_door.succeeded'),
+  })
+  .describe('An unlock door action attempt succeeded.')
+
+export const action_attempt_unlock_door_failed_event = action_attempt_event
+  .extend({
+    event_type: z.literal('action_attempt.unlock_door.failed'),
+  })
+  .describe('An unlock door action attempt failed.')
+
+export const action_attempt_events = [
+  action_attempt_lock_door_succeeded_event,
+  action_attempt_lock_door_failed_event,
+  action_attempt_unlock_door_succeeded_event,
+  action_attempt_unlock_door_failed_event,
+]
