@@ -4013,8 +4013,8 @@ export default {
                         type: 'object',
                       },
                       assa_abloy_vostio_metadata: {
-                        properties: { encoder_id: { type: 'string' } },
-                        required: ['encoder_id'],
+                        properties: { encoder_name: { type: 'string' } },
+                        required: ['encoder_name'],
                         type: 'object',
                       },
                       august_metadata: {
