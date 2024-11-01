@@ -7141,6 +7141,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'add_user',
         'x-response-key': null,
+        'x-title': 'Add an ACS User to an Access Group',
       },
       put: {
         description:
@@ -7193,6 +7194,7 @@ export default {
         tags: ['/acs'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Add an ACS User to an Access Group',
       },
     },
     '/acs/access_groups/get': {
@@ -7249,6 +7251,7 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'acs_access_group',
         'x-response-key': 'acs_access_group',
+        'x-title': 'Get an Access Group',
       },
     },
     '/acs/access_groups/list': {
@@ -7312,6 +7315,7 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_access_groups',
         'x-response-key': 'acs_access_groups',
+        'x-title': 'List Access Groups',
       },
     },
     '/acs/access_groups/list_accessible_entrances': {
@@ -7370,6 +7374,7 @@ export default {
         'x-fern-sdk-method-name': 'list_accessible_entrances',
         'x-fern-sdk-return-value': 'acs_entrances',
         'x-response-key': 'acs_entrances',
+        'x-title': 'List Entrances Accessible to an Access Group',
       },
     },
     '/acs/access_groups/list_users': {
@@ -7428,6 +7433,7 @@ export default {
         'x-fern-sdk-method-name': 'list_users',
         'x-fern-sdk-return-value': 'acs_users',
         'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users in an Access Group',
       },
     },
     '/acs/access_groups/remove_user': {
@@ -7483,6 +7489,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'access_groups'],
         'x-fern-sdk-method-name': 'remove_user',
         'x-response-key': null,
+        'x-title': 'Remove an ACS User from an Access Group',
       },
     },
     '/acs/access_groups/unmanaged/get': {
@@ -9496,6 +9503,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'entrances'],
         'x-fern-sdk-method-name': 'grant_access',
         'x-response-key': null,
+        'x-title': 'Grant an ACS User Access to an Entrance',
       },
     },
     '/acs/entrances/list': {
