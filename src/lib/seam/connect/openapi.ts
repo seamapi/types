@@ -3995,8 +3995,9 @@ export default {
                           _member_group_id: { type: 'string' },
                           gadget_id: { type: 'string' },
                           gadget_name: { type: 'string' },
+                          product_name: { type: 'string' },
                         },
-                        required: ['gadget_name', 'gadget_id'],
+                        required: ['gadget_name', 'gadget_id', 'product_name'],
                         type: 'object',
                       },
                       assa_abloy_vostio_metadata: {
@@ -6987,18 +6988,9 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  allow_external_modification: { type: 'boolean' },
-                  code: {
-                    maxLength: 9,
-                    minLength: 4,
-                    pattern: '^\\d+$',
-                    type: 'string',
-                  },
                   common_code_key: { type: 'string' },
                   ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
                   name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
                   starts_at: { type: 'string' },
                 },
                 required: ['common_code_key'],
@@ -7040,18 +7032,9 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  allow_external_modification: { type: 'boolean' },
-                  code: {
-                    maxLength: 9,
-                    minLength: 4,
-                    pattern: '^\\d+$',
-                    type: 'string',
-                  },
                   common_code_key: { type: 'string' },
                   ends_at: { type: 'string' },
-                  is_external_modification_allowed: { type: 'boolean' },
                   name: { type: 'string' },
-                  prefer_native_scheduling: { type: 'boolean' },
                   starts_at: { type: 'string' },
                 },
                 required: ['common_code_key'],
