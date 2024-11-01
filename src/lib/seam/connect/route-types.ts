@@ -314,8 +314,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -1332,8 +1331,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -2515,8 +2513,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -3520,8 +3517,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -4119,11 +4115,8 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /**
-        Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
-        
-        The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-       */
+      /** Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
+    The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_access_group: {
         /** ID of the access group. */
         acs_access_group_id: string
@@ -4134,14 +4127,14 @@ export interface Routes {
         /** Name of the access group. */
         name: string
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
         display_name: string
         /** Brand-specific terminology for the access group type. */
@@ -4181,14 +4174,14 @@ export interface Routes {
         /** Name of the access group. */
         name: string
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
         display_name: string
         /** Brand-specific terminology for the access group type. */
@@ -4328,7 +4321,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -4443,14 +4438,14 @@ export interface Routes {
         /** Name of the access group. */
         name: string
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
         display_name: string
         /** Brand-specific terminology for the access group type. */
@@ -4490,14 +4485,14 @@ export interface Routes {
         /** Name of the access group. */
         name: string
         /**
-         * @deprecated use external_type */
+         * @deprecated Use `external_type`. */
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
           | 'salto_access_group'
           | 'brivo_group'
         /**
-         * @deprecated use external_type_display_name */
+         * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
         display_name: string
         /** Brand-specific terminology for the access group type. */
@@ -4572,8 +4567,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -4687,8 +4681,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -4783,8 +4776,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -5055,8 +5047,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -5139,8 +5130,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -5323,8 +5313,7 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Means by which a user gains access at an entrance.
-    
-          The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
       acs_credential: {
         /** ID of the credential. */
         acs_credential_id: string
@@ -5697,8 +5686,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -7228,8 +7216,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -7798,6 +7785,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /** Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_entrance: {
         /** ID of the access control system that contains the entrance. */
         acs_system_id: string
@@ -8549,7 +8537,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -8682,7 +8672,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -8811,7 +8803,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -9051,7 +9045,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -9175,7 +9171,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -9595,8 +9593,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -10454,8 +10451,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -16918,8 +16914,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -17778,8 +17773,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -20140,8 +20134,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -21010,8 +21003,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -21919,8 +21911,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -22985,8 +22976,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -23847,8 +23837,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -25400,8 +25389,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -26264,8 +26252,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -28587,8 +28574,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -29568,8 +29554,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */
@@ -31832,7 +31817,9 @@ export interface Routes {
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
+              /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
+              /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               ends_at: string
             }
           | undefined
@@ -32391,8 +32378,7 @@ export interface Routes {
             error: null
             action_type: 'ENCODE_CREDENTIAL'
             /** Means by which a user gains access at an entrance.
-        
-              The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
               | {
                   /** ID of the credential. */

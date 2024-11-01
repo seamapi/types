@@ -29,12 +29,12 @@ const common_acs_access_group = z.object({
   name: z.string().describe('Name of the access group.'),
   access_group_type: acs_access_group_external_type.describe(`
     ---
-    deprecated: use external_type
+    deprecated: Use \`external_type\`.
     ---
   `),
   access_group_type_display_name: z.string().describe(`
     ---
-    deprecated: use external_type_display_name
+    deprecated: Use \`external_type_display_name\`.
     ---
     `),
   display_name: z.string(),
@@ -54,11 +54,9 @@ const common_acs_access_group = z.object({
 
 export const acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(true),
-}).describe(`
-    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
-    
-    The \`acs_access_group\` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-  `)
+})
+  .describe(`Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
+The \`acs_access_group\` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).`)
 export const unmanaged_acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(false),
 })
