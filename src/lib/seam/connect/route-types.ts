@@ -6697,7 +6697,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -11943,7 +11943,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -12760,7 +12760,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -14288,7 +14288,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -14934,7 +14934,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -15751,7 +15751,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -16397,7 +16397,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -18966,7 +18966,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -19612,7 +19612,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -24870,7 +24870,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -27411,7 +27411,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -28057,7 +28057,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -30770,7 +30770,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &
@@ -31418,7 +31418,7 @@ export interface Routes {
             | undefined
           assa_abloy_vostio_metadata?:
             | {
-                encoder_id: string
+                encoder_name: string
               }
             | undefined
         }) &

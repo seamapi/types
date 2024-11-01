@@ -264,7 +264,7 @@ export const device_metadata = z
       _member_group_id: z.string().optional(),
     }),
     assa_abloy_vostio_metadata: z.object({
-      encoder_id: z.string(),
+      encoder_name: z.string(),
     }),
   })
   .partial()
