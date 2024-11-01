@@ -3995,8 +3995,9 @@ export default {
                           _member_group_id: { type: 'string' },
                           gadget_id: { type: 'string' },
                           gadget_name: { type: 'string' },
+                          product_name: { type: 'string' },
                         },
-                        required: ['gadget_name', 'gadget_id'],
+                        required: ['gadget_name', 'gadget_id', 'product_name'],
                         type: 'object',
                       },
                       assa_abloy_vostio_metadata: {
