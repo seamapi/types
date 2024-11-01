@@ -144,10 +144,8 @@ function getAcsCredentialDescription(is_managed = true): string {
     : 'unmanaged_acs_credential'
   const management_clause = is_managed ? '' : ', which is not managed by Seam,'
 
-  return `
-      Means by which a user gains access at an entrance.
-
-      The \`${resource_name}\` object${management_clause} represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.`.trim()
+  return `Means by which a user gains access at an entrance.
+The \`${resource_name}\` object${management_clause} represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.`.trim()
 }
 
 export const acs_credential_on_encoder = z.object({

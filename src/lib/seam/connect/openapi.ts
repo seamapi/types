@@ -187,7 +187,7 @@ export default {
       },
       acs_access_group: {
         description:
-          '\n    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\n    \n    The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n  ',
+          'Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.\nThe `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
         properties: {
           access_group_type: {
             deprecated: true,
@@ -198,12 +198,12 @@ export default {
               'brivo_group',
             ],
             type: 'string',
-            'x-deprecated': 'use external_type',
+            'x-deprecated': 'Use `external_type`.',
           },
           access_group_type_display_name: {
             deprecated: true,
             type: 'string',
-            'x-deprecated': 'use external_type_display_name',
+            'x-deprecated': 'Use `external_type_display_name`.',
           },
           acs_access_group_id: {
             description: 'ID of the access group.',
@@ -264,7 +264,7 @@ export default {
       },
       acs_credential: {
         description:
-          'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+          'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
         properties: {
           access_method: {
             description:
@@ -465,6 +465,8 @@ export default {
         type: 'object',
       },
       acs_entrance: {
+        description:
+          'Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
         properties: {
           acs_entrance_id: {
             description: 'ID of the entrance.',
@@ -912,8 +914,18 @@ export default {
             description:
               "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
             properties: {
-              ends_at: { format: 'date-time', type: 'string' },
-              starts_at: { format: 'date-time', type: 'string' },
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
             },
             required: ['starts_at', 'ends_at'],
             type: 'object',
@@ -1473,7 +1485,7 @@ export default {
                     oneOf: [
                       {
                         description:
-                          'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                          'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
                             description:
@@ -1648,7 +1660,7 @@ export default {
                       },
                       {
                         description:
-                          'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
                             description:
@@ -1947,11 +1959,11 @@ export default {
               error: { nullable: true },
               result: {
                 description:
-                  'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                  'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                 oneOf: [
                   {
                     description:
-                      'Means by which a user gains access at an entrance.\n\n      The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                      'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
                         description:
@@ -2125,7 +2137,7 @@ export default {
                   },
                   {
                     description:
-                      'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                      'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
                         description:
@@ -7514,12 +7526,12 @@ export default {
                             'brivo_group',
                           ],
                           type: 'string',
-                          'x-deprecated': 'use external_type',
+                          'x-deprecated': 'Use `external_type`.',
                         },
                         access_group_type_display_name: {
                           deprecated: true,
                           type: 'string',
-                          'x-deprecated': 'use external_type_display_name',
+                          'x-deprecated': 'Use `external_type_display_name`.',
                         },
                         acs_access_group_id: {
                           description: 'ID of the access group.',
@@ -7655,12 +7667,12 @@ export default {
                               'brivo_group',
                             ],
                             type: 'string',
-                            'x-deprecated': 'use external_type',
+                            'x-deprecated': 'Use `external_type`.',
                           },
                           access_group_type_display_name: {
                             deprecated: true,
                             type: 'string',
-                            'x-deprecated': 'use external_type_display_name',
+                            'x-deprecated': 'Use `external_type_display_name`.',
                           },
                           acs_access_group_id: {
                             description: 'ID of the access group.',
@@ -8574,7 +8586,7 @@ export default {
                   properties: {
                     acs_credential: {
                       description:
-                        'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                        'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                       properties: {
                         access_method: {
                           description:
@@ -8851,7 +8863,7 @@ export default {
                     acs_credentials: {
                       items: {
                         description:
-                          'Means by which a user gains access at an entrance.\n\n      The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
                             description:
@@ -10414,8 +10426,18 @@ export default {
                           description:
                             "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
                           properties: {
-                            ends_at: { format: 'date-time', type: 'string' },
-                            starts_at: { format: 'date-time', type: 'string' },
+                            ends_at: {
+                              description:
+                                "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                              format: 'date-time',
+                              type: 'string',
+                            },
+                            starts_at: {
+                              description:
+                                "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                              format: 'date-time',
+                              type: 'string',
+                            },
                           },
                           required: ['starts_at', 'ends_at'],
                           type: 'object',
@@ -10796,8 +10818,15 @@ export default {
                             description:
                               "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
                             properties: {
-                              ends_at: { format: 'date-time', type: 'string' },
+                              ends_at: {
+                                description:
+                                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                                format: 'date-time',
+                                type: 'string',
+                              },
                               starts_at: {
+                                description:
+                                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                                 format: 'date-time',
                                 type: 'string',
                               },
