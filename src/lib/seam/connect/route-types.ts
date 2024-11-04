@@ -86,16 +86,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -284,7 +284,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -305,14 +305,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -466,7 +466,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -1103,16 +1103,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -1301,7 +1301,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -1322,14 +1322,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -1483,7 +1483,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -2285,16 +2285,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -2483,7 +2483,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -2504,14 +2504,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -2665,7 +2665,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -3289,16 +3289,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -3487,7 +3487,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -3508,14 +3508,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -3669,7 +3669,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -5384,15 +5384,13 @@ export interface Routes {
       }
     }
   }
-  '/acs/encoders/encode_credential': {
-    route: '/acs/encoders/encode_credential'
+  '/acs/encoders/encode_card': {
+    route: '/acs/encoders/encode_card'
     method: 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the encoder to use for the encoding. */
       device_id: string
-      /** ID of the acs_credential to encode on a physical card. */
       acs_credential_id: string
     }
     formData: {}
@@ -5458,16 +5456,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -5656,7 +5654,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -5677,14 +5675,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -5838,7 +5836,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -6914,15 +6912,13 @@ export interface Routes {
       }>
     }
   }
-  '/acs/encoders/scan_credential': {
-    route: '/acs/encoders/scan_credential'
+  '/acs/encoders/scan_card': {
+    route: '/acs/encoders/scan_card'
     method: 'POST'
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the acs_system the encoder belongs to. */
       acs_system_id: string
-      /** ID of the encoder to use for the scan. */
       device_id: string
     }
     formData: {}
@@ -6988,16 +6984,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -7186,7 +7182,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -7207,14 +7203,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -7368,7 +7364,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -9365,16 +9361,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -9563,7 +9559,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -9584,14 +9580,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -9745,7 +9741,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -10223,16 +10219,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -10421,7 +10417,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -10442,14 +10438,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -10603,7 +10599,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -16686,16 +16682,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -16884,7 +16880,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -16905,14 +16901,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -17066,7 +17062,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -17545,16 +17541,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -17743,7 +17739,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -17764,14 +17760,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -17925,7 +17921,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -19906,16 +19902,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -20104,7 +20100,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -20125,14 +20121,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -20286,7 +20282,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -20775,16 +20771,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -20973,7 +20969,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -20994,14 +20990,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -21155,7 +21151,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -21683,16 +21679,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -21881,7 +21877,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -21902,14 +21898,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -22063,7 +22059,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -22748,16 +22744,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -22946,7 +22942,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -22967,14 +22963,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -23128,7 +23124,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -23609,16 +23605,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -23807,7 +23803,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -23828,14 +23824,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -23989,7 +23985,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -25161,16 +25157,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -25359,7 +25355,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -25380,14 +25376,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -25541,7 +25537,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -26024,16 +26020,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -26222,7 +26218,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -26243,14 +26239,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -26404,7 +26400,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -28346,16 +28342,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -28544,7 +28540,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -28565,14 +28561,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -28726,7 +28722,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -29326,16 +29322,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -29524,7 +29520,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -29545,14 +29541,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -29706,7 +29702,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -32150,16 +32146,16 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             result: {
-              /** Snapshot of credential data read from physical encoder. */
+              /** Snapshot of the card data read from the physical encoder. */
               acs_credential_on_encoder: {
                 /** Date and time the credential was created. */
                 created_at: string | null
@@ -32348,7 +32344,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'SCAN_CREDENTIAL'
+            action_type: 'SCAN_CARD'
             error:
               | {
                   type: 'uncategorized_error'
@@ -32369,14 +32365,14 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
           }
         | {
             /** The ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
             error: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             /** Means by which a user gains access at an entrance.
         The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
             result:
@@ -32530,7 +32526,7 @@ export interface Routes {
             action_attempt_id: string
             status: 'error'
             result: null
-            action_type: 'ENCODE_CREDENTIAL'
+            action_type: 'ENCODE_CARD'
             error:
               | {
                   type: 'uncategorized_error'
