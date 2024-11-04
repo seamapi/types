@@ -44,7 +44,7 @@ export const DEVICE_PROVIDERS = {
   LATCH: 'latch',
   AKILES: 'akiles',
   VOSTIO: 'assa_abloy_vostio',
-  VOSTIO_CREDENTIAL_SERVICE: 'vostio_credential_service',
+  ASSA_ABLOY_VOSTIO_CREDENTIAL_SERVICE: 'assa_abloy_vostio_credential_service',
 } as const
 
 export type DeviceProviderName =
