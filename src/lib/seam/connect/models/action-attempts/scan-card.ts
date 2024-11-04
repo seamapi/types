@@ -12,7 +12,7 @@ import {
   common_succeeded_action_attempt,
 } from './common.js'
 
-const action_type = z.literal('SCAN_CREDENTIAL')
+const action_type = z.literal('SCAN_CARD')
 
 const no_card_on_encoder_error = z.object({
   type: z.literal('no_card_on_encoder'),
@@ -33,7 +33,7 @@ const acs_credential_on_seam = acs_credential.or(unmanaged_acs_credential)
 
 const result = z.object({
   acs_credential_on_encoder: acs_credential_on_encoder.describe(
-    'Snapshot of credential data read from physical encoder.',
+    'Snapshot of the card data read from the physical encoder.',
   ),
   acs_credential_on_seam: acs_credential_on_seam
     .nullable()
@@ -41,23 +41,21 @@ const result = z.object({
   warnings: z.array(warning),
 })
 
-export const scan_credential_action_attempt = z.discriminatedUnion('status', [
+export const scan_card_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt
     .extend({
       action_type,
     })
-    .describe('Reading credential data from physical encoder.'),
+    .describe('Reading card data from physical encoder.'),
   common_succeeded_action_attempt
     .extend({
       action_type,
       result,
     })
-    .describe('Reading credential data from physical encoder succeeded.'),
+    .describe('Reading card data from physical encoder succeeded.'),
   common_failed_action_attempt
     .extend({ action_type, error })
-    .describe('Reading credential data from physical encoder failed.'),
+    .describe('Reading card data from physical encoder failed.'),
 ])
 
-export type ScanCredentialActionAttempt = z.infer<
-  typeof scan_credential_action_attempt
->
+export type ScanCardActionAttempt = z.infer<typeof scan_card_action_attempt>
