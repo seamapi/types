@@ -8030,6 +8030,19 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  assa_abloy_vostio_metadata: {
+                    description:
+                      'Vostio-specific metadata for the new credential.',
+                    properties: {
+                      join_all_guest_acs_entrances: { type: 'boolean' },
+                      override_all_guest_acs_entrances: { type: 'boolean' },
+                      override_guest_acs_entrance_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                    },
+                    type: 'object',
+                  },
                   code: {
                     description:
                       'Access (PIN) code for the new credential. There may be manufacturer-specific code restrictions. For details, see the applicable [device or system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview).',

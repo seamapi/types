@@ -4673,6 +4673,14 @@ export interface Routes {
             joiner_acs_credential_ids?: string[] | undefined
           }
         | undefined
+      /** Vostio-specific metadata for the new credential. */
+      assa_abloy_vostio_metadata?:
+        | {
+            override_all_guest_acs_entrances?: boolean | undefined
+            join_all_guest_acs_entrances?: boolean | undefined
+            override_guest_acs_entrance_ids?: string[] | undefined
+          }
+        | undefined
       /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
       /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
