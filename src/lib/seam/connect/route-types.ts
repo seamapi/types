@@ -23544,8 +23544,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device. */
       device_id: string
+      /** Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
+      /** Temperature to which the HVAC system connected to the thermostat should cool (in °F). You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
       sync?: boolean
     }
@@ -24438,7 +24441,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the thermostat device. */
       device_id?: string | undefined
+      /** Name of the thermostat. */
       name?: string | undefined
     }
     formData: {}
@@ -25096,8 +25101,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device. */
       device_id: string
+      /** Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
+      /** Temperature to which the HVAC system connected to the thermostat should heat (in °F). You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
       sync?: boolean
     }
@@ -25957,10 +25965,15 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device. */
       device_id: string
+      /** Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
+      /** Temperature the thermostat should heat to (in °F). You must set one of the heating_set_point parameters. */
       heating_set_point_fahrenheit?: number | undefined
+      /** Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
+      /** Temperature the thermostat should cool to (in °F). You must set one of the cooling_set_point parameters. */
       cooling_set_point_fahrenheit?: number | undefined
       sync?: boolean
     }
@@ -28283,6 +28296,7 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device. */
       device_id: string
       sync?: boolean
     }
@@ -29259,10 +29273,12 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the thermostat device. */
       device_id: string
       /**
-       * @deprecated use fan_mode_setting instead. */
+       * @deprecated Use `fan_mode_setting` instead. */
       fan_mode?: ('auto' | 'on' | 'circulate') | undefined
+      /** Fan mode setting of the thermostat. See also [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings). */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
       sync?: boolean
     }
