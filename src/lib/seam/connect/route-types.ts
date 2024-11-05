@@ -4252,11 +4252,11 @@ export interface Routes {
               door_name: string
               locked_state: string
               lock_type: string
-              online: boolean
+              online?: boolean | undefined
               battery_level: string
-              left_open_alarm: boolean
-              intrusion_alarm: boolean
-              privacy_mode: boolean
+              left_open_alarm?: boolean | undefined
+              intrusion_alarm?: boolean | undefined
+              privacy_mode?: boolean | undefined
             }
           | undefined
         dormakaba_community_metadata?:
@@ -5013,11 +5013,11 @@ export interface Routes {
               door_name: string
               locked_state: string
               lock_type: string
-              online: boolean
+              online?: boolean | undefined
               battery_level: string
-              left_open_alarm: boolean
-              intrusion_alarm: boolean
-              privacy_mode: boolean
+              left_open_alarm?: boolean | undefined
+              intrusion_alarm?: boolean | undefined
+              privacy_mode?: boolean | undefined
             }
           | undefined
         dormakaba_community_metadata?:
@@ -7833,11 +7833,11 @@ export interface Routes {
               door_name: string
               locked_state: string
               lock_type: string
-              online: boolean
+              online?: boolean | undefined
               battery_level: string
-              left_open_alarm: boolean
-              intrusion_alarm: boolean
-              privacy_mode: boolean
+              left_open_alarm?: boolean | undefined
+              intrusion_alarm?: boolean | undefined
+              privacy_mode?: boolean | undefined
             }
           | undefined
         dormakaba_community_metadata?:
@@ -7927,11 +7927,11 @@ export interface Routes {
               door_name: string
               locked_state: string
               lock_type: string
-              online: boolean
+              online?: boolean | undefined
               battery_level: string
-              left_open_alarm: boolean
-              intrusion_alarm: boolean
-              privacy_mode: boolean
+              left_open_alarm?: boolean | undefined
+              intrusion_alarm?: boolean | undefined
+              privacy_mode?: boolean | undefined
             }
           | undefined
         dormakaba_community_metadata?:
@@ -8943,11 +8943,11 @@ export interface Routes {
               door_name: string
               locked_state: string
               lock_type: string
-              online: boolean
+              online?: boolean | undefined
               battery_level: string
-              left_open_alarm: boolean
-              intrusion_alarm: boolean
-              privacy_mode: boolean
+              left_open_alarm?: boolean | undefined
+              intrusion_alarm?: boolean | undefined
+              privacy_mode?: boolean | undefined
             }
           | undefined
         dormakaba_community_metadata?:
