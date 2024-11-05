@@ -40,7 +40,7 @@ export const acs_system_external_type = z.enum([
   'dormakaba_community',
   'legic_connect',
   'assa_abloy_vostio',
-  'vostio_credential_service',
+  'assa_abloy_vostio_credential_service',
 ])
 
 export type AcsSystemExternalType = z.infer<typeof acs_system_external_type>
