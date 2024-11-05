@@ -15331,6 +15331,8 @@ export default {
     },
     '/thermostats/cool': {
       post: {
+        description:
+          'Sets a thermostat to cooling mode. You must include a cooling set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsCoolPost',
         requestBody: {
           content: {
@@ -15338,14 +15340,22 @@ export default {
               schema: {
                 properties: {
                   cooling_set_point_celsius: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should cool (in °F). You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   sync: { default: false, type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -15387,6 +15397,7 @@ export default {
         'x-fern-sdk-method-name': 'cool',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Set to Cool Mode',
       },
     },
     '/thermostats/create_climate_preset': {
@@ -15511,14 +15522,22 @@ export default {
     },
     '/thermostats/get': {
       post: {
+        description: 'Returns a specific thermostat.',
         operationId: 'thermostatsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  name: { type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  name: {
+                    description: 'Name of the thermostat.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -15557,22 +15576,33 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat',
         'x-response-key': 'thermostat',
+        'x-title': 'Get a Thermostat',
       },
     },
     '/thermostats/heat': {
       post: {
+        description:
+          'Sets a thermostat to heating mode. You must include a heating set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsHeatPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   heating_set_point_celsius: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should heat (in °F). You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -15617,10 +15647,13 @@ export default {
         'x-fern-sdk-method-name': 'heat',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Set to Heat Mode',
       },
     },
     '/thermostats/heat_cool': {
       post: {
+        description:
+          'Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).',
         operationId: 'thermostatsHeatCoolPost',
         requestBody: {
           content: {
@@ -15628,19 +15661,31 @@ export default {
               schema: {
                 properties: {
                   cooling_set_point_celsius: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
+                    description:
+                      'Temperature the thermostat should cool to (in °F). You must set one of the cooling_set_point parameters.',
                     format: 'float',
                     type: 'number',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   heating_set_point_celsius: {
+                    description:
+                      'Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
+                    description:
+                      'Temperature the thermostat should heat to (in °F). You must set one of the heating_set_point parameters.',
                     format: 'float',
                     type: 'number',
                   },
@@ -15685,10 +15730,13 @@ export default {
         'x-fern-sdk-method-name': 'heat_cool',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Set to Heat-Cool (Auto) Mode',
       },
     },
     '/thermostats/list': {
       post: {
+        description:
+          'Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.',
         operationId: 'thermostatsListPost',
         requestBody: {
           content: {
@@ -15959,17 +16007,24 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Thermostats',
       },
     },
     '/thermostats/off': {
       post: {
+        description:
+          'Sets a thermostat to "off" mode. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsOffPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   sync: { default: false, type: 'boolean' },
                 },
                 required: ['device_id'],
@@ -16011,6 +16066,7 @@ export default {
         'x-fern-sdk-method-name': 'off',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Set to Off Mode',
       },
     },
     '/thermostats/schedules/create': {
@@ -16373,20 +16429,28 @@ export default {
     },
     '/thermostats/set_fan_mode': {
       post: {
+        description:
+          'Sets the fan mode setting for a thermostat. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) and [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).',
         operationId: 'thermostatsSetFanModePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   fan_mode: {
                     deprecated: true,
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
-                    'x-deprecated': 'use fan_mode_setting instead.',
+                    'x-deprecated': 'Use `fan_mode_setting` instead.',
                   },
                   fan_mode_setting: {
+                    description:
+                      'Fan mode setting of the thermostat. See also [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
@@ -16431,6 +16495,7 @@ export default {
         'x-fern-sdk-method-name': 'set_fan_mode',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Set Fan Mode Setting',
       },
     },
     '/thermostats/set_temperature_threshold': {
