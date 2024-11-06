@@ -8109,6 +8109,10 @@ export interface Routes {
         /**
          * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        location: {
+          /** Time zone in which the `acs_system` is located. */
+          time_zone: string | null
+        }
         /** Name of the `acs_system`. */
         name: string
         /** Date and time at which the `acs_system` was created. */
@@ -8252,6 +8256,10 @@ export interface Routes {
         /**
          * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        location: {
+          /** Time zone in which the `acs_system` is located. */
+          time_zone: string | null
+        }
         /** Name of the `acs_system`. */
         name: string
         /** Date and time at which the `acs_system` was created. */
@@ -8395,6 +8403,10 @@ export interface Routes {
         /**
          * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        location: {
+          /** Time zone in which the `acs_system` is located. */
+          time_zone: string | null
+        }
         /** Name of the `acs_system`. */
         name: string
         /** Date and time at which the `acs_system` was created. */
@@ -31726,6 +31738,10 @@ export interface Routes {
         /**
          * @deprecated Use `external_type_display_name`. */
         system_type_display_name?: string | undefined
+        location: {
+          /** Time zone in which the `acs_system` is located. */
+          time_zone: string | null
+        }
         /** Name of the `acs_system`. */
         name: string
         /** Date and time at which the `acs_system` was created. */
