@@ -1355,7 +1355,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Reading card data from physical encoder.',
+            description: 'Reading credential data from physical encoder.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -1363,7 +1363,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['SCAN_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
               error: { nullable: true },
               result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
@@ -1378,7 +1378,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Reading card data from physical encoder succeeded.',
+            description:
+              'Reading credential data from physical encoder succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -1386,13 +1387,13 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['SCAN_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
               error: { nullable: true },
               result: {
                 properties: {
                   acs_credential_on_encoder: {
                     description:
-                      'Snapshot of the card data read from the physical encoder.',
+                      'Snapshot of credential data read from physical encoder.',
                     properties: {
                       card_number: {
                         description:
@@ -1864,7 +1865,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Reading card data from physical encoder failed.',
+            description:
+              'Reading credential data from physical encoder failed.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -1872,7 +1874,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['SCAN_CARD'], type: 'string' },
+              action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
               error: {
                 oneOf: [
                   {
@@ -1917,7 +1919,7 @@ export default {
             type: 'object',
           },
           {
-            description: 'Encoding card data from physical encoder.',
+            description: 'Encoding credential data from physical encoder.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -1925,7 +1927,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
               error: { nullable: true },
               result: { nullable: true },
               status: { enum: ['pending'], type: 'string' },
@@ -1940,7 +1942,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Encoding card data from physical encoder succeeded.',
+            description:
+              'Encoding credential data from physical encoder succeeded.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -1948,7 +1951,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
               error: { nullable: true },
               result: {
                 description:
@@ -2316,7 +2319,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Encoding card data from physical encoder failed.',
+            description:
+              'Encoding credential data from physical encoder failed.',
             properties: {
               action_attempt_id: {
                 description: 'The ID of the action attempt.',
@@ -2324,7 +2328,7 @@ export default {
                 type: 'string',
                 'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CARD'], type: 'string' },
+              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
               error: {
                 oneOf: [
                   {
@@ -9201,16 +9205,25 @@ export default {
         'x-title': 'Update a Credential',
       },
     },
-    '/acs/encoders/encode_card': {
+    '/acs/encoders/encode_credential': {
       post: {
-        operationId: 'acsEncodersEncodeCardPost',
+        operationId: 'acsEncodersEncodeCredentialPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description:
+                      'ID of the acs_credential to encode on a physical card.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the encoder to use for the encoding.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'acs_credential_id'],
                 type: 'object',
@@ -9244,10 +9257,10 @@ export default {
           { console_session: [] },
           { api_key: [] },
         ],
-        summary: '/acs/encoders/encode_card',
+        summary: '/acs/encoders/encode_credential',
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'encoders'],
-        'x-fern-sdk-method-name': 'encode_card',
+        'x-fern-sdk-method-name': 'encode_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-undocumented': 'Encoding a card is currently unimplemented.',
@@ -9339,16 +9352,24 @@ export default {
         'x-undocumented': 'Encoders are in alpha.',
       },
     },
-    '/acs/encoders/scan_card': {
+    '/acs/encoders/scan_credential': {
       post: {
-        operationId: 'acsEncodersScanCardPost',
+        operationId: 'acsEncodersScanCredentialPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_system_id: { format: 'uuid', type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  acs_system_id: {
+                    description: 'ID of the acs_system the encoder belongs to.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the encoder to use for the scan.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['acs_system_id', 'device_id'],
                 type: 'object',
@@ -9382,10 +9403,10 @@ export default {
           { console_session: [] },
           { api_key: [] },
         ],
-        summary: '/acs/encoders/scan_card',
+        summary: '/acs/encoders/scan_credential',
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'encoders'],
-        'x-fern-sdk-method-name': 'scan_card',
+        'x-fern-sdk-method-name': 'scan_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
         'x-undocumented': 'Reading a card is currently unimplemented.',
