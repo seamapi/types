@@ -8148,7 +8148,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
@@ -8156,7 +8156,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -8164,7 +8164,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
         >
@@ -8295,7 +8295,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
@@ -8303,7 +8303,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -8311,7 +8311,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
         >
@@ -8442,7 +8442,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
@@ -8450,7 +8450,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -8458,7 +8458,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
         >
@@ -13749,6 +13749,8 @@ export interface Routes {
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
+            | 'acs_encoder.added'
+            | 'acs_encoder.removed'
             | 'enrollment_automation.deleted'
             | 'client_session.deleted'
             | 'action_attempt.lock_door.succeeded'
@@ -13821,6 +13823,8 @@ export interface Routes {
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
+            | 'acs_encoder.added'
+            | 'acs_encoder.removed'
             | 'enrollment_automation.deleted'
             | 'client_session.deleted'
             | 'action_attempt.lock_door.succeeded'
@@ -31777,7 +31781,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
             }
           | {
@@ -31785,7 +31789,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'acs_system_disconnected'
             }
           | {
@@ -31793,7 +31797,7 @@ export interface Routes {
               created_at: string
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
-              /** Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
         >

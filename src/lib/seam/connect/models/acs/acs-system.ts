@@ -75,6 +75,7 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
   .describe(`Indicates that the Seam API cannot communicate with the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if the Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+
 const visionline_instance_unreachable = common_acs_system_error.extend({
   error_code: z
     .literal('visionline_instance_unreachable')
@@ -84,29 +85,36 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).`)
 
-const salto_ks_subscription_limit_exceeded = common_acs_system_error.extend({
-  error_code: z
-    .literal('salto_ks_subscription_limit_exceeded')
-    .describe(
-      'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
-    ),
-})
+const salto_ks_subscription_limit_exceeded = common_acs_system_error
+  .extend({
+    error_code: z
+      .literal('salto_ks_subscription_limit_exceeded')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+  )
 
-const acs_system_disconnected = common_acs_system_error.extend({
-  error_code: z
-    .literal('acs_system_disconnected')
-    .describe(
-      'Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
-    ),
-})
+const acs_system_disconnected = common_acs_system_error
+  .extend({
+    error_code: z
+      .literal('acs_system_disconnected')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the access system has been disconnected. See [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
+  )
 
-const account_disconnected = common_acs_system_error.extend({
-  error_code: z
-    .literal('account_disconnected')
-    .describe(
-      'Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access.',
-    ),
-})
+const account_disconnected = common_acs_system_error
+  .extend({
+    error_code: z
+      .literal('account_disconnected')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.',
+  )
+
 const acs_system_error = z
   .union([
     seam_bridge_disconnected,

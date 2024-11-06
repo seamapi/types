@@ -700,6 +700,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
                   properties: {
                     created_at: {
                       description:
@@ -709,7 +711,7 @@ export default {
                     },
                     error_code: {
                       description:
-                        'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_ks_subscription_limit_exceeded'],
                       type: 'string',
                     },
@@ -723,6 +725,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Indicates that the access system has been disconnected. See [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
                   properties: {
                     created_at: {
                       description:
@@ -732,7 +736,7 @@ export default {
                     },
                     error_code: {
                       description:
-                        'Indicates that the access system has been disconnected. Please refer to [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['acs_system_disconnected'],
                       type: 'string',
                     },
@@ -746,6 +750,8 @@ export default {
                   type: 'object',
                 },
                 {
+                  description:
+                    'Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.',
                   properties: {
                     created_at: {
                       description:
@@ -755,7 +761,7 @@ export default {
                     },
                     error_code: {
                       description:
-                        'Indicates that the login credentials are invalid. Please reconnect the account using the Connect Webview to restore access.',
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['account_disconnected'],
                       type: 'string',
                     },
@@ -13789,6 +13795,8 @@ export default {
                       'acs_user.deleted',
                       'acs_credential.deleted',
                       'acs_credential.issued',
+                      'acs_encoder.added',
+                      'acs_encoder.removed',
                       'enrollment_automation.deleted',
                       'client_session.deleted',
                       'action_attempt.lock_door.succeeded',
@@ -13863,6 +13871,8 @@ export default {
                         'acs_user.deleted',
                         'acs_credential.deleted',
                         'acs_credential.issued',
+                        'acs_encoder.added',
+                        'acs_encoder.removed',
                         'enrollment_automation.deleted',
                         'client_session.deleted',
                         'action_attempt.lock_door.succeeded',
