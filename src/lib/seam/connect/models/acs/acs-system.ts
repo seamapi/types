@@ -27,6 +27,13 @@ export const acs_system_capability_flags = z.object({
     ),
 })
 
+export const location = z.object({
+  time_zone: z
+    .string()
+    .nullable()
+    .describe('Time zone in which the `acs_system` is located.'),
+})
+
 // If changed, update seam.acs_system.external_type generated column
 export const acs_system_external_type = z.enum([
   'pti_site',
@@ -219,6 +226,7 @@ export const acs_system = z
       deprecated: Use \`external_type_display_name\`.
       ---
       `),
+    location,
     name: z.string().describe('Name of the `acs_system`.'),
     created_at: z
       .string()

@@ -809,6 +809,17 @@ export default {
               'Indicates if the `acs_system` is a credential manager.',
             type: 'boolean',
           },
+          location: {
+            properties: {
+              time_zone: {
+                description: 'Time zone in which the `acs_system` is located.',
+                nullable: true,
+                type: 'string',
+              },
+            },
+            required: ['time_zone'],
+            type: 'object',
+          },
           name: { description: 'Name of the `acs_system`.', type: 'string' },
           system_type: {
             deprecated: true,
@@ -893,6 +904,7 @@ export default {
         required: [
           'acs_system_id',
           'is_credential_manager',
+          'location',
           'name',
           'created_at',
           'workspace_id',
