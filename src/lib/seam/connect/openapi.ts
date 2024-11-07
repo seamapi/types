@@ -4618,21 +4618,51 @@ export default {
                         default: null,
                         nullable: true,
                         properties: {
-                          climate_preset_key: { type: 'string' },
-                          created_at: { format: 'date-time', type: 'string' },
-                          device_id: { format: 'uuid', type: 'string' },
-                          ends_at: { format: 'date-time', type: 'string' },
+                          climate_preset_key: {
+                            description:
+                              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the climate schedule was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          device_id: {
+                            description: 'ID of the desired thermostat device.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          ends_at: {
+                            description:
+                              'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
                           errors: {
                             description:
-                              'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+                              'Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
                           },
                           max_override_period_minutes: {
+                            description:
+                              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
                             minimum: 0,
                             type: 'integer',
                           },
-                          name: { type: 'string' },
-                          starts_at: { format: 'date-time', type: 'string' },
+                          name: {
+                            description:
+                              'User-friendly name to identify the climate schedule.',
+                            type: 'string',
+                          },
+                          starts_at: {
+                            description:
+                              'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
                           thermostat_schedule_id: {
+                            description: 'ID of the climate schedule.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -4651,37 +4681,71 @@ export default {
                       available_climate_presets: {
                         items: {
                           properties: {
-                            can_delete: { type: 'boolean' },
-                            can_edit: { type: 'boolean' },
-                            climate_preset_key: { type: 'string' },
+                            can_delete: {
+                              description:
+                                'Indicates whether this climate preset key can be deleted.',
+                              type: 'boolean',
+                            },
+                            can_edit: {
+                              description:
+                                'Indicates whether this climate preset key can be edited.',
+                              type: 'boolean',
+                            },
+                            climate_preset_key: {
+                              description:
+                                'Unique key to identify the climate preset.',
+                              type: 'string',
+                            },
                             cooling_set_point_celsius: {
+                              description:
+                                'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                               format: 'float',
                               type: 'number',
                             },
                             cooling_set_point_fahrenheit: {
+                              description:
+                                'Temperature to which the thermostat should cool (in °F).',
                               format: 'float',
                               type: 'number',
                             },
-                            display_name: { type: 'string' },
+                            display_name: {
+                              description:
+                                'Display name for the climate preset.',
+                              type: 'string',
+                            },
                             fan_mode_setting: {
+                              description:
+                                'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                               enum: ['auto', 'on', 'circulate'],
                               type: 'string',
                             },
                             heating_set_point_celsius: {
+                              description:
+                                'Temperature to which the thermostat should heat (in °C).',
                               format: 'float',
                               type: 'number',
                             },
                             heating_set_point_fahrenheit: {
+                              description:
+                                'Temperature to which the thermostat should heat (in °F).',
                               format: 'float',
                               type: 'number',
                             },
                             hvac_mode_setting: {
+                              description:
+                                'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                               enum: ['off', 'heat', 'cool', 'heat_cool'],
                               type: 'string',
                             },
-                            manual_override_allowed: { type: 'boolean' },
+                            manual_override_allowed: {
+                              description:
+                                "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                              type: 'boolean',
+                            },
                             name: {
                               default: null,
+                              description:
+                                'User-friendly name to identify the climate preset.',
                               nullable: true,
                               type: 'string',
                             },
@@ -4713,37 +4777,70 @@ export default {
                       },
                       current_climate_setting: {
                         properties: {
-                          can_delete: { type: 'boolean' },
-                          can_edit: { type: 'boolean' },
-                          climate_preset_key: { type: 'string' },
+                          can_delete: {
+                            description:
+                              'Indicates whether this climate preset key can be deleted.',
+                            type: 'boolean',
+                          },
+                          can_edit: {
+                            description:
+                              'Indicates whether this climate preset key can be edited.',
+                            type: 'boolean',
+                          },
+                          climate_preset_key: {
+                            description:
+                              'Unique key to identify the climate preset.',
+                            type: 'string',
+                          },
                           cooling_set_point_celsius: {
+                            description:
+                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           cooling_set_point_fahrenheit: {
+                            description:
+                              'Temperature to which the thermostat should cool (in °F).',
                             format: 'float',
                             type: 'number',
                           },
-                          display_name: { type: 'string' },
+                          display_name: {
+                            description: 'Display name for the climate preset.',
+                            type: 'string',
+                          },
                           fan_mode_setting: {
+                            description:
+                              'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                             enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
+                            description:
+                              'Temperature to which the thermostat should heat (in °C).',
                             format: 'float',
                             type: 'number',
                           },
                           heating_set_point_fahrenheit: {
+                            description:
+                              'Temperature to which the thermostat should heat (in °F).',
                             format: 'float',
                             type: 'number',
                           },
                           hvac_mode_setting: {
+                            description:
+                              'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                             enum: ['off', 'heat', 'cool', 'heat_cool'],
                             type: 'string',
                           },
-                          manual_override_allowed: { type: 'boolean' },
+                          manual_override_allowed: {
+                            description:
+                              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                            type: 'boolean',
+                          },
                           name: {
                             default: null,
+                            description:
+                              'User-friendly name to identify the climate preset.',
                             nullable: true,
                             type: 'string',
                           },
@@ -4753,37 +4850,70 @@ export default {
                       default_climate_setting: {
                         deprecated: true,
                         properties: {
-                          can_delete: { type: 'boolean' },
-                          can_edit: { type: 'boolean' },
-                          climate_preset_key: { type: 'string' },
+                          can_delete: {
+                            description:
+                              'Indicates whether this climate preset key can be deleted.',
+                            type: 'boolean',
+                          },
+                          can_edit: {
+                            description:
+                              'Indicates whether this climate preset key can be edited.',
+                            type: 'boolean',
+                          },
+                          climate_preset_key: {
+                            description:
+                              'Unique key to identify the climate preset.',
+                            type: 'string',
+                          },
                           cooling_set_point_celsius: {
+                            description:
+                              'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                             format: 'float',
                             type: 'number',
                           },
                           cooling_set_point_fahrenheit: {
+                            description:
+                              'Temperature to which the thermostat should cool (in °F).',
                             format: 'float',
                             type: 'number',
                           },
-                          display_name: { type: 'string' },
+                          display_name: {
+                            description: 'Display name for the climate preset.',
+                            type: 'string',
+                          },
                           fan_mode_setting: {
+                            description:
+                              'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                             enum: ['auto', 'on', 'circulate'],
                             type: 'string',
                           },
                           heating_set_point_celsius: {
+                            description:
+                              'Temperature to which the thermostat should heat (in °C).',
                             format: 'float',
                             type: 'number',
                           },
                           heating_set_point_fahrenheit: {
+                            description:
+                              'Temperature to which the thermostat should heat (in °F).',
                             format: 'float',
                             type: 'number',
                           },
                           hvac_mode_setting: {
+                            description:
+                              'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                             enum: ['off', 'heat', 'cool', 'heat_cool'],
                             type: 'string',
                           },
-                          manual_override_allowed: { type: 'boolean' },
+                          manual_override_allowed: {
+                            description:
+                              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                            type: 'boolean',
+                          },
                           name: {
                             default: null,
+                            description:
+                              'User-friendly name to identify the climate preset.',
                             nullable: true,
                             type: 'string',
                           },
@@ -5288,18 +5418,53 @@ export default {
       },
       thermostat_schedule: {
         properties: {
-          climate_preset_key: { type: 'string' },
-          created_at: { format: 'date-time', type: 'string' },
-          device_id: { format: 'uuid', type: 'string' },
-          ends_at: { format: 'date-time', type: 'string' },
+          climate_preset_key: {
+            description:
+              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the climate schedule was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          device_id: {
+            description: 'ID of the desired thermostat device.',
+            format: 'uuid',
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+            format: 'date-time',
+            type: 'string',
+          },
           errors: {
             description:
-              'Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
+              'Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
           },
-          max_override_period_minutes: { minimum: 0, type: 'integer' },
-          name: { type: 'string' },
-          starts_at: { format: 'date-time', type: 'string' },
-          thermostat_schedule_id: { format: 'uuid', type: 'string' },
+          max_override_period_minutes: {
+            description:
+              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+            minimum: 0,
+            type: 'integer',
+          },
+          name: {
+            description: 'User-friendly name to identify the climate schedule.',
+            type: 'string',
+          },
+          starts_at: {
+            description:
+              'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+            format: 'date-time',
+            type: 'string',
+          },
+          thermostat_schedule_id: {
+            description: 'ID of the climate schedule.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'thermostat_schedule_id',
@@ -12672,35 +12837,54 @@ export default {
     },
     '/devices/list': {
       post: {
+        description:
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices).',
         operationId: 'devicesListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview by which to filter devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_id: {
                     description:
-                      'List all devices owned by this connected account',
+                      'ID of the connected account by which to filter.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
+                    description:
+                      'Array of IDs of the connected accounts by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
+                    description:
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
                   },
                   device_ids: {
+                    description:
+                      'Array of device IDs by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
+                    description: 'Device type by which to filter devices.',
                     oneOf: [
                       {
                         enum: [
@@ -12757,6 +12941,8 @@ export default {
                     ],
                   },
                   device_types: {
+                    description:
+                      'Array of device types by which to filter devices.',
                     items: {
                       oneOf: [
                         {
@@ -12836,6 +13022,7 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
                   include_if: {
                     items: {
@@ -12855,9 +13042,17 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of devices to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   manufacturer: {
+                    description: 'Manufacturer by which to filter devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -12897,7 +13092,11 @@ export default {
                     ],
                     type: 'string',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your own internal user ID for the user by which to filter devices.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -12938,6 +13137,7 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Devices',
       },
     },
     '/devices/list_device_providers': {
@@ -13183,29 +13383,46 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview by which to filter devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_id: {
                     description:
-                      'List all devices owned by this connected account',
+                      'ID of the connected account by which to filter.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
+                    description:
+                      'Array of IDs of the connected accounts by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
+                    description:
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
                   },
                   device_ids: {
+                    description:
+                      'Array of device IDs by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
+                    description: 'Device type by which to filter devices.',
                     oneOf: [
                       {
                         enum: [
@@ -13262,6 +13479,8 @@ export default {
                     ],
                   },
                   device_types: {
+                    description:
+                      'Array of device types by which to filter devices.',
                     items: {
                       oneOf: [
                         {
@@ -13341,6 +13560,7 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
                   include_if: {
                     items: {
@@ -13360,9 +13580,17 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of devices to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   manufacturer: {
+                    description: 'Manufacturer by which to filter devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -13402,7 +13630,11 @@ export default {
                     ],
                     type: 'string',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your own internal user ID for the user by which to filter devices.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -13992,29 +14224,46 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview by which to filter devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_id: {
                     description:
-                      'List all devices owned by this connected account',
+                      'ID of the connected account by which to filter.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
+                    description:
+                      'Array of IDs of the connected accounts by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
+                    description:
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
                   },
                   device_ids: {
+                    description:
+                      'Array of device IDs by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
+                    description: 'Device type by which to filter devices.',
                     oneOf: [
                       {
                         enum: [
@@ -14071,6 +14320,8 @@ export default {
                     ],
                   },
                   device_types: {
+                    description:
+                      'Array of device types by which to filter devices.',
                     items: {
                       oneOf: [
                         {
@@ -14150,6 +14401,7 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
                   include_if: {
                     items: {
@@ -14169,9 +14421,17 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of devices to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   manufacturer: {
+                    description: 'Manufacturer by which to filter devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -14211,7 +14471,11 @@ export default {
                     ],
                     type: 'string',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your own internal user ID for the user by which to filter devices.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -14459,29 +14723,46 @@ export default {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview by which to filter devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_id: {
                     description:
-                      'List all devices owned by this connected account',
+                      'ID of the connected account by which to filter.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
+                    description:
+                      'Array of IDs of the connected accounts by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
+                    description:
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
                   },
                   device_ids: {
+                    description:
+                      'Array of device IDs by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
+                    description: 'Device type by which to filter devices.',
                     oneOf: [
                       {
                         enum: [
@@ -14538,6 +14819,8 @@ export default {
                     ],
                   },
                   device_types: {
+                    description:
+                      'Array of device types by which to filter devices.',
                     items: {
                       oneOf: [
                         {
@@ -14617,6 +14900,7 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
                   include_if: {
                     items: {
@@ -14636,9 +14920,17 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of devices to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   manufacturer: {
+                    description: 'Manufacturer by which to filter devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -14678,7 +14970,11 @@ export default {
                     ],
                     type: 'string',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your own internal user ID for the user by which to filter devices.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -15323,14 +15619,24 @@ export default {
     },
     '/thermostats/activate_climate_preset': {
       post: {
+        description:
+          'Activates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsActivateClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Climate preset key of the desired climate preset.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'climate_preset_key'],
                 type: 'object',
@@ -15370,12 +15676,13 @@ export default {
         'x-fern-sdk-method-name': 'activate_climate_preset',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
+        'x-title': 'Activate a Climate Preset',
       },
     },
     '/thermostats/cool': {
       post: {
         description:
-          'Sets a thermostat to cooling mode. You must include a cooling set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [cool mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsCoolPost',
         requestBody: {
           content: {
@@ -15384,22 +15691,26 @@ export default {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters.',
+                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should cool (in °F). You must set one of the `cooling_set_point` parameters.',
+                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the thermostat device.',
+                    description: 'ID of the desired thermostat device.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  sync: { default: false, type: 'boolean' },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -15445,40 +15756,71 @@ export default {
     },
     '/thermostats/create_climate_preset': {
       post: {
+        description:
+          'Creates a [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsCreateClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
+                  climate_preset_key: {
+                    description: 'Unique key to identify the climate preset.',
+                    type: 'string',
+                  },
                   cooling_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °F).',
                     format: 'float',
                     type: 'number',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   fan_mode_setting: {
+                    description:
+                      'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
                   heating_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °C).',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °F).',
                     format: 'float',
                     type: 'number',
                   },
                   hvac_mode_setting: {
+                    description:
+                      'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { default: null, nullable: true, type: 'string' },
+                  manual_override_allowed: {
+                    description:
+                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                    type: 'boolean',
+                  },
+                  name: {
+                    default: null,
+                    description:
+                      'User-friendly name to identify the climate preset.',
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
                 required: [
                   'device_id',
@@ -15516,18 +15858,29 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'create_climate_preset',
         'x-response-key': null,
+        'x-title': 'Create a Climate Preset',
       },
     },
     '/thermostats/delete_climate_preset': {
       post: {
+        description:
+          'Deletes a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsDeleteClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Climate preset key of the desired climate preset.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'climate_preset_key'],
                 type: 'object',
@@ -15561,11 +15914,13 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'delete_climate_preset',
         'x-response-key': null,
+        'x-title': 'Delete a Climate Preset',
       },
     },
     '/thermostats/get': {
       post: {
-        description: 'Returns a specific thermostat.',
+        description:
+          'Returns a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsGetPost',
         requestBody: {
           content: {
@@ -15573,12 +15928,13 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the thermostat device.',
+                    description: 'ID of the desired thermostat device.',
                     format: 'uuid',
                     type: 'string',
                   },
                   name: {
-                    description: 'Name of the thermostat.',
+                    description:
+                      'User-friendly name of the desired thermostat device.',
                     type: 'string',
                   },
                 },
@@ -15620,12 +15976,13 @@ export default {
         'x-fern-sdk-return-value': 'thermostat',
         'x-response-key': 'thermostat',
         'x-title': 'Get a Thermostat',
+        'x-undocumented': 'Will be removed.',
       },
     },
     '/thermostats/heat': {
       post: {
         description:
-          'Sets a thermostat to heating mode. You must include a heating set point in Celsius or Fahrenheit. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsHeatPost',
         requestBody: {
           content: {
@@ -15633,23 +15990,27 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the thermostat device.',
+                    description: 'ID of the desired thermostat device.',
                     format: 'uuid',
                     type: 'string',
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.',
+                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should heat (in °F). You must set one of the `heating_set_point` parameters.',
+                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
-                  sync: { default: false, type: 'boolean' },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -15696,7 +16057,7 @@ export default {
     '/thermostats/heat_cool': {
       post: {
         description:
-          'Set a thermostat to heat-cool mode, also known as "auto" mode. To do so, you must include both cooling and heating set points in the payload, either in Celsius or Fahrenheit. For information about verifying the heating and cooling availability of the thermostat and validating the correct set points, see [HVAC Mode Constraints](https://docs.seam.co/latest/capability-guides/thermostats/hvac-mode#hvac-mode-constraints) and [Set Point Constraints](https://docs.seam.co/latest/capability-guides/thermostats/set-points#set-point-constraints).',
+          'Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to [heat-cool ("auto") mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsHeatCoolPost',
         requestBody: {
           content: {
@@ -15705,34 +16066,38 @@ export default {
                 properties: {
                   cooling_set_point_celsius: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters.',
+                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
                     description:
-                      'Temperature the thermostat should cool to (in °F). You must set one of the cooling_set_point parameters.',
+                      'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   device_id: {
-                    description: 'ID of the thermostat device.',
+                    description: 'ID of the desired thermostat device.',
                     format: 'uuid',
                     type: 'string',
                   },
                   heating_set_point_celsius: {
                     description:
-                      'Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters.',
+                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
                     description:
-                      'Temperature the thermostat should heat to (in °F). You must set one of the heating_set_point parameters.',
+                      'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
                     format: 'float',
                     type: 'number',
                   },
-                  sync: { default: false, type: 'boolean' },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -15779,36 +16144,53 @@ export default {
     '/thermostats/list': {
       post: {
         description:
-          'Returns a list of thermostats connected to your workspace. If no thermostats are connected, the list will be empty.',
+          'Returns a list of all [thermostats](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  connect_webview_id: { format: 'uuid', type: 'string' },
+                  connect_webview_id: {
+                    description:
+                      'ID of the Connect Webview by which to filter devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   connected_account_id: {
                     description:
-                      'List all devices owned by this connected account',
+                      'ID of the connected account by which to filter.',
                     format: 'uuid',
                     type: 'string',
                   },
                   connected_account_ids: {
+                    description:
+                      'Array of IDs of the connected accounts by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
-                  created_before: { format: 'date-time', type: 'string' },
+                  created_before: {
+                    description:
+                      'Date threshold for devices to return. If specified, returns only devices created before the specified date.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
                   custom_metadata_has: {
                     additionalProperties: {
                       oneOf: [{ type: 'string' }, { type: 'boolean' }],
                     },
+                    description:
+                      'Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices.',
                     type: 'object',
                   },
                   device_ids: {
+                    description:
+                      'Array of device IDs by which to filter devices.',
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
                   device_type: {
+                    description: 'Device type by which to filter devices.',
                     oneOf: [
                       {
                         enum: [
@@ -15865,6 +16247,8 @@ export default {
                     ],
                   },
                   device_types: {
+                    description:
+                      'Array of device types by which to filter devices.',
                     items: {
                       oneOf: [
                         {
@@ -15944,6 +16328,7 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
                   include_if: {
                     items: {
@@ -15963,9 +16348,17 @@ export default {
                       type: 'string',
                     },
                     type: 'array',
+                    'x-undocumented': 'Only used internally.',
                   },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Numerical limit on the number of devices to return.',
+                    format: 'float',
+                    type: 'number',
+                  },
                   manufacturer: {
+                    description: 'Manufacturer by which to filter devices.',
                     enum: [
                       'akuvox',
                       'august',
@@ -16005,7 +16398,11 @@ export default {
                     ],
                     type: 'string',
                   },
-                  user_identifier_key: { type: 'string' },
+                  user_identifier_key: {
+                    description:
+                      'Your own internal user ID for the user by which to filter devices.',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -16056,7 +16453,7 @@ export default {
     '/thermostats/off': {
       post: {
         description:
-          'Sets a thermostat to "off" mode. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
+          'Sets a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) to ["off" mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings).',
         operationId: 'thermostatsOffPost',
         requestBody: {
           content: {
@@ -16064,11 +16461,15 @@ export default {
               schema: {
                 properties: {
                   device_id: {
-                    description: 'ID of the thermostat device.',
+                    description: 'ID of the desired thermostat device.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  sync: { default: false, type: 'boolean' },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -16114,22 +16515,45 @@ export default {
     },
     '/thermostats/schedules/create': {
       post: {
+        description:
+          'Creates a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesCreatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  device_id: { type: 'string' },
-                  ends_at: { type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
                   max_override_period_minutes: {
                     default: 0,
+                    description:
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
-                  name: { type: 'string' },
-                  starts_at: { type: 'string' },
+                  name: {
+                    description:
+                      'User-friendly name to identify the climate schedule.',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
                 },
                 required: [
                   'device_id',
@@ -16175,17 +16599,24 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'thermostat_schedule',
         'x-response-key': 'thermostat_schedule',
+        'x-title': 'Create a Climate Schedule',
       },
     },
     '/thermostats/schedules/delete': {
       post: {
+        description:
+          'Deletes a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                  thermostat_schedule_id: {
+                    description: 'ID of the desired climate schedule.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['thermostat_schedule_id'],
                 type: 'object',
@@ -16220,17 +16651,24 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a Climate Schedule',
       },
     },
     '/thermostats/schedules/get': {
       post: {
+        description:
+          'Returns a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
         operationId: 'thermostatsSchedulesGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                  thermostat_schedule_id: {
+                    description: 'ID of the desired climate schedule.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['thermostat_schedule_id'],
                 type: 'object',
@@ -16271,18 +16709,29 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat_schedule',
         'x-response-key': 'thermostat_schedule',
+        'x-title': 'Get a Climate Schedule',
       },
     },
     '/thermostats/schedules/list': {
       post: {
+        description:
+          'Returns a list of all [climate schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identifier_key: { type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identifier_key: {
+                    description:
+                      'User identifier key by which to filter the list of returned climate schedules.',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -16326,22 +16775,50 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'thermostat_schedules',
         'x-response-key': 'thermostat_schedules',
+        'x-title': 'List Climate Schedules',
       },
     },
     '/thermostats/schedules/update': {
       patch: {
+        description:
+          'Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
         operationId: 'thermostatsSchedulesUpdatePatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  ends_at: { type: 'string' },
-                  max_override_period_minutes: { minimum: 0, type: 'integer' },
-                  name: { type: 'string' },
-                  starts_at: { type: 'string' },
-                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  max_override_period_minutes: {
+                    description:
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  name: {
+                    description:
+                      'User-friendly name to identify the climate schedule.',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  thermostat_schedule_id: {
+                    description: 'ID of the desired climate schedule.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['thermostat_schedule_id'],
                 type: 'object',
@@ -16375,20 +16852,48 @@ export default {
         tags: ['/thermostats'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Climate Schedule',
       },
       post: {
+        description:
+          'Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
         operationId: 'thermostatsSchedulesUpdatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  ends_at: { type: 'string' },
-                  max_override_period_minutes: { minimum: 0, type: 'integer' },
-                  name: { type: 'string' },
-                  starts_at: { type: 'string' },
-                  thermostat_schedule_id: { format: 'uuid', type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  max_override_period_minutes: {
+                    description:
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  name: {
+                    description:
+                      'User-friendly name to identify the climate schedule.',
+                    type: 'string',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    type: 'string',
+                  },
+                  thermostat_schedule_id: {
+                    description: 'ID of the desired climate schedule.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['thermostat_schedule_id'],
                 type: 'object',
@@ -16423,18 +16928,29 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a Climate Schedule',
       },
     },
     '/thermostats/set_fallback_climate_preset': {
       post: {
+        description:
+          'Sets a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) as the ["fallback"](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) preset for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSetFallbackClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
-                  device_id: { format: 'uuid', type: 'string' },
+                  climate_preset_key: {
+                    description:
+                      'Climate preset key of the desired climate preset.',
+                    type: 'string',
+                  },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['device_id', 'climate_preset_key'],
                 type: 'object',
@@ -16468,23 +16984,20 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'set_fallback_climate_preset',
         'x-response-key': null,
+        'x-title': 'Set the Fallback Climate Preset',
       },
     },
     '/thermostats/set_fan_mode': {
       post: {
         description:
-          'Sets the fan mode setting for a thermostat. See also [Setting the Current HVAC and Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) and [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).',
+          'Sets the [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSetFanModePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: {
-                    description: 'ID of the thermostat device.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
+                  device_id: { format: 'uuid', type: 'string' },
                   fan_mode: {
                     deprecated: true,
                     enum: ['auto', 'on', 'circulate'],
@@ -16493,11 +17006,15 @@ export default {
                   },
                   fan_mode_setting: {
                     description:
-                      'Fan mode setting of the thermostat. See also [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings).',
+                      'Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
-                  sync: { default: false, type: 'boolean' },
+                  sync: {
+                    default: false,
+                    type: 'boolean',
+                    'x-undocumented': 'Only used internally.',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',
@@ -16538,38 +17055,52 @@ export default {
         'x-fern-sdk-method-name': 'set_fan_mode',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-title': 'Set Fan Mode Setting',
+        'x-title': 'Set the Fan Mode Setting',
       },
     },
     '/thermostats/set_temperature_threshold': {
       patch: {
+        description:
+          'Sets a [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.',
         operationId: 'thermostatsSetTemperatureThresholdPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   lower_limit_celsius: {
                     default: null,
+                    description:
+                      'Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   lower_limit_fahrenheit: {
                     default: null,
+                    description:
+                      'Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   upper_limit_celsius: {
                     default: null,
+                    description:
+                      'Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   upper_limit_fahrenheit: {
                     default: null,
+                    description:
+                      'Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
@@ -16606,35 +17137,50 @@ export default {
         tags: ['/thermostats'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Set a Temperature Threshold',
       },
       post: {
+        description:
+          'Sets a [temperature threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds) for a specified thermostat. Seam emits a `thermostat.temperature_threshold_exceeded` event and adds a warning on a thermostat if it reports a temperature outside the threshold range.',
         operationId: 'thermostatsSetTemperatureThresholdPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   lower_limit_celsius: {
                     default: null,
+                    description:
+                      'Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   lower_limit_fahrenheit: {
                     default: null,
+                    description:
+                      'Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   upper_limit_celsius: {
                     default: null,
+                    description:
+                      'Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
                   },
                   upper_limit_fahrenheit: {
                     default: null,
+                    description:
+                      'Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both.',
                     format: 'float',
                     nullable: true,
                     type: 'number',
@@ -16672,44 +17218,76 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'set_temperature_threshold',
         'x-response-key': null,
+        'x-title': 'Set a Temperature Threshold',
       },
     },
     '/thermostats/update_climate_preset': {
       patch: {
+        description:
+          'Updates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsUpdateClimatePresetPatch',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
+                  climate_preset_key: {
+                    description: 'Unique key to identify the climate preset.',
+                    type: 'string',
+                  },
                   cooling_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °F).',
                     format: 'float',
                     type: 'number',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   fan_mode_setting: {
+                    description:
+                      'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
                   heating_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °C).',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °F).',
                     format: 'float',
                     type: 'number',
                   },
                   hvac_mode_setting: {
+                    description:
+                      'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { default: null, nullable: true, type: 'string' },
+                  manual_override_allowed: {
+                    description:
+                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                    type: 'boolean',
+                  },
+                  name: {
+                    default: null,
+                    description:
+                      'User-friendly name to identify the climate preset.',
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
                 required: [
                   'device_id',
@@ -16746,42 +17324,74 @@ export default {
         tags: ['/thermostats'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a Climate Preset',
       },
       post: {
+        description:
+          'Updates a specified [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsUpdateClimatePresetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  climate_preset_key: { type: 'string' },
+                  climate_preset_key: {
+                    description: 'Unique key to identify the climate preset.',
+                    type: 'string',
+                  },
                   cooling_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).',
                     format: 'float',
                     type: 'number',
                   },
                   cooling_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should cool (in °F).',
                     format: 'float',
                     type: 'number',
                   },
-                  device_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   fan_mode_setting: {
+                    description:
+                      'Desired fan mode setting, such as `on`, `auto`, or `circulate`.',
                     enum: ['auto', 'on', 'circulate'],
                     type: 'string',
                   },
                   heating_set_point_celsius: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °C).',
                     format: 'float',
                     type: 'number',
                   },
                   heating_set_point_fahrenheit: {
+                    description:
+                      'Temperature to which the thermostat should heat (in °F).',
                     format: 'float',
                     type: 'number',
                   },
                   hvac_mode_setting: {
+                    description:
+                      'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`.',
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: { type: 'boolean' },
-                  name: { default: null, nullable: true, type: 'string' },
+                  manual_override_allowed: {
+                    description:
+                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                    type: 'boolean',
+                  },
+                  name: {
+                    default: null,
+                    description:
+                      'User-friendly name to identify the climate preset.',
+                    nullable: true,
+                    type: 'string',
+                  },
                 },
                 required: [
                   'device_id',
@@ -16819,6 +17429,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats'],
         'x-fern-sdk-method-name': 'update_climate_preset',
         'x-response-key': null,
+        'x-title': 'Update a Climate Preset',
       },
     },
     '/user_identities/add_acs_user': {

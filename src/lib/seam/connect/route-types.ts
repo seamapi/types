@@ -6771,25 +6771,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -6797,58 +6809,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -12029,25 +12073,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12055,58 +12111,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -12186,10 +12274,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** List all devices owned by this connected account */
+      /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
+      /** Array of IDs of the connected accounts by which to filter devices. */
       connected_account_ids?: string[] | undefined
+      /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
+      /** Device type by which to filter devices. */
       device_type?:
         | (
             | (
@@ -12231,6 +12322,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
+      /** Array of device types by which to filter devices. */
       device_types?:
         | Array<
             | (
@@ -12272,6 +12364,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
+      /** Manufacturer by which to filter devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -12311,11 +12404,17 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
+      /** Array of device IDs by which to filter devices. */
       device_ids?: string[] | undefined
+      /** Numerical limit on the number of devices to return. */
       limit?: number
+      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
       created_before?: Date | undefined
+      /** Your own internal user ID for the user by which to filter devices. */
       user_identifier_key?: string | undefined
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /**  */
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -12331,6 +12430,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
       exclude_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -12846,25 +12946,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12872,58 +12984,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -13285,10 +13429,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** List all devices owned by this connected account */
+      /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
+      /** Array of IDs of the connected accounts by which to filter devices. */
       connected_account_ids?: string[] | undefined
+      /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
+      /** Device type by which to filter devices. */
       device_type?:
         | (
             | (
@@ -13330,6 +13477,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
+      /** Array of device types by which to filter devices. */
       device_types?:
         | Array<
             | (
@@ -13371,6 +13519,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
+      /** Manufacturer by which to filter devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -13410,11 +13559,17 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
+      /** Array of device IDs by which to filter devices. */
       device_ids?: string[] | undefined
+      /** Numerical limit on the number of devices to return. */
       limit?: number
+      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
       created_before?: Date | undefined
+      /** Your own internal user ID for the user by which to filter devices. */
       user_identifier_key?: string | undefined
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /**  */
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -13430,6 +13585,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
       exclude_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -14378,25 +14534,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -14404,58 +14572,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -15024,25 +15224,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15050,58 +15262,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -15181,10 +15425,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** List all devices owned by this connected account */
+      /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
+      /** Array of IDs of the connected accounts by which to filter devices. */
       connected_account_ids?: string[] | undefined
+      /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
+      /** Device type by which to filter devices. */
       device_type?:
         | (
             | (
@@ -15226,6 +15473,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
+      /** Array of device types by which to filter devices. */
       device_types?:
         | Array<
             | (
@@ -15267,6 +15515,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
+      /** Manufacturer by which to filter devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -15306,11 +15555,17 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
+      /** Array of device IDs by which to filter devices. */
       device_ids?: string[] | undefined
+      /** Numerical limit on the number of devices to return. */
       limit?: number
+      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
       created_before?: Date | undefined
+      /** Your own internal user ID for the user by which to filter devices. */
       user_identifier_key?: string | undefined
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /**  */
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -15326,6 +15581,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
       exclude_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -15841,25 +16097,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15867,58 +16135,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -16487,25 +16787,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -16513,58 +16825,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -18396,10 +18740,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** List all devices owned by this connected account */
+      /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
+      /** Array of IDs of the connected accounts by which to filter devices. */
       connected_account_ids?: string[] | undefined
+      /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
+      /** Device type by which to filter devices. */
       device_type?:
         | (
             | (
@@ -18441,6 +18788,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
+      /** Array of device types by which to filter devices. */
       device_types?:
         | Array<
             | (
@@ -18482,6 +18830,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
+      /** Manufacturer by which to filter devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -18521,11 +18870,17 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
+      /** Array of device IDs by which to filter devices. */
       device_ids?: string[] | undefined
+      /** Numerical limit on the number of devices to return. */
       limit?: number
+      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
       created_before?: Date | undefined
+      /** Your own internal user ID for the user by which to filter devices. */
       user_identifier_key?: string | undefined
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /**  */
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -18541,6 +18896,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
       exclude_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -19056,25 +19412,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19082,58 +19450,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -19702,25 +20102,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19728,58 +20140,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -22705,7 +23149,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Climate preset key of the desired climate preset. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -23564,12 +24010,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device. */
+      /** ID of the desired thermostat device. */
       device_id: string
-      /** Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters. */
+      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
-      /** Temperature to which the HVAC system connected to the thermostat should cool (in °F). You must set one of the `cooling_set_point` parameters. */
+      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -24428,15 +24875,25 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Unique key to identify the climate preset. */
       climate_preset_key: string
+      /** User-friendly name to identify the climate preset. */
       name?: (string | null) | undefined
+      /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+      /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+      /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
       cooling_set_point_celsius?: number | undefined
+      /** Temperature to which the thermostat should heat (in °C). */
       heating_set_point_celsius?: number | undefined
+      /** Temperature to which the thermostat should cool (in °F). */
       cooling_set_point_fahrenheit?: number | undefined
+      /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
+      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
       manual_override_allowed: boolean
     }
     commonParams: {}
@@ -24448,7 +24905,9 @@ export interface Routes {
     method: 'POST' | 'DELETE'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Climate preset key of the desired climate preset. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -24461,9 +24920,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the thermostat device. */
+      /** ID of the desired thermostat device. */
       device_id?: string | undefined
-      /** Name of the thermostat. */
+      /** User-friendly name of the desired thermostat device. */
       name?: string | undefined
     }
     formData: {}
@@ -24965,25 +25424,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -24991,58 +25462,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -25121,12 +25624,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device. */
+      /** ID of the desired thermostat device. */
       device_id: string
-      /** Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters. */
+      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
-      /** Temperature to which the HVAC system connected to the thermostat should heat (in °F). You must set one of the `heating_set_point` parameters. */
+      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -25985,16 +26489,17 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device. */
+      /** ID of the desired thermostat device. */
       device_id: string
-      /** Temperature to which the HVAC system connected to the thermostat should heat (in °C). You must set one of the `heating_set_point` parameters. */
+      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
       heating_set_point_celsius?: number | undefined
-      /** Temperature the thermostat should heat to (in °F). You must set one of the heating_set_point parameters. */
+      /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
       heating_set_point_fahrenheit?: number | undefined
-      /** Temperature to which the HVAC system connected to the thermostat should cool (in °C). You must set one of the `cooling_set_point` parameters. */
+      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_celsius?: number | undefined
-      /** Temperature the thermostat should cool to (in °F). You must set one of the cooling_set_point parameters. */
+      /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
       cooling_set_point_fahrenheit?: number | undefined
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -26854,10 +27359,13 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** List all devices owned by this connected account */
+      /** ID of the connected account by which to filter. */
       connected_account_id?: string | undefined
+      /** Array of IDs of the connected accounts by which to filter devices. */
       connected_account_ids?: string[] | undefined
+      /** ID of the Connect Webview by which to filter devices. */
       connect_webview_id?: string | undefined
+      /** Device type by which to filter devices. */
       device_type?:
         | (
             | (
@@ -26899,6 +27407,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           )
         | undefined
+      /** Array of device types by which to filter devices. */
       device_types?:
         | Array<
             | (
@@ -26940,6 +27449,7 @@ export interface Routes {
             | ('visionline_encoder' | 'assa_abloy_vostio_encoder')
           >
         | undefined
+      /** Manufacturer by which to filter devices. */
       manufacturer?:
         | (
             | 'akuvox'
@@ -26979,11 +27489,17 @@ export interface Routes {
             | 'akiles'
           )
         | undefined
+      /** Array of device IDs by which to filter devices. */
       device_ids?: string[] | undefined
+      /** Numerical limit on the number of devices to return. */
       limit?: number
+      /** Date threshold for devices to return. If specified, returns only devices created before the specified date. */
       created_before?: Date | undefined
+      /** Your own internal user ID for the user by which to filter devices. */
       user_identifier_key?: string | undefined
+      /** Set of key:value [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) pairs by which you want to filter devices. */
       custom_metadata_has?: Record<string, string | boolean> | undefined
+      /**  */
       include_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -26999,6 +27515,7 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
       exclude_if?:
         | Array<
             | 'can_remotely_unlock'
@@ -27514,25 +28031,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -27540,58 +28069,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -28160,25 +28721,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -28186,58 +28759,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -28316,8 +28921,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device. */
+      /** ID of the desired thermostat device. */
       device_id: string
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -29176,26 +29782,40 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** User-friendly name to identify the climate schedule. */
       name?: string | undefined
+      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
       climate_preset_key: string
+      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
       max_override_period_minutes?: number
+      /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at: string
+      /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
       thermostat_schedule: {
+        /** ID of the climate schedule. */
         thermostat_schedule_id: string
+        /** ID of the desired thermostat device. */
         device_id: string
+        /** User-friendly name to identify the climate schedule. */
         name?: string | undefined
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
         climate_preset_key: string
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
+        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** Date and time at which the climate schedule was created. */
         created_at: string
-        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }
     }
@@ -29206,6 +29826,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired climate schedule. */
       thermostat_schedule_id: string
     }
     formData: {}
@@ -29217,20 +29838,29 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired climate schedule. */
       thermostat_schedule_id: string
     }
     formData: {}
     jsonResponse: {
       thermostat_schedule: {
+        /** ID of the climate schedule. */
         thermostat_schedule_id: string
+        /** ID of the desired thermostat device. */
         device_id: string
+        /** User-friendly name to identify the climate schedule. */
         name?: string | undefined
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
         climate_preset_key: string
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
+        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** Date and time at which the climate schedule was created. */
         created_at: string
-        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }
     }
@@ -29241,21 +29871,31 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** User identifier key by which to filter the list of returned climate schedules. */
       user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
       thermostat_schedules: Array<{
+        /** ID of the climate schedule. */
         thermostat_schedule_id: string
+        /** ID of the desired thermostat device. */
         device_id: string
+        /** User-friendly name to identify the climate schedule. */
         name?: string | undefined
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
         climate_preset_key: string
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
+        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
+        /** Date and time at which the climate schedule was created. */
         created_at: string
-        /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }>
     }
@@ -29265,11 +29905,17 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired climate schedule. */
       thermostat_schedule_id: string
+      /** User-friendly name to identify the climate schedule. */
       name?: string | undefined
+      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
       climate_preset_key?: string | undefined
+      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
       max_override_period_minutes?: number | undefined
+      /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
+      /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at?: string | undefined
     }
     commonParams: {}
@@ -29281,7 +29927,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Climate preset key of the desired climate preset. */
       climate_preset_key: string
     }
     commonParams: {}
@@ -29293,13 +29941,13 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the thermostat device. */
       device_id: string
       /**
        * @deprecated Use `fan_mode_setting` instead. */
       fan_mode?: ('auto' | 'on' | 'circulate') | undefined
-      /** Fan mode setting of the thermostat. See also [Fan Mode Settings](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings). */
+      /** Desired [fan mode setting](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings#fan-mode-settings) for the thermostat. */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+      /**  */
       sync?: boolean
     }
     commonParams: {}
@@ -30158,10 +30806,15 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Lower temperature limit in in °C. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both. */
       lower_limit_celsius?: (number | undefined) | null
+      /** Lower temperature limit in in °F. Seam alerts you if the reported temperature is lower than this value. You can specify either `lower_limit` but not both. */
       lower_limit_fahrenheit?: (number | undefined) | null
+      /** Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both. */
       upper_limit_celsius?: (number | undefined) | null
+      /** Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both. */
       upper_limit_fahrenheit?: (number | undefined) | null
     }
     commonParams: {}
@@ -30173,15 +30826,25 @@ export interface Routes {
     method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Unique key to identify the climate preset. */
       climate_preset_key: string
+      /** User-friendly name to identify the climate preset. */
       name?: (string | null) | undefined
+      /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
       fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+      /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
       hvac_mode_setting?: ('off' | 'heat' | 'cool' | 'heat_cool') | undefined
+      /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
       cooling_set_point_celsius?: number | undefined
+      /** Temperature to which the thermostat should heat (in °C). */
       heating_set_point_celsius?: number | undefined
+      /** Temperature to which the thermostat should cool (in °F). */
       cooling_set_point_fahrenheit?: number | undefined
+      /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
+      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
       manual_override_allowed: boolean
     }
     commonParams: {}
@@ -30876,25 +31539,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -30902,58 +31577,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -31524,25 +32231,37 @@ export interface Routes {
             is_temporary_manual_override_active?: boolean | undefined
             current_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31550,58 +32269,90 @@ export interface Routes {
              * @deprecated use fallback_climate_preset_key to specify a fallback climate preset instead. */
             default_climate_setting?:
               | {
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key?: string | undefined
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit?: boolean | undefined
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete?: boolean | undefined
+                  /** User-friendly name to identify the climate preset. */
                   name?: ((string | null) | undefined) | undefined
+                  /** Display name for the climate preset. */
                   display_name?: string | undefined
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?:
                     | (('auto' | 'on' | 'circulate') | undefined)
                     | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | (('off' | 'heat' | 'cool' | 'heat_cool') | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: (number | undefined) | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
             available_climate_presets?:
               | Array<{
+                  /** Unique key to identify the climate preset. */
                   climate_preset_key: string
+                  /** Indicates whether this climate preset key can be edited. */
                   can_edit: boolean
+                  /** Indicates whether this climate preset key can be deleted. */
                   can_delete: boolean
+                  /** User-friendly name to identify the climate preset. */
                   name?: (string | null) | undefined
+                  /** Display name for the climate preset. */
                   display_name: string
+                  /** Desired fan mode setting, such as `on`, `auto`, or `circulate`. */
                   fan_mode_setting?: ('auto' | 'on' | 'circulate') | undefined
+                  /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) setting, such as `heat`, `cool`, `heat_cool`, or `off`. */
                   hvac_mode_setting?:
                     | ('off' | 'heat' | 'cool' | 'heat_cool')
                     | undefined
+                  /** Temperature to which the thermostat should cool (in °C). See also [Set Points](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                   cooling_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °C). */
                   heating_set_point_celsius?: number | undefined
+                  /** Temperature to which the thermostat should cool (in °F). */
                   cooling_set_point_fahrenheit?: number | undefined
+                  /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
                   manual_override_allowed: boolean
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
             active_thermostat_schedule?:
               | ({
+                  /** ID of the climate schedule. */
                   thermostat_schedule_id: string
+                  /** ID of the desired thermostat device. */
                   device_id: string
+                  /** User-friendly name to identify the climate schedule. */
                   name?: string | undefined
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
                   climate_preset_key: string
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
+                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
+                  /** Date and time at which the climate schedule was created. */
                   created_at: string
-                  /** Collection of errors associated with the thermostat schedule, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
