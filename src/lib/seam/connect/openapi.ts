@@ -4616,16 +4616,18 @@ export default {
                     properties: {
                       active_thermostat_schedule: {
                         default: null,
+                        description:
+                          'Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
                         nullable: true,
                         properties: {
                           climate_preset_key: {
                             description:
-                              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
                             type: 'string',
                           },
                           created_at: {
                             description:
-                              'Date and time at which the climate schedule was created.',
+                              'Date and time at which the thermostat schedule was created.',
                             format: 'date-time',
                             type: 'string',
                           },
@@ -4636,33 +4638,33 @@ export default {
                           },
                           ends_at: {
                             description:
-                              'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             format: 'date-time',
                             type: 'string',
                           },
                           errors: {
                             description:
-                              'Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                              'Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
                           },
                           max_override_period_minutes: {
                             description:
-                              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                             minimum: 0,
                             type: 'integer',
                           },
                           name: {
                             description:
-                              'User-friendly name to identify the climate schedule.',
+                              'User-friendly name to identify the thermostat schedule.',
                             type: 'string',
                           },
                           starts_at: {
                             description:
-                              'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                              'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                             format: 'date-time',
                             type: 'string',
                           },
                           thermostat_schedule_id: {
-                            description: 'ID of the climate schedule.',
+                            description: 'ID of the thermostat schedule.',
                             format: 'uuid',
                             type: 'string',
                           },
@@ -5417,15 +5419,17 @@ export default {
         type: 'object',
       },
       thermostat_schedule: {
+        description:
+          'Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
         properties: {
           climate_preset_key: {
             description:
-              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+              'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
             type: 'string',
           },
           created_at: {
             description:
-              'Date and time at which the climate schedule was created.',
+              'Date and time at which the thermostat schedule was created.',
             format: 'date-time',
             type: 'string',
           },
@@ -5436,32 +5440,33 @@ export default {
           },
           ends_at: {
             description:
-              'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             format: 'date-time',
             type: 'string',
           },
           errors: {
             description:
-              'Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+              'Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
           },
           max_override_period_minutes: {
             description:
-              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+              "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
             minimum: 0,
             type: 'integer',
           },
           name: {
-            description: 'User-friendly name to identify the climate schedule.',
+            description:
+              'User-friendly name to identify the thermostat schedule.',
             type: 'string',
           },
           starts_at: {
             description:
-              'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+              'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
             format: 'date-time',
             type: 'string',
           },
           thermostat_schedule_id: {
-            description: 'ID of the climate schedule.',
+            description: 'ID of the thermostat schedule.',
             format: 'uuid',
             type: 'string',
           },
@@ -16516,7 +16521,7 @@ export default {
     '/thermostats/schedules/create': {
       post: {
         description:
-          'Creates a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+          'Creates a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesCreatePost',
         requestBody: {
           content: {
@@ -16525,7 +16530,7 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
                     type: 'string',
                   },
                   device_id: {
@@ -16534,24 +16539,24 @@ export default {
                   },
                   ends_at: {
                     description:
-                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   max_override_period_minutes: {
                     default: 0,
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
                   name: {
                     description:
-                      'User-friendly name to identify the climate schedule.',
+                      'User-friendly name to identify the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
                     description:
-                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                 },
@@ -16599,13 +16604,13 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'thermostat_schedule',
         'x-response-key': 'thermostat_schedule',
-        'x-title': 'Create a Climate Schedule',
+        'x-title': 'Create a Thermostat Schedule',
       },
     },
     '/thermostats/schedules/delete': {
       post: {
         description:
-          'Deletes a [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+          'Deletes a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesDeletePost',
         requestBody: {
           content: {
@@ -16613,7 +16618,7 @@ export default {
               schema: {
                 properties: {
                   thermostat_schedule_id: {
-                    description: 'ID of the desired climate schedule.',
+                    description: 'ID of the desired thermostat schedule.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -16651,13 +16656,13 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
-        'x-title': 'Delete a Climate Schedule',
+        'x-title': 'Delete a Thermostat Schedule',
       },
     },
     '/thermostats/schedules/get': {
       post: {
         description:
-          'Returns a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
+          'Returns a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
         operationId: 'thermostatsSchedulesGetPost',
         requestBody: {
           content: {
@@ -16665,7 +16670,7 @@ export default {
               schema: {
                 properties: {
                   thermostat_schedule_id: {
-                    description: 'ID of the desired climate schedule.',
+                    description: 'ID of the desired thermostat schedule.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -16709,13 +16714,13 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'thermostat_schedule',
         'x-response-key': 'thermostat_schedule',
-        'x-title': 'Get a Climate Schedule',
+        'x-title': 'Get a Thermostat Schedule',
       },
     },
     '/thermostats/schedules/list': {
       post: {
         description:
-          'Returns a list of all [climate schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+          'Returns a list of all [thermostat schedules](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
         operationId: 'thermostatsSchedulesListPost',
         requestBody: {
           content: {
@@ -16729,7 +16734,7 @@ export default {
                   },
                   user_identifier_key: {
                     description:
-                      'User identifier key by which to filter the list of returned climate schedules.',
+                      'User identifier key by which to filter the list of returned thermostat schedules.',
                     type: 'string',
                   },
                 },
@@ -16775,13 +16780,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'thermostat_schedules',
         'x-response-key': 'thermostat_schedules',
-        'x-title': 'List Climate Schedules',
+        'x-title': 'List Thermostat Schedules',
       },
     },
     '/thermostats/schedules/update': {
       patch: {
         description:
-          'Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
+          'Updates a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
         operationId: 'thermostatsSchedulesUpdatePatch',
         requestBody: {
           content: {
@@ -16790,32 +16795,32 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
                     type: 'string',
                   },
                   ends_at: {
                     description:
-                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
                   name: {
                     description:
-                      'User-friendly name to identify the climate schedule.',
+                      'User-friendly name to identify the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
                     description:
-                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   thermostat_schedule_id: {
-                    description: 'ID of the desired climate schedule.',
+                    description: 'ID of the desired thermostat schedule.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -16852,11 +16857,11 @@ export default {
         tags: ['/thermostats'],
         'x-fern-ignore': true,
         'x-response-key': null,
-        'x-title': 'Update a Climate Schedule',
+        'x-title': 'Update a Thermostat Schedule',
       },
       post: {
         description:
-          'Updates a specified [climate schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules).',
+          'Updates a specified [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
         operationId: 'thermostatsSchedulesUpdatePost',
         requestBody: {
           content: {
@@ -16865,32 +16870,32 @@ export default {
                 properties: {
                   climate_preset_key: {
                     description:
-                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule.',
+                      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
                     type: 'string',
                   },
                   ends_at: {
                     description:
-                      'Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
                   name: {
                     description:
-                      'User-friendly name to identify the climate schedule.',
+                      'User-friendly name to identify the thermostat schedule.',
                     type: 'string',
                   },
                   starts_at: {
                     description:
-                      'Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                      'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
                   thermostat_schedule_id: {
-                    description: 'ID of the desired climate schedule.',
+                    description: 'ID of the desired thermostat schedule.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -16928,7 +16933,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'schedules'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
-        'x-title': 'Update a Climate Schedule',
+        'x-title': 'Update a Thermostat Schedule',
       },
     },
     '/thermostats/set_fallback_climate_preset': {
