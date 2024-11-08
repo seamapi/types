@@ -6874,25 +6874,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -12176,25 +12177,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -13049,25 +13051,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -14637,25 +14640,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -15327,25 +15331,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -16200,25 +16205,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -16890,25 +16896,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -19515,25 +19522,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -20205,25 +20213,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -25527,25 +25536,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -28134,25 +28144,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -28824,25 +28835,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -29784,38 +29796,39 @@ export interface Routes {
     jsonBody: {
       /** ID of the desired thermostat device. */
       device_id: string
-      /** User-friendly name to identify the climate schedule. */
+      /** User-friendly name to identify the thermostat schedule. */
       name?: string | undefined
-      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
       climate_preset_key: string
-      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
       max_override_period_minutes?: number
-      /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at: string
-      /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
       thermostat_schedule: {
-        /** ID of the climate schedule. */
+        /** ID of the thermostat schedule. */
         thermostat_schedule_id: string
         /** ID of the desired thermostat device. */
         device_id: string
-        /** User-friendly name to identify the climate schedule. */
+        /** User-friendly name to identify the thermostat schedule. */
         name?: string | undefined
-        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
         climate_preset_key: string
-        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
-        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
-        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
-        /** Date and time at which the climate schedule was created. */
+        /** Date and time at which the thermostat schedule was created. */
         created_at: string
-        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }
     }
@@ -29826,7 +29839,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired climate schedule. */
+      /** ID of the desired thermostat schedule. */
       thermostat_schedule_id: string
     }
     formData: {}
@@ -29838,29 +29851,30 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the desired climate schedule. */
+      /** ID of the desired thermostat schedule. */
       thermostat_schedule_id: string
     }
     formData: {}
     jsonResponse: {
+      /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
       thermostat_schedule: {
-        /** ID of the climate schedule. */
+        /** ID of the thermostat schedule. */
         thermostat_schedule_id: string
         /** ID of the desired thermostat device. */
         device_id: string
-        /** User-friendly name to identify the climate schedule. */
+        /** User-friendly name to identify the thermostat schedule. */
         name?: string | undefined
-        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
         climate_preset_key: string
-        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
-        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
-        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
-        /** Date and time at which the climate schedule was created. */
+        /** Date and time at which the thermostat schedule was created. */
         created_at: string
-        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }
     }
@@ -29873,29 +29887,29 @@ export interface Routes {
     commonParams: {
       /** ID of the desired thermostat device. */
       device_id: string
-      /** User identifier key by which to filter the list of returned climate schedules. */
+      /** User identifier key by which to filter the list of returned thermostat schedules. */
       user_identifier_key?: string | undefined
     }
     formData: {}
     jsonResponse: {
       thermostat_schedules: Array<{
-        /** ID of the climate schedule. */
+        /** ID of the thermostat schedule. */
         thermostat_schedule_id: string
         /** ID of the desired thermostat device. */
         device_id: string
-        /** User-friendly name to identify the climate schedule. */
+        /** User-friendly name to identify the thermostat schedule. */
         name?: string | undefined
-        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+        /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
         climate_preset_key: string
-        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+        /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
         max_override_period_minutes: number
-        /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
-        /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
-        /** Date and time at which the climate schedule was created. */
+        /** Date and time at which the thermostat schedule was created. */
         created_at: string
-        /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+        /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors?: any
       }>
     }
@@ -29905,17 +29919,17 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** ID of the desired climate schedule. */
+      /** ID of the desired thermostat schedule. */
       thermostat_schedule_id: string
-      /** User-friendly name to identify the climate schedule. */
+      /** User-friendly name to identify the thermostat schedule. */
       name?: string | undefined
-      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+      /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
       climate_preset_key?: string | undefined
-      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+      /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
       max_override_period_minutes?: number | undefined
-      /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
-      /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at?: string | undefined
     }
     commonParams: {}
@@ -31642,25 +31656,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
@@ -32334,25 +32349,26 @@ export interface Routes {
                 }>
               | undefined
             fallback_climate_preset_key?: (string | null) | undefined
+            /** Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time. */
             active_thermostat_schedule?:
               | ({
-                  /** ID of the climate schedule. */
+                  /** ID of the thermostat schedule. */
                   thermostat_schedule_id: string
                   /** ID of the desired thermostat device. */
                   device_id: string
-                  /** User-friendly name to identify the climate schedule. */
+                  /** User-friendly name to identify the thermostat schedule. */
                   name?: string | undefined
-                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the climate schedule. */
+                  /** Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule. */
                   climate_preset_key: string
-                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-schedules#specifying-manual-override-permissions). */
+                  /** Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions). */
                   max_override_period_minutes: number
-                  /** Date and time at which the climate schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
-                  /** Date and time at which the climate schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
-                  /** Date and time at which the climate schedule was created. */
+                  /** Date and time at which the thermostat schedule was created. */
                   created_at: string
-                  /** Array of errors associated with the climate schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
+                  /** Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
                   errors?: any
                 } | null)
               | undefined
