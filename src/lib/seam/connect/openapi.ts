@@ -9407,13 +9407,14 @@ export default {
                     format: 'uuid',
                     type: 'string',
                   },
-                  device_id: {
-                    description: 'ID of the encoder to use for the encoding.',
+                  acs_encoder_id: {
+                    description:
+                      'ID of the acs_encoder to use for the encoding.',
                     format: 'uuid',
                     type: 'string',
                   },
                 },
-                required: ['device_id', 'acs_credential_id'],
+                required: ['acs_encoder_id', 'acs_credential_id'],
                 type: 'object',
               },
             },
@@ -9464,28 +9465,28 @@ export default {
                 oneOf: [
                   {
                     properties: {
+                      acs_encoder_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
                       acs_system_ids: {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
-                      device_ids: {
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
                       limit: { default: 500, format: 'float', type: 'number' },
                     },
-                    required: ['acs_system_ids', 'device_ids'],
+                    required: ['acs_system_ids', 'acs_encoder_ids'],
                     type: 'object',
                   },
                   {
                     properties: {
-                      device_ids: {
+                      acs_encoder_ids: {
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
                       limit: { default: 500, format: 'float', type: 'number' },
                     },
-                    required: ['device_ids'],
+                    required: ['acs_encoder_ids'],
                     type: 'object',
                   },
                   {
@@ -9510,13 +9511,93 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
-                    devices: {
-                      items: { $ref: '#/components/schemas/device' },
+                    acs_encoders: {
+                      items: {
+                        properties: {
+                          acs_encoder_id: {
+                            description: 'ID of the `acs_encoder`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          acs_system_id: {
+                            description:
+                              'ID of the access control system that contains the `acs_encoder`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          created_at: {
+                            description:
+                              'Date and time at which the `acs_encoder` was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name for the `acs_encoder`.',
+                            type: 'string',
+                          },
+                          errors: {
+                            description:
+                              'Errors associated with the `acs_encoder`.',
+                            items: {
+                              description:
+                                'Error associated with the `acs_encoder`.',
+                              properties: {
+                                _event_id: {
+                                  description:
+                                    'ID of the event that was created when the `acs_encoder` was removed.',
+                                  format: 'uuid',
+                                  type: 'string',
+                                },
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the error.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                error_code: {
+                                  description:
+                                    'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                  enum: ['acs_encoder_removed'],
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'error_code',
+                                '_event_id',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
+                          workspace_id: {
+                            description:
+                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'acs_encoder_id',
+                          'acs_system_id',
+                          'workspace_id',
+                          'errors',
+                          'created_at',
+                          'display_name',
+                        ],
+                        type: 'object',
+                      },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['devices', 'ok'],
+                  required: ['acs_encoders', 'ok'],
                   type: 'object',
                 },
               },
@@ -9535,8 +9616,8 @@ export default {
         tags: ['/acs'],
         'x-fern-sdk-group-name': ['acs', 'encoders'],
         'x-fern-sdk-method-name': 'list',
-        'x-fern-sdk-return-value': 'devices',
-        'x-response-key': 'devices',
+        'x-fern-sdk-return-value': 'acs_encoders',
+        'x-response-key': 'acs_encoders',
         'x-undocumented': 'Encoders are in alpha.',
       },
     },
@@ -9548,18 +9629,18 @@ export default {
             'application/json': {
               schema: {
                 properties: {
+                  acs_encoder_id: {
+                    description: 'ID of the acs_encoder to use for the scan.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   acs_system_id: {
                     description: 'ID of the acs_system the encoder belongs to.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  device_id: {
-                    description: 'ID of the encoder to use for the scan.',
-                    format: 'uuid',
-                    type: 'string',
-                  },
                 },
-                required: ['acs_system_id', 'device_id'],
+                required: ['acs_system_id', 'acs_encoder_id'],
                 type: 'object',
               },
             },
