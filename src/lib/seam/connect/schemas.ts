@@ -2,6 +2,7 @@ export {
   access_code,
   acs_access_group,
   acs_credential,
+  acs_encoder,
   acs_entrance,
   acs_system,
   acs_user,
