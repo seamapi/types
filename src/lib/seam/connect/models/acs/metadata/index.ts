@@ -1,5 +1,5 @@
-export * from './assa_abloy_vostio.js'
-export * from './dormakaba_community.js'
+export * from './assa-abloy-vostio.js'
+export * from './dormakaba-community.js'
 export * from './latch.js'
 export * from './salto.js'
 export * from './visionline.js'
