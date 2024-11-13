@@ -7298,6 +7298,7 @@ export default {
         summary: '/access_codes/update_multiple',
         tags: ['/access_codes'],
         'x-fern-ignore': true,
+        'x-response-key': null,
       },
       post: {
         operationId: 'accessCodesUpdateMultiplePost',
@@ -7343,6 +7344,7 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'update_multiple',
+        'x-response-key': null,
       },
     },
     '/acs/access_groups/add_user': {
