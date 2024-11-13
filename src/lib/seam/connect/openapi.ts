@@ -4668,6 +4668,12 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          unstable_is_override_allowed: {
+                            description:
+                              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                            type: 'boolean',
+                            'x-undocumented': 'Unstable',
+                          },
                         },
                         required: [
                           'thermostat_schedule_id',
@@ -5469,6 +5475,12 @@ export default {
             description: 'ID of the thermostat schedule.',
             format: 'uuid',
             type: 'string',
+          },
+          unstable_is_override_allowed: {
+            description:
+              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+            type: 'boolean',
+            'x-undocumented': 'Unstable',
           },
         },
         required: [
@@ -16623,6 +16635,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { default: false, type: 'boolean' },
                   max_override_period_minutes: {
                     default: 0,
                     description:
@@ -16884,6 +16897,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
@@ -16959,6 +16973,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
