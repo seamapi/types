@@ -47,11 +47,13 @@ export const climate_preset = z.object({
     .number()
     .optional()
     .describe('Temperature to which the thermostat should heat (in °F).'),
-  manual_override_allowed: z
-    .boolean()
-    .describe(
-      "Indicates whether a person at the thermostat can change the thermostat's settings.",
-    ),
+  manual_override_allowed: z.boolean().describe(
+    `
+      ---
+      deprecated: Use 'thermostat_schedule.is_override_allowed'
+      ---
+      Indicates whether a person at the thermostat can change the thermostat's settings.`,
+  ),
 })
 
 export type ClimatePreset = z.infer<typeof climate_preset>

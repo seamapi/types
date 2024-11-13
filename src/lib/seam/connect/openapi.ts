@@ -4668,6 +4668,12 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          unstable_is_override_allowed: {
+                            description:
+                              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                            type: 'boolean',
+                            'x-undocumented': 'Unstable',
+                          },
                         },
                         required: [
                           'thermostat_schedule_id',
@@ -4740,9 +4746,12 @@ export default {
                               type: 'string',
                             },
                             manual_override_allowed: {
+                              deprecated: true,
                               description:
                                 "Indicates whether a person at the thermostat can change the thermostat's settings.",
                               type: 'boolean',
+                              'x-deprecated':
+                                "Use 'thermostat_schedule.is_override_allowed'",
                             },
                             name: {
                               default: null,
@@ -4835,9 +4844,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -4908,9 +4920,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -5153,19 +5168,45 @@ export default {
         type: 'object',
       },
       enrollment_automation: {
+        description:
+          'Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development).',
         properties: {
-          created_at: { format: 'date-time', type: 'string' },
-          credential_manager_acs_system_id: { format: 'uuid', type: 'string' },
-          enrollment_automation_id: { format: 'uuid', type: 'string' },
-          user_identity_id: { format: 'uuid', type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          created_at: {
+            description:
+              'Date and time at which the enrollment automation was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          credential_manager_acs_system_id: {
+            description:
+              'ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager.',
+            format: 'uuid',
+            type: 'string',
+          },
+          enrollment_automation_id: {
+            description: 'ID of the enrollment automation.',
+            format: 'uuid',
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
+            format: 'uuid',
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the enrollment automation.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
+          'enrollment_automation_id',
           'credential_manager_acs_system_id',
           'user_identity_id',
           'created_at',
           'workspace_id',
-          'enrollment_automation_id',
         ],
         type: 'object',
       },
@@ -5469,6 +5510,12 @@ export default {
             description: 'ID of the thermostat schedule.',
             format: 'uuid',
             type: 'string',
+          },
+          unstable_is_override_allowed: {
+            description:
+              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+            type: 'boolean',
+            'x-undocumented': 'Unstable',
           },
         },
         required: [
@@ -5922,15 +5969,46 @@ export default {
         type: 'object',
       },
       user_identity: {
+        description:
+          'Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account.',
         properties: {
-          created_at: { format: 'date-time', type: 'string' },
+          created_at: {
+            description:
+              'Date and time at which the user identity was created.',
+            format: 'date-time',
+            type: 'string',
+          },
           display_name: { minLength: 1, type: 'string' },
-          email_address: { format: 'email', nullable: true, type: 'string' },
+          email_address: {
+            description: 'Unique email address for the user identity.',
+            format: 'email',
+            nullable: true,
+            type: 'string',
+          },
           full_name: { minLength: 1, nullable: true, type: 'string' },
-          phone_number: { nullable: true, type: 'string' },
-          user_identity_id: { format: 'uuid', type: 'string' },
-          user_identity_key: { minLength: 1, nullable: true, type: 'string' },
-          workspace_id: { format: 'uuid', type: 'string' },
+          phone_number: {
+            description:
+              'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_id: {
+            description: 'ID of the user identity.',
+            format: 'uuid',
+            type: 'string',
+          },
+          user_identity_key: {
+            description: 'Unique key for the user identity.',
+            minLength: 1,
+            nullable: true,
+            type: 'string',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity.',
+            format: 'uuid',
+            type: 'string',
+          },
         },
         required: [
           'user_identity_id',
@@ -15895,11 +15973,7 @@ export default {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: {
-                    description:
-                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
-                    type: 'boolean',
-                  },
+                  manual_override_allowed: { default: true, type: 'boolean' },
                   name: {
                     default: null,
                     description:
@@ -15908,11 +15982,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: [
-                  'device_id',
-                  'climate_preset_key',
-                  'manual_override_allowed',
-                ],
+                required: ['device_id', 'climate_preset_key'],
                 type: 'object',
               },
             },
@@ -16623,6 +16693,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { default: false, type: 'boolean' },
                   max_override_period_minutes: {
                     default: 0,
                     description:
@@ -16884,6 +16955,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
@@ -16959,6 +17031,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
@@ -17363,9 +17436,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,
@@ -17467,9 +17543,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,
@@ -17520,14 +17599,24 @@ export default {
     },
     '/user_identities/add_acs_user': {
       post: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: {
+                    description: 'ID of the desired ACS user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'acs_user_id'],
                 type: 'object',
@@ -17561,16 +17650,27 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'add_acs_user',
         'x-response-key': null,
+        'x-title': 'Add an ACS User to a User Identity',
       },
       put: {
+        description:
+          'Adds a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesAddAcsUserPut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: {
+                    description: 'ID of the desired ACS user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'acs_user_id'],
                 type: 'object',
@@ -17603,10 +17703,13 @@ export default {
         tags: ['/user_identities'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Add an ACS User to a User Identity',
       },
     },
     '/user_identities/create': {
       post: {
+        description:
+          'Creates a new [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesCreatePost',
         requestBody: {
           content: {
@@ -17614,13 +17717,26 @@ export default {
               schema: {
                 properties: {
                   email_address: {
+                    description: 'Unique email address for the user identity.',
                     format: 'email',
                     nullable: true,
                     type: 'string',
                   },
-                  full_name: { minLength: 1, nullable: true, type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
+                  full_name: {
+                    description:
+                      'Full name of the user associated with the user identity.',
+                    minLength: 1,
+                    nullable: true,
+                    type: 'string',
+                  },
+                  phone_number: {
+                    description:
+                      'Unique phone number for the user identity in E.164 format (for example, +15555550100).',
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identity_key: {
+                    description: 'Unique key for the user identity.',
                     minLength: 1,
                     nullable: true,
                     type: 'string',
@@ -17663,17 +17779,24 @@ export default {
         'x-fern-sdk-method-name': 'create',
         'x-fern-sdk-return-value': 'user_identity',
         'x-response-key': 'user_identity',
+        'x-title': 'Create a User Identity',
       },
     },
     '/user_identities/delete': {
       post: {
+        description:
+          'Deletes a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). To delete a user identity, you must first delete any [ACS credentials](https://docs.seam.co/latest/api/access-control-systems/credentials) and [enrollment automations](https://docs.seam.co/latest/api/user_identities/enrollment_automations/delete) associated with the user identity. You must also deactivate any associated phones.',
         operationId: 'userIdentitiesDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -17707,17 +17830,24 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete a User Identity',
       },
     },
     '/user_identities/enrollment_automations/delete': {
       post: {
+        description:
+          'Deletes a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system). You must delete all enrollment automations associated with a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) before [deleting the user identity](https://docs.seam.co/latest/api/user_identities/delete).',
         operationId: 'userIdentitiesEnrollmentAutomationsDeletePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  enrollment_automation_id: { format: 'uuid', type: 'string' },
+                  enrollment_automation_id: {
+                    description: 'ID of the desired enrollment automation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['enrollment_automation_id'],
                 type: 'object',
@@ -17751,17 +17881,24 @@ export default {
         'x-fern-sdk-group-name': ['user_identities', 'enrollment_automations'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-title': 'Delete an Enrollment Automation',
       },
     },
     '/user_identities/enrollment_automations/get': {
       post: {
+        description:
+          'Returns a specified [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
         operationId: 'userIdentitiesEnrollmentAutomationsGetPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  enrollment_automation_id: { format: 'uuid', type: 'string' },
+                  enrollment_automation_id: {
+                    description: 'ID of the desired enrollment automation.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['enrollment_automation_id'],
                 type: 'object',
@@ -17802,27 +17939,47 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'enrollment_automation',
         'x-response-key': 'enrollment_automation',
+        'x-title': 'Get an Enrollment Automation',
       },
     },
     '/user_identities/enrollment_automations/launch': {
       post: {
+        description:
+          'Sets up a new [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) with a specified [credential manager](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system).',
         operationId: 'userIdentitiesEnrollmentAutomationsLaunchPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_pool_id: { format: 'uuid', type: 'string' },
-                  create_credential_manager_user: { type: 'boolean' },
+                  acs_credential_pool_id: {
+                    description:
+                      'ID of the ACS credential pool from which to obtain credentials for the user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  create_credential_manager_user: {
+                    description:
+                      'Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`.',
+                    type: 'boolean',
+                  },
                   credential_manager_acs_system_id: {
+                    description:
+                      'ID of the desired ACS system that serves as the credential manager.',
                     format: 'uuid',
                     type: 'string',
                   },
                   credential_manager_acs_user_id: {
+                    description:
+                      'ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`.',
                     format: 'uuid',
                     type: 'string',
                   },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: [
                   'user_identity_id',
@@ -17890,17 +18047,25 @@ export default {
         'x-fern-sdk-method-name': 'launch',
         'x-fern-sdk-return-value': 'enrollment_automation',
         'x-response-key': 'enrollment_automation',
+        'x-title': 'Launch an Enrollment Automation',
       },
     },
     '/user_identities/enrollment_automations/list': {
       post: {
+        description:
+          'Returns a list of all [enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) for a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesEnrollmentAutomationsListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all enrollment automations.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -17944,10 +18109,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'enrollment_automations',
         'x-response-key': 'enrollment_automations',
+        'x-title': 'List Enrollment Automations',
       },
     },
     '/user_identities/get': {
       post: {
+        description:
+          'Returns a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesGetPost',
         requestBody: {
           content: {
@@ -17956,7 +18124,11 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      user_identity_id: { format: 'uuid', type: 'string' },
+                      user_identity_id: {
+                        description: 'ID of the desired user identity.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                     },
                     required: ['user_identity_id'],
                     type: 'object',
@@ -18003,18 +18175,29 @@ export default {
         'x-fern-sdk-method-name': 'get',
         'x-fern-sdk-return-value': 'user_identity',
         'x-response-key': 'user_identity',
+        'x-title': 'Get a User Identity',
       },
     },
     '/user_identities/grant_access_to_device': {
       post: {
+        description:
+          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
         operationId: 'userIdentitiesGrantAccessToDevicePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired managed device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'device_id'],
                 type: 'object',
@@ -18048,16 +18231,27 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'grant_access_to_device',
         'x-response-key': null,
+        'x-title': 'Grant a User Identity Access to a Device',
       },
       put: {
+        description:
+          'Grants a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/).',
         operationId: 'userIdentitiesGrantAccessToDevicePut',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired managed device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'device_id'],
                 type: 'object',
@@ -18090,10 +18284,13 @@ export default {
         tags: ['/user_identities'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Grant a User Identity Access to a Device',
       },
     },
     '/user_identities/list': {
       post: {
+        description:
+          'Returns a list of all [user identities](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListPost',
         requestBody: {
           content: {
@@ -18144,17 +18341,25 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'user_identities',
         'x-response-key': 'user_identities',
+        'x-title': 'List User Identities',
       },
     },
     '/user_identities/list_accessible_devices': {
       post: {
+        description:
+          'Returns a list of all [devices](https://docs.seam.co/latest/core-concepts/devices) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAccessibleDevicesPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all accessible devices.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -18201,17 +18406,25 @@ export default {
         'x-fern-sdk-method-name': 'list_accessible_devices',
         'x-fern-sdk-return-value': 'devices',
         'x-response-key': 'devices',
+        'x-title': 'List Accessible Devices for a User Identity',
       },
     },
     '/user_identities/list_acs_systems': {
       post: {
+        description:
+          'Returns a list of all [access control systems](https://docs.seam.co/latest/capability-guides/access-systems) associated with a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsSystemsPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all access control systems.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -18253,17 +18466,25 @@ export default {
         'x-fern-sdk-method-name': 'list_acs_systems',
         'x-fern-sdk-return-value': 'acs_systems',
         'x-response-key': 'acs_systems',
+        'x-title': 'List ACS Systems Associated with a User Identity',
       },
     },
     '/user_identities/list_acs_users': {
       post: {
+        description:
+          'Returns a list of all [ACS users](https://docs.seam.co/latest/capability-guides/access-systems/user-management) assigned to a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesListAcsUsersPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity for which you want to retrieve all ACS users.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -18304,18 +18525,29 @@ export default {
         'x-fern-sdk-method-name': 'list_acs_users',
         'x-fern-sdk-return-value': 'acs_users',
         'x-response-key': 'acs_users',
+        'x-title': 'List ACS Users Associated with a User Identity',
       },
     },
     '/user_identities/remove_acs_user': {
       post: {
+        description:
+          'Removes a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRemoveAcsUserPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_user_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  acs_user_id: {
+                    description: 'ID of the ACS user.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'acs_user_id'],
                 type: 'object',
@@ -18349,18 +18581,29 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'remove_acs_user',
         'x-response-key': null,
+        'x-title': 'Remove an ACS User from a User Identity',
       },
     },
     '/user_identities/revoke_access_to_device': {
       post: {
+        description:
+          'Revokes access to a specified [device](https://docs.seam.co/latest/core-concepts/devices/) from a specified [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity).',
         operationId: 'userIdentitiesRevokeAccessToDevicePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  device_id: {
+                    description: 'ID of the desired managed device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the desired user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id', 'device_id'],
                 type: 'object',
@@ -18394,6 +18637,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'revoke_access_to_device',
         'x-response-key': null,
+        'x-title': 'Revoke Access to a Device from a User Identity',
       },
     },
     '/user_identities/update': {
@@ -18405,14 +18649,25 @@ export default {
               schema: {
                 properties: {
                   email_address: {
+                    description: 'Unique email address for the user identity.',
                     format: 'email',
                     nullable: true,
                     type: 'string',
                   },
                   full_name: { minLength: 1, nullable: true, type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  phone_number: {
+                    description:
+                      'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   user_identity_key: {
+                    description: 'Unique key for the user identity.',
                     minLength: 1,
                     nullable: true,
                     type: 'string',
@@ -18458,14 +18713,25 @@ export default {
               schema: {
                 properties: {
                   email_address: {
+                    description: 'Unique email address for the user identity.',
                     format: 'email',
                     nullable: true,
                     type: 'string',
                   },
                   full_name: { minLength: 1, nullable: true, type: 'string' },
-                  phone_number: { nullable: true, type: 'string' },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  phone_number: {
+                    description:
+                      'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                    nullable: true,
+                    type: 'string',
+                  },
+                  user_identity_id: {
+                    description: 'ID of the user identity.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   user_identity_key: {
+                    description: 'Unique key for the user identity.',
                     minLength: 1,
                     nullable: true,
                     type: 'string',
