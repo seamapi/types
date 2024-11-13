@@ -11436,7 +11436,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -11474,7 +11475,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -11504,7 +11506,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -11524,6 +11527,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -12310,7 +12315,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12348,7 +12354,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12378,7 +12385,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -12398,6 +12406,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -13899,7 +13909,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -13937,7 +13948,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -13967,7 +13979,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -13987,6 +14000,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -14590,7 +14605,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -14628,7 +14644,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -14658,7 +14675,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -14678,6 +14696,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -15464,7 +15484,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15502,7 +15523,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15532,7 +15554,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -15552,6 +15575,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -16155,7 +16180,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -16193,7 +16219,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -16223,7 +16250,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -16243,6 +16271,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -18781,7 +18811,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -18819,7 +18850,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -18849,7 +18881,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -18869,6 +18902,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -19472,7 +19507,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19510,7 +19546,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19540,7 +19577,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -19560,6 +19598,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -24218,6 +24258,7 @@ export interface Routes {
     jsonBody: {
       /** ID of the desired thermostat device. */
       device_id: string
+      manual_override_allowed?: boolean
       /** Unique key to identify the climate preset. */
       climate_preset_key: string
       /** User-friendly name to identify the climate preset. */
@@ -24234,8 +24275,6 @@ export interface Routes {
       cooling_set_point_fahrenheit?: number | undefined
       /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
-      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
-      manual_override_allowed: boolean
     }
     commonParams: {}
     formData: {}
@@ -24795,7 +24834,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -24833,7 +24873,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -24863,7 +24904,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -24883,6 +24925,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -27403,7 +27447,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -27441,7 +27486,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -27471,7 +27517,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -27491,6 +27538,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -28094,7 +28143,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -28132,7 +28182,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -28162,7 +28213,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -28182,6 +28234,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -29138,6 +29192,7 @@ export interface Routes {
       starts_at: string
       /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at: string
+      is_override_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -29156,6 +29211,8 @@ export interface Routes {
         max_override_period_minutes: number
         /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+        unstable_is_override_allowed?: boolean | undefined
         /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the thermostat schedule was created. */
@@ -29202,6 +29259,8 @@ export interface Routes {
         max_override_period_minutes: number
         /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+        unstable_is_override_allowed?: boolean | undefined
         /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the thermostat schedule was created. */
@@ -29237,6 +29296,8 @@ export interface Routes {
         max_override_period_minutes: number
         /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         starts_at: string
+        /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+        unstable_is_override_allowed?: boolean | undefined
         /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
         ends_at: string
         /** Date and time at which the thermostat schedule was created. */
@@ -29263,6 +29324,7 @@ export interface Routes {
       starts_at?: string | undefined
       /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       ends_at?: string | undefined
+      is_override_allowed?: boolean | undefined
     }
     commonParams: {}
     formData: {}
@@ -30190,7 +30252,8 @@ export interface Routes {
       cooling_set_point_fahrenheit?: number | undefined
       /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
-      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+      /** Indicates whether a person at the thermostat can change the thermostat's settings.
+       * @deprecated Use 'thermostat_schedule.is_override_allowed' */
       manual_override_allowed: boolean
     }
     commonParams: {}
@@ -30915,7 +30978,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -30953,7 +31017,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -30983,7 +31048,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -31003,6 +31069,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
@@ -31608,7 +31676,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31646,7 +31715,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31676,7 +31746,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -31696,6 +31767,8 @@ export interface Routes {
                   max_override_period_minutes: number
                   /** Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   starts_at: string
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  unstable_is_override_allowed?: boolean | undefined
                   /** Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
                   ends_at: string
                   /** Date and time at which the thermostat schedule was created. */
