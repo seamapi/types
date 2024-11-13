@@ -4668,6 +4668,12 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          unstable_is_override_allowed: {
+                            description:
+                              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+                            type: 'boolean',
+                            'x-undocumented': 'Unstable',
+                          },
                         },
                         required: [
                           'thermostat_schedule_id',
@@ -4740,9 +4746,12 @@ export default {
                               type: 'string',
                             },
                             manual_override_allowed: {
+                              deprecated: true,
                               description:
                                 "Indicates whether a person at the thermostat can change the thermostat's settings.",
                               type: 'boolean',
+                              'x-deprecated':
+                                "Use 'thermostat_schedule.is_override_allowed'",
                             },
                             name: {
                               default: null,
@@ -4835,9 +4844,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -4908,9 +4920,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -5469,6 +5484,12 @@ export default {
             description: 'ID of the thermostat schedule.',
             format: 'uuid',
             type: 'string',
+          },
+          unstable_is_override_allowed: {
+            description:
+              "Indicates whether a person at the thermostat can change the thermostat's settings.",
+            type: 'boolean',
+            'x-undocumented': 'Unstable',
           },
         },
         required: [
@@ -15895,11 +15916,7 @@ export default {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: {
-                    description:
-                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
-                    type: 'boolean',
-                  },
+                  manual_override_allowed: { default: true, type: 'boolean' },
                   name: {
                     default: null,
                     description:
@@ -15908,11 +15925,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: [
-                  'device_id',
-                  'climate_preset_key',
-                  'manual_override_allowed',
-                ],
+                required: ['device_id', 'climate_preset_key'],
                 type: 'object',
               },
             },
@@ -16623,6 +16636,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { default: false, type: 'boolean' },
                   max_override_period_minutes: {
                     default: 0,
                     description:
@@ -16884,6 +16898,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
@@ -16959,6 +16974,7 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
+                  is_override_allowed: { type: 'boolean' },
                   max_override_period_minutes: {
                     description:
                       "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
@@ -17363,9 +17379,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,
@@ -17467,9 +17486,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,
