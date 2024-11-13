@@ -32,6 +32,16 @@ export const thermostat_schedule = z
       .describe(
         'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
       ),
+    unstable_is_override_allowed: z
+      .boolean()
+      .optional()
+      .describe(
+        `
+        ---
+        undocumented: Unstable
+        ---
+        Indicates whether a person at the thermostat can change the thermostat's settings.`,
+      ),
     ends_at: z
       .string()
       .datetime()
