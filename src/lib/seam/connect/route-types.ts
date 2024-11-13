@@ -30266,7 +30266,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
+      /** ID of the desired ACS user. */
       acs_user_id: string
     }
     formData: {}
@@ -30278,21 +30280,32 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** Unique key for the user identity. */
       user_identity_key?: (string | null) | undefined
+      /** Unique email address for the user identity. */
       email_address?: (string | null) | undefined
+      /** Unique phone number for the user identity in E.164 format (for example, +15555550100). */
       phone_number?: (string | null) | undefined
+      /** Full name of the user associated with the user identity. */
       full_name?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
+      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
       user_identity: {
+        /** ID of the user identity. */
         user_identity_id: string
+        /** Unique key for the user identity. */
         user_identity_key: string | null
+        /** Unique email address for the user identity. */
         email_address: string | null
+        /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
         phone_number: string | null
         display_name: string
         full_name: string | null
+        /** Date and time at which the user identity was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
       }
     }
@@ -30303,6 +30316,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
     }
     formData: {}
@@ -30314,6 +30328,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired enrollment automation. */
       enrollment_automation_id: string
     }
     formData: {}
@@ -30325,16 +30340,23 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired enrollment automation. */
       enrollment_automation_id: string
     }
     formData: {}
     jsonResponse: {
+      /** Represents an [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system) within the [Seam mobile access solution](https://docs.seam.co/latest/capability-guides/mobile-access-in-development). */
       enrollment_automation: {
-        credential_manager_acs_system_id: string
-        user_identity_id: string
-        created_at: string
-        workspace_id: string
+        /** ID of the enrollment automation. */
         enrollment_automation_id: string
+        /** ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager. */
+        credential_manager_acs_system_id: string
+        /** ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). */
+        user_identity_id: string
+        /** Date and time at which the enrollment automation was created. */
+        created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the enrollment automation. */
+        workspace_id: string
       }
     }
   }
@@ -30344,10 +30366,15 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
+      /** ID of the desired ACS system that serves as the credential manager. */
       credential_manager_acs_system_id: string
+      /** ID of the ACS credential pool from which to obtain credentials for the user identity. */
       acs_credential_pool_id?: string | undefined
+      /** Indicates whether to create an associated credential manager user. If you set `create_credential_manager_user` to `true`, you cannot specify a `credential_manager_acs_user_id`. */
       create_credential_manager_user?: boolean | undefined
+      /** ID of the associated ACS user within the credential manager. If you specify a `credential_manager_acs_user_id`, you cannot set `create_credential_manager_user` to `true`. */
       credential_manager_acs_user_id?: string | undefined
     }
     formData: {}
@@ -30368,16 +30395,22 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all enrollment automations. */
       user_identity_id: string
     }
     formData: {}
     jsonResponse: {
       enrollment_automations: Array<{
-        credential_manager_acs_system_id: string
-        user_identity_id: string
-        created_at: string
-        workspace_id: string
+        /** ID of the enrollment automation. */
         enrollment_automation_id: string
+        /** ID of the associated [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) that serves as the credential manager. */
+        credential_manager_acs_system_id: string
+        /** ID of the associated [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity). */
+        user_identity_id: string
+        /** Date and time at which the enrollment automation was created. */
+        created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the enrollment automation. */
+        workspace_id: string
       }>
     }
   }
@@ -30388,6 +30421,7 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
+          /** ID of the desired user identity. */
           user_identity_id: string
         }
       | {
@@ -30395,14 +30429,21 @@ export interface Routes {
         }
     formData: {}
     jsonResponse: {
+      /** Represents a [user identity](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/managing-mobile-app-user-accounts-with-user-identities#what-is-a-user-identity) associated with an application user account. */
       user_identity: {
+        /** ID of the user identity. */
         user_identity_id: string
+        /** Unique key for the user identity. */
         user_identity_key: string | null
+        /** Unique email address for the user identity. */
         email_address: string | null
+        /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
         phone_number: string | null
         display_name: string
         full_name: string | null
+        /** Date and time at which the user identity was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
       }
     }
@@ -30413,7 +30454,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
+      /** ID of the desired managed device. */
       device_id: string
     }
     formData: {}
@@ -30430,13 +30473,19 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       user_identities: Array<{
+        /** ID of the user identity. */
         user_identity_id: string
+        /** Unique key for the user identity. */
         user_identity_key: string | null
+        /** Unique email address for the user identity. */
         email_address: string | null
+        /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
         phone_number: string | null
         display_name: string
         full_name: string | null
+        /** Date and time at which the user identity was created. */
         created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the user identity. */
         workspace_id: string
       }>
     }
@@ -30447,6 +30496,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all accessible devices. */
       user_identity_id: string
     }
     formData: {}
@@ -31853,6 +31903,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all access control systems. */
       user_identity_id: string
     }
     formData: {}
@@ -31999,6 +32050,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity for which you want to retrieve all ACS users. */
       user_identity_id: string
     }
     formData: {}
@@ -32121,7 +32173,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
+      /** ID of the ACS user. */
       acs_user_id: string
     }
     formData: {}
@@ -32133,7 +32187,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the desired user identity. */
       user_identity_id: string
+      /** ID of the desired managed device. */
       device_id: string
     }
     formData: {}
@@ -32144,9 +32200,13 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the user identity. */
       user_identity_id: string
+      /** Unique key for the user identity. */
       user_identity_key?: (string | null) | undefined
+      /** Unique email address for the user identity. */
       email_address?: (string | null) | undefined
+      /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
       phone_number?: (string | null) | undefined
       full_name?: (string | null) | undefined
     }
