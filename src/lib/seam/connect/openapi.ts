@@ -4746,9 +4746,12 @@ export default {
                               type: 'string',
                             },
                             manual_override_allowed: {
+                              deprecated: true,
                               description:
                                 "Indicates whether a person at the thermostat can change the thermostat's settings.",
                               type: 'boolean',
+                              'x-deprecated':
+                                "Use 'thermostat_schedule.is_override_allowed'",
                             },
                             name: {
                               default: null,
@@ -4841,9 +4844,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -4914,9 +4920,12 @@ export default {
                             type: 'string',
                           },
                           manual_override_allowed: {
+                            deprecated: true,
                             description:
                               "Indicates whether a person at the thermostat can change the thermostat's settings.",
                             type: 'boolean',
+                            'x-deprecated':
+                              "Use 'thermostat_schedule.is_override_allowed'",
                           },
                           name: {
                             default: null,
@@ -15907,11 +15916,7 @@ export default {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: {
-                    description:
-                      "Indicates whether a person at the thermostat can change the thermostat's settings.",
-                    type: 'boolean',
-                  },
+                  manual_override_allowed: { default: true, type: 'boolean' },
                   name: {
                     default: null,
                     description:
@@ -15920,11 +15925,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: [
-                  'device_id',
-                  'climate_preset_key',
-                  'manual_override_allowed',
-                ],
+                required: ['device_id', 'climate_preset_key'],
                 type: 'object',
               },
             },
@@ -17378,9 +17379,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,
@@ -17482,9 +17486,12 @@ export default {
                     type: 'string',
                   },
                   manual_override_allowed: {
+                    deprecated: true,
                     description:
                       "Indicates whether a person at the thermostat can change the thermostat's settings.",
                     type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
                   },
                   name: {
                     default: null,

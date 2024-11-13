@@ -11436,7 +11436,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -11474,7 +11475,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -11504,7 +11506,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -12312,7 +12315,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12350,7 +12354,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -12380,7 +12385,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -13903,7 +13909,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -13941,7 +13948,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -13971,7 +13979,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -14596,7 +14605,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -14634,7 +14644,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -14664,7 +14675,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -15472,7 +15484,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15510,7 +15523,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -15540,7 +15554,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -16165,7 +16180,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -16203,7 +16219,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -16233,7 +16250,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -18793,7 +18811,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -18831,7 +18850,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -18861,7 +18881,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -19486,7 +19507,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19524,7 +19546,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -19554,7 +19577,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -24234,6 +24258,7 @@ export interface Routes {
     jsonBody: {
       /** ID of the desired thermostat device. */
       device_id: string
+      manual_override_allowed?: boolean
       /** Unique key to identify the climate preset. */
       climate_preset_key: string
       /** User-friendly name to identify the climate preset. */
@@ -24250,8 +24275,6 @@ export interface Routes {
       cooling_set_point_fahrenheit?: number | undefined
       /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
-      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
-      manual_override_allowed: boolean
     }
     commonParams: {}
     formData: {}
@@ -24811,7 +24834,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -24849,7 +24873,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -24879,7 +24904,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -27421,7 +27447,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -27459,7 +27486,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -27489,7 +27517,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -28114,7 +28143,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -28152,7 +28182,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -28182,7 +28213,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -30220,7 +30252,8 @@ export interface Routes {
       cooling_set_point_fahrenheit?: number | undefined
       /** Temperature to which the thermostat should heat (in °F). */
       heating_set_point_fahrenheit?: number | undefined
-      /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+      /** Indicates whether a person at the thermostat can change the thermostat's settings.
+       * @deprecated Use 'thermostat_schedule.is_override_allowed' */
       manual_override_allowed: boolean
     }
     commonParams: {}
@@ -30945,7 +30978,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -30983,7 +31017,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31013,7 +31048,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
@@ -31640,7 +31676,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31678,7 +31715,8 @@ export interface Routes {
                   heating_set_point_fahrenheit?:
                     | (number | undefined)
                     | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed?: boolean | undefined
                 }
               | undefined
@@ -31708,7 +31746,8 @@ export interface Routes {
                   cooling_set_point_fahrenheit?: number | undefined
                   /** Temperature to which the thermostat should heat (in °F). */
                   heating_set_point_fahrenheit?: number | undefined
-                  /** Indicates whether a person at the thermostat can change the thermostat's settings. */
+                  /** Indicates whether a person at the thermostat can change the thermostat's settings.
+                   * @deprecated Use 'thermostat_schedule.is_override_allowed' */
                   manual_override_allowed: boolean
                 }>
               | undefined
