@@ -16,6 +16,7 @@ export const DEVICE_PROVIDERS = {
   GENIE: 'genie',
   DOORKING: 'doorking',
   SALTO: 'salto',
+  SALTO_KS: 'salto_ks',
   LOCKLY: 'lockly',
   TTLOCK: 'ttlock',
   LINEAR: 'linear',
@@ -108,7 +109,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'visionline',
     'assa_abloy_credential_service',
     'latch',
-    'salto',
+    'salto_ks',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
