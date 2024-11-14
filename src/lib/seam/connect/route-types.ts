@@ -166,14 +166,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -238,14 +270,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -355,14 +419,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -427,14 +523,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -1183,14 +1311,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -1255,14 +1415,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -1372,14 +1564,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -1444,14 +1668,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -2365,14 +2621,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -2437,14 +2725,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -2554,14 +2874,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -2626,14 +2978,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -3369,14 +3753,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -3441,14 +3857,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -3558,14 +4006,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -3630,14 +4110,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -4607,14 +5119,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -4729,14 +5273,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -4824,14 +5400,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -4928,14 +5536,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5095,14 +5735,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5178,14 +5850,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5274,14 +5978,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5361,14 +6097,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5546,14 +6314,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5618,14 +6418,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5735,14 +6567,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -5807,14 +6671,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -6453,14 +7349,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -6525,14 +7453,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -6642,14 +7602,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -6714,14 +7706,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -7386,14 +8410,46 @@ export interface Routes {
         starts_at?: string | undefined
         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
         ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
         errors: Array<{
           error_code: string
           message: string
         }>
-        warnings: Array<{
-          warning_code: string
-          message: string
-        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -8842,14 +9898,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -8914,14 +10002,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9031,14 +10151,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9103,14 +10255,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9700,14 +10884,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9772,14 +10988,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9889,14 +11137,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -9961,14 +11241,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -16505,14 +17817,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -16577,14 +17921,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -16694,14 +18070,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -16766,14 +18174,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -17364,14 +18804,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -17436,14 +18908,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -17553,14 +19057,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -17625,14 +19161,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -19837,14 +21405,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -19909,14 +21509,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20026,14 +21658,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20098,14 +21762,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20706,14 +22402,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20778,14 +22506,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20895,14 +22655,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -20967,14 +22759,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -21614,14 +23438,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -21686,14 +23542,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -21803,14 +23691,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -21875,14 +23795,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -22681,14 +24633,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -22753,14 +24737,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -22870,14 +24886,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -22942,14 +24990,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -23546,14 +25626,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -23618,14 +25730,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -23735,14 +25879,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -23807,14 +25983,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -25165,14 +27373,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -25237,14 +27477,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -25354,14 +27626,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -25426,14 +27730,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -26034,14 +28370,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -26106,14 +28474,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -26223,14 +28623,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -26295,14 +28727,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -28470,14 +30934,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -28542,14 +31038,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -28659,14 +31187,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -28731,14 +31291,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -29504,14 +32096,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -29576,14 +32200,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -29693,14 +32349,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -29765,14 +32453,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -32508,14 +35228,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -32580,14 +35332,46 @@ export interface Routes {
                         starts_at?: string | undefined
                         /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                         ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
                         errors: Array<{
                           error_code: string
                           message: string
                         }>
-                        warnings: Array<{
-                          warning_code: string
-                          message: string
-                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -32697,14 +35481,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
@@ -32769,14 +35585,46 @@ export interface Routes {
                   starts_at?: string | undefined
                   /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
                   ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
                   errors: Array<{
                     error_code: string
                     message: string
                   }>
-                  warnings: Array<{
-                    warning_code: string
-                    message: string
-                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
