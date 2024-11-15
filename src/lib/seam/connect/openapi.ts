@@ -13756,9 +13756,13 @@ export default {
         ],
         summary: '/devices/delete',
         tags: ['/devices'],
+        'x-deprecated':
+          'Deleting a device is no longer supported and will be removed.',
         'x-fern-sdk-group-name': ['devices'],
         'x-fern-sdk-method-name': 'delete',
         'x-response-key': null,
+        'x-undocumented':
+          'Deleting a device is no longer supported and will be removed.',
       },
     },
     '/devices/get': {
