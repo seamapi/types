@@ -31,7 +31,7 @@ const acs_encoder_error =
     // ])
     .describe('Error associated with the `acs_encoder`.')
 
-export const acs_encoder_error_map = z.object({
+const acs_encoder_error_map = z.object({
   acs_encoder_removed: acs_encoder_removed.optional().nullable(),
 })
 

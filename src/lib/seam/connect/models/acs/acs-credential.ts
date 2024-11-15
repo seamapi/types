@@ -21,6 +21,75 @@ export type AcsCredentialExternalType = z.infer<
   typeof acs_credential_external_type
 >
 
+const common_acs_credential_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const waiting_to_be_issued = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('waiting_to_be_issued')
+      .describe(warning_code_description),
+  })
+  .describe('Indicates that the credential is waiting to be issued.')
+
+const schedule_externally_modified = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('schedule_externally_modified')
+      .describe(warning_code_description),
+  })
+  .describe(
+    "Indicates that the schedule of one of the credential's children was modified externally.",
+  )
+
+const schedule_modified = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('schedule_modified')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.',
+  )
+
+const being_deleted = common_acs_credential_warning
+  .extend({
+    warning_code: z.literal('being_deleted').describe(warning_code_description),
+  })
+  .describe('Indicates that this credential is being deleted.')
+
+const acs_credential_warning = z
+  .union([
+    waiting_to_be_issued,
+    schedule_externally_modified,
+    schedule_modified,
+    being_deleted,
+  ])
+  .describe('Warning associated with the `acs_credential`.')
+
+const acs_credential_warning_map = z.object({
+  waiting_to_be_issued: waiting_to_be_issued.optional().nullable(),
+  schedule_externally_modified: schedule_externally_modified
+    .optional()
+    .nullable(),
+  schedule_modified: schedule_modified.optional().nullable(),
+  being_deleted: being_deleted.optional().nullable(),
+})
+
+export type AcsCredentialWarningMap = z.infer<typeof acs_credential_warning_map>
+
 const common_acs_credential = z.object({
   acs_credential_id: z.string().uuid().describe('ID of the credential.'),
   acs_user_id: z
@@ -86,18 +155,17 @@ const common_acs_credential = z.object({
     .describe(
       'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
     ),
-  errors: z.array(
-    z.object({
-      error_code: z.string(),
-      message: z.string(),
-    }),
-  ),
-  warnings: z.array(
-    z.object({
-      warning_code: z.string(),
-      message: z.string(),
-    }),
-  ),
+  errors: z
+    .array(
+      z.object({
+        error_code: z.string(),
+        message: z.string(),
+      }),
+    )
+    .describe('Errors associated with the `acs_credential`.'),
+  warnings: z
+    .array(acs_credential_warning)
+    .describe('Warnings associated with the `acs_credential`.'),
   is_multi_phone_sync_credential: z
     .boolean()
     .optional()
