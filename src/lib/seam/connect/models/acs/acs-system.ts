@@ -115,6 +115,13 @@ const account_disconnected = common_acs_system_error
     'Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.',
   )
 
+const salto_ks_certification_expired = common_acs_system_error.extend({
+  error_code: z
+    .literal('salto_ks_certification_expired')
+    .describe(
+      'Indicates that the access system has lost its Salto KS certification. Please contact support to regain access.',
+    ),
+})
 const acs_system_error = z
   .union([
     seam_bridge_disconnected,
@@ -122,6 +129,7 @@ const acs_system_error = z
     salto_ks_subscription_limit_exceeded,
     acs_system_disconnected,
     account_disconnected,
+    salto_ks_certification_expired,
   ])
   .describe('Error associated with the `acs_system`.')
 
@@ -135,6 +143,9 @@ export const acs_system_error_map = z.object({
     .nullable(),
   acs_system_disconnected: acs_system_disconnected.optional().nullable(),
   account_disconnected: account_disconnected.optional().nullable(),
+  salto_ks_certification_expired: salto_ks_certification_expired
+    .optional()
+    .nullable(),
 })
 
 export type AcsSystemErrorMap = z.infer<typeof acs_system_error_map>
