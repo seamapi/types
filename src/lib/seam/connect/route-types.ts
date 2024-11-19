@@ -8600,6 +8600,14 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the access system has lost its Salto KS certification. Please contact support to regain access. */
+              error_code: 'salto_ks_certification_expired'
+            }
         >
         /** Warnings associated with the `acs_system`. */
         warnings: Array<{
@@ -8747,6 +8755,14 @@ export interface Routes {
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the access system has lost its Salto KS certification. Please contact support to regain access. */
+              error_code: 'salto_ks_certification_expired'
+            }
         >
         /** Warnings associated with the `acs_system`. */
         warnings: Array<{
@@ -8893,6 +8909,14 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the access system has lost its Salto KS certification. Please contact support to regain access. */
+              error_code: 'salto_ks_certification_expired'
             }
         >
         /** Warnings associated with the `acs_system`. */
@@ -34744,6 +34768,14 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the access system has lost its Salto KS certification. Please contact support to regain access. */
+              error_code: 'salto_ks_certification_expired'
             }
         >
         /** Warnings associated with the `acs_system`. */

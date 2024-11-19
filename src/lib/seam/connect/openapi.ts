@@ -873,6 +873,29 @@ export default {
                   required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Indicates that the access system has lost its Salto KS certification. Please contact support to regain access.',
+                      enum: ['salto_ks_certification_expired'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
