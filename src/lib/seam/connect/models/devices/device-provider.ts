@@ -110,6 +110,8 @@ export const PROVIDER_CATEGORY_MAP = {
     'assa_abloy_credential_service',
     'latch',
     'salto_ks',
+    'assa_abloy_vostio',
+    'assa_abloy_vostio_credential_service',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
