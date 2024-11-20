@@ -18055,6 +18055,157 @@ export default {
         'x-title': 'Set the Fan Mode Setting',
       },
     },
+    '/thermostats/set_hvac_mode': {
+      post: {
+        description:
+          'Sets the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/configure-current-climate-settings) for a specified [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+        operationId: 'thermostatsSetHvacModePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                discriminator: { propertyName: 'hvac_mode_setting' },
+                oneOf: [
+                  {
+                    properties: {
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      hvac_mode_setting: { enum: ['off'], type: 'string' },
+                    },
+                    required: ['hvac_mode_setting', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        description:
+                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        description:
+                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      hvac_mode_setting: { enum: ['cool'], type: 'string' },
+                    },
+                    required: ['hvac_mode_setting', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      heating_set_point_celsius: {
+                        description:
+                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        description:
+                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode_setting: { enum: ['heat'], type: 'string' },
+                    },
+                    required: ['hvac_mode_setting', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        description:
+                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        description:
+                          'Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      heating_set_point_celsius: {
+                        description:
+                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        description:
+                          'Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters.',
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode_setting: {
+                        enum: ['heat_cool'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['hvac_mode_setting', 'device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    action_attempt: {
+                      $ref: '#/components/schemas/action_attempt',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['action_attempt', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { client_session: [] },
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/thermostats/set_hvac_mode',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats'],
+        'x-fern-sdk-method-name': 'set_hvac_mode',
+        'x-fern-sdk-return-value': 'action_attempt',
+        'x-response-key': 'action_attempt',
+        'x-title': 'Set the HVAC Mode',
+      },
+    },
     '/thermostats/set_temperature_threshold': {
       patch: {
         description:
