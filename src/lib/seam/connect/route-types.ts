@@ -32955,6 +32955,1026 @@ export interface Routes {
           }
     }
   }
+  '/thermostats/set_hvac_mode': {
+    route: '/thermostats/set_hvac_mode'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          hvac_mode_setting: 'off'
+          /** ID of the desired thermostat device. */
+          device_id: string
+        }
+      | {
+          hvac_mode_setting: 'cool'
+          /** ID of the desired thermostat device. */
+          device_id: string
+          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+          cooling_set_point_celsius?: number | undefined
+          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+          cooling_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode_setting: 'heat'
+          /** ID of the desired thermostat device. */
+          device_id: string
+          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+          heating_set_point_celsius?: number | undefined
+          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+          heating_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode_setting: 'heat_cool'
+          /** ID of the desired thermostat device. */
+          device_id: string
+          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `cooling_set_point` parameters. */
+          cooling_set_point_celsius?: number | undefined
+          /** Desired [cooling set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `cooling_set_point` parameters. */
+          cooling_set_point_fahrenheit?: number | undefined
+          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set one of the `heating_set_point` parameters. */
+          heating_set_point_celsius?: number | undefined
+          /** Desired [heating set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set one of the `heating_set_point` parameters. */
+          heating_set_point_fahrenheit?: number | undefined
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      action_attempt:
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'LOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'LOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'LOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UNLOCK_DOOR'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UNLOCK_DOOR'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UNLOCK_DOOR'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SCAN_CREDENTIAL'
+            result: {
+              /** Snapshot of credential data read from physical encoder. */
+              acs_credential_on_encoder: {
+                /** Date and time the credential was created. */
+                created_at: string | null
+                is_issued: boolean | null
+                /** Date and time the credential will become useable. */
+                starts_at: string | null
+                /** Date and time the credential will stop being useable. */
+                ends_at: string | null
+                /** A number or string that physically identifies this card. */
+                card_number: string | null
+                /** Visionline-specific metadata for the credential. */
+                visionline_metadata?:
+                  | {
+                      card_id: string
+                      cancelled: boolean
+                      discarded: boolean
+                      expired: boolean
+                      overwritten: boolean
+                      overridden?: boolean | undefined
+                      pending_auto_update: boolean
+                      card_format: 'TLCode' | 'rfid48'
+                      card_holder?: string | undefined
+                      number_of_issued_cards: number
+                      guest_acs_entrance_ids?: string[] | undefined
+                      common_acs_entrance_ids?: string[] | undefined
+                    }
+                  | undefined
+              }
+              /** Matching acs_credential currently encoded on this card. */
+              acs_credential_on_seam:
+                | (
+                    | {
+                        /** ID of the credential. */
+                        acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
+                        acs_system_id: string
+                        /** ID of the parent credential. */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
+                        display_name: string
+                        /** Access (PIN) code for the credential. */
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
+                        workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        /** Visionline-specific metadata for the credential. */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: true
+                      }
+                    | {
+                        /** ID of the credential. */
+                        acs_credential_id: string
+                        /** ID of the ACS user to whom the credential belongs. */
+                        acs_user_id?: string | undefined
+                        acs_credential_pool_id?: string | undefined
+                        /** ID of the access control system that contains the credential. */
+                        acs_system_id: string
+                        /** ID of the parent credential. */
+                        parent_acs_credential_id?: string | undefined
+                        /** Display name that corresponds to the credential type. */
+                        display_name: string
+                        /** Access (PIN) code for the credential. */
+                        code?: (string | undefined) | null
+                        card_number?: (string | undefined) | null
+                        is_issued?: boolean | undefined
+                        issued_at?: (string | undefined) | null
+                        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
+                        access_method: 'code' | 'card' | 'mobile_key'
+                        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                        external_type?:
+                          | (
+                              | 'pti_card'
+                              | 'brivo_credential'
+                              | 'hid_credential'
+                              | 'visionline_card'
+                              | 'salto_ks_credential'
+                            )
+                          | undefined
+                        /** Display name that corresponds to the brand-specific terminology for the credential type. */
+                        external_type_display_name?: string | undefined
+                        /** Date and time at which the credential was created. */
+                        created_at: string
+                        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
+                        workspace_id: string
+                        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                        starts_at?: string | undefined
+                        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                        ends_at?: string | undefined
+                        /** Errors associated with the `acs_credential`. */
+                        errors: Array<{
+                          error_code: string
+                          message: string
+                        }>
+                        /** Warnings associated with the `acs_credential`. */
+                        warnings: Array<
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'waiting_to_be_issued'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_externally_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'schedule_modified'
+                            }
+                          | {
+                              /** Date and time at which Seam created the warning. */
+                              created_at: string
+                              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                              message: string
+                              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                              warning_code: 'being_deleted'
+                            }
+                        >
+                        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                        is_multi_phone_sync_credential?: boolean | undefined
+                        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
+                        is_latest_desired_state_synced_with_provider?:
+                          | boolean
+                          | undefined
+                        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
+                        latest_desired_state_synced_with_provider_at?:
+                          | string
+                          | undefined
+                        /** Visionline-specific metadata for the credential. */
+                        visionline_metadata?:
+                          | {
+                              card_function_type: 'guest' | 'staff'
+                              joiner_acs_credential_ids?: string[] | undefined
+                              guest_acs_entrance_ids?: string[] | undefined
+                              common_acs_entrance_ids?: string[] | undefined
+                              is_valid?: boolean | undefined
+                              auto_join?: boolean | undefined
+                              card_id?: string | undefined
+                              credential_id?: string | undefined
+                            }
+                          | undefined
+                        is_managed: false
+                      }
+                  )
+                | null
+              warnings: Array<{
+                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_message: string
+              }>
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SCAN_CREDENTIAL'
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ENCODE_CREDENTIAL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ENCODE_CREDENTIAL'
+            /** Means by which a user gains access at an entrance.
+        The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+            result:
+              | {
+                  /** ID of the credential. */
+                  acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
+                  acs_system_id: string
+                  /** ID of the parent credential. */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
+                  display_name: string
+                  /** Access (PIN) code for the credential. */
+                  code?: (string | undefined) | null
+                  card_number?: (string | undefined) | null
+                  is_issued?: boolean | undefined
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
+                  workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | boolean
+                    | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | string
+                    | undefined
+                  /** Visionline-specific metadata for the credential. */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: true
+                }
+              | {
+                  /** ID of the credential. */
+                  acs_credential_id: string
+                  /** ID of the ACS user to whom the credential belongs. */
+                  acs_user_id?: string | undefined
+                  acs_credential_pool_id?: string | undefined
+                  /** ID of the access control system that contains the credential. */
+                  acs_system_id: string
+                  /** ID of the parent credential. */
+                  parent_acs_credential_id?: string | undefined
+                  /** Display name that corresponds to the credential type. */
+                  display_name: string
+                  /** Access (PIN) code for the credential. */
+                  code?: (string | undefined) | null
+                  card_number?: (string | undefined) | null
+                  is_issued?: boolean | undefined
+                  issued_at?: (string | undefined) | null
+                  /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
+                  access_method: 'code' | 'card' | 'mobile_key'
+                  /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+                  external_type?:
+                    | (
+                        | 'pti_card'
+                        | 'brivo_credential'
+                        | 'hid_credential'
+                        | 'visionline_card'
+                        | 'salto_ks_credential'
+                      )
+                    | undefined
+                  /** Display name that corresponds to the brand-specific terminology for the credential type. */
+                  external_type_display_name?: string | undefined
+                  /** Date and time at which the credential was created. */
+                  created_at: string
+                  /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
+                  workspace_id: string
+                  /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                  starts_at?: string | undefined
+                  /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+                  ends_at?: string | undefined
+                  /** Errors associated with the `acs_credential`. */
+                  errors: Array<{
+                    error_code: string
+                    message: string
+                  }>
+                  /** Warnings associated with the `acs_credential`. */
+                  warnings: Array<
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'waiting_to_be_issued'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_externally_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'schedule_modified'
+                      }
+                    | {
+                        /** Date and time at which Seam created the warning. */
+                        created_at: string
+                        /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+                        message: string
+                        /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                        warning_code: 'being_deleted'
+                      }
+                  >
+                  /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+                  is_multi_phone_sync_credential?: boolean | undefined
+                  /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
+                  is_latest_desired_state_synced_with_provider?:
+                    | boolean
+                    | undefined
+                  /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
+                  latest_desired_state_synced_with_provider_at?:
+                    | string
+                    | undefined
+                  /** Visionline-specific metadata for the credential. */
+                  visionline_metadata?:
+                    | {
+                        card_function_type: 'guest' | 'staff'
+                        joiner_acs_credential_ids?: string[] | undefined
+                        guest_acs_entrance_ids?: string[] | undefined
+                        common_acs_entrance_ids?: string[] | undefined
+                        is_valid?: boolean | undefined
+                        auto_join?: boolean | undefined
+                        card_id?: string | undefined
+                        credential_id?: string | undefined
+                      }
+                    | undefined
+                  is_managed: false
+                }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ENCODE_CREDENTIAL'
+            error:
+              | {
+                  type: 'uncategorized_error'
+                  message: string
+                }
+              | {
+                  type: 'action_attempt_expired'
+                  message: string
+                }
+              | {
+                  type: 'no_card_on_encoder'
+                  message: string
+                }
+              | {
+                  type: 'incompatible_card_format'
+                  message: string
+                }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'RESET_SANDBOX_WORKSPACE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HEAT_COOL'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HEAT_COOL'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HEAT_COOL'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_FAN_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_FAN_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_FAN_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'ACTIVATE_CLIMATE_PRESET'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SYNC_ACCESS_CODES'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SYNC_ACCESS_CODES'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_ACCESS_CODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            result: {
+              access_code?: any
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_ACCESS_CODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'CREATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'DELETE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            result: {
+              noise_threshold?: any
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'UPDATE_NOISE_THRESHOLD'
+            error: {
+              type: string
+              message: string
+            }
+          }
+    }
+  }
   '/thermostats/set_temperature_threshold': {
     route: '/thermostats/set_temperature_threshold'
     method: 'POST' | 'PATCH'
