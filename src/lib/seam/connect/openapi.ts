@@ -1054,6 +1054,7 @@ export default {
                 description:
                   "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                 format: 'date-time',
+                nullable: true,
                 type: 'string',
               },
               starts_at: {
@@ -11102,12 +11103,15 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
+                      "`starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`.",
                     properties: {
-                      ends_at: { format: 'date-time', type: 'string' },
+                      ends_at: {
+                        format: 'date-time',
+                        nullable: true,
+                        type: 'string',
+                      },
                       starts_at: { format: 'date-time', type: 'string' },
                     },
-                    required: ['starts_at', 'ends_at'],
                     type: 'object',
                   },
                   acs_access_group_ids: {
@@ -11619,6 +11623,7 @@ export default {
                               description:
                                 "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                               format: 'date-time',
+                              nullable: true,
                               type: 'string',
                             },
                             starts_at: {
@@ -12011,6 +12016,7 @@ export default {
                                 description:
                                   "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
                                 format: 'date-time',
+                                nullable: true,
                                 type: 'string',
                               },
                               starts_at: {
@@ -12433,7 +12439,7 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
+                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.",
                     nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },
@@ -12513,7 +12519,7 @@ export default {
                 properties: {
                   access_schedule: {
                     description:
-                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems.",
+                      "`starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`.",
                     nullable: true,
                     properties: {
                       ends_at: { format: 'date-time', type: 'string' },

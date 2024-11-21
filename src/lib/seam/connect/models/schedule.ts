@@ -12,7 +12,8 @@ export const start_end_schedule = z.object({
     .datetime()
     .describe(
       "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
-    ),
+    )
+    .nullable(),
 })
 
 // export const schedule = z.union([
