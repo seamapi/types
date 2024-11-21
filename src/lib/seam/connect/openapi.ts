@@ -10369,28 +10369,10 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      acs_encoder_ids: {
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
-                      acs_system_ids: {
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
+                      acs_system_id: { format: 'uuid', type: 'string' },
                       limit: { default: 500, format: 'float', type: 'number' },
                     },
-                    required: ['acs_system_ids', 'acs_encoder_ids'],
-                    type: 'object',
-                  },
-                  {
-                    properties: {
-                      acs_encoder_ids: {
-                        items: { format: 'uuid', type: 'string' },
-                        type: 'array',
-                      },
-                      limit: { default: 500, format: 'float', type: 'number' },
-                    },
-                    required: ['acs_encoder_ids'],
+                    required: ['acs_system_id'],
                     type: 'object',
                   },
                   {
@@ -10402,6 +10384,17 @@ export default {
                       limit: { default: 500, format: 'float', type: 'number' },
                     },
                     required: ['acs_system_ids'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      acs_encoder_ids: {
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      limit: { default: 500, format: 'float', type: 'number' },
+                    },
+                    required: ['acs_encoder_ids'],
                     type: 'object',
                   },
                 ],
