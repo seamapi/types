@@ -4836,7 +4836,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -8964,11 +8964,11 @@ export interface Routes {
       acs_access_group_ids?: string[]
       /** ID of the user identity with which to associate the new `acs_user`. */
       user_identity_id?: string | undefined
-      /** `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems. */
+      /** `starts_at` and `ends_at` timestamps for the new `acs_user`'s access. If you specify an `access_schedule`, you may include both `starts_at` and `ends_at`. `starts_at` defaults to the current time if not provided. `ends_at` is optional and must be a time in the future and after `starts_at`. */
       access_schedule?:
         | {
-            starts_at: string
-            ends_at: string
+            starts_at?: string | undefined
+            ends_at?: (string | undefined) | null
           }
         | undefined
       /** Full name of the `acs_user`. */
@@ -9017,7 +9017,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -9152,7 +9152,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -9283,7 +9283,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -9525,7 +9525,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -9651,7 +9651,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
@@ -9747,7 +9747,7 @@ export interface Routes {
     method: 'PATCH' | 'POST'
     queryParams: {}
     jsonBody: {
-      /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. Only applicable to Salto KS access control systems. */
+      /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. If you specify an `access_schedule`, you must include both `starts_at` and `ends_at`. `ends_at` must be a time in the future and after `starts_at`. */
       access_schedule?:
         | ({
             starts_at: string
@@ -35862,7 +35862,7 @@ export interface Routes {
               /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
               starts_at: string
               /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
-              ends_at: string
+              ends_at: string | null
             }
           | undefined
         /** ID of the user identity associated with the `acs_user`. */
