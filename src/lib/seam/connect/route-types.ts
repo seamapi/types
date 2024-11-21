@@ -7156,16 +7156,15 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
-          acs_system_ids: string[]
-          acs_encoder_ids: string[]
-          limit?: number
-        }
-      | {
-          acs_encoder_ids: string[]
+          acs_system_id: string
           limit?: number
         }
       | {
           acs_system_ids: string[]
+          limit?: number
+        }
+      | {
+          acs_encoder_ids: string[]
           limit?: number
         }
     formData: {}
