@@ -4327,10 +4327,6 @@ export default {
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
-              {
-                enum: ['visionline_encoder', 'assa_abloy_vostio_encoder'],
-                type: 'string',
-              },
             ],
           },
           display_name: {
@@ -6342,10 +6338,6 @@ export default {
                 type: 'string',
               },
               { enum: ['ios_phone', 'android_phone'], type: 'string' },
-              {
-                enum: ['visionline_encoder', 'assa_abloy_vostio_encoder'],
-                type: 'string',
-              },
             ],
           },
           errors: {
@@ -13939,13 +13931,6 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
-                      {
-                        enum: [
-                          'visionline_encoder',
-                          'assa_abloy_vostio_encoder',
-                        ],
-                        type: 'string',
-                      },
                     ],
                   },
                   device_types: {
@@ -13999,13 +13984,6 @@ export default {
                         },
                         {
                           enum: ['ios_phone', 'android_phone'],
-                          type: 'string',
-                        },
-                        {
-                          enum: [
-                            'visionline_encoder',
-                            'assa_abloy_vostio_encoder',
-                          ],
                           type: 'string',
                         },
                       ],
@@ -14477,13 +14455,6 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
-                      {
-                        enum: [
-                          'visionline_encoder',
-                          'assa_abloy_vostio_encoder',
-                        ],
-                        type: 'string',
-                      },
                     ],
                   },
                   device_types: {
@@ -14537,13 +14508,6 @@ export default {
                         },
                         {
                           enum: ['ios_phone', 'android_phone'],
-                          type: 'string',
-                        },
-                        {
-                          enum: [
-                            'visionline_encoder',
-                            'assa_abloy_vostio_encoder',
-                          ],
                           type: 'string',
                         },
                       ],
@@ -15318,13 +15282,6 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
-                      {
-                        enum: [
-                          'visionline_encoder',
-                          'assa_abloy_vostio_encoder',
-                        ],
-                        type: 'string',
-                      },
                     ],
                   },
                   device_types: {
@@ -15378,13 +15335,6 @@ export default {
                         },
                         {
                           enum: ['ios_phone', 'android_phone'],
-                          type: 'string',
-                        },
-                        {
-                          enum: [
-                            'visionline_encoder',
-                            'assa_abloy_vostio_encoder',
-                          ],
                           type: 'string',
                         },
                       ],
@@ -15817,13 +15767,6 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
-                      {
-                        enum: [
-                          'visionline_encoder',
-                          'assa_abloy_vostio_encoder',
-                        ],
-                        type: 'string',
-                      },
                     ],
                   },
                   device_types: {
@@ -15877,13 +15820,6 @@ export default {
                         },
                         {
                           enum: ['ios_phone', 'android_phone'],
-                          type: 'string',
-                        },
-                        {
-                          enum: [
-                            'visionline_encoder',
-                            'assa_abloy_vostio_encoder',
-                          ],
                           type: 'string',
                         },
                       ],
@@ -17237,13 +17173,6 @@ export default {
                         type: 'string',
                       },
                       { enum: ['ios_phone', 'android_phone'], type: 'string' },
-                      {
-                        enum: [
-                          'visionline_encoder',
-                          'assa_abloy_vostio_encoder',
-                        ],
-                        type: 'string',
-                      },
                     ],
                   },
                   device_types: {
@@ -17297,13 +17226,6 @@ export default {
                         },
                         {
                           enum: ['ios_phone', 'android_phone'],
-                          type: 'string',
-                        },
-                        {
-                          enum: [
-                            'visionline_encoder',
-                            'assa_abloy_vostio_encoder',
-                          ],
                           type: 'string',
                         },
                       ],
