@@ -9003,6 +9003,89 @@ export default {
         'x-title': 'Create a Credential for an ACS User',
       },
     },
+    '/acs/credentials/create_offline_code': {
+      post: {
+        description:
+          'Creates a new offline [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) for a specified [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+        operationId: 'acsCredentialsCreateOfflineCodePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  acs_user_id: {
+                    description:
+                      'ID of the ACS user to whom the new credential belongs.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  allowed_acs_entrance_id: {
+                    description:
+                      'IDs of the [`acs_entrance`s](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  ends_at: {
+                    description:
+                      'Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                  is_one_time_use: {
+                    default: false,
+                    description:
+                      'Indicates whether the code is one-time-use or reusable.',
+                    type: 'boolean',
+                  },
+                  starts_at: {
+                    description:
+                      'Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                    format: 'date-time',
+                    type: 'string',
+                  },
+                },
+                required: ['acs_user_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    acs_credential: {
+                      $ref: '#/components/schemas/acs_credential',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['acs_credential', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session: [] },
+          { api_key: [] },
+        ],
+        summary: '/acs/credentials/create_offline_code',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'credentials'],
+        'x-fern-sdk-method-name': 'create_offline_code',
+        'x-fern-sdk-return-value': 'acs_credential',
+        'x-response-key': 'acs_credential',
+        'x-title': 'Create an Offline Credential for an ACS User',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/acs/credentials/delete': {
       post: {
         description:
