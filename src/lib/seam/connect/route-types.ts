@@ -5203,14 +5203,15 @@ export interface Routes {
       /** Visionline-specific metadata for the new credential. */
       visionline_metadata?:
         | {
-            /** DEPRECATED: DO NOT USE */
+            /**
+             * @deprecated Read-only endpoint references moved to `endpoint`. */
             assa_abloy_credential_service_mobile_endpoint_id?:
               | string
               | undefined
             card_format?: ('TLCode' | 'rfid48') | undefined
             card_function_type?: 'guest' | 'staff'
             /**
-             * @deprecated use override. */
+             * @deprecated Use `override` instead. */
             is_override_key?: boolean | undefined
             override?: boolean | undefined
             auto_join?: boolean | undefined
@@ -5225,6 +5226,129 @@ export interface Routes {
             override_guest_acs_entrance_ids?: string[] | undefined
           }
         | undefined
+      /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      starts_at?: string | undefined
+      /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+      ends_at?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      /** Means by which a user gains access at an entrance.
+    The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code. */
+      acs_credential: {
+        /** ID of the credential. */
+        acs_credential_id: string
+        /** ID of the ACS user to whom the credential belongs. */
+        acs_user_id?: string | undefined
+        acs_credential_pool_id?: string | undefined
+        /** ID of the access control system that contains the credential. */
+        acs_system_id: string
+        /** ID of the parent credential. */
+        parent_acs_credential_id?: string | undefined
+        /** Display name that corresponds to the credential type. */
+        display_name: string
+        /** Access (PIN) code for the credential. */
+        code?: (string | undefined) | null
+        card_number?: (string | undefined) | null
+        is_issued?: boolean | undefined
+        issued_at?: (string | undefined) | null
+        /** Access method for the credential. Supported values: `code`, `card`, `mobile_key`. */
+        access_method: 'code' | 'card' | 'mobile_key'
+        /** Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`. */
+        external_type?:
+          | (
+              | 'pti_card'
+              | 'brivo_credential'
+              | 'hid_credential'
+              | 'visionline_card'
+              | 'salto_ks_credential'
+            )
+          | undefined
+        /** Display name that corresponds to the brand-specific terminology for the credential type. */
+        external_type_display_name?: string | undefined
+        /** Date and time at which the credential was created. */
+        created_at: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential. */
+        workspace_id: string
+        /** Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+        starts_at?: string | undefined
+        /** Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+        ends_at?: string | undefined
+        /** Errors associated with the `acs_credential`. */
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        /** Warnings associated with the `acs_credential`. */
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'waiting_to_be_issued'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_externally_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schedule_modified'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'being_deleted'
+            }
+        >
+        /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
+        is_multi_phone_sync_credential?: boolean | undefined
+        /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
+        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
+        latest_desired_state_synced_with_provider_at?: string | undefined
+        /** Visionline-specific metadata for the credential. */
+        visionline_metadata?:
+          | {
+              card_function_type: 'guest' | 'staff'
+              joiner_acs_credential_ids?: string[] | undefined
+              guest_acs_entrance_ids?: string[] | undefined
+              common_acs_entrance_ids?: string[] | undefined
+              is_valid?: boolean | undefined
+              auto_join?: boolean | undefined
+              card_id?: string | undefined
+              credential_id?: string | undefined
+            }
+          | undefined
+        is_managed: true
+      }
+    }
+  }
+  '/acs/credentials/create_offline_code': {
+    route: '/acs/credentials/create_offline_code'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** ID of the ACS user to whom the new credential belongs. */
+      acs_user_id: string
+      /** IDs of the [`acs_entrance`s](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access. */
+      allowed_acs_entrance_id?: string | undefined
+      /** Indicates whether the code is one-time-use or reusable. */
+      is_one_time_use?: boolean
       /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
       /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
