@@ -5203,14 +5203,15 @@ export interface Routes {
       /** Visionline-specific metadata for the new credential. */
       visionline_metadata?:
         | {
-            /** DEPRECATED: DO NOT USE */
+            /**
+             * @deprecated Read-only endpoint references moved to `endpoint`. */
             assa_abloy_credential_service_mobile_endpoint_id?:
               | string
               | undefined
             card_format?: ('TLCode' | 'rfid48') | undefined
             card_function_type?: 'guest' | 'staff'
             /**
-             * @deprecated use override. */
+             * @deprecated Use `override` instead. */
             is_override_key?: boolean | undefined
             override?: boolean | undefined
             auto_join?: boolean | undefined
