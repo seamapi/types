@@ -8934,9 +8934,13 @@ export default {
                       'Visionline-specific metadata for the new credential.',
                     properties: {
                       assa_abloy_credential_service_mobile_endpoint_id: {
-                        description: 'DEPRECATED: DO NOT USE',
+                        deprecated: true,
                         format: 'uuid',
                         type: 'string',
+                        'x-deprecated':
+                          'Read-only endpoint references moved to `endpoint`.',
+                        'x-undocumented':
+                          'Deprecated. Read-only endpoint references moved to `endpoint`.',
                       },
                       auto_join: { type: 'boolean' },
                       card_format: {
@@ -8951,7 +8955,8 @@ export default {
                       is_override_key: {
                         deprecated: true,
                         type: 'boolean',
-                        'x-deprecated': 'use override.',
+                        'x-deprecated': 'Use `override` instead.',
+                        'x-undocumented': 'Use `override` instead.',
                       },
                       joiner_acs_credential_ids: {
                         items: { format: 'uuid', type: 'string' },
