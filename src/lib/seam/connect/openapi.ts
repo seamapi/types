@@ -7153,6 +7153,8 @@ export default {
     },
     '/access_codes/pull_backup_access_code': {
       post: {
+        description:
+          'Retrieves a backup access code for an access code. See also [Managing Backup Access Codes](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes).',
         operationId: 'accessCodesPullBackupAccessCodePost',
         requestBody: {
           content: {
@@ -7173,12 +7175,13 @@ export default {
               'application/json': {
                 schema: {
                   properties: {
+                    access_code: { $ref: '#/components/schemas/access_code' },
                     backup_access_code: {
                       $ref: '#/components/schemas/access_code',
                     },
                     ok: { type: 'boolean' },
                   },
-                  required: ['backup_access_code', 'ok'],
+                  required: ['backup_access_code', 'access_code', 'ok'],
                   type: 'object',
                 },
               },
@@ -7198,8 +7201,8 @@ export default {
         tags: ['/access_codes'],
         'x-fern-sdk-group-name': ['access_codes'],
         'x-fern-sdk-method-name': 'pull_backup_access_code',
-        'x-fern-sdk-return-value': 'backup_access_code',
-        'x-response-key': 'backup_access_code',
+        'x-fern-sdk-return-value': 'access_code',
+        'x-response-key': 'access_code',
       },
     },
     '/access_codes/simulate/create_unmanaged_access_code': {
