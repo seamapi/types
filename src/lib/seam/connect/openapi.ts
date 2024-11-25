@@ -4898,7 +4898,7 @@ export default {
                       },
                       nest_metadata: {
                         properties: {
-                          custom_name: { type: 'string' },
+                          device_custom_name: { type: 'string' },
                           device_name: { type: 'string' },
                           display_name: { type: 'string' },
                           nest_device_id: { type: 'string' },
@@ -4906,7 +4906,7 @@ export default {
                         required: [
                           'nest_device_id',
                           'device_name',
-                          'custom_name',
+                          'device_custom_name',
                         ],
                         type: 'object',
                       },
