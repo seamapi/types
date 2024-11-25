@@ -2395,6 +2395,71 @@ export interface Routes {
         /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
+      access_code: {
+        /** Unique identifier for a group of access codes that share the same code. */
+        common_code_key: string | null
+        /** Indicates whether the code is set on the device according to a preconfigured schedule. */
+        is_scheduled_on_device?: boolean | undefined
+        /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
+        type: 'time_bound' | 'ongoing'
+        /** Indicates whether the access code is waiting for a code assignment. */
+        is_waiting_for_code_assignment?: boolean | undefined
+        /** Unique identifier for the access code. */
+        access_code_id: string
+        /** Unique identifier for the device associated with the access code. */
+        device_id: string
+        /** Name of the access code. Enables administrators and users to identify the access code easily, especially when there are numerous access codes. */
+        name: string | null
+        /** Code used for access. Typically, a numeric or alphanumeric string. */
+        code: string | null
+        /** Date and time at which the access code was created. */
+        created_at: string
+        /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
+        errors: Array<
+          | {
+              message: string
+              is_access_code_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_device_error: true
+              error_code: string
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              error_code: string
+            }
+        >
+        /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
+        warnings: Array<{
+          message: string
+          warning_code: string
+        }>
+        /** Indicates whether Seam manages the access code. */
+        is_managed: true
+        /** Date and time at which the time-bound access code becomes active. */
+        starts_at?: (string | null) | undefined
+        /** Date and time after which the time-bound access code becomes inactive. */
+        ends_at?: (string | null) | undefined
+        /**
+            Current status of the access code within the operational lifecycle. Values are "setting," a transitional phase that indicates that the code is being configured or activated; "set", which indicates that the code is active and operational; "unset," which indicates a deactivated or unused state, either before activation or after deliberate deactivation; "removing," which indicates a transitional period in which the code is being deleted or made inactive; and "unknown," which indicates an indeterminate state, due to reasons such as system errors or incomplete data, that highlights a potential need for system review or troubleshooting.
+           */
+        status: 'setting' | 'set' | 'unset' | 'removing' | 'unknown'
+        /** Indicates whether a backup access code is available for use if the primary access code is lost or compromised. */
+        is_backup_access_code_available: boolean
+        /** Indicates whether the access code is a backup code. */
+        is_backup?: boolean | undefined
+        /** Identifier of the pulled backup access code. Used to associate the pulled backup access code with the original access code. */
+        pulled_backup_access_code_id?: (string | null) | undefined
+        /** Indicates whether changes to the access code from external sources are permitted. */
+        is_external_modification_allowed: boolean
+        /** Indicates whether the access code can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use: boolean
+        /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
+        is_offline_access_code: boolean
+      }
     }
   }
   '/access_codes/simulate/create_unmanaged_access_code': {
