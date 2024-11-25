@@ -12712,7 +12712,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -13588,7 +13588,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -15178,7 +15178,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -15873,7 +15873,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -16749,7 +16749,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -17444,7 +17444,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -20328,7 +20328,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -21023,7 +21023,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -26989,7 +26989,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -29855,7 +29855,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -30550,7 +30550,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -34710,7 +34710,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
@@ -35407,7 +35407,7 @@ export interface Routes {
             | {
                 nest_device_id: string
                 device_name: string
-                custom_name: string
+                device_custom_name: string
                 display_name?: string | undefined
               }
             | undefined
