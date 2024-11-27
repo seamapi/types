@@ -141,6 +141,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -245,6 +247,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -394,6 +398,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -498,6 +504,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -1286,6 +1294,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -1390,6 +1400,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -1539,6 +1551,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -1643,6 +1657,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -2661,6 +2677,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -2765,6 +2783,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -2914,6 +2934,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -3018,6 +3040,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -3793,6 +3817,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -3897,6 +3923,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -4046,6 +4074,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -4150,6 +4180,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -5159,6 +5191,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -5314,6 +5348,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -5411,7 +5447,7 @@ export interface Routes {
       /** ID of the ACS user to whom the new credential belongs. */
       acs_user_id: string
       /** IDs of the [`acs_entrance`s](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) for which the new credential grants access. */
-      allowed_acs_entrance_id?: string | undefined
+      allowed_acs_entrance_id: string
       /** Indicates whether the code is one-time-use or reusable. */
       is_one_time_use?: boolean
       /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
@@ -5437,6 +5473,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -5564,6 +5602,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -5700,6 +5740,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -5899,6 +5941,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -6014,6 +6058,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -6142,6 +6188,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -6261,6 +6309,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -6478,6 +6528,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -6582,6 +6634,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -6731,6 +6785,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -6835,6 +6891,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -7512,6 +7570,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -7616,6 +7676,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -7765,6 +7827,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -7869,6 +7933,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -8573,6 +8639,8 @@ export interface Routes {
         display_name: string
         /** Access (PIN) code for the credential. */
         code?: (string | undefined) | null
+        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+        is_one_time_use?: boolean | undefined
         card_number?: (string | undefined) | null
         is_issued?: boolean | undefined
         issued_at?: (string | undefined) | null
@@ -10085,6 +10153,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -10189,6 +10259,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -10338,6 +10410,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -10442,6 +10516,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -11071,6 +11147,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -11175,6 +11253,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -11324,6 +11404,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -11428,6 +11510,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -17990,6 +18074,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -18094,6 +18180,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -18243,6 +18331,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -18347,6 +18437,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -18977,6 +19069,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -19081,6 +19175,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -19230,6 +19326,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -19334,6 +19432,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -21574,6 +21674,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -21678,6 +21780,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -21827,6 +21931,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -21931,6 +22037,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -22571,6 +22679,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -22675,6 +22785,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -22824,6 +22936,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -22928,6 +23042,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -23607,6 +23723,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -23711,6 +23829,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -23860,6 +23980,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -23964,6 +24086,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -24802,6 +24926,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -24906,6 +25032,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -25055,6 +25183,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -25159,6 +25289,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -25795,6 +25927,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -25899,6 +26033,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -26048,6 +26184,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -26152,6 +26290,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -27541,6 +27681,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -27645,6 +27787,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -27794,6 +27938,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -27898,6 +28044,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -28538,6 +28686,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -28642,6 +28792,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -28791,6 +28943,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -28895,6 +29049,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -31098,6 +31254,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -31202,6 +31360,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -31351,6 +31511,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -31455,6 +31617,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -32260,6 +32424,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -32364,6 +32530,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -32513,6 +32681,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -32617,6 +32787,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -33280,6 +33452,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -33384,6 +33558,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -33533,6 +33709,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -33637,6 +33815,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -36418,6 +36598,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -36522,6 +36704,8 @@ export interface Routes {
                         display_name: string
                         /** Access (PIN) code for the credential. */
                         code?: (string | undefined) | null
+                        /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                        is_one_time_use?: boolean | undefined
                         card_number?: (string | undefined) | null
                         is_issued?: boolean | undefined
                         issued_at?: (string | undefined) | null
@@ -36671,6 +36855,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
@@ -36775,6 +36961,8 @@ export interface Routes {
                   display_name: string
                   /** Access (PIN) code for the credential. */
                   code?: (string | undefined) | null
+                  /** Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use. */
+                  is_one_time_use?: boolean | undefined
                   card_number?: (string | undefined) | null
                   is_issued?: boolean | undefined
                   issued_at?: (string | undefined) | null
