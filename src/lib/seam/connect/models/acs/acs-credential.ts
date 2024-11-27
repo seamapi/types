@@ -116,6 +116,12 @@ const common_acs_credential = z.object({
     .optional()
     .nullable()
     .describe('Access (PIN) code for the credential.'),
+  is_one_time_use: z
+    .boolean()
+    .optional()
+    .describe(
+      'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+    ),
   card_number: z.string().optional().nullable(),
   is_issued: z.boolean().optional(),
   issued_at: z.string().datetime().optional().nullable(),
