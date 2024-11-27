@@ -352,6 +352,11 @@ export default {
               'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
             type: 'boolean',
           },
+          is_one_time_use: {
+            description:
+              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+            type: 'boolean',
+          },
           issued_at: { format: 'date-time', nullable: true, type: 'string' },
           latest_desired_state_synced_with_provider_at: {
             description:
@@ -1717,6 +1722,11 @@ export default {
                               'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                             type: 'boolean',
                           },
+                          is_one_time_use: {
+                            description:
+                              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+                            type: 'boolean',
+                          },
                           issued_at: {
                             format: 'date-time',
                             nullable: true,
@@ -2008,6 +2018,11 @@ export default {
                           is_multi_phone_sync_credential: {
                             description:
                               'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                            type: 'boolean',
+                          },
+                          is_one_time_use: {
+                            description:
+                              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
                             type: 'boolean',
                           },
                           issued_at: {
@@ -2430,6 +2445,11 @@ export default {
                           'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                         type: 'boolean',
                       },
+                      is_one_time_use: {
+                        description:
+                          'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+                        type: 'boolean',
+                      },
                       issued_at: {
                         format: 'date-time',
                         nullable: true,
@@ -2720,6 +2740,11 @@ export default {
                       is_multi_phone_sync_credential: {
                         description:
                           'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                        type: 'boolean',
+                      },
+                      is_one_time_use: {
+                        description:
+                          'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
                         type: 'boolean',
                       },
                       issued_at: {
@@ -9052,7 +9077,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['acs_user_id'],
+                required: ['acs_user_id', 'allowed_acs_entrance_id'],
                 type: 'object',
               },
             },
@@ -9636,6 +9661,11 @@ export default {
                             'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                           type: 'boolean',
                         },
+                        is_one_time_use: {
+                          description:
+                            'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+                          type: 'boolean',
+                        },
                         issued_at: {
                           format: 'date-time',
                           nullable: true,
@@ -10030,6 +10060,11 @@ export default {
                           is_multi_phone_sync_credential: {
                             description:
                               'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+                            type: 'boolean',
+                          },
+                          is_one_time_use: {
+                            description:
+                              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
                             type: 'boolean',
                           },
                           issued_at: {
