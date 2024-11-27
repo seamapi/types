@@ -1050,6 +1050,8 @@ export default {
         type: 'object',
       },
       acs_user: {
+        description:
+          'Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
         properties: {
           access_schedule: {
             description:
@@ -11725,6 +11727,8 @@ export default {
                 schema: {
                   properties: {
                     acs_user: {
+                      description:
+                        'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
                       properties: {
                         access_schedule: {
                           description:
@@ -12118,6 +12122,8 @@ export default {
                   properties: {
                     acs_users: {
                       items: {
+                        description:
+                          'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
                         properties: {
                           access_schedule: {
                             description:

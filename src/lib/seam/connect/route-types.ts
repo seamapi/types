@@ -9240,6 +9240,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_user: {
         /** ID of the `acs_user`. */
         acs_user_id: string
@@ -9375,6 +9376,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_user: {
         /** ID of the `acs_user`. */
         acs_user_id: string
@@ -9748,6 +9750,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /** Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
       acs_user: {
         /** ID of the `acs_user`. */
         acs_user_id: string
