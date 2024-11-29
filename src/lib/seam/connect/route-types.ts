@@ -789,6 +789,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -1931,6 +1958,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -3325,6 +3379,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -4454,6 +4535,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -7176,6 +7284,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -8207,6 +8342,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -10804,6 +10966,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -11787,6 +11976,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -18727,6 +18943,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -19711,6 +19954,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -22327,6 +22597,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -23321,6 +23618,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -24365,6 +24689,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -25579,6 +25930,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -26569,6 +26947,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -28334,6 +28739,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -29328,6 +29760,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -31907,6 +32366,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -33077,6 +33563,33 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
@@ -34094,6 +34607,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string
@@ -37240,6 +37780,33 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_THERMOSTAT_OFF'
+            error: {
+              type: string
+              message: string
+            }
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'pending'
+            result: null
+            error: null
+            action_type: 'SET_HVAC_MODE'
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'success'
+            error: null
+            action_type: 'SET_HVAC_MODE'
+            result: {}
+          }
+        | {
+            /** The ID of the action attempt. */
+            action_attempt_id: string
+            status: 'error'
+            result: null
+            action_type: 'SET_HVAC_MODE'
             error: {
               type: string
               message: string

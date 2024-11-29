@@ -3489,6 +3489,82 @@ export default {
             type: 'object',
           },
           {
+            description: 'Setting HVAC mode.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
+              error: { nullable: true },
+              result: { nullable: true },
+              status: { enum: ['pending'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'error',
+              'action_type',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC mode succeeded.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
+              error: { nullable: true },
+              result: { properties: {}, type: 'object' },
+              status: { enum: ['success'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'error',
+              'action_type',
+              'result',
+            ],
+            type: 'object',
+          },
+          {
+            description: 'Setting HVAC mode failed.',
+            properties: {
+              action_attempt_id: {
+                description: 'The ID of the action attempt.',
+                format: 'uuid',
+                type: 'string',
+                'x-title': 'Action Attempt ID',
+              },
+              action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
+              error: {
+                properties: {
+                  message: { type: 'string' },
+                  type: { type: 'string' },
+                },
+                required: ['type', 'message'],
+                type: 'object',
+              },
+              result: { nullable: true },
+              status: { enum: ['error'], type: 'string' },
+            },
+            required: [
+              'action_attempt_id',
+              'status',
+              'result',
+              'action_type',
+              'error',
+            ],
+            type: 'object',
+          },
+          {
             description: 'Activating climate preset.',
             properties: {
               action_attempt_id: {
