@@ -12442,6 +12442,7 @@ export interface Routes {
             | 'akiles'
             | 'assa_abloy_vostio'
             | 'assa_abloy_vostio_credential_service'
+            | 'tado'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -14373,6 +14374,7 @@ export interface Routes {
           | 'akiles'
           | 'assa_abloy_vostio'
           | 'assa_abloy_vostio_credential_service'
+          | 'tado'
         display_name: string
         image_url: string
         provider_categories: Array<
