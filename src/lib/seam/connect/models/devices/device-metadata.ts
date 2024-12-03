@@ -266,6 +266,12 @@ export const device_metadata = z
     assa_abloy_vostio_metadata: z.object({
       encoder_name: z.string(),
     }),
+
+    tado_metadata: z.object({
+      serial_number: z.string(),
+      device_name: z.string(),
+      device_type: z.string(),
+    }),
   })
   .partial()
 
