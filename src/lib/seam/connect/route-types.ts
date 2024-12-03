@@ -12777,6 +12777,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -13169,6 +13170,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -13484,6 +13492,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -13525,6 +13534,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -13567,6 +13577,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'akiles'
+            | 'tado'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -13653,6 +13664,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -14045,6 +14057,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -14481,6 +14500,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -14643,6 +14663,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -14684,6 +14705,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -14726,6 +14748,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'akiles'
+            | 'tado'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -14812,6 +14835,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -15246,6 +15270,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -15638,6 +15663,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -15941,6 +15973,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -16333,6 +16366,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -16648,6 +16688,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -16689,6 +16730,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -16731,6 +16773,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'akiles'
+            | 'tado'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -16817,6 +16860,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -17209,6 +17253,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -17512,6 +17563,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -17904,6 +17956,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -20297,6 +20356,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -20338,6 +20398,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -20380,6 +20441,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'akiles'
+            | 'tado'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -20466,6 +20528,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -20858,6 +20921,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -21161,6 +21231,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -21553,6 +21624,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -27302,6 +27380,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -27694,6 +27773,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -30069,6 +30155,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -30110,6 +30197,7 @@ export interface Routes {
                 | 'ecobee_thermostat'
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
+                | 'tado_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -30152,6 +30240,7 @@ export interface Routes {
             | 'tedee'
             | 'honeywell_resideo'
             | 'akiles'
+            | 'tado'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -30238,6 +30327,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -30630,6 +30720,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -30933,6 +31030,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -31325,6 +31423,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -35198,6 +35303,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -35590,6 +35696,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
@@ -35895,6 +36008,7 @@ export interface Routes {
               | 'ecobee_thermostat'
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
+              | 'tado_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -36287,6 +36401,13 @@ export interface Routes {
           assa_abloy_vostio_metadata?:
             | {
                 encoder_name: string
+              }
+            | undefined
+          tado_metadata?:
+            | {
+                serial_number: string
+                device_name: string
+                device_type: string
               }
             | undefined
         }) &
