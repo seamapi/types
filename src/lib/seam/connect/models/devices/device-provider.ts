@@ -46,6 +46,7 @@ export const DEVICE_PROVIDERS = {
   AKILES: 'akiles',
   VOSTIO: 'assa_abloy_vostio',
   ASSA_ABLOY_VOSTIO_CREDENTIAL_SERVICE: 'assa_abloy_vostio_credential_service',
+  TADO: 'tado',
 } as const
 
 export type DeviceProviderName =
