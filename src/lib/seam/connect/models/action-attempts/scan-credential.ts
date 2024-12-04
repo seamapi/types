@@ -32,9 +32,9 @@ const warning = z.object({
 const acs_credential_on_seam = acs_credential.or(unmanaged_acs_credential)
 
 const result = z.object({
-  acs_credential_on_encoder: acs_credential_on_encoder.describe(
-    'Snapshot of credential data read from physical encoder.',
-  ),
+  acs_credential_on_encoder: acs_credential_on_encoder
+    .nullable()
+    .describe('Snapshot of credential data read from physical encoder.'),
   acs_credential_on_seam: acs_credential_on_seam
     .nullable()
     .describe('Matching acs_credential currently encoded on this card.'),

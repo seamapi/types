@@ -123,7 +123,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -1303,7 +1303,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -2713,7 +2713,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -3880,7 +3880,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -6618,7 +6618,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -7687,7 +7687,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -10300,7 +10300,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -11321,7 +11321,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -18338,7 +18338,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -19360,7 +19360,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -22011,7 +22011,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -23043,7 +23043,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -24114,7 +24114,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -25344,7 +25344,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -26372,7 +26372,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -28161,7 +28161,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -29193,7 +29193,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -31807,7 +31807,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -33004,7 +33004,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -34059,7 +34059,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
@@ -37248,7 +37248,7 @@ export interface Routes {
                       common_acs_entrance_ids?: string[] | undefined
                     }
                   | undefined
-              }
+              } | null
               /** Matching acs_credential currently encoded on this card. */
               acs_credential_on_seam:
                 | (
