@@ -1542,6 +1542,7 @@ export default {
                   acs_credential_on_encoder: {
                     description:
                       'Snapshot of credential data read from physical encoder.',
+                    nullable: true,
                     properties: {
                       card_number: {
                         description:
