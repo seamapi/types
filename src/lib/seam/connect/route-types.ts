@@ -4856,7 +4856,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -4866,7 +4866,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -4903,7 +4903,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -4913,7 +4913,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -4953,6 +4953,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -5167,7 +5168,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -5177,7 +5178,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -5214,7 +5215,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -5224,7 +5225,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -5976,6 +5977,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8642,6 +8644,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8736,6 +8739,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -9824,6 +9828,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
