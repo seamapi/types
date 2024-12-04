@@ -4953,6 +4953,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -5976,6 +5977,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8642,6 +8644,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8736,6 +8739,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -9824,6 +9828,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
