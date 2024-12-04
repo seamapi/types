@@ -2230,7 +2230,10 @@ export default {
                     items: {
                       properties: {
                         warning_code: {
-                          enum: ['acs_credential_on_encoder_out_of_sync'],
+                          enum: [
+                            'acs_credential_on_encoder_out_of_sync',
+                            'acs_credential_on_seam_not_found',
+                          ],
                           type: 'string',
                         },
                         warning_message: { type: 'string' },

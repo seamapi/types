@@ -342,7 +342,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -1522,7 +1524,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -2932,7 +2936,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -4099,7 +4105,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -6837,7 +6845,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -7906,7 +7916,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -10519,7 +10531,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -11540,7 +11554,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -18557,7 +18573,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -19579,7 +19597,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -22230,7 +22250,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -23262,7 +23284,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -24333,7 +24357,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -25563,7 +25589,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -26591,7 +26619,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -28380,7 +28410,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -29412,7 +29444,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -32026,7 +32060,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -33223,7 +33259,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -34278,7 +34316,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
@@ -37467,7 +37507,9 @@ export interface Routes {
                   )
                 | null
               warnings: Array<{
-                warning_code: 'acs_credential_on_encoder_out_of_sync'
+                warning_code:
+                  | 'acs_credential_on_encoder_out_of_sync'
+                  | 'acs_credential_on_seam_not_found'
                 warning_message: string
               }>
             }
