@@ -25,7 +25,10 @@ const error = z.union([
 ])
 
 const warning = z.object({
-  warning_code: z.literal('acs_credential_on_encoder_out_of_sync'),
+  warning_code: z.union([
+    z.literal('acs_credential_on_encoder_out_of_sync'),
+    z.literal('acs_credential_on_seam_not_found'),
+  ]),
   warning_message: z.string(),
 })
 
