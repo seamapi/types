@@ -39,6 +39,7 @@ export const acs_system_external_type = z.enum([
   'pti_site',
   'alta_org',
   'salto_ks_site',
+  'salto_space_system',
   'brivo_account',
   'hid_credential_manager_organization',
   'visionline_system',
