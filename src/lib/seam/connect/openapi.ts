@@ -194,7 +194,7 @@ export default {
             enum: [
               'pti_unit',
               'pti_access_level',
-              'salto_access_group',
+              'salto_ks_access_group',
               'brivo_group',
             ],
             type: 'string',
@@ -228,7 +228,7 @@ export default {
             enum: [
               'pti_unit',
               'pti_access_level',
-              'salto_access_group',
+              'salto_ks_access_group',
               'brivo_group',
             ],
             type: 'string',
@@ -627,6 +627,7 @@ export default {
               accessibility_type: { type: 'string' },
               door_name: { type: 'string' },
               door_type: { type: 'string' },
+              ext_door_id: { type: 'string' },
               is_connected: { type: 'boolean' },
             },
             required: [
@@ -634,6 +635,7 @@ export default {
               'door_name',
               'door_type',
               'is_connected',
+              'ext_door_id',
             ],
             type: 'object',
           },
@@ -8500,7 +8502,7 @@ export default {
                           enum: [
                             'pti_unit',
                             'pti_access_level',
-                            'salto_access_group',
+                            'salto_ks_access_group',
                             'brivo_group',
                           ],
                           type: 'string',
@@ -8535,7 +8537,7 @@ export default {
                           enum: [
                             'pti_unit',
                             'pti_access_level',
-                            'salto_access_group',
+                            'salto_ks_access_group',
                             'brivo_group',
                           ],
                           type: 'string',
@@ -8641,7 +8643,7 @@ export default {
                             enum: [
                               'pti_unit',
                               'pti_access_level',
-                              'salto_access_group',
+                              'salto_ks_access_group',
                               'brivo_group',
                             ],
                             type: 'string',
@@ -8676,7 +8678,7 @@ export default {
                             enum: [
                               'pti_unit',
                               'pti_access_level',
-                              'salto_access_group',
+                              'salto_ks_access_group',
                               'brivo_group',
                             ],
                             type: 'string',
