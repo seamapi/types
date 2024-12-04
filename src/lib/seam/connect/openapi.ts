@@ -627,6 +627,7 @@ export default {
               accessibility_type: { type: 'string' },
               door_name: { type: 'string' },
               door_type: { type: 'string' },
+              ext_door_id: { type: 'string' },
               is_connected: { type: 'boolean' },
             },
             required: [
@@ -634,6 +635,7 @@ export default {
               'door_name',
               'door_type',
               'is_connected',
+              'ext_door_id',
             ],
             type: 'object',
           },
