@@ -268,8 +268,7 @@ export const device_metadata = z
     }),
 
     tado_metadata: z.object({
-      serial_number: z.string(),
-      device_name: z.string(),
+      serial_no: z.string(),
       device_type: z.string(),
     }),
   })
