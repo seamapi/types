@@ -47,6 +47,7 @@ export const DEVICE_PROVIDERS = {
   VOSTIO: 'assa_abloy_vostio',
   ASSA_ABLOY_VOSTIO_CREDENTIAL_SERVICE: 'assa_abloy_vostio_credential_service',
   TADO: 'tado',
+  SALTO_SPACE: 'salto_space',
 } as const
 
 export type DeviceProviderName =
@@ -113,6 +114,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'salto_ks',
     'assa_abloy_vostio',
     'assa_abloy_vostio_credential_service',
+    'salto_space',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,
