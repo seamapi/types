@@ -9042,14 +9042,24 @@ export interface Routes {
             }
         >
         /** Warnings associated with the `acs_system`. */
-        warnings: Array<{
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
-          warning_code: 'salto_ks_subscription_limit_almost_reached'
-        }>
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
+              warning_code: 'time_zone_does_not_match_location'
+            }
+        >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -9199,14 +9209,24 @@ export interface Routes {
             }
         >
         /** Warnings associated with the `acs_system`. */
-        warnings: Array<{
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
-          warning_code: 'salto_ks_subscription_limit_almost_reached'
-        }>
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
+              warning_code: 'time_zone_does_not_match_location'
+            }
+        >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -9356,14 +9376,24 @@ export interface Routes {
             }
         >
         /** Warnings associated with the `acs_system`. */
-        warnings: Array<{
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
-          warning_code: 'salto_ks_subscription_limit_almost_reached'
-        }>
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
+              warning_code: 'time_zone_does_not_match_location'
+            }
+        >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */
@@ -36847,14 +36877,24 @@ export interface Routes {
             }
         >
         /** Warnings associated with the `acs_system`. */
-        warnings: Array<{
-          /** Date and time at which Seam created the warning. */
-          created_at: string
-          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
-          message: string
-          /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
-          warning_code: 'salto_ks_subscription_limit_almost_reached'
-        }>
+        warnings: Array<
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
+              warning_code: 'time_zone_does_not_match_location'
+            }
+        >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
         can_automate_enrollment?: boolean | undefined
         /** Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems). */

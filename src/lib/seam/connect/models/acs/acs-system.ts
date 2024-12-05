@@ -172,11 +172,20 @@ const salto_ks_subscription_limit_almost_reached =
       ),
   })
 
-const acs_system_warning =
-  // z.union([
-  salto_ks_subscription_limit_almost_reached
-    // ])
-    .describe('Warning associated with the `acs_system`.')
+const time_zone_does_not_match_location = common_acs_system_warning.extend({
+  warning_code: z
+    .literal('time_zone_does_not_match_location')
+    .describe(
+      'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
+    ),
+})
+
+const acs_system_warning = z
+  .union([
+    salto_ks_subscription_limit_almost_reached,
+    time_zone_does_not_match_location,
+  ])
+  .describe('Warning associated with the `acs_system`.')
 
 export const acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:

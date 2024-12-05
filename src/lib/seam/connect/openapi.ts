@@ -1005,27 +1005,54 @@ export default {
             description: 'Warnings associated with the `acs_system`.',
             items: {
               description: 'Warning associated with the `acs_system`.',
-              properties: {
-                created_at: {
-                  description:
-                    'Date and time at which Seam created the warning.',
-                  format: 'date-time',
-                  type: 'string',
+              oneOf: [
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                      enum: ['salto_ks_subscription_limit_almost_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                message: {
-                  description:
-                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                  type: 'string',
+                {
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
+                      enum: ['time_zone_does_not_match_location'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
                 },
-                warning_code: {
-                  description:
-                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
-                  enum: ['salto_ks_subscription_limit_almost_reached'],
-                  type: 'string',
-                },
-              },
-              required: ['created_at', 'message', 'warning_code'],
-              type: 'object',
+              ],
             },
             type: 'array',
           },
