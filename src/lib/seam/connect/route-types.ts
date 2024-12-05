@@ -4856,7 +4856,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -4866,7 +4866,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -4903,7 +4903,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -4913,7 +4913,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -4953,6 +4953,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -5167,7 +5168,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -5177,7 +5178,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -5214,7 +5215,7 @@ export interface Routes {
         access_group_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /**
          * @deprecated Use `external_type_display_name`. */
@@ -5224,7 +5225,7 @@ export interface Routes {
         external_type:
           | 'pti_unit'
           | 'pti_access_level'
-          | 'salto_access_group'
+          | 'salto_ks_access_group'
           | 'brivo_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
@@ -5976,6 +5977,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8642,6 +8644,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8736,6 +8739,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -8926,6 +8930,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -8958,6 +8963,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -9081,6 +9087,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -9113,6 +9120,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -9236,6 +9244,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -9268,6 +9277,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -9824,6 +9834,7 @@ export interface Routes {
               door_name: string
               door_type: string
               is_connected: boolean
+              ext_door_id: string
             }
           | undefined
         visionline_metadata?:
@@ -12459,6 +12470,7 @@ export interface Routes {
             | 'assa_abloy_vostio'
             | 'assa_abloy_vostio_credential_service'
             | 'tado'
+            | 'salto_space'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -14410,6 +14422,7 @@ export interface Routes {
           | 'assa_abloy_vostio'
           | 'assa_abloy_vostio_credential_service'
           | 'tado'
+          | 'salto_space'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -36736,6 +36749,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
@@ -36768,6 +36782,7 @@ export interface Routes {
               | 'pti_site'
               | 'alta_org'
               | 'salto_ks_site'
+              | 'salto_space_system'
               | 'brivo_account'
               | 'hid_credential_manager_organization'
               | 'visionline_system'
