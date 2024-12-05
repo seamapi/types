@@ -5,6 +5,7 @@ export const acs_entrance_latch_metadata = z.object({
   door_name: z.string(),
   door_type: z.string(),
   is_connected: z.boolean(),
+  ext_door_id: z.string(),
 })
 
 export type AcsEntranceLatchMetadata = z.infer<

@@ -194,7 +194,7 @@ export default {
             enum: [
               'pti_unit',
               'pti_access_level',
-              'salto_access_group',
+              'salto_ks_access_group',
               'brivo_group',
             ],
             type: 'string',
@@ -228,7 +228,7 @@ export default {
             enum: [
               'pti_unit',
               'pti_access_level',
-              'salto_access_group',
+              'salto_ks_access_group',
               'brivo_group',
             ],
             type: 'string',
@@ -627,6 +627,7 @@ export default {
               accessibility_type: { type: 'string' },
               door_name: { type: 'string' },
               door_type: { type: 'string' },
+              ext_door_id: { type: 'string' },
               is_connected: { type: 'boolean' },
             },
             required: [
@@ -634,6 +635,7 @@ export default {
               'door_name',
               'door_type',
               'is_connected',
+              'ext_door_id',
             ],
             type: 'object',
           },
@@ -912,6 +914,7 @@ export default {
               'pti_site',
               'alta_org',
               'salto_ks_site',
+              'salto_space_system',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
@@ -960,6 +963,7 @@ export default {
               'pti_site',
               'alta_org',
               'salto_ks_site',
+              'salto_space_system',
               'brivo_account',
               'hid_credential_manager_organization',
               'visionline_system',
@@ -5132,15 +5136,10 @@ export default {
                       },
                       tado_metadata: {
                         properties: {
-                          device_name: { type: 'string' },
                           device_type: { type: 'string' },
-                          serial_number: { type: 'string' },
+                          serial_no: { type: 'string' },
                         },
-                        required: [
-                          'serial_number',
-                          'device_name',
-                          'device_type',
-                        ],
+                        required: ['serial_no', 'device_type'],
                         type: 'object',
                       },
                       tedee_metadata: {
@@ -5854,6 +5853,7 @@ export default {
               'assa_abloy_vostio',
               'assa_abloy_vostio_credential_service',
               'tado',
+              'salto_space',
             ],
             type: 'string',
           },
@@ -8500,7 +8500,7 @@ export default {
                           enum: [
                             'pti_unit',
                             'pti_access_level',
-                            'salto_access_group',
+                            'salto_ks_access_group',
                             'brivo_group',
                           ],
                           type: 'string',
@@ -8535,7 +8535,7 @@ export default {
                           enum: [
                             'pti_unit',
                             'pti_access_level',
-                            'salto_access_group',
+                            'salto_ks_access_group',
                             'brivo_group',
                           ],
                           type: 'string',
@@ -8641,7 +8641,7 @@ export default {
                             enum: [
                               'pti_unit',
                               'pti_access_level',
-                              'salto_access_group',
+                              'salto_ks_access_group',
                               'brivo_group',
                             ],
                             type: 'string',
@@ -8676,7 +8676,7 @@ export default {
                             enum: [
                               'pti_unit',
                               'pti_access_level',
-                              'salto_access_group',
+                              'salto_ks_access_group',
                               'brivo_group',
                             ],
                             type: 'string',
@@ -13495,6 +13495,7 @@ export default {
                         'assa_abloy_vostio',
                         'assa_abloy_vostio_credential_service',
                         'tado',
+                        'salto_space',
                         'yale_access',
                         'hid_cm',
                         'google_nest',
