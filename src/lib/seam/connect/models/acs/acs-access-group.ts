@@ -4,7 +4,7 @@ import { z } from 'zod'
 export const acs_access_group_external_type = z.enum([
   'pti_unit',
   'pti_access_level',
-  'salto_access_group',
+  'salto_ks_access_group',
   'brivo_group',
 ])
 
