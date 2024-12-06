@@ -12305,6 +12305,7 @@ export interface Routes {
         client_session_id: string
         workspace_id: string
         created_at: string
+        expires_at: string
         token: string
         user_identifier_key: string | null
         device_count: number
@@ -12340,6 +12341,7 @@ export interface Routes {
         client_session_id: string
         workspace_id: string
         created_at: string
+        expires_at: string
         token: string
         user_identifier_key: string | null
         device_count: number
@@ -12367,6 +12369,7 @@ export interface Routes {
         client_session_id: string
         workspace_id: string
         created_at: string
+        expires_at: string
         token: string
         user_identifier_key: string | null
         device_count: number
@@ -12394,6 +12397,7 @@ export interface Routes {
         client_session_id: string
         workspace_id: string
         created_at: string
+        expires_at: string
         token: string
         user_identifier_key: string | null
         device_count: number
@@ -12421,6 +12425,7 @@ export interface Routes {
         client_session_id: string
         workspace_id: string
         created_at: string
+        expires_at: string
         token: string
         user_identifier_key: string | null
         device_count: number
