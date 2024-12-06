@@ -4,6 +4,7 @@ export const client_session = z.object({
   client_session_id: z.string().uuid(),
   workspace_id: z.string().uuid(),
   created_at: z.string().datetime(),
+  expires_at: z.string().datetime(),
   token: z.string(),
   user_identifier_key: z.string().nullable(),
   device_count: z.number(),

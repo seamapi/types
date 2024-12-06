@@ -4208,6 +4208,7 @@ export default {
           },
           created_at: { format: 'date-time', type: 'string' },
           device_count: { format: 'float', type: 'number' },
+          expires_at: { format: 'date-time', type: 'string' },
           token: { type: 'string' },
           user_identifier_key: { nullable: true, type: 'string' },
           user_identity_ids: {
@@ -4220,6 +4221,7 @@ export default {
           'client_session_id',
           'workspace_id',
           'created_at',
+          'expires_at',
           'token',
           'user_identifier_key',
           'device_count',
