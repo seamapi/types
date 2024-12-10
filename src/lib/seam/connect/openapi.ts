@@ -610,7 +610,10 @@ export default {
             properties: {
               access_point_name: { type: 'string' },
               common_area_number: { format: 'float', type: 'number' },
-              inner_access_points: { items: { type: 'string' }, type: 'array' },
+              inner_access_points_names: {
+                items: { type: 'string' },
+                type: 'array',
+              },
             },
             required: ['access_point_name'],
             type: 'object',
@@ -658,6 +661,15 @@ export default {
               'lock_type',
               'battery_level',
             ],
+            type: 'object',
+          },
+          salto_space_metadata: {
+            properties: {
+              door_description: { type: 'string' },
+              door_name: { type: 'string' },
+              ext_door_id: { type: 'string' },
+            },
+            required: ['door_name', 'ext_door_id'],
             type: 'object',
           },
           visionline_metadata: {
