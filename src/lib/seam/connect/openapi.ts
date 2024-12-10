@@ -607,7 +607,14 @@ export default {
             type: 'string',
           },
           dormakaba_community_metadata: {
-            properties: { access_point_name: { type: 'string' } },
+            properties: {
+              access_point_name: { type: 'string' },
+              common_area_number: { format: 'float', type: 'number' },
+              inner_access_points_names: {
+                items: { type: 'string' },
+                type: 'array',
+              },
+            },
             required: ['access_point_name'],
             type: 'object',
           },
