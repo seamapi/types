@@ -4987,6 +4987,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -5000,6 +5002,13 @@ export interface Routes {
               door_number?: number | undefined
               stand_open?: boolean | undefined
               pms_id?: string | undefined
+            }
+          | undefined
+        salto_space_metadata?:
+          | {
+              door_name: string
+              ext_door_id: string
+              door_description?: string | undefined
             }
           | undefined
       }>
@@ -6010,6 +6019,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -6023,6 +6034,13 @@ export interface Routes {
               door_number?: number | undefined
               stand_open?: boolean | undefined
               pms_id?: string | undefined
+            }
+          | undefined
+        salto_space_metadata?:
+          | {
+              door_name: string
+              ext_door_id: string
+              door_description?: string | undefined
             }
           | undefined
       }>
@@ -8676,6 +8694,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8689,6 +8709,13 @@ export interface Routes {
               door_number?: number | undefined
               stand_open?: boolean | undefined
               pms_id?: string | undefined
+            }
+          | undefined
+        salto_space_metadata?:
+          | {
+              door_name: string
+              ext_door_id: string
+              door_description?: string | undefined
             }
           | undefined
       }
@@ -8770,6 +8797,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8783,6 +8812,13 @@ export interface Routes {
               door_number?: number | undefined
               stand_open?: boolean | undefined
               pms_id?: string | undefined
+            }
+          | undefined
+        salto_space_metadata?:
+          | {
+              door_name: string
+              ext_door_id: string
+              door_description?: string | undefined
             }
           | undefined
       }>
@@ -9894,6 +9930,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -9907,6 +9945,13 @@ export interface Routes {
               door_number?: number | undefined
               stand_open?: boolean | undefined
               pms_id?: string | undefined
+            }
+          | undefined
+        salto_space_metadata?:
+          | {
+              door_name: string
+              ext_door_id: string
+              door_description?: string | undefined
             }
           | undefined
       }>
