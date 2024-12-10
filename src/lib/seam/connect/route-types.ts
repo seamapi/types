@@ -4987,6 +4987,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -6010,6 +6012,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8676,6 +8680,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8770,6 +8776,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -9894,6 +9902,8 @@ export interface Routes {
         dormakaba_community_metadata?:
           | {
               access_point_name: string
+              common_area_number?: number | undefined
+              inner_access_points_names?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
