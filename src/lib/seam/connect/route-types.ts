@@ -656,87 +656,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -753,33 +672,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -1838,87 +1730,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -1935,33 +1746,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -3250,87 +3034,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -3347,33 +3050,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -4419,87 +4095,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -4516,33 +4111,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -7177,87 +6745,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -7274,33 +6761,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -8248,87 +7708,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -8345,33 +7724,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -10926,87 +10278,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -11023,33 +10294,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -11949,87 +11193,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -12046,33 +11209,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -18969,87 +18105,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -19066,33 +18121,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -19993,87 +19021,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -20090,33 +19037,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -22644,87 +21564,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -22741,33 +21580,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -23678,87 +22490,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -23775,33 +22506,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -24751,87 +23455,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -24848,33 +23471,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -25983,87 +24579,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -26080,33 +24595,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -27013,87 +25501,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -27110,33 +25517,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -28803,87 +27183,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -28900,33 +27199,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -29837,87 +28109,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -29934,33 +28125,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -32451,87 +30615,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -32548,33 +30631,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -33650,87 +31706,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -33747,33 +31722,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -34707,87 +32655,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -34804,33 +32671,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
@@ -37908,87 +35748,6 @@ export interface Routes {
             status: 'pending'
             result: null
             error: null
-            action_type: 'SET_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_HEAT_COOL'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_HEAT_COOL'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_HEAT_COOL'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
@@ -38005,33 +35764,6 @@ export interface Routes {
             status: 'error'
             result: null
             action_type: 'SET_FAN_MODE'
-            error: {
-              type: string
-              message: string
-            }
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'pending'
-            result: null
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'success'
-            error: null
-            action_type: 'SET_THERMOSTAT_OFF'
-            result: {}
-          }
-        | {
-            /** The ID of the action attempt. */
-            action_attempt_id: string
-            status: 'error'
-            result: null
-            action_type: 'SET_THERMOSTAT_OFF'
             error: {
               type: string
               message: string
