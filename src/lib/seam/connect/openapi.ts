@@ -16729,7 +16729,15 @@ export default {
                     enum: ['off', 'heat', 'cool', 'heat_cool'],
                     type: 'string',
                   },
-                  manual_override_allowed: { default: true, type: 'boolean' },
+                  manual_override_allowed: {
+                    default: true,
+                    deprecated: true,
+                    description:
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings.",
+                    type: 'boolean',
+                    'x-deprecated':
+                      "Use 'thermostat_schedule.is_override_allowed'",
+                  },
                   name: {
                     default: null,
                     description:
@@ -17438,11 +17446,16 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
-                  is_override_allowed: { default: false, type: 'boolean' },
+                  is_override_allowed: {
+                    default: false,
+                    description:
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                    type: 'boolean',
+                  },
                   max_override_period_minutes: {
                     default: 0,
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
@@ -17700,10 +17713,14 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
-                  is_override_allowed: { type: 'boolean' },
+                  is_override_allowed: {
+                    description:
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                    type: 'boolean',
+                  },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
@@ -17776,10 +17793,14 @@ export default {
                       'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
                     type: 'string',
                   },
-                  is_override_allowed: { type: 'boolean' },
+                  is_override_allowed: {
+                    description:
+                      "Indicates whether a person at the thermostat or using the API can change the thermostat's settings while the schedule is active. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                    type: 'boolean',
+                  },
                   max_override_period_minutes: {
                     description:
-                      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+                      "Number of minutes for which a person at the thermostat or using the API can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
                     minimum: 0,
                     type: 'integer',
                   },
