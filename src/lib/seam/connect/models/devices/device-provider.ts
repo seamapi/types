@@ -88,6 +88,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'visionline',
     'assa_abloy_credential_service',
     'latch',
+    'akiles',
   ],
 
   consumer_smartlocks: [
@@ -102,6 +103,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'wyze',
     'lockly',
     'tedee',
+    'akiles',
   ],
 
   thermostats: ['ecobee', 'nest'],
