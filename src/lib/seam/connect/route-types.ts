@@ -8812,6 +8812,8 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** Full name of the new `acs_user`. */
+      full_name: string
       /** ID of the `acs_system` to which to add the new `acs_user`. */
       acs_system_id: string
       /** Array of `access_group_id`s to indicate the access groups to which to add the new `acs_user`. */
@@ -8825,8 +8827,6 @@ export interface Routes {
             ends_at?: (string | undefined) | null
           }
         | undefined
-      /** Full name of the `acs_user`. */
-      full_name?: string | undefined
       /**
        * @deprecated use email_address. */
       email?: string | undefined

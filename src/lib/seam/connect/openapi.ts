@@ -10674,7 +10674,12 @@ export default {
         name: 'client-session-token',
         type: 'apiKey',
       },
-      console_session: {
+      console_session_with_workspace: {
+        bearerFormat: 'Console Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
+      console_session_without_workspace: {
         bearerFormat: 'Console Session Token',
         scheme: 'bearer',
         type: 'http',
@@ -10779,7 +10784,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/create',
@@ -10865,7 +10870,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/create_multiple',
@@ -10949,7 +10954,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/create_multiple',
@@ -11000,7 +11005,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/delete',
@@ -11048,7 +11053,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/generate_code',
@@ -11098,7 +11103,7 @@ export default {
         security: [
           { api_key: [] },
           { access_token: [] },
-          { user_session: [] },
+          { console_session_with_workspace: [] },
           { client_session: [] },
         ],
         summary: '/access_codes/get',
@@ -11154,7 +11159,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/list',
@@ -11208,7 +11213,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/pull_backup_access_code',
@@ -11266,7 +11271,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/simulate/create_unmanaged_access_code',
@@ -11316,7 +11321,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/convert_to_managed',
@@ -11362,7 +11367,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/convert_to_managed',
@@ -11413,7 +11418,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/delete',
@@ -11464,7 +11469,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/get',
@@ -11519,7 +11524,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/list',
@@ -11569,7 +11574,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/update',
@@ -11615,7 +11620,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/unmanaged/update',
@@ -11695,7 +11700,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/update',
@@ -11772,7 +11777,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/update',
@@ -11850,7 +11855,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/update',
@@ -11897,7 +11902,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/update_multiple',
@@ -11942,7 +11947,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/access_codes/update_multiple',
@@ -11997,7 +12002,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/add_user',
@@ -12051,7 +12056,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/add_user',
@@ -12106,7 +12111,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/get',
@@ -12170,7 +12175,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/list',
@@ -12230,7 +12235,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/access_groups/list_accessible_entrances',
         tags: ['/acs'],
@@ -12288,7 +12293,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/list_users',
@@ -12345,7 +12350,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/remove_user',
@@ -12477,7 +12482,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/unmanaged/get',
@@ -12620,7 +12625,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/access_groups/unmanaged/list',
@@ -12675,7 +12680,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credential_pools/list',
@@ -12741,7 +12746,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credential_provisioning_automations/launch',
@@ -12805,7 +12810,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/assign',
@@ -12863,7 +12868,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/assign',
@@ -13013,7 +13018,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/create',
@@ -13095,7 +13100,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/create_offline_code',
@@ -13148,7 +13153,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/delete',
@@ -13204,7 +13209,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/get',
@@ -13337,7 +13342,7 @@ export default {
           { api_key: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/credentials/list',
         tags: ['/acs'],
@@ -13396,7 +13401,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/credentials/list_accessible_entrances',
         tags: ['/acs'],
@@ -13457,7 +13462,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/unassign',
@@ -13515,7 +13520,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/unassign',
@@ -13865,7 +13870,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/unmanaged/get',
@@ -14269,7 +14274,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/credentials/unmanaged/list',
         tags: ['/acs'],
@@ -14337,7 +14342,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/update',
@@ -14401,7 +14406,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/credentials/update',
@@ -14462,7 +14467,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/encoders/encode_credential',
@@ -14621,7 +14626,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/encoders/list',
@@ -14681,7 +14686,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/encoders/scan_credential',
@@ -14733,7 +14738,7 @@ export default {
         security: [
           { api_key: [] },
           { access_token: [] },
-          { user_session: [] },
+          { console_session_with_workspace: [] },
           { client_session: [] },
         ],
         summary: '/acs/entrances/get',
@@ -14781,7 +14786,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/entrances/grant_access',
         tags: ['/acs'],
@@ -14835,7 +14840,7 @@ export default {
           { api_key: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/entrances/list',
         tags: ['/acs'],
@@ -14896,7 +14901,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/entrances/list_credentials_with_access',
@@ -14951,7 +14956,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/systems/get',
@@ -15010,7 +15015,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/systems/list',
@@ -15069,7 +15074,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/systems/list_compatible_credential_manager_acs_systems',
@@ -15127,7 +15132,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/add_to_access_group',
@@ -15181,7 +15186,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/add_to_access_group',
@@ -15239,7 +15244,7 @@ export default {
                     type: 'string',
                   },
                   full_name: {
-                    description: 'Full name of the `acs_user`.',
+                    description: 'Full name of the new `acs_user`.',
                     type: 'string',
                   },
                   phone_number: {
@@ -15254,7 +15259,7 @@ export default {
                     type: 'string',
                   },
                 },
-                required: ['acs_system_id'],
+                required: ['full_name', 'acs_system_id'],
                 type: 'object',
               },
             },
@@ -15281,7 +15286,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/create',
@@ -15333,7 +15338,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/delete',
@@ -15387,7 +15392,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/get',
@@ -15464,7 +15469,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/list',
@@ -15523,7 +15528,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/list_accessible_entrances',
@@ -15580,7 +15585,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/remove_from_access_group',
@@ -15632,7 +15637,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/users/revoke_access_to_all_entrances',
         tags: ['/acs'],
@@ -15682,7 +15687,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/suspend',
@@ -16070,7 +16075,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/unmanaged/get',
@@ -16468,7 +16473,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/acs/users/unmanaged/list',
@@ -16521,7 +16526,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/users/unsuspend',
         tags: ['/acs'],
@@ -16604,7 +16609,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/users/update',
         tags: ['/acs'],
@@ -16684,7 +16689,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/acs/users/update',
         tags: ['/acs'],
@@ -16734,7 +16739,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/action_attempts/get',
@@ -16789,7 +16794,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/action_attempts/list',
         tags: ['/action_attempts'],
@@ -16944,7 +16949,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/client_sessions/delete',
         tags: ['/client_sessions'],
@@ -16993,7 +16998,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/client_sessions/get',
@@ -17166,7 +17171,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/client_sessions/grant_access',
         tags: ['/client_sessions'],
@@ -17224,7 +17229,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/client_sessions/grant_access',
         tags: ['/client_sessions'],
@@ -17277,7 +17282,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/client_sessions/list',
         tags: ['/client_sessions'],
@@ -17322,7 +17327,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/client_sessions/revoke',
         tags: ['/client_sessions'],
@@ -17457,7 +17462,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/connect_webviews/create',
@@ -17503,7 +17508,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/connect_webviews/delete',
         tags: ['/connect_webviews'],
@@ -17552,7 +17557,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/connect_webviews/get',
@@ -17616,7 +17621,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/connect_webviews/list',
@@ -17663,7 +17668,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/connected_accounts/delete',
         tags: ['/connected_accounts'],
@@ -17722,7 +17727,7 @@ export default {
           { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/connected_accounts/get',
         tags: ['/connected_accounts'],
@@ -17784,7 +17789,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/connected_accounts/list',
         tags: ['/connected_accounts'],
@@ -17844,7 +17849,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/connected_accounts/update',
@@ -17887,7 +17892,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/delete',
         tags: ['/devices'],
@@ -17938,7 +17943,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/devices/get',
@@ -18231,7 +18236,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/devices/list',
@@ -18292,7 +18297,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/devices/list_device_providers',
@@ -18336,7 +18341,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/simulate/connect',
         tags: ['/devices'],
@@ -18378,7 +18383,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/simulate/disconnect',
         tags: ['/devices'],
@@ -18420,7 +18425,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/simulate/remove',
         tags: ['/devices'],
@@ -18467,7 +18472,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/devices/unmanaged/get',
@@ -18758,7 +18763,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/unmanaged/list',
         tags: ['/devices'],
@@ -18804,7 +18809,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/unmanaged/update',
         tags: ['/devices'],
@@ -18846,7 +18851,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/unmanaged/update',
         tags: ['/devices'],
@@ -18906,7 +18911,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/update',
         tags: ['/devices'],
@@ -18963,7 +18968,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/devices/update',
         tags: ['/devices'],
@@ -19013,7 +19018,7 @@ export default {
           { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/events/get',
         tags: ['/events'],
@@ -19249,7 +19254,7 @@ export default {
           { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/events/list',
         tags: ['/events'],
@@ -19298,7 +19303,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/locks/get',
@@ -19594,7 +19599,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/locks/list',
@@ -19646,7 +19651,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/locks/lock_door',
@@ -19698,7 +19703,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/locks/unlock_door',
@@ -19744,7 +19749,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/networks/get',
@@ -19787,7 +19792,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/networks/list',
@@ -20082,7 +20087,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/noise_sensors/list',
@@ -20142,7 +20147,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/create',
         tags: ['/noise_sensors'],
@@ -20194,7 +20199,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/delete',
         tags: ['/noise_sensors'],
@@ -20243,7 +20248,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/get',
         tags: ['/noise_sensors'],
@@ -20296,7 +20301,7 @@ export default {
           { client_session: [] },
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/list',
         tags: ['/noise_sensors'],
@@ -20353,7 +20358,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
@@ -20406,7 +20411,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
@@ -20460,7 +20465,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/noise_thresholds/update',
         tags: ['/noise_sensors'],
@@ -20501,7 +20506,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/noise_sensors/simulate/trigger_noise_threshold',
         tags: ['/noise_sensors'],
@@ -20543,7 +20548,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/phones/deactivate',
@@ -20594,7 +20599,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/phones/list',
         tags: ['/phones'],
@@ -20679,7 +20684,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/phones/simulate/create_sandbox_phone',
         tags: ['/phones'],
@@ -20739,7 +20744,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/activate_climate_preset',
@@ -20814,7 +20819,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/cool',
@@ -20922,7 +20927,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/create_climate_preset',
@@ -20978,7 +20983,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/delete_climate_preset',
@@ -21037,7 +21042,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/get',
@@ -21114,7 +21119,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/heat',
@@ -21201,7 +21206,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/heat_cool',
@@ -21499,7 +21504,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { client_session: [] },
         ],
         summary: '/thermostats/list',
@@ -21562,7 +21567,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/off',
@@ -21657,7 +21662,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/schedules/create',
@@ -21710,7 +21715,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/schedules/delete',
@@ -21767,7 +21772,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/schedules/get',
@@ -21834,7 +21839,7 @@ export default {
           { api_key: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/thermostats/schedules/list',
         tags: ['/thermostats'],
@@ -21917,7 +21922,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/schedules/update',
@@ -21997,7 +22002,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/schedules/update',
@@ -22053,7 +22058,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/set_fallback_climate_preset',
@@ -22123,7 +22128,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/set_fan_mode',
@@ -22274,7 +22279,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/set_hvac_mode',
@@ -22359,7 +22364,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/thermostats/set_temperature_threshold',
         tags: ['/thermostats'],
@@ -22439,7 +22444,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/thermostats/set_temperature_threshold',
         tags: ['/thermostats'],
@@ -22548,7 +22553,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/update_climate_preset',
@@ -22655,7 +22660,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/thermostats/update_climate_preset',
@@ -22712,7 +22717,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/add_acs_user',
         tags: ['/user_identities'],
@@ -22766,7 +22771,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/add_acs_user',
         tags: ['/user_identities'],
@@ -22840,7 +22845,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/create',
         tags: ['/user_identities'],
@@ -22892,7 +22897,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/delete',
         tags: ['/user_identities'],
@@ -22942,7 +22947,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/enrollment_automations/delete',
@@ -22999,7 +23004,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/enrollment_automations/get',
@@ -23107,7 +23112,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/enrollment_automations/launch',
@@ -23169,7 +23174,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/enrollment_automations/list',
@@ -23236,7 +23241,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/get',
         tags: ['/user_identities'],
@@ -23293,7 +23298,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/grant_access_to_device',
         tags: ['/user_identities'],
@@ -23347,7 +23352,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/grant_access_to_device',
         tags: ['/user_identities'],
@@ -23402,7 +23407,7 @@ export default {
           { api_key: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/list',
         tags: ['/user_identities'],
@@ -23467,7 +23472,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/list_accessible_devices',
         tags: ['/user_identities'],
@@ -23526,7 +23531,7 @@ export default {
         security: [
           { client_session: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/list_acs_systems',
@@ -23586,7 +23591,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/list_acs_users',
         tags: ['/user_identities'],
@@ -23643,7 +23648,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/remove_acs_user',
         tags: ['/user_identities'],
@@ -23699,7 +23704,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/user_identities/revoke_access_to_device',
         tags: ['/user_identities'],
@@ -23766,7 +23771,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/update',
@@ -23830,7 +23835,7 @@ export default {
         },
         security: [
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
           { api_key: [] },
         ],
         summary: '/user_identities/update',
@@ -23883,7 +23888,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/create',
         tags: ['/webhooks'],
@@ -23926,7 +23931,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/delete',
         tags: ['/webhooks'],
@@ -23971,7 +23976,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/get',
         tags: ['/webhooks'],
@@ -24009,7 +24014,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/list',
         tags: ['/webhooks'],
@@ -24043,7 +24048,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/list',
         tags: ['/webhooks'],
@@ -24089,7 +24094,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/update',
         tags: ['/webhooks'],
@@ -24132,7 +24137,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/webhooks/update',
         tags: ['/webhooks'],
@@ -24191,8 +24196,8 @@ export default {
         },
         security: [
           { pat_without_workspace: [] },
-          { console_session: [] },
-          { user_session_without_workspace: [] },
+          { console_session_with_workspace: [] },
+          { console_session_without_workspace: [] },
         ],
         summary: '/workspaces/create',
         tags: ['/workspaces'],
@@ -24226,7 +24231,7 @@ export default {
         },
         security: [
           { api_key: [] },
-          { user_session: [] },
+          { console_session_with_workspace: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
         ],
@@ -24258,7 +24263,7 @@ export default {
         },
         security: [
           { api_key: [] },
-          { user_session: [] },
+          { console_session_with_workspace: [] },
           { client_session: [] },
           { pat_with_workspace: [] },
         ],
@@ -24298,11 +24303,10 @@ export default {
         security: [
           { pat_with_workspace: [] },
           { pat_without_workspace: [] },
-          { user_session: [] },
-          { user_session_without_workspace: [] },
           { api_key: [] },
           { client_session: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
+          { console_session_without_workspace: [] },
         ],
         summary: '/workspaces/list',
         tags: ['/workspaces'],
@@ -24336,11 +24340,10 @@ export default {
         security: [
           { pat_with_workspace: [] },
           { pat_without_workspace: [] },
-          { user_session: [] },
-          { user_session_without_workspace: [] },
           { api_key: [] },
           { client_session: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
+          { console_session_without_workspace: [] },
         ],
         summary: '/workspaces/list',
         tags: ['/workspaces'],
@@ -24377,7 +24380,7 @@ export default {
         security: [
           { api_key: [] },
           { pat_with_workspace: [] },
-          { console_session: [] },
+          { console_session_with_workspace: [] },
         ],
         summary: '/workspaces/reset_sandbox',
         tags: ['/workspaces'],
