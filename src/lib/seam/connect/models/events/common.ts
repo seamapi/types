@@ -1,28 +1,16 @@
 import { z } from 'zod'
 
 export const common_event = z.object({
-  event_id: z.string().uuid().describe(`
-    ---
-    title: Event ID
-    ---
-    The ID of the event.
-  `),
-  workspace_id: z.string().uuid().describe(`
-    ---
-    title: Workspace ID
-    ---
-    The ID of the workspace.
-  `),
-  created_at: z.string().datetime().describe(`
-    ---
-    title: Created At
-    ---
-    The time when the event was created.
-  `),
-  occurred_at: z.string().datetime().describe(`
-    ---
-    title: Occurred At
-    ---
-    The time when the event occurred.
-  `),
+  event_id: z.string().uuid().describe('ID of the event.'),
+  workspace_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+    ),
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Time at which the event was created.'),
+  occurred_at: z.string().datetime().describe('Time when the event occurred.'),
 })
