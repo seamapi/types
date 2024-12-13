@@ -7070,8 +7070,6 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the acs_system the encoder belongs to. */
-      acs_system_id: string
       /** ID of the acs_encoder to use for the scan. */
       acs_encoder_id: string
     }
