@@ -13,8 +13,8 @@ import {
 
 const action_type = z.literal('ENCODE_CREDENTIAL')
 
-const no_card_on_encoder_error = z.object({
-  type: z.literal('no_card_on_encoder'),
+const no_credential_on_encoder_error = z.object({
+  type: z.literal('no_credential_on_encoder'),
   message: z.string(),
 })
 
@@ -25,7 +25,7 @@ const incompatible_card_format_error = z.object({
 
 const error = z.union([
   ...common_action_attempt_errors,
-  no_card_on_encoder_error,
+  no_credential_on_encoder_error,
   incompatible_card_format_error,
 ])
 
