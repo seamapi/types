@@ -14,14 +14,14 @@ import {
 
 const action_type = z.literal('SCAN_CREDENTIAL')
 
-const no_card_on_encoder_error = z.object({
-  type: z.literal('no_card_on_encoder'),
+const no_credential_on_encoder_error = z.object({
+  type: z.literal('no_credential_on_encoder'),
   message: z.string(),
 })
 
 const error = z.union([
   ...common_action_attempt_errors,
-  no_card_on_encoder_error,
+  no_credential_on_encoder_error,
 ])
 
 const warning = z.object({

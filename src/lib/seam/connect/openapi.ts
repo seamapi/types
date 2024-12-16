@@ -196,6 +196,7 @@ export default {
               'pti_access_level',
               'salto_ks_access_group',
               'brivo_group',
+              'salto_space_group',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -230,6 +231,7 @@ export default {
               'pti_access_level',
               'salto_ks_access_group',
               'brivo_group',
+              'salto_space_group',
             ],
             type: 'string',
           },
@@ -2342,7 +2344,10 @@ export default {
                   {
                     properties: {
                       message: { type: 'string' },
-                      type: { enum: ['no_card_on_encoder'], type: 'string' },
+                      type: {
+                        enum: ['no_credential_on_encoder'],
+                        type: 'string',
+                      },
                     },
                     required: ['type', 'message'],
                     type: 'object',
@@ -3042,7 +3047,10 @@ export default {
                   {
                     properties: {
                       message: { type: 'string' },
-                      type: { enum: ['no_card_on_encoder'], type: 'string' },
+                      type: {
+                        enum: ['no_credential_on_encoder'],
+                        type: 'string',
+                      },
                     },
                     required: ['type', 'message'],
                     type: 'object',
@@ -12242,6 +12250,7 @@ export default {
                             'pti_access_level',
                             'salto_ks_access_group',
                             'brivo_group',
+                            'salto_space_group',
                           ],
                           type: 'string',
                           'x-deprecated': 'Use `external_type`.',
@@ -12277,6 +12286,7 @@ export default {
                             'pti_access_level',
                             'salto_ks_access_group',
                             'brivo_group',
+                            'salto_space_group',
                           ],
                           type: 'string',
                         },
@@ -12383,6 +12393,7 @@ export default {
                               'pti_access_level',
                               'salto_ks_access_group',
                               'brivo_group',
+                              'salto_space_group',
                             ],
                             type: 'string',
                             'x-deprecated': 'Use `external_type`.',
@@ -12418,6 +12429,7 @@ export default {
                               'pti_access_level',
                               'salto_ks_access_group',
                               'brivo_group',
+                              'salto_space_group',
                             ],
                             type: 'string',
                           },
@@ -14320,7 +14332,7 @@ export default {
         'x-fern-sdk-method-name': 'encode_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-undocumented': 'Encoding a card is currently unimplemented.',
+        'x-undocumented': 'Encoders are in alpha.',
       },
     },
     '/acs/encoders/list': {
@@ -14534,7 +14546,283 @@ export default {
         'x-fern-sdk-method-name': 'scan_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-undocumented': 'Reading a card is currently unimplemented.',
+        'x-undocumented': 'Encoders are in alpha.',
+      },
+    },
+    '/acs/encoders/simulate/next_credential_encode_will_fail': {
+      post: {
+        operationId: 'acsEncodersSimulateNextCredentialEncodeWillFailPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      error_code: {
+                        default: 'no_credential_on_encoder',
+                        enum: ['no_credential_on_encoder'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id'],
+                    type: 'object',
+                  },
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_credential_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      error_code: {
+                        enum: ['uncategorized_error', 'action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id', 'error_code'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/encoders/simulate/next_credential_encode_will_fail',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
+        'x-fern-sdk-method-name': 'next_credential_encode_will_fail',
+        'x-response-key': null,
+        'x-undocumented': 'Encoder simulations are in alpha.',
+      },
+    },
+    '/acs/encoders/simulate/next_credential_encode_will_succeed': {
+      post: {
+        operationId: 'acsEncodersSimulateNextCredentialEncodeWillSucceedPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                additionalProperties: false,
+                properties: {
+                  acs_encoder_id: { format: 'uuid', type: 'string' },
+                  scenario: {
+                    default: 'credential_is_issued',
+                    enum: ['credential_is_issued'],
+                    type: 'string',
+                  },
+                },
+                required: ['acs_encoder_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/encoders/simulate/next_credential_encode_will_succeed',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
+        'x-fern-sdk-method-name': 'next_credential_encode_will_succeed',
+        'x-response-key': null,
+        'x-undocumented': 'Encoder simulations are in alpha.',
+      },
+    },
+    '/acs/encoders/simulate/next_credential_scan_will_fail': {
+      post: {
+        operationId: 'acsEncodersSimulateNextCredentialScanWillFailPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      error_code: {
+                        default: 'no_credential_on_encoder',
+                        enum: ['no_credential_on_encoder'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id'],
+                    type: 'object',
+                  },
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_credential_id_on_seam: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      error_code: {
+                        enum: ['uncategorized_error', 'action_attempt_expired'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id', 'error_code'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/encoders/simulate/next_credential_scan_will_fail',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
+        'x-fern-sdk-method-name': 'next_credential_scan_will_fail',
+        'x-response-key': null,
+        'x-undocumented': 'Encoder simulations are in alpha.',
+      },
+    },
+    '/acs/encoders/simulate/next_credential_scan_will_succeed': {
+      post: {
+        operationId: 'acsEncodersSimulateNextCredentialScanWillSucceedPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                oneOf: [
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_credential_id_on_seam: {
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      scenario: {
+                        default: 'credential_exists_on_seam',
+                        enum: [
+                          'credential_exists_on_seam',
+                          'credential_on_encoder_needs_update',
+                        ],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id'],
+                    type: 'object',
+                  },
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      scenario: {
+                        enum: ['credential_does_not_exist_on_seam'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id', 'scenario'],
+                    type: 'object',
+                  },
+                  {
+                    additionalProperties: false,
+                    properties: {
+                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      scenario: {
+                        enum: ['credential_on_encoder_is_empty'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['acs_encoder_id', 'scenario'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/acs/encoders/simulate/next_credential_scan_will_succeed',
+        tags: ['/acs'],
+        'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
+        'x-fern-sdk-method-name': 'next_credential_scan_will_succeed',
+        'x-response-key': null,
+        'x-undocumented': 'Encoder simulations are in alpha.',
       },
     },
     '/acs/entrances/get': {

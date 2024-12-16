@@ -365,7 +365,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -615,7 +615,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -1439,7 +1439,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -1689,7 +1689,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -2743,7 +2743,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -2993,7 +2993,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -3804,7 +3804,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -4054,7 +4054,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -4426,6 +4426,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4436,6 +4437,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4473,6 +4475,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4483,6 +4486,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4746,6 +4750,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4756,6 +4761,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4793,6 +4799,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4803,6 +4810,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -6454,7 +6462,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -6704,7 +6712,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -7415,7 +7423,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -7665,7 +7673,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -7979,6 +7987,78 @@ export interface Routes {
             }
           }
     }
+  }
+  '/acs/encoders/simulate/next_credential_encode_will_fail': {
+    route: '/acs/encoders/simulate/next_credential_encode_will_fail'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          acs_encoder_id: string
+          error_code?: 'no_credential_on_encoder'
+        }
+      | {
+          acs_encoder_id: string
+          error_code: 'uncategorized_error' | 'action_attempt_expired'
+          acs_credential_id?: string | undefined
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/encoders/simulate/next_credential_encode_will_succeed': {
+    route: '/acs/encoders/simulate/next_credential_encode_will_succeed'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      acs_encoder_id: string
+      scenario?: 'credential_is_issued'
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/encoders/simulate/next_credential_scan_will_fail': {
+    route: '/acs/encoders/simulate/next_credential_scan_will_fail'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          acs_encoder_id: string
+          error_code?: 'no_credential_on_encoder'
+        }
+      | {
+          acs_encoder_id: string
+          error_code: 'uncategorized_error' | 'action_attempt_expired'
+          acs_credential_id_on_seam?: string | undefined
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/acs/encoders/simulate/next_credential_scan_will_succeed': {
+    route: '/acs/encoders/simulate/next_credential_scan_will_succeed'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          acs_encoder_id: string
+          scenario?:
+            | 'credential_exists_on_seam'
+            | 'credential_on_encoder_needs_update'
+          acs_credential_id_on_seam?: string | undefined
+        }
+      | {
+          acs_encoder_id: string
+          scenario: 'credential_does_not_exist_on_seam'
+        }
+      | {
+          acs_encoder_id: string
+          scenario: 'credential_on_encoder_is_empty'
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
   }
   '/acs/entrances/get': {
     route: '/acs/entrances/get'
@@ -9985,7 +10065,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -10235,7 +10315,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -10900,7 +10980,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -11150,7 +11230,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -20182,7 +20262,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -20432,7 +20512,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -21098,7 +21178,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -21348,7 +21428,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -23641,7 +23721,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -23891,7 +23971,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -24567,7 +24647,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -24817,7 +24897,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -25532,7 +25612,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -25782,7 +25862,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -26656,7 +26736,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -26906,7 +26986,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -27578,7 +27658,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -27828,7 +27908,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -29262,7 +29342,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -29512,7 +29592,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -30188,7 +30268,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -30438,7 +30518,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -32694,7 +32774,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -32944,7 +33024,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -33787,7 +33867,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -34037,7 +34117,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -34736,7 +34816,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -34986,7 +35066,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
@@ -37829,7 +37909,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
           }
@@ -38079,7 +38159,7 @@ export interface Routes {
                   message: string
                 }
               | {
-                  type: 'no_card_on_encoder'
+                  type: 'no_credential_on_encoder'
                   message: string
                 }
               | {
