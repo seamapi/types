@@ -4426,6 +4426,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4436,6 +4437,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4473,6 +4475,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4483,6 +4486,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4746,6 +4750,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4756,6 +4761,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4793,6 +4799,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4803,6 +4810,7 @@ export interface Routes {
           | 'pti_access_level'
           | 'salto_ks_access_group'
           | 'brivo_group'
+          | 'salto_space_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */

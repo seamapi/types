@@ -6,6 +6,7 @@ export const acs_access_group_external_type = z.enum([
   'pti_access_level',
   'salto_ks_access_group',
   'brivo_group',
+  'salto_space_group',
 ])
 
 export type AcsAccessGroupExternalType = z.infer<
