@@ -88,7 +88,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'visionline',
     'assa_abloy_credential_service',
     'latch',
-    'assa_abloy_vostio',
   ],
 
   consumer_smartlocks: [
@@ -116,6 +115,7 @@ export const PROVIDER_CATEGORY_MAP = {
     'assa_abloy_vostio',
     'assa_abloy_vostio_credential_service',
     'salto_space',
+    'assa_abloy_vostio',
   ],
 
   internal_beta: ALL_DEVICE_PROVIDERS,

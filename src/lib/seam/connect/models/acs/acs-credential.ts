@@ -70,12 +70,24 @@ const being_deleted = common_acs_credential_warning
   })
   .describe('Indicates that this credential is being deleted.')
 
+const unknown_issue_with_credential = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('unknown_issue_with_credential')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'An unknown issue occurred while syncing the state of this credential with the provider. ' +
+      'This issue may affect the proper functioning of this credential.',
+  )
+
 const acs_credential_warning = z
   .union([
     waiting_to_be_issued,
     schedule_externally_modified,
     schedule_modified,
     being_deleted,
+    unknown_issue_with_credential,
   ])
   .describe('Warning associated with the `acs_credential`.')
 
@@ -86,6 +98,9 @@ const acs_credential_warning_map = z.object({
     .nullable(),
   schedule_modified: schedule_modified.optional().nullable(),
   being_deleted: being_deleted.optional().nullable(),
+  unknown_issue_with_credential: unknown_issue_with_credential
+    .optional()
+    .nullable(),
 })
 
 export type AcsCredentialWarningMap = z.infer<typeof acs_credential_warning_map>
