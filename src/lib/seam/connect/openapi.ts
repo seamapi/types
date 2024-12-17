@@ -747,9 +747,15 @@ export default {
               'Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
             type: 'boolean',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
+            format: 'uuid',
+            type: 'string',
+          },
           connected_account_ids: {
             description:
-              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
+              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.\n---\ndeprecated: Use `connected_account_id`.\n---',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
@@ -1089,6 +1095,7 @@ export default {
           'created_at',
           'workspace_id',
           'connected_account_ids',
+          'connected_account_id',
           'image_url',
           'image_alt_text',
           'errors',
