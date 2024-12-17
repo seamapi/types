@@ -505,6 +505,31 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_credential'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -747,9 +772,15 @@ export default {
               'Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
             type: 'boolean',
           },
+          connected_account_id: {
+            description:
+              'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
+            format: 'uuid',
+            type: 'string',
+          },
           connected_account_ids: {
             description:
-              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
+              'IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.\n---\ndeprecated: Use `connected_account_id`.\n---',
             items: { format: 'uuid', type: 'string' },
             type: 'array',
           },
@@ -936,8 +967,8 @@ export default {
               'visionline_system',
               'assa_abloy_credential_service',
               'latch_building',
-              'dormakaba_community',
-              'legic_connect',
+              'dormakaba_community_site',
+              'legic_connect_credential_service',
               'assa_abloy_vostio',
               'assa_abloy_vostio_credential_service',
             ],
@@ -985,8 +1016,8 @@ export default {
               'visionline_system',
               'assa_abloy_credential_service',
               'latch_building',
-              'dormakaba_community',
-              'legic_connect',
+              'dormakaba_community_site',
+              'legic_connect_credential_service',
               'assa_abloy_vostio',
               'assa_abloy_vostio_credential_service',
             ],
@@ -1089,6 +1120,7 @@ export default {
           'created_at',
           'workspace_id',
           'connected_account_ids',
+          'connected_account_id',
           'image_url',
           'image_alt_text',
           'errors',
@@ -1949,6 +1981,35 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['unknown_issue_with_credential'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -2237,6 +2298,35 @@ export default {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                       enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['unknown_issue_with_credential'],
                                       type: 'string',
                                     },
                                   },
@@ -2678,6 +2768,35 @@ export default {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['unknown_issue_with_credential'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -2965,6 +3084,35 @@ export default {
                                   description:
                                     'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                   enum: ['being_deleted'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['unknown_issue_with_credential'],
                                   type: 'string',
                                 },
                               },
@@ -13678,6 +13826,35 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['unknown_issue_with_credential'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -14069,6 +14246,35 @@ export default {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                       enum: ['being_deleted'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['unknown_issue_with_credential'],
                                       type: 'string',
                                     },
                                   },
