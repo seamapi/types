@@ -10552,16 +10552,6 @@ export default {
         type: 'apiKey',
       },
       seam_workspace: { in: 'header', name: 'seam-workspace', type: 'apiKey' },
-      user_session: {
-        bearerFormat: 'User Session Token',
-        scheme: 'bearer',
-        type: 'http',
-      },
-      user_session_without_workspace: {
-        bearerFormat: 'User Session Token',
-        scheme: 'bearer',
-        type: 'http',
-      },
     },
   },
   info: { title: 'Seam Connect', version: '1.0.0' },
