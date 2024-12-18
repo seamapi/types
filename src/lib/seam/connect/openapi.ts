@@ -641,6 +641,7 @@ export default {
                 items: { type: 'string' },
                 type: 'array',
               },
+              lease_ids: { items: { type: 'string' }, type: 'array' },
             },
             required: ['access_point_name'],
             type: 'object',
