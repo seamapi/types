@@ -24102,6 +24102,7 @@ export default {
         tags: ['/user_identities'],
         'x-fern-ignore': true,
         'x-response-key': null,
+        'x-title': 'Update a User Identity',
       },
       post: {
         operationId: 'userIdentitiesUpdatePost',
@@ -24167,6 +24168,7 @@ export default {
         'x-fern-sdk-group-name': ['user_identities'],
         'x-fern-sdk-method-name': 'update',
         'x-response-key': null,
+        'x-title': 'Update a User Identity',
       },
     },
     '/webhooks/create': {
