@@ -4689,6 +4689,7 @@ export interface Routes {
               access_point_name: string
               common_area_number?: number | undefined
               inner_access_points_names?: string[] | undefined
+              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -5765,6 +5766,7 @@ export interface Routes {
               access_point_name: string
               common_area_number?: number | undefined
               inner_access_points_names?: string[] | undefined
+              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8390,6 +8392,7 @@ export interface Routes {
               access_point_name: string
               common_area_number?: number | undefined
               inner_access_points_names?: string[] | undefined
+              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8493,6 +8496,7 @@ export interface Routes {
               access_point_name: string
               common_area_number?: number | undefined
               inner_access_points_names?: string[] | undefined
+              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -9649,6 +9653,7 @@ export interface Routes {
               access_point_name: string
               common_area_number?: number | undefined
               inner_access_points_names?: string[] | undefined
+              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
