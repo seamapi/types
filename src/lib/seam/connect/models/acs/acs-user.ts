@@ -178,6 +178,7 @@ const common_acs_user = z
       ),
     is_suspended: z
       .boolean()
+      .optional()
       .describe(
         'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
       ),
