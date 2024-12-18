@@ -4752,7 +4752,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -9234,7 +9234,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -9370,7 +9370,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -9501,7 +9501,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -9754,7 +9754,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -9880,7 +9880,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
@@ -38030,7 +38030,7 @@ export interface Routes {
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
         external_type_display_name?: string | undefined
         /** Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users). */
-        is_suspended: boolean
+        is_suspended?: boolean | undefined
         /** `starts_at` and `ends_at` timestamps for the `acs_user`'s access. */
         access_schedule?:
           | {
