@@ -8803,6 +8803,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -8975,6 +8976,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -9147,6 +9149,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -37978,6 +37981,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */

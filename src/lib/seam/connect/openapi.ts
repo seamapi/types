@@ -1092,6 +1092,10 @@ export default {
                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    misconfigured_acs_entrance_ids: {
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
                     warning_code: {
                       description:
                         'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
