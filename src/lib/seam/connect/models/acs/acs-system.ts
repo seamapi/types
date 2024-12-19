@@ -271,13 +271,12 @@ export const acs_system = z
       .describe(
         'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
       ),
-    connected_account_ids: z.array(z.string().uuid()).describe(
-      `IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the \`acs_system\`.
-        ---
-        deprecated: Use \`connected_account_id\`.
-        ---
-        `,
-    ),
+    connected_account_ids: z.array(z.string().uuid()).describe(`
+      ---
+      deprecated: Use \`connected_account_id\`.
+      ---
+      IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the \`acs_system\`.
+      `),
     connected_account_id: z
       .string()
       .uuid()
