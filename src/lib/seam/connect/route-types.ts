@@ -7296,8 +7296,6 @@ export interface Routes {
           message: string
           /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
           error_code: 'acs_encoder_removed'
-          /** ID of the event that was created when the `acs_encoder` was removed. */
-          _event_id: string
         }>
         /** Date and time at which the `acs_encoder` was created. */
         created_at: string
