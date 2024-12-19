@@ -1092,6 +1092,10 @@ export default {
                         'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
                       type: 'string',
                     },
+                    misconfigured_acs_entrance_ids: {
+                      items: { format: 'uuid', type: 'string' },
+                      type: 'array',
+                    },
                     warning_code: {
                       description:
                         'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
@@ -14611,12 +14615,6 @@ export default {
                               description:
                                 'Error associated with the `acs_encoder`.',
                               properties: {
-                                _event_id: {
-                                  description:
-                                    'ID of the event that was created when the `acs_encoder` was removed.',
-                                  format: 'uuid',
-                                  type: 'string',
-                                },
                                 created_at: {
                                   description:
                                     'Date and time at which Seam created the error.',
@@ -14635,12 +14633,7 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'created_at',
-                                'message',
-                                'error_code',
-                                '_event_id',
-                              ],
+                              required: ['created_at', 'message', 'error_code'],
                               type: 'object',
                             },
                             type: 'array',
