@@ -8725,9 +8725,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -8803,6 +8801,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -8897,9 +8896,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -8975,6 +8972,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -9069,9 +9067,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -9147,6 +9143,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */
@@ -37900,9 +37897,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -37978,6 +37973,7 @@ export interface Routes {
               message: string
               /** Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances. */
               warning_code: 'time_zone_does_not_match_location'
+              misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
         /** Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`. */

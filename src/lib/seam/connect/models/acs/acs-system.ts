@@ -178,6 +178,7 @@ const time_zone_does_not_match_location = common_acs_system_warning.extend({
     .describe(
       'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
     ),
+  misconfigured_acs_entrance_ids: z.array(z.string().uuid()).optional(),
 })
 
 const acs_system_warning = z
@@ -190,6 +191,9 @@ const acs_system_warning = z
 export const acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
     salto_ks_subscription_limit_almost_reached.optional().nullable(),
+  time_zone_does_not_match_location: time_zone_does_not_match_location
+    .optional()
+    .nullable(),
 })
 
 export type AcsSystemWarningMap = z.infer<typeof acs_system_warning_map>
@@ -267,13 +271,12 @@ export const acs_system = z
       .describe(
         'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
       ),
-    connected_account_ids: z.array(z.string().uuid()).describe(
-      `IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the \`acs_system\`.
-        ---
-        deprecated: Use \`connected_account_id\`.
-        ---
-        `,
-    ),
+    connected_account_ids: z.array(z.string().uuid()).describe(`
+      ---
+      deprecated: Use \`connected_account_id\`.
+      ---
+      IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the \`acs_system\`.
+      `),
     connected_account_id: z
       .string()
       .uuid()
