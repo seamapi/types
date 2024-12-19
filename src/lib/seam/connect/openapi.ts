@@ -14611,12 +14611,6 @@ export default {
                               description:
                                 'Error associated with the `acs_encoder`.',
                               properties: {
-                                _event_id: {
-                                  description:
-                                    'ID of the event that was created when the `acs_encoder` was removed.',
-                                  format: 'uuid',
-                                  type: 'string',
-                                },
                                 created_at: {
                                   description:
                                     'Date and time at which Seam created the error.',
@@ -14635,12 +14629,7 @@ export default {
                                   type: 'string',
                                 },
                               },
-                              required: [
-                                'created_at',
-                                'message',
-                                'error_code',
-                                '_event_id',
-                              ],
+                              required: ['created_at', 'message', 'error_code'],
                               type: 'object',
                             },
                             type: 'array',
