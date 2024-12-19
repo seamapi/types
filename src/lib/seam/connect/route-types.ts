@@ -8725,9 +8725,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -8898,9 +8896,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -9071,9 +9067,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
@@ -37903,9 +37897,7 @@ export interface Routes {
         /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`. */
         workspace_id: string
         /** IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.
-        ---
-        deprecated: Use `connected_account_id`.
-        --- */
+         * @deprecated Use `connected_account_id`. */
         connected_account_ids: string[]
         /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`. */
         connected_account_id: string
