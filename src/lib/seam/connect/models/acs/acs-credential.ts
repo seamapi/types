@@ -70,7 +70,7 @@ const being_deleted = common_acs_credential_warning
   })
   .describe('Indicates that this credential is being deleted.')
 
-const unknown_issue_with_credential = common_acs_credential_warning
+export const unknown_issue_with_credential = common_acs_credential_warning
   .extend({
     warning_code: z
       .literal('unknown_issue_with_credential')

@@ -197,6 +197,7 @@ export default {
               'salto_ks_access_group',
               'brivo_group',
               'salto_space_group',
+              'dormakaba_community_access_group',
             ],
             type: 'string',
             'x-deprecated': 'Use `external_type`.',
@@ -232,6 +233,7 @@ export default {
               'salto_ks_access_group',
               'brivo_group',
               'salto_space_group',
+              'dormakaba_community_access_group',
             ],
             type: 'string',
           },
@@ -637,11 +639,6 @@ export default {
             properties: {
               access_point_name: { type: 'string' },
               common_area_number: { format: 'float', type: 'number' },
-              inner_access_points_names: {
-                items: { type: 'string' },
-                type: 'array',
-              },
-              lease_ids: { items: { type: 'string' }, type: 'array' },
             },
             required: ['access_point_name'],
             type: 'object',
@@ -4220,12 +4217,32 @@ export default {
           },
           warnings: {
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              description: 'Warning associated with the `connected_account`.',
+              oneOf: [
+                {
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: { type: 'string' },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_connected_account'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -12400,6 +12417,7 @@ export default {
                             'salto_ks_access_group',
                             'brivo_group',
                             'salto_space_group',
+                            'dormakaba_community_access_group',
                           ],
                           type: 'string',
                           'x-deprecated': 'Use `external_type`.',
@@ -12436,6 +12454,7 @@ export default {
                             'salto_ks_access_group',
                             'brivo_group',
                             'salto_space_group',
+                            'dormakaba_community_access_group',
                           ],
                           type: 'string',
                         },
@@ -12543,6 +12562,7 @@ export default {
                               'salto_ks_access_group',
                               'brivo_group',
                               'salto_space_group',
+                              'dormakaba_community_access_group',
                             ],
                             type: 'string',
                             'x-deprecated': 'Use `external_type`.',
@@ -12579,6 +12599,7 @@ export default {
                               'salto_ks_access_group',
                               'brivo_group',
                               'salto_space_group',
+                              'dormakaba_community_access_group',
                             ],
                             type: 'string',
                           },

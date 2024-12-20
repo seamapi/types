@@ -7,6 +7,9 @@ const common_connected_account_error = z.object({
   is_connected_account_error: z.literal(true),
 })
 
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
 const common_connected_account_warning = z.object({
   message: z.string(),
 })
@@ -17,9 +20,26 @@ export const connected_account_error = common_connected_account_error.extend({
 
 export type ConnectedAccountError = z.infer<typeof connected_account_error>
 
-const connected_account_warning = common_connected_account_warning.extend({
-  warning_code: z.string(),
-})
+export const unknown_issue_with_connected_account =
+  common_connected_account_warning
+    .extend({
+      warning_code: z
+        .literal('unknown_issue_with_connected_account')
+        .describe(warning_code_description),
+    })
+    .describe(
+      'An unknown issue occurred while syncing the state of this connected account with the provider. ' +
+        'This issue may affect the proper functioning of one or more resources in this account.',
+    )
+
+const connected_account_warning = z
+  .union([
+    common_connected_account_warning.extend({
+      warning_code: z.string(),
+    }),
+    unknown_issue_with_connected_account,
+  ])
+  .describe('Warning associated with the `connected_account`.')
 
 export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
 
