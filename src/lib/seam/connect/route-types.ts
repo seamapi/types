@@ -213,7 +213,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -327,7 +327,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -488,7 +488,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -602,7 +602,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1319,7 +1319,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1433,7 +1433,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1594,7 +1594,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -1708,7 +1708,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -2655,7 +2655,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -2769,7 +2769,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -2930,7 +2930,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -3044,7 +3044,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -3748,7 +3748,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -3862,7 +3862,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -4023,7 +4023,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -4137,7 +4137,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5135,7 +5135,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5300,7 +5300,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5433,7 +5433,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5570,7 +5570,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5716,7 +5716,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -5933,7 +5933,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6058,7 +6058,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6196,7 +6196,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6325,7 +6325,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6552,7 +6552,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6666,7 +6666,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6827,7 +6827,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -6941,7 +6941,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -7543,7 +7543,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -7657,7 +7657,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -7818,7 +7818,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -7932,7 +7932,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -8653,7 +8653,7 @@ export interface Routes {
               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_credential'
+              warning_code: 'unknown_issue_with_acs_credential'
             }
         >
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -10234,7 +10234,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -10348,7 +10348,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -10509,7 +10509,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -10623,7 +10623,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11181,7 +11181,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11295,7 +11295,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11456,7 +11456,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -11570,7 +11570,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20516,7 +20516,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20630,7 +20630,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20791,7 +20791,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -20905,7 +20905,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -21464,7 +21464,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -21578,7 +21578,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -21739,7 +21739,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -21853,7 +21853,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24039,7 +24039,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24153,7 +24153,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24314,7 +24314,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24428,7 +24428,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -24997,7 +24997,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -25111,7 +25111,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -25272,7 +25272,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -25386,7 +25386,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -25994,7 +25994,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -26108,7 +26108,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -26269,7 +26269,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -26383,7 +26383,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -27150,7 +27150,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -27264,7 +27264,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -27425,7 +27425,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -27539,7 +27539,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -28104,7 +28104,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -28218,7 +28218,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -28379,7 +28379,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -28493,7 +28493,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29820,7 +29820,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -29934,7 +29934,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30095,7 +30095,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30209,7 +30209,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30778,7 +30778,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -30892,7 +30892,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -31053,7 +31053,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -31167,7 +31167,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -33316,7 +33316,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -33430,7 +33430,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -33591,7 +33591,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -33705,7 +33705,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34441,7 +34441,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34555,7 +34555,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34716,7 +34716,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -34830,7 +34830,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35422,7 +35422,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35536,7 +35536,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35697,7 +35697,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -35811,7 +35811,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38551,7 +38551,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38665,7 +38665,7 @@ export interface Routes {
                               /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                               message: string
                               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                              warning_code: 'unknown_issue_with_credential'
+                              warning_code: 'unknown_issue_with_acs_credential'
                             }
                         >
                         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38826,7 +38826,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
@@ -38940,7 +38940,7 @@ export interface Routes {
                         /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
                         message: string
                         /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                        warning_code: 'unknown_issue_with_credential'
+                        warning_code: 'unknown_issue_with_acs_credential'
                       }
                   >
                   /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
