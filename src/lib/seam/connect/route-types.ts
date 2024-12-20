@@ -4555,6 +4555,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4566,6 +4567,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4604,6 +4606,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4615,6 +4618,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4688,8 +4692,6 @@ export interface Routes {
           | {
               access_point_name: string
               common_area_number?: number | undefined
-              inner_access_points_names?: string[] | undefined
-              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -4880,6 +4882,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4891,6 +4894,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -4929,6 +4933,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /**
          * @deprecated Use `external_type_display_name`. */
         access_group_type_display_name: string
@@ -4940,6 +4945,7 @@ export interface Routes {
           | 'salto_ks_access_group'
           | 'brivo_group'
           | 'salto_space_group'
+          | 'dormakaba_community_access_group'
         /** Display name that corresponds to the brand-specific terminology for the access group type. */
         external_type_display_name: string
         /** Date and time at which the access group was created. */
@@ -5765,8 +5771,6 @@ export interface Routes {
           | {
               access_point_name: string
               common_area_number?: number | undefined
-              inner_access_points_names?: string[] | undefined
-              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8389,8 +8393,6 @@ export interface Routes {
           | {
               access_point_name: string
               common_area_number?: number | undefined
-              inner_access_points_names?: string[] | undefined
-              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -8493,8 +8495,6 @@ export interface Routes {
           | {
               access_point_name: string
               common_area_number?: number | undefined
-              inner_access_points_names?: string[] | undefined
-              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
@@ -9647,8 +9647,6 @@ export interface Routes {
           | {
               access_point_name: string
               common_area_number?: number | undefined
-              inner_access_points_names?: string[] | undefined
-              lease_ids?: string[] | undefined
             }
           | undefined
         assa_abloy_vostio_metadata?:
