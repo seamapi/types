@@ -10700,6 +10700,11 @@ export default {
         scheme: 'bearer',
         type: 'http',
       },
+      publishable_key: {
+        in: 'header',
+        name: 'seam-publishable-key',
+        type: 'apiKey',
+      },
       seam_client_session_token: {
         in: 'header',
         name: 'seam-client-session-token',
@@ -17169,6 +17174,12 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
+        security: [
+          { publishable_key: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/client_sessions/create',
         tags: ['/client_sessions'],
         'x-fern-sdk-group-name': ['client_sessions'],
@@ -17224,6 +17235,12 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
+        security: [
+          { publishable_key: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/client_sessions/create',
         tags: ['/client_sessions'],
         'x-fern-ignore': true,
@@ -17374,64 +17391,17 @@ export default {
           400: { description: 'Bad Request' },
           401: { description: 'Unauthorized' },
         },
+        security: [
+          { publishable_key: [] },
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
         summary: '/client_sessions/get_or_create',
         tags: ['/client_sessions'],
         'x-fern-sdk-group-name': ['client_sessions'],
         'x-fern-sdk-method-name': 'get_or_create',
         'x-fern-sdk-return-value': 'client_session',
-        'x-response-key': 'client_session',
-      },
-      put: {
-        operationId: 'clientSessionsGetOrCreatePut',
-        requestBody: {
-          content: {
-            'application/json': {
-              schema: {
-                properties: {
-                  connect_webview_ids: {
-                    items: { type: 'string' },
-                    type: 'array',
-                  },
-                  connected_account_ids: {
-                    items: { type: 'string' },
-                    type: 'array',
-                  },
-                  expires_at: { format: 'date-time', type: 'string' },
-                  user_identifier_key: { minLength: 1, type: 'string' },
-                  user_identity_ids: {
-                    items: { type: 'string' },
-                    type: 'array',
-                  },
-                },
-                type: 'object',
-              },
-            },
-          },
-        },
-        responses: {
-          200: {
-            content: {
-              'application/json': {
-                schema: {
-                  properties: {
-                    client_session: {
-                      $ref: '#/components/schemas/client_session',
-                    },
-                    ok: { type: 'boolean' },
-                  },
-                  required: ['client_session', 'ok'],
-                  type: 'object',
-                },
-              },
-            },
-            description: 'OK',
-          },
-          400: { description: 'Bad Request' },
-          401: { description: 'Unauthorized' },
-        },
-        summary: '/client_sessions/get_or_create',
-        tags: ['/client_sessions'],
-        'x-fern-ignore': true,
         'x-response-key': 'client_session',
       },
     },
