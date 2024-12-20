@@ -11963,7 +11963,7 @@ export interface Routes {
   }
   '/client_sessions/get_or_create': {
     route: '/client_sessions/get_or_create'
-    method: 'POST' | 'PUT'
+    method: 'POST'
     queryParams: {}
     jsonBody: {
       user_identifier_key?: string | undefined
