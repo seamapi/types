@@ -554,7 +554,7 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['unknown_issue_with_credential'],
+                      enum: ['unknown_issue_with_acs_credential'],
                       type: 'string',
                     },
                   },
@@ -2031,7 +2031,9 @@ export default {
                                     warning_code: {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['unknown_issue_with_credential'],
+                                      enum: [
+                                        'unknown_issue_with_acs_credential',
+                                      ],
                                       type: 'string',
                                     },
                                   },
@@ -2358,7 +2360,9 @@ export default {
                                     warning_code: {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['unknown_issue_with_credential'],
+                                      enum: [
+                                        'unknown_issue_with_acs_credential',
+                                      ],
                                       type: 'string',
                                     },
                                   },
@@ -2818,7 +2822,7 @@ export default {
                                 warning_code: {
                                   description:
                                     'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                  enum: ['unknown_issue_with_credential'],
+                                  enum: ['unknown_issue_with_acs_credential'],
                                   type: 'string',
                                 },
                               },
@@ -3144,7 +3148,7 @@ export default {
                                 warning_code: {
                                   description:
                                     'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                  enum: ['unknown_issue_with_credential'],
+                                  enum: ['unknown_issue_with_acs_credential'],
                                   type: 'string',
                                 },
                               },
@@ -13971,7 +13975,7 @@ export default {
                                   warning_code: {
                                     description:
                                       'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['unknown_issue_with_credential'],
+                                    enum: ['unknown_issue_with_acs_credential'],
                                     type: 'string',
                                   },
                                 },
@@ -14401,7 +14405,9 @@ export default {
                                     warning_code: {
                                       description:
                                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['unknown_issue_with_credential'],
+                                      enum: [
+                                        'unknown_issue_with_acs_credential',
+                                      ],
                                       type: 'string',
                                     },
                                   },
