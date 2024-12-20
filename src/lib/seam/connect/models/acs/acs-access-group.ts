@@ -14,6 +14,47 @@ export type AcsAccessGroupExternalType = z.infer<
   typeof acs_access_group_external_type
 >
 
+const common_acs_access_group_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
+  message: z
+    .string()
+    .describe(
+      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+    ),
+})
+
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+export const unknown_issue_with_acs_access_group =
+  common_acs_access_group_warning
+    .extend({
+      warning_code: z
+        .literal('unknown_issue_with_acs_access_group')
+        .describe(warning_code_description),
+    })
+    .describe(
+      'An unknown issue occurred while syncing the state of this access group with the provider. ' +
+        'This issue may affect the proper functioning of this access group.',
+    )
+
+const acs_access_group_warning = unknown_issue_with_acs_access_group.describe(
+  'Warning associated with the `acs_access_group`.',
+)
+
+const acs_access_group_warning_map = z.object({
+  unknown_issue_with_acs_access_group: unknown_issue_with_acs_access_group
+    .optional()
+    .nullable(),
+})
+
+export type AcsAccessGroupWarningMap = z.infer<
+  typeof acs_access_group_warning_map
+>
+
 const common_acs_access_group = z.object({
   acs_access_group_id: z.string().uuid().describe('ID of the access group.'),
   acs_system_id: z
@@ -52,6 +93,9 @@ const common_acs_access_group = z.object({
     .string()
     .datetime()
     .describe('Date and time at which the access group was created.'),
+  warnings: z
+    .array(acs_access_group_warning)
+    .describe('Warnings associated with the `acs_access_group`.'),
 })
 
 export const acs_access_group = common_acs_access_group.extend({

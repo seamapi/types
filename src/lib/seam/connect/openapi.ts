@@ -244,6 +244,34 @@ export default {
           },
           is_managed: { enum: [true], type: 'boolean' },
           name: { description: 'Name of the access group.', type: 'string' },
+          warnings: {
+            description: 'Warnings associated with the `acs_access_group`.',
+            items: {
+              description: 'Warning associated with the `acs_access_group`.',
+              properties: {
+                created_at: {
+                  description:
+                    'Date and time at which Seam created the warning.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                message: {
+                  description:
+                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                  type: 'string',
+                },
+                warning_code: {
+                  description:
+                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                  enum: ['unknown_issue_with_acs_access_group'],
+                  type: 'string',
+                },
+              },
+              required: ['created_at', 'message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
           workspace_id: {
             description:
               'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
@@ -262,6 +290,7 @@ export default {
           'external_type',
           'external_type_display_name',
           'created_at',
+          'warnings',
           'is_managed',
         ],
         type: 'object',
@@ -12468,6 +12497,36 @@ export default {
                           description: 'Name of the access group.',
                           type: 'string',
                         },
+                        warnings: {
+                          description:
+                            'Warnings associated with the `acs_access_group`.',
+                          items: {
+                            description:
+                              'Warning associated with the `acs_access_group`.',
+                            properties: {
+                              created_at: {
+                                description:
+                                  'Date and time at which Seam created the warning.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              message: {
+                                description:
+                                  'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                type: 'string',
+                              },
+                              warning_code: {
+                                description:
+                                  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                enum: ['unknown_issue_with_acs_access_group'],
+                                type: 'string',
+                              },
+                            },
+                            required: ['created_at', 'message', 'warning_code'],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
                         workspace_id: {
                           description:
                             'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
@@ -12486,6 +12545,7 @@ export default {
                         'external_type',
                         'external_type_display_name',
                         'created_at',
+                        'warnings',
                         'is_managed',
                       ],
                       type: 'object',
@@ -12613,6 +12673,40 @@ export default {
                             description: 'Name of the access group.',
                             type: 'string',
                           },
+                          warnings: {
+                            description:
+                              'Warnings associated with the `acs_access_group`.',
+                            items: {
+                              description:
+                                'Warning associated with the `acs_access_group`.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['unknown_issue_with_acs_access_group'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            type: 'array',
+                          },
                           workspace_id: {
                             description:
                               'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
@@ -12631,6 +12725,7 @@ export default {
                           'external_type',
                           'external_type_display_name',
                           'created_at',
+                          'warnings',
                           'is_managed',
                         ],
                         type: 'object',

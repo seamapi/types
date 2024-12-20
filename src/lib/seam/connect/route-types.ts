@@ -4572,6 +4572,15 @@ export interface Routes {
         external_type_display_name: string
         /** Date and time at which the access group was created. */
         created_at: string
+        /** Warnings associated with the `acs_access_group`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'unknown_issue_with_acs_access_group'
+        }>
         is_managed: true
       }
     }
@@ -4623,6 +4632,15 @@ export interface Routes {
         external_type_display_name: string
         /** Date and time at which the access group was created. */
         created_at: string
+        /** Warnings associated with the `acs_access_group`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'unknown_issue_with_acs_access_group'
+        }>
         is_managed: true
       }>
     }
@@ -4899,6 +4917,15 @@ export interface Routes {
         external_type_display_name: string
         /** Date and time at which the access group was created. */
         created_at: string
+        /** Warnings associated with the `acs_access_group`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'unknown_issue_with_acs_access_group'
+        }>
         is_managed: false
       }
     }
@@ -4950,6 +4977,15 @@ export interface Routes {
         external_type_display_name: string
         /** Date and time at which the access group was created. */
         created_at: string
+        /** Warnings associated with the `acs_access_group`. */
+        warnings: Array<{
+          /** Date and time at which Seam created the warning. */
+          created_at: string
+          /** Detailed description of the warning. Provides insights into the issue and potentially how to rectify it. */
+          message: string
+          /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+          warning_code: 'unknown_issue_with_acs_access_group'
+        }>
         is_managed: false
       }>
     }
