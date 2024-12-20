@@ -12294,10 +12294,17 @@ export interface Routes {
           is_connected_account_error: true
           error_code: string
         }>
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              warning_code: string
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_connected_account'
+            }
+        >
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
@@ -12335,10 +12342,17 @@ export interface Routes {
           is_connected_account_error: true
           error_code: string
         }>
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              warning_code: string
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_connected_account'
+            }
+        >
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }>
@@ -12375,10 +12389,17 @@ export interface Routes {
           is_connected_account_error: true
           error_code: string
         }>
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              warning_code: string
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'unknown_issue_with_connected_account'
+            }
+        >
         custom_metadata: Record<string, string | boolean>
         automatically_manage_new_devices: boolean
       }
