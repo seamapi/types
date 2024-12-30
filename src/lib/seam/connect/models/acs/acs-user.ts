@@ -215,13 +215,16 @@ const common_acs_user = z
     latest_desired_state_synced_with_provider_at: z
       .string()
       .datetime()
+      .nullable()
       .optional().describe(`
       ---
       undocumented: Only used internally.
       ---
       `),
-    is_latest_desired_state_synced_with_provider: z.boolean().optional()
-      .describe(`
+    is_latest_desired_state_synced_with_provider: z
+      .boolean()
+      .nullable()
+      .optional().describe(`
       ---
       undocumented: Only used internally.
       ---

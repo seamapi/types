@@ -220,11 +220,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -334,11 +334,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -495,11 +495,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -609,11 +609,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -1326,11 +1326,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -1440,11 +1440,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -1601,11 +1601,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -1715,11 +1715,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -2662,11 +2662,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -2776,11 +2776,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -2937,11 +2937,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -3051,11 +3051,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -3755,11 +3755,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -3869,11 +3869,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -4030,11 +4030,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -4144,11 +4144,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -4791,9 +4791,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -5141,9 +5145,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -5313,9 +5321,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -5446,9 +5458,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -5583,9 +5599,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -5729,9 +5749,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -5946,9 +5970,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -6071,9 +6099,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -6209,9 +6241,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -6338,9 +6374,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -6566,11 +6606,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -6680,11 +6720,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -6841,11 +6881,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -6955,11 +6995,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -7557,11 +7597,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -7671,11 +7711,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -7832,11 +7872,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -7946,11 +7986,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -8666,9 +8706,13 @@ export interface Routes {
         /** Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials). */
         is_multi_phone_sync_credential?: boolean | undefined
         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /** Visionline-specific metadata for the credential. */
         visionline_metadata?:
           | {
@@ -9291,9 +9335,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -9427,9 +9475,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -9558,9 +9610,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -9809,9 +9865,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -9935,9 +9995,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -10248,11 +10312,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -10362,11 +10426,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -10523,11 +10587,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -10637,11 +10701,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -11195,11 +11259,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -11309,11 +11373,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -11470,11 +11534,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -11584,11 +11648,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -20530,11 +20594,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -20644,11 +20708,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -20805,11 +20869,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -20919,11 +20983,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -21478,11 +21542,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -21592,11 +21656,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -21753,11 +21817,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -21867,11 +21931,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -24053,11 +24117,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -24167,11 +24231,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -24328,11 +24392,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -24442,11 +24506,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -25011,11 +25075,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -25125,11 +25189,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -25286,11 +25350,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -25400,11 +25464,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -26008,11 +26072,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -26122,11 +26186,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -26283,11 +26347,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -26397,11 +26461,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -27164,11 +27228,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -27278,11 +27342,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -27439,11 +27503,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -27553,11 +27617,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -28118,11 +28182,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -28232,11 +28296,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -28393,11 +28457,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -28507,11 +28571,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -29834,11 +29898,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -29948,11 +30012,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -30109,11 +30173,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -30223,11 +30287,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -30792,11 +30856,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -30906,11 +30970,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -31067,11 +31131,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -31181,11 +31245,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -33330,11 +33394,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -33444,11 +33508,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -33605,11 +33669,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -33719,11 +33783,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -34455,11 +34519,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -34569,11 +34633,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -34730,11 +34794,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -34844,11 +34908,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -35436,11 +35500,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -35550,11 +35614,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -35711,11 +35775,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -35825,11 +35889,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -38105,9 +38169,13 @@ export interface Routes {
         /** Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`). */
         user_identity_phone_number?: (string | null) | undefined
         /**  */
-        latest_desired_state_synced_with_provider_at?: string | undefined
+        latest_desired_state_synced_with_provider_at?:
+          | (string | null)
+          | undefined
         /**  */
-        is_latest_desired_state_synced_with_provider?: boolean | undefined
+        is_latest_desired_state_synced_with_provider?:
+          | (boolean | null)
+          | undefined
         /** Warnings associated with the `acs_user`. */
         warnings: Array<
           | {
@@ -38565,11 +38633,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -38679,11 +38747,11 @@ export interface Routes {
                         is_multi_phone_sync_credential?: boolean | undefined
                         /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                         is_latest_desired_state_synced_with_provider?:
-                          | boolean
+                          | (boolean | null)
                           | undefined
                         /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                         latest_desired_state_synced_with_provider_at?:
-                          | string
+                          | (string | null)
                           | undefined
                         /** Visionline-specific metadata for the credential. */
                         visionline_metadata?:
@@ -38840,11 +38908,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
@@ -38954,11 +39022,11 @@ export interface Routes {
                   is_multi_phone_sync_credential?: boolean | undefined
                   /** Indicates whether the latest state of the credential has been synced from Seam to the provider. */
                   is_latest_desired_state_synced_with_provider?:
-                    | boolean
+                    | (boolean | null)
                     | undefined
                   /** Date and time at which the state of the credential was most recently synced from Seam to the provider. */
                   latest_desired_state_synced_with_provider_at?:
-                    | string
+                    | (string | null)
                     | undefined
                   /** Visionline-specific metadata for the credential. */
                   visionline_metadata?:
