@@ -5205,6 +5205,13 @@ export interface Routes {
             override_guest_acs_entrance_ids?: string[] | undefined
           }
         | undefined
+      /** Salto Space-specific metadata for the new credential. */
+      salto_space_metadata?:
+        | {
+            assign_new_key?: boolean | undefined
+            update_current_key?: boolean | undefined
+          }
+        | undefined
       /** Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
       starts_at?: string | undefined
       /** Date and time at which the validity of the new credential ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */

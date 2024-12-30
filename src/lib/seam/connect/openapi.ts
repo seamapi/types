@@ -13070,6 +13070,15 @@ export default {
                       'Indicates whether the new credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
                     type: 'boolean',
                   },
+                  salto_space_metadata: {
+                    description:
+                      'Salto Space-specific metadata for the new credential.',
+                    properties: {
+                      assign_new_key: { type: 'boolean' },
+                      update_current_key: { type: 'boolean' },
+                    },
+                    type: 'object',
+                  },
                   starts_at: {
                     description:
                       'Date and time at which the validity of the new credential starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
