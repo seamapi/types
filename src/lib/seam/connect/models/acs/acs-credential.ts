@@ -195,6 +195,7 @@ const common_acs_credential = z.object({
     ),
   is_latest_desired_state_synced_with_provider: z
     .boolean()
+    .nullable()
     .optional()
     .describe(
       'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
@@ -202,6 +203,7 @@ const common_acs_credential = z.object({
   latest_desired_state_synced_with_provider_at: z
     .string()
     .datetime()
+    .nullable()
     .optional()
     .describe(
       'Date and time at which the state of the credential was most recently synced from Seam to the provider.',

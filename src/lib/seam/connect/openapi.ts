@@ -377,6 +377,7 @@ export default {
           is_latest_desired_state_synced_with_provider: {
             description:
               'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+            nullable: true,
             type: 'boolean',
           },
           is_managed: { enum: [true], type: 'boolean' },
@@ -395,6 +396,7 @@ export default {
             description:
               'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
             format: 'date-time',
+            nullable: true,
             type: 'string',
           },
           parent_acs_credential_id: {
@@ -1364,6 +1366,7 @@ export default {
           },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
           is_latest_desired_state_synced_with_provider: {
+            nullable: true,
             type: 'boolean',
             'x-undocumented': 'Only used internally.',
           },
@@ -1375,6 +1378,7 @@ export default {
           },
           latest_desired_state_synced_with_provider_at: {
             format: 'date-time',
+            nullable: true,
             type: 'string',
             'x-undocumented': 'Only used internally.',
           },
@@ -1828,6 +1832,7 @@ export default {
                           is_latest_desired_state_synced_with_provider: {
                             description:
                               'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                            nullable: true,
                             type: 'boolean',
                           },
                           is_managed: { enum: [true], type: 'boolean' },
@@ -1850,6 +1855,7 @@ export default {
                             description:
                               'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
+                            nullable: true,
                             type: 'string',
                           },
                           parent_acs_credential_id: {
@@ -2157,6 +2163,7 @@ export default {
                           is_latest_desired_state_synced_with_provider: {
                             description:
                               'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                            nullable: true,
                             type: 'boolean',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
@@ -2179,6 +2186,7 @@ export default {
                             description:
                               'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
+                            nullable: true,
                             type: 'string',
                           },
                           parent_acs_credential_id: {
@@ -2619,6 +2627,7 @@ export default {
                       is_latest_desired_state_synced_with_provider: {
                         description:
                           'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                        nullable: true,
                         type: 'boolean',
                       },
                       is_managed: { enum: [true], type: 'boolean' },
@@ -2641,6 +2650,7 @@ export default {
                         description:
                           'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                         format: 'date-time',
+                        nullable: true,
                         type: 'string',
                       },
                       parent_acs_credential_id: {
@@ -2945,6 +2955,7 @@ export default {
                       is_latest_desired_state_synced_with_provider: {
                         description:
                           'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                        nullable: true,
                         type: 'boolean',
                       },
                       is_managed: { enum: [false], type: 'boolean' },
@@ -2967,6 +2978,7 @@ export default {
                         description:
                           'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                         format: 'date-time',
+                        nullable: true,
                         type: 'string',
                       },
                       parent_acs_credential_id: {
@@ -13781,6 +13793,7 @@ export default {
                         is_latest_desired_state_synced_with_provider: {
                           description:
                             'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                          nullable: true,
                           type: 'boolean',
                         },
                         is_managed: { enum: [false], type: 'boolean' },
@@ -13803,6 +13816,7 @@ export default {
                           description:
                             'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                         },
                         parent_acs_credential_id: {
@@ -14211,6 +14225,7 @@ export default {
                           is_latest_desired_state_synced_with_provider: {
                             description:
                               'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+                            nullable: true,
                             type: 'boolean',
                           },
                           is_managed: { enum: [false], type: 'boolean' },
@@ -14233,6 +14248,7 @@ export default {
                             description:
                               'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
                             format: 'date-time',
+                            nullable: true,
                             type: 'string',
                           },
                           parent_acs_credential_id: {
@@ -16400,6 +16416,7 @@ export default {
                         },
                         hid_acs_system_id: { format: 'uuid', type: 'string' },
                         is_latest_desired_state_synced_with_provider: {
+                          nullable: true,
                           type: 'boolean',
                           'x-undocumented': 'Only used internally.',
                         },
@@ -16411,6 +16428,7 @@ export default {
                         },
                         latest_desired_state_synced_with_provider_at: {
                           format: 'date-time',
+                          nullable: true,
                           type: 'string',
                           'x-undocumented': 'Only used internally.',
                         },
@@ -16795,6 +16813,7 @@ export default {
                           },
                           hid_acs_system_id: { format: 'uuid', type: 'string' },
                           is_latest_desired_state_synced_with_provider: {
+                            nullable: true,
                             type: 'boolean',
                             'x-undocumented': 'Only used internally.',
                           },
@@ -16806,6 +16825,7 @@ export default {
                           },
                           latest_desired_state_synced_with_provider_at: {
                             format: 'date-time',
+                            nullable: true,
                             type: 'string',
                             'x-undocumented': 'Only used internally.',
                           },
