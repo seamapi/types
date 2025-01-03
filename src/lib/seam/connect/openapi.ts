@@ -6930,11 +6930,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -6980,11 +6978,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7030,11 +7026,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7081,11 +7075,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7133,11 +7125,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7185,11 +7175,9 @@ export default {
               },
               acs_user_id: { format: 'uuid', type: 'string' },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7241,11 +7229,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
@@ -7297,11 +7283,9 @@ export default {
                 'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                deprecated: true,
                 description: 'ID of the connected account.',
                 format: 'uuid',
                 type: 'string',
-                'x-deprecated': 'Will be removed.',
                 'x-title': 'Connected Account ID',
               },
               created_at: {
