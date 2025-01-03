@@ -113,7 +113,6 @@ export const PROVIDER_CATEGORY_MAP = {
     'latch',
     'salto_ks',
     'assa_abloy_vostio',
-    'assa_abloy_vostio_credential_service',
     'salto_space',
     'assa_abloy_vostio',
   ],
