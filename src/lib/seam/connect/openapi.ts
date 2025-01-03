@@ -5319,6 +5319,15 @@ export default {
                           errors: {
                             description:
                               'Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+                            items: {
+                              properties: {
+                                error_code: { type: 'string' },
+                                message: { type: 'string' },
+                              },
+                              required: ['error_code', 'message'],
+                              type: 'object',
+                            },
+                            type: 'array',
                           },
                           max_override_period_minutes: {
                             description:
@@ -5357,6 +5366,7 @@ export default {
                           'starts_at',
                           'ends_at',
                           'created_at',
+                          'errors',
                         ],
                         type: 'object',
                       },
@@ -10161,6 +10171,15 @@ export default {
           errors: {
             description:
               'Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
           },
           max_override_period_minutes: {
             description:
@@ -10199,6 +10218,7 @@ export default {
           'starts_at',
           'ends_at',
           'created_at',
+          'errors',
         ],
         type: 'object',
       },
