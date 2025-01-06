@@ -6404,9 +6404,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the acs_encoder to use for the encoding. */
+      /** ID of the `acs_encoder` to use to encode the `acs_credential`. */
       acs_encoder_id: string
-      /** ID of the acs_credential to encode on a physical card. */
+      /** ID of the `acs_credential` to encode onto a card. */
       acs_credential_id: string
     }
     formData: {}
@@ -7355,15 +7355,21 @@ export interface Routes {
     jsonBody: {}
     commonParams:
       | {
+          /** ID of the `acs_system` for which you want to retrieve all `acs_encoder`s. */
           acs_system_id: string
+          /** Number of `acs_encoders` to return. */
           limit?: number
         }
       | {
+          /** IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s. */
           acs_system_ids: string[]
+          /** Number of `acs_encoders` to return. */
           limit?: number
         }
       | {
+          /** IDs of the `acs_encoder`s that you want to retrieve. */
           acs_encoder_ids: string[]
+          /** Number of `acs_encoders` to return. */
           limit?: number
         }
     formData: {}
@@ -7397,7 +7403,7 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
-      /** ID of the acs_encoder to use for the scan. */
+      /** ID of the `acs_encoder` to use for the scan. */
       acs_encoder_id: string
     }
     formData: {}
@@ -8345,12 +8351,17 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | {
+          /** ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`. */
           acs_encoder_id: string
+          /** Code of the error to simulate. */
           error_code?: 'no_credential_on_encoder'
         }
       | {
+          /** ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`. */
           acs_encoder_id: string
+          /** Code of the error to simulate. */
           error_code: 'uncategorized_error' | 'action_attempt_expired'
+          /** ID of the `acs_credential` that will fail to be encoded onto a card in the next request. */
           acs_credential_id?: string | undefined
         }
     commonParams: {}
@@ -8362,7 +8373,9 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`. */
       acs_encoder_id: string
+      /** Scenario to simulate. */
       scenario?: 'credential_is_issued'
     }
     commonParams: {}
@@ -8375,10 +8388,12 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | {
+          /** ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request. */
           acs_encoder_id: string
           error_code?: 'no_credential_on_encoder'
         }
       | {
+          /** ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request. */
           acs_encoder_id: string
           error_code: 'uncategorized_error' | 'action_attempt_expired'
           acs_credential_id_on_seam?: string | undefined
@@ -8393,18 +8408,25 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | {
+          /** ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`. */
           acs_encoder_id: string
+          /** Scenario to simulate. */
           scenario?:
             | 'credential_exists_on_seam'
             | 'credential_on_encoder_needs_update'
+          /** ID of the Seam `acs_credential` that matches the `acs_credential` on the encoder in this simulation. */
           acs_credential_id_on_seam?: string | undefined
         }
       | {
+          /** ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`. */
           acs_encoder_id: string
+          /** Scenario to simulate. */
           scenario: 'credential_does_not_exist_on_seam'
         }
       | {
+          /** ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`. */
           acs_encoder_id: string
+          /** Scenario to simulate. */
           scenario: 'credential_on_encoder_is_empty'
         }
     commonParams: {}
