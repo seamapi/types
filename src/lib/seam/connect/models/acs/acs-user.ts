@@ -127,6 +127,41 @@ export const acs_users_warnings = z
 
 export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>
 
+const common_acs_user_modification = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which this modification was requested.'),
+  message: z.string().describe('Detailed description of the modification.'),
+})
+
+const acs_user_suspension_state_modification = common_acs_user_modification
+  .extend({
+    modification_code: z.literal('suspension_state'),
+  })
+  .describe(
+    "Indicates that the acs_user's is_suspended state was updated on Seam and will soon be applied on the user on the ACS System",
+  )
+
+const acs_user_profile_modification = common_acs_user_modification
+  .extend({
+    modification_code: z.literal('profile'),
+  })
+  .describe(
+    "Indicates that the acs_user's profile details (name, email, phone) were updated on Seam and will soon be applied on the user on the ACS System",
+  )
+
+export const acs_user_unapplied_modification_map = z.object({
+  suspension_state: acs_user_suspension_state_modification
+    .optional()
+    .nullable(),
+  profile: acs_user_profile_modification.optional().nullable(),
+})
+
+export type AcsUserUnappliedModificationMap = z.infer<
+  typeof acs_user_unapplied_modification_map
+>
+
 const user_fields = z.object({
   full_name: z.string().optional().describe('Full name of the `acs_user`.'),
   email: z.string().email().optional().describe(`
