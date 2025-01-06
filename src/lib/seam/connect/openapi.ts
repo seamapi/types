@@ -14633,6 +14633,8 @@ export default {
     },
     '/acs/encoders/encode_credential': {
       post: {
+        description:
+          'Encodes an existing [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) onto a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersEncodeCredentialPost',
         requestBody: {
           content: {
@@ -14641,13 +14643,13 @@ export default {
                 properties: {
                   acs_credential_id: {
                     description:
-                      'ID of the acs_credential to encode on a physical card.',
+                      'ID of the `acs_credential` to encode onto a card.',
                     format: 'uuid',
                     type: 'string',
                   },
                   acs_encoder_id: {
                     description:
-                      'ID of the acs_encoder to use for the encoding.',
+                      'ID of the `acs_encoder` to use to encode the `acs_credential`.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -14690,11 +14692,13 @@ export default {
         'x-fern-sdk-method-name': 'encode_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-undocumented': 'Encoders are in alpha.',
+        'x-title': 'Encode a Credential',
       },
     },
     '/acs/encoders/list': {
       post: {
+        description:
+          'Returns a list of all [encoders](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersListPost',
         requestBody: {
           content: {
@@ -14703,8 +14707,18 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      acs_system_id: { format: 'uuid', type: 'string' },
-                      limit: { default: 500, format: 'float', type: 'number' },
+                      acs_system_id: {
+                        description:
+                          'ID of the `acs_system` for which you want to retrieve all `acs_encoder`s.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      limit: {
+                        default: 500,
+                        description: 'Number of `acs_encoders` to return.',
+                        format: 'float',
+                        type: 'number',
+                      },
                     },
                     required: ['acs_system_id'],
                     type: 'object',
@@ -14712,10 +14726,17 @@ export default {
                   {
                     properties: {
                       acs_system_ids: {
+                        description:
+                          'IDs of the `acs_system`s for which you want to retrieve all `acs_encoder`s.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
-                      limit: { default: 500, format: 'float', type: 'number' },
+                      limit: {
+                        default: 500,
+                        description: 'Number of `acs_encoders` to return.',
+                        format: 'float',
+                        type: 'number',
+                      },
                     },
                     required: ['acs_system_ids'],
                     type: 'object',
@@ -14723,10 +14744,17 @@ export default {
                   {
                     properties: {
                       acs_encoder_ids: {
+                        description:
+                          'IDs of the `acs_encoder`s that you want to retrieve.',
                         items: { format: 'uuid', type: 'string' },
                         type: 'array',
                       },
-                      limit: { default: 500, format: 'float', type: 'number' },
+                      limit: {
+                        default: 500,
+                        description: 'Number of `acs_encoders` to return.',
+                        format: 'float',
+                        type: 'number',
+                      },
                     },
                     required: ['acs_encoder_ids'],
                     type: 'object',
@@ -14838,11 +14866,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'acs_encoders',
         'x-response-key': 'acs_encoders',
-        'x-undocumented': 'Encoders are in alpha.',
+        'x-title': 'List Encoders',
       },
     },
     '/acs/encoders/scan_credential': {
       post: {
+        description:
+          'Scans an encoded [acs_credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) from a plastic card placed on the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
         operationId: 'acsEncodersScanCredentialPost',
         requestBody: {
           content: {
@@ -14850,7 +14880,7 @@ export default {
               schema: {
                 properties: {
                   acs_encoder_id: {
-                    description: 'ID of the acs_encoder to use for the scan.',
+                    description: 'ID of the `acs_encoder` to use for the scan.',
                     format: 'uuid',
                     type: 'string',
                   },
@@ -14893,11 +14923,13 @@ export default {
         'x-fern-sdk-method-name': 'scan_credential',
         'x-fern-sdk-return-value': 'action_attempt',
         'x-response-key': 'action_attempt',
-        'x-undocumented': 'Encoders are in alpha.',
+        'x-title': 'Scan a Credential',
       },
     },
     '/acs/encoders/simulate/next_credential_encode_will_fail': {
       post: {
+        description:
+          'Simulates that the next attempt to encode a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialEncodeWillFailPost',
         requestBody: {
           content: {
@@ -14907,9 +14939,15 @@ export default {
                   {
                     additionalProperties: false,
                     properties: {
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       error_code: {
                         default: 'no_credential_on_encoder',
+                        description: 'Code of the error to simulate.',
                         enum: ['no_credential_on_encoder'],
                         type: 'string',
                       },
@@ -14920,9 +14958,20 @@ export default {
                   {
                     additionalProperties: false,
                     properties: {
-                      acs_credential_id: { format: 'uuid', type: 'string' },
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_credential_id: {
+                        description:
+                          'ID of the `acs_credential` that will fail to be encoded onto a card in the next request.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       error_code: {
+                        description: 'Code of the error to simulate.',
                         enum: ['uncategorized_error', 'action_attempt_expired'],
                         type: 'string',
                       },
@@ -14961,11 +15010,13 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
         'x-fern-sdk-method-name': 'next_credential_encode_will_fail',
         'x-response-key': null,
-        'x-undocumented': 'Encoder simulations are in alpha.',
+        'x-title': 'Simulate that the Next Credential Encoding Will Fail',
       },
     },
     '/acs/encoders/simulate/next_credential_encode_will_succeed': {
       post: {
+        description:
+          'Simulates that the next attempt to encode a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialEncodeWillSucceedPost',
         requestBody: {
           content: {
@@ -14973,9 +15024,15 @@ export default {
               schema: {
                 additionalProperties: false,
                 properties: {
-                  acs_encoder_id: { format: 'uuid', type: 'string' },
+                  acs_encoder_id: {
+                    description:
+                      'ID of the `acs_encoder` that will be used in the next request to encode the `acs_credential`.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                   scenario: {
                     default: 'credential_is_issued',
+                    description: 'Scenario to simulate.',
                     enum: ['credential_is_issued'],
                     type: 'string',
                   },
@@ -15012,11 +15069,13 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
         'x-fern-sdk-method-name': 'next_credential_encode_will_succeed',
         'x-response-key': null,
-        'x-undocumented': 'Encoder simulations are in alpha.',
+        'x-title': 'Simulate that the Next Credential Encoding Will Succeed',
       },
     },
     '/acs/encoders/simulate/next_credential_scan_will_fail': {
       post: {
+        description:
+          'Simulates that the next attempt to scan a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) will fail. You can only perform this action within a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialScanWillFailPost',
         requestBody: {
           content: {
@@ -15026,7 +15085,12 @@ export default {
                   {
                     additionalProperties: false,
                     properties: {
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       error_code: {
                         default: 'no_credential_on_encoder',
                         enum: ['no_credential_on_encoder'],
@@ -15043,7 +15107,12 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will fail to scan the `acs_credential` in the next request.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       error_code: {
                         enum: ['uncategorized_error', 'action_attempt_expired'],
                         type: 'string',
@@ -15083,11 +15152,13 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
         'x-fern-sdk-method-name': 'next_credential_scan_will_fail',
         'x-response-key': null,
-        'x-undocumented': 'Encoder simulations are in alpha.',
+        'x-title': 'Simulate that the Next Credential Scan Will Fail',
       },
     },
     '/acs/encoders/simulate/next_credential_scan_will_succeed': {
       post: {
+        description:
+          'Simulates that the next attempt to scan a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) using the specified [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) will succeed. You can only perform this action within a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces).',
         operationId: 'acsEncodersSimulateNextCredentialScanWillSucceedPost',
         requestBody: {
           content: {
@@ -15098,12 +15169,20 @@ export default {
                     additionalProperties: false,
                     properties: {
                       acs_credential_id_on_seam: {
+                        description:
+                          'ID of the Seam `acs_credential` that matches the `acs_credential` on the encoder in this simulation.',
                         format: 'uuid',
                         type: 'string',
                       },
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       scenario: {
                         default: 'credential_exists_on_seam',
+                        description: 'Scenario to simulate.',
                         enum: [
                           'credential_exists_on_seam',
                           'credential_on_encoder_needs_update',
@@ -15117,8 +15196,14 @@ export default {
                   {
                     additionalProperties: false,
                     properties: {
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       scenario: {
+                        description: 'Scenario to simulate.',
                         enum: ['credential_does_not_exist_on_seam'],
                         type: 'string',
                       },
@@ -15129,8 +15214,14 @@ export default {
                   {
                     additionalProperties: false,
                     properties: {
-                      acs_encoder_id: { format: 'uuid', type: 'string' },
+                      acs_encoder_id: {
+                        description:
+                          'ID of the `acs_encoder` that will be used in the next request to scan the `acs_credential`.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       scenario: {
+                        description: 'Scenario to simulate.',
                         enum: ['credential_on_encoder_is_empty'],
                         type: 'string',
                       },
@@ -15169,7 +15260,7 @@ export default {
         'x-fern-sdk-group-name': ['acs', 'encoders', 'simulate'],
         'x-fern-sdk-method-name': 'next_credential_scan_will_succeed',
         'x-response-key': null,
-        'x-undocumented': 'Encoder simulations are in alpha.',
+        'x-title': 'Simulate that the Next Credential Scan Will Succeed',
       },
     },
     '/acs/entrances/get': {
