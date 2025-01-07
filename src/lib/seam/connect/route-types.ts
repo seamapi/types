@@ -16978,6 +16978,29 @@ export interface Routes {
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
+                /** ID of the device. */
+                device_id: string
+                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                connected_account_id: string
+                event_type: 'thermostat.temperature_reached_set_point'
+                /** Temperature, in °C, reported by the thermostat. */
+                temperature_celsius: number
+                /** Temperature, in °F, reported by the thermostat. */
+                temperature_fahrenheit: number
+                /** Desired temperature, in °C, set by the thermostat's cooling or heating set point. */
+                desired_temperature_celsius?: number | undefined
+                /** Desired temperature, in °F, set by the thermostat's cooling or heating set point. */
+                desired_temperature_fahrenheit?: number | undefined
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
                 /** ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut). */
                 enrollment_automation_id: string
                 event_type: 'enrollment_automation.deleted'
@@ -17088,6 +17111,7 @@ export interface Routes {
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
+            | 'thermostat.temperature_reached_set_point'
           )
         | undefined
       event_types?:
@@ -17163,6 +17187,7 @@ export interface Routes {
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
+            | 'thermostat.temperature_reached_set_point'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -18340,6 +18365,29 @@ export interface Routes {
             lower_limit_celsius: number | null
             /** Lower temperature limit, in °F, defined by the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds). */
             lower_limit_fahrenheit: number | null
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the device. */
+            device_id: string
+            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            connected_account_id: string
+            event_type: 'thermostat.temperature_reached_set_point'
+            /** Temperature, in °C, reported by the thermostat. */
+            temperature_celsius: number
+            /** Temperature, in °F, reported by the thermostat. */
+            temperature_fahrenheit: number
+            /** Desired temperature, in °C, set by the thermostat's cooling or heating set point. */
+            desired_temperature_celsius?: number | undefined
+            /** Desired temperature, in °F, set by the thermostat's cooling or heating set point. */
+            desired_temperature_fahrenheit?: number | undefined
           }
         | {
             /** ID of the event. */
