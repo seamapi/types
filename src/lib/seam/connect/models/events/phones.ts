@@ -3,12 +3,12 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const phone_event = common_event.extend({
-  device_id: z.string().uuid().describe(`
-    ---
-    title: Device ID
-    ---
-    ID of the device.
-  `),
+  device_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+    ),
 })
 
 export const phone_deactivated_event = phone_event

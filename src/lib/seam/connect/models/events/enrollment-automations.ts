@@ -3,19 +3,21 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const enrollment_automation_event = common_event.extend({
-  enrollment_automation_id: z.string().uuid().describe(`
-    ---
-    title: Enrollment Automation ID
-    ---
-    ID of the enrollment automation.
-  `),
+  enrollment_automation_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).',
+    ),
 })
 
 export const enrollment_automation_deleted_event = enrollment_automation_event
   .extend({
     event_type: z.literal('enrollment_automation.deleted'),
   })
-  .describe('An enrollment automation was deleted.')
+  .describe(
+    'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
+  )
 
 export type EnrollmentAutomationDeletedEvent = z.infer<
   typeof enrollment_automation_deleted_event

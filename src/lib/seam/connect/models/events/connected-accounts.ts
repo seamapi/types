@@ -3,20 +3,20 @@ import { z } from 'zod'
 import { common_event } from './common.js'
 
 const connected_account_event = common_event.extend({
-  connected_account_id: z.string().uuid().describe(`
-    ---
-    title: Connected Account ID
-    ---
-    ID of the connected account.
-  `),
+  connected_account_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+    ),
 })
 
-const connect_webview_id = z.string().uuid().describe(`
-  ---
-  title: Connect Webview ID
-  ---
-  ID of the connect webview.
-`)
+const connect_webview_id = z
+  .string()
+  .uuid()
+  .describe(
+    'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
+  )
 
 export const connected_account_connected_event = connected_account_event
   .extend({
@@ -24,7 +24,7 @@ export const connected_account_connected_event = connected_account_event
     connect_webview_id,
   })
   .describe(
-    'A connected account was connected for the first time, was reconnected after being disconnected.',
+    'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.',
   )
 
 export type ConnectedAccountConnectedEvent = z.infer<
@@ -36,7 +36,9 @@ export const connected_account_created_event = connected_account_event
     event_type: z.literal('connected_account.created'),
     connect_webview_id,
   })
-  .describe('A connected account was created.')
+  .describe(
+    'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was created.',
+  )
 
 export type ConnectedAccountCreatedEvent = z.infer<
   typeof connected_account_created_event
@@ -50,7 +52,7 @@ export const connected_account_successful_login_event =
     ---
     deprecated: Use \`connect_webview.login_succeeded\`.
     ---
-    A connected account had a successful connect webview login.`)
+    A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).`)
 
 /** @deprecated Rely on ConnectWebviewLoginSucceededEvent instead */
 export type ConnectedAccountSuccessfulLoginEvent = z.infer<
@@ -61,7 +63,9 @@ export const connected_account_disconnected_event = connected_account_event
   .extend({
     event_type: z.literal('connected_account.disconnected'),
   })
-  .describe('A connected account was disconnected.')
+  .describe(
+    'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.',
+  )
 
 export type ConnectedAccountDisconnectedEvent = z.infer<
   typeof connected_account_disconnected_event
@@ -73,7 +77,7 @@ export const connected_account_completed_first_sync_event =
       event_type: z.literal('connected_account.completed_first_sync'),
     })
     .describe(
-      'A connected account completed the first sync with Seam and devices are now available.',
+      'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
     )
 
 export type ConnectedAccountCompletedFirstSyncEvent = z.infer<
@@ -84,7 +88,9 @@ export const connected_account_deleted_event = connected_account_event
   .extend({
     event_type: z.literal('connected_account.deleted'),
   })
-  .describe('A connected account was deleted.')
+  .describe(
+    'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
+  )
 
 export type ConnectedAccountDeletedEvent = z.infer<
   typeof connected_account_deleted_event
@@ -98,7 +104,7 @@ export const connected_account_completed_first_sync_after_reconnection_event =
       ),
     })
     .describe(
-      'A connected account completed the first sync after reconnection with Seam and devices are now available.',
+      'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
     )
 
 export type ConnectedAccountCompletedFirstSyncAfterReconnectionEvent = z.infer<
