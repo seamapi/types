@@ -11,6 +11,9 @@ export const common_event = z.object({
   created_at: z
     .string()
     .datetime()
-    .describe('Time at which the event was created.'),
-  occurred_at: z.string().datetime().describe('Time when the event occurred.'),
+    .describe('Date and time at which the event was created.'),
+  occurred_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which the event occurred.'),
 })
