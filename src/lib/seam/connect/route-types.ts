@@ -16222,6 +16222,22 @@ export interface Routes {
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
+                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                connected_account_id?: string | undefined
+                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                acs_system_id: string
+                acs_access_group_id: string
+                event_type: 'acs_access_group.deleted'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
                 /** ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens). */
                 client_session_id: string
                 event_type: 'client_session.deleted'
@@ -17096,6 +17112,7 @@ export interface Routes {
             | 'acs_system.added'
             | 'acs_system.connected'
             | 'acs_system.disconnected'
+            | 'acs_access_group.deleted'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
@@ -17172,6 +17189,7 @@ export interface Routes {
             | 'acs_system.added'
             | 'acs_system.connected'
             | 'acs_system.disconnected'
+            | 'acs_access_group.deleted'
             | 'acs_user.deleted'
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
@@ -17619,6 +17637,22 @@ export interface Routes {
             /** ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners). */
             acs_encoder_id: string
             event_type: 'acs_encoder.removed'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            connected_account_id?: string | undefined
+            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            acs_system_id: string
+            acs_access_group_id: string
+            event_type: 'acs_access_group.deleted'
           }
         | {
             /** ID of the event. */
