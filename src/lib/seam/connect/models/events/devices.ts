@@ -561,6 +561,32 @@ export type TemperatureThresholdNoLongerExceededEvent = z.infer<
   typeof temperature_threshold_no_longer_exceeded_event
 >
 
+export const temperature_reached_set_point_event = device_event.extend({
+  event_type: z.literal('thermostat.temperature_reached_set_point'),
+  temperature_celsius: z
+    .number()
+    .describe('Temperature, in °C, reported by the thermostat.'),
+  temperature_fahrenheit: z
+    .number()
+    .describe('Temperature, in °F, reported by the thermostat.'),
+  desired_temperature_celsius: z
+    .number()
+    .optional()
+    .describe(
+      "Desired temperature, in °C, set by the thermostat's cooling or heating set point.",
+    ),
+  desired_temperature_fahrenheit: z
+    .number()
+    .optional()
+    .describe(
+      "Desired temperature, in °F, set by the thermostat's cooling or heating set point.",
+    ),
+})
+
+export type TemperatureReachedSetPointEvent = z.infer<
+  typeof temperature_reached_set_point_event
+>
+
 export const device_events = [
   device_connected_event,
   device_added_event,
@@ -592,4 +618,5 @@ export const device_events = [
   thermostat_manually_adjusted_event,
   temperature_threshold_exceeded_event,
   temperature_threshold_no_longer_exceeded_event,
+  temperature_reached_set_point_event,
 ] as const
