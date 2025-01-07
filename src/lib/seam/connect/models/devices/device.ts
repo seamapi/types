@@ -26,13 +26,128 @@ const common_device_error = z.object({
   is_device_error: z.literal(true),
 })
 
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
 const common_device_warning = z.object({
   message: z.string(),
 })
 
-export const device_error = common_device_error.extend({
-  error_code: z.string(),
-})
+const device_offline = common_device_error
+  .extend({
+    error_code: z.literal('device_offline').describe(error_code_description),
+  })
+  .describe('Device is offline')
+
+const device_removed = common_device_error
+  .extend({
+    error_code: z.literal('device_removed').describe(error_code_description),
+  })
+  .describe('Device has been removed')
+
+const account_disconnected = common_device_error
+  .extend({
+    error_code: z
+      .literal('account_disconnected')
+      .describe(error_code_description),
+  })
+  .describe('Account is disconnected')
+
+const hub_disconnected = common_device_error
+  .extend({
+    error_code: z.literal('hub_disconnected').describe(error_code_description),
+  })
+  .describe('Hub is disconnected')
+
+const device_disconnected = common_device_error
+  .extend({
+    error_code: z
+      .literal('device_disconnected')
+      .describe(error_code_description),
+  })
+  .describe('Device is disconnected')
+
+const empty_backup_access_code_pool = common_device_error
+  .extend({
+    error_code: z
+      .literal('empty_backup_access_code_pool')
+      .describe(error_code_description),
+  })
+  .describe('The backup access code pool is empty.')
+
+const august_lock_not_authorized = common_device_error
+  .extend({
+    error_code: z
+      .literal('august_lock_not_authorized')
+      .describe(error_code_description),
+  })
+  .describe('User is not authorized to use the August Lock.')
+
+const august_lock_missing_bridge = common_device_error
+  .extend({
+    error_code: z
+      .literal('august_lock_missing_bridge')
+      .describe(error_code_description),
+  })
+  .describe('Lock is not connected to the Seam Bridge.')
+
+const salto_site_user_limit_reached = common_device_error
+  .extend({
+    error_code: z
+      .literal('salto_site_user_limit_reached')
+      .describe(error_code_description),
+  })
+  .describe('Salto site user limit reached.')
+
+const ttlock_lock_not_paired_to_gateway = common_device_error
+  .extend({
+    error_code: z
+      .literal('ttlock_lock_not_paired_to_gateway')
+      .describe(error_code_description),
+  })
+  .describe('Lock is not paired with a Gateway.')
+
+const missing_device_credentials = common_device_error
+  .extend({
+    error_code: z
+      .literal('missing_device_credentials')
+      .describe(error_code_description),
+  })
+  .describe('Missing device credentials.')
+
+const auxiliary_heat_running = common_device_error
+  .extend({
+    error_code: z
+      .literal('auxiliary_heat_running')
+      .describe(error_code_description),
+  })
+  .describe('The auxiliary heat is running.')
+
+const subscription_required = common_device_error
+  .extend({
+    error_code: z
+      .literal('subscription_required')
+      .describe(error_code_description),
+  })
+  .describe('Subscription required to connect.')
+
+export const device_error = z
+  .union([
+    device_offline,
+    device_removed,
+    account_disconnected,
+    hub_disconnected,
+    device_disconnected,
+    empty_backup_access_code_pool,
+    august_lock_not_authorized,
+    august_lock_missing_bridge,
+    salto_site_user_limit_reached,
+    ttlock_lock_not_paired_to_gateway,
+    missing_device_credentials,
+    auxiliary_heat_running,
+    subscription_required,
+  ])
+  .describe('Error associated with the `device`.')
 
 export type DeviceError = z.infer<typeof device_error>
 

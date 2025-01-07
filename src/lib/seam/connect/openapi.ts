@@ -53,13 +53,205 @@ export default {
                   type: 'object',
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
+                  description: 'Error associated with the `device`.',
+                  oneOf: [
+                    {
+                      description: 'Device is offline',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_offline'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device has been removed',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_removed'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Account is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Hub is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hub_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The backup access code pool is empty.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['empty_backup_access_code_pool'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'User is not authorized to use the August Lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_not_authorized'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not connected to the Seam Bridge.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_bridge'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user limit reached.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_limit_reached'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not paired with a Gateway.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['ttlock_lock_not_paired_to_gateway'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Missing device credentials.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['missing_device_credentials'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The auxiliary heat is running.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['auxiliary_heat_running'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Subscription required to connect.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['subscription_required'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   properties: {
@@ -4415,13 +4607,205 @@ export default {
             items: {
               oneOf: [
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
+                  description: 'Error associated with the `device`.',
+                  oneOf: [
+                    {
+                      description: 'Device is offline',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_offline'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device has been removed',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_removed'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Account is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Hub is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hub_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The backup access code pool is empty.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['empty_backup_access_code_pool'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'User is not authorized to use the August Lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_not_authorized'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not connected to the Seam Bridge.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_bridge'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user limit reached.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_limit_reached'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not paired with a Gateway.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['ttlock_lock_not_paired_to_gateway'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Missing device credentials.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['missing_device_credentials'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The auxiliary heat is running.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['auxiliary_heat_running'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Subscription required to connect.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['subscription_required'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   properties: {
@@ -10019,13 +10403,205 @@ export default {
             items: {
               oneOf: [
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
+                  description: 'Error associated with the `device`.',
+                  oneOf: [
+                    {
+                      description: 'Device is offline',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_offline'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device has been removed',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_removed'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Account is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Hub is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hub_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The backup access code pool is empty.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['empty_backup_access_code_pool'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'User is not authorized to use the August Lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_not_authorized'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not connected to the Seam Bridge.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_bridge'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user limit reached.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_limit_reached'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not paired with a Gateway.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['ttlock_lock_not_paired_to_gateway'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Missing device credentials.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['missing_device_credentials'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The auxiliary heat is running.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['auxiliary_heat_running'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Subscription required to connect.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['subscription_required'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   properties: {
@@ -10266,13 +10842,205 @@ export default {
                   type: 'object',
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
+                  description: 'Error associated with the `device`.',
+                  oneOf: [
+                    {
+                      description: 'Device is offline',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_offline'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device has been removed',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_removed'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Account is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Hub is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hub_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The backup access code pool is empty.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['empty_backup_access_code_pool'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'User is not authorized to use the August Lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_not_authorized'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not connected to the Seam Bridge.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_bridge'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user limit reached.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_limit_reached'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not paired with a Gateway.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['ttlock_lock_not_paired_to_gateway'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Missing device credentials.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['missing_device_credentials'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The auxiliary heat is running.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['auxiliary_heat_running'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Subscription required to connect.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['subscription_required'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   properties: {
@@ -10446,13 +11214,205 @@ export default {
             items: {
               oneOf: [
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
+                  description: 'Error associated with the `device`.',
+                  oneOf: [
+                    {
+                      description: 'Device is offline',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_offline'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device has been removed',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_removed'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Account is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Hub is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hub_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Device is disconnected',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['device_disconnected'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The backup access code pool is empty.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['empty_backup_access_code_pool'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'User is not authorized to use the August Lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_not_authorized'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not connected to the Seam Bridge.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_bridge'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user limit reached.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_limit_reached'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock is not paired with a Gateway.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['ttlock_lock_not_paired_to_gateway'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Missing device credentials.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['missing_device_credentials'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'The auxiliary heat is running.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['auxiliary_heat_running'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Subscription required to connect.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['subscription_required'],
+                          type: 'string',
+                        },
+                        is_device_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: ['message', 'is_device_error', 'error_code'],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   properties: {
