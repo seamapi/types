@@ -5901,30 +5901,31 @@ export default {
         discriminator: { propertyName: 'event_type' },
         oneOf: [
           {
-            description: 'An access code was created.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was created.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -5933,7 +5934,7 @@ export default {
               },
               event_type: { enum: ['access_code.created'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -5957,30 +5958,31 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code was changed.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was changed.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -5989,7 +5991,7 @@ export default {
               },
               event_type: { enum: ['access_code.changed'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6013,35 +6015,36 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code was natively scheduled on a device.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was [scheduled natively](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes#native-scheduling) on a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               code: {
-                description: 'The code of the access code.',
+                description:
+                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 type: 'string',
-                'x-title': 'Access Code',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6053,7 +6056,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6078,35 +6081,36 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code was set on a device.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was set on a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               code: {
-                description: 'The code of the access code.',
+                description:
+                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 type: 'string',
-                'x-title': 'Access Code',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6118,7 +6122,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6143,30 +6147,31 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code was removed from a device.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was removed from a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6178,7 +6183,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6203,30 +6208,30 @@ export default {
           },
           {
             description:
-              'There was an unusually long delay in setting an access code on a device.',
+              'There was an unusually long delay in setting an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) on a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6238,7 +6243,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6262,30 +6267,31 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code failed to be set on a device.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) failed to be set on a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6297,7 +6303,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6321,36 +6327,37 @@ export default {
             type: 'object',
           },
           {
-            description: 'An access code was deleted.',
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was deleted.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               code: {
-                description: 'The code of the access code.',
+                description:
+                  'Code for the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 nullable: true,
                 type: 'string',
-                'x-title': 'Access Code',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6359,7 +6366,7 @@ export default {
               },
               event_type: { enum: ['access_code.deleted'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6385,30 +6392,30 @@ export default {
           },
           {
             description:
-              'There was an unusually long delay in removing an access code from a device.',
+              'There was an unusually long delay in removing an [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) from a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6420,184 +6427,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'access_code_id',
-              'device_id',
-              'connected_account_id',
-              'event_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'An access code failed to be removed from a device.',
-            properties: {
-              access_code_id: {
-                description: 'The ID of the access code.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Access Code ID',
-              },
-              connected_account_id: {
-                description: 'The ID of the connected account.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Connected Account ID',
-              },
-              created_at: {
-                description: 'Time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              device_id: {
-                description: 'The ID of the device.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Device ID',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['access_code.failed_to_remove_from_device'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Time when the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'access_code_id',
-              'device_id',
-              'connected_account_id',
-              'event_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'An access code was modified external to Seam.',
-            properties: {
-              access_code_id: {
-                description: 'The ID of the access code.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Access Code ID',
-              },
-              connected_account_id: {
-                description: 'The ID of the connected account.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Connected Account ID',
-              },
-              created_at: {
-                description: 'Time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              device_id: {
-                description: 'The ID of the device.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Device ID',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['access_code.modified_external_to_seam'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Time when the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'access_code_id',
-              'device_id',
-              'connected_account_id',
-              'event_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'An access code was deleted external to Seam.',
-            properties: {
-              access_code_id: {
-                description: 'The ID of the access code.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Access Code ID',
-              },
-              connected_account_id: {
-                description: 'The ID of the connected account.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Connected Account ID',
-              },
-              created_at: {
-                description: 'Time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              device_id: {
-                description: 'The ID of the device.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Device ID',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['access_code.deleted_external_to_seam'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6622,31 +6452,211 @@ export default {
           },
           {
             description:
-              'A backup access code was pulled from the backup access code pool and set on a device.',
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) failed to be removed from a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
-              backup_access_code_id: { type: 'string' },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.failed_to_remove_from_device'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was modified outside of Seam.',
+            properties: {
+              access_code_id: {
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.modified_external_to_seam'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'An [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) was deleted outside of Seam.',
+            properties: {
+              access_code_id: {
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['access_code.deleted_external_to_seam'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'access_code_id',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'A [backup access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/backup-access-codes) was pulled from the backup access code pool and set on a device.',
+            properties: {
+              access_code_id: {
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
+                format: 'uuid',
+                type: 'string',
+              },
+              backup_access_code_id: { type: 'string' },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
+                format: 'uuid',
+                type: 'string',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6658,7 +6668,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6684,30 +6694,30 @@ export default {
           },
           {
             description:
-              'An unmanaged access code was successfully converted to a managed access code.',
+              'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was converted successfully to a managed access code.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6719,7 +6729,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6744,30 +6754,30 @@ export default {
           },
           {
             description:
-              'An unmanaged access code failed to be converted to a managed access code.',
+              'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) failed to be converted to a managed access code.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6779,7 +6789,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6803,30 +6813,31 @@ export default {
             type: 'object',
           },
           {
-            description: 'An unmanaged access code was created on a device.',
+            description:
+              'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was created on a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6838,7 +6849,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6862,30 +6873,31 @@ export default {
             type: 'object',
           },
           {
-            description: 'An unmanaged access code was removed from a device.',
+            description:
+              'An [unmanaged access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes/migrating-existing-access-codes) was removed from a device.',
             properties: {
               access_code_id: {
-                description: 'The ID of the access code.',
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Access Code ID',
               },
               connected_account_id: {
-                description: 'The ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'The ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -6897,7 +6909,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6921,22 +6933,23 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS system was connected.',
+            description:
+              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was connected.',
             properties: {
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6947,7 +6960,7 @@ export default {
               },
               event_type: { enum: ['acs_system.connected'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6969,22 +6982,23 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS system was added.',
+            description:
+              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was added.',
             properties: {
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -6995,7 +7009,7 @@ export default {
               },
               event_type: { enum: ['acs_system.added'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7017,22 +7031,23 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS system was disconnected.',
+            description:
+              'An [ACS system](https://docs.seam.co/latest/capability-guides/access-systems) was disconnected.',
             properties: {
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7043,7 +7058,7 @@ export default {
               },
               event_type: { enum: ['acs_system.disconnected'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7065,23 +7080,24 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS credential was deleted.',
+            description:
+              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was deleted.',
             properties: {
               acs_credential_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7092,7 +7108,7 @@ export default {
               },
               event_type: { enum: ['acs_credential.deleted'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7115,23 +7131,24 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS credential was issued.',
+            description:
+              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.',
             properties: {
               acs_credential_id: { format: 'uuid', type: 'string' },
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7142,7 +7159,7 @@ export default {
               },
               event_type: { enum: ['acs_credential.issued'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7165,23 +7182,24 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS user was deleted.',
+            description:
+              'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.',
             properties: {
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               acs_user_id: { format: 'uuid', type: 'string' },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7192,7 +7210,7 @@ export default {
               },
               event_type: { enum: ['acs_user.deleted'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7215,27 +7233,29 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS encoder was added.',
+            description:
+              'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.',
             properties: {
               acs_encoder_id: {
-                description: 'ID of the ACS encoder.',
+                description:
+                  'ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
                 format: 'uuid',
                 type: 'string',
               },
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7246,7 +7266,7 @@ export default {
               },
               event_type: { enum: ['acs_encoder.added'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7269,27 +7289,29 @@ export default {
             type: 'object',
           },
           {
-            description: 'An ACS encoder was removed.',
+            description:
+              'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.',
             properties: {
               acs_encoder_id: {
-                description: 'ID of the ACS encoder.',
+                description:
+                  'ID of the [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
                 format: 'uuid',
                 type: 'string',
               },
               acs_system_id: {
-                description: 'ID of the ACS system.',
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'ACS System ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7300,7 +7322,7 @@ export default {
               },
               event_type: { enum: ['acs_encoder.removed'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7323,16 +7345,17 @@ export default {
             type: 'object',
           },
           {
-            description: 'A client session was deleted.',
+            description:
+              'A [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was deleted.',
             properties: {
               client_session_id: {
-                description: 'ID of the client session.',
+                description:
+                  'ID of the [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Client Session ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7343,7 +7366,7 @@ export default {
               },
               event_type: { enum: ['client_session.deleted'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7366,22 +7389,22 @@ export default {
           },
           {
             description:
-              'A connected account was connected for the first time, was reconnected after being disconnected.',
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was connected for the first time or was reconnected after being disconnected.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the connect webview.',
+                description:
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connect Webview ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7395,7 +7418,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7418,22 +7441,23 @@ export default {
             type: 'object',
           },
           {
-            description: 'A connected account was created.',
+            description:
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was created.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the connect webview.',
+                description:
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connect Webview ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7447,7 +7471,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7472,22 +7496,22 @@ export default {
           {
             deprecated: true,
             description:
-              'A connected account had a successful connect webview login.',
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) had a successful login using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
             properties: {
               connect_webview_id: {
-                description: 'ID of the connect webview.',
+                description:
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connect Webview ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7501,7 +7525,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7525,16 +7549,17 @@ export default {
             'x-deprecated': 'Use `connect_webview.login_succeeded`.',
           },
           {
-            description: 'A connected account was disconnected.',
+            description:
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was disconnected.',
             properties: {
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7548,7 +7573,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7571,16 +7596,16 @@ export default {
           },
           {
             description:
-              'A connected account completed the first sync with Seam and devices are now available.',
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync with Seam, and the corresponding devices or systems are now available.',
             properties: {
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7594,52 +7619,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'connected_account_id',
-              'event_type',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'A connected account was deleted.',
-            properties: {
-              connected_account_id: {
-                description: 'ID of the connected account.',
-                format: 'uuid',
-                type: 'string',
-                'x-title': 'Connected Account ID',
-              },
-              created_at: {
-                description: 'Time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: {
-                enum: ['connected_account.deleted'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7662,16 +7642,62 @@ export default {
           },
           {
             description:
-              'A connected account completed the first sync after reconnection with Seam and devices are now available.',
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) was deleted.',
             properties: {
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['connected_account.deleted'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'connected_account_id',
+              'event_type',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'A [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) completed the first sync after reconnection with Seam, and the corresponding devices or systems are now available.',
+            properties: {
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7687,7 +7713,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7709,21 +7735,18 @@ export default {
             type: 'object',
           },
           {
-            description: 'A lock door action attempt succeeded.',
+            description:
+              'A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description:
+                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: {
-                description: 'The type of action.',
-                type: 'string',
-                'x-title': 'Action Type',
-              },
+              action_type: { description: 'Type of action.', type: 'string' },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7737,15 +7760,11 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
-              status: {
-                description: 'The status of the action.',
-                type: 'string',
-                'x-title': 'Status',
-              },
+              status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
                 description:
                   'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
@@ -7766,21 +7785,18 @@ export default {
             type: 'object',
           },
           {
-            description: 'A lock door action attempt failed.',
+            description:
+              'A lock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description:
+                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: {
-                description: 'The type of action.',
-                type: 'string',
-                'x-title': 'Action Type',
-              },
+              action_type: { description: 'Type of action.', type: 'string' },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7794,15 +7810,11 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
-              status: {
-                description: 'The status of the action.',
-                type: 'string',
-                'x-title': 'Status',
-              },
+              status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
                 description:
                   'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
@@ -7823,21 +7835,18 @@ export default {
             type: 'object',
           },
           {
-            description: 'An unlock door action attempt succeeded.',
+            description:
+              'An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description:
+                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: {
-                description: 'The type of action.',
-                type: 'string',
-                'x-title': 'Action Type',
-              },
+              action_type: { description: 'Type of action.', type: 'string' },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7851,15 +7860,11 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
-              status: {
-                description: 'The status of the action.',
-                type: 'string',
-                'x-title': 'Status',
-              },
+              status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
                 description:
                   'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
@@ -7880,21 +7885,18 @@ export default {
             type: 'object',
           },
           {
-            description: 'An unlock door action attempt failed.',
+            description:
+              'An unlock door [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description:
+                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: {
-                description: 'The type of action.',
-                type: 'string',
-                'x-title': 'Action Type',
-              },
+              action_type: { description: 'Type of action.', type: 'string' },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7908,15 +7910,11 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
-              status: {
-                description: 'The status of the action.',
-                type: 'string',
-                'x-title': 'Status',
-              },
+              status: { description: 'Status of the action.', type: 'string' },
               workspace_id: {
                 description:
                   'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
@@ -7937,22 +7935,23 @@ export default {
             type: 'object',
           },
           {
-            description: 'A connect webview had a successful login.',
+            description:
+              'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login succeeded.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the connect webview.',
+                description:
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connect Webview ID',
               },
               connected_account_id: {
-                description: 'ID of the connected account.',
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connected Account ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7966,7 +7965,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -7989,16 +7988,17 @@ export default {
             type: 'object',
           },
           {
-            description: 'A connect webview had a failed login.',
+            description:
+              'A [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) login failed.',
             properties: {
               connect_webview_id: {
-                description: 'ID of the connect webview.',
+                description:
+                  'ID of the [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Connect Webview ID',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8012,7 +8012,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8034,7 +8034,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A new device was connected to Seam.',
+            description:
+              'The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`. Note that some devices operate entirely in offline mode, so Seam never emits a `device.connected` event for these devices.',
             properties: {
               connected_account_id: {
                 description:
@@ -8043,7 +8044,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8059,7 +8060,7 @@ export default {
               },
               event_type: { enum: ['device.connected'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8082,7 +8083,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A device was added or reconnected to Seam.',
+            description:
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) was added to Seam or was re-added to Seam after having been removed.',
             properties: {
               connected_account_id: {
                 description:
@@ -8091,7 +8093,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8107,7 +8109,7 @@ export default {
               },
               event_type: { enum: ['device.added'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8140,7 +8142,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8159,7 +8161,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8192,7 +8194,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8211,7 +8213,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8235,7 +8237,7 @@ export default {
           },
           {
             description:
-              'An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was connected to Seam.',
+              'The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from offline to online. That is, the `device.properties.online` property changed from `false` to `true`.',
             properties: {
               connected_account_id: {
                 description:
@@ -8244,7 +8246,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8263,7 +8265,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8286,7 +8288,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A device was disconnected from Seam.',
+            description:
+              'The status of a [device](https://docs.seam.co/latest/core-concepts/devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
               connected_account_id: {
                 description:
@@ -8295,7 +8298,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8321,7 +8324,7 @@ export default {
               },
               event_type: { enum: ['device.disconnected'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8346,7 +8349,7 @@ export default {
           },
           {
             description:
-              'An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was disconnected from Seam.',
+              'The status of an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) changed from online to offline. That is, the `device.properties.online` property changed from `true` to `false`.',
             properties: {
               connected_account_id: {
                 description:
@@ -8355,7 +8358,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8384,7 +8387,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8409,7 +8412,7 @@ export default {
           },
           {
             description:
-              'A device detected that it was tampered with, for example, opened or moved.',
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) detected that it was tampered with, for example, opened or moved.',
             properties: {
               connected_account_id: {
                 description:
@@ -8418,7 +8421,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8434,7 +8437,7 @@ export default {
               },
               event_type: { enum: ['device.tampered'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8458,7 +8461,7 @@ export default {
           },
           {
             description:
-              'A device battery level dropped below the low threshold.',
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) battery level dropped below the low threshold.',
             properties: {
               battery_level: {
                 description:
@@ -8475,7 +8478,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8491,7 +8494,7 @@ export default {
               },
               event_type: { enum: ['device.low_battery'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8516,7 +8519,7 @@ export default {
           },
           {
             description:
-              'A device battery status changed since the last `battery_status_changed` event.',
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) battery status changed since the last `battery_status_changed` event.',
             properties: {
               battery_level: {
                 description:
@@ -8539,7 +8542,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8558,7 +8561,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8584,7 +8587,7 @@ export default {
           },
           {
             description:
-              'A device was removed externally from the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) was removed externally from the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
             properties: {
               connected_account_id: {
                 description:
@@ -8593,7 +8596,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8609,7 +8612,7 @@ export default {
               },
               event_type: { enum: ['device.removed'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8633,7 +8636,7 @@ export default {
           },
           {
             description:
-              'A device was [deleted](https://docs.seam.co/latest/api/devices/delete).',
+              'A [device](https://docs.seam.co/latest/core-concepts/devices) was deleted.',
             properties: {
               connected_account_id: {
                 description:
@@ -8642,7 +8645,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8658,7 +8661,7 @@ export default {
               },
               event_type: { enum: ['device.deleted'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8682,7 +8685,7 @@ export default {
           },
           {
             description:
-              'Seam detected that a device is using a third-party integration that will interfere with Seam device management.',
+              'Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is using a third-party integration that will interfere with Seam device management.',
             properties: {
               connected_account_id: {
                 description:
@@ -8691,7 +8694,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8710,7 +8713,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8734,7 +8737,7 @@ export default {
           },
           {
             description:
-              'Seam detected that a device is no longer using a third-party integration that was interfering with Seam device management.',
+              'Seam detected that a [device](https://docs.seam.co/latest/core-concepts/devices) is no longer using a third-party integration that was interfering with Seam device management.',
             properties: {
               connected_account_id: {
                 description:
@@ -8743,7 +8746,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8762,7 +8765,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8785,7 +8788,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A Salto device activated privacy mode.',
+            description:
+              'A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) activated privacy mode.',
             properties: {
               connected_account_id: {
                 description:
@@ -8794,7 +8798,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8813,7 +8817,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8836,7 +8840,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A Salto device deactivated privacy mode.',
+            description:
+              'A [Salto device](https://docs.seam.co/latest/device-and-system-integration-guides/salto-locks) deactivated privacy mode.',
             properties: {
               connected_account_id: {
                 description:
@@ -8845,7 +8850,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8864,7 +8869,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8887,7 +8892,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'Seam detected a flaky device connection.',
+            description:
+              'Seam detected a flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection.',
             properties: {
               connected_account_id: {
                 description:
@@ -8896,7 +8902,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8915,7 +8921,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8939,7 +8945,7 @@ export default {
           },
           {
             description:
-              'Seam detected that a previously-flaky device connection stabilized.',
+              'Seam detected that a previously-flaky [device](https://docs.seam.co/latest/core-concepts/devices) connection stabilized.',
             properties: {
               connected_account_id: {
                 description:
@@ -8948,7 +8954,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8967,7 +8973,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -8991,7 +8997,7 @@ export default {
           },
           {
             description:
-              'A third-party subscription is required to use all device features.',
+              'A third-party subscription is required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.',
             properties: {
               connected_account_id: {
                 description:
@@ -9000,7 +9006,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9019,7 +9025,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9043,7 +9049,7 @@ export default {
           },
           {
             description:
-              'A third-party subscription is active or no longer required to use all device features.',
+              'A third-party subscription is active or no longer required to use all [device](https://docs.seam.co/latest/core-concepts/devices) features.',
             properties: {
               connected_account_id: {
                 description:
@@ -9052,7 +9058,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9071,7 +9077,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9094,7 +9100,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'An accessory keypad was connected to a device.',
+            description:
+              'An accessory keypad was connected to a [device](https://docs.seam.co/latest/core-concepts/devices).',
             properties: {
               connected_account_id: {
                 description:
@@ -9103,7 +9110,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9122,7 +9129,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9145,7 +9152,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'An accessory keypad was disconnected from a device.',
+            description:
+              'An accessory keypad was disconnected from a [device](https://docs.seam.co/latest/core-concepts/devices).',
             properties: {
               connected_account_id: {
                 description:
@@ -9154,7 +9162,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9173,7 +9181,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9206,7 +9214,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9228,7 +9236,6 @@ export default {
                 additionalProperties: {},
                 description: 'Metadata from Minut.',
                 type: 'object',
-                'x-title': 'Minut Metadata',
               },
               noise_level_decibels: {
                 description: 'Detected noise level in decibels.',
@@ -9256,10 +9263,9 @@ export default {
                 additionalProperties: {},
                 description: 'Metadata from Noiseaware.',
                 type: 'object',
-                'x-title': 'Noiseaware Metadata',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9282,7 +9288,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A lock was locked.',
+            description:
+              'A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was locked.',
             properties: {
               access_code_id: {
                 description:
@@ -9303,7 +9310,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9320,79 +9327,12 @@ export default {
               event_type: { enum: ['lock.locked'], type: 'string' },
               method: {
                 description:
-                  'Method by which a lock device was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+                  'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was locked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
                 enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
-                format: 'date-time',
-                type: 'string',
-              },
-              workspace_id: {
-                description:
-                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
-                format: 'uuid',
-                type: 'string',
-              },
-            },
-            required: [
-              'event_id',
-              'workspace_id',
-              'created_at',
-              'occurred_at',
-              'device_id',
-              'connected_account_id',
-              'event_type',
-              'method',
-            ],
-            type: 'object',
-          },
-          {
-            description: 'A lock was unlocked.',
-            properties: {
-              access_code_id: {
-                description:
-                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device.',
-                format: 'uuid',
-                type: 'string',
-              },
-              action_attempt_id: {
-                description:
-                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action.',
-                format: 'uuid',
-                type: 'string',
-              },
-              connected_account_id: {
-                description:
-                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
-                format: 'uuid',
-                type: 'string',
-              },
-              created_at: {
-                description: 'Time at which the event was created.',
-                format: 'date-time',
-                type: 'string',
-              },
-              device_id: {
-                description: 'ID of the device.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_id: {
-                description: 'ID of the event.',
-                format: 'uuid',
-                type: 'string',
-              },
-              event_type: { enum: ['lock.unlocked'], type: 'string' },
-              method: {
-                description:
-                  'Method by which a lock device was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
-                enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
-                type: 'string',
-              },
-              occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9417,7 +9357,75 @@ export default {
           },
           {
             description:
-              'The lock denied access to a user after one or more consecutive invalid attempts to unlock the device.',
+              'A [lock](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked.',
+            properties: {
+              access_code_id: {
+                description:
+                  'ID of the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used to unlock the device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              action_attempt_id: {
+                description:
+                  'ID of the [action attempt](https://docs.seam.co/latest/core-concepts/action-attempts) associated with the unlock action.',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description: 'ID of the device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['lock.unlocked'], type: 'string' },
+              method: {
+                description:
+                  'Method by which a [lock device](https://docs.seam.co/latest/capability-guides/smart-locks) was unlocked. When the method is `keycode`, the `access_code_id` indicates the [access code](https://docs.seam.co/latest/capability-guides/smart-locks/access-codes) that was used, if reported by the device.',
+                enum: ['keycode', 'manual', 'automatic', 'unknown', 'seamapi'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'method',
+            ],
+            type: 'object',
+          },
+          {
+            description:
+              'The [lock](https://docs.seam.co/latest/capability-guides/smart-locks) denied access to a user after one or more consecutive invalid attempts to unlock the device.',
             properties: {
               access_code_id: {
                 description:
@@ -9432,7 +9440,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9448,7 +9456,7 @@ export default {
               },
               event_type: { enum: ['lock.access_denied'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9486,7 +9494,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9506,11 +9514,11 @@ export default {
               },
               is_fallback_climate_preset: {
                 description:
-                  'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the thermostat.',
+                  'Indicates whether the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) that was activated is the [fallback climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets/setting-the-fallback-climate-preset) for the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 type: 'boolean',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9543,7 +9551,8 @@ export default {
             type: 'object',
           },
           {
-            description: 'A thermostat was adjusted manually.',
+            description:
+              'A [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) was adjusted manually.',
             properties: {
               connected_account_id: {
                 description:
@@ -9564,7 +9573,7 @@ export default {
                 type: 'number',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9608,12 +9617,12 @@ export default {
               },
               method: {
                 description:
-                  'Method used to adjust the thermostat manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the thermostat.',
+                  'Method used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) manually. `seam` indicates that the Seam API, Seam CLI, or Seam Console was used to adjust the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 enum: ['seam', 'external'],
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9638,7 +9647,7 @@ export default {
           },
           {
             description:
-              "A thermostat's temperature reading exceeded the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
+              "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading exceeded the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
               connected_account_id: {
                 description:
@@ -9647,7 +9656,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9680,17 +9689,19 @@ export default {
                 type: 'number',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
               temperature_celsius: {
-                description: 'Temperature, in °C, reported by the thermostat.',
+                description:
+                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
-                description: 'Temperature, in °F, reported by the thermostat.',
+                description:
+                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
@@ -9734,7 +9745,7 @@ export default {
           },
           {
             description:
-              "A thermostat's temperature reading no longer exceeds the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
+              "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading no longer exceeds the set [threshold](https://docs.seam.co/latest/capability-guides/thermostats/setting-and-monitoring-temperature-thresholds).",
             properties: {
               connected_account_id: {
                 description:
@@ -9743,7 +9754,7 @@ export default {
                 type: 'string',
               },
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9776,17 +9787,19 @@ export default {
                 type: 'number',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
               temperature_celsius: {
-                description: 'Temperature, in °C, reported by the thermostat.',
+                description:
+                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
-                description: 'Temperature, in °F, reported by the thermostat.',
+                description:
+                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
@@ -9829,18 +9842,19 @@ export default {
             type: 'object',
           },
           {
-            description: 'An enrollment automation was deleted.',
+            description:
+              'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
             properties: {
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               enrollment_automation_id: {
-                description: 'ID of the enrollment automation.',
+                description:
+                  'ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Enrollment Automation ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -9852,7 +9866,7 @@ export default {
                 type: 'string',
               },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
@@ -9877,15 +9891,15 @@ export default {
             description: 'A phone device was deactivated.',
             properties: {
               created_at: {
-                description: 'Time at which the event was created.',
+                description: 'Date and time at which the event was created.',
                 format: 'date-time',
                 type: 'string',
               },
               device_id: {
-                description: 'ID of the device.',
+                description:
+                  'ID of the [device](https://docs.seam.co/latest/core-concepts/devices).',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Device ID',
               },
               event_id: {
                 description: 'ID of the event.',
@@ -9894,7 +9908,7 @@ export default {
               },
               event_type: { enum: ['phone.deactivated'], type: 'string' },
               occurred_at: {
-                description: 'Time when the event occurred.',
+                description: 'Date and time at which the event occurred.',
                 format: 'date-time',
                 type: 'string',
               },
