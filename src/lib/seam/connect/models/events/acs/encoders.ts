@@ -11,23 +11,25 @@ const acs_encoder_event = common_acs_event.extend({
     ),
 })
 
-export const acs_encoder_added_event = acs_encoder_event
-  .extend({
-    event_type: z.literal('acs_encoder.added'),
-  })
-  .describe(
-    'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.',
-  )
+export const acs_encoder_added_event = acs_encoder_event.extend({
+  event_type: z.literal('acs_encoder.added'),
+}).describe(`
+    ---
+    route_path: /acs/encoders
+    ---
+    An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was added.
+  `)
 
 export type AcsEncoderAddedEvent = z.infer<typeof acs_encoder_added_event>
 
-export const acs_encoder_removed_event = acs_encoder_event
-  .extend({
-    event_type: z.literal('acs_encoder.removed'),
-  })
-  .describe(
-    'An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.',
-  )
+export const acs_encoder_removed_event = acs_encoder_event.extend({
+  event_type: z.literal('acs_encoder.removed'),
+}).describe(`
+    ---
+    route_path: /acs/encoders
+    ---
+    An [ACS encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was removed.
+  `)
 
 export type AcsEncoderRemovedEvent = z.infer<typeof acs_encoder_removed_event>
 
