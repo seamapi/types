@@ -20,7 +20,11 @@ export const seam_event = z.discriminatedUnion('event_type', [
   ...device_events,
   ...enrollment_automation_events,
   ...phone_events,
-])
+]).describe(`
+  ---
+  route_path: /events
+  ---
+`)
 
 export type SeamEvent = z.infer<typeof seam_event>
 
