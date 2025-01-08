@@ -11,6 +11,10 @@ export const client_session = z.object({
   connected_account_ids: z.array(z.string().uuid()),
   connect_webview_ids: z.array(z.string().uuid()),
   user_identity_ids: z.array(z.string().uuid()),
-})
+}).describe(`
+  ---
+  route_path: /client_sessions
+  ---
+`)
 
 export type ClientSession = z.infer<typeof client_session>

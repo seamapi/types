@@ -370,6 +370,10 @@ export const device = z
       .describe('Indicates whether Seam manages the device.'),
     custom_metadata,
   })
-  .merge(device_capability_flags)
+  .merge(device_capability_flags).describe(`
+    ---
+    route_path: /devices
+    ---
+  `)
 
 export type Device = z.infer<typeof device>

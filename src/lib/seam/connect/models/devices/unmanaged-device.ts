@@ -34,6 +34,10 @@ export const unmanaged_device = device
       model: true,
     }),
   })
-  .merge(device_capability_flags)
+  .merge(device_capability_flags).describe(`
+    ---
+    route_path: /devices/unmanaged
+    ---
+  `)
 
 export type UnmanagedDevice = z.infer<typeof unmanaged_device>
