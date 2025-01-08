@@ -100,9 +100,13 @@ const common_acs_access_group = z.object({
 
 export const acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(true),
-})
-  .describe(`Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
-The \`acs_access_group\` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).`)
+}).describe(`
+    ---
+    route_path: /acs/access_groups
+    ---
+    Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
+    The \`acs_access_group\` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  `)
 export const unmanaged_acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(false),
 })
