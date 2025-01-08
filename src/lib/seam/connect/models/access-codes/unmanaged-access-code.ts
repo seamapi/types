@@ -19,6 +19,10 @@ export const unmanaged_access_code = access_code
   .extend({
     is_managed: z.literal(false),
     status: z.enum(['set']),
-  })
+  }).describe(`
+    ---
+    route_path: /access_codes/unmanaged
+    ---
+  `)
 
 export type UnmanagedAccessCode = z.infer<typeof unmanaged_access_code>

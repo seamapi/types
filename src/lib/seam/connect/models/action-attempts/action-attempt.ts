@@ -20,6 +20,10 @@ export const action_attempt = z.union([
   ...set_hvac_mode_action_attempt.options,
   ...activate_climate_preset_action_attempt.options,
   ...deprecated_action_attempts,
-])
+]).describe(`
+  ---
+  route_path: /action_attempts
+  ---
+`)
 
 export type ActionAttempt = z.infer<typeof action_attempt>
