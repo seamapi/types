@@ -296,9 +296,11 @@ export const acs_system = z
       .array(acs_system_warning)
       .describe('Warnings associated with the `acs_system`.'),
   })
-  .merge(acs_system_capability_flags)
-  .describe(
-    'Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
-  )
+  .merge(acs_system_capability_flags).describe(`
+    ---
+    route_path: /acs/systems
+    ---
+    Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+  `)
 
 export type AcsSystem = z.output<typeof acs_system>

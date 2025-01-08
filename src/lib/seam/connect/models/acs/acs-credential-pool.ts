@@ -14,6 +14,10 @@ export const acs_credential_pool = z.object({
   external_type_display_name: z.string(),
   created_at: z.string().datetime(),
   workspace_id: z.string().uuid(),
-})
+}).describe(`
+  ---
+  route_path: /acs/credential_pools
+  ---
+`)
 
 export type AcsCredentialPool = z.output<typeof acs_credential_pool>
