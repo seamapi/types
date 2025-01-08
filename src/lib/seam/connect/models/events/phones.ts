@@ -11,11 +11,14 @@ const phone_event = common_event.extend({
     ),
 })
 
-export const phone_deactivated_event = phone_event
-  .extend({
-    event_type: z.literal('phone.deactivated'),
-  })
-  .describe('A phone device was deactivated.')
+export const phone_deactivated_event = phone_event.extend({
+  event_type: z.literal('phone.deactivated'),
+}).describe(`
+    ---
+    route_path: /phones
+    ---
+    A phone device was deactivated.
+  `)
 
 export type PhoneDeactivatedEvent = z.infer<typeof phone_deactivated_event>
 

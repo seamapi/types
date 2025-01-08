@@ -16,6 +16,10 @@ export const workspace = z.object({
   `,
     )
     .nullable(),
-})
+}).describe(`
+  ---
+  route_path: /workspaces
+  ---
+`)
 
 export type Workspace = z.infer<typeof workspace>
