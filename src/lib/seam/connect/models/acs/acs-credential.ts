@@ -81,6 +81,16 @@ export const unknown_issue_with_acs_credential = common_acs_credential_warning
       'This issue may affect the proper functioning of this credential.',
   )
 
+const needs_to_be_reissued = common_acs_credential_warning
+  .extend({
+    warning_code: z
+      .literal('needs_to_be_reissued')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+  )
+
 const acs_credential_warning = z
   .union([
     waiting_to_be_issued,
@@ -88,6 +98,7 @@ const acs_credential_warning = z
     schedule_modified,
     being_deleted,
     unknown_issue_with_acs_credential,
+    needs_to_be_reissued,
   ])
   .describe('Warning associated with the `acs_credential`.')
 
@@ -101,6 +112,7 @@ const acs_credential_warning_map = z.object({
   unknown_issue_with_acs_credential: unknown_issue_with_acs_credential
     .optional()
     .nullable(),
+  needs_to_be_reissued: needs_to_be_reissued.optional().nullable(),
 })
 
 export type AcsCredentialWarningMap = z.infer<typeof acs_credential_warning_map>

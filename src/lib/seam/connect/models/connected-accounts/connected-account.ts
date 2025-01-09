@@ -61,6 +61,10 @@ export const connected_account = z.object({
   warnings: z.array(connected_account_warning),
   custom_metadata,
   automatically_manage_new_devices: z.boolean(),
-})
+}).describe(`
+  ---
+  route_path: /connected_accounts
+  ---
+`)
 
 export type ConnectedAccount = z.infer<typeof connected_account>
