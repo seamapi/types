@@ -138,6 +138,10 @@ export const access_code = z.object({
     .describe(
       'Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection.',
     ),
-})
+}).describe(`
+  ---
+  route_path: /access_codes
+  ---
+`)
 
 export type AccessCode = z.infer<typeof access_code>

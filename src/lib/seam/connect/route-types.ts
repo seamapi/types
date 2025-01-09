@@ -25,6 +25,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -960,6 +961,7 @@ export interface Routes {
               message: string
             }
           }
+      /**  */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
@@ -1281,6 +1283,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -2246,6 +2249,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
@@ -2552,6 +2556,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       backup_access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
@@ -2692,6 +2697,7 @@ export interface Routes {
         /** Indicates whether the access code is intended for use in offline scenarios. If "true," this code can be created on a device without a network connection. */
         is_offline_access_code: boolean
       }
+      /**  */
       access_code: {
         /** Unique identifier for a group of access codes that share the same code. */
         common_code_key: string | null
@@ -2846,6 +2852,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       access_code: {
         /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
@@ -2992,6 +2999,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -3941,6 +3949,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       access_code: {
         /** Nature of the access code. Values are "ongoing" for access codes that are active continuously until deactivated manually or "time_bound" for access codes that have a specific duration. */
         type: 'time_bound' | 'ongoing'
@@ -4235,6 +4244,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -5703,6 +5713,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       acs_credential_provisioning_automation: {
         acs_credential_provisioning_automation_id: string
         credential_manager_acs_system_id: string
@@ -7084,6 +7095,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -8081,6 +8093,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -10809,6 +10822,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -12708,6 +12722,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -12744,6 +12759,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -12772,6 +12788,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -12800,6 +12817,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       client_session: {
         client_session_id: string
         workspace_id: string
@@ -12930,6 +12948,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       connect_webview: {
         connect_webview_id: string
         workspace_id: string
@@ -12978,6 +12997,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       connect_webview: {
         connect_webview_id: string
         workspace_id: string
@@ -13072,6 +13092,7 @@ export interface Routes {
         }
     formData: {}
     jsonResponse: {
+      /**  */
       connected_account: {
         connected_account_id?: string | undefined
         created_at?: string | undefined
@@ -13167,6 +13188,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       connected_account: {
         connected_account_id?: string | undefined
         created_at?: string | undefined
@@ -13224,6 +13246,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -15102,6 +15125,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -15783,6 +15807,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       event?:
         | (
             | {
@@ -18458,6 +18483,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       lock: {
         /** Unique identifier for the device. */
         device_id: string
@@ -19238,6 +19264,7 @@ export interface Routes {
         can_simulate_connection?: boolean | undefined
         can_simulate_disconnection?: boolean | undefined
       }
+      /**  */
       device: {
         /** Unique identifier for the device. */
         device_id: string
@@ -21775,6 +21802,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -22723,6 +22751,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -23670,6 +23699,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       network: {
         network_id: string
         workspace_id: string
@@ -25454,6 +25484,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -26389,6 +26420,7 @@ export interface Routes {
               message: string
             }
           }
+      /**  */
       noise_threshold: {
         noise_threshold_id: string
         device_id: string
@@ -26412,6 +26444,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -27359,6 +27392,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       noise_threshold: {
         noise_threshold_id: string
         device_id: string
@@ -27409,6 +27443,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -28553,6 +28588,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       phone: {
         /** Unique identifier for the device. */
         device_id: string
@@ -28715,6 +28751,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -29669,6 +29706,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -30664,6 +30702,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       thermostat: {
         /** Unique identifier for the device. */
         device_id: string
@@ -31463,6 +31502,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -32421,6 +32461,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -35115,6 +35156,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -36249,6 +36291,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -37230,6 +37273,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */
@@ -40379,6 +40423,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       webhook: {
         webhook_id: string
         url: string
@@ -40408,6 +40453,7 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
+      /**  */
       webhook: {
         webhook_id: string
         url: string
@@ -40462,6 +40508,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       workspace: {
         workspace_id: string
         name: string
@@ -40481,6 +40528,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       workspace: {
         workspace_id: string
         name: string
@@ -40519,6 +40567,7 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
+      /**  */
       action_attempt:
         | {
             /** The ID of the action attempt. */

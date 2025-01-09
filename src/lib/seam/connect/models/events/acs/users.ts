@@ -10,13 +10,14 @@ const acs_user_event = common_acs_event
     'ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
   )
 
-export const acs_user_deleted_event = acs_user_event
-  .extend({
-    event_type: z.literal('acs_user.deleted'),
-  })
-  .describe(
-    'An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.',
-  )
+export const acs_user_deleted_event = acs_user_event.extend({
+  event_type: z.literal('acs_user.deleted'),
+}).describe(`
+    ---
+    route_path: /acs/users
+    ---
+    An [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) was deleted.
+  `)
 
 export type AcsUserDeletedEvent = z.infer<typeof acs_user_deleted_event>
 

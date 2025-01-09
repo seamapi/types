@@ -6,11 +6,14 @@ const acs_access_group_event = common_acs_event.extend({
   acs_access_group_id: z.string().uuid(),
 })
 
-export const acs_access_group_deleted_event = acs_access_group_event
-  .extend({
-    event_type: z.literal('acs_access_group.deleted'),
-  })
-  .describe('An ACS access group was deleted.')
+export const acs_access_group_deleted_event = acs_access_group_event.extend({
+  event_type: z.literal('acs_access_group.deleted'),
+}).describe(`
+  ---
+  route_path: /acs/access_groups
+  ---
+  An ACS access group was deleted.
+`)
 
 export type AcsAccessGroupDeletedEvent = z.infer<
   typeof acs_access_group_deleted_event

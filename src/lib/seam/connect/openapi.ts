@@ -376,6 +376,7 @@ export default {
           'is_offline_access_code',
         ],
         type: 'object',
+        'x-route-path': '/access_codes',
       },
       acs_access_group: {
         description:
@@ -486,6 +487,7 @@ export default {
           'is_managed',
         ],
         type: 'object',
+        'x-route-path': '/acs/access_groups',
       },
       acs_credential: {
         description:
@@ -799,6 +801,7 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-route-path': '/acs/credential_pools',
       },
       acs_credential_provisioning_automation: {
         properties: {
@@ -819,6 +822,7 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-route-path': '/acs/credential_provisioning_automations',
       },
       acs_entrance: {
         description:
@@ -960,6 +964,7 @@ export default {
           'errors',
         ],
         type: 'object',
+        'x-route-path': '/acs/entrances',
       },
       acs_system: {
         description:
@@ -1351,6 +1356,7 @@ export default {
           'warnings',
         ],
         type: 'object',
+        'x-route-path': '/acs/systems',
       },
       acs_user: {
         description:
@@ -1651,6 +1657,7 @@ export default {
           'is_managed',
         ],
         type: 'object',
+        'x-route-path': '/acs/users',
       },
       action_attempt: {
         oneOf: [
@@ -4299,6 +4306,7 @@ export default {
             type: 'object',
           },
         ],
+        'x-route-path': '/action_attempts',
       },
       client_session: {
         properties: {
@@ -4335,6 +4343,7 @@ export default {
           'user_identity_ids',
         ],
         type: 'object',
+        'x-route-path': '/client_sessions',
       },
       connect_webview: {
         properties: {
@@ -4413,6 +4422,7 @@ export default {
           'selected_provider',
         ],
         type: 'object',
+        'x-route-path': '/connect_webviews',
       },
       connected_account: {
         properties: {
@@ -4489,6 +4499,7 @@ export default {
           'automatically_manage_new_devices',
         ],
         type: 'object',
+        'x-route-path': '/connected_accounts',
       },
       device: {
         properties: {
@@ -5750,6 +5761,7 @@ export default {
                           'errors',
                         ],
                         type: 'object',
+                        'x-route-path': '/thermostats/schedules',
                       },
                       available_climate_presets: {
                         items: {
@@ -6147,6 +6159,7 @@ export default {
           'custom_metadata',
         ],
         type: 'object',
+        'x-route-path': '/devices',
       },
       device_provider: {
         properties: {
@@ -6234,6 +6247,7 @@ export default {
           'provider_categories',
         ],
         type: 'object',
+        'x-route-path': '/devices',
       },
       enrollment_automation: {
         description:
@@ -6277,6 +6291,7 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-route-path': '/user_identities/enrollment_automations',
       },
       event: {
         discriminator: { propertyName: 'event_type' },
@@ -6337,6 +6352,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6394,6 +6410,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6460,6 +6477,7 @@ export default {
               'code',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6526,6 +6544,7 @@ export default {
               'code',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6586,6 +6605,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6646,6 +6666,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6706,6 +6727,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6770,6 +6792,7 @@ export default {
               'code',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6830,6 +6853,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6890,6 +6914,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -6950,6 +6975,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -7010,6 +7036,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -7072,6 +7099,7 @@ export default {
               'backup_access_code_id',
             ],
             type: 'object',
+            'x-route-path': '/access_codes',
           },
           {
             description:
@@ -7132,6 +7160,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes/unmanaged',
           },
           {
             description:
@@ -7192,6 +7221,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes/unmanaged',
           },
           {
             description:
@@ -7252,6 +7282,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes/unmanaged',
           },
           {
             description:
@@ -7312,6 +7343,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/access_codes/unmanaged',
           },
           {
             description:
@@ -7361,6 +7393,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/systems',
           },
           {
             description:
@@ -7410,6 +7443,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/systems',
           },
           {
             description:
@@ -7459,6 +7493,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/systems',
           },
           {
             description:
@@ -7510,6 +7545,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/credentials',
           },
           {
             description:
@@ -7561,6 +7597,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/credentials',
           },
           {
             description:
@@ -7612,6 +7649,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/users',
           },
           {
             description:
@@ -7668,6 +7706,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/encoders',
           },
           {
             description:
@@ -7724,6 +7763,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/encoders',
           },
           {
             description: 'An ACS access group was deleted.',
@@ -7777,6 +7817,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/access_groups',
           },
           {
             description:
@@ -7820,6 +7861,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/client_sessions',
           },
           {
             description:
@@ -7873,6 +7915,7 @@ export default {
               'connect_webview_id',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -7926,6 +7969,7 @@ export default {
               'connect_webview_id',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             deprecated: true,
@@ -7981,6 +8025,7 @@ export default {
             ],
             type: 'object',
             'x-deprecated': 'Use `connect_webview.login_succeeded`.',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -8027,6 +8072,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -8073,6 +8119,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -8119,6 +8166,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -8167,6 +8215,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/connected_accounts',
           },
           {
             description:
@@ -8217,6 +8266,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/action_attempts',
           },
           {
             description:
@@ -8267,6 +8317,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/action_attempts',
           },
           {
             description:
@@ -8317,6 +8368,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/action_attempts',
           },
           {
             description:
@@ -8367,6 +8419,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/action_attempts',
           },
           {
             description:
@@ -8420,6 +8473,7 @@ export default {
               'connected_account_id',
             ],
             type: 'object',
+            'x-route-path': '/connect_webviews',
           },
           {
             description:
@@ -8466,6 +8520,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/connect_webviews',
           },
           {
             description:
@@ -8515,6 +8570,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -8564,10 +8620,11 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
-              'An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.',
+              'A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
             properties: {
               connected_account_id: {
                 description:
@@ -8616,10 +8673,11 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
-              'A managed device was successfully converted to an [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices).',
+              'An [unmanaged device](https://docs.seam.co/latest/core-concepts/devices/managed-and-unmanaged-devices) was successfully converted to a managed device.',
             properties: {
               connected_account_id: {
                 description:
@@ -8668,6 +8726,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices/unmanaged',
           },
           {
             description:
@@ -8720,6 +8779,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices/unmanaged',
           },
           {
             description:
@@ -8780,6 +8840,7 @@ export default {
               'error_code',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -8843,6 +8904,7 @@ export default {
               'error_code',
             ],
             type: 'object',
+            'x-route-path': '/devices/unmanaged',
           },
           {
             description:
@@ -8892,6 +8954,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -8950,6 +9013,7 @@ export default {
               'battery_level',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9018,6 +9082,7 @@ export default {
               'battery_level',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9067,6 +9132,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9116,6 +9182,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9168,6 +9235,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9220,6 +9288,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9272,6 +9341,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9324,6 +9394,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9376,6 +9447,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9428,6 +9500,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9480,6 +9553,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9532,6 +9606,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9584,6 +9659,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9636,6 +9712,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/devices',
           },
           {
             description:
@@ -9720,6 +9797,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/noise_sensors/noise_thresholds',
           },
           {
             description:
@@ -9788,6 +9866,7 @@ export default {
               'method',
             ],
             type: 'object',
+            'x-route-path': '/locks',
           },
           {
             description:
@@ -9856,6 +9935,7 @@ export default {
               'method',
             ],
             type: 'object',
+            'x-route-path': '/locks',
           },
           {
             description:
@@ -9911,6 +9991,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/locks',
           },
           {
             description:
@@ -9983,6 +10064,7 @@ export default {
               'is_fallback_climate_preset',
             ],
             type: 'object',
+            'x-route-path': '/thermostats',
           },
           {
             description:
@@ -10078,6 +10160,7 @@ export default {
               'method',
             ],
             type: 'object',
+            'x-route-path': '/thermostats',
           },
           {
             description:
@@ -10176,6 +10259,7 @@ export default {
               'lower_limit_fahrenheit',
             ],
             type: 'object',
+            'x-route-path': '/thermostats',
           },
           {
             description:
@@ -10274,6 +10358,7 @@ export default {
               'lower_limit_fahrenheit',
             ],
             type: 'object',
+            'x-route-path': '/thermostats',
           },
           {
             properties: {
@@ -10348,6 +10433,7 @@ export default {
               'temperature_fahrenheit',
             ],
             type: 'object',
+            'x-route-path': '/thermostats',
           },
           {
             description:
@@ -10394,6 +10480,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/user_identities/enrollment_automations',
           },
           {
             description: 'A phone device was deactivated.',
@@ -10436,8 +10523,10 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/phones',
           },
         ],
+        'x-route-path': '/events',
       },
       network: {
         properties: {
@@ -10448,6 +10537,7 @@ export default {
         },
         required: ['network_id', 'workspace_id', 'display_name', 'created_at'],
         type: 'object',
+        'x-route-path': '/networks',
       },
       noise_threshold: {
         properties: {
@@ -10468,6 +10558,7 @@ export default {
           'noise_threshold_decibels',
         ],
         type: 'object',
+        'x-route-path': '/noise_sensors/noise_thresholds',
       },
       phone: {
         properties: {
@@ -10830,6 +10921,7 @@ export default {
           'custom_metadata',
         ],
         type: 'object',
+        'x-route-path': '/phones',
       },
       service_health: {
         properties: {
@@ -10839,6 +10931,7 @@ export default {
         },
         required: ['service', 'status', 'description'],
         type: 'object',
+        'x-route-path': '/health',
       },
       thermostat_schedule: {
         description:
@@ -10919,6 +11012,7 @@ export default {
           'errors',
         ],
         type: 'object',
+        'x-route-path': '/thermostats/schedules',
       },
       unmanaged_access_code: {
         properties: {
@@ -11234,6 +11328,7 @@ export default {
           'status',
         ],
         type: 'object',
+        'x-route-path': '/access_codes/unmanaged',
       },
       unmanaged_device: {
         properties: {
@@ -11739,6 +11834,7 @@ export default {
           'properties',
         ],
         type: 'object',
+        'x-route-path': '/devices/unmanaged',
       },
       user_identity: {
         description:
@@ -11793,6 +11889,7 @@ export default {
           'workspace_id',
         ],
         type: 'object',
+        'x-route-path': '/user_identities',
       },
       webhook: {
         properties: {
@@ -11803,6 +11900,7 @@ export default {
         },
         required: ['webhook_id', 'url'],
         type: 'object',
+        'x-route-path': '/webhooks',
       },
       workspace: {
         properties: {
@@ -11825,6 +11923,7 @@ export default {
           'connect_partner_name',
         ],
         type: 'object',
+        'x-route-path': '/workspaces',
       },
     },
     securitySchemes: {

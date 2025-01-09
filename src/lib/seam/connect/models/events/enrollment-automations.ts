@@ -11,13 +11,15 @@ const enrollment_automation_event = common_event.extend({
     ),
 })
 
-export const enrollment_automation_deleted_event = enrollment_automation_event
-  .extend({
+export const enrollment_automation_deleted_event =
+  enrollment_automation_event.extend({
     event_type: z.literal('enrollment_automation.deleted'),
-  })
-  .describe(
-    'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
-  )
+  }).describe(`
+    ---
+    route_path: /user_identities/enrollment_automations
+    ---
+    An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.
+  `)
 
 export type EnrollmentAutomationDeletedEvent = z.infer<
   typeof enrollment_automation_deleted_event
