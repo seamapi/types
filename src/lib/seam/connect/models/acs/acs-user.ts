@@ -114,15 +114,31 @@ const acs_users_salto_ks_user_not_subscribed = common_acs_user_warning
     `Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.`,
   )
 
+export const unknown_issue_with_acs_user = common_acs_user_warning
+  .extend({
+    warning_code: z.literal('unknown_issue_with_acs_user'),
+  })
+  .describe(
+    'An unknown issue occurred while syncing the state of this user with the provider. ' +
+      'This issue may affect the proper functioning of this user.',
+  )
+
 export const acs_users_warning_map = z.object({
   being_deleted: acs_users_being_deleted.optional().nullable(),
   salto_ks_user_not_subscribed: acs_users_salto_ks_user_not_subscribed
     .optional()
     .nullable(),
+  unknown_issue_with_acs_user: unknown_issue_with_acs_user
+    .optional()
+    .nullable(),
 })
 
 export const acs_users_warnings = z
-  .union([acs_users_being_deleted, acs_users_salto_ks_user_not_subscribed])
+  .union([
+    acs_users_being_deleted,
+    acs_users_salto_ks_user_not_subscribed,
+    unknown_issue_with_acs_user,
+  ])
   .describe('Warning associated with the `acs_user`.')
 
 export type AcsUsersWarningMap = z.infer<typeof acs_users_warning_map>

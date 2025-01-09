@@ -599,26 +599,31 @@ export const temperature_reached_set_point_event = device_event.extend({
   event_type: z.literal('thermostat.temperature_reached_set_point'),
   temperature_celsius: z
     .number()
-    .describe('Temperature, in °C, reported by the thermostat.'),
+    .describe(
+      'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+    ),
   temperature_fahrenheit: z
     .number()
-    .describe('Temperature, in °F, reported by the thermostat.'),
+    .describe(
+      'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+    ),
   desired_temperature_celsius: z
     .number()
     .optional()
     .describe(
-      "Desired temperature, in °C, set by the thermostat's cooling or heating set point.",
+      "Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
     ),
   desired_temperature_fahrenheit: z
     .number()
     .optional()
     .describe(
-      "Desired temperature, in °F, set by the thermostat's cooling or heating set point.",
+      "Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
     ),
 }).describe(`
   ---
   route_path: /thermostats
   ---
+  A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).
 `)
 
 export type TemperatureReachedSetPointEvent = z.infer<

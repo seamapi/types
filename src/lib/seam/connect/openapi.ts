@@ -1660,6 +1660,20 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['unknown_issue_with_acs_user'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -10553,6 +10567,8 @@ export default {
             'x-route-path': '/thermostats',
           },
           {
+            description:
+              "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) temperature reading is within 1 °C of the configured cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
             properties: {
               connected_account_id: {
                 description:
@@ -10567,13 +10583,13 @@ export default {
               },
               desired_temperature_celsius: {
                 description:
-                  "Desired temperature, in °C, set by the thermostat's cooling or heating set point.",
+                  "Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
                 format: 'float',
                 type: 'number',
               },
               desired_temperature_fahrenheit: {
                 description:
-                  "Desired temperature, in °F, set by the thermostat's cooling or heating set point.",
+                  "Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points).",
                 format: 'float',
                 type: 'number',
               },
@@ -10597,12 +10613,14 @@ export default {
                 type: 'string',
               },
               temperature_celsius: {
-                description: 'Temperature, in °C, reported by the thermostat.',
+                description:
+                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
               temperature_fahrenheit: {
-                description: 'Temperature, in °F, reported by the thermostat.',
+                description:
+                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
                 format: 'float',
                 type: 'number',
               },
@@ -18051,6 +18069,27 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
+                                    enum: ['unknown_issue_with_acs_user'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -18438,6 +18477,27 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['salto_ks_user_not_subscribed'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: ['unknown_issue_with_acs_user'],
                                       type: 'string',
                                     },
                                   },
