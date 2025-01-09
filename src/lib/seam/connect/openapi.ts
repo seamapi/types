@@ -757,6 +757,31 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['needs_to_be_reissued'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -2246,6 +2271,35 @@ export default {
                                   ],
                                   type: 'object',
                                 },
+                                {
+                                  description:
+                                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['needs_to_be_reissued'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
                               ],
                             },
                             type: 'array',
@@ -2567,6 +2621,35 @@ export default {
                                       enum: [
                                         'unknown_issue_with_acs_credential',
                                       ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['needs_to_be_reissued'],
                                       type: 'string',
                                     },
                                   },
@@ -3039,6 +3122,35 @@ export default {
                               ],
                               type: 'object',
                             },
+                            {
+                              description:
+                                'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['needs_to_be_reissued'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
                           ],
                         },
                         type: 'array',
@@ -3357,6 +3469,35 @@ export default {
                                   description:
                                     'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                                   enum: ['unknown_issue_with_acs_credential'],
+                                  type: 'string',
+                                },
+                              },
+                              required: [
+                                'created_at',
+                                'message',
+                                'warning_code',
+                              ],
+                              type: 'object',
+                            },
+                            {
+                              description:
+                                'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                              properties: {
+                                created_at: {
+                                  description:
+                                    'Date and time at which Seam created the warning.',
+                                  format: 'date-time',
+                                  type: 'string',
+                                },
+                                message: {
+                                  description:
+                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                  type: 'string',
+                                },
+                                warning_code: {
+                                  description:
+                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                  enum: ['needs_to_be_reissued'],
                                   type: 'string',
                                 },
                               },
@@ -7598,6 +7739,57 @@ export default {
             ],
             type: 'object',
             'x-route-path': '/acs/credentials',
+          },
+          {
+            description:
+              'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.',
+            properties: {
+              acs_credential_id: { format: 'uuid', type: 'string' },
+              acs_system_id: {
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['acs_credential.reissued'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'acs_system_id',
+              'acs_credential_id',
+              'event_type',
+            ],
+            type: 'object',
           },
           {
             description:
@@ -15210,6 +15402,35 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                                properties: {
+                                  created_at: {
+                                    description:
+                                      'Date and time at which Seam created the warning.',
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: {
+                                    description:
+                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                    type: 'string',
+                                  },
+                                  warning_code: {
+                                    description:
+                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                    enum: ['needs_to_be_reissued'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -15634,6 +15855,35 @@ export default {
                                       enum: [
                                         'unknown_issue_with_acs_credential',
                                       ],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                                  properties: {
+                                    created_at: {
+                                      description:
+                                        'Date and time at which Seam created the warning.',
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: {
+                                      description:
+                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                                      type: 'string',
+                                    },
+                                    warning_code: {
+                                      description:
+                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                                      enum: ['needs_to_be_reissued'],
                                       type: 'string',
                                     },
                                   },
@@ -20855,6 +21105,7 @@ export default {
                       'acs_user.deleted',
                       'acs_credential.deleted',
                       'acs_credential.issued',
+                      'acs_credential.reissued',
                       'acs_encoder.added',
                       'acs_encoder.removed',
                       'enrollment_automation.deleted',
@@ -20934,6 +21185,7 @@ export default {
                         'acs_user.deleted',
                         'acs_credential.deleted',
                         'acs_credential.issued',
+                        'acs_credential.reissued',
                         'acs_encoder.added',
                         'acs_encoder.removed',
                         'enrollment_automation.deleted',
