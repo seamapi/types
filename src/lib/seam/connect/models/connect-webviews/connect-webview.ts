@@ -44,6 +44,10 @@ export const connect_webview = z.object({
   wait_for_device_creation: z.boolean(),
   authorized_at: z.string().datetime().nullable(),
   selected_provider: z.string().nullable(),
-})
+}).describe(`
+  ---
+  route_path: /connect_webviews
+  ---
+`)
 
 export type ConnectWebview = z.infer<typeof connect_webview>
