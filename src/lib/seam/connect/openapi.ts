@@ -859,10 +859,7 @@ export default {
             type: 'string',
           },
           dormakaba_community_metadata: {
-            properties: {
-              access_point_name: { type: 'string' },
-              common_area_number: { format: 'float', type: 'number' },
-            },
+            properties: { access_point_name: { type: 'string' } },
             required: ['access_point_name'],
             type: 'object',
           },
