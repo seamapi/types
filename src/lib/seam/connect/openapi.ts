@@ -1660,6 +1660,20 @@ export default {
                   required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['unknown_issue_with_acs_user'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -18055,6 +18069,27 @@ export default {
                                 ],
                                 type: 'object',
                               },
+                              {
+                                description:
+                                  'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                  warning_code: {
+                                    enum: ['unknown_issue_with_acs_user'],
+                                    type: 'string',
+                                  },
+                                },
+                                required: [
+                                  'created_at',
+                                  'message',
+                                  'warning_code',
+                                ],
+                                type: 'object',
+                              },
                             ],
                           },
                           type: 'array',
@@ -18442,6 +18477,27 @@ export default {
                                     message: { type: 'string' },
                                     warning_code: {
                                       enum: ['salto_ks_user_not_subscribed'],
+                                      type: 'string',
+                                    },
+                                  },
+                                  required: [
+                                    'created_at',
+                                    'message',
+                                    'warning_code',
+                                  ],
+                                  type: 'object',
+                                },
+                                {
+                                  description:
+                                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                                  properties: {
+                                    created_at: {
+                                      format: 'date-time',
+                                      type: 'string',
+                                    },
+                                    message: { type: 'string' },
+                                    warning_code: {
+                                      enum: ['unknown_issue_with_acs_user'],
                                       type: 'string',
                                     },
                                   },

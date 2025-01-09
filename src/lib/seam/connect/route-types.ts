@@ -5622,6 +5622,11 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
+            }
         >
         /** Errors associated with the `acs_user`. */
         errors: Array<
@@ -10332,6 +10337,11 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
+            }
         >
         /** Errors associated with the `acs_user`. */
         errors: Array<
@@ -10472,6 +10482,11 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
+            }
         >
         /** Errors associated with the `acs_user`. */
         errors: Array<
@@ -10606,6 +10621,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
             }
         >
         /** Errors associated with the `acs_user`. */
@@ -10861,6 +10881,11 @@ export interface Routes {
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
             }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
+            }
         >
         /** Errors associated with the `acs_user`. */
         errors: Array<
@@ -10990,6 +11015,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
             }
         >
         /** Errors associated with the `acs_user`. */
@@ -41066,6 +41096,11 @@ export interface Routes {
               created_at: string
               message: string
               warning_code: 'salto_ks_user_not_subscribed'
+            }
+          | {
+              created_at: string
+              message: string
+              warning_code: 'unknown_issue_with_acs_user'
             }
         >
         /** Errors associated with the `acs_user`. */
