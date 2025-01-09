@@ -133,6 +133,10 @@ export const device_provider = z
     image_url: z.string(),
     provider_categories: z.array(z.enum(PUBLIC_PROVIDER_CATEGORIES)),
   })
-  .extend(device_capability_flags.shape)
+  .extend(device_capability_flags.shape).describe(`
+    ---
+    route_path: /devices
+    ---
+  `)
 
 export type DeviceProvider = z.infer<typeof device_provider>
