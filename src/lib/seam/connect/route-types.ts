@@ -17371,13 +17371,13 @@ export interface Routes {
                 /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
                 connected_account_id: string
                 event_type: 'thermostat.temperature_reached_set_point'
-                /** Temperature, in °C, reported by the thermostat. */
+                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
                 temperature_celsius: number
-                /** Temperature, in °F, reported by the thermostat. */
+                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
                 temperature_fahrenheit: number
-                /** Desired temperature, in °C, set by the thermostat's cooling or heating set point. */
+                /** Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                 desired_temperature_celsius?: number | undefined
-                /** Desired temperature, in °F, set by the thermostat's cooling or heating set point. */
+                /** Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
                 desired_temperature_fahrenheit?: number | undefined
               }
             | {
@@ -18804,13 +18804,13 @@ export interface Routes {
             /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
             connected_account_id: string
             event_type: 'thermostat.temperature_reached_set_point'
-            /** Temperature, in °C, reported by the thermostat. */
+            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
             temperature_celsius: number
-            /** Temperature, in °F, reported by the thermostat. */
+            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
             temperature_fahrenheit: number
-            /** Desired temperature, in °C, set by the thermostat's cooling or heating set point. */
+            /** Desired temperature, in °C, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
             desired_temperature_celsius?: number | undefined
-            /** Desired temperature, in °F, set by the thermostat's cooling or heating set point. */
+            /** Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
             desired_temperature_fahrenheit?: number | undefined
           }
         | {
