@@ -28,4 +28,14 @@ export const seam_event = z.discriminatedUnion('event_type', [
 
 export type SeamEvent = z.infer<typeof seam_event>
 
+const event_types = seam_event.options.map(
+  (schema) => schema.shape.event_type.value,
+)
+
+type HasAtLeastOneElement<T> = T extends Array<infer E> ? [E, ...E[]] : never
+
+export const seam_event_type = z.enum(
+  event_types as HasAtLeastOneElement<typeof event_types>,
+)
+
 export type SeamEventType = SeamEvent['event_type']

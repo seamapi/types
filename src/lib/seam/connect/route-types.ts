@@ -14456,10 +14456,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -15420,10 +15493,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -15727,10 +15873,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         is_managed: false
@@ -16137,10 +16356,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         is_managed: false
@@ -17542,20 +17834,59 @@ export interface Routes {
       access_code_ids?: string[] | undefined
       event_type?:
         | (
-            | 'device.accessory_keypad_connected'
-            | 'device.accessory_keypad_disconnected'
-            | 'device.added'
+            | 'access_code.created'
+            | 'access_code.changed'
+            | 'access_code.scheduled_on_device'
+            | 'access_code.set_on_device'
+            | 'access_code.removed_from_device'
+            | 'access_code.delay_in_setting_on_device'
+            | 'access_code.failed_to_set_on_device'
+            | 'access_code.deleted'
+            | 'access_code.delay_in_removing_from_device'
+            | 'access_code.failed_to_remove_from_device'
+            | 'access_code.modified_external_to_seam'
+            | 'access_code.deleted_external_to_seam'
+            | 'access_code.backup_access_code_pulled'
+            | 'access_code.unmanaged.converted_to_managed'
+            | 'access_code.unmanaged.failed_to_convert_to_managed'
+            | 'access_code.unmanaged.created'
+            | 'access_code.unmanaged.removed'
+            | 'acs_system.connected'
+            | 'acs_system.added'
+            | 'acs_system.disconnected'
+            | 'acs_credential.deleted'
+            | 'acs_credential.issued'
+            | 'acs_credential.reissued'
+            | 'acs_user.deleted'
+            | 'acs_encoder.added'
+            | 'acs_encoder.removed'
+            | 'acs_access_group.deleted'
+            | 'client_session.deleted'
+            | 'connected_account.connected'
+            | 'connected_account.created'
+            | 'connected_account.successful_login'
+            | 'connected_account.disconnected'
+            | 'connected_account.completed_first_sync'
+            | 'connected_account.deleted'
+            | 'connected_account.completed_first_sync_after_reconnection'
+            | 'action_attempt.lock_door.succeeded'
+            | 'action_attempt.lock_door.failed'
+            | 'action_attempt.unlock_door.succeeded'
+            | 'action_attempt.unlock_door.failed'
+            | 'connect_webview.login_succeeded'
+            | 'connect_webview.login_failed'
             | 'device.connected'
+            | 'device.added'
+            | 'device.converted_to_unmanaged'
+            | 'device.unmanaged.converted_to_managed'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
-            | 'device.converted_to_unmanaged'
-            | 'device.unmanaged.converted_to_managed'
-            | 'device.removed'
-            | 'device.deleted'
             | 'device.tampered'
             | 'device.low_battery'
             | 'device.battery_status_changed'
+            | 'device.removed'
+            | 'device.deleted'
             | 'device.third_party_integration_detected'
             | 'device.third_party_integration_no_longer_detected'
             | 'device.salto.privacy_mode_activated'
@@ -17564,76 +17895,76 @@ export interface Routes {
             | 'device.connection_stabilized'
             | 'device.error.subscription_required'
             | 'device.error.subscription_required.resolved'
-            | 'access_code.created'
-            | 'access_code.changed'
-            | 'access_code.scheduled_on_device'
-            | 'access_code.set_on_device'
-            | 'access_code.deleted'
-            | 'access_code.removed_from_device'
-            | 'access_code.failed_to_set_on_device'
-            | 'access_code.delay_in_setting_on_device'
-            | 'access_code.failed_to_remove_from_device'
-            | 'access_code.delay_in_removing_from_device'
-            | 'access_code.deleted_external_to_seam'
-            | 'access_code.modified_external_to_seam'
-            | 'access_code.unmanaged.converted_to_managed'
-            | 'access_code.unmanaged.failed_to_convert_to_managed'
-            | 'access_code.unmanaged.created'
-            | 'access_code.unmanaged.removed'
+            | 'device.accessory_keypad_connected'
+            | 'device.accessory_keypad_disconnected'
+            | 'noise_sensor.noise_threshold_triggered'
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
-            | 'phone.deactivated'
-            | 'connected_account.connected'
-            | 'connected_account.successful_login'
-            | 'connected_account.created'
-            | 'connected_account.deleted'
-            | 'connected_account.disconnected'
-            | 'connected_account.completed_first_sync'
-            | 'connected_account.completed_first_sync_after_reconnection'
-            | 'connect_webview.login_succeeded'
-            | 'connect_webview.login_failed'
-            | 'noise_sensor.noise_threshold_triggered'
-            | 'access_code.backup_access_code_pulled'
-            | 'acs_system.added'
-            | 'acs_system.connected'
-            | 'acs_system.disconnected'
-            | 'acs_access_group.deleted'
-            | 'acs_user.deleted'
-            | 'acs_credential.deleted'
-            | 'acs_credential.issued'
-            | 'acs_credential.reissued'
-            | 'acs_encoder.added'
-            | 'acs_encoder.removed'
-            | 'enrollment_automation.deleted'
-            | 'client_session.deleted'
-            | 'action_attempt.lock_door.succeeded'
-            | 'action_attempt.lock_door.failed'
-            | 'action_attempt.unlock_door.succeeded'
-            | 'action_attempt.unlock_door.failed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
+            | 'enrollment_automation.deleted'
+            | 'phone.deactivated'
           )
         | undefined
       event_types?:
         | Array<
-            | 'device.accessory_keypad_connected'
-            | 'device.accessory_keypad_disconnected'
-            | 'device.added'
+            | 'access_code.created'
+            | 'access_code.changed'
+            | 'access_code.scheduled_on_device'
+            | 'access_code.set_on_device'
+            | 'access_code.removed_from_device'
+            | 'access_code.delay_in_setting_on_device'
+            | 'access_code.failed_to_set_on_device'
+            | 'access_code.deleted'
+            | 'access_code.delay_in_removing_from_device'
+            | 'access_code.failed_to_remove_from_device'
+            | 'access_code.modified_external_to_seam'
+            | 'access_code.deleted_external_to_seam'
+            | 'access_code.backup_access_code_pulled'
+            | 'access_code.unmanaged.converted_to_managed'
+            | 'access_code.unmanaged.failed_to_convert_to_managed'
+            | 'access_code.unmanaged.created'
+            | 'access_code.unmanaged.removed'
+            | 'acs_system.connected'
+            | 'acs_system.added'
+            | 'acs_system.disconnected'
+            | 'acs_credential.deleted'
+            | 'acs_credential.issued'
+            | 'acs_credential.reissued'
+            | 'acs_user.deleted'
+            | 'acs_encoder.added'
+            | 'acs_encoder.removed'
+            | 'acs_access_group.deleted'
+            | 'client_session.deleted'
+            | 'connected_account.connected'
+            | 'connected_account.created'
+            | 'connected_account.successful_login'
+            | 'connected_account.disconnected'
+            | 'connected_account.completed_first_sync'
+            | 'connected_account.deleted'
+            | 'connected_account.completed_first_sync_after_reconnection'
+            | 'action_attempt.lock_door.succeeded'
+            | 'action_attempt.lock_door.failed'
+            | 'action_attempt.unlock_door.succeeded'
+            | 'action_attempt.unlock_door.failed'
+            | 'connect_webview.login_succeeded'
+            | 'connect_webview.login_failed'
             | 'device.connected'
+            | 'device.added'
+            | 'device.converted_to_unmanaged'
+            | 'device.unmanaged.converted_to_managed'
             | 'device.unmanaged.connected'
             | 'device.disconnected'
             | 'device.unmanaged.disconnected'
-            | 'device.converted_to_unmanaged'
-            | 'device.unmanaged.converted_to_managed'
-            | 'device.removed'
-            | 'device.deleted'
             | 'device.tampered'
             | 'device.low_battery'
             | 'device.battery_status_changed'
+            | 'device.removed'
+            | 'device.deleted'
             | 'device.third_party_integration_detected'
             | 'device.third_party_integration_no_longer_detected'
             | 'device.salto.privacy_mode_activated'
@@ -17642,58 +17973,19 @@ export interface Routes {
             | 'device.connection_stabilized'
             | 'device.error.subscription_required'
             | 'device.error.subscription_required.resolved'
-            | 'access_code.created'
-            | 'access_code.changed'
-            | 'access_code.scheduled_on_device'
-            | 'access_code.set_on_device'
-            | 'access_code.deleted'
-            | 'access_code.removed_from_device'
-            | 'access_code.failed_to_set_on_device'
-            | 'access_code.delay_in_setting_on_device'
-            | 'access_code.failed_to_remove_from_device'
-            | 'access_code.delay_in_removing_from_device'
-            | 'access_code.deleted_external_to_seam'
-            | 'access_code.modified_external_to_seam'
-            | 'access_code.unmanaged.converted_to_managed'
-            | 'access_code.unmanaged.failed_to_convert_to_managed'
-            | 'access_code.unmanaged.created'
-            | 'access_code.unmanaged.removed'
+            | 'device.accessory_keypad_connected'
+            | 'device.accessory_keypad_disconnected'
+            | 'noise_sensor.noise_threshold_triggered'
             | 'lock.locked'
             | 'lock.unlocked'
             | 'lock.access_denied'
-            | 'phone.deactivated'
-            | 'connected_account.connected'
-            | 'connected_account.successful_login'
-            | 'connected_account.created'
-            | 'connected_account.deleted'
-            | 'connected_account.disconnected'
-            | 'connected_account.completed_first_sync'
-            | 'connected_account.completed_first_sync_after_reconnection'
-            | 'connect_webview.login_succeeded'
-            | 'connect_webview.login_failed'
-            | 'noise_sensor.noise_threshold_triggered'
-            | 'access_code.backup_access_code_pulled'
-            | 'acs_system.added'
-            | 'acs_system.connected'
-            | 'acs_system.disconnected'
-            | 'acs_access_group.deleted'
-            | 'acs_user.deleted'
-            | 'acs_credential.deleted'
-            | 'acs_credential.issued'
-            | 'acs_credential.reissued'
-            | 'acs_encoder.added'
-            | 'acs_encoder.removed'
-            | 'enrollment_automation.deleted'
-            | 'client_session.deleted'
-            | 'action_attempt.lock_door.succeeded'
-            | 'action_attempt.lock_door.failed'
-            | 'action_attempt.unlock_door.succeeded'
-            | 'action_attempt.unlock_door.failed'
             | 'thermostat.climate_preset_activated'
             | 'thermostat.manually_adjusted'
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
+            | 'enrollment_automation.deleted'
+            | 'phone.deactivated'
           >
         | undefined
       connected_account_id?: string | undefined
@@ -19727,10 +20019,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -20508,10 +20873,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -21472,10 +21910,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -22252,10 +22763,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -25229,10 +25813,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -26009,10 +26666,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -29224,10 +29954,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -29399,10 +30202,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -32226,10 +33102,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -35184,10 +36133,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -35964,10 +36986,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -40226,10 +41321,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */
@@ -41008,10 +42176,83 @@ export interface Routes {
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'partial_backup_access_code_pool'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'many_active_backup_codes'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_unknown_device_type'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'wyze_device_missing_gateway'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'functional_offline_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'nest_thermostat_in_manual_eco_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'ttlock_weak_gateway_signal'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'temperature_threshold_exceeded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_communication_degraded'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'device_has_flaky_connection'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_privacy_mode'
+            }
+        >
         /** Date and time at which the device object was created. */
         created_at: string
         /** Indicates whether Seam manages the device. */

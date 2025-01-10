@@ -1,4 +1,4 @@
-import { acs_access_group_events } from './access_groups.js'
+import { acs_access_group_events } from './access-groups.js'
 import { acs_credential_events } from './credentials.js'
 import { acs_encoder_events } from './encoders.js'
 import { acs_system_events } from './systems.js'
