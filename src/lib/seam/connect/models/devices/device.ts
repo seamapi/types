@@ -29,10 +29,6 @@ const common_device_error = z.object({
 const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
-const common_device_warning = z.object({
-  message: z.string(),
-})
-
 const device_offline = common_device_error
   .extend({
     error_code: z.literal('device_offline').describe(error_code_description),
@@ -151,9 +147,150 @@ export const device_error = z
 
 export type DeviceError = z.infer<typeof device_error>
 
-const device_warning = common_device_warning.extend({
-  warning_code: z.string(),
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
+const common_device_warning = z.object({
+  message: z.string(),
 })
+
+const partial_backup_access_code_pool = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('partial_backup_access_code_pool')
+      .describe(warning_code_description),
+  })
+  .describe('Backup access code unhealthy.')
+
+const many_active_backup_codes = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('many_active_backup_codes')
+      .describe(warning_code_description),
+  })
+  .describe('Too many backup codes.')
+
+const salto_unknown_device_type = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('salto_unknown_device_type')
+      .describe(warning_code_description),
+  })
+  .describe('A Salto Lock displaying an unknown device type.')
+
+const salto_office_mode = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('salto_office_mode')
+      .describe(warning_code_description),
+  })
+  .describe('Lock is in Office Mode. Access Codes will not unlock doors.')
+
+const salto_privacy_mode = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('salto_privacy_mode')
+      .describe(warning_code_description),
+  })
+  .describe('Lock is in Privacy Mode. Access Codes will not unlock doors.')
+
+const wyze_device_missing_gateway = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('wyze_device_missing_gateway')
+      .describe(warning_code_description),
+  })
+  .describe('Wyze Lock is not connected to a gateway.')
+
+const functional_offline_device = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('functional_offline_device')
+      .describe(warning_code_description),
+  })
+  .describe('Device is offline, but has some functionality available.')
+
+const third_party_integration_detected = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('third_party_integration_detected')
+      .describe(warning_code_description),
+  })
+  .describe('Third-party integration detected.')
+
+const nest_thermostat_in_manual_eco_mode = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('nest_thermostat_in_manual_eco_mode')
+      .describe(warning_code_description),
+  })
+  .describe('Nest thermostat in manual eco mode.')
+
+const ttlock_lock_gateway_unlocking_not_enabled = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('ttlock_lock_gateway_unlocking_not_enabled')
+      .describe(warning_code_description),
+  })
+  .describe('Remote Unlock feature not enabled in settings.')
+
+const ttlock_weak_gateway_signal = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('ttlock_weak_gateway_signal')
+      .describe(warning_code_description),
+  })
+  .describe('Gateway signal is weak.')
+
+const temperature_threshold_exceeded = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('temperature_threshold_exceeded')
+      .describe(warning_code_description),
+  })
+  .describe('Temperature threshold exceeded.')
+
+const device_communication_degraded = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('device_communication_degraded')
+      .describe(warning_code_description),
+  })
+  .describe('Device appears to be unresponsive.')
+
+const scheduled_maintenance_window = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('scheduled_maintenance_window')
+      .describe(warning_code_description),
+  })
+  .describe('Scheduled maintenance window detected.')
+
+const device_has_flaky_connection = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('device_has_flaky_connection')
+      .describe(warning_code_description),
+  })
+  .describe('Device has flaky connection.')
+
+const device_warning = z.union([
+  partial_backup_access_code_pool,
+  many_active_backup_codes,
+  salto_unknown_device_type,
+  wyze_device_missing_gateway,
+  functional_offline_device,
+  third_party_integration_detected,
+  nest_thermostat_in_manual_eco_mode,
+  ttlock_lock_gateway_unlocking_not_enabled,
+  ttlock_weak_gateway_signal,
+  temperature_threshold_exceeded,
+  device_communication_degraded,
+  scheduled_maintenance_window,
+  device_has_flaky_connection,
+  salto_office_mode,
+  salto_privacy_mode,
+])
 
 export type DeviceWarning = z.infer<typeof device_warning>
 
