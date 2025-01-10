@@ -6292,12 +6292,222 @@ export default {
             description:
               'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Backup access code unhealthy.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['partial_backup_access_code_pool'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Too many backup codes.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['many_active_backup_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'A Salto Lock displaying an unknown device type.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_unknown_device_type'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Wyze Lock is not connected to a gateway.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_device_missing_gateway'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Device is offline, but has some functionality available.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['functional_offline_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Third-party integration detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Nest thermostat in manual eco mode.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['nest_thermostat_in_manual_eco_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Remote Unlock feature not enabled in settings.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_gateway_unlocking_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Gateway signal is weak.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_weak_gateway_signal'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Temperature threshold exceeded.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['temperature_threshold_exceeded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device appears to be unresponsive.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_communication_degraded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Scheduled maintenance window detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['scheduled_maintenance_window'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device has flaky connection.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_has_flaky_connection'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_office_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -11110,12 +11320,222 @@ export default {
             description:
               'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Backup access code unhealthy.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['partial_backup_access_code_pool'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Too many backup codes.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['many_active_backup_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'A Salto Lock displaying an unknown device type.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_unknown_device_type'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Wyze Lock is not connected to a gateway.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_device_missing_gateway'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Device is offline, but has some functionality available.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['functional_offline_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Third-party integration detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Nest thermostat in manual eco mode.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['nest_thermostat_in_manual_eco_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Remote Unlock feature not enabled in settings.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_gateway_unlocking_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Gateway signal is weak.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_weak_gateway_signal'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Temperature threshold exceeded.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['temperature_threshold_exceeded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device appears to be unresponsive.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_communication_degraded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Scheduled maintenance window detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['scheduled_maintenance_window'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device has flaky connection.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_has_flaky_connection'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_office_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -12024,12 +12444,222 @@ export default {
             description:
               'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Backup access code unhealthy.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['partial_backup_access_code_pool'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Too many backup codes.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['many_active_backup_codes'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'A Salto Lock displaying an unknown device type.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_unknown_device_type'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Wyze Lock is not connected to a gateway.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_device_missing_gateway'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Device is offline, but has some functionality available.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['functional_offline_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Third-party integration detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Nest thermostat in manual eco mode.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['nest_thermostat_in_manual_eco_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Remote Unlock feature not enabled in settings.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_lock_gateway_unlocking_not_enabled'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Gateway signal is weak.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['ttlock_weak_gateway_signal'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Temperature threshold exceeded.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['temperature_threshold_exceeded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device appears to be unresponsive.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_communication_degraded'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Scheduled maintenance window detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['scheduled_maintenance_window'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Device has flaky connection.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['device_has_flaky_connection'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_office_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
