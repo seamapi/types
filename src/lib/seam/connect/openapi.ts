@@ -44,13 +44,381 @@ export default {
             items: {
               oneOf: [
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
+                  oneOf: [
+                    {
+                      description: 'Failed to set code on Smart Things device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['smartthings_failed_to_set_access_code'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to set code after multiple retries.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'smartthings_failed_to_set_after_multiple_retries',
+                          ],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to set code on device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['failed_to_set_on_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to remove code from device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['failed_to_remove_from_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Duplicate access code detected on device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['duplicate_code_on_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'An attempt to modify this access code was prevented.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['duplicate_code_attempt_prevented'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Igloohome bridge has too many pending jobs in the queue.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['igloohome_bridge_too_many_pending_jobs'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Igloohome bridge is offline.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['igloohome_bridge_offline'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock as reached max amount of codes.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'igloohome_offline_access_code_no_variance_available',
+                          ],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Unable to confirm the access code is set on Kwikset device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['kwikset_unable_to_confirm_code'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Unable to confirm the deletion of the access code on Kwikset device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['kwikset_unable_to_confirm_deletion'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Code was modified or removed externally after Seam successfully set it on the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['code_modified_external_to_seam'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Invalid code length for August lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_invalid_code_length'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Access code has not yet been fully moved to the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_device_programming_delay'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'All access code slots on the device are full.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_device_slots_full'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'August lock is missing a keypad.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_keypad'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user is not subscribed.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_not_subscribed'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Access code has not yet been fully moved to the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hubitat_device_programming_delay'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'No free positions available on the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hubitat_no_free_positions_available'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   description: 'Error associated with the `device`.',
@@ -254,20 +622,52 @@ export default {
                   ],
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
+                  oneOf: [
+                    {
+                      description: 'Account is disconnected.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
                     },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
+                    {
+                      description: 'Credentials provided were invalid.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['invalid_credentials'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
                   ],
-                  type: 'object',
                 },
               ],
             },
@@ -348,12 +748,153 @@ export default {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Failed to set code on Smart Things device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['smartthings_failed_to_set_access_code'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Received an error when attempting to create this code.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_creation_outage'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['code_modified_external_to_seam'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Delay in setting code on device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_setting_on_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Delay in removing code from device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_removing_from_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Third party integration detected that may cause access codes to fail.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Access code has not yet been fully moved to the device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_device_programming_delay'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Algopins must be used within 24 hours.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['igloo_algopin_must_be_used_within_24_hours'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Management was transferred to another workspace.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['management_transferred'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -4604,13 +5145,52 @@ export default {
           },
           errors: {
             items: {
-              properties: {
-                error_code: { type: 'string' },
-                is_connected_account_error: { enum: [true], type: 'boolean' },
-                message: { type: 'string' },
-              },
-              required: ['message', 'is_connected_account_error', 'error_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Account is disconnected.',
+                  properties: {
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['account_disconnected'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description: 'Credentials provided were invalid.',
+                  properties: {
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['invalid_credentials'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                  },
+                  required: [
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                  ],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -4629,9 +5209,15 @@ export default {
               description: 'Warning associated with the `connected_account`.',
               oneOf: [
                 {
+                  description: 'Scheduled downtime for account planned.',
                   properties: {
                     message: { type: 'string' },
-                    warning_code: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['scheduled_maintenance_window'],
+                      type: 'string',
+                    },
                   },
                   required: ['message', 'warning_code'],
                   type: 'object',
@@ -4981,20 +5567,52 @@ export default {
                   ],
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
+                  oneOf: [
+                    {
+                      description: 'Account is disconnected.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
                     },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
+                    {
+                      description: 'Credentials provided were invalid.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['invalid_credentials'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
                   ],
-                  type: 'object',
                 },
               ],
             },
@@ -11249,20 +11867,52 @@ export default {
                   ],
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
+                  oneOf: [
+                    {
+                      description: 'Account is disconnected.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
                     },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
+                    {
+                      description: 'Credentials provided were invalid.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['invalid_credentials'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
                   ],
-                  type: 'object',
                 },
               ],
             },
@@ -11691,13 +12341,381 @@ export default {
             items: {
               oneOf: [
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_access_code_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_access_code_error', 'error_code'],
-                  type: 'object',
+                  oneOf: [
+                    {
+                      description: 'Failed to set code on Smart Things device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['smartthings_failed_to_set_access_code'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to set code after multiple retries.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'smartthings_failed_to_set_after_multiple_retries',
+                          ],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to set code on device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['failed_to_set_on_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Failed to remove code from device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['failed_to_remove_from_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Duplicate access code detected on device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['duplicate_code_on_device'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'An attempt to modify this access code was prevented.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['duplicate_code_attempt_prevented'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Igloohome bridge has too many pending jobs in the queue.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['igloohome_bridge_too_many_pending_jobs'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Igloohome bridge is offline.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['igloohome_bridge_offline'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Lock as reached max amount of codes.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: [
+                            'igloohome_offline_access_code_no_variance_available',
+                          ],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Unable to confirm the access code is set on Kwikset device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['kwikset_unable_to_confirm_code'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Unable to confirm the deletion of the access code on Kwikset device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['kwikset_unable_to_confirm_deletion'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Code was modified or removed externally after Seam successfully set it on the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['code_modified_external_to_seam'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Invalid code length for August lock.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_invalid_code_length'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Access code has not yet been fully moved to the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_device_programming_delay'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'All access code slots on the device are full.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_device_slots_full'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'August lock is missing a keypad.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['august_lock_missing_keypad'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'Salto site user is not subscribed.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['salto_site_user_not_subscribed'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description:
+                        'Access code has not yet been fully moved to the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hubitat_device_programming_delay'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                    {
+                      description: 'No free positions available on the device.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                          enum: ['hubitat_no_free_positions_available'],
+                          type: 'string',
+                        },
+                        is_access_code_error: { enum: [true], type: 'boolean' },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_access_code_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
+                  ],
                 },
                 {
                   description: 'Error associated with the `device`.',
@@ -11901,20 +12919,52 @@ export default {
                   ],
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
+                  oneOf: [
+                    {
+                      description: 'Account is disconnected.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
                     },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
+                    {
+                      description: 'Credentials provided were invalid.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['invalid_credentials'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
                   ],
-                  type: 'object',
                 },
               ],
             },
@@ -11945,12 +12995,153 @@ export default {
             description:
               'Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention.',
             items: {
-              properties: {
-                message: { type: 'string' },
-                warning_code: { type: 'string' },
-              },
-              required: ['message', 'warning_code'],
-              type: 'object',
+              oneOf: [
+                {
+                  description: 'Failed to set code on Smart Things device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['smartthings_failed_to_set_access_code'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code detected.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_detected_duplicate'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Received an error when attempting to create this code.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schlage_creation_outage'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Code was modified or removed externally after Seam successfully set it on the device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['code_modified_external_to_seam'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Delay in setting code on device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_setting_on_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Delay in removing code from device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['delay_in_removing_from_device'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Third party integration detected that may cause access codes to fail.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['third_party_integration_detected'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Access code has not yet been fully moved to the device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_device_programming_delay'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Algopins must be used within 24 hours.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['igloo_algopin_must_be_used_within_24_hours'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Management was transferred to another workspace.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['management_transferred'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
             },
             type: 'array',
           },
@@ -12274,20 +13465,52 @@ export default {
                   ],
                 },
                 {
-                  properties: {
-                    error_code: { type: 'string' },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
+                  oneOf: [
+                    {
+                      description: 'Account is disconnected.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['account_disconnected'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
                     },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
+                    {
+                      description: 'Credentials provided were invalid.',
+                      properties: {
+                        error_code: {
+                          description:
+                            'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                          enum: ['invalid_credentials'],
+                          type: 'string',
+                        },
+                        is_connected_account_error: {
+                          enum: [true],
+                          type: 'boolean',
+                        },
+                        message: { type: 'string' },
+                      },
+                      required: [
+                        'message',
+                        'is_connected_account_error',
+                        'error_code',
+                      ],
+                      type: 'object',
+                    },
                   ],
-                  type: 'object',
                 },
               ],
             },
