@@ -14,6 +14,8 @@ export const acs_credential_external_type = z.enum([
   'salto_ks_credential',
   'assa_abloy_vostio_card',
   'assa_abloy_vostio_mobile_key',
+  'salto_space_card',
+  'salto_space_mobile_key',
 ])
 
 export const acs_credential_access_method_type = z.enum([
