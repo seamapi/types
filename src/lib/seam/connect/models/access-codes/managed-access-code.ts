@@ -8,19 +8,294 @@ const common_access_code_error = z.object({
   is_access_code_error: z.literal(true),
 })
 
+const error_code_description =
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+
+const smartthings_failed_to_set_access_code_error = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('smartthings_failed_to_set_access_code')
+      .describe(error_code_description),
+  })
+  .describe('Failed to set code on Smart Things device.')
+
+const smartthings_failed_to_set_after_multiple_retries =
+  common_access_code_error
+    .extend({
+      error_code: z
+        .literal('smartthings_failed_to_set_after_multiple_retries')
+        .describe(error_code_description),
+    })
+    .describe('Failed to set code after multiple retries.')
+
+const code_modified_external_to_seam_error = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('code_modified_external_to_seam')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Code was modified or removed externally after Seam successfully set it on the device.',
+  )
+
+const failed_to_set_on_device = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('failed_to_set_on_device')
+      .describe(error_code_description),
+  })
+  .describe('Failed to set code on device.')
+
+const failed_to_remove_from_device = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('failed_to_remove_from_device')
+      .describe(error_code_description),
+  })
+  .describe('Failed to remove code from device.')
+
+const duplicate_code_on_device = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('duplicate_code_on_device')
+      .describe(error_code_description),
+  })
+  .describe('Duplicate access code detected on device.')
+
+const duplicate_code_attempt_prevented = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('duplicate_code_attempt_prevented')
+      .describe(error_code_description),
+  })
+  .describe('An attempt to modify this access code was prevented.')
+
+const igloohome_bridge_too_many_pending_jobs = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('igloohome_bridge_too_many_pending_jobs')
+      .describe(error_code_description),
+  })
+  .describe('Igloohome bridge has too many pending jobs in the queue.')
+
+const igloohome_bridge_offline = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('igloohome_bridge_offline')
+      .describe(error_code_description),
+  })
+  .describe('Igloohome bridge is offline.')
+
+const kwikset_unable_to_confirm_code = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('kwikset_unable_to_confirm_code')
+      .describe(error_code_description),
+  })
+  .describe('Unable to confirm the access code is set on Kwikset device.')
+
+const kwikset_unable_to_confirm_deletion = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('kwikset_unable_to_confirm_deletion')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Unable to confirm the deletion of the access code on Kwikset device.',
+  )
+
+const igloohome_offline_access_code_no_variance_available =
+  common_access_code_error
+    .extend({
+      error_code: z
+        .literal('igloohome_offline_access_code_no_variance_available')
+        .describe(error_code_description),
+    })
+    .describe('Lock as reached max amount of codes.')
+
+const august_lock_invalid_code_length = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('august_lock_invalid_code_length')
+      .describe(error_code_description),
+  })
+  .describe('Invalid code length for August lock.')
+
+const august_device_programming_delay_error = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('august_device_programming_delay')
+      .describe(error_code_description),
+  })
+  .describe('Access code has not yet been fully moved to the device.')
+
+const august_device_slots_full = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('august_device_slots_full')
+      .describe(error_code_description),
+  })
+  .describe('All access code slots on the device are full.')
+
+const august_lock_missing_keypad = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('august_lock_missing_keypad')
+      .describe(error_code_description),
+  })
+  .describe('August lock is missing a keypad.')
+
+const salto_site_user_not_subscribed = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('salto_site_user_not_subscribed')
+      .describe(error_code_description),
+  })
+  .describe('Salto site user is not subscribed.')
+
+const hubitat_device_programming_delay = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('hubitat_device_programming_delay')
+      .describe(error_code_description),
+  })
+  .describe('Access code has not yet been fully moved to the device.')
+
+const hubitat_no_free_positions_available = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('hubitat_no_free_positions_available')
+      .describe(error_code_description),
+  })
+  .describe('No free positions available on the device.')
+
+const access_code_error = z.union([
+  smartthings_failed_to_set_access_code_error,
+  smartthings_failed_to_set_after_multiple_retries,
+  failed_to_set_on_device,
+  failed_to_remove_from_device,
+  duplicate_code_on_device,
+  duplicate_code_attempt_prevented,
+  igloohome_bridge_too_many_pending_jobs,
+  igloohome_bridge_offline,
+  igloohome_offline_access_code_no_variance_available,
+  kwikset_unable_to_confirm_code,
+  kwikset_unable_to_confirm_deletion,
+  code_modified_external_to_seam_error,
+  august_lock_invalid_code_length,
+  august_device_programming_delay_error,
+  august_device_slots_full,
+  august_lock_missing_keypad,
+  salto_site_user_not_subscribed,
+  hubitat_device_programming_delay,
+  hubitat_no_free_positions_available,
+])
+
+export type AccessCodeError = z.infer<typeof access_code_error>
+
 const common_access_code_warning = z.object({
   message: z.string(),
 })
 
-const access_code_error = common_access_code_error.extend({
-  error_code: z.string(),
-})
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
-export type AccessCodeError = z.infer<typeof access_code_error>
+const smartthings_failed_to_set_access_code_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('smartthings_failed_to_set_access_code')
+      .describe(warning_code_description),
+  })
+  .describe('Failed to set code on Smart Things device.')
 
-const access_code_warning = common_access_code_warning.extend({
-  warning_code: z.string(),
-})
+const august_device_programming_delay_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('august_device_programming_delay')
+      .describe(warning_code_description),
+  })
+  .describe('Access code has not yet been fully moved to the device.')
+
+const code_modified_external_to_seam_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('code_modified_external_to_seam')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Code was modified or removed externally after Seam successfully set it on the device.',
+  )
+
+const schlage_detected_duplicate = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('schlage_detected_duplicate')
+      .describe(warning_code_description),
+  })
+  .describe('Duplicate access code detected.')
+
+const schlage_creation_outage = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('schlage_creation_outage')
+      .describe(warning_code_description),
+  })
+  .describe('Received an error when attempting to create this code.')
+
+const delay_in_setting_on_device = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('delay_in_setting_on_device')
+      .describe(warning_code_description),
+  })
+  .describe('Delay in setting code on device.')
+
+const delay_in_removing_from_device = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('delay_in_removing_from_device')
+      .describe(warning_code_description),
+  })
+  .describe('Delay in removing code from device.')
+
+const third_party_integration_detected = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('third_party_integration_detected')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Third party integration detected that may cause access codes to fail.',
+  )
+
+const igloo_algopin_must_be_used_within_24_hours = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('igloo_algopin_must_be_used_within_24_hours')
+      .describe(warning_code_description),
+  })
+  .describe('Algopins must be used within 24 hours.')
+
+const management_transferred = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('management_transferred')
+      .describe(warning_code_description),
+  })
+  .describe('Management was transferred to another workspace.')
+
+const access_code_warning = z.union([
+  smartthings_failed_to_set_access_code_warning,
+  schlage_detected_duplicate,
+  schlage_creation_outage,
+  code_modified_external_to_seam_warning,
+  delay_in_setting_on_device,
+  delay_in_removing_from_device,
+  third_party_integration_detected,
+  august_device_programming_delay_warning,
+  igloo_algopin_must_be_used_within_24_hours,
+  management_transferred,
+])
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
