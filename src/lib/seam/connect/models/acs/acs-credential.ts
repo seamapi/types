@@ -1,6 +1,9 @@
 import { z } from 'zod'
 
-import { acs_credential_visionline_metadata } from './metadata/index.js'
+import {
+  acs_credential_visionline_metadata,
+  acs_credential_vostio_metadata,
+} from './metadata/index.js'
 
 // If changed, update seam.acs_credential.external_type generated column
 export const acs_credential_external_type = z.enum([
@@ -225,6 +228,9 @@ const common_acs_credential = z.object({
   visionline_metadata: acs_credential_visionline_metadata
     .optional()
     .describe('Visionline-specific metadata for the credential.'),
+  assa_abloy_vostio_metadata: acs_credential_vostio_metadata
+    .optional()
+    .describe('Vostio-specific metadata for the credential.'),
 })
 
 export const acs_credential = common_acs_credential

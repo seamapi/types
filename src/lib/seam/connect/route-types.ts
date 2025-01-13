@@ -250,6 +250,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -372,6 +384,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -545,6 +569,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -667,6 +701,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -1023,11 +1067,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -1108,17 +1263,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1190,11 +1402,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -1275,17 +1598,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -1548,6 +1928,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -1670,6 +2062,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -1843,6 +2247,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -1965,6 +2379,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -2351,11 +2775,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -2436,17 +2971,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -2505,11 +3097,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -2590,17 +3293,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -2658,11 +3418,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -2743,17 +3614,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -2799,11 +3727,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -2884,17 +3923,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
         /** Date and time at which the time-bound access code becomes active. */
@@ -2948,11 +4044,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -3033,17 +4240,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -3304,6 +4568,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -3426,6 +4702,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -3599,6 +4887,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -3721,6 +5019,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -4085,11 +5393,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -4170,17 +5589,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -4216,11 +5692,122 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | {
-              message: string
-              is_access_code_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_access_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_set_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'failed_to_remove_from_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_on_device'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'duplicate_code_attempt_prevented'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_too_many_pending_jobs'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_bridge_offline'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'igloohome_offline_access_code_no_variance_available'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_code'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'kwikset_unable_to_confirm_deletion'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'code_modified_external_to_seam'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_invalid_code_length'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_device_slots_full'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'august_lock_missing_keypad'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'salto_site_user_not_subscribed'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_device_programming_delay'
+                }
+              | {
+                  message: string
+                  is_access_code_error: true
+                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+                  error_code: 'hubitat_no_free_positions_available'
+                }
+            )
           | (
               | {
                   message: string
@@ -4301,17 +5888,74 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
-        warnings: Array<{
-          message: string
-          warning_code: string
-        }>
+        warnings: Array<
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_detected_duplicate'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_setting_on_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'delay_in_removing_from_device'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'third_party_integration_detected'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'igloo_algopin_must_be_used_within_24_hours'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'management_transferred'
+            }
+        >
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
         starts_at?: (string | null) | undefined
@@ -4589,6 +6233,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -4711,6 +6367,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -4884,6 +6552,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -5006,6 +6684,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -6025,6 +7713,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -6211,6 +7909,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -6356,6 +8064,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -6507,6 +8225,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -6667,6 +8395,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -6899,6 +8637,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -7036,6 +8784,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: false
@@ -7190,6 +8948,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: false
       }>
     }
@@ -7331,6 +9099,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -7575,6 +9353,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -7697,6 +9487,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -7870,6 +9672,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -7992,6 +9804,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -8613,6 +10435,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -8735,6 +10569,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -8908,6 +10754,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -9030,6 +10886,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -9775,6 +11641,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -11417,6 +13293,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -11539,6 +13427,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -11712,6 +13612,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -11834,6 +13744,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -12404,6 +14324,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -12526,6 +14458,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -12699,6 +14643,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -12821,6 +14775,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -13557,15 +15521,25 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors: Array<{
-          message: string
-          is_connected_account_error: true
-          error_code: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
+        >
         warnings: Array<
           | {
               message: string
-              warning_code: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
@@ -13605,15 +15579,25 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors: Array<{
-          message: string
-          is_connected_account_error: true
-          error_code: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
+        >
         warnings: Array<
           | {
               message: string
-              warning_code: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
@@ -13653,15 +15637,25 @@ export interface Routes {
           | undefined
         account_type?: string | undefined
         account_type_display_name: string
-        errors: Array<{
-          message: string
-          is_connected_account_error: true
-          error_code: string
-        }>
+        errors: Array<
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
+        >
         warnings: Array<
           | {
               message: string
-              warning_code: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
@@ -14449,11 +16443,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -15486,11 +17489,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -15866,11 +17878,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -16349,11 +18370,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -20012,11 +22042,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -20866,11 +22905,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -21903,11 +23951,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -22756,11 +24813,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -23095,6 +25161,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -23217,6 +25295,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -23390,6 +25480,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -23512,6 +25612,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -24084,6 +26194,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -24206,6 +26328,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -24379,6 +26513,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -24501,6 +26645,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -25806,11 +27960,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -26659,11 +28822,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -27003,6 +29175,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -27125,6 +29309,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -27298,6 +29494,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -27420,6 +29626,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -28003,6 +30219,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -28125,6 +30353,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -28298,6 +30538,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -28420,6 +30670,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -29042,6 +31302,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -29164,6 +31436,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -29337,6 +31621,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -29459,6 +31753,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -29947,11 +32251,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -30195,11 +32508,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -30536,6 +32858,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -30658,6 +32992,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -30831,6 +33177,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -30953,6 +33309,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -31531,6 +33897,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -31653,6 +34031,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -31826,6 +34216,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -31948,6 +34348,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -33095,11 +35505,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -33440,6 +35859,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -33562,6 +35993,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -33735,6 +36178,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -33857,6 +36310,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -34439,6 +36902,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -34561,6 +37036,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -34734,6 +37221,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -34856,6 +37353,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -36126,11 +38633,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -36979,11 +39495,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -37320,6 +39845,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -37442,6 +39979,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -37615,6 +40164,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -37737,6 +40296,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -38495,6 +41064,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -38617,6 +41198,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -38790,6 +41383,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -38912,6 +41515,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -39517,6 +42130,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -39639,6 +42264,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -39812,6 +42449,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -39934,6 +42581,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -41314,11 +43971,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -42169,11 +44835,20 @@ export interface Routes {
                   error_code: 'subscription_required'
                 }
             )
-          | {
-              message: string
-              is_connected_account_error: true
-              error_code: string
-            }
+          | (
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'account_disconnected'
+                }
+              | {
+                  message: string
+                  is_connected_account_error: true
+                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+                  error_code: 'invalid_credentials'
+                }
+            )
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -43002,6 +45677,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -43124,6 +45811,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -43297,6 +45996,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -43419,6 +46128,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
