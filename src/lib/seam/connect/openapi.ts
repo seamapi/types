@@ -1057,6 +1057,20 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          assa_abloy_vostio_metadata: {
+            description: 'Vostio-specific metadata for the credential.',
+            properties: {
+              door_names: { items: { type: 'string' }, type: 'array' },
+              endpoint_id: { type: 'string' },
+              key_id: { type: 'string' },
+              key_issuing_request_id: { type: 'string' },
+              override_guest_acs_entrance_ids: {
+                items: { type: 'string' },
+                type: 'array',
+              },
+            },
+            type: 'object',
+          },
           card_number: { nullable: true, type: 'string' },
           code: {
             description: 'Access (PIN) code for the credential.',
@@ -2552,6 +2566,24 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           card_number: { nullable: true, type: 'string' },
                           code: {
                             description:
@@ -2913,6 +2945,24 @@ export default {
                               'ID of the ACS user to whom the credential belongs.',
                             format: 'uuid',
                             type: 'string',
+                          },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
                           },
                           card_number: { nullable: true, type: 'string' },
                           code: {
@@ -3410,6 +3460,24 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      assa_abloy_vostio_metadata: {
+                        description:
+                          'Vostio-specific metadata for the credential.',
+                        properties: {
+                          door_names: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          endpoint_id: { type: 'string' },
+                          key_id: { type: 'string' },
+                          key_issuing_request_id: { type: 'string' },
+                          override_guest_acs_entrance_ids: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
                       card_number: { nullable: true, type: 'string' },
                       code: {
                         description: 'Access (PIN) code for the credential.',
@@ -3768,6 +3836,24 @@ export default {
                           'ID of the ACS user to whom the credential belongs.',
                         format: 'uuid',
                         type: 'string',
+                      },
+                      assa_abloy_vostio_metadata: {
+                        description:
+                          'Vostio-specific metadata for the credential.',
+                        properties: {
+                          door_names: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          endpoint_id: { type: 'string' },
+                          key_id: { type: 'string' },
+                          key_issuing_request_id: { type: 'string' },
+                          override_guest_acs_entrance_ids: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
                       },
                       card_number: { nullable: true, type: 'string' },
                       code: {
@@ -17010,6 +17096,24 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        assa_abloy_vostio_metadata: {
+                          description:
+                            'Vostio-specific metadata for the credential.',
+                          properties: {
+                            door_names: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                            endpoint_id: { type: 'string' },
+                            key_id: { type: 'string' },
+                            key_issuing_request_id: { type: 'string' },
+                            override_guest_acs_entrance_ids: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         card_number: { nullable: true, type: 'string' },
                         code: {
                           description: 'Access (PIN) code for the credential.',
@@ -17471,6 +17575,24 @@ export default {
                               'ID of the ACS user to whom the credential belongs.',
                             format: 'uuid',
                             type: 'string',
+                          },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
                           },
                           card_number: { nullable: true, type: 'string' },
                           code: {

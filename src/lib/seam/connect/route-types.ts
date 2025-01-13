@@ -250,6 +250,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -372,6 +384,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -545,6 +569,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -667,6 +701,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -1884,6 +1928,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -2006,6 +2062,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -2179,6 +2247,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -2301,6 +2379,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -4480,6 +4568,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -4602,6 +4702,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -4775,6 +4887,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -4897,6 +5019,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -6101,6 +6233,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -6223,6 +6367,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -6396,6 +6552,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -6518,6 +6684,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -7537,6 +7713,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -7723,6 +7909,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -7868,6 +8064,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8019,6 +8225,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8179,6 +8395,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8411,6 +8637,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: true
       }
     }
@@ -8548,6 +8784,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: false
@@ -8702,6 +8948,16 @@ export interface Routes {
               credential_id?: string | undefined
             }
           | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
+            }
+          | undefined
         is_managed: false
       }>
     }
@@ -8843,6 +9099,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -9087,6 +9353,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -9209,6 +9487,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -9382,6 +9672,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -9504,6 +9804,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -10125,6 +10435,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -10247,6 +10569,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -10420,6 +10754,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -10542,6 +10886,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -11287,6 +11641,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -12929,6 +13293,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -13051,6 +13427,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -13224,6 +13612,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -13346,6 +13744,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -13916,6 +14324,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -14038,6 +14458,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -14211,6 +14643,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -14333,6 +14775,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -24709,6 +25161,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -24831,6 +25295,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -25004,6 +25480,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -25126,6 +25612,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -25698,6 +26194,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -25820,6 +26328,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -25993,6 +26513,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -26115,6 +26645,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -28635,6 +29175,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -28757,6 +29309,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -28930,6 +29494,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -29052,6 +29626,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -29635,6 +30219,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -29757,6 +30353,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -29930,6 +30538,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -30052,6 +30670,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -30674,6 +31302,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -30796,6 +31436,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -30969,6 +31621,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -31091,6 +31753,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -32186,6 +32858,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -32308,6 +32992,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -32481,6 +33177,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -32603,6 +33309,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -33181,6 +33897,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -33303,6 +34031,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -33476,6 +34216,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -33598,6 +34348,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -35099,6 +35859,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -35221,6 +35993,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -35394,6 +36178,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -35516,6 +36310,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -36098,6 +36902,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -36220,6 +37036,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -36393,6 +37221,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -36515,6 +37353,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -38997,6 +39845,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -39119,6 +39979,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -39292,6 +40164,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -39414,6 +40296,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -40172,6 +41064,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -40294,6 +41198,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -40467,6 +41383,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -40589,6 +41515,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -41194,6 +42130,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -41316,6 +42264,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -41489,6 +42449,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -41611,6 +42581,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -44697,6 +45677,18 @@ export interface Routes {
                               credential_id?: string | undefined
                             }
                           | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
+                            }
+                          | undefined
                         is_managed: true
                       }
                     | {
@@ -44819,6 +45811,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -44992,6 +45996,16 @@ export interface Routes {
                         credential_id?: string | undefined
                       }
                     | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
+                      }
+                    | undefined
                   is_managed: true
                 }
               | {
@@ -45114,6 +46128,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
