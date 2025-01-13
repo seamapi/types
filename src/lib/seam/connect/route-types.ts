@@ -159,6 +159,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -295,6 +297,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -478,6 +482,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -612,6 +618,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -1837,6 +1845,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -1973,6 +1983,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -2156,6 +2168,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -2290,6 +2304,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4477,6 +4493,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4613,6 +4631,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4796,6 +4816,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4930,6 +4952,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6142,6 +6166,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6278,6 +6304,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6461,6 +6489,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6595,6 +6625,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7622,6 +7654,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7818,6 +7852,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7975,6 +8011,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8136,6 +8174,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8306,6 +8346,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8546,6 +8588,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8695,6 +8739,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8857,6 +8903,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9010,6 +9058,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9262,6 +9312,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9398,6 +9450,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9581,6 +9635,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9715,6 +9771,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10344,6 +10402,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10480,6 +10540,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10663,6 +10725,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10797,6 +10861,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -11552,6 +11618,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13202,6 +13270,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13338,6 +13408,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13521,6 +13593,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13655,6 +13729,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14233,6 +14309,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14369,6 +14447,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14552,6 +14632,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14686,6 +14768,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25070,6 +25154,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25206,6 +25292,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25389,6 +25477,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25523,6 +25613,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -26103,6 +26195,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -26239,6 +26333,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -26422,6 +26518,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -26556,6 +26654,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29084,6 +29184,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29220,6 +29322,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29403,6 +29507,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29537,6 +29643,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30128,6 +30236,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30264,6 +30374,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30447,6 +30559,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30581,6 +30695,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -31211,6 +31327,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -31347,6 +31465,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -31530,6 +31650,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -31664,6 +31786,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32767,6 +32891,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32903,6 +33029,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33086,6 +33214,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33220,6 +33350,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33806,6 +33938,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33942,6 +34076,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -34125,6 +34261,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -34259,6 +34397,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35768,6 +35908,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35904,6 +36046,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36087,6 +36231,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36221,6 +36367,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36811,6 +36959,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36947,6 +37097,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -37130,6 +37282,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -37264,6 +37418,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -39754,6 +39910,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -39890,6 +40048,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40073,6 +40233,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40207,6 +40369,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40973,6 +41137,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41109,6 +41275,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41292,6 +41460,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41426,6 +41596,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -42039,6 +42211,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -42175,6 +42349,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -42358,6 +42534,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -42492,6 +42670,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -45586,6 +45766,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -45722,6 +45904,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -45905,6 +46089,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -46039,6 +46225,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
