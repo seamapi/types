@@ -7,6 +7,9 @@ const common_connected_account_error = z.object({
   is_connected_account_error: z.literal(true),
 })
 
+const error_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
@@ -14,9 +17,26 @@ const common_connected_account_warning = z.object({
   message: z.string(),
 })
 
-export const connected_account_error = common_connected_account_error.extend({
-  error_code: z.string(),
-})
+export const account_disconnected = common_connected_account_error
+  .extend({
+    error_code: z
+      .literal('account_disconnected')
+      .describe(error_code_description),
+  })
+  .describe('Account is disconnected.')
+
+export const invalid_credentials = common_connected_account_error
+  .extend({
+    error_code: z
+      .literal('invalid_credentials')
+      .describe(error_code_description),
+  })
+  .describe('Credentials provided were invalid.')
+
+export const connected_account_error = z.union([
+  account_disconnected,
+  invalid_credentials,
+])
 
 export type ConnectedAccountError = z.infer<typeof connected_account_error>
 
@@ -32,13 +52,16 @@ export const unknown_issue_with_connected_account =
         'This issue may affect the proper functioning of one or more resources in this account.',
     )
 
+const scheduled_maintenance_window = common_connected_account_warning
+  .extend({
+    warning_code: z
+      .literal('scheduled_maintenance_window')
+      .describe(warning_code_description),
+  })
+  .describe('Scheduled downtime for account planned.')
+
 const connected_account_warning = z
-  .union([
-    common_connected_account_warning.extend({
-      warning_code: z.string(),
-    }),
-    unknown_issue_with_connected_account,
-  ])
+  .union([scheduled_maintenance_window, unknown_issue_with_connected_account])
   .describe('Warning associated with the `connected_account`.')
 
 export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
