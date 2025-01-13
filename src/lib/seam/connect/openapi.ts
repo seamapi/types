@@ -1057,6 +1057,20 @@ export default {
             format: 'uuid',
             type: 'string',
           },
+          assa_abloy_vostio_metadata: {
+            description: 'Vostio-specific metadata for the credential.',
+            properties: {
+              door_names: { items: { type: 'string' }, type: 'array' },
+              endpoint_id: { type: 'string' },
+              key_id: { type: 'string' },
+              key_issuing_request_id: { type: 'string' },
+              override_guest_acs_entrance_ids: {
+                items: { type: 'string' },
+                type: 'array',
+              },
+            },
+            type: 'object',
+          },
           card_number: { nullable: true, type: 'string' },
           code: {
             description: 'Access (PIN) code for the credential.',
@@ -1102,6 +1116,8 @@ export default {
               'salto_ks_credential',
               'assa_abloy_vostio_card',
               'assa_abloy_vostio_mobile_key',
+              'salto_space_card',
+              'salto_space_mobile_key',
             ],
             type: 'string',
           },
@@ -2552,6 +2568,24 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           card_number: { nullable: true, type: 'string' },
                           code: {
                             description:
@@ -2600,6 +2634,8 @@ export default {
                               'salto_ks_credential',
                               'assa_abloy_vostio_card',
                               'assa_abloy_vostio_mobile_key',
+                              'salto_space_card',
+                              'salto_space_mobile_key',
                             ],
                             type: 'string',
                           },
@@ -2914,6 +2950,24 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           card_number: { nullable: true, type: 'string' },
                           code: {
                             description:
@@ -2962,6 +3016,8 @@ export default {
                               'salto_ks_credential',
                               'assa_abloy_vostio_card',
                               'assa_abloy_vostio_mobile_key',
+                              'salto_space_card',
+                              'salto_space_mobile_key',
                             ],
                             type: 'string',
                           },
@@ -3410,6 +3466,24 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      assa_abloy_vostio_metadata: {
+                        description:
+                          'Vostio-specific metadata for the credential.',
+                        properties: {
+                          door_names: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          endpoint_id: { type: 'string' },
+                          key_id: { type: 'string' },
+                          key_issuing_request_id: { type: 'string' },
+                          override_guest_acs_entrance_ids: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
                       card_number: { nullable: true, type: 'string' },
                       code: {
                         description: 'Access (PIN) code for the credential.',
@@ -3457,6 +3531,8 @@ export default {
                           'salto_ks_credential',
                           'assa_abloy_vostio_card',
                           'assa_abloy_vostio_mobile_key',
+                          'salto_space_card',
+                          'salto_space_mobile_key',
                         ],
                         type: 'string',
                       },
@@ -3769,6 +3845,24 @@ export default {
                         format: 'uuid',
                         type: 'string',
                       },
+                      assa_abloy_vostio_metadata: {
+                        description:
+                          'Vostio-specific metadata for the credential.',
+                        properties: {
+                          door_names: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                          endpoint_id: { type: 'string' },
+                          key_id: { type: 'string' },
+                          key_issuing_request_id: { type: 'string' },
+                          override_guest_acs_entrance_ids: {
+                            items: { type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
                       card_number: { nullable: true, type: 'string' },
                       code: {
                         description: 'Access (PIN) code for the credential.',
@@ -3816,6 +3910,8 @@ export default {
                           'salto_ks_credential',
                           'assa_abloy_vostio_card',
                           'assa_abloy_vostio_mobile_key',
+                          'salto_space_card',
+                          'salto_space_mobile_key',
                         ],
                         type: 'string',
                       },
@@ -17010,6 +17106,24 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        assa_abloy_vostio_metadata: {
+                          description:
+                            'Vostio-specific metadata for the credential.',
+                          properties: {
+                            door_names: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                            endpoint_id: { type: 'string' },
+                            key_id: { type: 'string' },
+                            key_issuing_request_id: { type: 'string' },
+                            override_guest_acs_entrance_ids: {
+                              items: { type: 'string' },
+                              type: 'array',
+                            },
+                          },
+                          type: 'object',
+                        },
                         card_number: { nullable: true, type: 'string' },
                         code: {
                           description: 'Access (PIN) code for the credential.',
@@ -17057,6 +17171,8 @@ export default {
                             'salto_ks_credential',
                             'assa_abloy_vostio_card',
                             'assa_abloy_vostio_mobile_key',
+                            'salto_space_card',
+                            'salto_space_mobile_key',
                           ],
                           type: 'string',
                         },
@@ -17472,6 +17588,24 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          assa_abloy_vostio_metadata: {
+                            description:
+                              'Vostio-specific metadata for the credential.',
+                            properties: {
+                              door_names: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                              endpoint_id: { type: 'string' },
+                              key_id: { type: 'string' },
+                              key_issuing_request_id: { type: 'string' },
+                              override_guest_acs_entrance_ids: {
+                                items: { type: 'string' },
+                                type: 'array',
+                              },
+                            },
+                            type: 'object',
+                          },
                           card_number: { nullable: true, type: 'string' },
                           code: {
                             description:
@@ -17520,6 +17654,8 @@ export default {
                               'salto_ks_credential',
                               'assa_abloy_vostio_card',
                               'assa_abloy_vostio_mobile_key',
+                              'salto_space_card',
+                              'salto_space_mobile_key',
                             ],
                             type: 'string',
                           },

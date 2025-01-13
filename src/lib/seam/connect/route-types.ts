@@ -159,6 +159,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -248,6 +250,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -283,6 +297,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -372,6 +388,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -454,6 +482,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -543,6 +573,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -578,6 +618,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -667,6 +709,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -1793,6 +1845,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -1882,6 +1936,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -1917,6 +1983,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -2006,6 +2074,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -2088,6 +2168,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -2177,6 +2259,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -2212,6 +2304,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -2301,6 +2395,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -4389,6 +4493,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4478,6 +4584,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -4513,6 +4631,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4602,6 +4722,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -4684,6 +4816,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4773,6 +4907,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -4808,6 +4952,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -4897,6 +5043,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -6010,6 +6166,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6099,6 +6257,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -6134,6 +6304,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6223,6 +6395,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -6305,6 +6489,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6394,6 +6580,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -6429,6 +6625,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -6518,6 +6716,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -7446,6 +7654,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7535,6 +7745,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -7632,6 +7852,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7721,6 +7943,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -7779,6 +8011,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -7868,6 +8102,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -7930,6 +8174,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8019,6 +8265,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8090,6 +8346,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8179,6 +8437,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8320,6 +8588,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8409,6 +8679,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8459,6 +8739,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8548,6 +8830,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: false
@@ -8611,6 +8903,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8700,6 +8994,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: false
@@ -8754,6 +9058,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -8843,6 +9149,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -8996,6 +9312,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9085,6 +9403,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -9120,6 +9450,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9209,6 +9541,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -9291,6 +9635,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9380,6 +9726,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -9415,6 +9771,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -9504,6 +9862,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -10034,6 +10402,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10123,6 +10493,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -10158,6 +10540,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10247,6 +10631,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -10329,6 +10725,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10418,6 +10816,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -10453,6 +10861,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -10542,6 +10952,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -11198,6 +11618,8 @@ export interface Routes {
               | 'salto_ks_credential'
               | 'assa_abloy_vostio_card'
               | 'assa_abloy_vostio_mobile_key'
+              | 'salto_space_card'
+              | 'salto_space_mobile_key'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -11287,6 +11709,16 @@ export interface Routes {
               auto_join?: boolean | undefined
               card_id?: string | undefined
               credential_id?: string | undefined
+            }
+          | undefined
+        /** Vostio-specific metadata for the credential. */
+        assa_abloy_vostio_metadata?:
+          | {
+              override_guest_acs_entrance_ids?: string[] | undefined
+              key_id?: string | undefined
+              key_issuing_request_id?: string | undefined
+              door_names?: string[] | undefined
+              endpoint_id?: string | undefined
             }
           | undefined
         is_managed: true
@@ -12838,6 +13270,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -12927,6 +13361,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -12962,6 +13408,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13051,6 +13499,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -13133,6 +13593,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13222,6 +13684,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -13257,6 +13729,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13346,6 +13820,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -13825,6 +14309,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -13914,6 +14400,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -13949,6 +14447,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14038,6 +14538,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -14120,6 +14632,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14209,6 +14723,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -14244,6 +14768,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -14333,6 +14859,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -24618,6 +25154,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -24707,6 +25245,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -24742,6 +25292,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -24831,6 +25383,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -24913,6 +25477,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25002,6 +25568,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -25037,6 +25613,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25126,6 +25704,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -25607,6 +26195,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25696,6 +26286,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -25731,6 +26333,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25820,6 +26424,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -25902,6 +26518,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -25991,6 +26609,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -26026,6 +26654,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -26115,6 +26745,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -28544,6 +29184,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -28633,6 +29275,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -28668,6 +29322,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -28757,6 +29413,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -28839,6 +29507,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -28928,6 +29598,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -28963,6 +29643,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29052,6 +29734,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -29544,6 +30236,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29633,6 +30327,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -29668,6 +30374,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29757,6 +30465,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -29839,6 +30559,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -29928,6 +30650,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -29963,6 +30695,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30052,6 +30786,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -30583,6 +31327,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30672,6 +31418,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -30707,6 +31465,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30796,6 +31556,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -30878,6 +31650,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -30967,6 +31741,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -31002,6 +31786,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -31091,6 +31877,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -32095,6 +32891,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32184,6 +32982,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -32219,6 +33029,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32308,6 +33120,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -32390,6 +33214,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32479,6 +33305,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -32514,6 +33350,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -32603,6 +33441,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -33090,6 +33938,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33179,6 +34029,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -33214,6 +34076,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33303,6 +34167,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -33385,6 +34261,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33474,6 +34352,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -33509,6 +34397,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -33598,6 +34488,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -35008,6 +35908,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35097,6 +35999,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -35132,6 +36046,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35221,6 +36137,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -35303,6 +36231,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35392,6 +36322,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -35427,6 +36367,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -35516,6 +36458,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -36007,6 +36959,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36096,6 +37050,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -36131,6 +37097,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36220,6 +37188,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -36302,6 +37282,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36391,6 +37373,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -36426,6 +37418,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -36515,6 +37509,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -38906,6 +39910,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -38995,6 +40001,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -39030,6 +40048,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -39119,6 +40139,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -39201,6 +40233,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -39290,6 +40324,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -39325,6 +40369,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -39414,6 +40460,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -40081,6 +41137,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40170,6 +41228,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -40205,6 +41275,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40294,6 +41366,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -40376,6 +41460,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40465,6 +41551,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -40500,6 +41596,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -40589,6 +41687,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -41103,6 +42211,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41192,6 +42302,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -41227,6 +42349,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41316,6 +42440,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -41398,6 +42534,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41487,6 +42625,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -41522,6 +42670,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -41611,6 +42761,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
@@ -44606,6 +45766,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -44695,6 +45857,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: true
@@ -44730,6 +45904,8 @@ export interface Routes {
                               | 'salto_ks_credential'
                               | 'assa_abloy_vostio_card'
                               | 'assa_abloy_vostio_mobile_key'
+                              | 'salto_space_card'
+                              | 'salto_space_mobile_key'
                             )
                           | undefined
                         /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -44819,6 +45995,18 @@ export interface Routes {
                               auto_join?: boolean | undefined
                               card_id?: string | undefined
                               credential_id?: string | undefined
+                            }
+                          | undefined
+                        /** Vostio-specific metadata for the credential. */
+                        assa_abloy_vostio_metadata?:
+                          | {
+                              override_guest_acs_entrance_ids?:
+                                | string[]
+                                | undefined
+                              key_id?: string | undefined
+                              key_issuing_request_id?: string | undefined
+                              door_names?: string[] | undefined
+                              endpoint_id?: string | undefined
                             }
                           | undefined
                         is_managed: false
@@ -44901,6 +46089,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -44990,6 +46180,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: true
@@ -45025,6 +46225,8 @@ export interface Routes {
                         | 'salto_ks_credential'
                         | 'assa_abloy_vostio_card'
                         | 'assa_abloy_vostio_mobile_key'
+                        | 'salto_space_card'
+                        | 'salto_space_mobile_key'
                       )
                     | undefined
                   /** Display name that corresponds to the brand-specific terminology for the credential type. */
@@ -45114,6 +46316,16 @@ export interface Routes {
                         auto_join?: boolean | undefined
                         card_id?: string | undefined
                         credential_id?: string | undefined
+                      }
+                    | undefined
+                  /** Vostio-specific metadata for the credential. */
+                  assa_abloy_vostio_metadata?:
+                    | {
+                        override_guest_acs_entrance_ids?: string[] | undefined
+                        key_id?: string | undefined
+                        key_issuing_request_id?: string | undefined
+                        door_names?: string[] | undefined
+                        endpoint_id?: string | undefined
                       }
                     | undefined
                   is_managed: false
