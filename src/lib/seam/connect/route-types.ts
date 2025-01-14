@@ -7331,6 +7331,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -12306,6 +12307,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -12451,6 +12453,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -12591,6 +12594,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -12850,6 +12854,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -12985,6 +12990,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
@@ -45330,6 +45336,7 @@ export interface Routes {
               | 'salto_site_user'
               | 'latch_user'
               | 'dormakaba_community_user'
+              | 'salto_space_user'
             )
           | undefined
         /** Display name that corresponds to the brand-specific terminology for the `acs_user` type. */
