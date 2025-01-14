@@ -4251,6 +4251,17 @@ export default {
                     required: ['type', 'message'],
                     type: 'object',
                   },
+                  {
+                    properties: {
+                      message: { type: 'string' },
+                      type: {
+                        enum: ['credential_cannot_be_reissued'],
+                        type: 'string',
+                      },
+                    },
+                    required: ['type', 'message'],
+                    type: 'object',
+                  },
                 ],
               },
               result: { nullable: true },

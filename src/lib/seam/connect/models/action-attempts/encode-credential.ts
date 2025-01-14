@@ -23,10 +23,16 @@ const incompatible_card_format_error = z.object({
   message: z.string(),
 })
 
+const credential_cannot_be_reissued = z.object({
+  type: z.literal('credential_cannot_be_reissued'),
+  message: z.string(),
+})
+
 const error = z.union([
   ...common_action_attempt_errors,
   no_credential_on_encoder_error,
   incompatible_card_format_error,
+  credential_cannot_be_reissued,
 ])
 
 const result = acs_credential.or(unmanaged_acs_credential)
