@@ -739,6 +739,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -2415,6 +2419,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -5057,6 +5065,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -6720,6 +6732,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -9843,6 +9859,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -10923,6 +10943,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -13788,6 +13812,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -14817,6 +14845,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -25656,6 +25688,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -26687,6 +26723,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -29670,6 +29710,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -30712,6 +30756,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -31795,6 +31843,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -33353,6 +33405,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -34390,6 +34446,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -36354,6 +36414,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -37395,6 +37459,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -40340,6 +40408,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -41559,6 +41631,10 @@ export interface Routes {
                   type: 'incompatible_card_format'
                   message: string
                 }
+              | {
+                  type: 'credential_cannot_be_reissued'
+                  message: string
+                }
           }
         | {
             /** The ID of the action attempt. */
@@ -42623,6 +42699,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
@@ -46171,6 +46251,10 @@ export interface Routes {
                 }
               | {
                   type: 'incompatible_card_format'
+                  message: string
+                }
+              | {
+                  type: 'credential_cannot_be_reissued'
                   message: string
                 }
           }
