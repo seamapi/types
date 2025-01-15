@@ -7223,6 +7223,21 @@ export default {
                   required: ['message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_phone'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -12283,6 +12298,21 @@ export default {
                   required: ['message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_phone'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -13974,6 +14004,21 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['salto_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_phone'],
                       type: 'string',
                     },
                   },

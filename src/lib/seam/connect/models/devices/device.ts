@@ -274,6 +274,17 @@ const device_has_flaky_connection = common_device_warning
   })
   .describe('Device has flaky connection.')
 
+export const unknown_issue_with_phone = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('unknown_issue_with_phone')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'An unknown issue occurred while syncing the state of this phone with the provider. ' +
+      'This issue may affect the proper functioning of this phone.',
+  )
+
 const device_warning = z.union([
   partial_backup_access_code_pool,
   many_active_backup_codes,
@@ -290,6 +301,7 @@ const device_warning = z.union([
   device_has_flaky_connection,
   salto_office_mode,
   salto_privacy_mode,
+  unknown_issue_with_phone,
 ])
 
 export type DeviceWarning = z.infer<typeof device_warning>
