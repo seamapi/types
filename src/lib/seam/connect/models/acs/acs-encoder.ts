@@ -53,6 +53,10 @@ export const acs_encoder = z.object({
     .datetime()
     .describe('Date and time at which the `acs_encoder` was created.'),
   display_name: z.string().describe('Display name for the `acs_encoder`.'),
-})
+}).describe(`
+  ---
+  route_path: /acs/encoders
+  ---
+`)
 
 export type AcsEncoder = z.infer<typeof acs_encoder>

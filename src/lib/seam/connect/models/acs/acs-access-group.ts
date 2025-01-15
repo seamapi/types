@@ -109,7 +109,11 @@ export const acs_access_group = common_acs_access_group.extend({
   `)
 export const unmanaged_acs_access_group = common_acs_access_group.extend({
   is_managed: z.literal(false),
-})
+}).describe(`
+  ---
+  route_path: /acs/access_groups/unmanaged
+  ---
+`)
 
 export type AcsAccessGroup = z.output<typeof acs_access_group>
 export type UnmanagedAcsAccessGroup = z.output<
