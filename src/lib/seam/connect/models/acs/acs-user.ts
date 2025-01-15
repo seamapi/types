@@ -295,21 +295,22 @@ export const acs_user = common_acs_user.merge(
     is_managed: z.literal(true),
   }),
 ).describe(`
-    ---
-    route_path: /acs/users
-    ---
-    Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
-  `)
+  ---
+  route_path: /acs/users
+  ---
+  Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+`)
 
-export const unmanaged_acs_user = common_acs_user
-  .merge(
-    z.object({
-      is_managed: z.literal(false),
-    }),
-  )
-  .describe(
-    'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
-  )
+export const unmanaged_acs_user = common_acs_user.merge(
+  z.object({
+    is_managed: z.literal(false),
+  }),
+).describe(`
+  ---
+  route_path: /acs/users/unmanaged
+  ---
+  Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+`)
 
 export type AcsUser = z.output<typeof acs_user>
 export type AcsUnmanagedUser = z.output<typeof unmanaged_acs_user>

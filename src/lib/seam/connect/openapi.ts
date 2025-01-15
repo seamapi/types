@@ -1362,6 +1362,7 @@ export default {
           'is_managed',
         ],
         type: 'object',
+        'x-route-path': '/acs/credentials',
       },
       acs_credential_pool: {
         properties: {
@@ -1405,6 +1406,74 @@ export default {
         ],
         type: 'object',
         'x-route-path': '/acs/credential_provisioning_automations',
+      },
+      acs_encoder: {
+        properties: {
+          acs_encoder_id: {
+            description: 'ID of the `acs_encoder`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the `acs_encoder`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description:
+              'Date and time at which the `acs_encoder` was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the `acs_encoder`.',
+            type: 'string',
+          },
+          errors: {
+            description: 'Errors associated with the `acs_encoder`.',
+            items: {
+              description: 'Error associated with the `acs_encoder`.',
+              properties: {
+                created_at: {
+                  description: 'Date and time at which Seam created the error.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                error_code: {
+                  description:
+                    'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                  enum: ['acs_encoder_removed'],
+                  type: 'string',
+                },
+                message: {
+                  description:
+                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                  type: 'string',
+                },
+              },
+              required: ['created_at', 'message', 'error_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'acs_encoder_id',
+          'acs_system_id',
+          'workspace_id',
+          'errors',
+          'created_at',
+          'display_name',
+        ],
+        type: 'object',
+        'x-route-path': '/acs/encoders',
       },
       acs_entrance: {
         description:
@@ -2915,6 +2984,7 @@ export default {
                           'is_managed',
                         ],
                         type: 'object',
+                        'x-route-path': '/acs/credentials',
                       },
                       {
                         description:
@@ -3295,8 +3365,10 @@ export default {
                           'is_managed',
                         ],
                         type: 'object',
+                        'x-route-path': '/acs/credentials/unmanaged',
                       },
                     ],
+                    'x-route-path': '/acs/credentials',
                   },
                   warnings: {
                     items: {
@@ -3806,6 +3878,7 @@ export default {
                       'is_managed',
                     ],
                     type: 'object',
+                    'x-route-path': '/acs/credentials',
                   },
                   {
                     description:
@@ -4183,8 +4256,10 @@ export default {
                       'is_managed',
                     ],
                     type: 'object',
+                    'x-route-path': '/acs/credentials/unmanaged',
                   },
                 ],
+                'x-route-path': '/acs/credentials',
               },
               status: { enum: ['success'], type: 'string' },
             },
@@ -13289,6 +13364,765 @@ export default {
         type: 'object',
         'x-route-path': '/access_codes/unmanaged',
       },
+      unmanaged_acs_access_group: {
+        properties: {
+          access_group_type: {
+            deprecated: true,
+            enum: [
+              'pti_unit',
+              'pti_access_level',
+              'salto_ks_access_group',
+              'brivo_group',
+              'salto_space_group',
+              'dormakaba_community_access_group',
+            ],
+            type: 'string',
+            'x-deprecated': 'Use `external_type`.',
+          },
+          access_group_type_display_name: {
+            deprecated: true,
+            type: 'string',
+            'x-deprecated': 'Use `external_type_display_name`.',
+          },
+          acs_access_group_id: {
+            description: 'ID of the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the access group was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: { type: 'string' },
+          external_type: {
+            description:
+              'Brand-specific terminology for the access group type.',
+            enum: [
+              'pti_unit',
+              'pti_access_level',
+              'salto_ks_access_group',
+              'brivo_group',
+              'salto_space_group',
+              'dormakaba_community_access_group',
+            ],
+            type: 'string',
+          },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the access group type.',
+            type: 'string',
+          },
+          is_managed: { enum: [false], type: 'boolean' },
+          name: { description: 'Name of the access group.', type: 'string' },
+          warnings: {
+            description: 'Warnings associated with the `acs_access_group`.',
+            items: {
+              description: 'Warning associated with the `acs_access_group`.',
+              properties: {
+                created_at: {
+                  description:
+                    'Date and time at which Seam created the warning.',
+                  format: 'date-time',
+                  type: 'string',
+                },
+                message: {
+                  description:
+                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                  type: 'string',
+                },
+                warning_code: {
+                  description:
+                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                  enum: ['unknown_issue_with_acs_access_group'],
+                  type: 'string',
+                },
+              },
+              required: ['created_at', 'message', 'warning_code'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'acs_access_group_id',
+          'acs_system_id',
+          'workspace_id',
+          'name',
+          'access_group_type',
+          'access_group_type_display_name',
+          'display_name',
+          'external_type',
+          'external_type_display_name',
+          'created_at',
+          'warnings',
+          'is_managed',
+        ],
+        type: 'object',
+        'x-route-path': '/acs/access_groups/unmanaged',
+      },
+      unmanaged_acs_credential: {
+        description:
+          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+        properties: {
+          access_method: {
+            description:
+              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
+            enum: ['code', 'card', 'mobile_key'],
+            type: 'string',
+          },
+          acs_credential_id: {
+            description: 'ID of the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_credential_pool_id: { format: 'uuid', type: 'string' },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_user_id: {
+            description: 'ID of the ACS user to whom the credential belongs.',
+            format: 'uuid',
+            type: 'string',
+          },
+          assa_abloy_vostio_metadata: {
+            description: 'Vostio-specific metadata for the credential.',
+            properties: {
+              door_names: { items: { type: 'string' }, type: 'array' },
+              endpoint_id: { type: 'string' },
+              key_id: { type: 'string' },
+              key_issuing_request_id: { type: 'string' },
+              override_guest_acs_entrance_ids: {
+                items: { type: 'string' },
+                type: 'array',
+              },
+            },
+            type: 'object',
+          },
+          card_number: { nullable: true, type: 'string' },
+          code: {
+            description: 'Access (PIN) code for the credential.',
+            nullable: true,
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the credential was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description:
+              'Display name that corresponds to the credential type.',
+            minLength: 1,
+            type: 'string',
+          },
+          ends_at: {
+            description:
+              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+            type: 'string',
+          },
+          errors: {
+            description: 'Errors associated with the `acs_credential`.',
+            items: {
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
+            },
+            type: 'array',
+          },
+          external_type: {
+            description:
+              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
+            enum: [
+              'pti_card',
+              'brivo_credential',
+              'hid_credential',
+              'visionline_card',
+              'salto_ks_credential',
+              'assa_abloy_vostio_key',
+              'salto_space_key',
+            ],
+            type: 'string',
+          },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the credential type.',
+            type: 'string',
+          },
+          is_issued: { type: 'boolean' },
+          is_latest_desired_state_synced_with_provider: {
+            description:
+              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
+            nullable: true,
+            type: 'boolean',
+          },
+          is_managed: { enum: [false], type: 'boolean' },
+          is_multi_phone_sync_credential: {
+            description:
+              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
+            type: 'boolean',
+          },
+          is_one_time_use: {
+            description:
+              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
+            type: 'boolean',
+          },
+          issued_at: { format: 'date-time', nullable: true, type: 'string' },
+          latest_desired_state_synced_with_provider_at: {
+            description:
+              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+          },
+          parent_acs_credential_id: {
+            description: 'ID of the parent credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+          starts_at: {
+            description:
+              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+            type: 'string',
+          },
+          visionline_metadata: {
+            description: 'Visionline-specific metadata for the credential.',
+            properties: {
+              auto_join: { type: 'boolean' },
+              card_function_type: { enum: ['guest', 'staff'], type: 'string' },
+              card_id: { type: 'string' },
+              common_acs_entrance_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              credential_id: { type: 'string' },
+              guest_acs_entrance_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+              is_valid: { type: 'boolean' },
+              joiner_acs_credential_ids: {
+                items: { format: 'uuid', type: 'string' },
+                type: 'array',
+              },
+            },
+            required: ['card_function_type'],
+            type: 'object',
+          },
+          warnings: {
+            description: 'Warnings associated with the `acs_credential`.',
+            items: {
+              description: 'Warning associated with the `acs_credential`.',
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the credential is waiting to be issued.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['waiting_to_be_issued'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the schedule of one of the credential's children was modified externally.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_externally_modified'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['schedule_modified'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that this credential is being deleted.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['being_deleted'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['unknown_issue_with_acs_credential'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['needs_to_be_reissued'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'acs_credential_id',
+          'acs_system_id',
+          'display_name',
+          'access_method',
+          'created_at',
+          'workspace_id',
+          'errors',
+          'warnings',
+          'is_managed',
+        ],
+        type: 'object',
+        'x-route-path': '/acs/credentials/unmanaged',
+      },
+      unmanaged_acs_user: {
+        description:
+          'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+        properties: {
+          access_schedule: {
+            description:
+              "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
+            properties: {
+              ends_at: {
+                description:
+                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                nullable: true,
+                type: 'string',
+              },
+              starts_at: {
+                description:
+                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                format: 'date-time',
+                type: 'string',
+              },
+            },
+            required: ['starts_at', 'ends_at'],
+            type: 'object',
+          },
+          acs_system_id: {
+            description:
+              'ID of the access control system that contains the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          acs_user_id: {
+            description: 'ID of the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
+          created_at: {
+            description: 'Date and time at which the `acs_user` was created.',
+            format: 'date-time',
+            type: 'string',
+          },
+          display_name: {
+            description: 'Display name for the `acs_user`.',
+            type: 'string',
+          },
+          email: {
+            deprecated: true,
+            format: 'email',
+            type: 'string',
+            'x-deprecated': 'use email_address.',
+          },
+          email_address: {
+            description: 'Email address of the `acs_user`.',
+            format: 'email',
+            type: 'string',
+          },
+          errors: {
+            description: 'Errors associated with the `acs_user`.',
+            items: {
+              description: 'Error associated with the `acs_user`.',
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['deleted_externally'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['failed_to_create_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['failed_to_update_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      enum: ['failed_to_delete_on_acs_system'],
+                      type: 'string',
+                    },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          external_type: {
+            description: 'Brand-specific terminology for the `acs_user` type.',
+            enum: [
+              'pti_user',
+              'brivo_user',
+              'hid_credential_manager_user',
+              'salto_site_user',
+              'latch_user',
+              'dormakaba_community_user',
+              'salto_space_user',
+            ],
+            type: 'string',
+          },
+          external_type_display_name: {
+            description:
+              'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
+            type: 'string',
+          },
+          full_name: {
+            description: 'Full name of the `acs_user`.',
+            type: 'string',
+          },
+          hid_acs_system_id: { format: 'uuid', type: 'string' },
+          is_latest_desired_state_synced_with_provider: {
+            nullable: true,
+            type: 'boolean',
+            'x-undocumented': 'Only used internally.',
+          },
+          is_managed: { enum: [false], type: 'boolean' },
+          is_suspended: {
+            description:
+              'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
+            type: 'boolean',
+          },
+          latest_desired_state_synced_with_provider_at: {
+            format: 'date-time',
+            nullable: true,
+            type: 'string',
+            'x-undocumented': 'Only used internally.',
+          },
+          phone_number: {
+            description:
+              'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
+            type: 'string',
+          },
+          user_identity_email_address: {
+            description:
+              'Email address of the user identity associated with the `acs_user`.',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_full_name: {
+            description:
+              'Full name of the user identity associated with the `acs_user`.',
+            nullable: true,
+            type: 'string',
+          },
+          user_identity_id: {
+            description:
+              'ID of the user identity associated with the `acs_user`.',
+            type: 'string',
+          },
+          user_identity_phone_number: {
+            description:
+              'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
+            nullable: true,
+            type: 'string',
+          },
+          warnings: {
+            description: 'Warnings associated with the `acs_user`.',
+            items: {
+              description: 'Warning associated with the `acs_user`.',
+              oneOf: [
+                {
+                  description:
+                    'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: { enum: ['being_deleted'], type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['salto_ks_user_not_subscribed'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      enum: ['unknown_issue_with_acs_user'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+          },
+          workspace_id: {
+            description:
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
+            format: 'uuid',
+            type: 'string',
+          },
+        },
+        required: [
+          'acs_user_id',
+          'acs_system_id',
+          'workspace_id',
+          'created_at',
+          'display_name',
+          'warnings',
+          'errors',
+          'is_managed',
+        ],
+        type: 'object',
+        'x-route-path': '/acs/users/unmanaged',
+      },
       unmanaged_device: {
         properties: {
           can_hvac_cool: { type: 'boolean' },
@@ -15870,118 +16704,7 @@ export default {
                 schema: {
                   properties: {
                     acs_access_group: {
-                      properties: {
-                        access_group_type: {
-                          deprecated: true,
-                          enum: [
-                            'pti_unit',
-                            'pti_access_level',
-                            'salto_ks_access_group',
-                            'brivo_group',
-                            'salto_space_group',
-                            'dormakaba_community_access_group',
-                          ],
-                          type: 'string',
-                          'x-deprecated': 'Use `external_type`.',
-                        },
-                        access_group_type_display_name: {
-                          deprecated: true,
-                          type: 'string',
-                          'x-deprecated': 'Use `external_type_display_name`.',
-                        },
-                        acs_access_group_id: {
-                          description: 'ID of the access group.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: {
-                          description:
-                            'ID of the access control system that contains the access group.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the access group was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: { type: 'string' },
-                        external_type: {
-                          description:
-                            'Brand-specific terminology for the access group type.',
-                          enum: [
-                            'pti_unit',
-                            'pti_access_level',
-                            'salto_ks_access_group',
-                            'brivo_group',
-                            'salto_space_group',
-                            'dormakaba_community_access_group',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: {
-                          description:
-                            'Display name that corresponds to the brand-specific terminology for the access group type.',
-                          type: 'string',
-                        },
-                        is_managed: { enum: [false], type: 'boolean' },
-                        name: {
-                          description: 'Name of the access group.',
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the `acs_access_group`.',
-                          items: {
-                            description:
-                              'Warning associated with the `acs_access_group`.',
-                            properties: {
-                              created_at: {
-                                description:
-                                  'Date and time at which Seam created the warning.',
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                              message: {
-                                description:
-                                  'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                type: 'string',
-                              },
-                              warning_code: {
-                                description:
-                                  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                enum: ['unknown_issue_with_acs_access_group'],
-                                type: 'string',
-                              },
-                            },
-                            required: ['created_at', 'message', 'warning_code'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'acs_access_group_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'name',
-                        'access_group_type',
-                        'access_group_type_display_name',
-                        'display_name',
-                        'external_type',
-                        'external_type_display_name',
-                        'created_at',
-                        'warnings',
-                        'is_managed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/unmanaged_acs_access_group',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -16046,122 +16769,7 @@ export default {
                   properties: {
                     acs_access_groups: {
                       items: {
-                        properties: {
-                          access_group_type: {
-                            deprecated: true,
-                            enum: [
-                              'pti_unit',
-                              'pti_access_level',
-                              'salto_ks_access_group',
-                              'brivo_group',
-                              'salto_space_group',
-                              'dormakaba_community_access_group',
-                            ],
-                            type: 'string',
-                            'x-deprecated': 'Use `external_type`.',
-                          },
-                          access_group_type_display_name: {
-                            deprecated: true,
-                            type: 'string',
-                            'x-deprecated': 'Use `external_type_display_name`.',
-                          },
-                          acs_access_group_id: {
-                            description: 'ID of the access group.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: {
-                            description:
-                              'ID of the access control system that contains the access group.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the access group was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: { type: 'string' },
-                          external_type: {
-                            description:
-                              'Brand-specific terminology for the access group type.',
-                            enum: [
-                              'pti_unit',
-                              'pti_access_level',
-                              'salto_ks_access_group',
-                              'brivo_group',
-                              'salto_space_group',
-                              'dormakaba_community_access_group',
-                            ],
-                            type: 'string',
-                          },
-                          external_type_display_name: {
-                            description:
-                              'Display name that corresponds to the brand-specific terminology for the access group type.',
-                            type: 'string',
-                          },
-                          is_managed: { enum: [false], type: 'boolean' },
-                          name: {
-                            description: 'Name of the access group.',
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the `acs_access_group`.',
-                            items: {
-                              description:
-                                'Warning associated with the `acs_access_group`.',
-                              properties: {
-                                created_at: {
-                                  description:
-                                    'Date and time at which Seam created the warning.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                message: {
-                                  description:
-                                    'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                  type: 'string',
-                                },
-                                warning_code: {
-                                  description:
-                                    'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                  enum: ['unknown_issue_with_acs_access_group'],
-                                  type: 'string',
-                                },
-                              },
-                              required: [
-                                'created_at',
-                                'message',
-                                'warning_code',
-                              ],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the access group.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'acs_access_group_id',
-                          'acs_system_id',
-                          'workspace_id',
-                          'name',
-                          'access_group_type',
-                          'access_group_type_display_name',
-                          'display_name',
-                          'external_type',
-                          'external_type_display_name',
-                          'created_at',
-                          'warnings',
-                          'is_managed',
-                        ],
-                        type: 'object',
+                        $ref: '#/components/schemas/unmanaged_acs_access_group',
                       },
                       type: 'array',
                     },
@@ -17123,381 +17731,7 @@ export default {
                 schema: {
                   properties: {
                     acs_credential: {
-                      description:
-                        'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
-                      properties: {
-                        access_method: {
-                          description:
-                            'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
-                          enum: ['code', 'card', 'mobile_key'],
-                          type: 'string',
-                        },
-                        acs_credential_id: {
-                          description: 'ID of the credential.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_credential_pool_id: {
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_system_id: {
-                          description:
-                            'ID of the access control system that contains the credential.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_user_id: {
-                          description:
-                            'ID of the ACS user to whom the credential belongs.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        assa_abloy_vostio_metadata: {
-                          description:
-                            'Vostio-specific metadata for the credential.',
-                          properties: {
-                            door_names: {
-                              items: { type: 'string' },
-                              type: 'array',
-                            },
-                            endpoint_id: { type: 'string' },
-                            key_id: { type: 'string' },
-                            key_issuing_request_id: { type: 'string' },
-                            override_guest_acs_entrance_ids: {
-                              items: { type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          type: 'object',
-                        },
-                        card_number: { nullable: true, type: 'string' },
-                        code: {
-                          description: 'Access (PIN) code for the credential.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the credential was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description:
-                            'Display name that corresponds to the credential type.',
-                          minLength: 1,
-                          type: 'string',
-                        },
-                        ends_at: {
-                          description:
-                            'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
-                          type: 'string',
-                        },
-                        errors: {
-                          description:
-                            'Errors associated with the `acs_credential`.',
-                          items: {
-                            properties: {
-                              error_code: { type: 'string' },
-                              message: { type: 'string' },
-                            },
-                            required: ['error_code', 'message'],
-                            type: 'object',
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          description:
-                            'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
-                          enum: [
-                            'pti_card',
-                            'brivo_credential',
-                            'hid_credential',
-                            'visionline_card',
-                            'salto_ks_credential',
-                            'assa_abloy_vostio_key',
-                            'salto_space_key',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: {
-                          description:
-                            'Display name that corresponds to the brand-specific terminology for the credential type.',
-                          type: 'string',
-                        },
-                        is_issued: { type: 'boolean' },
-                        is_latest_desired_state_synced_with_provider: {
-                          description:
-                            'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
-                          nullable: true,
-                          type: 'boolean',
-                        },
-                        is_managed: { enum: [false], type: 'boolean' },
-                        is_multi_phone_sync_credential: {
-                          description:
-                            'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
-                          type: 'boolean',
-                        },
-                        is_one_time_use: {
-                          description:
-                            'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
-                          type: 'boolean',
-                        },
-                        issued_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        latest_desired_state_synced_with_provider_at: {
-                          description:
-                            'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        parent_acs_credential_id: {
-                          description: 'ID of the parent credential.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        starts_at: {
-                          description:
-                            'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
-                          type: 'string',
-                        },
-                        visionline_metadata: {
-                          description:
-                            'Visionline-specific metadata for the credential.',
-                          properties: {
-                            auto_join: { type: 'boolean' },
-                            card_function_type: {
-                              enum: ['guest', 'staff'],
-                              type: 'string',
-                            },
-                            card_id: { type: 'string' },
-                            common_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            credential_id: { type: 'string' },
-                            guest_acs_entrance_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                            is_valid: { type: 'boolean' },
-                            joiner_acs_credential_ids: {
-                              items: { format: 'uuid', type: 'string' },
-                              type: 'array',
-                            },
-                          },
-                          required: ['card_function_type'],
-                          type: 'object',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the `acs_credential`.',
-                          items: {
-                            description:
-                              'Warning associated with the `acs_credential`.',
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the credential is waiting to be issued.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['waiting_to_be_issued'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the schedule of one of the credential's children was modified externally.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['schedule_externally_modified'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['schedule_modified'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that this credential is being deleted.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['unknown_issue_with_acs_credential'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the warning.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                  warning_code: {
-                                    description:
-                                      'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                    enum: ['needs_to_be_reissued'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'acs_credential_id',
-                        'acs_system_id',
-                        'display_name',
-                        'access_method',
-                        'created_at',
-                        'workspace_id',
-                        'errors',
-                        'warnings',
-                        'is_managed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/unmanaged_acs_credential',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -17603,384 +17837,7 @@ export default {
                   properties: {
                     acs_credentials: {
                       items: {
-                        description:
-                          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
-                        properties: {
-                          access_method: {
-                            description:
-                              'Access method for the credential. Supported values: `code`, `card`, `mobile_key`.',
-                            enum: ['code', 'card', 'mobile_key'],
-                            type: 'string',
-                          },
-                          acs_credential_id: {
-                            description: 'ID of the credential.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_credential_pool_id: {
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: {
-                            description:
-                              'ID of the access control system that contains the credential.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_user_id: {
-                            description:
-                              'ID of the ACS user to whom the credential belongs.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          assa_abloy_vostio_metadata: {
-                            description:
-                              'Vostio-specific metadata for the credential.',
-                            properties: {
-                              door_names: {
-                                items: { type: 'string' },
-                                type: 'array',
-                              },
-                              endpoint_id: { type: 'string' },
-                              key_id: { type: 'string' },
-                              key_issuing_request_id: { type: 'string' },
-                              override_guest_acs_entrance_ids: {
-                                items: { type: 'string' },
-                                type: 'array',
-                              },
-                            },
-                            type: 'object',
-                          },
-                          card_number: { nullable: true, type: 'string' },
-                          code: {
-                            description:
-                              'Access (PIN) code for the credential.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the credential was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description:
-                              'Display name that corresponds to the credential type.',
-                            minLength: 1,
-                            type: 'string',
-                          },
-                          ends_at: {
-                            description:
-                              'Date and time at which the credential validity ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the `acs_credential`.',
-                            items: {
-                              properties: {
-                                error_code: { type: 'string' },
-                                message: { type: 'string' },
-                              },
-                              required: ['error_code', 'message'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          external_type: {
-                            description:
-                              'Brand-specific terminology for the credential type. Supported values: `pti_card`, `brivo_credential`, `hid_credential`, `visionline_card`.',
-                            enum: [
-                              'pti_card',
-                              'brivo_credential',
-                              'hid_credential',
-                              'visionline_card',
-                              'salto_ks_credential',
-                              'assa_abloy_vostio_key',
-                              'salto_space_key',
-                            ],
-                            type: 'string',
-                          },
-                          external_type_display_name: {
-                            description:
-                              'Display name that corresponds to the brand-specific terminology for the credential type.',
-                            type: 'string',
-                          },
-                          is_issued: { type: 'boolean' },
-                          is_latest_desired_state_synced_with_provider: {
-                            description:
-                              'Indicates whether the latest state of the credential has been synced from Seam to the provider.',
-                            nullable: true,
-                            type: 'boolean',
-                          },
-                          is_managed: { enum: [false], type: 'boolean' },
-                          is_multi_phone_sync_credential: {
-                            description:
-                              'Indicates whether the credential is a [multi-phone sync credential](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#what-are-multi-phone-sync-credentials).',
-                            type: 'boolean',
-                          },
-                          is_one_time_use: {
-                            description:
-                              'Indicates whether the credential can only be used once. If "true," the code becomes invalid after the first use.',
-                            type: 'boolean',
-                          },
-                          issued_at: {
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          latest_desired_state_synced_with_provider_at: {
-                            description:
-                              'Date and time at which the state of the credential was most recently synced from Seam to the provider.',
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          parent_acs_credential_id: {
-                            description: 'ID of the parent credential.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          starts_at: {
-                            description:
-                              'Date and time at which the credential validity starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
-                            type: 'string',
-                          },
-                          visionline_metadata: {
-                            description:
-                              'Visionline-specific metadata for the credential.',
-                            properties: {
-                              auto_join: { type: 'boolean' },
-                              card_function_type: {
-                                enum: ['guest', 'staff'],
-                                type: 'string',
-                              },
-                              card_id: { type: 'string' },
-                              common_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              credential_id: { type: 'string' },
-                              guest_acs_entrance_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                              is_valid: { type: 'boolean' },
-                              joiner_acs_credential_ids: {
-                                items: { format: 'uuid', type: 'string' },
-                                type: 'array',
-                              },
-                            },
-                            required: ['card_function_type'],
-                            type: 'object',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the `acs_credential`.',
-                            items: {
-                              description:
-                                'Warning associated with the `acs_credential`.',
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the credential is waiting to be issued.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['waiting_to_be_issued'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the schedule of one of the credential's children was modified externally.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['schedule_externally_modified'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the schedule of this credential was modified to avoid creating a credential with a start date in the past.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['schedule_modified'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that this credential is being deleted.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'An unknown issue occurred while syncing the state of this credential with the provider. This issue may affect the proper functioning of this credential.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: [
-                                        'unknown_issue_with_acs_credential',
-                                      ],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Access permissions for this [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) have changed. [Reissue](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners/creating-and-encoding-card-based-credentials) (re-encode) this credential. This issue may affect the proper functioning of the credential.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the warning.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the warning. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                    warning_code: {
-                                      description:
-                                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                                      enum: ['needs_to_be_reissued'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the credential.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'acs_credential_id',
-                          'acs_system_id',
-                          'display_name',
-                          'access_method',
-                          'created_at',
-                          'workspace_id',
-                          'errors',
-                          'warnings',
-                          'is_managed',
-                        ],
-                        type: 'object',
+                        $ref: '#/components/schemas/unmanaged_acs_credential',
                       },
                       type: 'array',
                     },
@@ -18282,76 +18139,7 @@ export default {
                 schema: {
                   properties: {
                     acs_encoders: {
-                      items: {
-                        properties: {
-                          acs_encoder_id: {
-                            description: 'ID of the `acs_encoder`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_system_id: {
-                            description:
-                              'ID of the access control system that contains the `acs_encoder`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the `acs_encoder` was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name for the `acs_encoder`.',
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the `acs_encoder`.',
-                            items: {
-                              description:
-                                'Error associated with the `acs_encoder`.',
-                              properties: {
-                                created_at: {
-                                  description:
-                                    'Date and time at which Seam created the error.',
-                                  format: 'date-time',
-                                  type: 'string',
-                                },
-                                error_code: {
-                                  description:
-                                    'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                                  enum: ['acs_encoder_removed'],
-                                  type: 'string',
-                                },
-                                message: {
-                                  description:
-                                    'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                  type: 'string',
-                                },
-                              },
-                              required: ['created_at', 'message', 'error_code'],
-                              type: 'object',
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'acs_encoder_id',
-                          'acs_system_id',
-                          'workspace_id',
-                          'errors',
-                          'created_at',
-                          'display_name',
-                        ],
-                        type: 'object',
-                      },
+                      items: { $ref: '#/components/schemas/acs_encoder' },
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
@@ -19795,370 +19583,7 @@ export default {
                 schema: {
                   properties: {
                     acs_user: {
-                      description:
-                        'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
-                      properties: {
-                        access_schedule: {
-                          description:
-                            "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
-                          properties: {
-                            ends_at: {
-                              description:
-                                "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
-                              format: 'date-time',
-                              nullable: true,
-                              type: 'string',
-                            },
-                            starts_at: {
-                              description:
-                                "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
-                              format: 'date-time',
-                              type: 'string',
-                            },
-                          },
-                          required: ['starts_at', 'ends_at'],
-                          type: 'object',
-                        },
-                        acs_system_id: {
-                          description:
-                            'ID of the access control system that contains the `acs_user`.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        acs_user_id: {
-                          description: 'ID of the `acs_user`.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                        created_at: {
-                          description:
-                            'Date and time at which the `acs_user` was created.',
-                          format: 'date-time',
-                          type: 'string',
-                        },
-                        display_name: {
-                          description: 'Display name for the `acs_user`.',
-                          type: 'string',
-                        },
-                        email: {
-                          deprecated: true,
-                          format: 'email',
-                          type: 'string',
-                          'x-deprecated': 'use email_address.',
-                        },
-                        email_address: {
-                          description: 'Email address of the `acs_user`.',
-                          format: 'email',
-                          type: 'string',
-                        },
-                        errors: {
-                          description: 'Errors associated with the `acs_user`.',
-                          items: {
-                            description:
-                              'Error associated with the `acs_user`.',
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    enum: ['deleted_externally'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    enum: [
-                                      'salto_ks_subscription_limit_exceeded',
-                                    ],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    enum: ['failed_to_create_on_acs_system'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    enum: ['failed_to_update_on_acs_system'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                properties: {
-                                  created_at: {
-                                    description:
-                                      'Date and time at which Seam created the error.',
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  error_code: {
-                                    enum: ['failed_to_delete_on_acs_system'],
-                                    type: 'string',
-                                  },
-                                  message: {
-                                    description:
-                                      'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'error_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        external_type: {
-                          description:
-                            'Brand-specific terminology for the `acs_user` type.',
-                          enum: [
-                            'pti_user',
-                            'brivo_user',
-                            'hid_credential_manager_user',
-                            'salto_site_user',
-                            'latch_user',
-                            'dormakaba_community_user',
-                            'salto_space_user',
-                          ],
-                          type: 'string',
-                        },
-                        external_type_display_name: {
-                          description:
-                            'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
-                          type: 'string',
-                        },
-                        full_name: {
-                          description: 'Full name of the `acs_user`.',
-                          type: 'string',
-                        },
-                        hid_acs_system_id: { format: 'uuid', type: 'string' },
-                        is_latest_desired_state_synced_with_provider: {
-                          nullable: true,
-                          type: 'boolean',
-                          'x-undocumented': 'Only used internally.',
-                        },
-                        is_managed: { enum: [false], type: 'boolean' },
-                        is_suspended: {
-                          description:
-                            'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
-                          type: 'boolean',
-                        },
-                        latest_desired_state_synced_with_provider_at: {
-                          format: 'date-time',
-                          nullable: true,
-                          type: 'string',
-                          'x-undocumented': 'Only used internally.',
-                        },
-                        phone_number: {
-                          description:
-                            'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
-                          type: 'string',
-                        },
-                        user_identity_email_address: {
-                          description:
-                            'Email address of the user identity associated with the `acs_user`.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        user_identity_full_name: {
-                          description:
-                            'Full name of the user identity associated with the `acs_user`.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        user_identity_id: {
-                          description:
-                            'ID of the user identity associated with the `acs_user`.',
-                          type: 'string',
-                        },
-                        user_identity_phone_number: {
-                          description:
-                            'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        warnings: {
-                          description:
-                            'Warnings associated with the `acs_user`.',
-                          items: {
-                            description:
-                              'Warning associated with the `acs_user`.',
-                            oneOf: [
-                              {
-                                description:
-                                  'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                  warning_code: {
-                                    enum: ['being_deleted'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                  warning_code: {
-                                    enum: ['salto_ks_user_not_subscribed'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                              {
-                                description:
-                                  'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
-                                properties: {
-                                  created_at: {
-                                    format: 'date-time',
-                                    type: 'string',
-                                  },
-                                  message: { type: 'string' },
-                                  warning_code: {
-                                    enum: ['unknown_issue_with_acs_user'],
-                                    type: 'string',
-                                  },
-                                },
-                                required: [
-                                  'created_at',
-                                  'message',
-                                  'warning_code',
-                                ],
-                                type: 'object',
-                              },
-                            ],
-                          },
-                          type: 'array',
-                        },
-                        workspace_id: {
-                          description:
-                            'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
-                          format: 'uuid',
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'acs_user_id',
-                        'acs_system_id',
-                        'workspace_id',
-                        'created_at',
-                        'display_name',
-                        'warnings',
-                        'errors',
-                        'is_managed',
-                      ],
-                      type: 'object',
+                      $ref: '#/components/schemas/unmanaged_acs_user',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -20213,371 +19638,7 @@ export default {
                   properties: {
                     acs_users: {
                       items: {
-                        description:
-                          'Represents an unmanaged [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
-                        properties: {
-                          access_schedule: {
-                            description:
-                              "`starts_at` and `ends_at` timestamps for the `acs_user`'s access.",
-                            properties: {
-                              ends_at: {
-                                description:
-                                  "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
-                                format: 'date-time',
-                                nullable: true,
-                                type: 'string',
-                              },
-                              starts_at: {
-                                description:
-                                  "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
-                                format: 'date-time',
-                                type: 'string',
-                              },
-                            },
-                            required: ['starts_at', 'ends_at'],
-                            type: 'object',
-                          },
-                          acs_system_id: {
-                            description:
-                              'ID of the access control system that contains the `acs_user`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          acs_user_id: {
-                            description: 'ID of the `acs_user`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                          created_at: {
-                            description:
-                              'Date and time at which the `acs_user` was created.',
-                            format: 'date-time',
-                            type: 'string',
-                          },
-                          display_name: {
-                            description: 'Display name for the `acs_user`.',
-                            type: 'string',
-                          },
-                          email: {
-                            deprecated: true,
-                            format: 'email',
-                            type: 'string',
-                            'x-deprecated': 'use email_address.',
-                          },
-                          email_address: {
-                            description: 'Email address of the `acs_user`.',
-                            format: 'email',
-                            type: 'string',
-                          },
-                          errors: {
-                            description:
-                              'Errors associated with the `acs_user`.',
-                            items: {
-                              description:
-                                'Error associated with the `acs_user`.',
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the ACS user was deleted from the ACS system outside of Seam.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      enum: ['deleted_externally'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the user could not be subscribed on Salto KS because the subscription limit has been exceeded.',
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      enum: [
-                                        'salto_ks_subscription_limit_exceeded',
-                                      ],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the user was not created on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      enum: ['failed_to_create_on_acs_system'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the user was not updated on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      enum: ['failed_to_update_on_acs_system'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    "Indicates that the user was not deleted on the ACS system. This is likely due to an internal unexpected error. Please contact Seam's support if you encounter this.",
-                                  properties: {
-                                    created_at: {
-                                      description:
-                                        'Date and time at which Seam created the error.',
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    error_code: {
-                                      enum: ['failed_to_delete_on_acs_system'],
-                                      type: 'string',
-                                    },
-                                    message: {
-                                      description:
-                                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'error_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          external_type: {
-                            description:
-                              'Brand-specific terminology for the `acs_user` type.',
-                            enum: [
-                              'pti_user',
-                              'brivo_user',
-                              'hid_credential_manager_user',
-                              'salto_site_user',
-                              'latch_user',
-                              'dormakaba_community_user',
-                              'salto_space_user',
-                            ],
-                            type: 'string',
-                          },
-                          external_type_display_name: {
-                            description:
-                              'Display name that corresponds to the brand-specific terminology for the `acs_user` type.',
-                            type: 'string',
-                          },
-                          full_name: {
-                            description: 'Full name of the `acs_user`.',
-                            type: 'string',
-                          },
-                          hid_acs_system_id: { format: 'uuid', type: 'string' },
-                          is_latest_desired_state_synced_with_provider: {
-                            nullable: true,
-                            type: 'boolean',
-                            'x-undocumented': 'Only used internally.',
-                          },
-                          is_managed: { enum: [false], type: 'boolean' },
-                          is_suspended: {
-                            description:
-                              'Indicates whether the `acs_user` is currently [suspended](https://docs.seam.co/latest/capability-guides/access-systems/user-management/suspending-and-unsuspending-users).',
-                            type: 'boolean',
-                          },
-                          latest_desired_state_synced_with_provider_at: {
-                            format: 'date-time',
-                            nullable: true,
-                            type: 'string',
-                            'x-undocumented': 'Only used internally.',
-                          },
-                          phone_number: {
-                            description:
-                              'Phone number of the `acs_user` in E.164 format (for example, `+15555550100`).',
-                            type: 'string',
-                          },
-                          user_identity_email_address: {
-                            description:
-                              'Email address of the user identity associated with the `acs_user`.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          user_identity_full_name: {
-                            description:
-                              'Full name of the user identity associated with the `acs_user`.',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          user_identity_id: {
-                            description:
-                              'ID of the user identity associated with the `acs_user`.',
-                            type: 'string',
-                          },
-                          user_identity_phone_number: {
-                            description:
-                              'Phone number of the user identity associated with the `acs_user` in E.164 format (for example, `+15555550100`).',
-                            nullable: true,
-                            type: 'string',
-                          },
-                          warnings: {
-                            description:
-                              'Warnings associated with the `acs_user`.',
-                            items: {
-                              description:
-                                'Warning associated with the `acs_user`.',
-                              oneOf: [
-                                {
-                                  description:
-                                    'Indicates that the user is being deleted from the ACS system. This is a temporary state, and the user will be deleted shortly.',
-                                  properties: {
-                                    created_at: {
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: { type: 'string' },
-                                    warning_code: {
-                                      enum: ['being_deleted'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'Indicates that the user is not subscribed on the Salto KS, so they cannot unlock doors or perform any actions. This occur when the their access schedule hasn’t started yet, or if their access schedule has ended, or if the site has reached its limit for active users (subscription slots), or if they have been manually unsubscribed.',
-                                  properties: {
-                                    created_at: {
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: { type: 'string' },
-                                    warning_code: {
-                                      enum: ['salto_ks_user_not_subscribed'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                                {
-                                  description:
-                                    'An unknown issue occurred while syncing the state of this user with the provider. This issue may affect the proper functioning of this user.',
-                                  properties: {
-                                    created_at: {
-                                      format: 'date-time',
-                                      type: 'string',
-                                    },
-                                    message: { type: 'string' },
-                                    warning_code: {
-                                      enum: ['unknown_issue_with_acs_user'],
-                                      type: 'string',
-                                    },
-                                  },
-                                  required: [
-                                    'created_at',
-                                    'message',
-                                    'warning_code',
-                                  ],
-                                  type: 'object',
-                                },
-                              ],
-                            },
-                            type: 'array',
-                          },
-                          workspace_id: {
-                            description:
-                              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_user`.',
-                            format: 'uuid',
-                            type: 'string',
-                          },
-                        },
-                        required: [
-                          'acs_user_id',
-                          'acs_system_id',
-                          'workspace_id',
-                          'created_at',
-                          'display_name',
-                          'warnings',
-                          'errors',
-                          'is_managed',
-                        ],
-                        type: 'object',
+                        $ref: '#/components/schemas/unmanaged_acs_user',
                       },
                       type: 'array',
                     },

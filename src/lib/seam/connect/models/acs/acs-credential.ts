@@ -233,21 +233,27 @@ const common_acs_credential = z.object({
     .describe('Vostio-specific metadata for the credential.'),
 })
 
-export const acs_credential = common_acs_credential
-  .merge(
-    z.object({
-      is_managed: z.literal(true),
-    }),
-  )
-  .describe(getAcsCredentialDescription())
+export const acs_credential = common_acs_credential.merge(
+  z.object({
+    is_managed: z.literal(true),
+  }),
+).describe(`
+  ---
+  route_path: /acs/credentials
+  ---
+  ${getAcsCredentialDescription()}
+`)
 
-export const unmanaged_acs_credential = common_acs_credential
-  .merge(
-    z.object({
-      is_managed: z.literal(false),
-    }),
-  )
-  .describe(getAcsCredentialDescription(false))
+export const unmanaged_acs_credential = common_acs_credential.merge(
+  z.object({
+    is_managed: z.literal(false),
+  }),
+).describe(`
+  ---
+  route_path: /acs/credentials/unmanaged
+  ---
+  ${getAcsCredentialDescription(false)}
+`)
 
 function getAcsCredentialDescription(is_managed = true): string {
   const resource_name = is_managed
