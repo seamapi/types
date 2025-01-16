@@ -8837,6 +8837,7 @@ export default {
               'event_type',
             ],
             type: 'object',
+            'x-route-path': '/acs/credentials',
           },
           {
             description:
