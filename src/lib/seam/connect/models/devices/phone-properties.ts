@@ -12,4 +12,10 @@ export const phone_specific_properties = z.object({
       ),
     })
     .optional(),
+
+  salto_space_credential_service_metadata: z
+    .object({
+      has_active_phone: z.boolean(),
+    })
+    .optional(),
 })
