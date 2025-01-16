@@ -6023,6 +6023,13 @@ export default {
                             required: ['has_active_endpoint', 'endpoints'],
                             type: 'object',
                           },
+                          salto_space_credential_service_metadata: {
+                            properties: {
+                              has_active_phone: { type: 'boolean' },
+                            },
+                            required: ['has_active_phone'],
+                            type: 'object',
+                          },
                         },
                         type: 'object',
                       },
@@ -12149,6 +12156,11 @@ export default {
                   has_active_endpoint: { type: 'boolean' },
                 },
                 required: ['has_active_endpoint', 'endpoints'],
+                type: 'object',
+              },
+              salto_space_credential_service_metadata: {
+                properties: { has_active_phone: { type: 'boolean' } },
+                required: ['has_active_phone'],
                 type: 'object',
               },
             },

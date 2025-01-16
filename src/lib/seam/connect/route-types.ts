@@ -15872,6 +15872,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -16919,6 +16927,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -21491,6 +21507,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -22355,6 +22379,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -23410,6 +23442,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -24273,6 +24313,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -27437,6 +27485,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -28300,6 +28356,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -32268,6 +32332,11 @@ export interface Routes {
                 }>
               }
             | undefined
+          salto_space_credential_service_metadata?:
+            | {
+                has_active_phone: boolean
+              }
+            | undefined
         }
         /** Location information for the device. */
         location: {
@@ -32528,6 +32597,11 @@ export interface Routes {
                   endpoint_id: string
                   is_active: boolean
                 }>
+              }
+            | undefined
+          salto_space_credential_service_metadata?:
+            | {
+                has_active_phone: boolean
               }
             | undefined
         }
@@ -35018,6 +35092,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -38163,6 +38245,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -39026,6 +39116,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
@@ -43523,6 +43621,14 @@ export interface Routes {
                 | undefined
               )
             | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
+                  }
+                | undefined
+              )
+            | undefined
         }) & {
           august_metadata?:
             | {
@@ -44388,6 +44494,14 @@ export interface Routes {
                       endpoint_id: string
                       is_active: boolean
                     }>
+                  }
+                | undefined
+              )
+            | undefined
+          salto_space_credential_service_metadata?:
+            | (
+                | {
+                    has_active_phone: boolean
                   }
                 | undefined
               )
