@@ -28,13 +28,14 @@ export const acs_credential_issued = acs_credential_event.extend({
     An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was issued.
   `)
 
-export const acs_credential_reissued = acs_credential_event
-  .extend({
-    event_type: z.literal('acs_credential.reissued'),
-  })
-  .describe(
-    'An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.',
-  )
+export const acs_credential_reissued = acs_credential_event.extend({
+  event_type: z.literal('acs_credential.reissued'),
+}).describe(`
+  ---
+  route_path: /acs/credentials
+  ---
+  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.
+`)
 
 export const acs_credential_events = [
   acs_credential_deleted_event,
