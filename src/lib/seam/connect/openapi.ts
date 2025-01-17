@@ -1032,7 +1032,7 @@ export default {
       },
       acs_credential: {
         description:
-          'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+          'Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
         properties: {
           access_method: {
             description:
@@ -2607,7 +2607,7 @@ export default {
                     oneOf: [
                       {
                         description:
-                          'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                          'Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
                             description:
@@ -2988,7 +2988,7 @@ export default {
                       },
                       {
                         description:
-                          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                          'Means by which a user gains access at an entrance. The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                         properties: {
                           access_method: {
                             description:
@@ -3500,11 +3500,11 @@ export default {
               error: { nullable: true },
               result: {
                 description:
-                  'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                  'Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                 oneOf: [
                   {
                     description:
-                      'Means by which a user gains access at an entrance.\nThe `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                      'Means by which a user gains access at an entrance. The `acs_credential` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
                         description:
@@ -3882,7 +3882,7 @@ export default {
                   },
                   {
                     description:
-                      'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+                      'Means by which a user gains access at an entrance. The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
                     properties: {
                       access_method: {
                         description:
@@ -13488,7 +13488,7 @@ export default {
       },
       unmanaged_acs_credential: {
         description:
-          'Means by which a user gains access at an entrance.\nThe `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
+          'Means by which a user gains access at an entrance. The `unmanaged_acs_credential` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.',
         properties: {
           access_method: {
             description:

@@ -241,7 +241,7 @@ export const acs_credential = common_acs_credential.merge(
   ---
   route_path: /acs/credentials
   ---
-  ${getAcsCredentialDescription()}
+  Means by which a user gains access at an entrance. The \`acs_credential\` object represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 `)
 
 export const unmanaged_acs_credential = common_acs_credential.merge(
@@ -252,18 +252,8 @@ export const unmanaged_acs_credential = common_acs_credential.merge(
   ---
   route_path: /acs/credentials/unmanaged
   ---
-  ${getAcsCredentialDescription(false)}
+  Means by which a user gains access at an entrance. The \`unmanaged_acs_credential\` object, which is not managed by Seam, represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.
 `)
-
-function getAcsCredentialDescription(is_managed = true): string {
-  const resource_name = is_managed
-    ? 'acs_credential'
-    : 'unmanaged_acs_credential'
-  const management_clause = is_managed ? '' : ', which is not managed by Seam,'
-
-  return `Means by which a user gains access at an entrance.
-The \`${resource_name}\` object${management_clause} represents a credential that provides an ACS user access within an access control system. For each acs_credential object, you define the access method. You can also specify additional properties, such as a code.`.trim()
-}
 
 export const acs_credential_on_encoder = z.object({
   created_at: z
