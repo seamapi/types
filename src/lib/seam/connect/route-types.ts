@@ -43180,6 +43180,19 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/thermostats/simulate/temperature_reached': {
+    route: '/thermostats/simulate/temperature_reached'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      temperature_celsius?: number | undefined
+      temperature_fahrenheit?: number | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/update_climate_preset': {
     route: '/thermostats/update_climate_preset'
     method: 'POST' | 'PATCH'

@@ -25645,6 +25645,52 @@ export default {
         'x-title': 'Set a Temperature Threshold',
       },
     },
+    '/thermostats/simulate/temperature_reached': {
+      post: {
+        operationId: 'thermostatsSimulateTemperatureReachedPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: { format: 'uuid', type: 'string' },
+                  temperature_celsius: { format: 'float', type: 'number' },
+                  temperature_fahrenheit: { format: 'float', type: 'number' },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/thermostats/simulate/temperature_reached',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'simulate'],
+        'x-fern-sdk-method-name': 'temperature_reached',
+        'x-response-key': null,
+      },
+    },
     '/thermostats/update_climate_preset': {
       patch: {
         description:
