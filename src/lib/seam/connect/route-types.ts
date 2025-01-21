@@ -43180,6 +43180,39 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/thermostats/simulate/set_hvac_mode': {
+    route: '/thermostats/simulate/set_hvac_mode'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          hvac_mode: 'off'
+          device_id: string
+        }
+      | {
+          hvac_mode: 'cool'
+          device_id: string
+          cooling_set_point_celsius?: number | undefined
+          cooling_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode: 'heat'
+          device_id: string
+          heating_set_point_celsius?: number | undefined
+          heating_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode: 'heat_cool'
+          device_id: string
+          cooling_set_point_celsius?: number | undefined
+          cooling_set_point_fahrenheit?: number | undefined
+          heating_set_point_celsius?: number | undefined
+          heating_set_point_fahrenheit?: number | undefined
+        }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/thermostats/simulate/temperature_reached': {
     route: '/thermostats/simulate/temperature_reached'
     method: 'POST'

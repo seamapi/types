@@ -25645,6 +25645,112 @@ export default {
         'x-title': 'Set a Temperature Threshold',
       },
     },
+    '/thermostats/simulate/set_hvac_mode': {
+      post: {
+        operationId: 'thermostatsSimulateSetHvacModePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                discriminator: { propertyName: 'hvac_mode' },
+                oneOf: [
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                      hvac_mode: { enum: ['off'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: { format: 'uuid', type: 'string' },
+                      hvac_mode: { enum: ['cool'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode: { enum: ['heat'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: { format: 'uuid', type: 'string' },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode: { enum: ['heat_cool'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/thermostats/simulate/set_hvac_mode',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'simulate'],
+        'x-fern-sdk-method-name': 'set_hvac_mode',
+        'x-response-key': null,
+      },
+    },
     '/thermostats/simulate/temperature_reached': {
       post: {
         operationId: 'thermostatsSimulateTemperatureReachedPost',
