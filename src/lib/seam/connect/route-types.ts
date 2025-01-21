@@ -19885,6 +19885,25 @@ export interface Routes {
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
+                /** ID of the device. */
+                device_id: string
+                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                connected_account_id: string
+                event_type: 'thermostat.temperature_changed_event'
+                /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                temperature_celsius: number
+                /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+                temperature_fahrenheit: number
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
                 /** ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut). */
                 enrollment_automation_id: string
                 event_type: 'enrollment_automation.deleted'
@@ -19996,6 +20015,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
+            | 'thermostat.temperature_changed_event'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           )
@@ -20074,6 +20094,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
+            | 'thermostat.temperature_changed_event'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           >
@@ -21308,6 +21329,25 @@ export interface Routes {
             desired_temperature_celsius?: number | undefined
             /** Desired temperature, in °F, defined by the [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) cooling or heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points). */
             desired_temperature_fahrenheit?: number | undefined
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the device. */
+            device_id: string
+            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            connected_account_id: string
+            event_type: 'thermostat.temperature_changed_event'
+            /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            temperature_celsius: number
+            /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
+            temperature_fahrenheit: number
           }
         | {
             /** ID of the event. */
@@ -43176,6 +43216,39 @@ export interface Routes {
       /** Upper temperature limit in in °C. Seam alerts you if the reported temperature is higher than this value. You can specify either `upper_limit` but not both. */
       upper_limit_fahrenheit?: (number | undefined) | null
     }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/thermostats/simulate/set_hvac_mode': {
+    route: '/thermostats/simulate/set_hvac_mode'
+    method: 'POST'
+    queryParams: {}
+    jsonBody:
+      | {
+          hvac_mode: 'off'
+          device_id: string
+        }
+      | {
+          hvac_mode: 'cool'
+          device_id: string
+          cooling_set_point_celsius?: number | undefined
+          cooling_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode: 'heat'
+          device_id: string
+          heating_set_point_celsius?: number | undefined
+          heating_set_point_fahrenheit?: number | undefined
+        }
+      | {
+          hvac_mode: 'heat_cool'
+          device_id: string
+          cooling_set_point_celsius?: number | undefined
+          cooling_set_point_fahrenheit?: number | undefined
+          heating_set_point_celsius?: number | undefined
+          heating_set_point_fahrenheit?: number | undefined
+        }
     commonParams: {}
     formData: {}
     jsonResponse: {}

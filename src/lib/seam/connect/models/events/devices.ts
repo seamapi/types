@@ -630,6 +630,27 @@ export type TemperatureReachedSetPointEvent = z.infer<
   typeof temperature_reached_set_point_event
 >
 
+export const temperature_changed_event = device_event.extend({
+  event_type: z.literal('thermostat.temperature_changed_event'),
+  temperature_celsius: z
+    .number()
+    .describe(
+      'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+    ),
+  temperature_fahrenheit: z
+    .number()
+    .describe(
+      'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+    ),
+}).describe(`
+  ---
+  route_path: /thermostats
+  ---
+  A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) reported temperature changed by 1 °C.
+`)
+
+export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
+
 export const device_events = [
   device_connected_event,
   device_added_event,
@@ -662,4 +683,5 @@ export const device_events = [
   temperature_threshold_exceeded_event,
   temperature_threshold_no_longer_exceeded_event,
   temperature_reached_set_point_event,
+  temperature_changed_event,
 ] as const
