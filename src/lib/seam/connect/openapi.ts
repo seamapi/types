@@ -11681,6 +11681,73 @@ export default {
           },
           {
             description:
+              "A [thermostat's](https://docs.seam.co/latest/capability-guides/thermostats) reported temperature changed by 1 °C.",
+            properties: {
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description: 'ID of the device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: {
+                enum: ['thermostat.temperature_changed_event'],
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              temperature_celsius: {
+                description:
+                  'Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                format: 'float',
+                type: 'number',
+              },
+              temperature_fahrenheit: {
+                description:
+                  'Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats).',
+                format: 'float',
+                type: 'number',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'temperature_celsius',
+              'temperature_fahrenheit',
+            ],
+            type: 'object',
+            'x-route-path': '/thermostats',
+          },
+          {
+            description:
               'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
             properties: {
               created_at: {
@@ -22309,6 +22376,7 @@ export default {
                       'thermostat.temperature_threshold_exceeded',
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
+                      'thermostat.temperature_changed_event',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                     ],
@@ -22389,6 +22457,7 @@ export default {
                         'thermostat.temperature_threshold_exceeded',
                         'thermostat.temperature_threshold_no_longer_exceeded',
                         'thermostat.temperature_reached_set_point',
+                        'thermostat.temperature_changed_event',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                       ],
@@ -25643,6 +25712,112 @@ export default {
         'x-fern-sdk-method-name': 'set_temperature_threshold',
         'x-response-key': null,
         'x-title': 'Set a Temperature Threshold',
+      },
+    },
+    '/thermostats/simulate/set_hvac_mode': {
+      post: {
+        operationId: 'thermostatsSimulateSetHvacModePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                discriminator: { propertyName: 'hvac_mode' },
+                oneOf: [
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                      hvac_mode: { enum: ['off'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: { format: 'uuid', type: 'string' },
+                      hvac_mode: { enum: ['cool'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      device_id: { format: 'uuid', type: 'string' },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode: { enum: ['heat'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                  {
+                    properties: {
+                      cooling_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      cooling_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      device_id: { format: 'uuid', type: 'string' },
+                      heating_set_point_celsius: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      heating_set_point_fahrenheit: {
+                        format: 'float',
+                        type: 'number',
+                      },
+                      hvac_mode: { enum: ['heat_cool'], type: 'string' },
+                    },
+                    required: ['hvac_mode', 'device_id'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/thermostats/simulate/set_hvac_mode',
+        tags: ['/thermostats'],
+        'x-fern-sdk-group-name': ['thermostats', 'simulate'],
+        'x-fern-sdk-method-name': 'set_hvac_mode',
+        'x-response-key': null,
       },
     },
     '/thermostats/simulate/temperature_reached': {
