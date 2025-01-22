@@ -19889,7 +19889,7 @@ export interface Routes {
                 device_id: string
                 /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
                 connected_account_id: string
-                event_type: 'thermostat.temperature_changed_event'
+                event_type: 'thermostat.temperature_changed'
                 /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
                 temperature_celsius: number
                 /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
@@ -20015,7 +20015,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
-            | 'thermostat.temperature_changed_event'
+            | 'thermostat.temperature_changed'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           )
@@ -20094,7 +20094,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_exceeded'
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
-            | 'thermostat.temperature_changed_event'
+            | 'thermostat.temperature_changed'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           >
@@ -21343,7 +21343,7 @@ export interface Routes {
             device_id: string
             /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
             connected_account_id: string
-            event_type: 'thermostat.temperature_changed_event'
+            event_type: 'thermostat.temperature_changed'
             /** Temperature, in °C, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
             temperature_celsius: number
             /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */

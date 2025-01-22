@@ -631,7 +631,7 @@ export type TemperatureReachedSetPointEvent = z.infer<
 >
 
 export const temperature_changed_event = device_event.extend({
-  event_type: z.literal('thermostat.temperature_changed_event'),
+  event_type: z.literal('thermostat.temperature_changed'),
   temperature_celsius: z
     .number()
     .describe(

@@ -11705,7 +11705,7 @@ export default {
                 type: 'string',
               },
               event_type: {
-                enum: ['thermostat.temperature_changed_event'],
+                enum: ['thermostat.temperature_changed'],
                 type: 'string',
               },
               occurred_at: {
@@ -22376,7 +22376,7 @@ export default {
                       'thermostat.temperature_threshold_exceeded',
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
-                      'thermostat.temperature_changed_event',
+                      'thermostat.temperature_changed',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                     ],
@@ -22457,7 +22457,7 @@ export default {
                         'thermostat.temperature_threshold_exceeded',
                         'thermostat.temperature_threshold_no_longer_exceeded',
                         'thermostat.temperature_reached_set_point',
-                        'thermostat.temperature_changed_event',
+                        'thermostat.temperature_changed',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                       ],
