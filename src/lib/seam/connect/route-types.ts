@@ -43220,8 +43220,8 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
-  '/thermostats/simulate/set_hvac_mode': {
-    route: '/thermostats/simulate/set_hvac_mode'
+  '/thermostats/simulate/hvac_mode_adjusted': {
+    route: '/thermostats/simulate/hvac_mode_adjusted'
     method: 'POST'
     queryParams: {}
     jsonBody:
