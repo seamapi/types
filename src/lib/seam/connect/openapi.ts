@@ -11705,7 +11705,7 @@ export default {
                 type: 'string',
               },
               event_type: {
-                enum: ['thermostat.temperature_changed_event'],
+                enum: ['thermostat.temperature_changed'],
                 type: 'string',
               },
               occurred_at: {
@@ -22376,7 +22376,7 @@ export default {
                       'thermostat.temperature_threshold_exceeded',
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
-                      'thermostat.temperature_changed_event',
+                      'thermostat.temperature_changed',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                     ],
@@ -22457,7 +22457,7 @@ export default {
                         'thermostat.temperature_threshold_exceeded',
                         'thermostat.temperature_threshold_no_longer_exceeded',
                         'thermostat.temperature_reached_set_point',
-                        'thermostat.temperature_changed_event',
+                        'thermostat.temperature_changed',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                       ],
@@ -25714,9 +25714,9 @@ export default {
         'x-title': 'Set a Temperature Threshold',
       },
     },
-    '/thermostats/simulate/set_hvac_mode': {
+    '/thermostats/simulate/hvac_mode_adjusted': {
       post: {
-        operationId: 'thermostatsSimulateSetHvacModePost',
+        operationId: 'thermostatsSimulateHvacModeAdjustedPost',
         requestBody: {
           content: {
             'application/json': {
@@ -25813,10 +25813,10 @@ export default {
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
         ],
-        summary: '/thermostats/simulate/set_hvac_mode',
+        summary: '/thermostats/simulate/hvac_mode_adjusted',
         tags: ['/thermostats'],
         'x-fern-sdk-group-name': ['thermostats', 'simulate'],
-        'x-fern-sdk-method-name': 'set_hvac_mode',
+        'x-fern-sdk-method-name': 'hvac_mode_adjusted',
         'x-response-key': null,
       },
     },
