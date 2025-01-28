@@ -25718,6 +25718,8 @@ export default {
     },
     '/thermostats/simulate/hvac_mode_adjusted': {
       post: {
+        description:
+          'Simulates having adjusted the [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) for a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://docs.seam.co/latest/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
         operationId: 'thermostatsSimulateHvacModeAdjustedPost',
         requestBody: {
           content: {
@@ -25727,8 +25729,17 @@ export default {
                 oneOf: [
                   {
                     properties: {
-                      device_id: { format: 'uuid', type: 'string' },
-                      hvac_mode: { enum: ['off'], type: 'string' },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      hvac_mode: {
+                        description:
+                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        enum: ['off'],
+                        type: 'string',
+                      },
                     },
                     required: ['hvac_mode', 'device_id'],
                     type: 'object',
@@ -25736,31 +25747,57 @@ export default {
                   {
                     properties: {
                       cooling_set_point_celsius: {
+                        description:
+                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
+                        description:
+                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
-                      device_id: { format: 'uuid', type: 'string' },
-                      hvac_mode: { enum: ['cool'], type: 'string' },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
+                      hvac_mode: {
+                        description:
+                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        enum: ['cool'],
+                        type: 'string',
+                      },
                     },
                     required: ['hvac_mode', 'device_id'],
                     type: 'object',
                   },
                   {
                     properties: {
-                      device_id: { format: 'uuid', type: 'string' },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       heating_set_point_celsius: {
+                        description:
+                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
+                        description:
+                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
-                      hvac_mode: { enum: ['heat'], type: 'string' },
+                      hvac_mode: {
+                        description:
+                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        enum: ['heat'],
+                        type: 'string',
+                      },
                     },
                     required: ['hvac_mode', 'device_id'],
                     type: 'object',
@@ -25768,23 +25805,40 @@ export default {
                   {
                     properties: {
                       cooling_set_point_celsius: {
+                        description:
+                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       cooling_set_point_fahrenheit: {
+                        description:
+                          'Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
-                      device_id: { format: 'uuid', type: 'string' },
+                      device_id: {
+                        description: 'ID of the desired thermostat device.',
+                        format: 'uuid',
+                        type: 'string',
+                      },
                       heating_set_point_celsius: {
+                        description:
+                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`.',
                         format: 'float',
                         type: 'number',
                       },
                       heating_set_point_fahrenheit: {
+                        description:
+                          'Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`.',
                         format: 'float',
                         type: 'number',
                       },
-                      hvac_mode: { enum: ['heat_cool'], type: 'string' },
+                      hvac_mode: {
+                        description:
+                          'Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate.',
+                        enum: ['heat_cool'],
+                        type: 'string',
+                      },
                     },
                     required: ['hvac_mode', 'device_id'],
                     type: 'object',
@@ -25824,15 +25878,31 @@ export default {
     },
     '/thermostats/simulate/temperature_reached': {
       post: {
+        description:
+          'Simulates a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) reaching a specified temperature. Only applicable for [sandbox devices](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). See also [Testing Your Thermostat App with Simulate Endpoints](https://docs.seam.co/latest/capability-guides/thermostats/testing-your-thermostat-app-with-simulate-endpoints).',
         operationId: 'thermostatsSimulateTemperatureReachedPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  device_id: { format: 'uuid', type: 'string' },
-                  temperature_celsius: { format: 'float', type: 'number' },
-                  temperature_fahrenheit: { format: 'float', type: 'number' },
+                  device_id: {
+                    description: 'ID of the desired thermostat device.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  temperature_celsius: {
+                    description:
+                      'Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  temperature_fahrenheit: {
+                    description:
+                      'Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`.',
+                    format: 'float',
+                    type: 'number',
+                  },
                 },
                 required: ['device_id'],
                 type: 'object',

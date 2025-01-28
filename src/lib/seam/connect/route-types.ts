@@ -43226,27 +43226,43 @@ export interface Routes {
     queryParams: {}
     jsonBody:
       | {
+          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
           hvac_mode: 'off'
+          /** ID of the desired thermostat device. */
           device_id: string
         }
       | {
+          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
           hvac_mode: 'cool'
+          /** ID of the desired thermostat device. */
           device_id: string
+          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
           cooling_set_point_celsius?: number | undefined
+          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
           cooling_set_point_fahrenheit?: number | undefined
         }
       | {
+          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
           hvac_mode: 'heat'
+          /** ID of the desired thermostat device. */
           device_id: string
+          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
           heating_set_point_celsius?: number | undefined
+          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
           heating_set_point_fahrenheit?: number | undefined
         }
       | {
+          /** Desired [HVAC mode](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/hvac-mode) to simulate. */
           hvac_mode: 'heat_cool'
+          /** ID of the desired thermostat device. */
           device_id: string
+          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `cooling_set_point_celsius` or `cooling_set_point_fahrenheit`. */
           cooling_set_point_celsius?: number | undefined
+          /** Desired simulated cooling [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `cooling_set_point_fahrenheit` or `cooling_set_point_celsius`. */
           cooling_set_point_fahrenheit?: number | undefined
+          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °C. You must set `heating_set_point_celsius` or `heating_set_point_fahrenheit`. */
           heating_set_point_celsius?: number | undefined
+          /** Desired simulated heating [set point](https://docs.seam.co/latest/capability-guides/thermostats/understanding-thermostat-concepts/set-points) in °F. You must set `heating_set_point_fahrenheit` or `heating_set_point_celsius`. */
           heating_set_point_fahrenheit?: number | undefined
         }
     commonParams: {}
@@ -43258,8 +43274,11 @@ export interface Routes {
     method: 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the desired thermostat device. */
       device_id: string
+      /** Desired simulated temperature in °C. You must set `temperature_celsius` or `temperature_fahrenheit`. */
       temperature_celsius?: number | undefined
+      /** Desired simulated temperature in °F. You must set `temperature_fahrenheit` or `temperature_celsius`. */
       temperature_fahrenheit?: number | undefined
     }
     commonParams: {}
