@@ -25874,6 +25874,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'simulate'],
         'x-fern-sdk-method-name': 'hvac_mode_adjusted',
         'x-response-key': null,
+        'x-title': 'HVAC Mode Adjusted',
       },
     },
     '/thermostats/simulate/temperature_reached': {
@@ -25936,6 +25937,7 @@ export default {
         'x-fern-sdk-group-name': ['thermostats', 'simulate'],
         'x-fern-sdk-method-name': 'temperature_reached',
         'x-response-key': null,
+        'x-title': 'Temperature Reached',
       },
     },
     '/thermostats/update_climate_preset': {
