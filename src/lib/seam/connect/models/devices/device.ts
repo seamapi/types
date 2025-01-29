@@ -41,14 +41,6 @@ const device_removed = common_device_error
   })
   .describe('Device has been removed')
 
-const account_disconnected = common_device_error
-  .extend({
-    error_code: z
-      .literal('account_disconnected')
-      .describe(error_code_description),
-  })
-  .describe('Account is disconnected')
-
 const hub_disconnected = common_device_error
   .extend({
     error_code: z.literal('hub_disconnected').describe(error_code_description),
@@ -128,10 +120,9 @@ const subscription_required = common_device_error
   .describe('Subscription required to connect.')
 
 export const device_error = z
-  .union([
+  .discriminatedUnion('error_code', [
     device_offline,
     device_removed,
-    account_disconnected,
     hub_disconnected,
     device_disconnected,
     empty_backup_access_code_pool,
@@ -285,7 +276,7 @@ export const unknown_issue_with_phone = common_device_warning
       'This issue may affect the proper functioning of this phone.',
   )
 
-const device_warning = z.union([
+const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
   salto_unknown_device_type,
@@ -501,7 +492,12 @@ export const device = z
         'Unique identifier for the Seam workspace associated with the device.',
       ),
     errors: z
-      .array(z.union([device_error, connected_account_error]))
+      .array(
+        z.discriminatedUnion('error_code', [
+          ...device_error.options,
+          ...connected_account_error.options,
+        ]),
+      )
       .describe(
         'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
       ),

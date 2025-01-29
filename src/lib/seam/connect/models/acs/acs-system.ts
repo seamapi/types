@@ -124,7 +124,7 @@ const salto_ks_certification_expired = common_acs_system_error.extend({
     ),
 })
 const acs_system_error = z
-  .union([
+  .discriminatedUnion('error_code', [
     seam_bridge_disconnected,
     visionline_instance_unreachable,
     salto_ks_subscription_limit_exceeded,
@@ -182,7 +182,7 @@ const time_zone_does_not_match_location = common_acs_system_warning.extend({
 })
 
 const acs_system_warning = z
-  .union([
+  .discriminatedUnion('warning_code', [
     salto_ks_subscription_limit_almost_reached,
     time_zone_does_not_match_location,
   ])

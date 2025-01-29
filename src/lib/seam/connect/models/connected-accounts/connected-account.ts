@@ -8,7 +8,7 @@ const common_connected_account_error = z.object({
 })
 
 const error_code_description =
-  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
+  'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
 
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
@@ -33,7 +33,7 @@ export const invalid_credentials = common_connected_account_error
   })
   .describe('Credentials provided were invalid.')
 
-export const connected_account_error = z.union([
+export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,
   invalid_credentials,
 ])
@@ -61,7 +61,10 @@ const scheduled_maintenance_window = common_connected_account_warning
   .describe('Scheduled downtime for account planned.')
 
 const connected_account_warning = z
-  .union([scheduled_maintenance_window, unknown_issue_with_connected_account])
+  .discriminatedUnion('warning_code', [
+    scheduled_maintenance_window,
+    unknown_issue_with_connected_account,
+  ])
   .describe('Warning associated with the `connected_account`.')
 
 export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>

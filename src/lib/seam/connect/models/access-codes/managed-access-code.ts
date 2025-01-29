@@ -169,7 +169,7 @@ const hubitat_no_free_positions_available = common_access_code_error
   })
   .describe('No free positions available on the device.')
 
-const access_code_error = z.union([
+const access_code_error = z.discriminatedUnion('error_code', [
   smartthings_failed_to_set_access_code_error,
   smartthings_failed_to_set_after_multiple_retries,
   failed_to_set_on_device,
@@ -284,7 +284,7 @@ const management_transferred = common_access_code_warning
   })
   .describe('Management was transferred to another workspace.')
 
-const access_code_warning = z.union([
+const access_code_warning = z.discriminatedUnion('warning_code', [
   smartthings_failed_to_set_access_code_warning,
   schlage_detected_duplicate,
   schlage_creation_outage,
@@ -350,7 +350,13 @@ export const access_code = z.object({
     .datetime()
     .describe('Date and time at which the access code was created.'),
   errors: z
-    .array(z.union([access_code_error, device_error, connected_account_error]))
+    .array(
+      z.discriminatedUnion('error_code', [
+        ...access_code_error.options,
+        ...device_error.options,
+        ...connected_account_error.options,
+      ]),
+    )
     .describe(
       'Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues.',
     ),
