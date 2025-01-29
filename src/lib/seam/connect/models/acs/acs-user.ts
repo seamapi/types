@@ -68,7 +68,7 @@ const acs_users_failed_to_delete_on_acs_system = common_acs_user_error
   )
 
 const acs_user_errors = z
-  .union([
+  .discriminatedUnion('error_code', [
     acs_users_deleted_externally,
     acs_users_salto_ks_subscription_limit_exceeded,
     acs_users_failed_to_create_on_acs_system,
@@ -135,7 +135,7 @@ export const acs_users_warning_map = z.object({
 })
 
 export const acs_users_warnings = z
-  .union([
+  .discriminatedUnion('warning_code', [
     acs_users_being_deleted,
     acs_users_salto_ks_user_not_subscribed,
     unknown_issue_with_acs_user,

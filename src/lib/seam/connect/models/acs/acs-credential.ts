@@ -97,7 +97,7 @@ const needs_to_be_reissued = common_acs_credential_warning
   )
 
 const acs_credential_warning = z
-  .union([
+  .discriminatedUnion('warning_code', [
     waiting_to_be_issued,
     schedule_externally_modified,
     schedule_modified,

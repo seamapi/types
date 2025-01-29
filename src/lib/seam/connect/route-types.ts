@@ -1070,216 +1070,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -1405,216 +1393,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -2781,216 +2757,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -3103,216 +3067,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -3424,216 +3376,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -3733,216 +3673,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -4050,216 +3978,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -5402,216 +5318,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -5701,216 +5605,204 @@ export interface Routes {
         created_at: string
         /** Collection of errors associated with the access code, structured in a dictionary format. A unique "error_code" keys each error. Each error entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the error. "created_at" is a date that indicates when the error was generated. This structure enables detailed tracking and timely response to critical issues. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_access_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'smartthings_failed_to_set_after_multiple_retries'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_set_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'failed_to_remove_from_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_on_device'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'duplicate_code_attempt_prevented'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_too_many_pending_jobs'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_bridge_offline'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'igloohome_offline_access_code_no_variance_available'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_code'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'kwikset_unable_to_confirm_deletion'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'code_modified_external_to_seam'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_invalid_code_length'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_device_slots_full'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_keypad'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_not_subscribed'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_device_programming_delay'
-                }
-              | {
-                  message: string
-                  is_access_code_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hubitat_no_free_positions_available'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_access_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_failed_to_set_after_multiple_retries'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_set_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'failed_to_remove_from_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_on_device'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'duplicate_code_attempt_prevented'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_too_many_pending_jobs'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_bridge_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'igloohome_offline_access_code_no_variance_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'kwikset_unable_to_confirm_deletion'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'code_modified_external_to_seam'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_invalid_code_length'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_device_slots_full'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_keypad'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_not_subscribed'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_device_programming_delay'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
         warnings: Array<
@@ -15549,13 +15441,13 @@ export interface Routes {
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
         >
@@ -15607,13 +15499,13 @@ export interface Routes {
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
         >
@@ -15665,13 +15557,13 @@ export interface Routes {
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
               message: string
               is_connected_account_error: true
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
         >
@@ -16395,100 +16287,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -17454,100 +17336,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -17848,100 +17720,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -18345,100 +18207,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -22070,100 +21922,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -22946,100 +22788,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -24005,100 +23837,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -24880,100 +24702,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -28046,100 +27858,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -28921,100 +28723,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -32369,100 +32161,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -32636,100 +32418,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -35652,100 +35424,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -38799,100 +38561,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -39674,100 +39426,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -44237,100 +43979,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
@@ -45114,100 +44846,90 @@ export interface Routes {
         workspace_id: string
         /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
         errors: Array<
-          | (
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_offline'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_removed'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'hub_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'device_disconnected'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'empty_backup_access_code_pool'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_not_authorized'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'august_lock_missing_bridge'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'salto_site_user_limit_reached'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'ttlock_lock_not_paired_to_gateway'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'missing_device_credentials'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'auxiliary_heat_running'
-                }
-              | {
-                  message: string
-                  is_device_error: true
-                  /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-                  error_code: 'subscription_required'
-                }
-            )
-          | (
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'account_disconnected'
-                }
-              | {
-                  message: string
-                  is_connected_account_error: true
-                  /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-                  error_code: 'invalid_credentials'
-                }
-            )
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_offline'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_removed'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'hub_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'device_disconnected'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'empty_backup_access_code_pool'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_not_authorized'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'august_lock_missing_bridge'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_site_user_limit_reached'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'ttlock_lock_not_paired_to_gateway'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'missing_device_credentials'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'auxiliary_heat_running'
+            }
+          | {
+              message: string
+              is_device_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'subscription_required'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+            }
+          | {
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'invalid_credentials'
+            }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
