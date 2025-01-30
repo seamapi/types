@@ -1289,6 +1289,11 @@ export interface Routes {
           | {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -1608,6 +1613,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
             }
           | {
               message: string
@@ -2976,6 +2986,11 @@ export interface Routes {
           | {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -3282,6 +3297,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
             }
           | {
               message: string
@@ -3595,6 +3615,11 @@ export interface Routes {
           | {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -3888,6 +3913,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
             }
           | {
               message: string
@@ -4193,6 +4223,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
             }
           | {
               message: string
@@ -5537,6 +5572,11 @@ export interface Routes {
           | {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -5820,6 +5860,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_office_mode'
             }
           | {
               message: string
