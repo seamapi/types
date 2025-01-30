@@ -242,6 +242,14 @@ const schlage_creation_outage = common_access_code_warning
   })
   .describe('Received an error when attempting to create this code.')
 
+const salto_office_mode = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('salto_office_mode')
+      .describe(warning_code_description),
+  })
+  .describe('Lock is in Office Mode. Access Codes will not unlock doors.')
+
 const delay_in_setting_on_device = common_access_code_warning
   .extend({
     warning_code: z
@@ -288,6 +296,7 @@ const access_code_warning = z.discriminatedUnion('warning_code', [
   smartthings_failed_to_set_access_code_warning,
   schlage_detected_duplicate,
   schlage_creation_outage,
+  salto_office_mode,
   code_modified_external_to_seam_warning,
   delay_in_setting_on_device,
   delay_in_removing_from_device,

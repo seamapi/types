@@ -690,6 +690,21 @@ export default {
                 },
                 {
                   description:
+                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_office_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
                     message: { type: 'string' },
@@ -13073,6 +13088,21 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['schlage_creation_outage'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Lock is in Office Mode. Access Codes will not unlock doors.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_office_mode'],
                       type: 'string',
                     },
                   },
