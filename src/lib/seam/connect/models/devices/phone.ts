@@ -10,10 +10,13 @@ export const phone = device
     connected_account_id: true,
   })
   .extend({
-    device_type: z.enum(['android_phone', 'ios_phone']),
+    device_type: z
+      .enum(['android_phone', 'ios_phone'])
+      .describe('Type of phone.'),
   })
   .merge(z.object({ properties: phone_specific_properties })).describe(`
     ---
     route_path: /phones
     ---
+    Properties of the phone.
   `)
