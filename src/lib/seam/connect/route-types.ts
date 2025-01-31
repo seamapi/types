@@ -15782,21 +15782,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -16831,21 +16838,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -21417,21 +21431,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -22283,21 +22304,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -23332,21 +23360,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -24197,21 +24232,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -27353,21 +27395,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -28218,21 +28267,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -32145,6 +32201,7 @@ export interface Routes {
     method: 'DELETE' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** Device ID of the desired phone. */
       device_id: string
     }
     commonParams: {}
@@ -32157,7 +32214,9 @@ export interface Routes {
     queryParams: {}
     jsonBody: {}
     commonParams: {
+      /** ID of the user identity that represents the owner by which to filter the list of returned phones. */
       owner_user_identity_id?: string | undefined
+      /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which to filter the list of returned phones. */
       acs_credential_id?: string | undefined
     }
     formData: {}
@@ -32165,6 +32224,7 @@ export interface Routes {
       phones: Array<{
         /** Unique identifier for the device. */
         device_id: string
+        /** Type of phone. */
         device_type: 'android_phone' | 'ios_phone'
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -32180,17 +32240,24 @@ export interface Routes {
           | 'phone'
         >
         properties: {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | {
+                /** Indicates whether the credential service has active endpoints associated with the phone. */
                 has_active_endpoint: boolean
+                /** Endpoints associated with the phone. */
                 endpoints: Array<{
+                  /** ID of the associated endpoint. */
                   endpoint_id: string
+                  /** Indicated whether the endpoint is active. */
                   is_active: boolean
                 }>
               }
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | {
+                /** Indicates whether the credential service has an active associated phone. */
                 has_active_phone: boolean
               }
             | undefined
@@ -32398,30 +32465,45 @@ export interface Routes {
     method: 'GET' | 'POST'
     queryParams: {}
     jsonBody: {
+      /** ID of the custom SDK installation to use for the simulated phone. */
       custom_sdk_installation_id?: string | undefined
+      /** ID of the user identity to associate with the simulated phone. */
       user_identity_id: string
+      /** Metadata to associate with the simulated phone. */
       phone_metadata?: {
+        /** Mobile operating system that you want to use for the simulated phone. */
         operating_system?: 'android' | 'ios'
+        /** Mobile operating system version that you want to use for the simulated phone. */
         os_version?: string
+        /** Manufacturer that you want to use for the simulated phone. */
         device_manufacturer?: string
+        /** Device model that you want to use for the simulated phone. */
         device_model?: string
       }
+      /** ASSA ABLOY metadata to associate with the simulated phone. */
       assa_abloy_metadata?: {
+        /** Indicates whether the simulated phone should have Bluetooth low energy (BLE) capability. */
         ble_capability?: boolean
+        /** Indicates whether the simulated phone should have host card emulation (HCE) capability. */
         hce_capability?: boolean
+        /** Indicates whether the simulated phone should have near-field communication (NFC) capability. */
         nfc_capability?: boolean
+        /** Application version that you want to use for the simulated phone. */
         application_version?: string
+        /** SEOS applet version that you want to use for the simulated phone. */
         seos_applet_version?: string
+        /** ID of the SEOS trusted service manager (TSM) endpoint that you want to use for the simulated phone. */
         seos_tsm_endpoint_id?: number
       }
     }
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /**  */
+      /** Properties of the phone. */
       phone: {
         /** Unique identifier for the device. */
         device_id: string
+        /** Type of phone. */
         device_type: 'android_phone' | 'ios_phone'
         /** Optional nickname to describe the device, settable through Seam */
         nickname?: string | undefined
@@ -32437,17 +32519,24 @@ export interface Routes {
           | 'phone'
         >
         properties: {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | {
+                /** Indicates whether the credential service has active endpoints associated with the phone. */
                 has_active_endpoint: boolean
+                /** Endpoints associated with the phone. */
                 endpoints: Array<{
+                  /** ID of the associated endpoint. */
                   endpoint_id: string
+                  /** Indicated whether the endpoint is active. */
                   is_active: boolean
                 }>
               }
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | {
+                /** Indicates whether the credential service has an active associated phone. */
                 has_active_phone: boolean
               }
             | undefined
@@ -34919,21 +35008,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -38056,21 +38152,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -38921,21 +39024,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -43474,21 +43584,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined
@@ -44341,21 +44458,28 @@ export interface Routes {
           /** Array of noise threshold IDs that are currently triggering. */
           currently_triggering_noise_threshold_ids?: string[] | undefined
         } & {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has active endpoints associated with the phone. */
                     has_active_endpoint: boolean
+                    /** Endpoints associated with the phone. */
                     endpoints: Array<{
+                      /** ID of the associated endpoint. */
                       endpoint_id: string
+                      /** Indicated whether the endpoint is active. */
                       is_active: boolean
                     }>
                   }
                 | undefined
               )
             | undefined
+          /** Salto Space credential service metadata for the phone. */
           salto_space_credential_service_metadata?:
             | (
                 | {
+                    /** Indicates whether the credential service has an active associated phone. */
                     has_active_phone: boolean
                   }
                 | undefined

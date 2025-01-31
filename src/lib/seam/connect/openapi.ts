@@ -5904,26 +5904,48 @@ export default {
                       {
                         properties: {
                           assa_abloy_credential_service_metadata: {
+                            description:
+                              'ASSA ABLOY Credential Service metadata for the phone.',
                             properties: {
                               endpoints: {
+                                description:
+                                  'Endpoints associated with the phone.',
                                 items: {
                                   properties: {
-                                    endpoint_id: { type: 'string' },
-                                    is_active: { type: 'boolean' },
+                                    endpoint_id: {
+                                      description:
+                                        'ID of the associated endpoint.',
+                                      type: 'string',
+                                    },
+                                    is_active: {
+                                      description:
+                                        'Indicated whether the endpoint is active.',
+                                      type: 'boolean',
+                                    },
                                   },
                                   required: ['endpoint_id', 'is_active'],
                                   type: 'object',
                                 },
                                 type: 'array',
                               },
-                              has_active_endpoint: { type: 'boolean' },
+                              has_active_endpoint: {
+                                description:
+                                  'Indicates whether the credential service has active endpoints associated with the phone.',
+                                type: 'boolean',
+                              },
                             },
                             required: ['has_active_endpoint', 'endpoints'],
                             type: 'object',
                           },
                           salto_space_credential_service_metadata: {
+                            description:
+                              'Salto Space credential service metadata for the phone.',
                             properties: {
-                              has_active_phone: { type: 'boolean' },
+                              has_active_phone: {
+                                description:
+                                  'Indicates whether the credential service has an active associated phone.',
+                                type: 'boolean',
+                              },
                             },
                             required: ['has_active_phone'],
                             type: 'object',
@@ -11771,6 +11793,7 @@ export default {
         'x-route-path': '/noise_sensors/noise_thresholds',
       },
       phone: {
+        description: 'Properties of the phone.',
         properties: {
           can_hvac_cool: { type: 'boolean' },
           can_hvac_heat: { type: 'boolean' },
@@ -11816,7 +11839,11 @@ export default {
             format: 'uuid',
             type: 'string',
           },
-          device_type: { enum: ['android_phone', 'ios_phone'], type: 'string' },
+          device_type: {
+            description: 'Type of phone.',
+            enum: ['android_phone', 'ios_phone'],
+            type: 'string',
+          },
           display_name: {
             description:
               'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
@@ -12084,25 +12111,47 @@ export default {
           properties: {
             properties: {
               assa_abloy_credential_service_metadata: {
+                description:
+                  'ASSA ABLOY Credential Service metadata for the phone.',
                 properties: {
                   endpoints: {
+                    description: 'Endpoints associated with the phone.',
                     items: {
                       properties: {
-                        endpoint_id: { type: 'string' },
-                        is_active: { type: 'boolean' },
+                        endpoint_id: {
+                          description: 'ID of the associated endpoint.',
+                          type: 'string',
+                        },
+                        is_active: {
+                          description:
+                            'Indicated whether the endpoint is active.',
+                          type: 'boolean',
+                        },
                       },
                       required: ['endpoint_id', 'is_active'],
                       type: 'object',
                     },
                     type: 'array',
                   },
-                  has_active_endpoint: { type: 'boolean' },
+                  has_active_endpoint: {
+                    description:
+                      'Indicates whether the credential service has active endpoints associated with the phone.',
+                    type: 'boolean',
+                  },
                 },
                 required: ['has_active_endpoint', 'endpoints'],
                 type: 'object',
               },
               salto_space_credential_service_metadata: {
-                properties: { has_active_phone: { type: 'boolean' } },
+                description:
+                  'Salto Space credential service metadata for the phone.',
+                properties: {
+                  has_active_phone: {
+                    description:
+                      'Indicates whether the credential service has an active associated phone.',
+                    type: 'boolean',
+                  },
+                },
                 required: ['has_active_phone'],
                 type: 'object',
               },
@@ -23539,12 +23588,19 @@ export default {
     },
     '/phones/deactivate': {
       post: {
+        description:
+          'Deactivates a phone, which is useful, for example, if a user has lost their phone. For more information, see [App User Lost Phone Process](https://docs.seam.co/latest/capability-guides/mobile-access/managing-phones-for-a-user-identity#app-user-lost-phone-process).',
         operationId: 'phonesDeactivatePost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
-                properties: { device_id: { type: 'string' } },
+                properties: {
+                  device_id: {
+                    description: 'Device ID of the desired phone.',
+                    type: 'string',
+                  },
+                },
                 required: ['device_id'],
                 type: 'object',
               },
@@ -23578,18 +23634,31 @@ export default {
         'x-fern-sdk-group-name': ['phones'],
         'x-fern-sdk-method-name': 'deactivate',
         'x-response-key': null,
+        'x-title': 'Deactivate a Phone',
       },
     },
     '/phones/list': {
       post: {
+        description:
+          'Returns a list of all phones. To filter the list of returned phones by a specific owner user identity or credential, include the `owner_user_identity_id` or `acs_credential_id`, respectively, in the request body.',
         operationId: 'phonesListPost',
         requestBody: {
           content: {
             'application/json': {
               schema: {
                 properties: {
-                  acs_credential_id: { format: 'uuid', type: 'string' },
-                  owner_user_identity_id: { format: 'uuid', type: 'string' },
+                  acs_credential_id: {
+                    description:
+                      'ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) by which to filter the list of returned phones.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                  owner_user_identity_id: {
+                    description:
+                      'ID of the user identity that represents the owner by which to filter the list of returned phones.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 type: 'object',
               },
@@ -23629,10 +23698,13 @@ export default {
         'x-fern-sdk-method-name': 'list',
         'x-fern-sdk-return-value': 'phones',
         'x-response-key': 'phones',
+        'x-title': 'List Phones',
       },
     },
     '/phones/simulate/create_sandbox_phone': {
       post: {
+        description:
+          'Creates a new simulated phone in a [sandbox workspace](https://docs.seam.co/latest/core-concepts/workspaces#sandbox-workspaces). For more information, see [Creating a Simulated Phone for a User Identity](https://docs.seam.co/latest/capability-guides/mobile-access/developing-in-a-sandbox-workspace#creating-a-simulated-phone-for-a-user-identity).',
         operationId: 'phonesSimulateCreateSandboxPhonePost',
         requestBody: {
           content: {
@@ -23641,42 +23713,93 @@ export default {
                 properties: {
                   assa_abloy_metadata: {
                     default: {},
+                    description:
+                      'ASSA ABLOY metadata to associate with the simulated phone.',
                     properties: {
-                      application_version: { default: '1.0.0', type: 'string' },
-                      ble_capability: { default: true, type: 'boolean' },
-                      hce_capability: { default: false, type: 'boolean' },
-                      nfc_capability: { default: false, type: 'boolean' },
-                      seos_applet_version: { default: '1.0.0', type: 'string' },
+                      application_version: {
+                        default: '1.0.0',
+                        description:
+                          'Application version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
+                      ble_capability: {
+                        default: true,
+                        description:
+                          'Indicates whether the simulated phone should have Bluetooth low energy (BLE) capability.',
+                        type: 'boolean',
+                      },
+                      hce_capability: {
+                        default: false,
+                        description:
+                          'Indicates whether the simulated phone should have host card emulation (HCE) capability.',
+                        type: 'boolean',
+                      },
+                      nfc_capability: {
+                        default: false,
+                        description:
+                          'Indicates whether the simulated phone should have near-field communication (NFC) capability.',
+                        type: 'boolean',
+                      },
+                      seos_applet_version: {
+                        default: '1.0.0',
+                        description:
+                          'SEOS applet version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
                       seos_tsm_endpoint_id: {
                         default: 1,
+                        description:
+                          'ID of the SEOS trusted service manager (TSM) endpoint that you want to use for the simulated phone.',
                         format: 'float',
                         type: 'number',
                       },
                     },
                     type: 'object',
                   },
-                  custom_sdk_installation_id: { type: 'string' },
+                  custom_sdk_installation_id: {
+                    description:
+                      'ID of the custom SDK installation to use for the simulated phone.',
+                    type: 'string',
+                  },
                   phone_metadata: {
                     default: {},
+                    description:
+                      'Metadata to associate with the simulated phone.',
                     properties: {
                       device_manufacturer: {
                         default: 'Samsung',
+                        description:
+                          'Manufacturer that you want to use for the simulated phone.',
                         type: 'string',
                       },
                       device_model: {
                         default: 'Samsung Galaxy S10',
+                        description:
+                          'Device model that you want to use for the simulated phone.',
                         type: 'string',
                       },
                       operating_system: {
                         default: 'android',
+                        description:
+                          'Mobile operating system that you want to use for the simulated phone.',
                         enum: ['android', 'ios'],
                         type: 'string',
                       },
-                      os_version: { default: '10', type: 'string' },
+                      os_version: {
+                        default: '10',
+                        description:
+                          'Mobile operating system version that you want to use for the simulated phone.',
+                        type: 'string',
+                      },
                     },
                     type: 'object',
                   },
-                  user_identity_id: { format: 'uuid', type: 'string' },
+                  user_identity_id: {
+                    description:
+                      'ID of the user identity to associate with the simulated phone.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
                 },
                 required: ['user_identity_id'],
                 type: 'object',
@@ -23714,6 +23837,7 @@ export default {
         'x-fern-sdk-method-name': 'create_sandbox_phone',
         'x-fern-sdk-return-value': 'phone',
         'x-response-key': 'phone',
+        'x-title': 'Create a Sandbox Phone',
       },
     },
     '/thermostats/activate_climate_preset': {
