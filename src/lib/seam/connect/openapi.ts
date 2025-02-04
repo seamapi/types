@@ -12421,16 +12421,6 @@ export default {
         type: 'object',
         'x-route-path': '/phones',
       },
-      service_health: {
-        properties: {
-          description: { type: 'string' },
-          service: { type: 'string' },
-          status: { enum: ['healthy', 'degraded', 'down'], type: 'string' },
-        },
-        required: ['service', 'status', 'description'],
-        type: 'object',
-        'x-route-path': '/health',
-      },
       thermostat_schedule: {
         description:
           'Represents a [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) that activates a configured [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) on a [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) at a specified starting time and deactivates the climate preset at a specified ending time.',
