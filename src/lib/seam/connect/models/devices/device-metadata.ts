@@ -27,6 +27,16 @@ export const device_metadata = z
       keypad_battery_level: z.string().optional(),
       model: z.string().optional(),
       house_id: z.string().optional(),
+
+      _pin_slot_min: z.number().optional(),
+      _pin_slot_max: z.number().optional(),
+      _pin_length_min: z.number().optional(),
+      _pin_length_max: z.number().optional(),
+      _pin_length: z.number().optional(),
+      _integrated_keypad: z.boolean().optional(),
+      _valid_accessories: z
+        .array(z.enum(['keypad', 'bridge', 'doorbell', 'camera']))
+        .optional(),
     }),
 
     avigilon_alta_metadata: z.object({
