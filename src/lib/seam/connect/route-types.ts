@@ -15819,6 +15819,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -16875,6 +16884,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -21468,6 +21486,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -22341,6 +22368,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -23397,6 +23433,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -24269,6 +24314,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -27432,6 +27486,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -28304,6 +28367,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -35045,6 +35117,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -38189,6 +38270,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -39061,6 +39151,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -43621,6 +43720,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
@@ -44495,6 +44603,15 @@ export interface Routes {
                 keypad_battery_level?: string | undefined
                 model?: string | undefined
                 house_id?: string | undefined
+                _pin_slot_min?: number | undefined
+                _pin_slot_max?: number | undefined
+                _pin_length_min?: number | undefined
+                _pin_length_max?: number | undefined
+                _pin_length?: number | undefined
+                _integrated_keypad?: boolean | undefined
+                _valid_accessories?:
+                  | Array<'keypad' | 'bridge' | 'doorbell' | 'camera'>
+                  | undefined
               }
             | undefined
           avigilon_alta_metadata?:
