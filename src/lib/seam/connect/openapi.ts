@@ -5974,6 +5974,19 @@ export default {
                       },
                       august_metadata: {
                         properties: {
+                          _integrated_keypad: { type: 'boolean' },
+                          _pin_length: { format: 'float', type: 'number' },
+                          _pin_length_max: { format: 'float', type: 'number' },
+                          _pin_length_min: { format: 'float', type: 'number' },
+                          _pin_slot_max: { format: 'float', type: 'number' },
+                          _pin_slot_min: { format: 'float', type: 'number' },
+                          _valid_accessories: {
+                            items: {
+                              enum: ['keypad', 'bridge', 'doorbell', 'camera'],
+                              type: 'string',
+                            },
+                            type: 'array',
+                          },
                           has_keypad: { type: 'boolean' },
                           house_id: { type: 'string' },
                           house_name: { type: 'string' },
