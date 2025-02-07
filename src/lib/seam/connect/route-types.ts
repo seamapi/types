@@ -32222,23 +32222,31 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       phones: Array<{
-        /** Unique identifier for the device. */
+        /** ID of the `phone`. */
         device_id: string
-        /** Type of phone. */
-        device_type: 'android_phone' | 'ios_phone'
-        /** Optional nickname to describe the device, settable through Seam */
+        /** Optional nickname to describe the phone, settable through Seam. */
         nickname?: string | undefined
-        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        /** Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones. */
         display_name: string
-        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        capabilities_supported: Array<
-          | 'access_code'
-          | 'lock'
-          | 'noise_detection'
-          | 'thermostat'
-          | 'battery'
-          | 'phone'
-        >
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`. */
+        workspace_id: string
+        /** Date and time at which the `phone` was created. */
+        created_at: string
+        /** Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone. */
+        custom_metadata: Record<string, string | boolean>
+        /** Errors associated with the `phone`. */
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        /** Warnings associated with the `phone`. */
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        /** Type of phone. */
+        device_type: 'ios_phone' | 'android_phone'
+        /** Properties of the phone. */
         properties: {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -32262,201 +32270,6 @@ export interface Routes {
               }
             | undefined
         }
-        /** Location information for the device. */
-        location: {
-          /** Name of the device location. */
-          location_name?: string | undefined
-          /** Time zone of the device location. */
-          timezone?: string | undefined
-        } | null
-        /** Unique identifier for the Seam workspace associated with the device. */
-        workspace_id: string
-        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_offline'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_removed'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'hub_disconnected'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_disconnected'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'empty_backup_access_code_pool'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'august_lock_not_authorized'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'august_lock_missing_bridge'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'ttlock_lock_not_paired_to_gateway'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'missing_device_credentials'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'auxiliary_heat_running'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'subscription_required'
-            }
-          | {
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'invalid_credentials'
-            }
-        >
-        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'partial_backup_access_code_pool'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'many_active_backup_codes'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'wyze_device_missing_gateway'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'functional_offline_device'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'third_party_integration_detected'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'nest_thermostat_in_manual_eco_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'ttlock_weak_gateway_signal'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'temperature_threshold_exceeded'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'device_communication_degraded'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'scheduled_maintenance_window'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'device_has_flaky_connection'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_phone'
-            }
-        >
-        /** Date and time at which the device object was created. */
-        created_at: string
-        /** Indicates whether Seam manages the device. */
-        is_managed: true
-        custom_metadata: Record<string, string | boolean>
-        can_remotely_unlock?: boolean | undefined
-        can_remotely_lock?: boolean | undefined
-        can_program_offline_access_codes?: boolean | undefined
-        can_program_online_access_codes?: boolean | undefined
-        can_hvac_heat?: boolean | undefined
-        can_hvac_cool?: boolean | undefined
-        can_hvac_heat_cool?: boolean | undefined
-        can_turn_off_hvac?: boolean | undefined
-        can_simulate_removal?: boolean | undefined
-        can_simulate_connection?: boolean | undefined
-        can_simulate_disconnection?: boolean | undefined
       }>
     }
   }
@@ -32499,25 +32312,33 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** Properties of the phone. */
+      /** Represents an app user's mobile phone. */
       phone: {
-        /** Unique identifier for the device. */
+        /** ID of the `phone`. */
         device_id: string
-        /** Type of phone. */
-        device_type: 'android_phone' | 'ios_phone'
-        /** Optional nickname to describe the device, settable through Seam */
+        /** Optional nickname to describe the phone, settable through Seam. */
         nickname?: string | undefined
-        /** Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices. */
+        /** Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones. */
         display_name: string
-        /** Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health. */
-        capabilities_supported: Array<
-          | 'access_code'
-          | 'lock'
-          | 'noise_detection'
-          | 'thermostat'
-          | 'battery'
-          | 'phone'
-        >
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`. */
+        workspace_id: string
+        /** Date and time at which the `phone` was created. */
+        created_at: string
+        /** Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone. */
+        custom_metadata: Record<string, string | boolean>
+        /** Errors associated with the `phone`. */
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        /** Warnings associated with the `phone`. */
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        /** Type of phone. */
+        device_type: 'ios_phone' | 'android_phone'
+        /** Properties of the phone. */
         properties: {
           /** ASSA ABLOY Credential Service metadata for the phone. */
           assa_abloy_credential_service_metadata?:
@@ -32541,201 +32362,6 @@ export interface Routes {
               }
             | undefined
         }
-        /** Location information for the device. */
-        location: {
-          /** Name of the device location. */
-          location_name?: string | undefined
-          /** Time zone of the device location. */
-          timezone?: string | undefined
-        } | null
-        /** Unique identifier for the Seam workspace associated with the device. */
-        workspace_id: string
-        /** Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it. */
-        errors: Array<
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_offline'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_removed'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'hub_disconnected'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'device_disconnected'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'empty_backup_access_code_pool'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'august_lock_not_authorized'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'august_lock_missing_bridge'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'ttlock_lock_not_paired_to_gateway'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'missing_device_credentials'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'auxiliary_heat_running'
-            }
-          | {
-              message: string
-              is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'subscription_required'
-            }
-          | {
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'invalid_credentials'
-            }
-        >
-        /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
-        warnings: Array<
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'partial_backup_access_code_pool'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'many_active_backup_codes'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'wyze_device_missing_gateway'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'functional_offline_device'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'third_party_integration_detected'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'nest_thermostat_in_manual_eco_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'ttlock_weak_gateway_signal'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'temperature_threshold_exceeded'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'device_communication_degraded'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'scheduled_maintenance_window'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'device_has_flaky_connection'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
-            }
-          | {
-              message: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'unknown_issue_with_phone'
-            }
-        >
-        /** Date and time at which the device object was created. */
-        created_at: string
-        /** Indicates whether Seam manages the device. */
-        is_managed: true
-        custom_metadata: Record<string, string | boolean>
-        can_remotely_unlock?: boolean | undefined
-        can_remotely_lock?: boolean | undefined
-        can_program_offline_access_codes?: boolean | undefined
-        can_program_online_access_codes?: boolean | undefined
-        can_hvac_heat?: boolean | undefined
-        can_hvac_cool?: boolean | undefined
-        can_hvac_heat_cool?: boolean | undefined
-        can_turn_off_hvac?: boolean | undefined
-        can_simulate_removal?: boolean | undefined
-        can_simulate_connection?: boolean | undefined
-        can_simulate_disconnection?: boolean | undefined
       }
     }
   }

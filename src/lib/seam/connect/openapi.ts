@@ -5447,7 +5447,11 @@ export default {
                 ],
                 type: 'string',
               },
-              { enum: ['ios_phone', 'android_phone'], type: 'string' },
+              {
+                description: 'Type of phone.',
+                enum: ['ios_phone', 'android_phone'],
+                type: 'string',
+              },
             ],
           },
           display_name: {
@@ -5902,6 +5906,7 @@ export default {
                         type: 'object',
                       },
                       {
+                        description: 'Properties of the phone.',
                         properties: {
                           assa_abloy_credential_service_metadata: {
                             description:
@@ -11793,38 +11798,10 @@ export default {
         'x-route-path': '/noise_sensors/noise_thresholds',
       },
       phone: {
-        description: 'Properties of the phone.',
+        description: "Represents an app user's mobile phone.",
         properties: {
-          can_hvac_cool: { type: 'boolean' },
-          can_hvac_heat: { type: 'boolean' },
-          can_hvac_heat_cool: { type: 'boolean' },
-          can_program_offline_access_codes: { type: 'boolean' },
-          can_program_online_access_codes: { type: 'boolean' },
-          can_remotely_lock: { type: 'boolean' },
-          can_remotely_unlock: { type: 'boolean' },
-          can_simulate_connection: { type: 'boolean' },
-          can_simulate_disconnection: { type: 'boolean' },
-          can_simulate_removal: { type: 'boolean' },
-          can_turn_off_hvac: { type: 'boolean' },
-          capabilities_supported: {
-            description:
-              'Collection of capabilities that the device supports when connected to Seam. Values are "access_code," which indicates that the device can manage and utilize digital PIN codes for secure access; "lock," which indicates that the device controls a door locking mechanism, enabling the remote opening and closing of doors and other entry points; "noise_detection," which indicates that the device supports monitoring and responding to ambient noise levels; "thermostat," which indicates that the device can regulate and adjust indoor temperatures; and "battery," which indicates that the device can manage battery life and health.',
-            items: {
-              enum: [
-                'access_code',
-                'lock',
-                'noise_detection',
-                'thermostat',
-                'battery',
-                'phone',
-              ],
-              type: 'string',
-            },
-            type: 'array',
-          },
           created_at: {
-            description:
-              'Date and time at which the device object was created.',
+            description: 'Date and time at which the `phone` was created.',
             format: 'date-time',
             type: 'string',
           },
@@ -11832,283 +11809,44 @@ export default {
             additionalProperties: {
               oneOf: [{ type: 'string' }, { type: 'boolean' }],
             },
+            description:
+              'Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone.',
             type: 'object',
           },
           device_id: {
-            description: 'Unique identifier for the device.',
+            description: 'ID of the `phone`.',
             format: 'uuid',
             type: 'string',
           },
           device_type: {
             description: 'Type of phone.',
-            enum: ['android_phone', 'ios_phone'],
+            enum: ['ios_phone', 'android_phone'],
             type: 'string',
           },
           display_name: {
             description:
-              'Display name of the device, defaults to nickname (if it is set) or properties.appearance.name otherwise. Enables administrators and users to identify the device easily, especially when there are numerous devices.',
+              'Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones.',
             type: 'string',
           },
           errors: {
-            description:
-              'Array of errors associated with the device. Each error object within the array contains two fields: "error_code" and "message." "error_code" is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+            description: 'Errors associated with the `phone`.',
             items: {
-              discriminator: { propertyName: 'error_code' },
-              oneOf: [
-                {
-                  description: 'Device is offline',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['device_offline'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Device has been removed',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['device_removed'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Hub is disconnected',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['hub_disconnected'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Device is disconnected',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['device_disconnected'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'The backup access code pool is empty.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['empty_backup_access_code_pool'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'User is not authorized to use the August Lock.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_not_authorized'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not connected to the Seam Bridge.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['august_lock_missing_bridge'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Salto site user limit reached.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_site_user_limit_reached'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Lock is not paired with a Gateway.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_not_paired_to_gateway'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Missing device credentials.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['missing_device_credentials'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'The auxiliary heat is running.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['auxiliary_heat_running'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Subscription required to connect.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['subscription_required'],
-                      type: 'string',
-                    },
-                    is_device_error: { enum: [true], type: 'boolean' },
-                    message: { type: 'string' },
-                  },
-                  required: ['message', 'is_device_error', 'error_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Account is disconnected.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['account_disconnected'],
-                      type: 'string',
-                    },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-                {
-                  description: 'Credentials provided were invalid.',
-                  properties: {
-                    error_code: {
-                      description:
-                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['invalid_credentials'],
-                      type: 'string',
-                    },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
-                    message: { type: 'string' },
-                  },
-                  required: [
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
-                  type: 'object',
-                },
-              ],
+              properties: {
+                error_code: { type: 'string' },
+                message: { type: 'string' },
+              },
+              required: ['error_code', 'message'],
+              type: 'object',
             },
             type: 'array',
           },
-          is_managed: {
-            description: 'Indicates whether Seam manages the device.',
-            enum: [true],
-            type: 'boolean',
-          },
-          location: {
-            description: 'Location information for the device.',
-            nullable: true,
-            properties: {
-              location_name: {
-                description: 'Name of the device location.',
-                type: 'string',
-              },
-              timezone: {
-                description: 'Time zone of the device location.',
-                type: 'string',
-              },
-            },
-            type: 'object',
-          },
           nickname: {
             description:
-              'Optional nickname to describe the device, settable through Seam',
+              'Optional nickname to describe the phone, settable through Seam.',
             type: 'string',
           },
           properties: {
+            description: 'Properties of the phone.',
             properties: {
               assa_abloy_credential_service_metadata: {
                 description:
@@ -12159,264 +11897,34 @@ export default {
             type: 'object',
           },
           warnings: {
-            description:
-              'Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it.',
+            description: 'Warnings associated with the `phone`.',
             items: {
-              discriminator: { propertyName: 'warning_code' },
-              oneOf: [
-                {
-                  description: 'Backup access code unhealthy.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['partial_backup_access_code_pool'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Too many backup codes.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['many_active_backup_codes'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'A Salto Lock displaying an unknown device type.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_unknown_device_type'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Wyze Lock is not connected to a gateway.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['wyze_device_missing_gateway'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Device is offline, but has some functionality available.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['functional_offline_device'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Third-party integration detected.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['third_party_integration_detected'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Nest thermostat in manual eco mode.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['nest_thermostat_in_manual_eco_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Remote Unlock feature not enabled in settings.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_lock_gateway_unlocking_not_enabled'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Gateway signal is weak.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['ttlock_weak_gateway_signal'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Temperature threshold exceeded.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['temperature_threshold_exceeded'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Device appears to be unresponsive.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['device_communication_degraded'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Scheduled maintenance window detected.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['scheduled_maintenance_window'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description: 'Device has flaky connection.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['device_has_flaky_connection'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Lock is in Office Mode. Access Codes will not unlock doors.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_office_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'Lock is in Privacy Mode. Access Codes will not unlock doors.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_privacy_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
-                    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
-                  properties: {
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['unknown_issue_with_phone'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-              ],
+              properties: {
+                message: { type: 'string' },
+                warning_code: { type: 'string' },
+              },
+              required: ['warning_code', 'message'],
+              type: 'object',
             },
             type: 'array',
           },
           workspace_id: {
             description:
-              'Unique identifier for the Seam workspace associated with the device.',
+              'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`.',
             format: 'uuid',
             type: 'string',
           },
         },
         required: [
           'device_id',
-          'device_type',
           'display_name',
-          'capabilities_supported',
-          'properties',
-          'location',
           'workspace_id',
+          'created_at',
+          'custom_metadata',
           'errors',
           'warnings',
-          'created_at',
-          'is_managed',
-          'custom_metadata',
+          'device_type',
+          'properties',
         ],
         type: 'object',
         'x-route-path': '/phones',
@@ -14126,7 +13634,11 @@ export default {
                 ],
                 type: 'string',
               },
-              { enum: ['ios_phone', 'android_phone'], type: 'string' },
+              {
+                description: 'Type of phone.',
+                enum: ['ios_phone', 'android_phone'],
+                type: 'string',
+              },
             ],
           },
           errors: {
@@ -21094,7 +20606,11 @@ export default {
                         ],
                         type: 'string',
                       },
-                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      {
+                        description: 'Type of phone.',
+                        enum: ['ios_phone', 'android_phone'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -21148,6 +20664,7 @@ export default {
                           type: 'string',
                         },
                         {
+                          description: 'Type of phone.',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -21621,7 +21138,11 @@ export default {
                         ],
                         type: 'string',
                       },
-                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      {
+                        description: 'Type of phone.',
+                        enum: ['ios_phone', 'android_phone'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -21675,6 +21196,7 @@ export default {
                           type: 'string',
                         },
                         {
+                          description: 'Type of phone.',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -22463,7 +21985,11 @@ export default {
                         ],
                         type: 'string',
                       },
-                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      {
+                        description: 'Type of phone.',
+                        enum: ['ios_phone', 'android_phone'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -22517,6 +22043,7 @@ export default {
                           type: 'string',
                         },
                         {
+                          description: 'Type of phone.',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -22953,7 +22480,11 @@ export default {
                         ],
                         type: 'string',
                       },
-                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      {
+                        description: 'Type of phone.',
+                        enum: ['ios_phone', 'android_phone'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -23007,6 +22538,7 @@ export default {
                           type: 'string',
                         },
                         {
+                          description: 'Type of phone.',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
@@ -24454,7 +23986,11 @@ export default {
                         ],
                         type: 'string',
                       },
-                      { enum: ['ios_phone', 'android_phone'], type: 'string' },
+                      {
+                        description: 'Type of phone.',
+                        enum: ['ios_phone', 'android_phone'],
+                        type: 'string',
+                      },
                     ],
                   },
                   device_types: {
@@ -24508,6 +24044,7 @@ export default {
                           type: 'string',
                         },
                         {
+                          description: 'Type of phone.',
                           enum: ['ios_phone', 'android_phone'],
                           type: 'string',
                         },
