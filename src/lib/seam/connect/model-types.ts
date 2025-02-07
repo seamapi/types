@@ -9,6 +9,7 @@ export type {
   AcsSystem,
   AcsUser,
   ActionAttempt,
+  Bridge,
   ClientSession,
   ConnectedAccount,
   ConnectedAccountError,
