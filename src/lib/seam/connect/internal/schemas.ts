@@ -16,6 +16,7 @@ export {
   acs_user_external_type,
   any_device_type,
   battery_status,
+  bridge,
   capabilities,
   climate_preset,
   climate_setting,

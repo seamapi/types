@@ -7,6 +7,7 @@ export {
   acs_system,
   acs_user,
   action_attempt,
+  bridge,
   client_session,
   common_failed_action_attempt,
   common_pending_action_attempt,

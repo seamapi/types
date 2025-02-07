@@ -15083,6 +15083,24 @@ export interface Routes {
       >
     }
   }
+  '/bridges/get': {
+    route: '/bridges/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      bridge_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge: {
+        bridge_id: string
+        workspace_id: string
+        created_at: string
+      }
+    }
+  }
   '/client_sessions/create': {
     route: '/client_sessions/create'
     method: 'POST' | 'PUT'
