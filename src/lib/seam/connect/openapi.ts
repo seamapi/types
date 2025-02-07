@@ -19395,6 +19395,62 @@ export default {
         'x-response-key': 'action_attempts',
       },
     },
+    '/bridges/get': {
+      post: {
+        operationId: 'bridgesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { bridge_id: { format: 'uuid', type: 'string' } },
+                required: ['bridge_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge: {
+                      properties: {
+                        bridge_id: { format: 'uuid', type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        workspace_id: { format: 'uuid', type: 'string' },
+                      },
+                      required: ['bridge_id', 'workspace_id', 'created_at'],
+                      type: 'object',
+                      'x-route-path': '/bridges',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/bridges/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['bridges'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'bridge',
+        'x-response-key': 'bridge',
+      },
+    },
     '/client_sessions/create': {
       post: {
         operationId: 'clientSessionsCreatePost',
