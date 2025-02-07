@@ -97,9 +97,9 @@ export const PHONE_DEVICE_TYPE_LIST = Object.values(
   PHONE_DEVICE_TYPE,
 ) as PhoneDeviceTypeFromMapping[]
 
-export const phone_device_type = z.enum(
-  Object.values(PHONE_DEVICE_TYPE_LIST) as [PhoneDeviceTypeFromMapping],
-)
+export const phone_device_type = z
+  .enum(Object.values(PHONE_DEVICE_TYPE_LIST) as [PhoneDeviceTypeFromMapping])
+  .describe('Type of phone.')
 
 export type PhoneDeviceType = z.infer<typeof phone_device_type>
 
