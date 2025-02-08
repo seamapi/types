@@ -57,6 +57,7 @@ export const acs_encoder = z.object({
   ---
   route_path: /acs/encoders
   ---
+  Represents a hardware device that encodes [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) data onto physical cards within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). See also [Working with Card Encoders and Scanners](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).
 `)
 
 export type AcsEncoder = z.infer<typeof acs_encoder>
