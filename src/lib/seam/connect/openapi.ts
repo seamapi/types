@@ -14383,6 +14383,16 @@ export default {
         type: 'http',
       },
       api_key: { bearerFormat: 'API Key', scheme: 'bearer', type: 'http' },
+      bridge_client_session: {
+        bearerFormat: 'Bridge Client Session Token',
+        scheme: 'bearer',
+        type: 'http',
+      },
+      certified_client: {
+        bearerFormat: 'Certified Client',
+        scheme: 'bearer',
+        type: 'http',
+      },
       client_session: {
         bearerFormat: 'Client Session Token',
         scheme: 'bearer',
