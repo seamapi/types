@@ -23430,6 +23430,245 @@ export default {
         'x-title': 'Create a Sandbox Phone',
       },
     },
+    '/seam/bridge/v1/bridge_client_sessions/create': {
+      post: {
+        description: 'Creates a new bridge client session.',
+        operationId: 'seamBridgeV1BridgeClientSessionsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  machine_identifier_key: { type: 'string' },
+                  name: { type: 'string' },
+                  time_zone: { type: 'string' },
+                },
+                required: ['name', 'time_zone', 'machine_identifier_key'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      properties: {
+                        bridge_client_machine_identifier_key: {
+                          type: 'string',
+                        },
+                        bridge_client_name: { type: 'string' },
+                        bridge_client_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        bridge_client_session_token: { type: 'string' },
+                        bridge_client_tailscale_hostname: { type: 'string' },
+                        bridge_client_time_zone: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        pairing_code: {
+                          maxLength: 6,
+                          minLength: 6,
+                          type: 'string',
+                        },
+                        pairing_code_expires_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        tailscale_auth_key: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'created_at',
+                        'bridge_client_session_id',
+                        'bridge_client_session_token',
+                        'bridge_client_name',
+                        'bridge_client_time_zone',
+                        'bridge_client_machine_identifier_key',
+                        'bridge_client_tailscale_hostname',
+                        'pairing_code',
+                        'pairing_code_expires_at',
+                        'tailscale_auth_key',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ certified_client: [] }],
+        summary: '/seam/bridge/v1/bridge_client_sessions/create',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'bridge_client_session',
+        'x-response-key': 'bridge_client_session',
+        'x-title': 'Create a Bridge Client Session',
+      },
+    },
+    '/seam/bridge/v1/bridge_client_sessions/get': {
+      get: {
+        description:
+          'Returns the bridge client session associated with the session token used.',
+        operationId: 'seamBridgeV1BridgeClientSessionsGetGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      properties: {
+                        bridge_client_machine_identifier_key: {
+                          type: 'string',
+                        },
+                        bridge_client_name: { type: 'string' },
+                        bridge_client_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        bridge_client_session_token: { type: 'string' },
+                        bridge_client_tailscale_hostname: { type: 'string' },
+                        bridge_client_time_zone: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        pairing_code: {
+                          maxLength: 6,
+                          minLength: 6,
+                          type: 'string',
+                        },
+                        pairing_code_expires_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        tailscale_auth_key: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'created_at',
+                        'bridge_client_session_id',
+                        'bridge_client_session_token',
+                        'bridge_client_name',
+                        'bridge_client_time_zone',
+                        'bridge_client_machine_identifier_key',
+                        'bridge_client_tailscale_hostname',
+                        'pairing_code',
+                        'pairing_code_expires_at',
+                        'tailscale_auth_key',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary: '/seam/bridge/v1/bridge_client_sessions/get',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'bridge_client_session',
+        'x-title': 'Get a Bridge Client Session',
+      },
+      post: {
+        description:
+          'Returns the bridge client session associated with the session token used.',
+        operationId: 'seamBridgeV1BridgeClientSessionsGetPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_client_session: {
+                      properties: {
+                        bridge_client_machine_identifier_key: {
+                          type: 'string',
+                        },
+                        bridge_client_name: { type: 'string' },
+                        bridge_client_session_id: {
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        bridge_client_session_token: { type: 'string' },
+                        bridge_client_tailscale_hostname: { type: 'string' },
+                        bridge_client_time_zone: { type: 'string' },
+                        created_at: { format: 'date-time', type: 'string' },
+                        pairing_code: {
+                          maxLength: 6,
+                          minLength: 6,
+                          type: 'string',
+                        },
+                        pairing_code_expires_at: {
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        tailscale_auth_key: { nullable: true, type: 'string' },
+                      },
+                      required: [
+                        'created_at',
+                        'bridge_client_session_id',
+                        'bridge_client_session_token',
+                        'bridge_client_name',
+                        'bridge_client_time_zone',
+                        'bridge_client_machine_identifier_key',
+                        'bridge_client_tailscale_hostname',
+                        'pairing_code',
+                        'pairing_code_expires_at',
+                        'tailscale_auth_key',
+                      ],
+                      type: 'object',
+                      'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_client_session', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary: '/seam/bridge/v1/bridge_client_sessions/get',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_client_sessions',
+        ],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'bridge_client_session',
+        'x-response-key': 'bridge_client_session',
+        'x-title': 'Get a Bridge Client Session',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
