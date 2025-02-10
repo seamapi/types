@@ -17,6 +17,7 @@ export {
   any_device_type,
   battery_status,
   bridge,
+  bridge_client_session,
   capabilities,
   climate_preset,
   climate_setting,

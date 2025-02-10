@@ -32383,6 +32383,56 @@ export interface Routes {
       }
     }
   }
+  '/seam/bridge/v1/bridge_client_sessions/create': {
+    route: '/seam/bridge/v1/bridge_client_sessions/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      name: string
+      time_zone: string
+      machine_identifier_key: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge_client_session: {
+        created_at: string
+        bridge_client_session_id: string
+        bridge_client_session_token: string
+        bridge_client_name: string
+        bridge_client_time_zone: string
+        bridge_client_machine_identifier_key: string
+        bridge_client_tailscale_hostname: string
+        pairing_code: string
+        pairing_code_expires_at: string
+        tailscale_auth_key: string | null
+      }
+    }
+  }
+  '/seam/bridge/v1/bridge_client_sessions/get': {
+    route: '/seam/bridge/v1/bridge_client_sessions/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge_client_session: {
+        created_at: string
+        bridge_client_session_id: string
+        bridge_client_session_token: string
+        bridge_client_name: string
+        bridge_client_time_zone: string
+        bridge_client_machine_identifier_key: string
+        bridge_client_tailscale_hostname: string
+        pairing_code: string
+        pairing_code_expires_at: string
+        tailscale_auth_key: string | null
+      }
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
