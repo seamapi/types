@@ -15101,6 +15101,21 @@ export interface Routes {
       }
     }
   }
+  '/bridges/list': {
+    route: '/bridges/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      bridges: Array<{
+        bridge_id: string
+        workspace_id: string
+        created_at: string
+      }>
+    }
+  }
   '/client_sessions/create': {
     route: '/client_sessions/create'
     method: 'POST' | 'PUT'
