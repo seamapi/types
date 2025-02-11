@@ -32433,6 +32433,29 @@ export interface Routes {
       }
     }
   }
+  '/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code': {
+    route: '/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      /**  */
+      bridge_client_session: {
+        created_at: string
+        bridge_client_session_id: string
+        bridge_client_session_token: string
+        pairing_code: string
+        pairing_code_expires_at: string
+        tailscale_hostname: string
+        tailscale_auth_key: string | null
+        bridge_client_name: string
+        bridge_client_time_zone: string
+        bridge_client_machine_identifier_key: string
+      }
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
