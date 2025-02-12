@@ -23606,6 +23606,7 @@ export default {
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23632,6 +23633,7 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Create a Bridge Client Session',
+        'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/get': {
@@ -23684,6 +23686,7 @@ export default {
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23703,6 +23706,7 @@ export default {
         'x-fern-ignore': true,
         'x-response-key': 'bridge_client_session',
         'x-title': 'Get a Bridge Client Session',
+        'x-undocumented': 'Seam Bridge Client only.',
       },
       post: {
         description:
@@ -23753,6 +23757,7 @@ export default {
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23779,6 +23784,7 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Get a Bridge Client Session',
+        'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/seam/bridge/v1/bridge_client_sessions/regenerate_pairing_code': {
@@ -23832,6 +23838,7 @@ export default {
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
+                      'x-undocumented': 'Seam Bridge Client only.',
                     },
                     ok: { type: 'boolean' },
                   },
@@ -23859,6 +23866,7 @@ export default {
         'x-fern-sdk-return-value': 'bridge_client_session',
         'x-response-key': 'bridge_client_session',
         'x-title': 'Regenerate a Bridge Client Session Pairing Code',
+        'x-undocumented': 'Seam Bridge Client only.',
       },
     },
     '/thermostats/activate_climate_preset': {
