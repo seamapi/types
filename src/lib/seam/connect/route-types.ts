@@ -32241,6 +32241,70 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/phones/get': {
+    route: '/phones/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      /** Device ID of the desired phone. */
+      device_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      /** Represents an app user's mobile phone. */
+      phone: {
+        /** ID of the `phone`. */
+        device_id: string
+        /** Optional nickname to describe the phone, settable through Seam. */
+        nickname?: string | undefined
+        /** Display name of the phone. Defaults to `nickname` (if it is set) or `properties.appearance.name` otherwise. Enables administrators and users to identify the phone easily, especially when there are numerous phones. */
+        display_name: string
+        /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `phone`. */
+        workspace_id: string
+        /** Date and time at which the `phone` was created. */
+        created_at: string
+        /** Optional [custom metadata](https://docs.seam.co/latest/core-concepts/devices/adding-custom-metadata-to-a-device) for the phone. */
+        custom_metadata: Record<string, string | boolean>
+        /** Errors associated with the `phone`. */
+        errors: Array<{
+          error_code: string
+          message: string
+        }>
+        /** Warnings associated with the `phone`. */
+        warnings: Array<{
+          warning_code: string
+          message: string
+        }>
+        /** Type of phone. */
+        device_type: 'ios_phone' | 'android_phone'
+        /** Properties of the phone. */
+        properties: {
+          /** ASSA ABLOY Credential Service metadata for the phone. */
+          assa_abloy_credential_service_metadata?:
+            | {
+                /** Indicates whether the credential service has active endpoints associated with the phone. */
+                has_active_endpoint: boolean
+                /** Endpoints associated with the phone. */
+                endpoints: Array<{
+                  /** ID of the associated endpoint. */
+                  endpoint_id: string
+                  /** Indicated whether the endpoint is active. */
+                  is_active: boolean
+                }>
+              }
+            | undefined
+          /** Salto Space credential service metadata for the phone. */
+          salto_space_credential_service_metadata?:
+            | {
+                /** Indicates whether the credential service has an active associated phone. */
+                has_active_phone: boolean
+              }
+            | undefined
+        }
+      }
+    }
+  }
   '/phones/list': {
     route: '/phones/list'
     method: 'GET' | 'POST'
