@@ -19463,6 +19463,59 @@ export default {
         'x-response-key': 'bridge',
       },
     },
+    '/bridges/list': {
+      post: {
+        operationId: 'bridgesListPost',
+        requestBody: {
+          content: {
+            'application/json': { schema: { properties: {}, type: 'object' } },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridges: {
+                      items: {
+                        properties: {
+                          bridge_id: { format: 'uuid', type: 'string' },
+                          created_at: { format: 'date-time', type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: ['bridge_id', 'workspace_id', 'created_at'],
+                        type: 'object',
+                        'x-route-path': '/bridges',
+                        'x-undocumented': 'Unreleased.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridges', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/bridges/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['bridges'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'bridges',
+        'x-response-key': 'bridges',
+      },
+    },
     '/client_sessions/create': {
       post: {
         operationId: 'clientSessionsCreatePost',
