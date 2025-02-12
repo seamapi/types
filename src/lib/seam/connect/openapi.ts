@@ -23280,6 +23280,61 @@ export default {
         'x-title': 'Deactivate a Phone',
       },
     },
+    '/phones/get': {
+      post: {
+        description:
+          'Returns a single phone entry matching the provided `device_id`.',
+        operationId: 'phonesGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_id: {
+                    description: 'Device ID of the desired phone.',
+                    format: 'uuid',
+                    type: 'string',
+                  },
+                },
+                required: ['device_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    ok: { type: 'boolean' },
+                    phone: { $ref: '#/components/schemas/phone' },
+                  },
+                  required: ['phone', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/phones/get',
+        tags: ['/phones'],
+        'x-fern-sdk-group-name': ['phones'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'phone',
+        'x-response-key': 'phone',
+        'x-title': 'Get Phone',
+      },
+    },
     '/phones/list': {
       post: {
         description:
