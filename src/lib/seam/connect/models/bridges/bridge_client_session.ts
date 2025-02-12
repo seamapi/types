@@ -14,6 +14,7 @@ export const bridge_client_session = z.object({
 }).describe(`
   ---
   route_path: /seam/bridge/v1/bridge_client_sessions
+  undocumented: Seam Bridge Client only.
   ---
 `)
 
