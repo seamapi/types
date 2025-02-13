@@ -18705,7 +18705,18 @@ export default {
                     type: 'string',
                   },
                   created_before: { format: 'date-time', type: 'string' },
-                  limit: { default: 500, format: 'float', type: 'number' },
+                  limit: {
+                    default: 500,
+                    description:
+                      'Maximum number of records to return per page.',
+                    format: 'float',
+                    type: 'number',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    type: 'string',
+                  },
                   user_identity_email_address: {
                     description:
                       'Email address of the user identity for which you want to retrieve all `acs_user`s.',
@@ -18739,8 +18750,27 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: {
+                      description:
+                        'Information about the current page of results.',
+                      properties: {
+                        has_next_page: {
+                          description:
+                            'Indicates whether there is another page of results after this one.',
+                          type: 'boolean',
+                        },
+                        next_page_cursor: {
+                          description:
+                            'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['next_page_cursor', 'has_next_page'],
+                      type: 'object',
+                    },
                   },
-                  required: ['acs_users', 'ok'],
+                  required: ['acs_users', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
@@ -21750,6 +21780,10 @@ export default {
                   connected_account_id: { format: 'uuid', type: 'string' },
                   device_id: { format: 'uuid', type: 'string' },
                   device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  event_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
