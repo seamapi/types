@@ -12449,8 +12449,11 @@ export interface Routes {
       user_identity_email_address?: string | undefined
       /** ID of the `acs_system` for which you want to retrieve all `acs_user`s. */
       acs_system_id?: string | undefined
+      /** Maximum number of records to return per page. */
       limit?: number
       created_before?: Date | undefined
+      /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
+      page_cursor?: string | undefined
     }
     formData: {}
     jsonResponse: {
@@ -12574,6 +12577,13 @@ export interface Routes {
         phone_number?: string | undefined
         is_managed: true
       }>
+      /** Information about the current page of results. */
+      pagination: {
+        /** Opaque value that can be used to select the next page of results via the `page_cursor` parameter. */
+        next_page_cursor: string | null
+        /** Indicates whether there is another page of results after this one. */
+        has_next_page: boolean
+      }
     }
   }
   '/acs/users/list_accessible_entrances': {
