@@ -20056,6 +20056,7 @@ export interface Routes {
       connected_account_id?: string | undefined
       connect_webview_id?: string | undefined
       limit?: number
+      event_ids?: string[] | undefined
     }
     formData: {}
     jsonResponse: {

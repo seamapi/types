@@ -21783,6 +21783,10 @@ export default {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
+                  event_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
                   event_type: {
                     enum: [
                       'access_code.created',
