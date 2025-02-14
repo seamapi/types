@@ -12453,7 +12453,7 @@ export interface Routes {
       limit?: number
       created_before?: Date | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
-      page_cursor?: string | undefined
+      page_cursor?: (string | undefined) | null
     }
     formData: {}
     jsonResponse: {
@@ -20056,6 +20056,7 @@ export interface Routes {
       connected_account_id?: string | undefined
       connect_webview_id?: string | undefined
       limit?: number
+      event_ids?: string[] | undefined
     }
     formData: {}
     jsonResponse: {

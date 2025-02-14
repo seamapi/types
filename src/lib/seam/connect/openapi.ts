@@ -18709,12 +18709,14 @@ export default {
                     default: 500,
                     description:
                       'Maximum number of records to return per page.',
-                    format: 'float',
-                    type: 'number',
+                    exclusiveMinimum: 0,
+                    minimum: 0,
+                    type: 'integer',
                   },
                   page_cursor: {
                     description:
                       "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
                     type: 'string',
                   },
                   user_identity_email_address: {
@@ -21780,6 +21782,10 @@ export default {
                   connected_account_id: { format: 'uuid', type: 'string' },
                   device_id: { format: 'uuid', type: 'string' },
                   device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  event_ids: {
                     items: { format: 'uuid', type: 'string' },
                     type: 'array',
                   },
