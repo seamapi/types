@@ -18709,7 +18709,7 @@ export default {
                     default: 500,
                     description:
                       'Maximum number of records to return per page.',
-                    exclusiveMinimum: 0,
+                    exclusiveMinimum: true,
                     minimum: 0,
                     type: 'integer',
                   },
