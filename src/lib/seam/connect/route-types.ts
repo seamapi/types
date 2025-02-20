@@ -1326,6 +1326,11 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
+            }
         >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
@@ -1653,6 +1658,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
         /** Indicates whether Seam manages the access code. */
@@ -3023,6 +3033,11 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
+            }
         >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
@@ -3338,6 +3353,11 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
+            }
         >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
@@ -3652,6 +3672,11 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
+            }
         >
         /** Indicates whether Seam manages the access code. */
         is_managed: true
@@ -3953,6 +3978,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
         /** Indicates whether Seam manages the access code. */
@@ -4263,6 +4293,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
         is_managed: false
@@ -5609,6 +5644,11 @@ export interface Routes {
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
+            }
         >
         is_managed: false
         /** Date and time at which the time-bound access code becomes active. */
@@ -5900,6 +5940,11 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
+            }
+          | {
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'kwikset_unable_to_confirm_code'
             }
         >
         is_managed: false

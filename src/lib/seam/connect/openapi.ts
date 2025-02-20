@@ -805,6 +805,21 @@ export default {
                   required: ['message', 'warning_code'],
                   type: 'object',
                 },
+                {
+                  description:
+                    'Unable to confirm the access code is set on Kwikset device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['kwikset_unable_to_confirm_code'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
               ],
             },
             type: 'array',
@@ -12754,6 +12769,21 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['management_transferred'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Unable to confirm the access code is set on Kwikset device.',
+                  properties: {
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['kwikset_unable_to_confirm_code'],
                       type: 'string',
                     },
                   },
