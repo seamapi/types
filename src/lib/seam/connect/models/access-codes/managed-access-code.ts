@@ -292,6 +292,14 @@ const management_transferred = common_access_code_warning
   })
   .describe('Management was transferred to another workspace.')
 
+const kwikset_unable_to_confirm_code_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('kwikset_unable_to_confirm_code')
+      .describe(warning_code_description),
+  })
+  .describe('Unable to confirm the access code is set on Kwikset device.')
+
 const access_code_warning = z.discriminatedUnion('warning_code', [
   smartthings_failed_to_set_access_code_warning,
   schlage_detected_duplicate,
@@ -304,6 +312,7 @@ const access_code_warning = z.discriminatedUnion('warning_code', [
   august_device_programming_delay_warning,
   igloo_algopin_must_be_used_within_24_hours,
   management_transferred,
+  kwikset_unable_to_confirm_code_warning,
 ])
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
