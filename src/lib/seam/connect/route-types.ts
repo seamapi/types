@@ -45507,6 +45507,8 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        /** True if a sandbox workspace has not been accessed in 14 days */
+        is_suspended: boolean
         /**
          * @deprecated use company_name */
         connect_partner_name: (string | null) | null
@@ -45527,6 +45529,8 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        /** True if a sandbox workspace has not been accessed in 14 days */
+        is_suspended: boolean
         /**
          * @deprecated use company_name */
         connect_partner_name: (string | null) | null
@@ -45546,6 +45550,8 @@ export interface Routes {
         name: string
         company_name: string
         is_sandbox: boolean
+        /** True if a sandbox workspace has not been accessed in 14 days */
+        is_suspended: boolean
         /**
          * @deprecated use company_name */
         connect_partner_name: (string | null) | null
