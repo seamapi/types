@@ -5,6 +5,9 @@ export const workspace = z.object({
   name: z.string(),
   company_name: z.string(),
   is_sandbox: z.boolean(),
+  is_suspended: z
+    .boolean()
+    .describe('True if a sandbox workspace has not been accessed in 14 days'),
   connect_partner_name: z
     .string()
     .nullable()
