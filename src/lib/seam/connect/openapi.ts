@@ -14392,6 +14392,11 @@ export default {
             'x-deprecated': 'use company_name',
           },
           is_sandbox: { type: 'boolean' },
+          is_suspended: {
+            description:
+              'True if a sandbox workspace has not been accessed in 14 days',
+            type: 'boolean',
+          },
           name: { type: 'string' },
           workspace_id: { format: 'uuid', type: 'string' },
         },
@@ -14400,6 +14405,7 @@ export default {
           'name',
           'company_name',
           'is_sandbox',
+          'is_suspended',
           'connect_partner_name',
         ],
         type: 'object',
