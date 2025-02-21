@@ -18755,6 +18755,11 @@ export default {
                     nullable: true,
                     type: 'string',
                   },
+                  search: {
+                    description:
+                      'String to partial match between full_name, phone_number and email_address.',
+                    type: 'string',
+                  },
                   user_identity_email_address: {
                     description:
                       'Email address of the user identity for which you want to retrieve all `acs_user`s.',

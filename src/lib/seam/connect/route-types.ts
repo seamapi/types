@@ -12496,6 +12496,8 @@ export interface Routes {
       acs_system_id?: string | undefined
       /** Maximum number of records to return per page. */
       limit?: number
+      /** String to partial match between full_name, phone_number and email_address. */
+      search?: string | undefined
       created_before?: Date | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
