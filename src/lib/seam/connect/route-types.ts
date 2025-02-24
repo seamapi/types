@@ -12494,10 +12494,10 @@ export interface Routes {
       user_identity_email_address?: string | undefined
       /** ID of the `acs_system` for which you want to retrieve all `acs_user`s. */
       acs_system_id?: string | undefined
-      /** Maximum number of records to return per page. */
-      limit?: number
       /** String to partial match between full_name, phone_number and email_address. */
       search?: string | undefined
+      /** Maximum number of records to return per page. */
+      limit?: number
       created_before?: Date | undefined
       /** Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`. */
       page_cursor?: (string | undefined) | null
@@ -12630,6 +12630,8 @@ export interface Routes {
         next_page_cursor: string | null
         /** Indicates whether there is another page of results after this one. */
         has_next_page: boolean
+        /** URL to get the next page of results. */
+        next_page_url: string | null
       }
     }
   }
