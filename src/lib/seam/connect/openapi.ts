@@ -18758,6 +18758,7 @@ export default {
                   search: {
                     description:
                       'String to partial match between full_name, phone_number and email_address.',
+                    minLength: 1,
                     type: 'string',
                   },
                   user_identity_email_address: {
@@ -18808,8 +18809,18 @@ export default {
                           nullable: true,
                           type: 'string',
                         },
+                        next_page_url: {
+                          description: 'URL to get the next page of results.',
+                          format: 'uri',
+                          nullable: true,
+                          type: 'string',
+                        },
                       },
-                      required: ['next_page_cursor', 'has_next_page'],
+                      required: [
+                        'next_page_cursor',
+                        'has_next_page',
+                        'next_page_url',
+                      ],
                       type: 'object',
                     },
                   },
