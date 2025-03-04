@@ -39,6 +39,7 @@ export {
   device as managed_device,
   noise_sensor_device_type,
   noise_threshold,
+  pagination,
   phone,
   phone_number,
   thermostat_capability_properties,
