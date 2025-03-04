@@ -11814,6 +11814,30 @@ export default {
         type: 'object',
         'x-route-path': '/noise_sensors/noise_thresholds',
       },
+      pagination: {
+        description: 'Information about the current page of results.',
+        properties: {
+          has_next_page: {
+            description:
+              'Indicates whether there is another page of results after this one.',
+            type: 'boolean',
+          },
+          next_page_cursor: {
+            description:
+              'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
+            nullable: true,
+            type: 'string',
+          },
+          next_page_url: {
+            description: 'URL to get the next page of results.',
+            format: 'uri',
+            nullable: true,
+            type: 'string',
+          },
+        },
+        required: ['next_page_cursor', 'has_next_page', 'next_page_url'],
+        type: 'object',
+      },
       phone: {
         description: "Represents an app user's mobile phone.",
         properties: {
@@ -18794,35 +18818,7 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
-                    pagination: {
-                      description:
-                        'Information about the current page of results.',
-                      properties: {
-                        has_next_page: {
-                          description:
-                            'Indicates whether there is another page of results after this one.',
-                          type: 'boolean',
-                        },
-                        next_page_cursor: {
-                          description:
-                            'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
-                          nullable: true,
-                          type: 'string',
-                        },
-                        next_page_url: {
-                          description: 'URL to get the next page of results.',
-                          format: 'uri',
-                          nullable: true,
-                          type: 'string',
-                        },
-                      },
-                      required: [
-                        'next_page_cursor',
-                        'has_next_page',
-                        'next_page_url',
-                      ],
-                      type: 'object',
-                    },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
                   required: ['acs_users', 'pagination', 'ok'],
                   type: 'object',

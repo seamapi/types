@@ -19,6 +19,7 @@ export {
   device,
   device_provider,
   noise_threshold,
+  pagination,
   seam_event,
   thermostat_schedule,
   unmanaged_access_code,
