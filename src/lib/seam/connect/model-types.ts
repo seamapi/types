@@ -12,8 +12,6 @@ export type {
   Bridge,
   ClientSession,
   ConnectedAccount,
-  ConnectedAccountError,
-  ConnectedAccountWarning,
   ConnectWebview,
   CustomMetadata,
   Device,

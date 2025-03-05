@@ -523,6 +523,12 @@ export default {
                 {
                   description: 'Account is disconnected.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -536,6 +542,7 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
@@ -545,6 +552,12 @@ export default {
                 {
                   description: 'Credentials provided were invalid.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -558,9 +571,71 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'subscribed_site_user_count',
+                              'site_user_subscription_limit',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                    'salto_ks_metadata',
                   ],
                   type: 'object',
                 },
@@ -5260,6 +5335,12 @@ export default {
                 {
                   description: 'Account is disconnected.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -5273,6 +5354,7 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
@@ -5282,6 +5364,12 @@ export default {
                 {
                   description: 'Credentials provided were invalid.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -5295,9 +5383,71 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'subscribed_site_user_count',
+                              'site_user_subscription_limit',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                    'salto_ks_metadata',
                   ],
                   type: 'object',
                 },
@@ -5323,6 +5473,12 @@ export default {
                 {
                   description: 'Scheduled downtime for account planned.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -5331,13 +5487,19 @@ export default {
                       type: 'string',
                     },
                   },
-                  required: ['message', 'warning_code'],
+                  required: ['created_at', 'message', 'warning_code'],
                   type: 'object',
                 },
                 {
                   description:
                     'An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -5346,7 +5508,63 @@ export default {
                       type: 'string',
                     },
                   },
-                  required: ['message', 'warning_code'],
+                  required: ['created_at', 'message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the warning.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'site_user_subscription_limit',
+                              'subscribed_site_user_count',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_almost_reached'],
+                      type: 'string',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'warning_code',
+                    'salto_ks_metadata',
+                  ],
                   type: 'object',
                 },
               ],
@@ -5665,6 +5883,12 @@ export default {
                 {
                   description: 'Account is disconnected.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -5678,6 +5902,7 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
@@ -5687,6 +5912,12 @@ export default {
                 {
                   description: 'Credentials provided were invalid.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -5700,9 +5931,71 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'subscribed_site_user_count',
+                              'site_user_subscription_limit',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                    'salto_ks_metadata',
                   ],
                   type: 'object',
                 },
@@ -12567,6 +12860,12 @@ export default {
                 {
                   description: 'Account is disconnected.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12580,6 +12879,7 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
@@ -12589,6 +12889,12 @@ export default {
                 {
                   description: 'Credentials provided were invalid.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12602,9 +12908,71 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'subscribed_site_user_count',
+                              'site_user_subscription_limit',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                    'salto_ks_metadata',
                   ],
                   type: 'object',
                 },
@@ -13886,6 +14254,12 @@ export default {
                 {
                   description: 'Account is disconnected.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13899,6 +14273,7 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
@@ -13908,6 +14283,12 @@ export default {
                 {
                   description: 'Credentials provided were invalid.',
                   properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13921,9 +14302,71 @@ export default {
                     message: { type: 'string' },
                   },
                   required: [
+                    'created_at',
                     'message',
                     'is_connected_account_error',
                     'error_code',
+                  ],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_exceeded'],
+                      type: 'string',
+                    },
+                    is_connected_account_error: {
+                      enum: [true],
+                      type: 'boolean',
+                    },
+                    message: { type: 'string' },
+                    salto_ks_metadata: {
+                      properties: {
+                        sites: {
+                          items: {
+                            properties: {
+                              site_id: { type: 'string' },
+                              site_name: { type: 'string' },
+                              site_user_subscription_limit: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                              subscribed_site_user_count: {
+                                minimum: 0,
+                                type: 'integer',
+                              },
+                            },
+                            required: [
+                              'site_id',
+                              'site_name',
+                              'subscribed_site_user_count',
+                              'site_user_subscription_limit',
+                            ],
+                            type: 'object',
+                          },
+                          type: 'array',
+                        },
+                      },
+                      required: ['sites'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'message',
+                    'is_connected_account_error',
+                    'error_code',
+                    'salto_ks_metadata',
                   ],
                   type: 'object',
                 },

@@ -1257,16 +1257,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -1590,16 +1610,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -2964,16 +3004,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3284,16 +3344,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3603,16 +3683,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3910,16 +4010,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -4225,16 +4345,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -5575,16 +5715,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -5872,16 +6032,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -15576,28 +15756,67 @@ export interface Routes {
         account_type_display_name: string
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
+            }
         >
         warnings: Array<
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  site_user_subscription_limit: number
+                  subscribed_site_user_count: number
+                }>
+              }
             }
         >
         custom_metadata: Record<string, string | boolean>
@@ -15634,28 +15853,67 @@ export interface Routes {
         account_type_display_name: string
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
+            }
         >
         warnings: Array<
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  site_user_subscription_limit: number
+                  subscribed_site_user_count: number
+                }>
+              }
             }
         >
         custom_metadata: Record<string, string | boolean>
@@ -15692,28 +15950,67 @@ export interface Routes {
         account_type_display_name: string
         errors: Array<
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
+            }
         >
         warnings: Array<
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_connected_account'
+            }
+          | {
+              /** Date and time at which Seam created the warning. */
+              created_at: string
+              message: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  site_user_subscription_limit: number
+                  subscribed_site_user_count: number
+                }>
+              }
             }
         >
         custom_metadata: Record<string, string | boolean>
@@ -16504,16 +16801,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -17560,16 +17877,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -17944,16 +18281,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -18431,16 +18788,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -22154,16 +22531,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -23027,16 +23424,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -24083,16 +24500,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -24955,16 +25392,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -28118,16 +28575,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -28990,16 +29467,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -35494,16 +35991,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -38638,16 +39155,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -39510,16 +40047,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -44070,16 +44627,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -44944,16 +45521,36 @@ export interface Routes {
               error_code: 'subscription_required'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
           | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error: true
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              salto_ks_metadata: {
+                sites: Array<{
+                  site_id: string
+                  site_name: string
+                  subscribed_site_user_count: number
+                  site_user_subscription_limit: number
+                }>
+              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
