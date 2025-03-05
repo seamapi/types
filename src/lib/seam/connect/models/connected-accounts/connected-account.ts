@@ -3,6 +3,10 @@ import { z } from 'zod'
 import { custom_metadata } from '../custom-metadata.js'
 
 const common_connected_account_error = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the error.'),
   message: z.string(),
   is_connected_account_error: z.literal(true),
 })
@@ -14,6 +18,10 @@ const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const common_connected_account_warning = z.object({
+  created_at: z
+    .string()
+    .datetime()
+    .describe('Date and time at which Seam created the warning.'),
   message: z.string(),
 })
 
@@ -33,12 +41,44 @@ export const invalid_credentials = common_connected_account_error
   })
   .describe('Credentials provided were invalid.')
 
+export const salto_ks_subscription_limit_exceeded =
+  common_connected_account_error
+    .extend({
+      error_code: z
+        .literal('salto_ks_subscription_limit_exceeded')
+        .describe(error_code_description),
+      salto_ks_metadata: z.object({
+        sites: z.array(
+          z.object({
+            site_id: z.string(),
+            site_name: z.string(),
+            subscribed_site_user_count: z.number().int().min(0),
+            site_user_subscription_limit: z.number().int().min(0),
+          }),
+        ),
+      }),
+    })
+    .describe(
+      'Indicates that the maximum number of users allowed for the site has been reached. This means that new access codes cannot be created. Contact Salto support to increase the user limit.',
+    )
+
 export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,
   invalid_credentials,
+  salto_ks_subscription_limit_exceeded,
 ])
 
-export type ConnectedAccountError = z.infer<typeof connected_account_error>
+const connected_account_error_map = z.object({
+  account_disconnected: account_disconnected.nullable().optional(),
+  invalid_credentials: invalid_credentials.nullable().optional(),
+  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
+    .nullable()
+    .optional(),
+})
+
+export type ConnectedAccountErrorMap = z.infer<
+  typeof connected_account_error_map
+>
 
 export const unknown_issue_with_connected_account =
   common_connected_account_warning
@@ -60,14 +100,49 @@ const scheduled_maintenance_window = common_connected_account_warning
   })
   .describe('Scheduled downtime for account planned.')
 
+const salto_ks_subscription_limit_almost_reached =
+  common_connected_account_warning
+    .extend({
+      warning_code: z
+        .literal('salto_ks_subscription_limit_almost_reached')
+        .describe(warning_code_description),
+      salto_ks_metadata: z.object({
+        sites: z.array(
+          z.object({
+            site_id: z.string(),
+            site_name: z.string(),
+            site_user_subscription_limit: z.number().int().min(0),
+            subscribed_site_user_count: z.number().int().min(0),
+          }),
+        ),
+      }),
+    })
+    .describe(
+      'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+    )
+
 const connected_account_warning = z
   .discriminatedUnion('warning_code', [
     scheduled_maintenance_window,
     unknown_issue_with_connected_account,
+    salto_ks_subscription_limit_almost_reached,
   ])
   .describe('Warning associated with the `connected_account`.')
 
-export type ConnectedAccountWarning = z.infer<typeof connected_account_warning>
+const connected_account_warning_map = z.object({
+  scheduled_maintenance_window: scheduled_maintenance_window
+    .nullable()
+    .optional(),
+  unknown_issue_with_connected_account: unknown_issue_with_connected_account
+    .nullable()
+    .optional(),
+  salto_ks_subscription_limit_almost_reached:
+    salto_ks_subscription_limit_almost_reached.nullable().optional(),
+})
+
+export type ConnectedAccountWarningMap = z.infer<
+  typeof connected_account_warning_map
+>
 
 export const connected_account = z.object({
   connected_account_id: z.string().uuid().optional(),
