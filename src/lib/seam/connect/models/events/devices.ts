@@ -651,6 +651,18 @@ export const temperature_changed_event = device_event.extend({
 
 export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
 
+export const device_name_changed_event = device_event.extend({
+  event_type: z.literal('device.name_changed'),
+  new_name: z.string().describe('The new name of the device.'),
+}).describe(`
+  ---
+  route_path: /devices
+  ---
+  The name of a [device](https://docs.seam.co/latest/core-concepts/devices) was changed.
+`)
+
+export type DeviceNameChangedEvent = z.infer<typeof device_name_changed_event>
+
 export const device_events = [
   device_connected_event,
   device_added_event,
@@ -684,4 +696,5 @@ export const device_events = [
   temperature_threshold_no_longer_exceeded_event,
   temperature_reached_set_point_event,
   temperature_changed_event,
+  device_name_changed_event,
 ] as const
