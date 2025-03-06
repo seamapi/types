@@ -11984,6 +11984,61 @@ export default {
           },
           {
             description:
+              'The name of a [device](https://docs.seam.co/latest/core-concepts/devices) was changed.',
+            properties: {
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              device_id: {
+                description: 'ID of the device.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['device.name_changed'], type: 'string' },
+              new_name: {
+                description: 'The new name of the device.',
+                type: 'string',
+              },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'device_id',
+              'connected_account_id',
+              'event_type',
+              'new_name',
+            ],
+            type: 'object',
+            'x-route-path': '/devices',
+          },
+          {
+            description:
               'An [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) was deleted.',
             properties: {
               created_at: {
@@ -22355,6 +22410,7 @@ export default {
                       'thermostat.temperature_threshold_no_longer_exceeded',
                       'thermostat.temperature_reached_set_point',
                       'thermostat.temperature_changed',
+                      'device.name_changed',
                       'enrollment_automation.deleted',
                       'phone.deactivated',
                     ],
@@ -22436,6 +22492,7 @@ export default {
                         'thermostat.temperature_threshold_no_longer_exceeded',
                         'thermostat.temperature_reached_set_point',
                         'thermostat.temperature_changed',
+                        'device.name_changed',
                         'enrollment_automation.deleted',
                         'phone.deactivated',
                       ],
