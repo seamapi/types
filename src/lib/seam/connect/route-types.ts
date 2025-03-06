@@ -20284,6 +20284,23 @@ export interface Routes {
                 created_at: string
                 /** Date and time at which the event occurred. */
                 occurred_at: string
+                /** ID of the device. */
+                device_id: string
+                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                connected_account_id: string
+                event_type: 'device.name_changed'
+                /** The new name of the device. */
+                new_name: string
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
                 /** ID of the [enrollment automation](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut). */
                 enrollment_automation_id: string
                 event_type: 'enrollment_automation.deleted'
@@ -20396,6 +20413,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'device.name_changed'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           )
@@ -20475,6 +20493,7 @@ export interface Routes {
             | 'thermostat.temperature_threshold_no_longer_exceeded'
             | 'thermostat.temperature_reached_set_point'
             | 'thermostat.temperature_changed'
+            | 'device.name_changed'
             | 'enrollment_automation.deleted'
             | 'phone.deactivated'
           >
@@ -21729,6 +21748,23 @@ export interface Routes {
             temperature_celsius: number
             /** Temperature, in °F, reported by the [thermostat](https://docs.seam.co/latest/capability-guides/thermostats). */
             temperature_fahrenheit: number
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the device. */
+            device_id: string
+            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            connected_account_id: string
+            event_type: 'device.name_changed'
+            /** The new name of the device. */
+            new_name: string
           }
         | {
             /** ID of the event. */
