@@ -20622,7 +20622,7 @@ export interface Routes {
                 connected_account_id: string
                 event_type: 'device.name_changed'
                 /** The new name of the device. */
-                new_name: string
+                device_name: string
               }
             | {
                 /** ID of the event. */
@@ -22096,7 +22096,7 @@ export interface Routes {
             connected_account_id: string
             event_type: 'device.name_changed'
             /** The new name of the device. */
-            new_name: string
+            device_name: string
           }
         | {
             /** ID of the event. */

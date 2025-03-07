@@ -653,7 +653,7 @@ export type TemperatureChangedEvent = z.infer<typeof temperature_changed_event>
 
 export const device_name_changed_event = device_event.extend({
   event_type: z.literal('device.name_changed'),
-  new_name: z.string().describe('The new name of the device.'),
+  device_name: z.string().describe('The new name of the device.'),
 }).describe(`
   ---
   route_path: /devices

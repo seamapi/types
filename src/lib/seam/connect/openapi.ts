@@ -12259,16 +12259,16 @@ export default {
                 format: 'uuid',
                 type: 'string',
               },
+              device_name: {
+                description: 'The new name of the device.',
+                type: 'string',
+              },
               event_id: {
                 description: 'ID of the event.',
                 format: 'uuid',
                 type: 'string',
               },
               event_type: { enum: ['device.name_changed'], type: 'string' },
-              new_name: {
-                description: 'The new name of the device.',
-                type: 'string',
-              },
               occurred_at: {
                 description: 'Date and time at which the event occurred.',
                 format: 'date-time',
@@ -12289,7 +12289,7 @@ export default {
               'device_id',
               'connected_account_id',
               'event_type',
-              'new_name',
+              'device_name',
             ],
             type: 'object',
             'x-route-path': '/devices',
