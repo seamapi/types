@@ -1210,73 +1210,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -1286,31 +1307,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -1563,73 +1560,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -1639,31 +1657,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -2981,73 +2975,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -3057,31 +3072,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3321,73 +3312,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -3397,31 +3409,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3660,73 +3648,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -3736,31 +3745,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3987,73 +3972,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -4063,31 +4069,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -4322,73 +4304,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -4398,31 +4401,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -5716,73 +5695,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -5792,31 +5792,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -6033,73 +6009,94 @@ export interface Routes {
             }
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -6109,31 +6106,7 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -17035,73 +17008,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -17111,112 +17105,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -18113,73 +18099,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -18189,112 +18196,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -18517,73 +18516,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -18593,112 +18613,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -19024,73 +19036,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -19100,112 +19133,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -22805,73 +22830,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -22881,112 +22927,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -23700,73 +23738,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -23776,112 +23835,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -24778,73 +24829,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -24854,112 +24926,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -25672,73 +25736,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -25748,112 +25833,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -28905,73 +28982,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -28981,112 +29079,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -29799,73 +29889,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -29875,112 +29986,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -36445,73 +36548,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -36521,112 +36645,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -39659,73 +39775,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -39735,112 +39872,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -40553,73 +40682,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -40629,112 +40779,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -45213,73 +45355,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -45289,112 +45452,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }
@@ -46109,73 +46264,94 @@ export interface Routes {
         errors: Array<
           | {
               message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'account_disconnected'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
+              is_device_error: false
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_subscription_limit_exceeded'
+              is_connected_account_error: true
+            }
+          | {
+              message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_offline'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_removed'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hub_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'device_disconnected'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'empty_backup_access_code_pool'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_not_authorized'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_bridge'
             }
           | {
               message: string
               is_device_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_limit_reached'
-            }
-          | {
-              message: string
-              is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'ttlock_lock_not_paired_to_gateway'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'missing_device_credentials'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'auxiliary_heat_running'
             }
           | {
               message: string
               is_device_error: true
+              created_at: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'subscription_required'
             }
@@ -46185,112 +46361,104 @@ export interface Routes {
               message: string
               is_connected_account_error: true
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'account_disconnected'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
-            }
-          | {
-              /** Date and time at which Seam created the error. */
-              created_at: string
-              message: string
-              is_connected_account_error: true
-              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_ks_subscription_limit_exceeded'
-              salto_ks_metadata: {
-                sites: Array<{
-                  site_id: string
-                  site_name: string
-                  subscribed_site_user_count: number
-                  site_user_subscription_limit: number
-                }>
-              }
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
         warnings: Array<
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'partial_backup_access_code_pool'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'many_active_backup_codes'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_unknown_device_type'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'functional_offline_device'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'nest_thermostat_in_manual_eco_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_lock_gateway_unlocking_not_enabled'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'ttlock_weak_gateway_signal'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'temperature_threshold_exceeded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_communication_degraded'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'scheduled_maintenance_window'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'device_has_flaky_connection'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_privacy_mode'
             }
           | {
               message: string
+              created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'unknown_issue_with_phone'
             }

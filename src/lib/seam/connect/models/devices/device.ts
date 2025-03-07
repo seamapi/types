@@ -24,6 +24,7 @@ export type BatteryStatus = z.infer<typeof battery_status>
 const common_device_error = z.object({
   message: z.string(),
   is_device_error: z.literal(true),
+  created_at: z.string().datetime(),
 })
 
 const error_code_description =
@@ -55,6 +56,16 @@ const device_disconnected = common_device_error
   })
   .describe('Device is disconnected')
 
+const account_disconnected = common_device_error
+  .extend({
+    error_code: z
+      .literal('account_disconnected')
+      .describe(error_code_description),
+    is_connected_account_error: z.literal(true),
+    is_device_error: z.literal(false),
+  })
+  .describe('Account is disconnected')
+
 const empty_backup_access_code_pool = common_device_error
   .extend({
     error_code: z
@@ -79,11 +90,13 @@ const august_lock_missing_bridge = common_device_error
   })
   .describe('Lock is not connected to the Seam Bridge.')
 
-const salto_site_user_limit_reached = common_device_error
+const salto_ks_subscription_limit_exceeded = common_device_error
   .extend({
     error_code: z
-      .literal('salto_site_user_limit_reached')
+      .literal('salto_ks_subscription_limit_exceeded')
       .describe(error_code_description),
+    is_connected_account_error: z.literal(true),
+    is_device_error: z.literal(false),
   })
   .describe('Salto site user limit reached.')
 
@@ -121,6 +134,8 @@ const subscription_required = common_device_error
 
 export const device_error = z
   .discriminatedUnion('error_code', [
+    account_disconnected,
+    salto_ks_subscription_limit_exceeded,
     device_offline,
     device_removed,
     hub_disconnected,
@@ -128,7 +143,6 @@ export const device_error = z
     empty_backup_access_code_pool,
     august_lock_not_authorized,
     august_lock_missing_bridge,
-    salto_site_user_limit_reached,
     ttlock_lock_not_paired_to_gateway,
     missing_device_credentials,
     auxiliary_heat_running,
@@ -138,11 +152,36 @@ export const device_error = z
 
 export type DeviceError = z.infer<typeof device_error>
 
+const device_error_map = z.object({
+  device_offline: device_offline.optional().nullable(),
+  device_removed: device_removed.optional().nullable(),
+  hub_disconnected: hub_disconnected.optional().nullable(),
+  device_disconnected: device_disconnected.optional().nullable(),
+  account_disconnected: account_disconnected.optional().nullable(),
+  empty_backup_access_code_pool: empty_backup_access_code_pool
+    .optional()
+    .nullable(),
+  august_lock_not_authorized: august_lock_not_authorized.optional().nullable(),
+  august_lock_missing_bridge: august_lock_missing_bridge.optional().nullable(),
+  salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
+    .optional()
+    .nullable(),
+  ttlock_lock_not_paired_to_gateway: ttlock_lock_not_paired_to_gateway
+    .optional()
+    .nullable(),
+  missing_device_credentials: missing_device_credentials.optional().nullable(),
+  auxiliary_heat_running: auxiliary_heat_running.optional().nullable(),
+  subscription_required: subscription_required.optional().nullable(),
+})
+
+export type DeviceErrorMap = z.infer<typeof device_error_map>
+
 const warning_code_description =
   'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const common_device_warning = z.object({
   message: z.string(),
+  created_at: z.string().datetime(),
 })
 
 const partial_backup_access_code_pool = common_device_warning
@@ -297,6 +336,47 @@ const device_warning = z.discriminatedUnion('warning_code', [
 
 export type DeviceWarning = z.infer<typeof device_warning>
 
+export const device_warning_map = z.object({
+  partial_backup_access_code_pool: partial_backup_access_code_pool
+    .optional()
+    .nullable(),
+  many_active_backup_codes: many_active_backup_codes.optional().nullable(),
+  salto_unknown_device_type: salto_unknown_device_type.optional().nullable(),
+  wyze_device_missing_gateway: wyze_device_missing_gateway
+    .optional()
+    .nullable(),
+  functional_offline_device: functional_offline_device.optional().nullable(),
+  third_party_integration_detected: third_party_integration_detected
+    .optional()
+    .nullable(),
+  nest_thermostat_in_manual_eco_mode: nest_thermostat_in_manual_eco_mode
+    .optional()
+    .nullable(),
+  ttlock_lock_gateway_unlocking_not_enabled:
+    ttlock_lock_gateway_unlocking_not_enabled.optional().nullable(),
+  ttlock_weak_gateway_signal: ttlock_weak_gateway_signal.optional().nullable(),
+  temperature_threshold_exceeded: temperature_threshold_exceeded
+    .optional()
+    .nullable(),
+  device_communication_degraded: device_communication_degraded
+    .optional()
+    .nullable(),
+  scheduled_maintenance_window: scheduled_maintenance_window
+    .optional()
+    .nullable(),
+  device_has_flaky_connection: device_has_flaky_connection
+    .extend({
+      _event_id: z.string().uuid().optional(),
+    })
+    .optional()
+    .nullable(),
+  salto_office_mode: salto_office_mode.optional().nullable(),
+  salto_privacy_mode: salto_privacy_mode.optional().nullable(),
+  unknown_issue_with_phone: unknown_issue_with_phone.optional().nullable(),
+})
+
+export type DeviceWarningMap = z.infer<typeof device_warning_map>
+
 export const common_device_properties = z.object({
   online: z.boolean().describe('Indicates whether the device is online.'),
   name: z.string().describe(`
@@ -440,6 +520,18 @@ export const common_device_properties = z.object({
     .optional(),
 })
 
+export const device_and_connected_account_error_options = [
+  ...device_error.options,
+  ...connected_account_error.options.filter(
+    (_connected_account_error) =>
+      !device_error.options.some(
+        (_device_error) =>
+          _device_error.shape.error_code.value ===
+          _connected_account_error.shape.error_code.value,
+      ),
+  ),
+]
+
 export const device = z
   .object({
     device_id: z.string().uuid().describe('Unique identifier for the device.'),
@@ -495,7 +587,14 @@ export const device = z
       .array(
         z.discriminatedUnion('error_code', [
           ...device_error.options,
-          ...connected_account_error.options,
+          ...connected_account_error.options.filter(
+            (_connected_account_error) =>
+              !device_error.options.some(
+                (_device_error) =>
+                  _device_error.shape.error_code.value ===
+                  _connected_account_error.shape.error_code.value,
+              ),
+          ),
         ]),
       )
       .describe(

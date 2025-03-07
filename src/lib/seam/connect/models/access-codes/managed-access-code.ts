@@ -1,7 +1,6 @@
 import { z } from 'zod'
 
-import { connected_account_error } from '../connected-accounts/index.js'
-import { device_error } from '../devices/index.js'
+import { device_and_connected_account_error_options } from '../devices/index.js'
 
 const common_access_code_error = z.object({
   message: z.string(),
@@ -371,8 +370,7 @@ export const access_code = z.object({
     .array(
       z.discriminatedUnion('error_code', [
         ...access_code_error.options,
-        ...device_error.options,
-        ...connected_account_error.options,
+        ...device_and_connected_account_error_options,
       ]),
     )
     .describe(
