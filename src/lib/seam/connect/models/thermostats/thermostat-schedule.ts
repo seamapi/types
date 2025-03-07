@@ -4,29 +4,38 @@ export const thermostat_schedule = z.object({
   thermostat_schedule_id: z
     .string()
     .uuid()
-    .describe('ID of the thermostat schedule.'),
-  device_id: z.string().uuid().describe('ID of the desired thermostat device.'),
+    .describe(
+      'ID of the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+    ),
+  device_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the desired [thermostat](https://docs.seam.co/latest/capability-guides/thermostats) device.',
+    ),
   name: z
     .string()
     .optional()
-    .describe('User-friendly name to identify the thermostat schedule.'),
+    .describe(
+      'User-friendly name to identify the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
+    ),
   climate_preset_key: z
     .string()
     .describe(
-      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the thermostat schedule.',
+      'Key of the [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets) to use for the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
     ),
   max_override_period_minutes: z
     .number()
     .int()
     .nonnegative()
     .describe(
-      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled climate preset. See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
+      "Number of minutes for which a person at the thermostat can change the thermostat's settings after the activation of the scheduled [climate preset](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-climate-presets). See also [Specifying Manual Override Permissions](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules#specifying-manual-override-permissions).",
     ),
   starts_at: z
     .string()
     .datetime()
     .describe(
-      'Date and time at which the thermostat schedule starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      'Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
     ),
   unstable_is_override_allowed: z
     .boolean()
@@ -36,27 +45,37 @@ export const thermostat_schedule = z.object({
         ---
         undocumented: Unstable
         ---
-        Indicates whether a person at the thermostat can change the thermostat's settings.`,
+        Indicates whether a person at the thermostat can change the thermostat's settings after the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) starts.`,
     ),
   ends_at: z
     .string()
     .datetime()
     .describe(
-      'Date and time at which the thermostat schedule ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+      'Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
     ),
   created_at: z
     .string()
     .datetime()
-    .describe('Date and time at which the thermostat schedule was created.'),
+    .describe(
+      'Date and time at which the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules) was created.',
+    ),
   errors: z
     .array(
       z.object({
-        error_code: z.string(),
-        message: z.string(),
+        error_code: z
+          .string()
+          .describe(
+            'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+          ),
+        message: z
+          .string()
+          .describe(
+            'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+          ),
       }),
     )
     .describe(
-      'Array of errors associated with the thermostat schedule. Each error object within the array contains two fields: `error_code` and `message`. `error_code` is a string that uniquely identifies the type of error, enabling quick recognition and categorization of the issue. `message` provides a more detailed description of the error, offering insights into the issue and potentially how to rectify it.',
+      'Errors associated with the [thermostat schedule](https://docs.seam.co/latest/capability-guides/thermostats/creating-and-managing-thermostat-schedules).',
     ),
 }).describe(`
   ---

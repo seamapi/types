@@ -5,25 +5,25 @@ export const acs_system_capability_flags = z.object({
     .boolean()
     .optional()
     .describe(
-      'Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access-in-development/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the `acs_system`.',
+      'Indicates whether it is possible to [launch enrollment automations](https://docs.seam.co/latest/capability-guides/mobile-access/issuing-mobile-credentials-from-an-access-control-system#prepare-the-phones-for-a-user-identity-to-start-receiving-mobile-credentials-using-an-enrollment-aut) for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
     ),
   can_create_acs_access_groups: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the `acs_system` supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+      'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports creating [access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
     ),
   can_remove_acs_users_from_acs_access_groups: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the `acs_system` supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+      'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [removing users from access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#remove-an-acs-user-from-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
     ),
   can_add_acs_users_to_acs_access_groups: z
     .boolean()
     .optional()
     .describe(
-      'Indicates whether the `acs_system` supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
+      'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
     ),
 })
 
@@ -31,7 +31,9 @@ export const location = z.object({
   time_zone: z
     .string()
     .nullable()
-    .describe('Time zone in which the `acs_system` is located.'),
+    .describe(
+      'Time zone in which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) is located.',
+    ),
 })
 
 // If changed, update seam.acs_system.external_type generated column
@@ -67,14 +69,16 @@ const common_acs_system_error = z.object({
 
 const error_code_description =
   'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.'
+const warning_code_description =
+  'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.'
 
 const seam_bridge_disconnected = common_acs_system_error.extend({
   error_code: z
     .literal('seam_bridge_disconnected')
     .describe(error_code_description),
 })
-  .describe(`Indicates that the Seam API cannot communicate with the [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if the Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
-  This error might also occur if the Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
+  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
 
 const visionline_instance_unreachable = common_acs_system_error.extend({
@@ -82,7 +86,7 @@ const visionline_instance_unreachable = common_acs_system_error.extend({
     .literal('visionline_instance_unreachable')
     .describe(error_code_description),
 })
-  .describe(`Indicates that the Seam Bridge is functioning correctly and the Seam API can communicate with the Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
+  .describe(`Indicates that [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) is functioning correctly and the Seam API can communicate with Seam Bridge, but the Seam API cannot connect to the on-premises [Visionline access control system](https://docs.seam.co/latest/device-and-system-integration-guides/assa-abloy-visionline-access-control-system).
   For example, the IP address of the on-premises access control system may be set incorrectly within the Seam [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
   See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.visionline_instance_unreachable).`)
 
@@ -103,7 +107,7 @@ const acs_system_disconnected = common_acs_system_error
       .describe(error_code_description),
   })
   .describe(
-    'Indicates that the access system has been disconnected. See [this guide](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system guide) to resolve the issue.',
+    'Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has been disconnected. See [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system) to resolve the issue.',
   )
 
 const account_disconnected = common_acs_system_error
@@ -113,16 +117,18 @@ const account_disconnected = common_acs_system_error
       .describe(error_code_description),
   })
   .describe(
-    'Indicates that the login credentials are invalid. Reconnect the account using the Connect Webview to restore access.',
+    'Indicates that the login credentials are invalid. Reconnect the account using a [Connect Webview](https://docs.seam.co/latest/ui-components/connect-webviews) to restore access.',
   )
 
-const salto_ks_certification_expired = common_acs_system_error.extend({
-  error_code: z
-    .literal('salto_ks_certification_expired')
-    .describe(
-      'Indicates that the access system has lost its Salto KS certification. Please contact support to regain access.',
-    ),
-})
+const salto_ks_certification_expired = common_acs_system_error
+  .extend({
+    error_code: z
+      .literal('salto_ks_certification_expired')
+      .describe(error_code_description),
+  })
+  .describe(
+    'Indicates that the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) has lost its Salto KS certification. Contact [support](mailto:support@seam.co) to regain access.',
+  )
 const acs_system_error = z
   .discriminatedUnion('error_code', [
     seam_bridge_disconnected,
@@ -132,7 +138,9 @@ const acs_system_error = z
     account_disconnected,
     salto_ks_certification_expired,
   ])
-  .describe('Error associated with the `acs_system`.')
+  .describe(
+    'Error associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+  )
 
 export const acs_system_error_map = z.object({
   seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
@@ -163,30 +171,35 @@ const common_acs_system_warning = z.object({
     ),
 })
 
-const salto_ks_subscription_limit_almost_reached =
-  common_acs_system_warning.extend({
+const salto_ks_subscription_limit_almost_reached = common_acs_system_warning
+  .extend({
     warning_code: z
       .literal('salto_ks_subscription_limit_almost_reached')
-      .describe(
-        'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
-      ),
+      .describe(warning_code_description),
   })
+  .describe(
+    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Increase your subscription limit or delete some users from your site to rectify the issue.',
+  )
 
-const time_zone_does_not_match_location = common_acs_system_warning.extend({
-  warning_code: z
-    .literal('time_zone_does_not_match_location')
-    .describe(
-      'Indicates the ACS system time zone could not be determined because the reported physical location does not match the time zone configured on the physical ACS entrances.',
-    ),
-  misconfigured_acs_entrance_ids: z.array(z.string().uuid()).optional(),
-})
+const time_zone_does_not_match_location = common_acs_system_warning
+  .extend({
+    warning_code: z
+      .literal('time_zone_does_not_match_location')
+      .describe(warning_code_description),
+    misconfigured_acs_entrance_ids: z.array(z.string().uuid()).optional(),
+  })
+  .describe(
+    'Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
+  )
 
 const acs_system_warning = z
   .discriminatedUnion('warning_code', [
     salto_ks_subscription_limit_almost_reached,
     time_zone_does_not_match_location,
   ])
-  .describe('Warning associated with the `acs_system`.')
+  .describe(
+    'Warning associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+  )
 
 export const acs_system_warning_map = z.object({
   salto_ks_subscription_limit_almost_reached:
@@ -206,26 +219,28 @@ export const acs_system = z
       .nullable()
       .optional()
       .describe(
-        `
-        ---
-        draft: Needs review
-        ---
-        ID of the default credential manager acs_system for this access control system.
-        `,
+        'ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
       ),
-    acs_system_id: z.string().uuid().describe('ID of the `acs_system`.'),
+    acs_system_id: z
+      .string()
+      .uuid()
+      .describe(
+        'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+      ),
     external_type: acs_system_external_type
-      .describe('Brand-specific terminology for the `acs_system` type.')
+      .describe(
+        'Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.',
+      )
       .optional(),
     external_type_display_name: z
       .string()
       .describe(
-        'Display name that corresponds to the brand-specific terminology for the `acs_system` type.',
+        'Display name that corresponds to the brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.',
       )
       .optional(),
     is_credential_manager: z
       .boolean()
-      .describe('Indicates if the `acs_system` is a credential manager.'),
+      .describe('Indicates whether the `acs_system` is a credential manager.'),
     visionline_metadata: z
       .object({
         mobile_access_uuid: z
@@ -241,7 +256,7 @@ export const acs_system = z
         lan_address: z
           .string()
           .describe(
-            'IP address or hostname of the main Visionline server relative to the Seam Bridge on the local network.',
+            'IP address or hostname of the main Visionline server relative to [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge) on the local network.',
           ),
       })
       .optional(),
@@ -260,41 +275,55 @@ export const acs_system = z
       ---
       `),
     location,
-    name: z.string().describe('Name of the `acs_system`.'),
+    name: z
+      .string()
+      .describe(
+        'Name of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+      ),
     created_at: z
       .string()
       .datetime()
-      .describe('Date and time at which the `acs_system` was created.'),
+      .describe(
+        'Date and time at which the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) was created.',
+      ),
     workspace_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
+        'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
       ),
     connected_account_ids: z.array(z.string().uuid()).describe(`
       ---
       deprecated: Use \`connected_account_id\`.
       ---
-      IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the \`acs_system\`.
+      IDs of the [connected accounts](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
       `),
     connected_account_id: z
       .string()
       .uuid()
       .describe(
-        'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the `acs_system`.',
+        'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts) associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
       ),
     image_url: z
       .string()
-      .describe('URL for the image that represents the `acs_system`.'),
+      .describe(
+        'URL for the image that represents the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+      ),
     image_alt_text: z
       .string()
-      .describe('Alternative text for the `acs_system` image.'),
+      .describe(
+        'Alternative text for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) image.',
+      ),
     errors: z
       .array(acs_system_error)
-      .describe('Errors associated with the `acs_system`.'),
+      .describe(
+        'Errors associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+      ),
     warnings: z
       .array(acs_system_warning)
-      .describe('Warnings associated with the `acs_system`.'),
+      .describe(
+        'Warnings associated with the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
+      ),
   })
   .merge(acs_system_capability_flags).describe(`
     ---
