@@ -23,7 +23,9 @@ const acs_encoder_error =
   // z.union([
   acs_encoder_removed
     // ])
-    .describe('Error associated with the `acs_encoder`.')
+    .describe(
+      'Error associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+    )
 
 const acs_encoder_error_map = z.object({
   acs_encoder_removed: acs_encoder_removed.optional().nullable(),
@@ -32,27 +34,40 @@ const acs_encoder_error_map = z.object({
 export type AcsEncoderErrorMap = z.infer<typeof acs_encoder_error_map>
 
 export const acs_encoder = z.object({
-  acs_encoder_id: z.string().uuid().describe('ID of the `acs_encoder`.'),
+  acs_encoder_id: z
+    .string()
+    .uuid()
+    .describe(
+      'ID of the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners.',
+    ),
   acs_system_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the access control system that contains the `acs_encoder`.',
+      'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   workspace_id: z
     .string()
     .uuid()
     .describe(
-      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the `acs_system`.',
+      'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces) that contains the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
     ),
   errors: z
     .array(acs_encoder_error)
-    .describe('Errors associated with the `acs_encoder`.'),
+    .describe(
+      'Errors associated with the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+    ),
   created_at: z
     .string()
     .datetime()
-    .describe('Date and time at which the `acs_encoder` was created.'),
-  display_name: z.string().describe('Display name for the `acs_encoder`.'),
+    .describe(
+      'Date and time at which the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners) was created.',
+    ),
+  display_name: z
+    .string()
+    .describe(
+      'Display name for the [encoder](https://docs.seam.co/latest/capability-guides/access-systems/working-with-card-encoders-and-scanners).',
+    ),
 }).describe(`
   ---
   route_path: /acs/encoders
