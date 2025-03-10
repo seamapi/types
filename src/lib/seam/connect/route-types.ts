@@ -17126,12 +17126,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -17192,13 +17186,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -18217,12 +18217,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -18283,13 +18277,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -18634,12 +18634,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -18700,13 +18694,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -19154,12 +19154,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -19220,13 +19214,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -22948,12 +22948,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -23014,13 +23008,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -23856,12 +23856,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -23922,13 +23916,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -24947,12 +24947,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -25013,13 +25007,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -25854,12 +25854,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -25920,13 +25914,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -29100,12 +29100,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -29166,13 +29160,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -30007,12 +30007,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -30073,13 +30067,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -36666,12 +36666,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -36732,13 +36726,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -39893,12 +39893,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -39959,13 +39953,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -40800,12 +40800,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -40866,13 +40860,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -45473,12 +45473,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -45539,13 +45533,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string
@@ -46382,12 +46382,6 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_unknown_device_type'
-            }
-          | {
-              message: string
-              created_at: string
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'wyze_device_missing_gateway'
             }
           | {
@@ -46448,13 +46442,19 @@ export interface Routes {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
+              warning_code: 'salto_ks_office_mode'
             }
           | {
               message: string
               created_at: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_privacy_mode'
+              warning_code: 'salto_ks_privacy_mode'
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
+              warning_code: 'salto_ks_subscription_limit_almost_reached'
             }
           | {
               message: string

@@ -200,29 +200,31 @@ const many_active_backup_codes = common_device_warning
   })
   .describe('Too many backup codes.')
 
-const salto_unknown_device_type = common_device_warning
+const salto_ks_office_mode = common_device_warning
   .extend({
     warning_code: z
-      .literal('salto_unknown_device_type')
-      .describe(warning_code_description),
-  })
-  .describe('A Salto Lock displaying an unknown device type.')
-
-const salto_office_mode = common_device_warning
-  .extend({
-    warning_code: z
-      .literal('salto_office_mode')
+      .literal('salto_ks_office_mode')
       .describe(warning_code_description),
   })
   .describe('Lock is in Office Mode. Access Codes will not unlock doors.')
 
-const salto_privacy_mode = common_device_warning
+const salto_ks_privacy_mode = common_device_warning
   .extend({
     warning_code: z
-      .literal('salto_privacy_mode')
+      .literal('salto_ks_privacy_mode')
       .describe(warning_code_description),
   })
   .describe('Lock is in Privacy Mode. Access Codes will not unlock doors.')
+
+const salto_ks_subscription_limit_almost_reached = common_device_warning
+  .extend({
+    warning_code: z
+      .literal('salto_ks_subscription_limit_almost_reached')
+      .describe(warning_code_description),
+  })
+  .describe(
+    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+  )
 
 const wyze_device_missing_gateway = common_device_warning
   .extend({
@@ -318,7 +320,6 @@ export const unknown_issue_with_phone = common_device_warning
 const device_warning = z.discriminatedUnion('warning_code', [
   partial_backup_access_code_pool,
   many_active_backup_codes,
-  salto_unknown_device_type,
   wyze_device_missing_gateway,
   functional_offline_device,
   third_party_integration_detected,
@@ -329,8 +330,9 @@ const device_warning = z.discriminatedUnion('warning_code', [
   device_communication_degraded,
   scheduled_maintenance_window,
   device_has_flaky_connection,
-  salto_office_mode,
-  salto_privacy_mode,
+  salto_ks_office_mode,
+  salto_ks_privacy_mode,
+  salto_ks_subscription_limit_almost_reached,
   unknown_issue_with_phone,
 ])
 
@@ -341,7 +343,13 @@ export const device_warning_map = z.object({
     .optional()
     .nullable(),
   many_active_backup_codes: many_active_backup_codes.optional().nullable(),
-  salto_unknown_device_type: salto_unknown_device_type.optional().nullable(),
+  device_has_flaky_connection: device_has_flaky_connection
+    .extend({
+      _event_id: z.string().uuid().optional(),
+      _reason: z.string().optional(),
+    })
+    .optional()
+    .nullable(),
   wyze_device_missing_gateway: wyze_device_missing_gateway
     .optional()
     .nullable(),
@@ -364,14 +372,10 @@ export const device_warning_map = z.object({
   scheduled_maintenance_window: scheduled_maintenance_window
     .optional()
     .nullable(),
-  device_has_flaky_connection: device_has_flaky_connection
-    .extend({
-      _event_id: z.string().uuid().optional(),
-    })
-    .optional()
-    .nullable(),
-  salto_office_mode: salto_office_mode.optional().nullable(),
-  salto_privacy_mode: salto_privacy_mode.optional().nullable(),
+  salto_ks_office_mode: salto_ks_office_mode.optional().nullable(),
+  salto_ks_privacy_mode: salto_ks_privacy_mode.optional().nullable(),
+  salto_ks_subscription_limit_almost_reached:
+    salto_ks_subscription_limit_almost_reached.optional().nullable(),
   unknown_issue_with_phone: unknown_issue_with_phone.optional().nullable(),
 })
 

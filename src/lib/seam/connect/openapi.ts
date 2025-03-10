@@ -7599,22 +7599,6 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    'A Salto Lock displaying an unknown device type.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_unknown_device_type'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Wyze Lock is not connected to a gateway.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -7774,7 +7758,7 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_office_mode'],
+                      enum: ['salto_ks_office_mode'],
                       type: 'string',
                     },
                   },
@@ -7790,7 +7774,23 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_privacy_mode'],
+                      enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_almost_reached'],
                       type: 'string',
                     },
                   },
@@ -14968,22 +14968,6 @@ export default {
                   type: 'object',
                 },
                 {
-                  description:
-                    'A Salto Lock displaying an unknown device type.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_unknown_device_type'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'created_at', 'warning_code'],
-                  type: 'object',
-                },
-                {
                   description: 'Wyze Lock is not connected to a gateway.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -15143,7 +15127,7 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_office_mode'],
+                      enum: ['salto_ks_office_mode'],
                       type: 'string',
                     },
                   },
@@ -15159,7 +15143,23 @@ export default {
                     warning_code: {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_privacy_mode'],
+                      enum: ['salto_ks_privacy_mode'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'created_at', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Salto KS site has exceeded 80% of the maximum number of allowed users. Please increase your subscription limit, or delete some users from your site to rectify this.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
+                      enum: ['salto_ks_subscription_limit_almost_reached'],
                       type: 'string',
                     },
                   },
