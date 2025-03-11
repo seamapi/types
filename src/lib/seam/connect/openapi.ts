@@ -9554,6 +9554,110 @@ export default {
           },
           {
             description:
+              'An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was added.',
+            properties: {
+              acs_entrance_id: { format: 'uuid', type: 'string' },
+              acs_system_id: {
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['acs_entrance.added'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'acs_system_id',
+              'acs_entrance_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/acs/entrances',
+          },
+          {
+            description:
+              'An [ACS entrance](https://docs.seam.co/latest/capability-guides/retrieving-entrance-details) was removed.',
+            properties: {
+              acs_entrance_id: { format: 'uuid', type: 'string' },
+              acs_system_id: {
+                description:
+                  'ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems).',
+                format: 'uuid',
+                type: 'string',
+              },
+              connected_account_id: {
+                description:
+                  'ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts).',
+                format: 'uuid',
+                type: 'string',
+              },
+              created_at: {
+                description: 'Date and time at which the event was created.',
+                format: 'date-time',
+                type: 'string',
+              },
+              event_id: {
+                description: 'ID of the event.',
+                format: 'uuid',
+                type: 'string',
+              },
+              event_type: { enum: ['acs_entrance.removed'], type: 'string' },
+              occurred_at: {
+                description: 'Date and time at which the event occurred.',
+                format: 'date-time',
+                type: 'string',
+              },
+              workspace_id: {
+                description:
+                  'ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces).',
+                format: 'uuid',
+                type: 'string',
+              },
+            },
+            required: [
+              'event_id',
+              'workspace_id',
+              'created_at',
+              'occurred_at',
+              'acs_system_id',
+              'acs_entrance_id',
+              'event_type',
+            ],
+            type: 'object',
+            'x-route-path': '/acs/entrances',
+          },
+          {
+            description:
               'A [client session](https://docs.seam.co/latest/core-concepts/authentication/client-session-tokens) was deleted.',
             properties: {
               client_session_id: {
@@ -22742,6 +22846,8 @@ export default {
                       'acs_encoder.added',
                       'acs_encoder.removed',
                       'acs_access_group.deleted',
+                      'acs_entrance.added',
+                      'acs_entrance.removed',
                       'client_session.deleted',
                       'connected_account.connected',
                       'connected_account.created',
@@ -22824,6 +22930,8 @@ export default {
                         'acs_encoder.added',
                         'acs_encoder.removed',
                         'acs_access_group.deleted',
+                        'acs_entrance.added',
+                        'acs_entrance.removed',
                         'client_session.deleted',
                         'connected_account.connected',
                         'connected_account.created',
