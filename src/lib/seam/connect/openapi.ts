@@ -47,6 +47,7 @@ export default {
                 {
                   description: 'Failed to set code on Smart Things device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -62,6 +63,7 @@ export default {
                 {
                   description: 'Failed to set code after multiple retries.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -79,6 +81,7 @@ export default {
                 {
                   description: 'Failed to set code on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -94,6 +97,7 @@ export default {
                 {
                   description: 'Failed to remove code from device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -109,6 +113,7 @@ export default {
                 {
                   description: 'Duplicate access code detected on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -125,6 +130,7 @@ export default {
                   description:
                     'An attempt to modify this access code was prevented.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -141,6 +147,7 @@ export default {
                   description:
                     'Igloohome bridge has too many pending jobs in the queue.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -156,6 +163,7 @@ export default {
                 {
                   description: 'Igloohome bridge is offline.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -171,6 +179,7 @@ export default {
                 {
                   description: 'Lock as reached max amount of codes.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -189,6 +198,7 @@ export default {
                   description:
                     'Unable to confirm the access code is set on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -205,6 +215,7 @@ export default {
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -221,6 +232,7 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -236,6 +248,7 @@ export default {
                 {
                   description: 'Invalid code length for August lock.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -252,6 +265,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -267,6 +281,7 @@ export default {
                 {
                   description: 'All access code slots on the device are full.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -282,6 +297,7 @@ export default {
                 {
                   description: 'August lock is missing a keypad.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -297,6 +313,7 @@ export default {
                 {
                   description: 'Salto site user is not subscribed.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -313,6 +330,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -328,6 +346,7 @@ export default {
                 {
                   description: 'No free positions available on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -736,6 +755,7 @@ export default {
                 {
                   description: 'Failed to set code on Smart Things device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -750,6 +770,7 @@ export default {
                 {
                   description: 'Duplicate access code detected.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -765,6 +786,7 @@ export default {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -780,6 +802,7 @@ export default {
                   description:
                     'Lock is in Office Mode. Access Codes will not unlock doors.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -795,6 +818,7 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -809,6 +833,7 @@ export default {
                 {
                   description: 'Delay in setting code on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -823,6 +848,7 @@ export default {
                 {
                   description: 'Delay in removing code from device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -838,6 +864,7 @@ export default {
                   description:
                     'Third party integration detected that may cause access codes to fail.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -853,6 +880,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -867,6 +895,7 @@ export default {
                 {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -882,6 +911,7 @@ export default {
                   description:
                     'Management was transferred to another workspace.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -897,6 +927,7 @@ export default {
                   description:
                     'Unable to confirm the access code is set on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -12810,6 +12841,7 @@ export default {
                 {
                   description: 'Failed to set code on Smart Things device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12825,6 +12857,7 @@ export default {
                 {
                   description: 'Failed to set code after multiple retries.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12842,6 +12875,7 @@ export default {
                 {
                   description: 'Failed to set code on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12857,6 +12891,7 @@ export default {
                 {
                   description: 'Failed to remove code from device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12872,6 +12907,7 @@ export default {
                 {
                   description: 'Duplicate access code detected on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12888,6 +12924,7 @@ export default {
                   description:
                     'An attempt to modify this access code was prevented.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12904,6 +12941,7 @@ export default {
                   description:
                     'Igloohome bridge has too many pending jobs in the queue.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12919,6 +12957,7 @@ export default {
                 {
                   description: 'Igloohome bridge is offline.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12934,6 +12973,7 @@ export default {
                 {
                   description: 'Lock as reached max amount of codes.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12952,6 +12992,7 @@ export default {
                   description:
                     'Unable to confirm the access code is set on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12968,6 +13009,7 @@ export default {
                   description:
                     'Unable to confirm the deletion of the access code on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12984,6 +13026,7 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -12999,6 +13042,7 @@ export default {
                 {
                   description: 'Invalid code length for August lock.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13015,6 +13059,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13030,6 +13075,7 @@ export default {
                 {
                   description: 'All access code slots on the device are full.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13045,6 +13091,7 @@ export default {
                 {
                   description: 'August lock is missing a keypad.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13060,6 +13107,7 @@ export default {
                 {
                   description: 'Salto site user is not subscribed.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13076,6 +13124,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13091,6 +13140,7 @@ export default {
                 {
                   description: 'No free positions available on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
@@ -13449,6 +13499,7 @@ export default {
                 {
                   description: 'Failed to set code on Smart Things device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13463,6 +13514,7 @@ export default {
                 {
                   description: 'Duplicate access code detected.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13478,6 +13530,7 @@ export default {
                   description:
                     'Received an error when attempting to create this code.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13493,6 +13546,7 @@ export default {
                   description:
                     'Lock is in Office Mode. Access Codes will not unlock doors.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13508,6 +13562,7 @@ export default {
                   description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13522,6 +13577,7 @@ export default {
                 {
                   description: 'Delay in setting code on device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13536,6 +13592,7 @@ export default {
                 {
                   description: 'Delay in removing code from device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13551,6 +13608,7 @@ export default {
                   description:
                     'Third party integration detected that may cause access codes to fail.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13566,6 +13624,7 @@ export default {
                   description:
                     'Access code has not yet been fully moved to the device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13580,6 +13639,7 @@ export default {
                 {
                   description: 'Algopins must be used within 24 hours.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13595,6 +13655,7 @@ export default {
                   description:
                     'Management was transferred to another workspace.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
@@ -13610,6 +13671,7 @@ export default {
                   description:
                     'Unable to confirm the access code is set on Kwikset device.',
                   properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     message: { type: 'string' },
                     warning_code: {
                       description:
