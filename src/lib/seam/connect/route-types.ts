@@ -1097,114 +1097,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -1314,61 +1333,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -1447,114 +1478,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -1664,61 +1714,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -2862,114 +2924,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -3079,61 +3160,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -3199,114 +3292,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -3416,61 +3528,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -3535,114 +3659,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -3752,61 +3895,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -3859,114 +4014,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -4076,61 +4250,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -4191,114 +4377,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -4408,61 +4613,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -5582,114 +5799,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -5799,61 +6035,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }
@@ -5896,114 +6144,133 @@ export interface Routes {
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'smartthings_failed_to_set_after_multiple_retries'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_remove_from_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_on_device'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'duplicate_code_attempt_prevented'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_too_many_pending_jobs'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_bridge_offline'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'igloohome_offline_access_code_no_variance_available'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_code'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'kwikset_unable_to_confirm_deletion'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_invalid_code_length'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_device_slots_full'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'august_lock_missing_keypad'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_site_user_not_subscribed'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_device_programming_delay'
             }
           | {
               message: string
               is_access_code_error: true
+              created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
             }
@@ -6113,61 +6380,73 @@ export interface Routes {
         warnings: Array<
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'smartthings_failed_to_set_access_code'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_detected_duplicate'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'schlage_creation_outage'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'salto_office_mode'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_setting_on_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'delay_in_removing_from_device'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'third_party_integration_detected'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'igloo_algopin_must_be_used_within_24_hours'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'management_transferred'
             }
           | {
               message: string
+              created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'kwikset_unable_to_confirm_code'
             }

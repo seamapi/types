@@ -5,6 +5,7 @@ import { device_and_connected_account_error_options } from '../devices/index.js'
 const common_access_code_error = z.object({
   message: z.string(),
   is_access_code_error: z.literal(true),
+  created_at: z.string().datetime().optional(),
 })
 
 const error_code_description =
@@ -192,8 +193,58 @@ const access_code_error = z.discriminatedUnion('error_code', [
 
 export type AccessCodeError = z.infer<typeof access_code_error>
 
+const access_code_error_map = z.object({
+  smartthings_failed_to_set_access_code_error:
+    smartthings_failed_to_set_access_code_error.optional().nullable(),
+  smartthings_failed_to_set_after_multiple_retries:
+    smartthings_failed_to_set_after_multiple_retries.optional().nullable(),
+  failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
+  failed_to_remove_from_device: failed_to_remove_from_device
+    .optional()
+    .nullable(),
+  duplicate_code_on_device: duplicate_code_on_device.optional().nullable(),
+  duplicate_code_attempt_prevented: duplicate_code_attempt_prevented
+    .optional()
+    .nullable(),
+  igloohome_bridge_too_many_pending_jobs: igloohome_bridge_too_many_pending_jobs
+    .optional()
+    .nullable(),
+  igloohome_bridge_offline: igloohome_bridge_offline.optional().nullable(),
+  igloohome_offline_access_code_no_variance_available:
+    igloohome_offline_access_code_no_variance_available.optional().nullable(),
+  kwikset_unable_to_confirm_code: kwikset_unable_to_confirm_code
+    .optional()
+    .nullable(),
+  kwikset_unable_to_confirm_deletion: kwikset_unable_to_confirm_deletion
+    .optional()
+    .nullable(),
+  code_modified_external_to_seam_error: code_modified_external_to_seam_error
+    .optional()
+    .nullable(),
+  august_lock_invalid_code_length: august_lock_invalid_code_length
+    .optional()
+    .nullable(),
+  august_device_programming_delay_error: august_device_programming_delay_error
+    .optional()
+    .nullable(),
+  august_device_slots_full: august_device_slots_full.optional().nullable(),
+  august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
+  salto_site_user_not_subscribed: salto_site_user_not_subscribed
+    .optional()
+    .nullable(),
+  hubitat_device_programming_delay: hubitat_device_programming_delay
+    .optional()
+    .nullable(),
+  hubitat_no_free_positions_available: hubitat_no_free_positions_available
+    .optional()
+    .nullable(),
+})
+
+export type AccessCodeErrorMap = z.infer<typeof access_code_error_map>
+
 const common_access_code_warning = z.object({
   message: z.string(),
+  created_at: z.string().datetime().optional(),
 })
 
 const warning_code_description =
@@ -315,6 +366,34 @@ const access_code_warning = z.discriminatedUnion('warning_code', [
 ])
 
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
+
+const access_code_warning_map = z.object({
+  smartthings_failed_to_set_access_code_warning:
+    smartthings_failed_to_set_access_code_warning.optional().nullable(),
+  schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
+  schlage_creation_outage: schlage_creation_outage.optional().nullable(),
+  salto_office_mode: salto_office_mode.optional().nullable(),
+  code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
+    .optional()
+    .nullable(),
+  delay_in_setting_on_device: delay_in_setting_on_device.optional().nullable(),
+  delay_in_removing_from_device: delay_in_removing_from_device
+    .optional()
+    .nullable(),
+  third_party_integration_detected: third_party_integration_detected
+    .optional()
+    .nullable(),
+  august_device_programming_delay_warning:
+    august_device_programming_delay_warning.optional().nullable(),
+  igloo_algopin_must_be_used_within_24_hours:
+    igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
+  management_transferred: management_transferred.optional().nullable(),
+  kwikset_unable_to_confirm_code_warning: kwikset_unable_to_confirm_code_warning
+    .optional()
+    .nullable(),
+})
+
+export type AccessCodeWarningMap = z.infer<typeof access_code_warning_map>
 
 export const access_code = z.object({
   common_code_key: z
