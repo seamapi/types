@@ -86,8 +86,7 @@ export const unknown_issue_with_acs_credential = common_acs_credential_warning
       .describe(warning_code_description),
   })
   .describe(
-    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with the provider. ' +
-      'This issue may affect the proper functioning of the credential.',
+    'An unknown issue occurred while syncing the state of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) with the provider. This issue may affect the proper functioning of the credential.',
   )
 
 const needs_to_be_reissued = common_acs_credential_warning

@@ -88,8 +88,7 @@ export const unknown_issue_with_connected_account =
         .describe(warning_code_description),
     })
     .describe(
-      'An unknown issue occurred while syncing the state of this connected account with the provider. ' +
-        'This issue may affect the proper functioning of one or more resources in this account.',
+      'An unknown issue occurred while syncing the state of this connected account with the provider. This issue may affect the proper functioning of one or more resources in this account.',
     )
 
 const scheduled_maintenance_window = common_connected_account_warning

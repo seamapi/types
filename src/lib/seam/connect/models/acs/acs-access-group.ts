@@ -37,8 +37,7 @@ export const unknown_issue_with_acs_access_group =
         .describe(warning_code_description),
     })
     .describe(
-      'An unknown issue occurred while syncing the state of this access group with the provider. ' +
-        'This issue may affect the proper functioning of this access group.',
+      'An unknown issue occurred while syncing the state of this access group with the provider. This issue may affect the proper functioning of this access group.',
     )
 
 const acs_access_group_warning = unknown_issue_with_acs_access_group.describe(
