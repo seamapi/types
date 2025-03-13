@@ -137,6 +137,14 @@ const august_device_slots_full = common_access_code_error
   })
   .describe('All access code slots on the device are full.')
 
+const august_lock_temporarily_offline_error = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('august_lock_temporarily_offline')
+      .describe(error_code_description),
+  })
+  .describe('August lock is temporarily offline.')
+
 const august_lock_missing_keypad = common_access_code_error
   .extend({
     error_code: z
@@ -145,10 +153,10 @@ const august_lock_missing_keypad = common_access_code_error
   })
   .describe('August lock is missing a keypad.')
 
-const salto_site_user_not_subscribed = common_access_code_error
+const salto_ks_user_not_subscribed = common_access_code_error
   .extend({
     error_code: z
-      .literal('salto_site_user_not_subscribed')
+      .literal('salto_ks_user_not_subscribed')
       .describe(error_code_description),
   })
   .describe('Salto site user is not subscribed.')
@@ -169,9 +177,42 @@ const hubitat_no_free_positions_available = common_access_code_error
   })
   .describe('No free positions available on the device.')
 
+const smartthings_no_free_slots_available = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('smartthings_no_free_slots_available')
+      .describe(error_code_description),
+  })
+  .describe('No free slots available on the device.')
+
+const wyze_duplicate_code_name = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('wyze_duplicate_code_name')
+      .describe(error_code_description),
+  })
+  .describe('Duplicate access code name detected.')
+
+const wyze_potential_duplicate_code = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('wyze_potential_duplicate_code')
+      .describe(error_code_description),
+  })
+  .describe('Potential duplicate access code detected.')
+
+const dormakaba_oracode_no_valid_user_level = common_access_code_error
+  .extend({
+    error_code: z
+      .literal('dormakaba_oracode_no_valid_user_level')
+      .describe(error_code_description),
+  })
+  .describe('No valid user level for Oracode.')
+
 const access_code_error = z.discriminatedUnion('error_code', [
   smartthings_failed_to_set_access_code_error,
   smartthings_failed_to_set_after_multiple_retries,
+  smartthings_no_free_slots_available,
   failed_to_set_on_device,
   failed_to_remove_from_device,
   duplicate_code_on_device,
@@ -186,18 +227,25 @@ const access_code_error = z.discriminatedUnion('error_code', [
   august_device_programming_delay_error,
   august_device_slots_full,
   august_lock_missing_keypad,
-  salto_site_user_not_subscribed,
+  august_lock_temporarily_offline_error,
+  salto_ks_user_not_subscribed,
   hubitat_device_programming_delay,
   hubitat_no_free_positions_available,
+  wyze_duplicate_code_name,
+  wyze_potential_duplicate_code,
+  dormakaba_oracode_no_valid_user_level,
 ])
 
 export type AccessCodeError = z.infer<typeof access_code_error>
 
 const access_code_error_map = z.object({
-  smartthings_failed_to_set_access_code_error:
+  smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_error.optional().nullable(),
   smartthings_failed_to_set_after_multiple_retries:
     smartthings_failed_to_set_after_multiple_retries.optional().nullable(),
+  smartthings_no_free_slots_available: smartthings_no_free_slots_available
+    .optional()
+    .nullable(),
   failed_to_set_on_device: failed_to_set_on_device.optional().nullable(),
   failed_to_remove_from_device: failed_to_remove_from_device
     .optional()
@@ -224,18 +272,28 @@ const access_code_error_map = z.object({
   august_lock_invalid_code_length: august_lock_invalid_code_length
     .optional()
     .nullable(),
-  august_device_programming_delay_error: august_device_programming_delay_error
+  august_device_programming_delay: august_device_programming_delay_error
+    .optional()
+    .nullable(),
+  august_lock_temporarily_offline: august_lock_temporarily_offline_error
     .optional()
     .nullable(),
   august_device_slots_full: august_device_slots_full.optional().nullable(),
   august_lock_missing_keypad: august_lock_missing_keypad.optional().nullable(),
-  salto_site_user_not_subscribed: salto_site_user_not_subscribed
+  salto_ks_user_not_subscribed: salto_ks_user_not_subscribed
     .optional()
     .nullable(),
   hubitat_device_programming_delay: hubitat_device_programming_delay
     .optional()
     .nullable(),
   hubitat_no_free_positions_available: hubitat_no_free_positions_available
+    .optional()
+    .nullable(),
+  wyze_duplicate_code_name: wyze_duplicate_code_name.optional().nullable(),
+  wyze_potential_duplicate_code: wyze_potential_duplicate_code
+    .optional()
+    .nullable(),
+  dormakaba_oracode_no_valid_user_level: dormakaba_oracode_no_valid_user_level
     .optional()
     .nullable(),
 })
@@ -266,6 +324,14 @@ const august_device_programming_delay_warning = common_access_code_warning
   })
   .describe('Access code has not yet been fully moved to the device.')
 
+const august_lock_temporarily_offline_warning = common_access_code_warning
+  .extend({
+    warning_code: z
+      .literal('august_lock_temporarily_offline')
+      .describe(error_code_description),
+  })
+  .describe('August lock is temporarily offline.')
+
 const code_modified_external_to_seam_warning = common_access_code_warning
   .extend({
     warning_code: z
@@ -291,14 +357,6 @@ const schlage_creation_outage = common_access_code_warning
       .describe(warning_code_description),
   })
   .describe('Received an error when attempting to create this code.')
-
-const salto_office_mode = common_access_code_warning
-  .extend({
-    warning_code: z
-      .literal('salto_office_mode')
-      .describe(warning_code_description),
-  })
-  .describe('Lock is in Office Mode. Access Codes will not unlock doors.')
 
 const delay_in_setting_on_device = common_access_code_warning
   .extend({
@@ -354,12 +412,12 @@ const access_code_warning = z.discriminatedUnion('warning_code', [
   smartthings_failed_to_set_access_code_warning,
   schlage_detected_duplicate,
   schlage_creation_outage,
-  salto_office_mode,
   code_modified_external_to_seam_warning,
   delay_in_setting_on_device,
   delay_in_removing_from_device,
   third_party_integration_detected,
   august_device_programming_delay_warning,
+  august_lock_temporarily_offline_warning,
   igloo_algopin_must_be_used_within_24_hours,
   management_transferred,
   kwikset_unable_to_confirm_code_warning,
@@ -368,11 +426,10 @@ const access_code_warning = z.discriminatedUnion('warning_code', [
 export type AccessCodeWarning = z.infer<typeof access_code_warning>
 
 const access_code_warning_map = z.object({
-  smartthings_failed_to_set_access_code_warning:
+  smartthings_failed_to_set_access_code:
     smartthings_failed_to_set_access_code_warning.optional().nullable(),
   schlage_detected_duplicate: schlage_detected_duplicate.optional().nullable(),
   schlage_creation_outage: schlage_creation_outage.optional().nullable(),
-  salto_office_mode: salto_office_mode.optional().nullable(),
   code_modified_external_to_seam_warning: code_modified_external_to_seam_warning
     .optional()
     .nullable(),
@@ -383,8 +440,12 @@ const access_code_warning_map = z.object({
   third_party_integration_detected: third_party_integration_detected
     .optional()
     .nullable(),
-  august_device_programming_delay_warning:
-    august_device_programming_delay_warning.optional().nullable(),
+  august_device_programming_delay: august_device_programming_delay_warning
+    .optional()
+    .nullable(),
+  august_lock_temporarily_offline: august_lock_temporarily_offline_warning
+    .optional()
+    .nullable(),
   igloo_algopin_must_be_used_within_24_hours:
     igloo_algopin_must_be_used_within_24_hours.optional().nullable(),
   management_transferred: management_transferred.optional().nullable(),
