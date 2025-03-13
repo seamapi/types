@@ -313,8 +313,7 @@ export const unknown_issue_with_phone = common_device_warning
       .describe(warning_code_description),
   })
   .describe(
-    'An unknown issue occurred while syncing the state of this phone with the provider. ' +
-      'This issue may affect the proper functioning of this phone.',
+    'An unknown issue occurred while syncing the state of this phone with the provider. This issue may affect the proper functioning of this phone.',
   )
 
 const device_warning = z.discriminatedUnion('warning_code', [

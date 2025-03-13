@@ -129,8 +129,7 @@ export const unknown_issue_with_acs_user = common_acs_user_warning
     warning_code: z.literal('unknown_issue_with_acs_user'),
   })
   .describe(
-    'An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. ' +
-      'This issue may affect the proper functioning of this user.',
+    'An unknown issue occurred while syncing the state of this [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) with the provider. This issue may affect the proper functioning of this user.',
   )
 
 export const acs_users_warning_map = z.object({
