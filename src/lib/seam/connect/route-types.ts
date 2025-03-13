@@ -1113,6 +1113,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -1211,7 +1218,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -1226,6 +1240,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -1353,12 +1388,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -1384,6 +1413,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -1494,6 +1529,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -1592,7 +1634,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -1607,6 +1656,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -1734,12 +1804,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -1765,6 +1829,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -2940,6 +3010,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -3038,7 +3115,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -3053,6 +3137,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -3180,12 +3285,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -3211,6 +3310,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -3308,6 +3413,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -3406,7 +3518,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -3421,6 +3540,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -3548,12 +3688,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -3579,6 +3713,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -3675,6 +3815,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -3773,7 +3920,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -3788,6 +3942,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -3915,12 +4090,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -3946,6 +4115,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -4030,6 +4205,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -4128,7 +4310,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -4143,6 +4332,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -4270,12 +4480,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -4301,6 +4505,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -4393,6 +4603,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -4491,7 +4708,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -4506,6 +4730,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -4633,12 +4878,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -4664,6 +4903,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -5815,6 +6060,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -5913,7 +6165,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -5928,6 +6187,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -6055,12 +6335,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -6086,6 +6360,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
@@ -6160,6 +6440,13 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'smartthings_no_free_slots_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'failed_to_set_on_device'
             }
           | {
@@ -6258,7 +6545,14 @@ export interface Routes {
               is_access_code_error: true
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
-              error_code: 'salto_site_user_not_subscribed'
+              error_code: 'august_lock_temporarily_offline'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'salto_ks_user_not_subscribed'
             }
           | {
               message: string
@@ -6273,6 +6567,27 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'hubitat_no_free_positions_available'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_duplicate_code_name'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'wyze_potential_duplicate_code'
+            }
+          | {
+              message: string
+              is_access_code_error: true
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'dormakaba_oracode_no_valid_user_level'
             }
           | {
               message: string
@@ -6400,12 +6715,6 @@ export interface Routes {
               message: string
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
-              warning_code: 'salto_office_mode'
-            }
-          | {
-              message: string
-              created_at?: string | undefined
-              /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'code_modified_external_to_seam'
             }
           | {
@@ -6431,6 +6740,12 @@ export interface Routes {
               created_at?: string | undefined
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'august_device_programming_delay'
+            }
+          | {
+              message: string
+              created_at?: string | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              warning_code: 'august_lock_temporarily_offline'
             }
           | {
               message: string
