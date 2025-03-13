@@ -79,6 +79,22 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'No free slots available on the device.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['smartthings_no_free_slots_available'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description: 'Failed to set code on device.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -311,13 +327,29 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'August lock is temporarily offline.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_temporarily_offline'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description: 'Salto site user is not subscribed.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_site_user_not_subscribed'],
+                      enum: ['salto_ks_user_not_subscribed'],
                       type: 'string',
                     },
                     is_access_code_error: { enum: [true], type: 'boolean' },
@@ -351,6 +383,54 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_no_free_positions_available'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_duplicate_code_name'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Potential duplicate access code detected.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_potential_duplicate_code'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'No valid user level for Oracode.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_oracode_no_valid_user_level'],
                       type: 'string',
                     },
                     is_access_code_error: { enum: [true], type: 'boolean' },
@@ -800,22 +880,6 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Office Mode. Access Codes will not unlock doors.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_office_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -886,6 +950,21 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_programming_delay'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'August lock is temporarily offline.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_temporarily_offline'],
                       type: 'string',
                     },
                   },
@@ -12873,6 +12952,22 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'No free slots available on the device.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['smartthings_no_free_slots_available'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description: 'Failed to set code on device.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -13105,13 +13200,29 @@ export default {
                   type: 'object',
                 },
                 {
+                  description: 'August lock is temporarily offline.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_temporarily_offline'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
                   description: 'Salto site user is not subscribed.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
                     error_code: {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_site_user_not_subscribed'],
+                      enum: ['salto_ks_user_not_subscribed'],
                       type: 'string',
                     },
                     is_access_code_error: { enum: [true], type: 'boolean' },
@@ -13145,6 +13256,54 @@ export default {
                       description:
                         'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
                       enum: ['hubitat_no_free_positions_available'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Duplicate access code name detected.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_duplicate_code_name'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'Potential duplicate access code detected.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['wyze_potential_duplicate_code'],
+                      type: 'string',
+                    },
+                    is_access_code_error: { enum: [true], type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['message', 'is_access_code_error', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'No valid user level for Oracode.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['dormakaba_oracode_no_valid_user_level'],
                       type: 'string',
                     },
                     is_access_code_error: { enum: [true], type: 'boolean' },
@@ -13544,22 +13703,6 @@ export default {
                 },
                 {
                   description:
-                    'Lock is in Office Mode. Access Codes will not unlock doors.',
-                  properties: {
-                    created_at: { format: 'date-time', type: 'string' },
-                    message: { type: 'string' },
-                    warning_code: {
-                      description:
-                        'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
-                      enum: ['salto_office_mode'],
-                      type: 'string',
-                    },
-                  },
-                  required: ['message', 'warning_code'],
-                  type: 'object',
-                },
-                {
-                  description:
                     'Code was modified or removed externally after Seam successfully set it on the device.',
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
@@ -13630,6 +13773,21 @@ export default {
                       description:
                         'Unique identifier of the type of warning. Enables quick recognition and categorization of the issue.',
                       enum: ['august_device_programming_delay'],
+                      type: 'string',
+                    },
+                  },
+                  required: ['message', 'warning_code'],
+                  type: 'object',
+                },
+                {
+                  description: 'August lock is temporarily offline.',
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    message: { type: 'string' },
+                    warning_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['august_lock_temporarily_offline'],
                       type: 'string',
                     },
                   },
