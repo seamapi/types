@@ -22162,6 +22162,12 @@ export default {
                     ],
                     type: 'string',
                   },
+                  unstable_location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
+                  },
                   user_identifier_key: {
                     description:
                       'Your own internal user ID for the user by which to filter devices.',
@@ -22693,6 +22699,12 @@ export default {
                       'tado',
                     ],
                     type: 'string',
+                  },
+                  unstable_location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
                   },
                   user_identifier_key: {
                     description:
@@ -23551,6 +23563,12 @@ export default {
                     ],
                     type: 'string',
                   },
+                  unstable_location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
+                  },
                   user_identifier_key: {
                     description:
                       'Your own internal user ID for the user by which to filter devices.',
@@ -24045,6 +24063,12 @@ export default {
                       'tado',
                     ],
                     type: 'string',
+                  },
+                  unstable_location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
                   },
                   user_identifier_key: {
                     description:
@@ -25939,6 +25963,12 @@ export default {
                     ],
                     type: 'string',
                   },
+                  unstable_location_id: {
+                    format: 'uuid',
+                    nullable: true,
+                    type: 'string',
+                    'x-undocumented': 'Experimental locations.',
+                  },
                   user_identifier_key: {
                     description:
                       'Your own internal user ID for the user by which to filter devices.',
@@ -27373,6 +27403,624 @@ export default {
         'x-fern-sdk-method-name': 'update_climate_preset',
         'x-response-key': null,
         'x-title': 'Update a Climate Preset',
+      },
+    },
+    '/unstable_locations/add_devices': {
+      post: {
+        description:
+          'Add devices to a specific location. If a device already belongs to a location it will be moved.',
+        operationId: 'unstableLocationsAddDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/add_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'add_devices',
+        'x-response-key': null,
+        'x-title': 'Add Location Devices',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/create': {
+      post: {
+        description: 'Create a new location.',
+        operationId: 'unstableLocationsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  geolocation: {
+                    properties: {
+                      latitude: { format: 'float', type: 'number' },
+                      longitude: { format: 'float', type: 'number' },
+                    },
+                    required: ['latitude', 'longitude'],
+                    type: 'object',
+                  },
+                  name: { type: 'string' },
+                  time_zone: { type: 'string' },
+                },
+                required: ['name'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    location: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the location object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the location.',
+                          type: 'string',
+                        },
+                        geolocation: {
+                          description: 'Geographical location of the location.',
+                          properties: {
+                            latitude: { format: 'float', type: 'number' },
+                            longitude: { format: 'float', type: 'number' },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
+                        },
+                        location_id: {
+                          description: 'Unique identifier for the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        time_zone: {
+                          description: 'Time zone of the location.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'location_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['location', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'location',
+        'x-response-key': 'location',
+        'x-title': 'Create Location',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/delete': {
+      post: {
+        description: 'Delete a location.',
+        operationId: 'unstableLocationsDeletePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { location_id: { format: 'uuid', type: 'string' } },
+                required: ['location_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/delete',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'delete',
+        'x-response-key': null,
+        'x-title': 'Delete Location',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/get': {
+      post: {
+        description: 'Get a location.',
+        operationId: 'unstableLocationsGetPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: { location_id: { format: 'uuid', type: 'string' } },
+                required: ['location_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    location: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the location object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the location.',
+                          type: 'string',
+                        },
+                        geolocation: {
+                          description: 'Geographical location of the location.',
+                          properties: {
+                            latitude: { format: 'float', type: 'number' },
+                            longitude: { format: 'float', type: 'number' },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
+                        },
+                        location_id: {
+                          description: 'Unique identifier for the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        time_zone: {
+                          description: 'Time zone of the location.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'location_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['location', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/get',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'get',
+        'x-fern-sdk-return-value': 'location',
+        'x-response-key': 'location',
+        'x-title': 'Get Location',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/list': {
+      get: {
+        description: 'Returns a list of all locations.',
+        operationId: 'unstableLocationsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    locations: {
+                      items: {
+                        properties: {
+                          created_at: {
+                            description:
+                              'Date and time at which the location object was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the location.',
+                            type: 'string',
+                          },
+                          geolocation: {
+                            description:
+                              'Geographical location of the location.',
+                            properties: {
+                              latitude: { format: 'float', type: 'number' },
+                              longitude: { format: 'float', type: 'number' },
+                            },
+                            required: ['latitude', 'longitude'],
+                            type: 'object',
+                          },
+                          location_id: {
+                            description: 'Unique identifier for the location.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          time_zone: {
+                            description: 'Time zone of the location.',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the location.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'location_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['locations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/list',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'locations',
+        'x-title': 'List Locations',
+        'x-undocumented': 'Experimental locations.',
+      },
+      post: {
+        description: 'Returns a list of all locations.',
+        operationId: 'unstableLocationsListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    locations: {
+                      items: {
+                        properties: {
+                          created_at: {
+                            description:
+                              'Date and time at which the location object was created.',
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          display_name: {
+                            description: 'Display name of the location.',
+                            type: 'string',
+                          },
+                          geolocation: {
+                            description:
+                              'Geographical location of the location.',
+                            properties: {
+                              latitude: { format: 'float', type: 'number' },
+                              longitude: { format: 'float', type: 'number' },
+                            },
+                            required: ['latitude', 'longitude'],
+                            type: 'object',
+                          },
+                          location_id: {
+                            description: 'Unique identifier for the location.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          time_zone: {
+                            description: 'Time zone of the location.',
+                            type: 'string',
+                          },
+                          workspace_id: {
+                            description:
+                              'Unique identifier for the Seam workspace associated with the location.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        required: [
+                          'location_id',
+                          'workspace_id',
+                          'display_name',
+                          'created_at',
+                        ],
+                        type: 'object',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['locations', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/list',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'locations',
+        'x-response-key': 'locations',
+        'x-title': 'List Locations',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/remove_devices': {
+      post: {
+        description: 'Remove devices from a specific location.',
+        operationId: 'unstableLocationsRemoveDevicesPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/remove_devices',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'remove_devices',
+        'x-response-key': null,
+        'x-title': 'Remove Location Devices',
+        'x-undocumented': 'Experimental locations.',
+      },
+    },
+    '/unstable_locations/update': {
+      post: {
+        description: 'Update an existing location.',
+        operationId: 'unstableLocationsUpdatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  geolocation: {
+                    properties: {
+                      latitude: { format: 'float', type: 'number' },
+                      longitude: { format: 'float', type: 'number' },
+                    },
+                    required: ['latitude', 'longitude'],
+                    type: 'object',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                  name: { type: 'string' },
+                  time_zone: { type: 'string' },
+                },
+                required: ['location_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    location: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the location object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the location.',
+                          type: 'string',
+                        },
+                        geolocation: {
+                          description: 'Geographical location of the location.',
+                          properties: {
+                            latitude: { format: 'float', type: 'number' },
+                            longitude: { format: 'float', type: 'number' },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
+                        },
+                        location_id: {
+                          description: 'Unique identifier for the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        time_zone: {
+                          description: 'Time zone of the location.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'location_id',
+                        'workspace_id',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['location', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/update',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_locations'],
+        'x-fern-sdk-method-name': 'update',
+        'x-fern-sdk-return-value': 'location',
+        'x-response-key': 'location',
+        'x-title': 'Update Location',
+        'x-undocumented': 'Experimental locations.',
       },
     },
     '/user_identities/add_acs_user': {

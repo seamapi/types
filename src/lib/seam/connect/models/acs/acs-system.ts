@@ -27,7 +27,7 @@ export const acs_system_capability_flags = z.object({
     ),
 })
 
-export const location = z.object({
+export const acs_location = z.object({
   time_zone: z
     .string()
     .nullable()
@@ -274,7 +274,7 @@ export const acs_system = z
       deprecated: Use \`external_type_display_name\`.
       ---
       `),
-    location,
+    location: acs_location,
     name: z
       .string()
       .describe(

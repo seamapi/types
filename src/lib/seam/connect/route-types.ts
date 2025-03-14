@@ -17999,6 +17999,8 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
+      unstable_location_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -19561,6 +19563,8 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
+      unstable_location_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -24797,6 +24801,8 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
+      unstable_location_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -28950,6 +28956,8 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
+      unstable_location_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -39743,6 +39751,8 @@ export interface Routes {
             | 'can_simulate_disconnection'
           >
         | undefined
+      /**  */
+      unstable_location_id?: (string | null) | undefined
     }
     formData: {}
     jsonResponse: {
@@ -45084,6 +45094,178 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {}
+  }
+  '/unstable_locations/add_devices': {
+    route: '/unstable_locations/add_devices'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      location_id: string
+      device_ids: string[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/unstable_locations/create': {
+    route: '/unstable_locations/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      name: string
+      geolocation?:
+        | {
+            latitude: number
+            longitude: number
+          }
+        | undefined
+      time_zone?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      location: {
+        /** Unique identifier for the location. */
+        location_id: string
+        /** Unique identifier for the Seam workspace associated with the location. */
+        workspace_id: string
+        /** Display name of the location. */
+        display_name: string
+        /** Geographical location of the location. */
+        geolocation?:
+          | {
+              latitude: number
+              longitude: number
+            }
+          | undefined
+        /** Time zone of the location. */
+        time_zone?: string | undefined
+        /** Date and time at which the location object was created. */
+        created_at: string
+      }
+    }
+  }
+  '/unstable_locations/delete': {
+    route: '/unstable_locations/delete'
+    method: 'DELETE' | 'POST'
+    queryParams: {}
+    jsonBody: {
+      location_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/unstable_locations/get': {
+    route: '/unstable_locations/get'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {
+      location_id: string
+    }
+    formData: {}
+    jsonResponse: {
+      location: {
+        /** Unique identifier for the location. */
+        location_id: string
+        /** Unique identifier for the Seam workspace associated with the location. */
+        workspace_id: string
+        /** Display name of the location. */
+        display_name: string
+        /** Geographical location of the location. */
+        geolocation?:
+          | {
+              latitude: number
+              longitude: number
+            }
+          | undefined
+        /** Time zone of the location. */
+        time_zone?: string | undefined
+        /** Date and time at which the location object was created. */
+        created_at: string
+      }
+    }
+  }
+  '/unstable_locations/list': {
+    route: '/unstable_locations/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      locations: Array<{
+        /** Unique identifier for the location. */
+        location_id: string
+        /** Unique identifier for the Seam workspace associated with the location. */
+        workspace_id: string
+        /** Display name of the location. */
+        display_name: string
+        /** Geographical location of the location. */
+        geolocation?:
+          | {
+              latitude: number
+              longitude: number
+            }
+          | undefined
+        /** Time zone of the location. */
+        time_zone?: string | undefined
+        /** Date and time at which the location object was created. */
+        created_at: string
+      }>
+    }
+  }
+  '/unstable_locations/remove_devices': {
+    route: '/unstable_locations/remove_devices'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      location_id: string
+      device_ids: string[]
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/unstable_locations/update': {
+    route: '/unstable_locations/update'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      location_id: string
+      name?: string | undefined
+      geolocation?:
+        | {
+            latitude: number
+            longitude: number
+          }
+        | undefined
+      time_zone?: string | undefined
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      location: {
+        /** Unique identifier for the location. */
+        location_id: string
+        /** Unique identifier for the Seam workspace associated with the location. */
+        workspace_id: string
+        /** Display name of the location. */
+        display_name: string
+        /** Geographical location of the location. */
+        geolocation?:
+          | {
+              latitude: number
+              longitude: number
+            }
+          | undefined
+        /** Time zone of the location. */
+        time_zone?: string | undefined
+        /** Date and time at which the location object was created. */
+        created_at: string
+      }
+    }
   }
   '/user_identities/add_acs_user': {
     route: '/user_identities/add_acs_user'
