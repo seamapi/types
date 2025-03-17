@@ -34621,6 +34621,30 @@ export interface Routes {
         bridge_client_name: string
         bridge_client_time_zone: string
         bridge_client_machine_identifier_key: string
+        errors: Array<
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_lan_unreachable'
+              /** Seam cannot reach the tailscale proxy */
+              is_tailscale_proxy_reachable: boolean
+              /** Tailscale proxy's SOCKS server is unhealthy */
+              is_tailscale_proxy_socks_server_healthy: boolean
+              /** Tailscale proxy cannot reach the Tailscale network */
+              can_tailscale_proxy_reach_tailscale_network: boolean
+              /** Tailscale proxy cannot reach the bridge */
+              can_tailscale_proxy_reach_bridge: boolean
+              /** Bridge's SOCKS server is unhealthy */
+              is_bridge_socks_server_healthy: boolean
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_communication_from_bridge'
+            }
+        >
       }
     }
   }
@@ -34644,6 +34668,30 @@ export interface Routes {
         bridge_client_name: string
         bridge_client_time_zone: string
         bridge_client_machine_identifier_key: string
+        errors: Array<
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_lan_unreachable'
+              /** Seam cannot reach the tailscale proxy */
+              is_tailscale_proxy_reachable: boolean
+              /** Tailscale proxy's SOCKS server is unhealthy */
+              is_tailscale_proxy_socks_server_healthy: boolean
+              /** Tailscale proxy cannot reach the Tailscale network */
+              can_tailscale_proxy_reach_tailscale_network: boolean
+              /** Tailscale proxy cannot reach the bridge */
+              can_tailscale_proxy_reach_bridge: boolean
+              /** Bridge's SOCKS server is unhealthy */
+              is_bridge_socks_server_healthy: boolean
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_communication_from_bridge'
+            }
+        >
       }
     }
   }
@@ -34667,6 +34715,30 @@ export interface Routes {
         bridge_client_name: string
         bridge_client_time_zone: string
         bridge_client_machine_identifier_key: string
+        errors: Array<
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_lan_unreachable'
+              /** Seam cannot reach the tailscale proxy */
+              is_tailscale_proxy_reachable: boolean
+              /** Tailscale proxy's SOCKS server is unhealthy */
+              is_tailscale_proxy_socks_server_healthy: boolean
+              /** Tailscale proxy cannot reach the Tailscale network */
+              can_tailscale_proxy_reach_tailscale_network: boolean
+              /** Tailscale proxy cannot reach the bridge */
+              can_tailscale_proxy_reach_bridge: boolean
+              /** Bridge's SOCKS server is unhealthy */
+              is_bridge_socks_server_healthy: boolean
+            }
+          | {
+              message: string
+              created_at: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'no_communication_from_bridge'
+            }
+        >
       }
     }
   }
