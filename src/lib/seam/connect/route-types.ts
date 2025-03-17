@@ -8239,6 +8239,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -13290,6 +13345,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -13442,6 +13552,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -13594,6 +13759,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -13878,6 +14098,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -14020,6 +14295,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**
@@ -47623,6 +47953,61 @@ export interface Routes {
               error_code: 'failed_to_delete_on_acs_system'
             }
         >
+        /**  */
+        pending_modifications?:
+          | Array<
+              | {
+                  created_at: string
+                  modification_code: 'profile'
+                  modified_from: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                  modified_to: {
+                    email_address?: (string | null) | undefined
+                    full_name?: (string | null) | undefined
+                    phone_number?: ((string | undefined) | null) | undefined
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'access_schedule'
+                  modified_from: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                  modified_to: {
+                    /** Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    starts_at: string
+                    /** Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+                    ends_at: string | null
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'suspension_state'
+                  modified_from: {
+                    is_suspended: boolean
+                  }
+                  modified_to: {
+                    is_suspended: boolean
+                  }
+                }
+              | {
+                  created_at: string
+                  modification_code: 'acs_access_group_membership'
+                  modified_from: {
+                    acs_access_group_id: string | null
+                  }
+                  modified_to: {
+                    acs_access_group_id: string | null
+                  }
+                }
+            >
+          | undefined
         /** Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         full_name?: string | undefined
         /**

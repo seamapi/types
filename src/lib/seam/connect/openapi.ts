@@ -2439,6 +2439,170 @@ export default {
             type: 'string',
             'x-undocumented': 'Only used internally.',
           },
+          pending_modifications: {
+            items: {
+              discriminator: { propertyName: 'modification_code' },
+              oneOf: [
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: { enum: ['profile'], type: 'string' },
+                    modified_from: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['access_schedule'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: {
+                        ends_at: {
+                          description:
+                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        ends_at: {
+                          description:
+                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['suspension_state'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: { is_suspended: { type: 'boolean' } },
+                      required: ['is_suspended'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: { is_suspended: { type: 'boolean' } },
+                      required: ['is_suspended'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['acs_access_group_membership'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: {
+                        acs_access_group_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_access_group_id'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        acs_access_group_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_access_group_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+            'x-undocumented': 'Experimental.',
+          },
           phone_number: {
             description:
               'Phone number of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in E.164 format (for example, `+15555550100`).',
@@ -14558,6 +14722,170 @@ export default {
             nullable: true,
             type: 'string',
             'x-undocumented': 'Only used internally.',
+          },
+          pending_modifications: {
+            items: {
+              discriminator: { propertyName: 'modification_code' },
+              oneOf: [
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: { enum: ['profile'], type: 'string' },
+                    modified_from: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        email_address: {
+                          format: 'email',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        full_name: { nullable: true, type: 'string' },
+                        phone_number: { nullable: true, type: 'string' },
+                      },
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['access_schedule'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: {
+                        ends_at: {
+                          description:
+                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        ends_at: {
+                          description:
+                            "Date and time at which the user's access ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          nullable: true,
+                          type: 'string',
+                        },
+                        starts_at: {
+                          description:
+                            "Date and time at which the user's access starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.",
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                      },
+                      required: ['starts_at', 'ends_at'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['suspension_state'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: { is_suspended: { type: 'boolean' } },
+                      required: ['is_suspended'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: { is_suspended: { type: 'boolean' } },
+                      required: ['is_suspended'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: {
+                      enum: ['acs_access_group_membership'],
+                      type: 'string',
+                    },
+                    modified_from: {
+                      properties: {
+                        acs_access_group_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_access_group_id'],
+                      type: 'object',
+                    },
+                    modified_to: {
+                      properties: {
+                        acs_access_group_id: {
+                          format: 'uuid',
+                          nullable: true,
+                          type: 'string',
+                        },
+                      },
+                      required: ['acs_access_group_id'],
+                      type: 'object',
+                    },
+                  },
+                  required: [
+                    'created_at',
+                    'modification_code',
+                    'modified_from',
+                    'modified_to',
+                  ],
+                  type: 'object',
+                },
+              ],
+            },
+            type: 'array',
+            'x-undocumented': 'Experimental.',
           },
           phone_number: {
             description:
