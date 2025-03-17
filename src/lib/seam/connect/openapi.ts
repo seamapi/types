@@ -25222,6 +25222,92 @@ export default {
                         bridge_client_session_token: { type: 'string' },
                         bridge_client_time_zone: { type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         pairing_code: {
                           maxLength: 6,
                           minLength: 6,
@@ -25245,6 +25331,7 @@ export default {
                         'bridge_client_name',
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
+                        'errors',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -25302,6 +25389,92 @@ export default {
                         bridge_client_session_token: { type: 'string' },
                         bridge_client_time_zone: { type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         pairing_code: {
                           maxLength: 6,
                           minLength: 6,
@@ -25325,6 +25498,7 @@ export default {
                         'bridge_client_name',
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
+                        'errors',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -25373,6 +25547,92 @@ export default {
                         bridge_client_session_token: { type: 'string' },
                         bridge_client_time_zone: { type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         pairing_code: {
                           maxLength: 6,
                           minLength: 6,
@@ -25396,6 +25656,7 @@ export default {
                         'bridge_client_name',
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
+                        'errors',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
@@ -25454,6 +25715,92 @@ export default {
                         bridge_client_session_token: { type: 'string' },
                         bridge_client_time_zone: { type: 'string' },
                         created_at: { format: 'date-time', type: 'string' },
+                        errors: {
+                          items: {
+                            description:
+                              'Error associated with the `bridge_client_session`.',
+                            discriminator: { propertyName: 'error_code' },
+                            oneOf: [
+                              {
+                                description:
+                                  "Seam cannot reach the bridge's LAN",
+                                properties: {
+                                  can_tailscale_proxy_reach_bridge: {
+                                    description:
+                                      'Tailscale proxy cannot reach the bridge',
+                                    type: 'boolean',
+                                  },
+                                  can_tailscale_proxy_reach_tailscale_network: {
+                                    description:
+                                      'Tailscale proxy cannot reach the Tailscale network',
+                                    type: 'boolean',
+                                  },
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['bridge_lan_unreachable'],
+                                    type: 'string',
+                                  },
+                                  is_bridge_socks_server_healthy: {
+                                    description:
+                                      "Bridge's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_reachable: {
+                                    description:
+                                      'Seam cannot reach the tailscale proxy',
+                                    type: 'boolean',
+                                  },
+                                  is_tailscale_proxy_socks_server_healthy: {
+                                    description:
+                                      "Tailscale proxy's SOCKS server is unhealthy",
+                                    type: 'boolean',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                  'is_tailscale_proxy_reachable',
+                                  'is_tailscale_proxy_socks_server_healthy',
+                                  'can_tailscale_proxy_reach_tailscale_network',
+                                  'can_tailscale_proxy_reach_bridge',
+                                  'is_bridge_socks_server_healthy',
+                                ],
+                                type: 'object',
+                              },
+                              {
+                                description:
+                                  'Bridge has stopped communicating with Seam',
+                                properties: {
+                                  created_at: {
+                                    format: 'date-time',
+                                    type: 'string',
+                                  },
+                                  error_code: {
+                                    description:
+                                      'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                                    enum: ['no_communication_from_bridge'],
+                                    type: 'string',
+                                  },
+                                  message: { type: 'string' },
+                                },
+                                required: [
+                                  'message',
+                                  'created_at',
+                                  'error_code',
+                                ],
+                                type: 'object',
+                              },
+                            ],
+                          },
+                          type: 'array',
+                        },
                         pairing_code: {
                           maxLength: 6,
                           minLength: 6,
@@ -25477,6 +25824,7 @@ export default {
                         'bridge_client_name',
                         'bridge_client_time_zone',
                         'bridge_client_machine_identifier_key',
+                        'errors',
                       ],
                       type: 'object',
                       'x-route-path': '/seam/bridge/v1/bridge_client_sessions',
