@@ -28093,6 +28093,7 @@ export default {
                 properties: {
                   device_ids: {
                     items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
                     type: 'array',
                   },
                   location_id: { format: 'uuid', type: 'string' },
@@ -28128,6 +28129,56 @@ export default {
         tags: [],
         'x-fern-sdk-group-name': ['unstable_locations'],
         'x-fern-sdk-method-name': 'add_devices',
+        'x-response-key': null,
+        'x-title': 'Add Location Devices',
+        'x-undocumented': 'Experimental locations.',
+      },
+      put: {
+        description:
+          'Add devices to a specific location. If a device already belongs to a location it will be moved.',
+        operationId: 'unstableLocationsAddDevicesPut',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  device_ids: {
+                    items: { format: 'uuid', type: 'string' },
+                    minItems: 1,
+                    type: 'array',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['location_id', 'device_ids'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/add_devices',
+        tags: [],
+        'x-fern-ignore': true,
         'x-response-key': null,
         'x-title': 'Add Location Devices',
         'x-undocumented': 'Experimental locations.',
@@ -28191,6 +28242,10 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        name: {
+                          description: 'Name of the location.',
+                          type: 'string',
+                        },
                         time_zone: {
                           description: 'Time zone of the location.',
                           type: 'string',
@@ -28205,6 +28260,7 @@ export default {
                       required: [
                         'location_id',
                         'workspace_id',
+                        'name',
                         'display_name',
                         'created_at',
                       ],
@@ -28329,6 +28385,10 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        name: {
+                          description: 'Name of the location.',
+                          type: 'string',
+                        },
                         time_zone: {
                           description: 'Time zone of the location.',
                           type: 'string',
@@ -28343,6 +28403,7 @@ export default {
                       required: [
                         'location_id',
                         'workspace_id',
+                        'name',
                         'display_name',
                         'created_at',
                       ],
@@ -28413,6 +28474,10 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          name: {
+                            description: 'Name of the location.',
+                            type: 'string',
+                          },
                           time_zone: {
                             description: 'Time zone of the location.',
                             type: 'string',
@@ -28427,6 +28492,7 @@ export default {
                         required: [
                           'location_id',
                           'workspace_id',
+                          'name',
                           'display_name',
                           'created_at',
                         ],
@@ -28495,6 +28561,10 @@ export default {
                             format: 'uuid',
                             type: 'string',
                           },
+                          name: {
+                            description: 'Name of the location.',
+                            type: 'string',
+                          },
                           time_zone: {
                             description: 'Time zone of the location.',
                             type: 'string',
@@ -28509,6 +28579,7 @@ export default {
                         required: [
                           'location_id',
                           'workspace_id',
+                          'name',
                           'display_name',
                           'created_at',
                         ],
@@ -28595,6 +28666,112 @@ export default {
       },
     },
     '/unstable_locations/update': {
+      patch: {
+        description: 'Update an existing location.',
+        operationId: 'unstableLocationsUpdatePatch',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  geolocation: {
+                    properties: {
+                      latitude: { format: 'float', type: 'number' },
+                      longitude: { format: 'float', type: 'number' },
+                    },
+                    required: ['latitude', 'longitude'],
+                    type: 'object',
+                  },
+                  location_id: { format: 'uuid', type: 'string' },
+                  name: { type: 'string' },
+                  time_zone: { type: 'string' },
+                },
+                required: ['location_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    location: {
+                      properties: {
+                        created_at: {
+                          description:
+                            'Date and time at which the location object was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the location.',
+                          type: 'string',
+                        },
+                        geolocation: {
+                          description: 'Geographical location of the location.',
+                          properties: {
+                            latitude: { format: 'float', type: 'number' },
+                            longitude: { format: 'float', type: 'number' },
+                          },
+                          required: ['latitude', 'longitude'],
+                          type: 'object',
+                        },
+                        location_id: {
+                          description: 'Unique identifier for the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        name: {
+                          description: 'Name of the location.',
+                          type: 'string',
+                        },
+                        time_zone: {
+                          description: 'Time zone of the location.',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the location.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'location_id',
+                        'workspace_id',
+                        'name',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['location', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_locations/update',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'location',
+        'x-title': 'Update Location',
+        'x-undocumented': 'Experimental locations.',
+      },
       post: {
         description: 'Update an existing location.',
         operationId: 'unstableLocationsUpdatePost',
@@ -28653,6 +28830,10 @@ export default {
                           format: 'uuid',
                           type: 'string',
                         },
+                        name: {
+                          description: 'Name of the location.',
+                          type: 'string',
+                        },
                         time_zone: {
                           description: 'Time zone of the location.',
                           type: 'string',
@@ -28667,6 +28848,7 @@ export default {
                       required: [
                         'location_id',
                         'workspace_id',
+                        'name',
                         'display_name',
                         'created_at',
                       ],
