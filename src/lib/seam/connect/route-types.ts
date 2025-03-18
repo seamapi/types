@@ -45499,7 +45499,7 @@ export interface Routes {
   }
   '/unstable_locations/add_devices': {
     route: '/unstable_locations/add_devices'
-    method: 'POST'
+    method: 'POST' | 'PUT'
     queryParams: {}
     jsonBody: {
       location_id: string
@@ -45531,6 +45531,8 @@ export interface Routes {
         location_id: string
         /** Unique identifier for the Seam workspace associated with the location. */
         workspace_id: string
+        /** Name of the location. */
+        name: string
         /** Display name of the location. */
         display_name: string
         /** Geographical location of the location. */
@@ -45573,6 +45575,8 @@ export interface Routes {
         location_id: string
         /** Unique identifier for the Seam workspace associated with the location. */
         workspace_id: string
+        /** Name of the location. */
+        name: string
         /** Display name of the location. */
         display_name: string
         /** Geographical location of the location. */
@@ -45602,6 +45606,8 @@ export interface Routes {
         location_id: string
         /** Unique identifier for the Seam workspace associated with the location. */
         workspace_id: string
+        /** Name of the location. */
+        name: string
         /** Display name of the location. */
         display_name: string
         /** Geographical location of the location. */
@@ -45620,19 +45626,19 @@ export interface Routes {
   }
   '/unstable_locations/remove_devices': {
     route: '/unstable_locations/remove_devices'
-    method: 'POST'
+    method: 'POST' | 'DELETE'
     queryParams: {}
-    jsonBody: {
+    jsonBody: {}
+    commonParams: {
       location_id: string
       device_ids: string[]
     }
-    commonParams: {}
     formData: {}
     jsonResponse: {}
   }
   '/unstable_locations/update': {
     route: '/unstable_locations/update'
-    method: 'POST'
+    method: 'POST' | 'PATCH'
     queryParams: {}
     jsonBody: {
       location_id: string
@@ -45653,6 +45659,8 @@ export interface Routes {
         location_id: string
         /** Unique identifier for the Seam workspace associated with the location. */
         workspace_id: string
+        /** Name of the location. */
+        name: string
         /** Display name of the location. */
         display_name: string
         /** Geographical location of the location. */
