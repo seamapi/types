@@ -54,3 +54,50 @@ export const acs_user_pending_modification = z.discriminatedUnion(
     acs_access_group_membership_pending_modification,
   ],
 )
+
+export type AcsUserPendingModification = z.infer<
+  typeof acs_user_pending_modification
+>
+
+const acs_user_pending_modifications_map = z.object({
+  'profile.full_name': common_pending_modification
+    .extend({
+      modification_code: z.literal('profile'),
+      modified_from: z.object({
+        full_name: z.string().nullable(),
+      }),
+      modified_to: z.object({
+        full_name: z.string().nullable(),
+      }),
+    })
+    .optional()
+    .nullable(),
+  'profile.email_address': common_pending_modification
+    .extend({
+      modification_code: z.literal('profile'),
+      modified_from: z.object({
+        email_address: z.string().email().nullable(),
+      }),
+      modified_to: z.object({
+        email_address: z.string().email().nullable(),
+      }),
+    })
+    .optional()
+    .nullable(),
+  'profile.phone_number': common_pending_modification
+    .extend({
+      modification_code: z.literal('profile'),
+      modified_from: z.object({
+        phone_number: phone_number.nullable(),
+      }),
+      modified_to: z.object({
+        phone_number: phone_number.nullable(),
+      }),
+    })
+    .optional()
+    .nullable(),
+})
+
+export type AcsUserPendingModificationsMap = z.infer<
+  typeof acs_user_pending_modifications_map
+>
