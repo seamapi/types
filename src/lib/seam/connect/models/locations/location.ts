@@ -16,6 +16,7 @@ export const location = z.object({
     .describe(
       'Unique identifier for the Seam workspace associated with the location.',
     ),
+  name: z.string().describe('Name of the location.'),
   display_name: z.string().describe('Display name of the location.'),
   geolocation: geolocation
     .optional()
