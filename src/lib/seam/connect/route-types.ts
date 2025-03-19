@@ -12828,6 +12828,8 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
+              /**
+               * @deprecated this field is deprecated. */
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
@@ -12999,6 +13001,8 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
+              /**
+               * @deprecated this field is deprecated. */
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
@@ -13170,6 +13174,8 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
+              /**
+               * @deprecated this field is deprecated. */
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
@@ -47893,6 +47899,8 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of warning. Enables quick recognition and categorization of the issue. */
               warning_code: 'time_zone_does_not_match_location'
+              /**
+               * @deprecated this field is deprecated. */
               misconfigured_acs_entrance_ids?: string[] | undefined
             }
         >
