@@ -26096,6 +26096,7 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
+          { client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
@@ -26152,6 +26153,7 @@ export default {
           401: { description: 'Unauthorized' },
         },
         security: [
+          { client_session: [] },
           { pat_with_workspace: [] },
           { console_session_with_workspace: [] },
           { api_key: [] },
