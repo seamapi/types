@@ -2169,8 +2169,10 @@ export default {
                       type: 'string',
                     },
                     misconfigured_acs_entrance_ids: {
+                      deprecated: true,
                       items: { format: 'uuid', type: 'string' },
                       type: 'array',
+                      'x-deprecated': 'this field is deprecated.',
                     },
                     warning_code: {
                       description:

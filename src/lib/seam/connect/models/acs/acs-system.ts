@@ -186,7 +186,16 @@ const time_zone_does_not_match_location = common_acs_system_warning
     warning_code: z
       .literal('time_zone_does_not_match_location')
       .describe(warning_code_description),
-    misconfigured_acs_entrance_ids: z.array(z.string().uuid()).optional(),
+    misconfigured_acs_entrance_ids: z
+      .array(z.string().uuid())
+      .optional()
+      .describe(
+        `
+    ---
+    deprecated: this field is deprecated.
+    ---
+    `,
+      ),
   })
   .describe(
     'Indicates the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) time zone could not be determined because the reported physical location does not match the time zone configured on the physical [ACS entrances](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details).',
