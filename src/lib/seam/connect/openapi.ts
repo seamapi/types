@@ -22606,6 +22606,96 @@ export default {
         'x-response-key': 'device_providers',
       },
     },
+    '/devices/simulate/access_code_lock': {
+      post: {
+        operationId: 'devicesSimulateAccessCodeLockPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_code_id: { format: 'uuid', type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'access_code_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/devices/simulate/access_code_lock',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'access_code_lock',
+        'x-response-key': null,
+      },
+    },
+    '/devices/simulate/access_code_unlock': {
+      post: {
+        operationId: 'devicesSimulateAccessCodeUnlockPost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                properties: {
+                  access_code_id: { format: 'uuid', type: 'string' },
+                  device_id: { format: 'uuid', type: 'string' },
+                },
+                required: ['device_id', 'access_code_id'],
+                type: 'object',
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: { ok: { type: 'boolean' } },
+                  required: ['ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { api_key: [] },
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+        ],
+        summary: '/devices/simulate/access_code_unlock',
+        tags: ['/devices'],
+        'x-fern-sdk-group-name': ['devices', 'simulate'],
+        'x-fern-sdk-method-name': 'access_code_unlock',
+        'x-response-key': null,
+      },
+    },
     '/devices/simulate/connect': {
       post: {
         operationId: 'devicesSimulateConnectPost',
