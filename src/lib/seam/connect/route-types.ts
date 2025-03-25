@@ -19337,6 +19337,30 @@ export interface Routes {
       }>
     }
   }
+  '/devices/simulate/access_code_lock': {
+    route: '/devices/simulate/access_code_lock'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      access_code_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
+  '/devices/simulate/access_code_unlock': {
+    route: '/devices/simulate/access_code_unlock'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {
+      device_id: string
+      access_code_id: string
+    }
+    commonParams: {}
+    formData: {}
+    jsonResponse: {}
+  }
   '/devices/simulate/connect': {
     route: '/devices/simulate/connect'
     method: 'POST'
