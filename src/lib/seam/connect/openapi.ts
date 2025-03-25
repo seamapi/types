@@ -2737,14 +2737,21 @@ export default {
             description: 'Locking door.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -2760,13 +2767,16 @@ export default {
             description: 'Locking door succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -2783,10 +2793,9 @@ export default {
             description: 'Locking door failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['LOCK_DOOR'], type: 'string' },
               error: {
@@ -2797,7 +2806,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -2813,14 +2826,21 @@ export default {
             description: 'Unlocking door.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -2836,13 +2856,16 @@ export default {
             description: 'Unlocking door succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -2859,10 +2882,9 @@ export default {
             description: 'Unlocking door failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UNLOCK_DOOR'], type: 'string' },
               error: {
@@ -2873,7 +2895,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -2889,14 +2915,21 @@ export default {
             description: 'Reading credential data from physical encoder.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -2913,13 +2946,16 @@ export default {
               'Reading credential data from physical encoder succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: {
                 properties: {
                   acs_credential_on_encoder: {
@@ -3885,26 +3921,43 @@ export default {
               'Reading credential data from physical encoder failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SCAN_CREDENTIAL'], type: 'string' },
               error: {
                 oneOf: [
                   {
+                    description:
+                      "Error that doesn't fit into other specific error categories.",
                     properties: {
-                      message: { type: 'string' },
-                      type: { enum: ['uncategorized_error'], type: 'string' },
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['uncategorized_error'],
+                        type: 'string',
+                      },
                     },
                     required: ['type', 'message'],
                     type: 'object',
                   },
                   {
+                    description: 'Error to indicate an expired action attempt.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
                         enum: ['action_attempt_expired'],
                         type: 'string',
                       },
@@ -3925,7 +3978,11 @@ export default {
                   },
                 ],
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -3938,17 +3995,29 @@ export default {
             type: 'object',
           },
           {
-            description: 'Encoding credential data from physical encoder.',
+            description:
+              'Action attempt to track encoding credential data from the physical encoder onto a card.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              action_type: {
+                description: 'Type of action that the action attempt tracks.',
+                enum: ['ENCODE_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -3962,19 +4031,26 @@ export default {
           },
           {
             description:
-              'Encoding credential data from physical encoder succeeded.',
+              'Action attempt to indicate that encoding credential data from the physical encoder onto a card succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
-              error: { nullable: true },
+              action_type: {
+                description: 'Type of action that the action attempt tracks.',
+                enum: ['ENCODE_CREDENTIAL'],
+                type: 'string',
+              },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: {
                 description:
-                  'Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code.',
+                  'If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card.',
                 oneOf: [
                   {
                     description:
@@ -4763,7 +4839,6 @@ export default {
                     'x-route-path': '/acs/credentials/unmanaged',
                   },
                 ],
-                'x-route-path': '/acs/credentials',
               },
               status: { enum: ['success'], type: 'string' },
             },
@@ -4778,29 +4853,50 @@ export default {
           },
           {
             description:
-              'Encoding credential data from physical encoder failed.',
+              'Action attempt to indicate that encoding credential data from the physical encoder onto a card failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
-              action_type: { enum: ['ENCODE_CREDENTIAL'], type: 'string' },
+              action_type: {
+                description: 'Type of action that the action attempt tracks.',
+                enum: ['ENCODE_CREDENTIAL'],
+                type: 'string',
+              },
               error: {
                 oneOf: [
                   {
+                    description:
+                      "Error that doesn't fit into other specific error categories.",
                     properties: {
-                      message: { type: 'string' },
-                      type: { enum: ['uncategorized_error'], type: 'string' },
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
+                      type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
+                        enum: ['uncategorized_error'],
+                        type: 'string',
+                      },
                     },
                     required: ['type', 'message'],
                     type: 'object',
                   },
                   {
+                    description: 'Error to indicate an expired action attempt.',
                     properties: {
-                      message: { type: 'string' },
+                      message: {
+                        description:
+                          'Message for the error associated with the action attempt.',
+                        type: 'string',
+                      },
                       type: {
+                        description:
+                          'Type of the error associated with the action attempt.',
                         enum: ['action_attempt_expired'],
                         type: 'string',
                       },
@@ -4843,7 +4939,11 @@ export default {
                   },
                 ],
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -4859,17 +4959,24 @@ export default {
             description: 'Resetting sandbox workspace.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -4885,16 +4992,19 @@ export default {
             description: 'Resetting sandbox workspace succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
                 type: 'string',
               },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -4911,10 +5021,9 @@ export default {
             description: 'Resetting sandbox workspace failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['RESET_SANDBOX_WORKSPACE'],
@@ -4928,7 +5037,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -4944,14 +5057,21 @@ export default {
             description: 'Setting fan mode.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -4967,13 +5087,16 @@ export default {
             description: 'Setting fan mode succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -4990,10 +5113,9 @@ export default {
             description: 'Setting fan mode failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_FAN_MODE'], type: 'string' },
               error: {
@@ -5004,7 +5126,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5020,14 +5146,21 @@ export default {
             description: 'Setting HVAC mode.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5043,13 +5176,16 @@ export default {
             description: 'Setting HVAC mode succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5066,10 +5202,9 @@ export default {
             description: 'Setting HVAC mode failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SET_HVAC_MODE'], type: 'string' },
               error: {
@@ -5080,7 +5215,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5096,17 +5235,24 @@ export default {
             description: 'Activating climate preset.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5122,16 +5268,19 @@ export default {
             description: 'Activating climate preset succeeded.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
                 type: 'string',
               },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5148,10 +5297,9 @@ export default {
             description: 'Activating climate preset failed.',
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: {
                 enum: ['ACTIVATE_CLIMATE_PRESET'],
@@ -5165,7 +5313,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5180,14 +5332,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5202,13 +5361,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5224,10 +5386,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['SYNC_ACCESS_CODES'], type: 'string' },
               error: {
@@ -5238,7 +5399,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5253,14 +5418,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5275,13 +5447,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: { access_code: {} }, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5297,10 +5472,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -5311,7 +5485,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5326,14 +5504,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5348,13 +5533,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5370,10 +5558,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -5384,7 +5571,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5399,14 +5590,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5421,13 +5619,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: { access_code: {} }, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5443,10 +5644,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_ACCESS_CODE'], type: 'string' },
               error: {
@@ -5457,7 +5657,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5472,14 +5676,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5494,13 +5705,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: { noise_threshold: {} }, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5516,10 +5730,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['CREATE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -5530,7 +5743,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5545,14 +5762,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5567,13 +5791,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: {}, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5589,10 +5816,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['DELETE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -5603,7 +5829,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
@@ -5618,14 +5848,21 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
-              result: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
+              result: {
+                description:
+                  'Result of the action attempt. Null for pending action attempts.',
+                nullable: true,
+              },
               status: { enum: ['pending'], type: 'string' },
             },
             required: [
@@ -5640,13 +5877,16 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
-              error: { nullable: true },
+              error: {
+                description:
+                  'Errors associated with the action attempt. Null for successful action attempts.',
+                nullable: true,
+              },
               result: { properties: { noise_threshold: {} }, type: 'object' },
               status: { enum: ['success'], type: 'string' },
             },
@@ -5662,10 +5902,9 @@ export default {
           {
             properties: {
               action_attempt_id: {
-                description: 'The ID of the action attempt.',
+                description: 'ID of the action attempt.',
                 format: 'uuid',
                 type: 'string',
-                'x-title': 'Action Attempt ID',
               },
               action_type: { enum: ['UPDATE_NOISE_THRESHOLD'], type: 'string' },
               error: {
@@ -5676,7 +5915,11 @@ export default {
                 required: ['type', 'message'],
                 type: 'object',
               },
-              result: { nullable: true },
+              result: {
+                description:
+                  'Result of the action attempt. Null for failed action attempts.',
+                nullable: true,
+              },
               status: { enum: ['error'], type: 'string' },
             },
             required: [
