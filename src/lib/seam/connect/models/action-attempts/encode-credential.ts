@@ -11,7 +11,9 @@ import {
   common_succeeded_action_attempt,
 } from './common.js'
 
-const action_type = z.literal('ENCODE_CREDENTIAL')
+const action_type = z
+  .literal('ENCODE_CREDENTIAL')
+  .describe('Type of action that the action attempt tracks.')
 
 const no_credential_on_encoder_error = z.object({
   type: z.literal('no_credential_on_encoder'),
@@ -35,23 +37,33 @@ const error = z.union([
   credential_cannot_be_reissued,
 ])
 
-const result = acs_credential.or(unmanaged_acs_credential)
+const result = acs_credential
+  .or(unmanaged_acs_credential)
+  .describe(
+    'If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card.',
+  )
 
 export const encode_credential_action_attempt = z.discriminatedUnion('status', [
   common_pending_action_attempt
     .extend({
       action_type,
     })
-    .describe('Encoding credential data from physical encoder.'),
+    .describe(
+      'Action attempt to track encoding credential data from the physical encoder onto a card.',
+    ),
   common_succeeded_action_attempt
     .extend({
       action_type,
       result,
     })
-    .describe('Encoding credential data from physical encoder succeeded.'),
+    .describe(
+      'Action attempt to indicate that encoding credential data from the physical encoder onto a card succeeded.',
+    ),
   common_failed_action_attempt
     .extend({ action_type, error })
-    .describe('Encoding credential data from physical encoder failed.'),
+    .describe(
+      'Action attempt to indicate that encoding credential data from the physical encoder onto a card failed.',
+    ),
 ])
 
 export type EncodeCredentialActionAttempt = z.infer<
