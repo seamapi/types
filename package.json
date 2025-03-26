@@ -1,6 +1,6 @@
 {
   "name": "@seamapi/types",
-  "version": "1.367.2",
+  "version": "1.368.0",
   "description": "TypeScript types for the Seam API.",
   "type": "module",
   "main": "index.js",
@@ -89,7 +89,7 @@
     "npm": ">= 9.0.0"
   },
   "peerDependencies": {
-    "zod": "^3.21.4"
+    "zod": "^3.24.0"
   },
   "devDependencies": {
     "@seamapi/blueprint": "^0.37.1",
@@ -111,6 +111,6 @@
     "tsx": "^4.6.2",
     "typedoc": "^0.25.2",
     "typescript": "~5.3.3",
-    "zod": "^3.21.4"
+    "zod": "^3.24.0"
   }
 }
