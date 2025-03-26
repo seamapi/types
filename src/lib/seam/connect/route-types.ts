@@ -28,25 +28,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -55,25 +59,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -82,17 +90,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -429,18 +440,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -449,20 +465,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -740,18 +761,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -768,25 +795,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -795,25 +826,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -822,25 +857,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -849,25 +888,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -876,25 +919,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -903,17 +950,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -921,9 +971,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -932,25 +983,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -959,17 +1014,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -977,9 +1035,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -988,17 +1047,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -1006,9 +1068,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -1017,25 +1080,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -1044,17 +1111,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -1062,9 +1132,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -1895,25 +1966,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -1922,25 +1997,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -1949,17 +2028,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -2296,18 +2378,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -2316,20 +2403,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -2607,18 +2699,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -2635,25 +2733,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -2662,25 +2764,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -2689,25 +2795,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -2716,25 +2826,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -2743,25 +2857,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -2770,17 +2888,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -2788,9 +2909,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -2799,25 +2921,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -2826,17 +2952,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -2844,9 +2973,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -2855,17 +2985,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -2873,9 +3006,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -2884,25 +3018,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -2911,17 +3049,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -2929,9 +3070,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -4967,25 +5109,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -4994,25 +5140,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -5021,17 +5171,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -5368,18 +5521,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -5388,20 +5546,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -5679,18 +5842,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -5707,25 +5876,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -5734,25 +5907,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -5761,25 +5938,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -5788,25 +5969,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -5815,25 +6000,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -5842,17 +6031,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -5860,9 +6052,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -5871,25 +6064,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -5898,17 +6095,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -5916,9 +6116,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -5927,17 +6128,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -5945,9 +6149,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -5956,25 +6161,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -5983,17 +6192,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -6001,9 +6213,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -6821,25 +7034,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -6848,25 +7065,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -6875,17 +7096,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -7222,18 +7446,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -7242,20 +7471,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -7533,18 +7767,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -7561,25 +7801,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -7588,25 +7832,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -7615,25 +7863,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -7642,25 +7894,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -7669,25 +7925,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -7696,17 +7956,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -7714,9 +7977,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -7725,25 +7989,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -7752,17 +8020,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -7770,9 +8041,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -7781,17 +8053,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -7799,9 +8074,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -7810,25 +8086,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -7837,17 +8117,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -7855,9 +8138,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -10069,25 +10353,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -10096,25 +10384,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -10123,17 +10415,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -10470,18 +10765,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -10490,20 +10790,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -10781,18 +11086,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -10809,25 +11120,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -10836,25 +11151,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -10863,25 +11182,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -10890,25 +11213,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -10917,25 +11244,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -10944,17 +11275,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -10962,9 +11296,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -10973,25 +11308,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -11000,17 +11339,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -11018,9 +11360,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -11029,17 +11372,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -11047,9 +11393,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -11058,25 +11405,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -11085,17 +11436,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -11103,9 +11457,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -11178,25 +11533,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -11205,25 +11564,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -11232,17 +11595,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -11579,18 +11945,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -11599,20 +11970,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -11890,18 +12266,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -11918,25 +12300,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -11945,25 +12331,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -11972,25 +12362,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -11999,25 +12393,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -12026,25 +12424,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -12053,17 +12455,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -12071,9 +12476,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -12082,25 +12488,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -12109,17 +12519,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -12127,9 +12540,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -12138,17 +12552,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -12156,9 +12573,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -12167,25 +12585,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -12194,17 +12616,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -12212,9 +12637,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -14423,25 +14849,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -14450,25 +14880,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -14477,17 +14911,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -14824,18 +15261,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -14844,20 +15286,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -15135,18 +15582,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -15163,25 +15616,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -15190,25 +15647,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -15217,25 +15678,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -15244,25 +15709,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -15271,25 +15740,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -15298,17 +15771,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -15316,9 +15792,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -15327,25 +15804,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -15354,17 +15835,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -15372,9 +15856,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -15383,17 +15868,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -15401,9 +15889,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -15412,25 +15901,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -15439,17 +15932,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -15457,9 +15953,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -15481,25 +15978,29 @@ export interface Routes {
     jsonResponse: {
       action_attempts: Array<
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -15508,25 +16009,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -15535,17 +16040,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -15882,18 +16390,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -15902,20 +16415,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -16193,18 +16711,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -16221,25 +16745,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -16248,25 +16776,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -16275,25 +16807,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -16302,25 +16838,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -16329,25 +16869,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -16356,17 +16900,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -16374,9 +16921,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -16385,25 +16933,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -16412,17 +16964,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -16430,9 +16985,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -16441,17 +16997,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -16459,9 +17018,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -16470,25 +17030,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -16497,17 +17061,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -16515,9 +17082,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -26996,25 +27564,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -27023,25 +27595,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -27050,17 +27626,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -27397,18 +27976,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -27417,20 +28001,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -27708,18 +28297,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -27736,25 +28331,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -27763,25 +28362,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -27790,25 +28393,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -27817,25 +28424,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -27844,25 +28455,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -27871,17 +28486,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -27889,9 +28507,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -27900,25 +28519,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -27927,17 +28550,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -27945,9 +28571,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -27956,17 +28583,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -27974,9 +28604,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -27985,25 +28616,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -28012,17 +28647,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -28030,9 +28668,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -28056,25 +28695,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -28083,25 +28726,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -28110,17 +28757,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -28457,18 +29107,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -28477,20 +29132,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -28768,18 +29428,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -28796,25 +29462,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -28823,25 +29493,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -28850,25 +29524,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -28877,25 +29555,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -28904,25 +29586,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -28931,17 +29617,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -28949,9 +29638,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -28960,25 +29650,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -28987,17 +29681,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -29005,9 +29702,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -29016,17 +29714,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -29034,9 +29735,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -29045,25 +29747,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -29072,17 +29778,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -29090,9 +29799,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -31156,25 +31866,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -31183,25 +31897,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -31210,17 +31928,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -31557,18 +32278,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -31577,20 +32303,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -31868,18 +32599,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -31896,25 +32633,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -31923,25 +32664,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -31950,25 +32695,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -31977,25 +32726,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -32004,25 +32757,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -32031,17 +32788,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -32049,9 +32809,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -32060,25 +32821,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -32087,17 +32852,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -32105,9 +32873,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -32116,17 +32885,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -32134,9 +32906,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -32145,25 +32918,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -32172,17 +32949,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -32190,9 +32970,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -32227,25 +33008,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -32254,25 +33039,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -32281,17 +33070,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -32628,18 +33420,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -32648,20 +33445,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -32939,18 +33741,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -32967,25 +33775,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -32994,25 +33806,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -33021,25 +33837,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -33048,25 +33868,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -33075,25 +33899,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -33102,17 +33930,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -33120,9 +33951,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -33131,25 +33963,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -33158,17 +33994,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -33176,9 +34015,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -33187,17 +34027,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -33205,9 +34048,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -33216,25 +34060,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -33243,17 +34091,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -33261,9 +34112,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -33337,25 +34189,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -33364,25 +34220,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -33391,17 +34251,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -33738,18 +34601,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -33758,20 +34626,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -34049,18 +34922,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -34077,25 +34956,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -34104,25 +34987,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -34131,25 +35018,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -34158,25 +35049,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -34185,25 +35080,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -34212,17 +35111,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -34230,9 +35132,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -34241,25 +35144,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -34268,17 +35175,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -34286,9 +35196,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -34297,17 +35208,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -34315,9 +35229,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -34326,25 +35241,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -34353,17 +35272,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -34371,9 +35293,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -34788,25 +35711,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -34815,25 +35742,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -34842,17 +35773,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -35189,18 +36123,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -35209,20 +36148,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -35500,18 +36444,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -35528,25 +36478,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -35555,25 +36509,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -35582,25 +36540,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -35609,25 +36571,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -35636,25 +36602,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -35663,17 +36633,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -35681,9 +36654,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -35692,25 +36666,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -35719,17 +36697,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -35737,9 +36718,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -35748,17 +36730,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -35766,9 +36751,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -35777,25 +36763,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -35804,17 +36794,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -35822,9 +36815,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -35854,25 +36848,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -35881,25 +36879,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -35908,17 +36910,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -36255,18 +37260,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -36275,20 +37285,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -36566,18 +37581,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -36594,25 +37615,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -36621,25 +37646,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -36648,25 +37677,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -36675,25 +37708,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -36702,25 +37739,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -36729,17 +37770,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -36747,9 +37791,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -36758,25 +37803,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -36785,17 +37834,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -36803,9 +37855,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -36814,17 +37867,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -36832,9 +37888,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -36843,25 +37900,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -36870,17 +37931,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -36888,9 +37952,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -37888,25 +38953,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -37915,25 +38984,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -37942,17 +39015,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -38289,18 +39365,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -38309,20 +39390,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -38600,18 +39686,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -38628,25 +39720,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -38655,25 +39751,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -38682,25 +39782,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -38709,25 +39813,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -38736,25 +39844,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -38763,17 +39875,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -38781,9 +39896,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -38792,25 +39908,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -38819,17 +39939,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -38837,9 +39960,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -38848,17 +39972,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -38866,9 +39993,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -38877,25 +40005,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -38904,17 +40036,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -38922,9 +40057,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -38958,25 +40094,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -38985,25 +40125,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -39012,17 +40156,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -39359,18 +40506,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -39379,20 +40531,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -39670,18 +40827,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -39698,25 +40861,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -39725,25 +40892,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -39752,25 +40923,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -39779,25 +40954,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -39806,25 +40985,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -39833,17 +41016,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -39851,9 +41037,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -39862,25 +41049,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -39889,17 +41080,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -39907,9 +41101,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -39918,17 +41113,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -39936,9 +41134,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -39947,25 +41146,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -39974,17 +41177,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -39992,9 +41198,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -42020,25 +43227,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -42047,25 +43258,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -42074,17 +43289,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -42421,18 +43639,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -42441,20 +43664,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -42732,18 +43960,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -42760,25 +43994,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -42787,25 +44025,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -42814,25 +44056,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -42841,25 +44087,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -42868,25 +44118,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -42895,17 +44149,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -42913,9 +44170,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -42924,25 +44182,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -42951,17 +44213,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -42969,9 +44234,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -42980,17 +44246,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -42998,9 +44267,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -43009,25 +44279,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -43036,17 +44310,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -43054,9 +44331,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -43272,25 +44550,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -43299,25 +44581,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -43326,17 +44612,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -43673,18 +44962,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -43693,20 +44987,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -43984,18 +45283,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -44012,25 +45317,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -44039,25 +45348,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -44066,25 +45379,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -44093,25 +45410,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -44120,25 +45441,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -44147,17 +45472,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -44165,9 +45493,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -44176,25 +45505,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -44203,17 +45536,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -44221,9 +45557,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -44232,17 +45569,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -44250,9 +45590,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -44261,25 +45602,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -44288,17 +45633,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -44306,9 +45654,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -44365,25 +45714,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -44392,25 +45745,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -44419,17 +45776,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -44766,18 +46126,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -44786,20 +46151,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -45077,18 +46447,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -45105,25 +46481,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -45132,25 +46512,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -45159,25 +46543,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -45186,25 +46574,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -45213,25 +46605,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -45240,17 +46636,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -45258,9 +46657,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -45269,25 +46669,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -45296,17 +46700,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -45314,9 +46721,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -45325,17 +46733,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -45343,9 +46754,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -45354,25 +46766,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -45381,17 +46797,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -45399,9 +46818,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
@@ -48344,25 +49764,29 @@ export interface Routes {
       /**  */
       action_attempt:
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'LOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'LOCK_DOOR'
             error: {
@@ -48371,25 +49795,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UNLOCK_DOOR'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UNLOCK_DOOR'
             error: {
@@ -48398,17 +49826,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SCAN_CREDENTIAL'
             result: {
@@ -48745,18 +50176,23 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SCAN_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -48765,20 +50201,25 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
-            /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+            /** If an encoding attempt was successful, includes the `acs_credential` data that was encoded onto the card. */
             result:
               | {
                   /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
@@ -49056,18 +50497,24 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
+            /** Type of action that the action attempt tracks. */
             action_type: 'ENCODE_CREDENTIAL'
             error:
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'uncategorized_error'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
+                  /** Type of the error associated with the action attempt. */
                   type: 'action_attempt_expired'
+                  /** Message for the error associated with the action attempt. */
                   message: string
                 }
               | {
@@ -49084,25 +50531,29 @@ export interface Routes {
                 }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'RESET_SANDBOX_WORKSPACE'
             error: {
@@ -49111,25 +50562,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_FAN_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_FAN_MODE'
             error: {
@@ -49138,25 +50593,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SET_HVAC_MODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SET_HVAC_MODE'
             error: {
@@ -49165,25 +50624,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'ACTIVATE_CLIMATE_PRESET'
             error: {
@@ -49192,25 +50655,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'SYNC_ACCESS_CODES'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'SYNC_ACCESS_CODES'
             error: {
@@ -49219,17 +50686,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_ACCESS_CODE'
             result: {
@@ -49237,9 +50707,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_ACCESS_CODE'
             error: {
@@ -49248,25 +50719,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_ACCESS_CODE'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_ACCESS_CODE'
             error: {
@@ -49275,17 +50750,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_ACCESS_CODE'
             result: {
@@ -49293,9 +50771,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_ACCESS_CODE'
             error: {
@@ -49304,17 +50783,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             result: {
@@ -49322,9 +50804,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'CREATE_NOISE_THRESHOLD'
             error: {
@@ -49333,25 +50816,29 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             result: {}
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'DELETE_NOISE_THRESHOLD'
             error: {
@@ -49360,17 +50847,20 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'pending'
+            /** Result of the action attempt. Null for pending action attempts. */
             result: null
+            /** Errors associated with the action attempt. Null for pending action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'success'
+            /** Errors associated with the action attempt. Null for successful action attempts. */
             error: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             result: {
@@ -49378,9 +50868,10 @@ export interface Routes {
             }
           }
         | {
-            /** The ID of the action attempt. */
+            /** ID of the action attempt. */
             action_attempt_id: string
             status: 'error'
+            /** Result of the action attempt. Null for failed action attempts. */
             result: null
             action_type: 'UPDATE_NOISE_THRESHOLD'
             error: {
