@@ -86,6 +86,8 @@ export const acs_entrance = z.object({
   route_path: /acs/entrances
   ---
   Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+
+  In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the \`acs_entrance\` resources in your workspace or get these details for a specific \`acs_entrance\`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance.
 `)
 
 export type AcsEntrance = z.infer<typeof acs_entrance>
