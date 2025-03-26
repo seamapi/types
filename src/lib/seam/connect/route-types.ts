@@ -8191,7 +8191,10 @@ export interface Routes {
     formData: {}
     jsonResponse: {
       /** Group that defines the entrances to which a set of users has access and, in some cases, the access schedule for these entrances and users.
-    The `acs_access_group` object represents an [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
+    
+    Some access control systems use [access group](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups), which are sets of users, combined with sets of permissions. These permissions include both the set of areas or assets that the users can access and the schedule during which the users can access these areas or assets. Instead of assigning access rights individually to each access control system user, which can be time-consuming and error-prone, administrators can assign users to an access group, thereby ensuring that the users inherit all the permissions associated with the access group. Using access groups streamlines the process of managing large numbers of access control system users, especially in bigger organizations or complexes.
+    
+    To learn whether your access control system supports access groups, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems). */
       acs_access_group: {
         /** ID of the access group. */
         acs_access_group_id: string
@@ -8782,7 +8785,11 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -8980,7 +8987,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -9139,7 +9150,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -9302,7 +9317,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -9726,7 +9745,11 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -10197,7 +10220,11 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** Means by which an [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). For each `acs_credential` object, you define the access method. You can also specify additional properties, such as a PIN code. */
+      /** Means by which an [access control system user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) gains access at an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). The `acs_credential` object represents a [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) that provides an ACS user access within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An access control system generally uses digital means of access to authorize a user trying to get through a specific entrance. Examples of credentials include plastic key cards, mobile keys, biometric identifiers, and PIN codes. The electronic nature of these credentials, as well as the fact that access is centralized, enables both the rapid provisioning and rescinding of access and the ability to compile access audit logs.
+    
+    For each `acs_credential`, you define the access method. You can also specify additional properties, such as a PIN code, depending on the credential type. */
       acs_credential: {
         /** ID of the [credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials). */
         acs_credential_id: string
@@ -12748,7 +12775,9 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
+      /** Represents an [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details) within an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    In an access control system, an entrance is a secured door, gate, zone, or other method of entry. You can list details for all the `acs_entrance` resources in your workspace or get these details for a specific `acs_entrance`. You can also list all entrances associated with a specific credential, and you can list all credentials associated with a specific entrance. */
       acs_entrance: {
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) that contains the [entrance](https://docs.seam.co/latest/capability-guides/access-systems/retrieving-entrance-details). */
         acs_system_id: string
@@ -13107,7 +13136,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
+      /** Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    Within an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.
+    
+    For details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs). */
       acs_system: {
         /** ID of the default credential manager `acs_system` for this [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
         default_credential_manager_acs_system_id?: (string | null) | undefined
@@ -13661,7 +13694,11 @@ export interface Routes {
     commonParams: {}
     formData: {}
     jsonResponse: {
-      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
+      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An `acs_user` typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
+    
+    For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems). */
       acs_user: {
         /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         acs_user_id: string
@@ -13868,7 +13905,11 @@ export interface Routes {
     }
     formData: {}
     jsonResponse: {
-      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
+      /** Represents a [user](https://docs.seam.co/latest/capability-guides/access-systems/user-management) in an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).
+    
+    An `acs_user` typically refers to an individual who requires access, like an employee or resident. Each user can possess multiple credentials that serve as their keys or identifiers for access. The type of credential can vary widely. For example, in the Salto system, a user can have a PIN code, a mobile app account, and a fob. In other platforms, it is not uncommon for a user to have more than one of the same credential type, such as multiple key cards. Additionally, these credentials can have a schedule or validity period.
+    
+    For details about how to configure `acs_user`s in your access control system, see the corresponding [system integration guide](https://docs.seam.co/latest/device-and-system-integration-guides/overview#access-control-systems). */
       acs_user: {
         /** ID of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management). */
         acs_user_id: string
