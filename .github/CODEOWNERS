@@ -1,3 +1,4 @@
 * @seamapi/customer-experience
+/src/lib/seam/connect @seamapi/docs
 /package-lock.json @seambot
 /package.json @seambot
