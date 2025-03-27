@@ -28426,6 +28426,254 @@ export default {
         'x-title': 'Update a Climate Preset',
       },
     },
+    '/unstable_access_grants/create': {
+      post: {
+        description: 'Creates a new access grant.',
+        operationId: 'unstableAccessGrantsCreatePost',
+        requestBody: {
+          content: {
+            'application/json': {
+              schema: {
+                allOf: [
+                  {
+                    oneOf: [
+                      {
+                        properties: {
+                          user_identity_id: {
+                            description:
+                              'ID of user identity for whom access is being granted.',
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      {
+                        properties: {
+                          user_identity: {
+                            description:
+                              'When used, creates a new user identity with the given details, and grants them access.',
+                            properties: {
+                              email_address: {
+                                description:
+                                  'Unique email address for the user identity.',
+                                format: 'email',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              full_name: {
+                                minLength: 1,
+                                nullable: true,
+                                type: 'string',
+                              },
+                              phone_number: {
+                                description:
+                                  'Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100).',
+                                nullable: true,
+                                type: 'string',
+                              },
+                            },
+                            type: 'object',
+                            'x-route-path': '/user_identities',
+                          },
+                        },
+                        type: 'object',
+                      },
+                    ],
+                  },
+                  {
+                    properties: {
+                      desired_access_methods: {
+                        items: {
+                          properties: {
+                            mode: {
+                              description:
+                                'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                              enum: ['code', 'card', 'mobile_key'],
+                              type: 'string',
+                            },
+                          },
+                          required: ['mode'],
+                          type: 'object',
+                        },
+                        type: 'array',
+                      },
+                      ends_at: {
+                        description:
+                          'Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                      location: {
+                        description:
+                          'When used, creates a new location with the given entrances and devices, and gives the user access to this location.',
+                        properties: {
+                          acs_entrance_ids: {
+                            default: [],
+                            description:
+                              'Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                          device_ids: {
+                            default: [],
+                            description:
+                              'Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted.',
+                            items: { format: 'uuid', type: 'string' },
+                            type: 'array',
+                          },
+                        },
+                        type: 'object',
+                      },
+                      location_ids: {
+                        description:
+                          'Set of IDs of existing locations to which access is being granted.',
+                        items: { format: 'uuid', type: 'string' },
+                        type: 'array',
+                      },
+                      starts_at: {
+                        description:
+                          'Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format.',
+                        format: 'date-time',
+                        type: 'string',
+                      },
+                    },
+                    required: ['desired_access_methods'],
+                    type: 'object',
+                  },
+                ],
+              },
+            },
+          },
+        },
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    access_grant: {
+                      properties: {
+                        access_grant_id: {
+                          description: 'ID of the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        access_methods: {
+                          description:
+                            'Access methods associated with this access grant.',
+                          items: {
+                            properties: {
+                              access_method_key: {
+                                description:
+                                  'Key for the access method - unique within an access grant.',
+                                type: 'string',
+                              },
+                              created_at: {
+                                description:
+                                  'Date and time at which the access method was created.',
+                                format: 'date-time',
+                                type: 'string',
+                              },
+                              display_name: {
+                                description:
+                                  'Display name of the access method.',
+                                type: 'string',
+                              },
+                              issued_at: {
+                                description:
+                                  'Date and time at which the access method was issued.',
+                                format: 'date-time',
+                                nullable: true,
+                                type: 'string',
+                              },
+                              mode: {
+                                description:
+                                  'Access method mode. Supported values: `code`, `card`, `mobile_key`.',
+                                enum: ['code', 'card', 'mobile_key'],
+                                type: 'string',
+                              },
+                            },
+                            required: [
+                              'access_method_key',
+                              'display_name',
+                              'mode',
+                              'created_at',
+                              'issued_at',
+                            ],
+                            type: 'object',
+                            'x-undocumented': 'Unreleased.',
+                          },
+                          type: 'array',
+                        },
+                        created_at: {
+                          description:
+                            'Date and time at which the access grant was created.',
+                          format: 'date-time',
+                          type: 'string',
+                        },
+                        display_name: {
+                          description: 'Display name of the access grant.',
+                          type: 'string',
+                        },
+                        location_ids: {
+                          description:
+                            'IDs of the locations to which access is being given.',
+                          items: { format: 'uuid', type: 'string' },
+                          type: 'array',
+                        },
+                        user_identity_id: {
+                          description:
+                            'ID of user identity to which access is being granted.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                        workspace_id: {
+                          description:
+                            'Unique identifier for the Seam workspace associated with the access grant.',
+                          format: 'uuid',
+                          type: 'string',
+                        },
+                      },
+                      required: [
+                        'workspace_id',
+                        'access_grant_id',
+                        'user_identity_id',
+                        'location_ids',
+                        'access_methods',
+                        'display_name',
+                        'created_at',
+                      ],
+                      type: 'object',
+                      'x-undocumented': 'Unreleased.',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['access_grant', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [
+          { pat_with_workspace: [] },
+          { console_session_with_workspace: [] },
+          { api_key: [] },
+        ],
+        summary: '/unstable_access_grants/create',
+        tags: [],
+        'x-fern-sdk-group-name': ['unstable_access_grants'],
+        'x-fern-sdk-method-name': 'create',
+        'x-fern-sdk-return-value': 'access_grant',
+        'x-response-key': 'access_grant',
+        'x-title': 'Create an Access Grant',
+        'x-undocumented': 'Unreleased.',
+      },
+    },
     '/unstable_locations/add_devices': {
       post: {
         description:
