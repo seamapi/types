@@ -4,6 +4,7 @@ export const pagination = z
   .object({
     next_page_cursor: z
       .string()
+      .base64()
       .nullable()
       .describe(
         'Opaque value that can be used to select the next page of results via the `page_cursor` parameter.',
