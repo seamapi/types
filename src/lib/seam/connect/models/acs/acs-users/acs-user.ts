@@ -193,6 +193,8 @@ export type AcsUserUnappliedModificationMap = z.infer<
 const user_fields = z.object({
   full_name: z
     .string()
+    .trim()
+    .min(1)
     .optional()
     .describe(
       'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',

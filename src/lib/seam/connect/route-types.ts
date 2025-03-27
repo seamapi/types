@@ -46988,6 +46988,81 @@ export interface Routes {
     formData: {}
     jsonResponse: {}
   }
+  '/unstable_access_grants/create': {
+    route: '/unstable_access_grants/create'
+    method: 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: (
+      | {
+          /** ID of user identity for whom access is being granted. */
+          user_identity_id?: string | undefined
+        }
+      | {
+          /** When used, creates a new user identity with the given details, and grants them access. */
+          user_identity?:
+            | {
+                /** Unique email address for the user identity. */
+                email_address?: (string | null) | undefined
+                /** Unique phone number for the user identity in [E.164 format](https://www.itu.int/rec/T-REC-E.164/en) (for example, +15555550100). */
+                phone_number?: (string | null) | undefined
+                full_name?: (string | null) | undefined
+              }
+            | undefined
+        }
+    ) & {
+      /** Set of IDs of existing locations to which access is being granted. */
+      location_ids?: string[] | undefined
+      /** When used, creates a new location with the given entrances and devices, and gives the user access to this location. */
+      location?:
+        | {
+            /** Set of IDs of the [entrances](https://docs.seam.co/latest/api/acs/systems/list) to add to the location to which access is being granted. */
+            acs_entrance_ids?: string[]
+            /** Set of IDs of the [devices](https://docs.seam.co/latest/api/devices/list) to add to the location to which access is being granted. */
+            device_ids?: string[]
+          }
+        | undefined
+      desired_access_methods: Array<{
+        /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+        mode: 'code' | 'card' | 'mobile_key'
+      }>
+      /** Date and time at which the validity of the new grant starts, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. */
+      starts_at?: string | undefined
+      /** Date and time at which the validity of the new grant ends, in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format. Must be a time in the future and after `starts_at`. */
+      ends_at?: string | undefined
+    }
+    formData: {}
+    jsonResponse: {
+      /**  */
+      access_grant: {
+        /** Unique identifier for the Seam workspace associated with the access grant. */
+        workspace_id: string
+        /** ID of the access grant. */
+        access_grant_id: string
+        /** ID of user identity to which access is being granted. */
+        user_identity_id: string
+        /** IDs of the locations to which access is being given. */
+        location_ids: string[]
+        /** Access methods associated with this access grant. */
+        access_methods: Array<{
+          /** Key for the access method - unique within an access grant. */
+          access_method_key: string
+          /** Display name of the access method. */
+          display_name: string
+          /** Access method mode. Supported values: `code`, `card`, `mobile_key`. */
+          mode: 'code' | 'card' | 'mobile_key'
+          /** Date and time at which the access method was created. */
+          created_at: string
+          /** Date and time at which the access method was issued. */
+          issued_at: string | null
+        }>
+        /** Display name of the access grant. */
+        display_name: string
+        /** Date and time at which the access grant was created. */
+        created_at: string
+      }
+    }
+  }
   '/unstable_locations/add_devices': {
     route: '/unstable_locations/add_devices'
     method: 'POST' | 'PUT'
