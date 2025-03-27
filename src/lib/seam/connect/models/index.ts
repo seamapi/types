@@ -1,4 +1,5 @@
 export * from './access-codes/index.js'
+export * from './access-grants/index.js'
 export * from './acs/index.js'
 export * from './action-attempts/index.js'
 export * from './bridges/index.js'

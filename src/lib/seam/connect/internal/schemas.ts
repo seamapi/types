@@ -1,5 +1,7 @@
 export {
   access_code_code_constraint,
+  access_grant,
+  access_method,
   acs_access_group,
   acs_access_group_external_type,
   acs_credential,
