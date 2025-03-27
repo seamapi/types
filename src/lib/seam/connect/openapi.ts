@@ -2421,6 +2421,7 @@ export default {
           full_name: {
             description:
               'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+            minLength: 1,
             type: 'string',
           },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
@@ -14948,6 +14949,7 @@ export default {
           full_name: {
             description:
               'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+            minLength: 1,
             type: 'string',
           },
           hid_acs_system_id: { format: 'uuid', type: 'string' },
@@ -21028,6 +21030,7 @@ export default {
                   full_name: {
                     description:
                       'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                    minLength: 1,
                     type: 'string',
                   },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
@@ -21111,6 +21114,7 @@ export default {
                   full_name: {
                     description:
                       'Full name of the [ACS user](https://docs.seam.co/latest/capability-guides/access-systems/user-management).',
+                    minLength: 1,
                     type: 'string',
                   },
                   hid_acs_system_id: { format: 'uuid', type: 'string' },
@@ -22892,6 +22896,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'access_code_lock',
         'x-response-key': null,
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/devices/simulate/access_code_unlock': {
@@ -22937,6 +22942,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'access_code_unlock',
         'x-response-key': null,
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/devices/simulate/connect': {
