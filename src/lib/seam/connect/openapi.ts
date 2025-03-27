@@ -22896,6 +22896,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'access_code_lock',
         'x-response-key': null,
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/devices/simulate/access_code_unlock': {
@@ -22941,6 +22942,7 @@ export default {
         'x-fern-sdk-group-name': ['devices', 'simulate'],
         'x-fern-sdk-method-name': 'access_code_unlock',
         'x-response-key': null,
+        'x-undocumented': 'Unreleased.',
       },
     },
     '/devices/simulate/connect': {
