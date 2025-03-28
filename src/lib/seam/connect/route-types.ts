@@ -8531,6 +8531,10 @@ export interface Routes {
           | Array<
               | {
                   created_at: string
+                  modification_code: 'create'
+                }
+              | {
+                  created_at: string
                   modification_code: 'profile'
                   modified_from: {
                     email_address?: (string | null) | undefined
@@ -13819,6 +13823,10 @@ export interface Routes {
           | Array<
               | {
                   created_at: string
+                  modification_code: 'create'
+                }
+              | {
+                  created_at: string
                   modification_code: 'profile'
                   modified_from: {
                     email_address?: (string | null) | undefined
@@ -14030,6 +14038,10 @@ export interface Routes {
           | Array<
               | {
                   created_at: string
+                  modification_code: 'create'
+                }
+              | {
+                  created_at: string
                   modification_code: 'profile'
                   modified_from: {
                     email_address?: (string | null) | undefined
@@ -14235,6 +14247,10 @@ export interface Routes {
         /**  */
         pending_modifications?:
           | Array<
+              | {
+                  created_at: string
+                  modification_code: 'create'
+                }
               | {
                   created_at: string
                   modification_code: 'profile'
@@ -14576,6 +14592,10 @@ export interface Routes {
           | Array<
               | {
                   created_at: string
+                  modification_code: 'create'
+                }
+              | {
+                  created_at: string
                   modification_code: 'profile'
                   modified_from: {
                     email_address?: (string | null) | undefined
@@ -14771,6 +14791,10 @@ export interface Routes {
         /**  */
         pending_modifications?:
           | Array<
+              | {
+                  created_at: string
+                  modification_code: 'create'
+                }
               | {
                   created_at: string
                   modification_code: 'profile'
@@ -49624,6 +49648,10 @@ export interface Routes {
         /**  */
         pending_modifications?:
           | Array<
+              | {
+                  created_at: string
+                  modification_code: 'create'
+                }
               | {
                   created_at: string
                   modification_code: 'profile'

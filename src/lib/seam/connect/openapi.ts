@@ -2449,6 +2449,14 @@ export default {
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
+                    modification_code: { enum: ['create'], type: 'string' },
+                  },
+                  required: ['created_at', 'modification_code'],
+                  type: 'object',
+                },
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
                     modification_code: { enum: ['profile'], type: 'string' },
                     modified_from: {
                       properties: {
@@ -14974,6 +14982,14 @@ export default {
             items: {
               discriminator: { propertyName: 'modification_code' },
               oneOf: [
+                {
+                  properties: {
+                    created_at: { format: 'date-time', type: 'string' },
+                    modification_code: { enum: ['create'], type: 'string' },
+                  },
+                  required: ['created_at', 'modification_code'],
+                  type: 'object',
+                },
                 {
                   properties: {
                     created_at: { format: 'date-time', type: 'string' },
