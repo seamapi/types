@@ -26200,6 +26200,151 @@ export default {
         'x-undocumented': 'Seam Bridge Client only.',
       },
     },
+    '/seam/bridge/v1/bridge_connected_systems/list': {
+      get: {
+        description:
+          'Returns the bridge connected systems associated with the session token used.',
+        operationId: 'seamBridgeV1BridgeConnectedSystemsListGet',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_connected_systems: {
+                      items: {
+                        properties: {
+                          acs_system_display_name: { type: 'string' },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          bridge_created_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          bridge_id: { format: 'uuid', type: 'string' },
+                          connected_account_created_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          connected_account_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_display_name: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'bridge_id',
+                          'bridge_created_at',
+                          'connected_account_id',
+                          'connected_account_created_at',
+                          'acs_system_id',
+                          'acs_system_display_name',
+                          'workspace_id',
+                          'workspace_display_name',
+                        ],
+                        type: 'object',
+                        'x-route-path':
+                          '/seam/bridge/v1/bridge_connected_systems',
+                        'x-undocumented': 'Seam Bridge Client only.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_connected_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary: '/seam/bridge/v1/bridge_connected_systems/list',
+        tags: [],
+        'x-fern-ignore': true,
+        'x-response-key': 'bridge_connected_systems',
+        'x-title': 'List Bridge Connected Systems',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+      post: {
+        description:
+          'Returns the bridge connected systems associated with the session token used.',
+        operationId: 'seamBridgeV1BridgeConnectedSystemsListPost',
+        responses: {
+          200: {
+            content: {
+              'application/json': {
+                schema: {
+                  properties: {
+                    bridge_connected_systems: {
+                      items: {
+                        properties: {
+                          acs_system_display_name: { type: 'string' },
+                          acs_system_id: { format: 'uuid', type: 'string' },
+                          bridge_created_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          bridge_id: { format: 'uuid', type: 'string' },
+                          connected_account_created_at: {
+                            format: 'date-time',
+                            type: 'string',
+                          },
+                          connected_account_id: {
+                            format: 'uuid',
+                            type: 'string',
+                          },
+                          workspace_display_name: { type: 'string' },
+                          workspace_id: { format: 'uuid', type: 'string' },
+                        },
+                        required: [
+                          'bridge_id',
+                          'bridge_created_at',
+                          'connected_account_id',
+                          'connected_account_created_at',
+                          'acs_system_id',
+                          'acs_system_display_name',
+                          'workspace_id',
+                          'workspace_display_name',
+                        ],
+                        type: 'object',
+                        'x-route-path':
+                          '/seam/bridge/v1/bridge_connected_systems',
+                        'x-undocumented': 'Seam Bridge Client only.',
+                      },
+                      type: 'array',
+                    },
+                    ok: { type: 'boolean' },
+                  },
+                  required: ['bridge_connected_systems', 'ok'],
+                  type: 'object',
+                },
+              },
+            },
+            description: 'OK',
+          },
+          400: { description: 'Bad Request' },
+          401: { description: 'Unauthorized' },
+        },
+        security: [{ bridge_client_session: [] }],
+        summary: '/seam/bridge/v1/bridge_connected_systems/list',
+        tags: [],
+        'x-fern-sdk-group-name': [
+          'seam',
+          'bridge',
+          'v1',
+          'bridge_connected_systems',
+        ],
+        'x-fern-sdk-method-name': 'list',
+        'x-fern-sdk-return-value': 'bridge_connected_systems',
+        'x-response-key': 'bridge_connected_systems',
+        'x-title': 'List Bridge Connected Systems',
+        'x-undocumented': 'Seam Bridge Client only.',
+      },
+    },
     '/thermostats/activate_climate_preset': {
       post: {
         description:
