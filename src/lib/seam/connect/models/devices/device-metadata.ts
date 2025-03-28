@@ -168,6 +168,7 @@ export const device_metadata = z
         unlock_via_gateway: z.boolean(),
         lock_command: z.boolean(),
         incomplete_keyboard_passcode: z.boolean(),
+        wifi: z.boolean(),
       }),
       has_gateway: z.boolean().optional(),
       wireless_keypads: z
