@@ -7,6 +7,10 @@ const common_pending_modification = z.object({
   created_at: z.string().datetime(),
 })
 
+const lifecycle_create = common_pending_modification.extend({
+  modification_code: z.literal('create'),
+})
+
 const acs_user_profile = z.object({
   email_address: z.string().email().nullable(),
   full_name: z.string().nullable(),
@@ -48,6 +52,7 @@ const acs_access_group_membership_pending_modification =
 export const acs_user_pending_modification = z.discriminatedUnion(
   'modification_code',
   [
+    lifecycle_create,
     profile_pending_modification,
     access_schedule_pending_modification,
     suspension_state_pending_modification,
@@ -60,6 +65,7 @@ export type AcsUserPendingModification = z.infer<
 >
 
 const acs_user_pending_modifications_map = z.object({
+  lifecycle_create: lifecycle_create.optional().nullable(),
   'profile.full_name': common_pending_modification
     .extend({
       modification_code: z.literal('profile'),
