@@ -20,6 +20,7 @@ export {
   battery_status,
   bridge,
   bridge_client_session,
+  bridge_connected_system,
   capabilities,
   climate_preset,
   climate_setting,
