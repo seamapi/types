@@ -49828,6 +49828,7 @@ export interface Routes {
       webview_primary_button_color?: string | undefined
       webview_primary_button_text_color?: string | undefined
       webview_logo_shape?: ('circle' | 'square') | undefined
+      webview_success_message?: string | undefined
     }
     commonParams: {}
     formData: {}
