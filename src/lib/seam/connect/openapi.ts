@@ -7482,6 +7482,7 @@ export default {
                               passcode: { type: 'boolean' },
                               passcode_management: { type: 'boolean' },
                               unlock_via_gateway: { type: 'boolean' },
+                              wifi: { type: 'boolean' },
                             },
                             required: [
                               'passcode',
@@ -7489,6 +7490,7 @@ export default {
                               'unlock_via_gateway',
                               'lock_command',
                               'incomplete_keyboard_passcode',
+                              'wifi',
                             ],
                             type: 'object',
                           },

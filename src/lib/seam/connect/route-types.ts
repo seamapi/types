@@ -18209,6 +18209,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -19302,6 +19303,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -24127,6 +24129,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -25035,6 +25038,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -26128,6 +26132,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -27035,6 +27040,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -30425,6 +30431,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -31332,6 +31339,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -38438,6 +38446,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -41809,6 +41818,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -42716,6 +42726,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -47857,6 +47868,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
@@ -48766,6 +48778,7 @@ export interface Routes {
                   unlock_via_gateway: boolean
                   lock_command: boolean
                   incomplete_keyboard_passcode: boolean
+                  wifi: boolean
                 }
                 has_gateway?: boolean | undefined
                 wireless_keypads?:
