@@ -35736,6 +35736,26 @@ export interface Routes {
       }
     }
   }
+  '/seam/bridge/v1/bridge_connected_systems/list': {
+    route: '/seam/bridge/v1/bridge_connected_systems/list'
+    method: 'GET' | 'POST'
+    queryParams: {}
+    jsonBody: {}
+    commonParams: {}
+    formData: {}
+    jsonResponse: {
+      bridge_connected_systems: Array<{
+        bridge_id: string
+        bridge_created_at: string
+        connected_account_id: string
+        connected_account_created_at: string
+        acs_system_id: string
+        acs_system_display_name: string
+        workspace_id: string
+        workspace_display_name: string
+      }>
+    }
+  }
   '/thermostats/activate_climate_preset': {
     route: '/thermostats/activate_climate_preset'
     method: 'POST'
@@ -49808,6 +49828,7 @@ export interface Routes {
       webview_primary_button_color?: string | undefined
       webview_primary_button_text_color?: string | undefined
       webview_logo_shape?: ('circle' | 'square') | undefined
+      webview_success_message?: string | undefined
     }
     commonParams: {}
     formData: {}
