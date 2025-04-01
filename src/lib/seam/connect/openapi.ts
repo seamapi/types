@@ -22305,6 +22305,20 @@ export default {
                       'Returns accounts whose custom_metadata contains all of the provided key/value pairs.',
                     type: 'object',
                   },
+                  limit: {
+                    default: 11_000,
+                    description:
+                      'Maximum number of records to return per page.',
+                    exclusiveMinimum: true,
+                    minimum: 0,
+                    type: 'integer',
+                  },
+                  page_cursor: {
+                    description:
+                      "Identifies the specific page of results to return, obtained from the previous page's `next_page_cursor`.",
+                    nullable: true,
+                    type: 'string',
+                  },
                   user_identifier_key: {
                     description:
                       'Returns accounts that can be accessed by the provided user_identifier_key.',
@@ -22327,8 +22341,9 @@ export default {
                       type: 'array',
                     },
                     ok: { type: 'boolean' },
+                    pagination: { $ref: '#/components/schemas/pagination' },
                   },
-                  required: ['connected_accounts', 'ok'],
+                  required: ['connected_accounts', 'pagination', 'ok'],
                   type: 'object',
                 },
               },
