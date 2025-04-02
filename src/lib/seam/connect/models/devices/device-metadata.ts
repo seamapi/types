@@ -272,6 +272,12 @@ export const device_metadata = z
       serial_no: z.string(),
       device_type: z.string(),
     }),
+
+    sensi_metadata: z.object({
+      device_id: z.string(),
+      device_name: z.string(),
+      product_type: z.string(),
+    }),
   })
   .partial()
 
