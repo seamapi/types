@@ -17412,6 +17412,7 @@ export interface Routes {
             | 'assa_abloy_vostio_credential_service'
             | 'tado'
             | 'salto_space'
+            | 'sensi'
             | 'yale_access'
             | 'hid_cm'
             | 'google_nest'
@@ -17933,6 +17934,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -18347,6 +18349,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -18853,6 +18862,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -18895,6 +18905,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -18938,6 +18949,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'akiles'
             | 'tado'
+            | 'sensi'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -19027,6 +19039,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -19441,6 +19454,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -19962,6 +19982,7 @@ export interface Routes {
           | 'assa_abloy_vostio_credential_service'
           | 'tado'
           | 'salto_space'
+          | 'sensi'
         display_name: string
         image_url: string
         provider_categories: Array<
@@ -20094,6 +20115,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -20442,6 +20464,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -20484,6 +20507,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -20527,6 +20551,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'akiles'
             | 'tado'
+            | 'sensi'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -20616,6 +20641,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Unique identifier for the account associated with the device. */
@@ -21348,6 +21374,22 @@ export interface Routes {
                 acs_system_id: string
                 acs_credential_id: string
                 event_type: 'acs_credential.reissued'
+              }
+            | {
+                /** ID of the event. */
+                event_id: string
+                /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+                workspace_id: string
+                /** Date and time at which the event was created. */
+                created_at: string
+                /** Date and time at which the event occurred. */
+                occurred_at: string
+                /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+                connected_account_id?: string | undefined
+                /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+                acs_system_id: string
+                acs_credential_id: string
+                event_type: 'acs_credential.invalidated'
               }
             | {
                 /** ID of the event. */
@@ -22333,6 +22375,7 @@ export interface Routes {
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
             | 'acs_credential.reissued'
+            | 'acs_credential.invalidated'
             | 'acs_user.deleted'
             | 'acs_encoder.added'
             | 'acs_encoder.removed'
@@ -22415,6 +22458,7 @@ export interface Routes {
             | 'acs_credential.deleted'
             | 'acs_credential.issued'
             | 'acs_credential.reissued'
+            | 'acs_credential.invalidated'
             | 'acs_user.deleted'
             | 'acs_encoder.added'
             | 'acs_encoder.removed'
@@ -22868,6 +22912,22 @@ export interface Routes {
             acs_system_id: string
             acs_credential_id: string
             event_type: 'acs_credential.reissued'
+          }
+        | {
+            /** ID of the event. */
+            event_id: string
+            /** ID of the [workspace](https://docs.seam.co/latest/core-concepts/workspaces). */
+            workspace_id: string
+            /** Date and time at which the event was created. */
+            created_at: string
+            /** Date and time at which the event occurred. */
+            occurred_at: string
+            /** ID of the [connected account](https://docs.seam.co/latest/core-concepts/connected-accounts). */
+            connected_account_id?: string | undefined
+            /** ID of the [ACS system](https://docs.seam.co/latest/capability-guides/access-systems). */
+            acs_system_id: string
+            acs_credential_id: string
+            event_type: 'acs_credential.invalidated'
           }
         | {
             /** ID of the event. */
@@ -23853,6 +23913,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -24267,6 +24328,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -24762,6 +24830,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -25176,6 +25245,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -25682,6 +25758,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -25724,6 +25801,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -25767,6 +25845,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'akiles'
             | 'tado'
+            | 'sensi'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -25856,6 +25935,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -26270,6 +26350,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -26764,6 +26851,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -27178,6 +27266,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -29981,6 +30076,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           )
@@ -30023,6 +30119,7 @@ export interface Routes {
                 | 'nest_thermostat'
                 | 'honeywell_resideo_thermostat'
                 | 'tado_thermostat'
+                | 'sensi_thermostat'
               )
             | ('ios_phone' | 'android_phone')
           >
@@ -30066,6 +30163,7 @@ export interface Routes {
             | 'honeywell_resideo'
             | 'akiles'
             | 'tado'
+            | 'sensi'
           )
         | undefined
       /** Array of device IDs by which to filter devices. */
@@ -30155,6 +30253,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -30569,6 +30668,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -31063,6 +31169,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -31477,6 +31584,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -38170,6 +38284,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -38584,6 +38699,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -41337,6 +41459,7 @@ export interface Routes {
             | 'nest_thermostat'
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
+            | 'sensi_thermostat'
           )
         | undefined
       /** Array of device types by which to filter devices. */
@@ -41346,6 +41469,7 @@ export interface Routes {
             | 'nest_thermostat'
             | 'honeywell_resideo_thermostat'
             | 'tado_thermostat'
+            | 'sensi_thermostat'
           >
         | undefined
       /** Manufacturer by which to filter devices. */
@@ -41439,6 +41563,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -41853,6 +41978,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -42347,6 +42479,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -42761,6 +42894,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -47489,6 +47629,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -47903,6 +48044,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
@@ -48399,6 +48547,7 @@ export interface Routes {
               | 'nest_thermostat'
               | 'honeywell_resideo_thermostat'
               | 'tado_thermostat'
+              | 'sensi_thermostat'
             )
           | ('ios_phone' | 'android_phone')
         /** Optional nickname to describe the device, settable through Seam */
@@ -48813,6 +48962,13 @@ export interface Routes {
             | {
                 serial_no: string
                 device_type: string
+              }
+            | undefined
+          sensi_metadata?:
+            | {
+                device_id: string
+                device_name: string
+                product_type: string
               }
             | undefined
         }) &
