@@ -48,6 +48,7 @@ export const DEVICE_PROVIDERS = {
   ASSA_ABLOY_VOSTIO_CREDENTIAL_SERVICE: 'assa_abloy_vostio_credential_service',
   TADO: 'tado',
   SALTO_SPACE: 'salto_space',
+  SENSI: 'sensi',
 } as const
 
 export type DeviceProviderName =

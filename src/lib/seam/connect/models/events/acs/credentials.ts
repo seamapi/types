@@ -37,8 +37,18 @@ export const acs_credential_reissued = acs_credential_event.extend({
   An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was reissued.
 `)
 
+export const acs_credential_invalidated = acs_credential_event.extend({
+  event_type: z.literal('acs_credential.invalidated'),
+}).describe(`
+  ---
+  route_path: /acs/credentials
+  ---
+  An [ACS credential](https://docs.seam.co/latest/capability-guides/access-systems/managing-credentials) was invalidated.
+`)
+
 export const acs_credential_events = [
   acs_credential_deleted_event,
   acs_credential_issued,
   acs_credential_reissued,
+  acs_credential_invalidated,
 ] as const

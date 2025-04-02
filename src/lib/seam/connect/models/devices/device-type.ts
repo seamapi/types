@@ -69,6 +69,7 @@ export const THERMOSTAT_DEVICE_TYPE = {
   NEST_THERMOSTAT: 'nest_thermostat',
   HONEYWELL_RESIDEO_THERMOSTAT: 'honeywell_resideo_thermostat',
   TADO_THERMOSTAT: 'tado_thermostat',
+  SENSI_THERMOSTAT: 'sensi_thermostat',
 } as const
 
 type ThermostatDeviceTypeFromMapping =
