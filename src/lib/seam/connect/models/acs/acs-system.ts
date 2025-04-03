@@ -79,7 +79,14 @@ const seam_bridge_disconnected = common_acs_system_error.extend({
 })
   .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
   This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).
-  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+
+const bridge_disconnected = common_acs_system_error.extend({
+  error_code: z.literal('bridge_disconnected').describe(error_code_description),
+  is_bridge_error: z.boolean().optional(),
+})
+  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+    See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
 
 const visionline_instance_unreachable = common_acs_system_error.extend({
   error_code: z
@@ -132,6 +139,7 @@ const salto_ks_certification_expired = common_acs_system_error
 const acs_system_error = z
   .discriminatedUnion('error_code', [
     seam_bridge_disconnected,
+    bridge_disconnected,
     visionline_instance_unreachable,
     salto_ks_subscription_limit_exceeded,
     acs_system_disconnected,
@@ -144,6 +152,7 @@ const acs_system_error = z
 
 export const acs_system_error_map = z.object({
   seam_bridge_disconnected: seam_bridge_disconnected.optional().nullable(),
+  bridge_disconnected: bridge_disconnected.optional().nullable(),
   visionline_instance_unreachable: visionline_instance_unreachable
     .optional()
     .nullable(),

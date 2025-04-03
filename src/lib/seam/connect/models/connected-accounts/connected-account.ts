@@ -8,7 +8,8 @@ const common_connected_account_error = z.object({
     .datetime()
     .describe('Date and time at which Seam created the error.'),
   message: z.string(),
-  is_connected_account_error: z.literal(true),
+  is_connected_account_error: z.boolean().optional(),
+  is_bridge_error: z.boolean().optional(),
 })
 
 const error_code_description =
@@ -41,6 +42,12 @@ export const invalid_credentials = common_connected_account_error
   })
   .describe('Credentials provided were invalid.')
 
+export const bridge_disconnected = common_connected_account_error.extend({
+  error_code: z.literal('bridge_disconnected').describe(error_code_description),
+})
+  .describe(`Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.
+  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).`)
+
 export const salto_ks_subscription_limit_exceeded =
   common_connected_account_error
     .extend({
@@ -65,12 +72,14 @@ export const salto_ks_subscription_limit_exceeded =
 export const connected_account_error = z.discriminatedUnion('error_code', [
   account_disconnected,
   invalid_credentials,
+  bridge_disconnected,
   salto_ks_subscription_limit_exceeded,
 ])
 
 const connected_account_error_map = z.object({
   account_disconnected: account_disconnected.nullable().optional(),
   invalid_credentials: invalid_credentials.nullable().optional(),
+  bridge_disconnected: bridge_disconnected.nullable().optional(),
   salto_ks_subscription_limit_exceeded: salto_ks_subscription_limit_exceeded
     .nullable()
     .optional(),

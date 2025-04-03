@@ -1430,9 +1430,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -1846,9 +1856,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3398,9 +3418,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -3801,9 +3831,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -4203,9 +4243,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -4593,9 +4643,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -4991,9 +5051,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -6519,9 +6589,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -6899,9 +6979,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Collection of warnings associated with the access code, structured in a dictionary format. A unique "warning_code" keys each warning. Each warning entry is an object containing two fields: "message" and "created_at." "message" is a string that describes the warning. "created_at" is a date that indicates when the warning was generated. This structure enables detailed tracking and timely response to potential issues that are not critical but that may require attention. */
@@ -13241,6 +13331,15 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+              is_bridge_error?: boolean | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
           | {
@@ -13416,6 +13515,15 @@ export interface Routes {
               /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+              is_bridge_error?: boolean | undefined
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'visionline_instance_unreachable'
             }
           | {
@@ -13584,6 +13692,15 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+              is_bridge_error?: boolean | undefined
             }
           | {
               /** Date and time at which Seam created the error. */
@@ -17605,7 +17722,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
@@ -17613,7 +17731,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
@@ -17621,7 +17740,17 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
               salto_ks_metadata: {
@@ -17706,7 +17835,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
@@ -17714,7 +17844,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
@@ -17722,7 +17853,17 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
               salto_ks_metadata: {
@@ -17812,7 +17953,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'account_disconnected'
             }
@@ -17820,7 +17962,8 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
             }
@@ -17828,7 +17971,17 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'salto_ks_subscription_limit_exceeded'
               salto_ks_metadata: {
@@ -18695,9 +18848,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -19800,9 +19963,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -20243,9 +20416,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -20769,9 +20952,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -24674,9 +24867,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -25591,9 +25794,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -26664,9 +26877,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -27580,9 +27803,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -30862,9 +31095,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -31778,9 +32021,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -38893,9 +39146,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -42172,9 +42435,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -43088,9 +43361,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -48238,9 +48521,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -49156,9 +49449,19 @@ export interface Routes {
               /** Date and time at which Seam created the error. */
               created_at: string
               message: string
-              is_connected_account_error: true
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'invalid_credentials'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              message: string
+              is_connected_account_error?: boolean | undefined
+              is_bridge_error?: boolean | undefined
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
             }
         >
         /** Array of warnings associated with the device. Each warning object within the array contains two fields: "warning_code" and "message." "warning_code" is a string that uniquely identifies the type of warning, enabling quick recognition and categorization of the issue. "message" provides a more detailed description of the warning, offering insights into the issue and potentially how to rectify it. */
@@ -49379,6 +49682,15 @@ export interface Routes {
               message: string
               /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
               error_code: 'seam_bridge_disconnected'
+            }
+          | {
+              /** Date and time at which Seam created the error. */
+              created_at: string
+              /** Detailed description of the error. Provides insights into the issue and potentially how to rectify it. */
+              message: string
+              /** Unique identifier of the type of error. Enables quick recognition and categorization of the issue. */
+              error_code: 'bridge_disconnected'
+              is_bridge_error?: boolean | undefined
             }
           | {
               /** Date and time at which Seam created the error. */
