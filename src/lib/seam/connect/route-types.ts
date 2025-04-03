@@ -14119,7 +14119,7 @@ export interface Routes {
       user_identity_email_address?: string | undefined
       /** ID of the `acs_system` for which you want to retrieve all `acs_user`s. */
       acs_system_id?: string | undefined
-      /** String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, or `email_address`. */
+      /** String for which to search. Filters returned `acs_user`s to include all records that satisfy a partial match using `full_name`, `phone_number`, `email_address`, `acs_user_id`, `user_identity_id`, `user_identity_full_name` or `user_identity_phone_number`. */
       search?: string | undefined
       /** Maximum number of records to return per page. */
       limit?: number
