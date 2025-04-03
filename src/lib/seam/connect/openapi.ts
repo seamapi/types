@@ -737,18 +737,34 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
               ],
@@ -1867,7 +1883,7 @@ export default {
               oneOf: [
                 {
                   description:
-                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  This error might also occur if Seam Bridge is connected to the wrong [workspace](https://docs.seam.co/latest/core-concepts/workspaces).\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
                   properties: {
                     created_at: {
                       description:
@@ -1881,6 +1897,32 @@ export default {
                       enum: ['seam_bridge_disconnected'],
                       type: 'string',
                     },
+                    message: {
+                      description:
+                        'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
+                      type: 'string',
+                    },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n    See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
                     message: {
                       description:
                         'Detailed description of the error. Provides insights into the issue and potentially how to rectify it.',
@@ -6093,18 +6135,11 @@ export default {
                       enum: ['account_disconnected'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
@@ -6122,18 +6157,34 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
                 {
@@ -6152,10 +6203,8 @@ export default {
                       enum: ['salto_ks_subscription_limit_exceeded'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                     salto_ks_metadata: {
                       properties: {
@@ -6191,7 +6240,6 @@ export default {
                   required: [
                     'created_at',
                     'message',
-                    'is_connected_account_error',
                     'error_code',
                     'salto_ks_metadata',
                   ],
@@ -6745,18 +6793,34 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
               ],
@@ -14098,18 +14162,34 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
               ],
@@ -15752,18 +15832,34 @@ export default {
                       enum: ['invalid_credentials'],
                       type: 'string',
                     },
-                    is_connected_account_error: {
-                      enum: [true],
-                      type: 'boolean',
-                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
                     message: { type: 'string' },
                   },
-                  required: [
-                    'created_at',
-                    'message',
-                    'is_connected_account_error',
-                    'error_code',
-                  ],
+                  required: ['created_at', 'message', 'error_code'],
+                  type: 'object',
+                },
+                {
+                  description:
+                    'Indicates that the Seam API cannot communicate with [Seam Bridge](https://docs.seam.co/latest/capability-guides/seam-bridge), for example, if Seam Bridge executable has stopped or if the computer running the Seam Bridge executable is offline.\n  See also [Troubleshooting Your Access Control System](https://docs.seam.co/latest/capability-guides/access-systems/troubleshooting-your-access-control-system#acs_system.errors.seam_bridge_disconnected).',
+                  properties: {
+                    created_at: {
+                      description:
+                        'Date and time at which Seam created the error.',
+                      format: 'date-time',
+                      type: 'string',
+                    },
+                    error_code: {
+                      description:
+                        'Unique identifier of the type of error. Enables quick recognition and categorization of the issue.',
+                      enum: ['bridge_disconnected'],
+                      type: 'string',
+                    },
+                    is_bridge_error: { type: 'boolean' },
+                    is_connected_account_error: { type: 'boolean' },
+                    message: { type: 'string' },
+                  },
+                  required: ['created_at', 'message', 'error_code'],
                   type: 'object',
                 },
               ],
