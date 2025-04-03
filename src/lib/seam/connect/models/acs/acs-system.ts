@@ -236,6 +236,8 @@ export const acs_system = z
       .describe(
         'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
       ),
+    acs_users_count: z.number().optional(),
+    acs_access_group_count: z.number().optional(),
     external_type: acs_system_external_type
       .describe(
         'Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type.',

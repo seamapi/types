@@ -1802,12 +1802,14 @@ export default {
         description:
           'Represents an [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nWithin an `acs_system`, create [`acs_user`s](https://docs.seam.co/latest/api/acs/users#acs_user) and [`acs_credential`s](https://docs.seam.co/latest/api/acs/credentials#acs_credential) to grant access to the `acs_user`s.\n\nFor details about the resources associated with an access control system, see the [access control systems namespace](https://docs.seam.co/latest/api/acs).',
         properties: {
+          acs_access_group_count: { format: 'float', type: 'number' },
           acs_system_id: {
             description:
               'ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems).',
             format: 'uuid',
             type: 'string',
           },
+          acs_users_count: { format: 'float', type: 'number' },
           can_add_acs_users_to_acs_access_groups: {
             description:
               'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
