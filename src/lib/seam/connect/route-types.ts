@@ -13240,7 +13240,7 @@ export interface Routes {
         default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
         acs_system_id: string
-        acs_users_count?: number | undefined
+        acs_user_count?: number | undefined
         acs_access_group_count?: number | undefined
         /** Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type. */
         external_type?:
@@ -13424,7 +13424,7 @@ export interface Routes {
         default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
         acs_system_id: string
-        acs_users_count?: number | undefined
+        acs_user_count?: number | undefined
         acs_access_group_count?: number | undefined
         /** Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type. */
         external_type?:
@@ -13608,7 +13608,7 @@ export interface Routes {
         default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
         acs_system_id: string
-        acs_users_count?: number | undefined
+        acs_user_count?: number | undefined
         acs_access_group_count?: number | undefined
         /** Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type. */
         external_type?:
@@ -49598,7 +49598,7 @@ export interface Routes {
         default_credential_manager_acs_system_id?: (string | null) | undefined
         /** ID of the [access control system](https://docs.seam.co/latest/capability-guides/access-systems). */
         acs_system_id: string
-        acs_users_count?: number | undefined
+        acs_user_count?: number | undefined
         acs_access_group_count?: number | undefined
         /** Brand-specific terminology for the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) type. */
         external_type?:

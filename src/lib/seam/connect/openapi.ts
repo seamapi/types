@@ -1825,7 +1825,7 @@ export default {
             format: 'uuid',
             type: 'string',
           },
-          acs_users_count: { format: 'float', type: 'number' },
+          acs_user_count: { format: 'float', type: 'number' },
           can_add_acs_users_to_acs_access_groups: {
             description:
               'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
