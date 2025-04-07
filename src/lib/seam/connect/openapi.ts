@@ -1825,7 +1825,7 @@ export default {
             format: 'uuid',
             type: 'string',
           },
-          acs_users_count: { format: 'float', type: 'number' },
+          acs_user_count: { format: 'float', type: 'number' },
           can_add_acs_users_to_acs_access_groups: {
             description:
               'Indicates whether the [access control system](https://docs.seam.co/latest/capability-guides/access-systems) supports [adding users to access groups](https://docs.seam.co/latest/capability-guides/access-systems/assigning-users-to-access-groups#add-an-acs-user-to-an-access-group). See also [Access Group-based Access Control Systems](https://docs.seam.co/latest/capability-guides/access-systems/understanding-access-control-system-differences#access-group-based-access-control-systems).',
@@ -20325,7 +20325,7 @@ export default {
     '/acs/systems/list_compatible_credential_manager_acs_systems': {
       post: {
         description:
-          'Returns a list of all credential manager ACS systems that are compatible with a specified\n[access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS\nsystems by including the corresponding `acs_system_id` in the request body.',
+          'Returns a list of all credential manager ACS systems that are compatible with a specified [access control system](https://docs.seam.co/latest/capability-guides/access-systems).\n\nSpecify the ACS system for which you want to retrieve all compatible credential manager ACS systems by including the corresponding `acs_system_id` in the request body.',
         operationId: 'acsSystemsListCompatibleCredentialManagerAcsSystemsPost',
         requestBody: {
           content: {
